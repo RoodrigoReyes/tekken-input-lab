@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import type { ComboRepository } from '../storage/comboRepository';
 import type { Combo } from '../types/combo';
 
@@ -25,50 +25,53 @@ interface AsyncState<T> {
   reload: () => Promise<void>;
 }
 
-/** All combos, newest first. */
-export function useCombos(): AsyncState<Combo[]> {
-  const repo = useRepository();
-  const [data, setData] = useState<Combo[]>([]);
+/**
+ * Load data from the repository. A request counter discards out-of-order
+ * responses (e.g. rapid toggles) and results that arrive after unmount or
+ * after the key (id) changed.
+ */
+function useRepositoryQuery<T>(load: () => Promise<T>, initial: T, label: string): AsyncState<T> {
+  const [data, setData] = useState<T>(initial);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const latest = useRef(0);
+
   const reload = useCallback(async () => {
+    const request = ++latest.current;
     try {
-      setData(await repo.findAll());
+      const value = await load();
+      if (request !== latest.current) return;
+      setData(value);
       setError(null);
     } catch (e) {
-      setError(`Could not load your combos: ${errorMessage(e)}`);
+      if (request !== latest.current) return;
+      setError(`${label}: ${errorMessage(e)}`);
     } finally {
-      setLoading(false);
+      if (request === latest.current) setLoading(false);
     }
-  }, [repo]);
+  }, [load, label]);
+
   useEffect(() => {
+    setLoading(true);
     void reload();
+    return () => {
+      latest.current++; // invalidate in-flight requests
+    };
   }, [reload]);
+
   return { data, loading, error, reload };
 }
 
-/** One combo by id (null when missing). */
+/** All combos, newest first. */
+export function useCombos(): AsyncState<Combo[]> {
+  const repo = useRepository();
+  const load = useCallback(() => repo.findAll(), [repo]);
+  return useRepositoryQuery<Combo[]>(load, [], 'Could not load your combos');
+}
+
+/** One combo by id (null when missing or when id is null). Mount with key={id}. */
 export function useCombo(id: string | null): AsyncState<Combo | null> {
   const repo = useRepository();
-  const [data, setData] = useState<Combo | null>(null);
-  const [loading, setLoading] = useState(id !== null);
-  const [error, setError] = useState<string | null>(null);
-  const reload = useCallback(async () => {
-    if (id === null) {
-      setLoading(false);
-      return;
-    }
-    try {
-      setData(await repo.findById(id));
-      setError(null);
-    } catch (e) {
-      setError(`Could not load this combo: ${errorMessage(e)}`);
-    } finally {
-      setLoading(false);
-    }
-  }, [repo, id]);
-  useEffect(() => {
-    void reload();
-  }, [reload]);
-  return { data, loading, error, reload };
+  const load = useCallback(() => (id === null ? Promise.resolve(null) : repo.findById(id)), [repo, id]);
+  return useRepositoryQuery<Combo | null>(load, null, 'Could not load this combo');
 }

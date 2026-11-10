@@ -76,6 +76,22 @@ describe('ComboRepository (Dexie)', () => {
     expect(d.notation).toBe(c.notation);
   });
 
+  it('duplicates long names within the length limit', async () => {
+    const c = await repo.create(draft({ name: 'x'.repeat(120) }));
+    const d = await repo.duplicate(c.id);
+    expect(d.name).toHaveLength(120);
+    expect(d.name.endsWith(' (copy)')).toBe(true);
+  });
+
+  it('setFavorite does not bump updatedAt', async () => {
+    const c = await repo.create(draft());
+    await repo.setFavorite(c.id, true);
+    const after = await repo.findById(c.id);
+    expect(after?.favorite).toBe(true);
+    expect(after?.updatedAt).toBe(c.updatedAt);
+    await expect(repo.setFavorite('missing', true)).rejects.toBeInstanceOf(NotFoundError);
+  });
+
   it('deletes', async () => {
     const c = await repo.create(draft());
     await repo.delete(c.id);

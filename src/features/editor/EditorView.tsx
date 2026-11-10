@@ -1,4 +1,4 @@
-import { useMemo, useState, type FormEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { DiagnosticsList } from '../../components/combos/DiagnosticsList';
 import { ComboVisual, DEFAULT_VISUAL, VisualControls } from '../../components/combos/ComboVisual';
 import { Button, LinkButton } from '../../components/ui/Button';
@@ -56,6 +56,10 @@ function EditorForm({ id, initial, navigate }: { id: string | null; initial: Com
   const [visual, setVisual] = useState(DEFAULT_VISUAL);
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
+  const errorRef = useRef<HTMLParagraphElement>(null);
+  useEffect(() => {
+    if (formError) errorRef.current?.focus();
+  }, [formError]);
 
   const game = getGame(draft.game);
   const dialects = dialectsForGame(draft.game);
@@ -191,7 +195,7 @@ function EditorForm({ id, initial, navigate }: { id: string | null; initial: Com
       </Field>
 
       {formError && (
-        <p role="alert" className="rounded-lg border border-red-800 bg-red-950 p-3 text-sm text-red-200">
+        <p ref={errorRef} tabIndex={-1} role="alert" className="rounded-lg border border-red-800 bg-red-950 p-3 text-sm text-red-200">
           {formError}
         </p>
       )}

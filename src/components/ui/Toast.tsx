@@ -25,15 +25,22 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   const show = useCallback((message: string, tone: Tone = 'info') => {
     const id = nextId.current++;
     setItems((current) => [...current, { id, message, tone }]);
-    window.setTimeout(() => setItems((current) => current.filter((t) => t.id !== id)), 3500);
+    window.setTimeout(() => setItems((current) => current.filter((t) => t.id !== id)), tone === 'error' ? 10000 : 3500);
   }, []);
   return (
     <ToastContext.Provider value={show}>
       {children}
       <div className="pointer-events-none fixed inset-x-0 bottom-4 z-50 flex flex-col items-center gap-2 px-4" aria-live="polite">
         {items.map((t) => (
-          <div key={t.id} className={`pointer-events-auto rounded-lg border px-4 py-2 text-sm shadow-lg ${TONES[t.tone]}`}>
-            {t.message}
+          <div
+            key={t.id}
+            role={t.tone === 'error' ? 'alert' : 'status'}
+            className={`pointer-events-auto flex items-center gap-3 rounded-lg border px-4 py-2 text-sm shadow-lg ${TONES[t.tone]}`}
+          >
+            <span>{t.message}</span>
+            <button type="button" aria-label="Dismiss" className="opacity-70 hover:opacity-100" onClick={() => setItems((c) => c.filter((x) => x.id !== t.id))}>
+              ×
+            </button>
           </div>
         ))}
       </div>

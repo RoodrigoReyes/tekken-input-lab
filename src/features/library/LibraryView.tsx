@@ -1,14 +1,15 @@
-import { useMemo, useState, type ReactNode } from 'react';
+import { useMemo, useState } from 'react';
 import { LinkButton } from '../../components/ui/Button';
 import { useToast } from '../../components/ui/Toast';
 import { errorMessage, useCombos, useRepository } from '../../hooks/useCombos';
 import { paths } from '../../hooks/useHashRoute';
 import type { Combo } from '../../types/combo';
+import { BackupActions } from './BackupActions';
 import { ComboCard } from './ComboCard';
 import { Filters } from './Filters';
 import { collectCharacters, collectPartners, collectTags, EMPTY_FILTERS, filterCombos, type LibraryFilters } from './filters';
 
-export function LibraryView({ actions }: { actions?: ReactNode }) {
+export function LibraryView() {
   const repo = useRepository();
   const toast = useToast();
   const { data: combos, loading, error, reload } = useCombos();
@@ -17,7 +18,7 @@ export function LibraryView({ actions }: { actions?: ReactNode }) {
 
   const toggleFavorite = async (combo: Combo) => {
     try {
-      await repo.update(combo.id, { favorite: !combo.favorite });
+      await repo.setFavorite(combo.id, !combo.favorite);
       await reload();
     } catch (e) {
       toast(`Could not update favorite: ${errorMessage(e)}`, 'error');
@@ -28,7 +29,7 @@ export function LibraryView({ actions }: { actions?: ReactNode }) {
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <h1 className="mr-auto text-2xl font-extrabold">Combo Library</h1>
-        {actions}
+        <BackupActions onImported={reload} />
         <LinkButton href={paths.new()} variant="primary">
           + New combo
         </LinkButton>

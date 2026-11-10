@@ -1,7 +1,7 @@
 import { cloneElement, useId, type InputHTMLAttributes, type ReactElement, type ReactNode, type SelectHTMLAttributes, type TextareaHTMLAttributes } from 'react';
 
 const CONTROL =
-  'w-full rounded-lg border border-ink-700 bg-ink-900 px-3 py-2 text-sm text-ink-100 placeholder:text-ink-500 focus:border-ink-400 focus:outline-none';
+  'w-full rounded-lg border border-ink-700 bg-ink-900 px-3 py-2 text-sm text-ink-100 placeholder:text-ink-500 focus:border-ink-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400/70';
 
 /**
  * Label + control. Uses explicit htmlFor/id association (a wrapping <label>

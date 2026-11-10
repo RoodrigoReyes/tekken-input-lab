@@ -3,6 +3,7 @@ import { LinkButton } from './components/ui/Button';
 import { ToastProvider } from './components/ui/Toast';
 import { DetailsView } from './features/details/DetailsView';
 import { EditorView } from './features/editor/EditorView';
+import { ExportButtons } from './features/export/ExportButtons';
 import { LibraryView } from './features/library/LibraryView';
 import { RepositoryProvider } from './hooks/useCombos';
 import { paths, useHashRoute } from './hooks/useHashRoute';
@@ -42,9 +43,9 @@ export function App() {
           </header>
           <main className="mx-auto max-w-5xl px-4 py-6">
             {route.name === 'library' && <LibraryView />}
-            {route.name === 'new' && <EditorView id={null} navigate={navigate} />}
-            {route.name === 'edit' && <EditorView id={route.id} navigate={navigate} />}
-            {route.name === 'details' && <DetailsView id={route.id} navigate={navigate} />}
+            {route.name === 'new' && <EditorView key="new" id={null} navigate={navigate} />}
+            {route.name === 'edit' && <EditorView key={`edit-${route.id}`} id={route.id} navigate={navigate} />}
+            {route.name === 'details' && <DetailsView key={route.id} id={route.id} navigate={navigate} renderExtraActions={(props) => <ExportButtons {...props} />} />}
           </main>
         </div>
       </ToastProvider>

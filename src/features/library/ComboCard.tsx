@@ -14,7 +14,7 @@ export function ComboCard({ combo, onToggleFavorite }: ComboCardProps) {
   const parsed = useMemo(() => parseCombo(combo), [combo]);
   const warnings = parsed.result.diagnostics.filter((d) => d.severity === 'warning').length;
   return (
-    <article className="group relative flex flex-col gap-2 rounded-xl border border-ink-700 bg-ink-850 p-3 transition-colors hover:border-ink-500">
+    <article className="group relative flex flex-col gap-2 rounded-xl border border-ink-700 bg-ink-850 p-3 transition-colors hover:border-ink-500 focus-within:ring-2 focus-within:ring-red-400">
       <header className="flex items-start gap-2">
         <div className="min-w-0 flex-1">
           <h3 className="truncate font-bold">
@@ -34,7 +34,7 @@ export function ComboCard({ combo, onToggleFavorite }: ComboCardProps) {
           type="button"
           onClick={() => onToggleFavorite(combo)}
           aria-pressed={combo.favorite}
-          aria-label={combo.favorite ? 'Remove from favorites' : 'Add to favorites'}
+          aria-label="Favorite"
           className={`relative z-10 text-xl leading-none ${combo.favorite ? 'text-amber-400' : 'text-ink-500 hover:text-ink-200'}`}
         >
           {combo.favorite ? '★' : '☆'}

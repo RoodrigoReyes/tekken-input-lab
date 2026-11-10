@@ -93,7 +93,7 @@ function Details({
 
   const toggleFavorite = () =>
     run(async () => {
-      await repo.update(combo.id, { favorite: !combo.favorite });
+      await repo.setFavorite(combo.id, !combo.favorite);
       await reload();
     }, 'Could not update favorite');
 
@@ -118,7 +118,7 @@ function Details({
             type="button"
             onClick={toggleFavorite}
             aria-pressed={combo.favorite}
-            aria-label={combo.favorite ? 'Remove from favorites' : 'Add to favorites'}
+            aria-label="Favorite"
             className={`text-2xl ${combo.favorite ? 'text-amber-400' : 'text-ink-500 hover:text-ink-200'}`}
           >
             {combo.favorite ? '★' : '☆'}

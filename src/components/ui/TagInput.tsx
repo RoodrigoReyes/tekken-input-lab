@@ -24,7 +24,7 @@ export function TagInput({ value, onChange, suggestions = [], id }: TagInputProp
     }
   };
   return (
-    <div className="flex flex-wrap items-center gap-1.5 rounded-lg border border-ink-700 bg-ink-900 px-2 py-1.5">
+    <div className="flex flex-wrap items-center gap-1.5 rounded-lg border border-ink-700 bg-ink-900 px-2 py-1.5 focus-within:border-ink-400 focus-within:ring-2 focus-within:ring-red-400/70">
       {value.map((tag) => (
         <span key={tag} className="inline-flex items-center gap-1 rounded-md bg-ink-800 px-2 py-0.5 text-xs text-ink-100">
           {tag}

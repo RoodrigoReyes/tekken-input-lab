@@ -12,6 +12,8 @@ export interface ComboRepository {
   findById(id: string): Promise<Combo | null>;
   create(draft: ComboDraft): Promise<Combo>;
   update(id: string, changes: Partial<ComboDraft>): Promise<Combo>;
+  /** Toggle favorite without touching updatedAt or revalidating the record. */
+  setFavorite(id: string, favorite: boolean): Promise<void>;
   delete(id: string): Promise<void>;
   duplicate(id: string): Promise<Combo>;
   /** Insert or overwrite combos (by id). Used by JSON import. */
@@ -33,22 +35,24 @@ export class NotFoundError extends Error {
   }
 }
 
+const MAX_NAME = 120;
+const COPY_SUFFIX = ' (copy)';
+
+/** Normalization shared by create/update and JSON import. */
+export function normalizeCombo<T extends Pick<ComboDraft, 'game' | 'partner' | 'tags'>>(value: T): T {
+  const { partner, ...rest } = value;
+  const keepPartner = value.game === 'ttt2' && partner;
+  return { ...(rest as T), tags: [...new Set(value.tags)], ...(keepPartner ? { partner } : {}) };
+}
+
 function validateDraft(draft: unknown): ComboDraft {
   const parsed = comboDraftSchema.safeParse(draft);
   if (!parsed.success) throw new ValidationError(describeIssues(parsed.error));
   const value = parsed.data;
   // Keep the notation byte-for-byte (zod's trim must not touch it).
   const notation = (draft as { notation: string }).notation;
-  const partner = value.game === 'ttt2' && value.partner ? value.partner : undefined;
-  const { partner: _p, damage, ...rest } = value;
-  void _p;
-  return {
-    ...rest,
-    notation,
-    tags: [...new Set(value.tags)],
-    ...(partner ? { partner } : {}),
-    ...(damage !== undefined ? { damage } : {}),
-  };
+  const { damage, ...rest } = value;
+  return normalizeCombo({ ...rest, notation, ...(damage !== undefined ? { damage } : {}) });
 }
 
 export interface RepositoryDeps {
@@ -91,6 +95,10 @@ export function createDexieRepository(db: InputLabDatabase = new InputLabDatabas
       await db.combos.put(next);
       return next;
     },
+    async setFavorite(id, favorite) {
+      const changed = await db.combos.update(id, { favorite });
+      if (changed === 0 && !(await db.combos.get(id))) throw new NotFoundError(id);
+    },
     async delete(id) {
       await db.combos.delete(id);
     },
@@ -100,7 +108,8 @@ export function createDexieRepository(db: InputLabDatabase = new InputLabDatabas
       void _id;
       void _c;
       void _u;
-      return this.create({ ...draft, name: `${current.name} (copy)`, favorite: false });
+      const base = current.name.slice(0, MAX_NAME - COPY_SUFFIX.length);
+      return this.create({ ...draft, name: `${base}${COPY_SUFFIX}`, favorite: false });
     },
     async putMany(combos) {
       await db.combos.bulkPut([...combos]);
