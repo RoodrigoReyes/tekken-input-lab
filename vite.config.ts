@@ -11,7 +11,7 @@ export default defineConfig({
     include: ['tests/**/*.test.{ts,tsx}'],
     coverage: {
       provider: 'v8',
-      include: ['src/parser/**', 'src/notation/**', 'src/render/**', 'src/storage/**'],
+      include: ['src/parser/**', 'src/notation/**', 'src/render/**', 'src/storage/**', 'src/features/**/*.ts'],
       thresholds: { lines: 80, functions: 80, branches: 75, statements: 80 },
     },
   },

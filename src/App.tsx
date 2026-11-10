@@ -1,37 +1,53 @@
-import { useMemo, useState } from 'react';
-import { CommandSequence } from './components/arcade';
-import { GAMES } from './notation/games';
-import { parseNotation } from './parser';
-import type { GameId } from './types/notation';
+import { useMemo } from 'react';
+import { LinkButton } from './components/ui/Button';
+import { ToastProvider } from './components/ui/Toast';
+import { DetailsView } from './features/details/DetailsView';
+import { EditorView } from './features/editor/EditorView';
+import { LibraryView } from './features/library/LibraryView';
+import { RepositoryProvider } from './hooks/useCombos';
+import { paths, useHashRoute } from './hooks/useHashRoute';
+import { createDexieRepository } from './storage/comboRepository';
 
-/** Temporary live-preview playground (replaced by the full app in Phase 3). */
+function Logo() {
+  return (
+    <a href={paths.library()} className="flex items-center gap-2 font-extrabold tracking-tight">
+      <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden>
+        <circle cx="10" cy="10" r="6" fill="#e0262b" />
+        <circle cx="22" cy="10" r="6" fill="#cfd3dc" />
+        <circle cx="10" cy="22" r="6" fill="#cfd3dc" />
+        <circle cx="22" cy="22" r="6" fill="#e0262b" />
+      </svg>
+      TekkenInputLab
+    </a>
+  );
+}
+
 export function App() {
-  const [game, setGame] = useState<GameId>('t8');
-  const [text, setText] = useState('qcf+1 > uf+2,1 B! > SSL 1~b~uf+4 > f+1,2,1+2');
-  const result = useMemo(() => parseNotation(text, { game }), [text, game]);
+  const repository = useMemo(() => createDexieRepository(), []);
+  const [route, navigate] = useHashRoute();
 
   return (
-    <main className="mx-auto max-w-5xl space-y-4 p-6">
-      <h1 className="text-xl font-bold">TekkenInputLab</h1>
-      <select className="rounded bg-ink-850 p-2" value={game} onChange={(e) => setGame(e.target.value as GameId)}>
-        {GAMES.map((g) => (
-          <option key={g.id} value={g.id}>
-            {g.name}
-          </option>
-        ))}
-      </select>
-      <textarea
-        className="w-full rounded bg-ink-850 p-3 font-mono"
-        rows={3}
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-      <CommandSequence result={result} />
-      <ul className="text-sm text-amber-400">
-        {result.diagnostics.map((d, i) => (
-          <li key={i}>{d.message}</li>
-        ))}
-      </ul>
-    </main>
+    <RepositoryProvider repository={repository}>
+      <ToastProvider>
+        <div className="min-h-screen">
+          <header className="sticky top-0 z-20 border-b border-ink-800 bg-ink-950/90 backdrop-blur">
+            <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+              <Logo />
+              {route.name !== 'new' && (
+                <LinkButton href={paths.new()} size="sm" variant="primary">
+                  + New
+                </LinkButton>
+              )}
+            </div>
+          </header>
+          <main className="mx-auto max-w-5xl px-4 py-6">
+            {route.name === 'library' && <LibraryView />}
+            {route.name === 'new' && <EditorView id={null} navigate={navigate} />}
+            {route.name === 'edit' && <EditorView id={route.id} navigate={navigate} />}
+            {route.name === 'details' && <DetailsView id={route.id} navigate={navigate} />}
+          </main>
+        </div>
+      </ToastProvider>
+    </RepositoryProvider>
   );
 }

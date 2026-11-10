@@ -84,6 +84,21 @@ describe('layoutCombo', () => {
     for (const b of rowStarts.values()) expect(b.bracket?.side).not.toBe('close');
   });
 
+  it('never starts a row with a relation or stage separator', () => {
+    for (let width = 120; width < 600; width += 7) {
+      const l = layout('1,[2,3],4,[1,2],3 > [df+1] > 2', 't8', { width });
+      const rowStarts = new Map<number, Box>();
+      for (const b of l.boxes) if (!rowStarts.has(b.y)) rowStarts.set(b.y, b);
+      for (const b of rowStarts.values()) expect(['relation', 'stage']).not.toContain(b.kind);
+    }
+  });
+
+  it('expanded named moves never inherit warning highlights', () => {
+    const r = parseNotation('EWGF,1,zzz', { game: 't8', characters: ['Kazuya'] });
+    const l = layoutCombo(r, { width: 2000, size: 40, expandNamed: true });
+    expect(items(l.boxes).filter((b) => b.flagged).map((b) => b.title)).toEqual(['zzz']);
+  });
+
   it('section headers for TTT2 sections, including Tag Assault', () => {
     const r = parseNotation('df+1,2~5 ; 3+4,2', { game: 'ttt2', dialect: 'kage-ttt2' });
     const l = layoutCombo(r, { width: 2000, size: 40, sectionHeaders: [{ title: 'Kazuya' }, { title: 'Armor King' }] });

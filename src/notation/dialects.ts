@@ -35,6 +35,12 @@ const BASE_EVENTS: Readonly<Record<string, MechanicId>> = {
   ta: 'tagAssault',
 };
 
+/** Canonical spelling of each event abbreviation (keys are lowercase, without `!`). */
+export const EVENT_SPELLING: Readonly<Record<string, string>> = {
+  b: 'B!', s: 'S!', t: 'T!', w: 'W!', wb: 'WB!', f: 'F!', fb: 'FB!', bb: 'BB!',
+  wbl: 'WBl!', fbl: 'FBl!', wbo: 'WBo!', ta: 'TA!',
+};
+
 export const DIALECTS: Readonly<Record<DialectId, Dialect>> = {
   standard: {
     id: 'standard',

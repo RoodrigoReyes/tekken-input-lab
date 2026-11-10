@@ -108,6 +108,8 @@ class Builder {
   readonly h: number;
   private readonly measure: MeasureFn;
   private readonly flaggedSpans: Span[];
+  /** Expansion nodes have spans relative to the expansion text, not the original. */
+  private inExpansion = false;
 
   constructor(
     private readonly result: ParseResult,
@@ -120,6 +122,7 @@ class Builder {
   }
 
   private flagged(span: Span): boolean {
+    if (this.inExpansion) return false;
     return this.flaggedSpans.some((f) => f.start < span.end && span.start < f.end);
   }
 
@@ -134,7 +137,7 @@ class Builder {
   }
 
   private labelPart(text: string, fill: string, style: LabelStyle, caption?: string): PartDraft {
-    const main = this.textW(text, style === 'note' ? 0.3 : 0.4, style === 'note' ? 400 : 700);
+    const main = this.textW(text, style === 'note' ? 0.3 : 0.4, style === 'note' ? 400 : 800);
     const cap = caption ? this.textW(caption, 0.2, 700) : 0;
     return { type: 'label', w: Math.max(main, cap) + this.s * 0.36, text, fill, style, ...(caption ? { caption } : {}) }
   }
@@ -179,7 +182,7 @@ class Builder {
   private itemDraft(node: ItemNode): Draft {
     const s = this.s;
     const raw: PartDraft[] = [...this.prefixParts(node.prefixes), ...this.coreParts(node)];
-    if (node.hold) raw.push({ type: 'hold', w: s * 0.62 });
+    if (node.hold) raw.push({ type: 'hold', w: this.textW('HOLD', 0.2, 800) + s * 0.18 });
     if (node.repeat) raw.push({ type: 'repeat', w: this.textW(`×${node.repeat}`, 0.34) + s * 0.12, count: node.repeat });
     const pad = s * 0.12;
     const gap = s * 0.06;
@@ -219,9 +222,13 @@ class Builder {
     out.push(this.itemDraft(node));
     if (node.type === 'namedMove' && this.options.expandNamed && node.expansion) {
       const expanded = parseNotation(node.expansion, { game: this.result.game, dialect: this.result.dialect });
-      const steps = expanded.ast.sections[0]?.stages[0]?.steps ?? [];
       this.bracket('open', 'expansion', out);
-      this.steps(steps, out);
+      this.inExpansion = true;
+      expanded.ast.sections.flatMap((sec) => sec.stages).forEach((stage, i) => {
+        if (i > 0) this.stage(out);
+        this.steps(stage.steps, out);
+      });
+      this.inExpansion = false;
       this.bracket('close', 'expansion', out);
     }
   }
@@ -254,9 +261,9 @@ function segments(drafts: readonly Draft[]): Draft[][] {
   drafts.forEach((d, i) => {
     current.push(d);
     const next = drafts[i + 1];
-    // Never start a line with a closing bracket.
-    const nextIsClose = next?.kind === 'bracket' && next.bracket?.side === 'close';
-    if (d.breakAfter && !nextIsClose) {
+    // Never start a line with a separator or a closing bracket.
+    const nextBinds = next !== undefined && (next.kind === 'relation' || next.kind === 'stage' || next.bracket?.side === 'close');
+    if (d.breakAfter && !nextBinds) {
       out.push(current);
       current = [];
     }
