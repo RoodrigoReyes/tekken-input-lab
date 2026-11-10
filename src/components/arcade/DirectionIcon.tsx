@@ -3,7 +3,7 @@ import { COLORS } from '../../render/theme';
 
 export interface DirectionIconProps {
   direction: Direction;
-  /** Held directions (uppercase in notation) render as solid yellow arrows. */
+  /** Held directions (uppercase in notation) keep the white arrow with a yellow outline. */
   held?: boolean;
   size: number;
   x?: number;
@@ -30,8 +30,9 @@ export function DirectionIcon({ direction, held = false, size, x = 0, y = 0 }: D
   if (direction === 'n') {
     return (
       <g transform={`translate(${x} ${y})`} role="img" aria-label="neutral">
-        <circle cx={size / 2} cy={size / 2} r={size * 0.16} fill={COLORS.arrow} />
-        <circle cx={size / 2} cy={size / 2} r={size * 0.3} fill="none" stroke={COLORS.arrow} strokeWidth={size * 0.05} />
+        <circle cx={size / 2} cy={size / 2} r={size * 0.3} fill="none" stroke={COLORS.arrowOutline} strokeWidth={size * 0.11} />
+        <circle cx={size / 2} cy={size / 2} r={size * 0.3} fill="none" stroke={COLORS.arrow} strokeWidth={size * 0.06} />
+        <circle cx={size / 2} cy={size / 2} r={size * 0.15} fill={COLORS.arrow} stroke={COLORS.arrowOutline} strokeWidth={size * 0.03} />
       </g>
     );
   }
@@ -41,10 +42,11 @@ export function DirectionIcon({ direction, held = false, size, x = 0, y = 0 }: D
       <g transform={`rotate(${angle} ${size / 2} ${size / 2}) scale(${size})`}>
         <path
           d={ARROW_PATH}
-          fill={held ? COLORS.arrowHeld : 'none'}
-          stroke={held ? COLORS.arrowHeld : COLORS.arrow}
-          strokeWidth={0.07}
+          fill={COLORS.arrow}
+          stroke={held ? COLORS.arrowHeld : COLORS.arrowOutline}
+          strokeWidth={held ? 0.09 : 0.07}
           strokeLinejoin="round"
+          paintOrder="stroke"
         />
       </g>
     </g>

@@ -1,5 +1,5 @@
 import type { AttackButton } from '../../types/notation';
-import { COLORS, FONT_SANS } from '../../render/theme';
+import { BUTTON_COLORS, COLORS, FONT_SANS } from '../../render/theme';
 
 export interface ArcadeButtonsProps {
   /** Buttons pressed together; all others render inactive. */
@@ -8,11 +8,11 @@ export interface ArcadeButtonsProps {
   size: number;
   x?: number;
   y?: number;
-  /** Draw the button numbers inside the circles. Defaults to size >= 34. */
+  /** Draw the button numbers inside the circles (off by default, as in the game). */
   showNumbers?: boolean;
 }
 
-/** Arcade 2×2 layout:  1 2 / 3 4. Red = pressed. */
+/** Arcade 2×2 layout:  1 2 / 3 4. Pressed buttons use their own color (see BUTTON_COLORS). */
 const LAYOUT: ReadonlyArray<[AttackButton, number, number]> = [
   [1, 0.27, 0.27],
   [2, 0.73, 0.27],
@@ -22,7 +22,7 @@ const LAYOUT: ReadonlyArray<[AttackButton, number, number]> = [
 
 export function ArcadeButtons({ active, size, x = 0, y = 0, showNumbers }: ArcadeButtonsProps) {
   const r = size * 0.21;
-  const numbers = showNumbers ?? size >= 34;
+  const numbers = showNumbers ?? false;
   const label = active.length ? `Buttons ${active.join('+')}` : 'No buttons';
   return (
     <g transform={`translate(${x} ${y})`} role="img" aria-label={label}>
@@ -34,8 +34,8 @@ export function ArcadeButtons({ active, size, x = 0, y = 0, showNumbers }: Arcad
               cx={cx * size}
               cy={cy * size}
               r={r}
-              fill={on ? COLORS.buttonActive : COLORS.buttonInactive}
-              stroke={on ? COLORS.buttonActiveStroke : COLORS.buttonInactiveStroke}
+              fill={on ? BUTTON_COLORS[button].fill : COLORS.buttonInactive}
+              stroke={on ? BUTTON_COLORS[button].stroke : COLORS.buttonInactiveStroke}
               strokeWidth={Math.max(1, size * 0.035)}
             />
             {numbers && (
@@ -47,7 +47,7 @@ export function ArcadeButtons({ active, size, x = 0, y = 0, showNumbers }: Arcad
                 fontFamily={FONT_SANS}
                 fontWeight={700}
                 fontSize={r * 1.05}
-                fill={on ? '#ffffff' : '#5b6170'}
+                fill={on ? '#ffffff' : '#8a979a'}
               >
                 {button}
               </text>

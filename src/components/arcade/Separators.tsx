@@ -36,12 +36,15 @@ export function RelationMark({ box, size }: { box: Box; size: number }) {
 export function StageSeparator({ box, size }: { box: Box; size: number }) {
   const cx = box.w / 2;
   const cy = box.h / 2;
-  const a = size * 0.14;
+  const a = size * 0.17;
   return (
-    <g stroke={COLORS.stage} strokeWidth={size * 0.07} strokeLinecap="round" strokeLinejoin="round" fill="none">
-      <path d={`M${cx - a * 1.3} ${cy - a} L${cx - a * 0.3} ${cy} L${cx - a * 1.3} ${cy + a}`} />
-      <path d={`M${cx - a * 0.1} ${cy - a} L${cx + a * 0.9} ${cy} L${cx - a * 0.1} ${cy + a}`} />
-    </g>
+    <path
+      d={`M${cx - a * 0.7} ${cy - a} L${cx + a * 0.8} ${cy} L${cx - a * 0.7} ${cy + a} Z`}
+      fill={COLORS.stageMarker}
+      stroke={COLORS.stageMarker}
+      strokeWidth={size * 0.02}
+      strokeLinejoin="round"
+    />
   );
 }
 

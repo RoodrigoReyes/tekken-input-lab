@@ -12,12 +12,15 @@ export const COLORS = {
   text: '#e6e8ee',
   muted: '#8a93a6',
   dark: '#0b0d12',
-  buttonActive: '#e0262b',
-  buttonActiveStroke: '#ff7a7a',
-  buttonInactive: '#cfd3dc',
-  buttonInactiveStroke: '#8f96a3',
-  arrow: '#f2f4f8',
+  /** Unpressed button (dark, as in the in-game command list). */
+  buttonInactive: '#3d4a4c',
+  buttonInactiveStroke: '#1b2224',
+  /** Arrows are white with a dark outline; held directions get a yellow outline. */
+  arrow: '#f4f2ef',
+  arrowOutline: '#15191d',
   arrowHeld: '#ffd166',
+  /** Stage separator (>) — green triangle as in the in-game command list. */
+  stageMarker: '#16d61f',
   named: '#7c5cff',
   movement: '#0284c7',
   stance: '#475569',
@@ -29,6 +32,17 @@ export const COLORS = {
   stage: '#e6e8ee',
   bracket: '#64748b',
 } as const;
+
+/**
+ * Pressed-button colors by position, matching the in-game command list:
+ * 1 (top-left) pink, 2 (top-right) teal, 3 (bottom-left) light blue, 4 (bottom-right) magenta.
+ */
+export const BUTTON_COLORS: Readonly<Record<1 | 2 | 3 | 4, { fill: string; stroke: string }>> = {
+  1: { fill: '#ec9ac4', stroke: '#7a3a5c' },
+  2: { fill: '#1fc4a6', stroke: '#0c5e50' },
+  3: { fill: '#64b4e4', stroke: '#235a7a' },
+  4: { fill: '#d93a78', stroke: '#6e1638' },
+};
 
 /** Event colors by mechanic id. */
 export const EVENT_COLORS: Readonly<Record<string, string>> = {

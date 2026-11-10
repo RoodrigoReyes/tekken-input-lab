@@ -4,7 +4,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import { ArcadeButtons } from '../../src/components/arcade/ArcadeButtons';
 import { CommandSequence } from '../../src/components/arcade/CommandSequence';
 import { parseNotation } from '../../src/parser';
-import { COLORS } from '../../src/render/theme';
+import { BUTTON_COLORS, COLORS } from '../../src/render/theme';
 
 afterEach(cleanup);
 
@@ -15,23 +15,29 @@ function activeButtons(container: Element): string[][] {
 }
 
 describe('ArcadeButtons', () => {
-  it('paints pressed buttons red and the rest light gray', () => {
+  it('paints each pressed button in its own color and the rest dark', () => {
     const { container } = render(
       <svg>
         <ArcadeButtons active={[1, 4]} size={40} />
       </svg>,
     );
     const fills = [...container.querySelectorAll('circle')].map((c) => c.getAttribute('fill'));
-    expect(fills).toEqual([COLORS.buttonActive, COLORS.buttonInactive, COLORS.buttonInactive, COLORS.buttonActive]);
+    expect(fills).toEqual([BUTTON_COLORS[1].fill, COLORS.buttonInactive, COLORS.buttonInactive, BUTTON_COLORS[4].fill]);
   });
 
-  it('hides numbers at small sizes', () => {
-    const { container } = render(
+  it('has no numbers by default (like the in-game display), optional on request', () => {
+    const plain = render(
       <svg>
-        <ArcadeButtons active={[2]} size={20} />
+        <ArcadeButtons active={[2]} size={40} />
       </svg>,
     );
-    expect(container.querySelectorAll('text')).toHaveLength(0);
+    expect(plain.container.querySelectorAll('text')).toHaveLength(0);
+    const numbered = render(
+      <svg>
+        <ArcadeButtons active={[2]} size={40} showNumbers />
+      </svg>,
+    );
+    expect(numbered.container.querySelectorAll('text')).toHaveLength(4);
   });
 });
 

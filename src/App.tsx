@@ -13,10 +13,10 @@ function Logo() {
   return (
     <a href={paths.library()} className="flex items-center gap-2 font-extrabold tracking-tight">
       <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden>
-        <circle cx="10" cy="10" r="6" fill="#e0262b" />
-        <circle cx="22" cy="10" r="6" fill="#cfd3dc" />
-        <circle cx="10" cy="22" r="6" fill="#cfd3dc" />
-        <circle cx="22" cy="22" r="6" fill="#e0262b" />
+        <circle cx="10" cy="10" r="6" fill="#ec9ac4" />
+        <circle cx="22" cy="10" r="6" fill="#1fc4a6" />
+        <circle cx="10" cy="22" r="6" fill="#64b4e4" />
+        <circle cx="22" cy="22" r="6" fill="#d93a78" />
       </svg>
       TekkenInputLab
     </a>
@@ -32,7 +32,7 @@ export function App() {
       <ToastProvider>
         <div className="min-h-screen">
           <header className="sticky top-0 z-20 border-b border-ink-800 bg-ink-950/90 backdrop-blur">
-            <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+            <div className="flex items-center justify-between px-3 py-3 sm:px-4">
               <Logo />
               {route.name !== 'new' && (
                 <LinkButton href={paths.new()} size="sm" variant="primary">
@@ -41,7 +41,7 @@ export function App() {
               )}
             </div>
           </header>
-          <main className="mx-auto max-w-5xl px-4 py-6">
+          <main className="w-full px-2 py-4 sm:px-4">
             {route.name === 'library' && <LibraryView />}
             {route.name === 'new' && <EditorView key="new" id={null} navigate={navigate} />}
             {route.name === 'edit' && <EditorView key={`edit-${route.id}`} id={route.id} navigate={navigate} />}

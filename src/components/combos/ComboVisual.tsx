@@ -42,7 +42,7 @@ export function VisualControls({ value, onChange }: { value: VisualOptions; onCh
 export const ComboVisual = forwardRef<SVGSVGElement, { parsed: ParsedCombo; options: VisualOptions }>(function ComboVisual({ parsed, options }, ref) {
   const empty = parsed.result.ast.sections.every((s) => s.stages.length === 0);
   return (
-    <div className="rounded-xl border border-ink-700 bg-ink-900 p-2">
+    <div className="rounded-xl border border-ink-700 bg-ink-900 p-0.5 sm:p-1">
       {empty ? (
         <p className="p-4 text-sm text-ink-500">Type notation to see the arcade commands.</p>
       ) : (

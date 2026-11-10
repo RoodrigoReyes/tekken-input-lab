@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { parseCombo } from '../../src/features/combo/parseCombo';
 import { comboSvgMarkup, exportHeading, safeFilename } from '../../src/features/export/exportImage';
 import { estimateText } from '../../src/render/measure';
-import { COLORS } from '../../src/render/theme';
+import { BUTTON_COLORS, COLORS } from '../../src/render/theme';
 
 const combo = {
   name: 'Tag wall',
@@ -31,8 +31,11 @@ describe('SVG export', () => {
   });
 
   it('keeps simultaneous vs sequential buttons distinct', () => {
-    // df+1 → one red, 2 → one red, 1+2 → two red
-    expect(svg.match(new RegExp(`fill="${COLORS.buttonActive}"`, 'g'))).toHaveLength(4);
+    // df+1 → button 1, 2 → button 2, 1+2 → buttons 1 and 2 in one cluster
+    const count = (fill: string) => svg.match(new RegExp(`fill="${fill}"`, 'g'))?.length ?? 0;
+    expect(count(BUTTON_COLORS[1].fill)).toBe(2);
+    expect(count(BUTTON_COLORS[2].fill)).toBe(2);
+    expect(count(BUTTON_COLORS[3].fill) + count(BUTTON_COLORS[4].fill)).toBe(0);
     expect(svg).toContain('TAG ASSAULT');
   });
 

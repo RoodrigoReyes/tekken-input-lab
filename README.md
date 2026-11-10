@@ -9,7 +9,8 @@ qcf+1 > uf+2,1 B! > SSL 1~b~uf+4 > f+1,2,1+2
 ```
 
 Paste notation like the above and every direction, button press, transition and
-combo event is drawn with 2×2 arcade buttons (red = pressed), arrows, and labels.
+combo event is drawn with 2×2 arcade buttons (each pressed button in its in-game color:
+1 pink, 2 teal, 3 light blue, 4 magenta), white arrows, and labels.
 Combos are saved in your browser (IndexedDB). No account and no server.
 
 ## Quick start
