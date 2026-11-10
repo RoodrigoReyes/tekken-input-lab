@@ -8,6 +8,8 @@ test('create, view, persist, and delete a combo', async ({ page }) => {
   await expect(page.getByText('No combos yet')).toBeVisible();
 
   await page.getByRole('link', { name: 'Create a combo' }).click();
+  // Wait for the editor: the library also has a "Game" filter.
+  await expect(page.getByRole('heading', { name: 'New combo' })).toBeVisible();
   await page.getByLabel('Game').selectOption('t6');
   await page.getByLabel('Character', { exact: true }).fill('Kazuya');
   await page.getByLabel('Combo name').fill('T6 test combo');
@@ -47,9 +49,10 @@ test('create, view, persist, and delete a combo', async ({ page }) => {
 
 test('TTT2 sections differ by dialect', async ({ page }) => {
   await page.goto('/#/new');
+  await expect(page.getByRole('heading', { name: 'New combo' })).toBeVisible();
   await page.getByLabel('Game').selectOption('ttt2');
   await page.getByLabel('Character', { exact: true }).fill('Kazuya');
-  await page.getByLabel('Partner').fill('Armor King');
+  await page.getByLabel('Partner', { exact: true }).fill('Armor King');
   await page.getByLabel('Notation', { exact: true }).fill('EWGF, EWGF, df+1,2~5 ; 3+4,2 ; cd+3 W!');
 
   const preview = page.getByRole('region', { name: 'Live preview' });

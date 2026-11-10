@@ -35,6 +35,18 @@ npm run build      # type-check + production build to dist/
   Notation is never silently reinterpreted.
 - **TTT2 team combos.** Choose a primary character and a partner, and assign a
   character to each section. `Name:` labels inside the notation are recognized.
+- **TTT2 combo generator.** It builds team combos from the bundled
+  "TTT2 BNB Combos" guide: a route that reaches `B!`, then `TA!`, then a TA
+  filler, then an ender. You choose:
+  - the team
+  - open ground or the wall
+  - the starter: normal, Counter Hit or Low Parry
+  - the form (Kazuya or Devil Kazuya)
+  - who performs the filler and who performs the ender after `TA!`
+
+  Only combinations that follow the guide's rules are listed. Its conditions and
+  notes are shown as things to verify, and each result stays a suggestion until
+  you test it in practice mode.
 - **Combo library.** Create, edit, duplicate and delete combos. Search them, and
   filter by game, character, partner, difficulty, tags and favorites.
 - **Export.** Save a combo as SVG or PNG. Back up or restore the whole library
@@ -53,7 +65,7 @@ npm run build      # type-check + production build to dist/
 | `>` | next combo stage | `df+2 > 1,2 > T!` |
 | `;` | section break or Tag Assault (depends on dialect) | `… ; 3+4,2` |
 | `[ ]` | optional part | `df+2 [dash] f+2` |
-| `( )` | note | `1,2 (wall)` |
+| `( )` | optional input when the content is valid notation, otherwise a note | `(1,2),2`, `uf+4,(3,)4`, `1,2 (wall)` |
 | `x3` | repeat | `b+1 x3` |
 | `5` | TAG button (TTT2) | `df+1,2~5` |
 
@@ -133,6 +145,24 @@ src/
 - **Repository pattern.** The UI depends only on the `ComboRepository`
   interface. A cloud-sync implementation can be added later without changing
   any feature code.
+
+## TTT2 combo guide
+
+The generator ships the original text of the "TTT2 BNB Combos" guide in
+`src/data/ttt2/` and converts it on first use with `src/ttt2/guideImporter.ts`.
+The original text is the source of truth. The importer recognizes:
+
+- `#` character, `##` section, `Starter:`
+- numbered and unnumbered routes
+- `|` lists, where each `|` separates alternatives and every alternative becomes
+  its own piece
+- `Note:`, `Additional …:`, forms, and shared kits
+
+Lines the importer cannot classify are reported, never guessed. Generator rules
+are documented in `docs/TTT2_TEAM_COMBOS.md`.
+
+Guide credits: compiled from Tekken Zaibatsu, YouTube and community
+contributors. The guide notes that its routes have not been independently tested.
 
 ## Credits
 

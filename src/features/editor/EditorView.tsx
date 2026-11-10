@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
+import { lazy, Suspense, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { DiagnosticsList } from '../../components/combos/DiagnosticsList';
 import { ComboVisual, DEFAULT_VISUAL, VisualControls } from '../../components/combos/ComboVisual';
 import { Button, LinkButton } from '../../components/ui/Button';
@@ -13,8 +13,35 @@ import { DIFFICULTIES, type Combo, type ComboDraft } from '../../types/combo';
 import type { GameId } from '../../types/notation';
 import { parseCombo } from '../combo/parseCombo';
 import { collectTags } from '../library/filters';
+import type { GeneratedCombo } from '../../ttt2/generator';
+import { GUIDE_SOURCE } from '../../ttt2/guideData';
 import { NotationReference } from './NotationReference';
 import { SectionAssigner } from './SectionAssigner';
+
+/** Loaded on demand: the generator bundles the TTT2 guide. */
+const GeneratorPanel = lazy(() => import('../generator/GeneratorPanel').then((m) => ({ default: m.GeneratorPanel })));
+
+/** Draft fields filled from a generated combo (notation verbatim; verification list in notes). */
+export function draftFromGenerated(draft: ComboDraft, combo: GeneratedCombo, team: { point: string; partner: string }): ComboDraft {
+  const verify = combo.flags.map((f) => `- ${f.piece}: ${f.text}`);
+  const notes = [
+    `Generated from the "${GUIDE_SOURCE.title}" guide. Not tested yet: try it in practice mode.`,
+    ...(verify.length ? ['To verify:', ...verify] : []),
+  ].join('\n');
+  const name = `${team.point} + ${team.partner}: ${combo.route.starter ?? 'route'} → TA!`;
+  return {
+    ...draft,
+    game: 'ttt2',
+    dialect: 'standard',
+    character: team.point,
+    partner: team.partner,
+    notation: combo.notation,
+    sectionCharacters: [],
+    name: draft.name.trim() ? draft.name : name.slice(0, 120),
+    tags: draft.tags.includes('generated') ? draft.tags : [...draft.tags, 'generated'],
+    notes: draft.notes.trim() ? `${draft.notes}\n\n${notes}` : notes,
+  };
+}
 
 const NEW_DRAFT: ComboDraft = {
   game: 't8',
@@ -57,6 +84,7 @@ function EditorForm({ id, initial, navigate }: { id: string | null; initial: Com
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const errorRef = useRef<HTMLParagraphElement>(null);
+  const previewRef = useRef<HTMLElement>(null);
   useEffect(() => {
     if (formError) errorRef.current?.focus();
   }, [formError]);
@@ -140,6 +168,25 @@ function EditorForm({ id, initial, navigate }: { id: string | null; initial: Com
         )}
       </div>
 
+      {game.tag && (
+        <details className="rounded-xl border border-ink-700 bg-ink-900 p-3" open={!draft.notation.trim()}>
+          <summary className="cursor-pointer font-semibold text-ink-200">Generate from guide (TTT2 team combos)</summary>
+          <div className="mt-3">
+            <Suspense fallback={<p className="text-sm text-ink-400">Loading the generator…</p>}>
+              <GeneratorPanel
+                character={draft.character}
+                partner={draft.partner ?? ''}
+                onUse={(combo, team) => {
+                  setDraft((d) => draftFromGenerated(d, combo, team));
+                  toast('Combo inserted. Review it in the preview before saving.', 'success');
+                  window.setTimeout(() => previewRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+                }}
+              />
+            </Suspense>
+          </div>
+        </details>
+      )}
+
       <Field label="Combo name">
         <TextInput value={draft.name} onChange={(e) => set('name', e.target.value)} placeholder="e.g. Midscreen BnB" maxLength={120} required />
       </Field>
@@ -157,7 +204,7 @@ function EditorForm({ id, initial, navigate }: { id: string | null; initial: Com
         />
       </Field>
 
-      <section className="space-y-2" aria-label="Live preview">
+      <section ref={previewRef} className="space-y-2" aria-label="Live preview">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h2 className="text-sm font-bold text-ink-400 uppercase">Preview</h2>
           <VisualControls value={visual} onChange={setVisual} />

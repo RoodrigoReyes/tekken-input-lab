@@ -5,6 +5,7 @@ const NOTATION = 'df+2 > 1,2 > T! > dash > f+2,1';
 
 test('export SVG/PNG and back up / restore the library', async ({ page }) => {
   await page.goto('/#/new');
+  await expect(page.getByRole('heading', { name: 'New combo' })).toBeVisible();
   await page.getByLabel('Character', { exact: true }).fill('Jin');
   await page.getByLabel('Combo name').fill('Export me');
   await page.getByLabel('Notation', { exact: true }).fill(NOTATION);

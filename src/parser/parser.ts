@@ -27,6 +27,7 @@ import type {
   TokenType,
 } from '../types/notation';
 import { ITEM_START_TOKENS, PREFIXABLE_TOKENS, RELATION_TOKENS } from './grammar';
+import { tokenize } from './tokenizer';
 
 export interface ParseContext {
   game: GameId;
@@ -55,13 +56,15 @@ class Parser {
   private readonly toks: SigToken[];
   private pos = 0;
   private lastEnd = 0;
-  private depth = 0;
+  /** A relation written inside "( )" before the closing paren, e.g. "(3,)4". */
+  private trailingRelation: Relation | null = null;
   readonly diagnostics: Diagnostic[] = [];
 
   constructor(
     tokens: readonly Token[],
     private readonly text: string,
     private readonly ctx: ParseContext,
+    private depth = 0,
   ) {
     const sig: SigToken[] = [];
     let space = false;
@@ -186,6 +189,14 @@ class Parser {
         continue;
       }
 
+      const nextType = this.peek(1)?.type;
+      if (t.type === 'plus' && !pending && steps[steps.length - 1]?.node.type === 'movement' && nextType && ITEM_START_TOKENS.has(nextType)) {
+        // "SS+2" / "ss+1": a movement followed by its attack (written with "+" in many guides).
+        this.advance();
+        pending = { kind: 'implicit', raw: t.raw, span: t.span };
+        continue;
+      }
+
       if (!ITEM_START_TOKENS.has(t.type)) {
         // plus, dot, hold, repeat, rbracket … where a step should start.
         this.advance();
@@ -199,7 +210,8 @@ class Parser {
       const node = this.parseItem();
       if (prev && relation?.kind === 'implicit') this.checkImplicit(prev, node, t);
       steps.push({ relation, node });
-      pending = null;
+      pending = this.trailingRelation;
+      this.trailingRelation = null;
     }
 
     if (pending) this.diag('dangling-operator', 'warning', `"${pending.raw}" is not followed by an input.`, pending.span);
@@ -293,6 +305,8 @@ class Parser {
       case 'lbracket':
         return this.parseOptional(base);
       case 'note': {
+        const optional = t.closed ? this.tryParenthesizedOptional(t, base) : null;
+        if (optional) return optional;
         this.advance();
         const closed = t.closed === true;
         if (!closed) this.diag('unclosed-group', 'warning', 'Unclosed "(".', t.span);
@@ -418,6 +432,35 @@ class Parser {
     if (this.peek()?.type === 'rbracket') this.advance();
     else this.diag('unclosed-group', 'warning', 'Unclosed "[".', open.span);
     return { ...base, type: 'optional', steps: inner.steps };
+  }
+
+  /**
+   * Many guides write optional inputs in parentheses: "(1,2),2", "uf+4,(3,)4".
+   * When the content is complete, clean notation it becomes an optional group
+   * (reported as info); anything else stays a free-text note.
+   */
+  private tryParenthesizedOptional(t: SigToken, base: Omit<ItemNode, 'type'>): ItemNode | null {
+    if (this.depth >= MAX_OPTIONAL_DEPTH) return null;
+    const innerStart = t.span.start + 1;
+    const inner = t.raw.slice(1, -1);
+    const trailing = /([,~])\s*$/.exec(inner);
+    const content = trailing ? inner.slice(0, trailing.index) : inner;
+    if (!content.trim()) return null;
+    const shifted = tokenize(content).map((tok) => ({ ...tok, span: { start: tok.span.start + innerStart, end: tok.span.end + innerStart } }));
+    const sub = new Parser(shifted, this.text, this.ctx, this.depth + 1);
+    const stage = sub.parseChain(OPTIONAL_STOPS);
+    if (!sub.consumedAll() || stage.steps.length === 0 || sub.diagnostics.some((d) => d.severity === 'warning')) return null;
+    this.advance();
+    if (trailing) {
+      const at = innerStart + trailing.index;
+      this.trailingRelation = { kind: trailing[1] === '~' ? 'transition' : 'sequence', raw: trailing[1] ?? ',', span: { start: at, end: at + 1 } };
+    }
+    this.diag('parenthesis-optional', 'info', `"${t.raw}" is read as an optional input.`, t.span);
+    return { ...base, type: 'optional', steps: stage.steps };
+  }
+
+  private consumedAll(): boolean {
+    return this.pos >= this.toks.length;
   }
 
   private checkCharacterContext(ch: CharacterLookup, t: SigToken): void {

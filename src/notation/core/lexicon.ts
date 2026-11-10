@@ -82,6 +82,7 @@ export const STATES: Readonly<Record<string, WordDef>> = {
   bt: { id: 'backTurned', abbr: 'BT', label: 'Back turned' },
   wr: { id: 'whileRunning', abbr: 'WR', label: 'While running' },
   ch: { id: 'counterHit', abbr: 'CH', label: 'Counter hit' },
+  lp: { id: 'lowParry', abbr: 'LP', label: 'Low parry' },
 };
 
 /** Heat state prefix (`H.`). Kept separate because it is a game mechanic (T8 only). */

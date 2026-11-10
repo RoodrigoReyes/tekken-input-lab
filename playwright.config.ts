@@ -12,8 +12,10 @@ export default defineConfig({
     { name: 'desktop', use: { ...devices['Desktop Chrome'] } },
     { name: 'mobile', use: { ...devices['Pixel 7'] } },
   ],
+  // Test the production build: no on-the-fly dependency optimization (which
+  // can reload the page mid-test after config changes).
   webServer: {
-    command: 'npx vite --port 4317 --strictPort',
+    command: 'npx vite build --logLevel warn && npx vite preview --port 4317 --strictPort',
     url: 'http://localhost:4317',
     reuseExistingServer: true,
     timeout: 60_000,
