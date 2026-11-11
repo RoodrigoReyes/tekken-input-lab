@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { CommandSequence } from '../../components/arcade';
 import { DifficultyBadge, GameBadge } from '../../components/combos/GameBadge';
 import { paths } from '../../hooks/useHashRoute';
+import { useMotionFrame } from '../../hooks/useMotionFrame';
 import { usePlayerSide } from '../../hooks/usePlayerSide';
 import type { Combo } from '../../types/combo';
 import { parseCombo } from '../combo/parseCombo';
@@ -15,6 +16,7 @@ export interface ComboCardProps {
 export function ComboCard({ combo, onToggleFavorite }: ComboCardProps) {
   const parsed = useMemo(() => parseCombo(combo), [combo]);
   const [side] = usePlayerSide();
+  const [motionFrame] = useMotionFrame();
   const warnings = parsed.result.diagnostics.filter((d) => d.severity === 'warning').length;
   const characters = [combo.character || 'No character', combo.partner].filter(Boolean).join(' + ');
   return (
@@ -51,7 +53,7 @@ export function ComboCard({ combo, onToggleFavorite }: ComboCardProps) {
         </div>
       </header>
       <div className="pointer-events-none overflow-hidden rounded-[4px] border border-line-strong bg-neutral p-1">
-        <CommandSequence result={parsed.result} size={24} sectionHeaders={parsed.headers} side={side} />
+        <CommandSequence result={parsed.result} size={24} sectionHeaders={parsed.headers} side={side} motionFrame={motionFrame} />
       </div>
       <footer className="mt-auto flex flex-wrap items-center gap-1.5 border-t border-line-strong pt-3">
         <code className="min-w-0 flex-1 truncate font-mono text-[13px] text-fg-muted" title={combo.notation}>

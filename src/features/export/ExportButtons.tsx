@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '../../components/ui/Button';
 import { useToast } from '../../components/ui/Toast';
 import { errorMessage } from '../../hooks/useCombos';
+import { useMotionFrame } from '../../hooks/useMotionFrame';
 import { usePlayerSide } from '../../hooks/usePlayerSide';
 import type { DetailsExtraProps } from '../details/DetailsView';
 import { downloadBlob } from './download';
@@ -13,9 +14,10 @@ export function ExportButtons({ combo, parsed, visual }: DetailsExtraProps) {
   const toast = useToast();
   const [busy, setBusy] = useState(false);
   const [side] = usePlayerSide();
+  const [motionFrame] = useMotionFrame();
   const build = async () => {
     const { comboSvgMarkup, exportHeading, safeFilename } = await loadExporter();
-    const svg = comboSvgMarkup(parsed, exportHeading(combo, side), { size: visual.size, expandNamed: visual.expandNamed, side });
+    const svg = comboSvgMarkup(parsed, exportHeading(combo, side), { size: visual.size, expandNamed: visual.expandNamed, side, motionFrame });
     return { svg, filename: safeFilename(combo.name) };
   };
 

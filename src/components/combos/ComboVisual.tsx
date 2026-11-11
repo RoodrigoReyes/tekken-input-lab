@@ -1,7 +1,9 @@
 import { forwardRef } from 'react';
 import type { ParsedCombo } from '../../features/combo/parseCombo';
+import { useMotionFrame } from '../../hooks/useMotionFrame';
 import { usePlayerSide } from '../../hooks/usePlayerSide';
 import { CommandSequence } from '../arcade';
+import { MotionFrameToggle } from './MotionFrameToggle';
 import { SideToggle } from './SideToggle';
 
 export interface VisualOptions {
@@ -16,11 +18,12 @@ export interface VisualControlsProps {
   onChange: (v: VisualOptions) => void;
 }
 
-/** Player side, command size (20–72 px per cluster) and the "Expand named moves" toggle. */
+/** Player side, motion frame, command size (20–72 px per cluster) and the "Expand named moves" toggle. */
 export function VisualControls({ value, onChange }: VisualControlsProps) {
   return (
     <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
       <SideToggle />
+      <MotionFrameToggle />
       <label className="label-md flex items-center gap-2 text-fg-muted">
         Size
         <input
@@ -51,13 +54,14 @@ export function VisualControls({ value, onChange }: VisualControlsProps) {
 /** The arcade rendering of a parsed combo inside the arcade display container. */
 export const ComboVisual = forwardRef<SVGSVGElement, { parsed: ParsedCombo; options: VisualOptions }>(function ComboVisual({ parsed, options }, ref) {
   const [side] = usePlayerSide();
+  const [motionFrame] = useMotionFrame();
   const empty = parsed.result.ast.sections.every((s) => s.stages.length === 0);
   return (
     <div className="rounded-[4px] border border-line bg-surface p-1">
       {empty ? (
         <p className="p-6 text-sm text-fg-muted">Type or paste notation to see the arcade commands.</p>
       ) : (
-        <CommandSequence ref={ref} result={parsed.result} size={options.size} expandNamed={options.expandNamed} sectionHeaders={parsed.headers} side={side} />
+        <CommandSequence ref={ref} result={parsed.result} size={options.size} expandNamed={options.expandNamed} sectionHeaders={parsed.headers} side={side} motionFrame={motionFrame} />
       )}
     </div>
   );

@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { CommandSequence } from '../../components/arcade';
 import { Button } from '../../components/ui/Button';
+import { useMotionFrame } from '../../hooks/useMotionFrame';
 import { usePlayerSide } from '../../hooks/usePlayerSide';
 import type { GeneratedCombo } from '../../ttt2/generator';
 import { parseCombo } from '../combo/parseCombo';
@@ -24,6 +25,7 @@ export function GeneratedComboItem({ combo, rank, point, partner, onUse, onCopy 
     [combo.notation, point, partner],
   );
   const [side] = usePlayerSide();
+  const [motionFrame] = useMotionFrame();
   const kind = combo.route.routeKind ?? 'normal';
   return (
     <li className="flex flex-col gap-3 rounded-[4px] border border-line bg-surface p-3 sm:p-4" aria-label={`Generated combo ${rank}`}>
@@ -43,7 +45,7 @@ export function GeneratedComboItem({ combo, rank, point, partner, onUse, onCopy 
         </Button>
       </div>
       <div className="overflow-hidden rounded-[4px] border border-line-strong bg-neutral p-1">
-        <CommandSequence result={parsed.result} size={26} sectionHeaders={parsed.headers} side={side} />
+        <CommandSequence result={parsed.result} size={26} sectionHeaders={parsed.headers} side={side} motionFrame={motionFrame} />
       </div>
       <div className="flex items-start justify-between gap-3 rounded-[4px] border border-line-strong bg-muted/50 px-3 py-2">
         <pre className="min-w-0 overflow-x-auto font-mono text-[13px] leading-5 font-medium whitespace-pre-wrap text-fg">{combo.notation}</pre>

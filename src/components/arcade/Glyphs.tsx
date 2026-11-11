@@ -61,6 +61,14 @@ export function RepeatBadge({ x, w, h, size, count }: Placed & { count: number }
   );
 }
 
+/**
+ * Vertical placement of an event/mechanic (B!, T!, HB, …) and its caption (BOUND, TORNADO, …),
+ * as fractions of the box height. Chosen so the two lines together are centered in the label
+ * (at size 40, box height 50: abbreviation y=20, caption y=35.5).
+ */
+const CAPTIONED_MAIN_Y = 0.4;
+const CAPTIONED_CAPTION_Y = 0.71;
+
 export function LabelGlyph({ x, w, h, size, text, caption, fill, style }: Placed & { text: string; caption?: string; fill: string; style: LabelStyle }) {
   const labelH = h * 0.78;
   const top = (h - labelH) / 2;
@@ -88,7 +96,7 @@ export function LabelGlyph({ x, w, h, size, text, caption, fill, style }: Placed
       />
       <text
         x={x + w / 2}
-        y={caption ? top + labelH * 0.46 : h / 2}
+        y={caption ? h * CAPTIONED_MAIN_Y : h / 2}
         dy="0.35em"
         textAnchor="middle"
         fontFamily={FONT_SANS}
@@ -99,7 +107,7 @@ export function LabelGlyph({ x, w, h, size, text, caption, fill, style }: Placed
         {text}
       </text>
       {caption && (
-        <text x={x + w / 2} y={top + labelH * 0.82} textAnchor="middle" fontFamily={FONT_SANS} fontWeight={700} fontSize={size * 0.2} fill={color} opacity={0.85}>
+        <text x={x + w / 2} y={h * CAPTIONED_CAPTION_Y} textAnchor="middle" fontFamily={FONT_SANS} fontWeight={700} fontSize={size * 0.2} fill={color} opacity={0.85}>
           {caption}
         </text>
       )}

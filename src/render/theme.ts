@@ -22,6 +22,8 @@ export const COLORS = {
   arrow: '#f4f2ef',
   arrowOutline: '#15191d',
   arrowHeld: '#ffd166',
+  /** Neutral (n): solid white star, no outline. */
+  neutralStar: '#ffffff',
   /** Stage separator (>) — green triangle as in the in-game command list. */
   stageMarker: '#16d61f',
   named: '#7c5cff',

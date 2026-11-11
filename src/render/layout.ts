@@ -26,7 +26,19 @@ import { COLORS, EVENT_COLORS, MECHANIC_COLORS } from './theme';
 export type Part =
   | { type: 'prefix'; x: number; w: number; text: string; kind: PrefixKind }
   | { type: 'direction'; x: number; w: number; direction: Direction; held: boolean }
-  | { type: 'motion'; x: number; w: number; motion: MotionId; sequence: readonly Direction[] }
+  | {
+      type: 'motion';
+      x: number;
+      w: number;
+      motion: MotionId;
+      sequence: readonly Direction[];
+      /** Drawn inside a compact pill; otherwise the arrows look like plain direction inputs. */
+      framed: boolean;
+      /** Size of each arrow. */
+      arrow: number;
+      /** Space between arrows. */
+      gap: number;
+    }
   | { type: 'plus'; x: number; w: number }
   | { type: 'buttons'; x: number; w: number; active: readonly AttackButton[] }
   | { type: 'tag'; x: number; w: number }
@@ -66,6 +78,8 @@ export interface Layout {
   height: number;
   size: number;
   boxes: Box[];
+  /** Motions were laid out inside a frame. */
+  motionFrame: boolean;
 }
 
 export interface SectionHeaderInfo {
@@ -81,9 +95,20 @@ export interface LayoutOptions {
   expandNamed?: boolean;
   /** One entry per section; when provided (or when there are several sections) headers are drawn. */
   sectionHeaders?: readonly SectionHeaderInfo[];
+  /** Draw motion inputs (qcf, cd, ff, …) as a compact framed pill instead of full-size arrows. */
+  motionFrame?: boolean;
   measure?: MeasureFn;
   padding?: number;
 }
+
+/** Size of a direction arrow, relative to the base unit. */
+const DIRECTION_SCALE = 0.78;
+/** Space between the parts of one item box, relative to the base unit. */
+const PART_GAP = 0.06;
+/** Arrow size inside a framed motion pill, relative to the base unit. */
+const FRAMED_ARROW_SCALE = 0.4;
+/** Inner padding of a framed motion pill (both sides), relative to the base unit. */
+const FRAME_PADDING = 0.24;
 
 type Draft = Omit<Box, 'x' | 'y' | 'id'> & { breakAfter: boolean };
 
@@ -142,17 +167,27 @@ class Builder {
     return { type: 'label', w: Math.max(main, cap) + this.s * 0.36, text, fill, style, ...(caption ? { caption } : {}) }
   }
 
+  /** Framed: compact pill. Unframed (default): arrows sized and spaced like separate direction inputs. */
+  private motionPart(motion: MotionId): PartDraft {
+    const s = this.s;
+    const sequence = MOTIONS[motion].sequence;
+    const n = sequence.length;
+    if (this.options.motionFrame) {
+      const arrow = s * FRAMED_ARROW_SCALE;
+      return { type: 'motion', w: n * arrow + s * FRAME_PADDING, motion, sequence, framed: true, arrow, gap: 0 };
+    }
+    const arrow = s * DIRECTION_SCALE;
+    const gap = s * PART_GAP;
+    return { type: 'motion', w: n * arrow + (n - 1) * gap, motion, sequence, framed: false, arrow, gap };
+  }
+
   private coreParts(node: ItemNode): PartDraft[] {
     const s = this.s;
     switch (node.type) {
       case 'input': {
         const parts: PartDraft[] = [];
-        if (node.direction) parts.push({ type: 'direction', w: s * 0.78, direction: node.direction.value, held: node.direction.held });
-        if (node.motion) {
-          const sequence = MOTIONS[node.motion.value].sequence;
-          const w = Math.max(sequence.length * s * 0.36, this.textW(node.motion.value, 0.24)) + s * 0.24;
-          parts.push({ type: 'motion', w, motion: node.motion.value, sequence });
-        }
+        if (node.direction) parts.push({ type: 'direction', w: s * DIRECTION_SCALE, direction: node.direction.value, held: node.direction.held });
+        if (node.motion) parts.push(this.motionPart(node.motion.value));
         const hasButtons = node.buttons.length > 0;
         if ((node.direction || node.motion) && (hasButtons || node.tag)) parts.push({ type: 'plus', w: s * 0.3 });
         if (hasButtons) parts.push({ type: 'buttons', w: s * 0.92, active: node.buttons });
@@ -185,7 +220,7 @@ class Builder {
     if (node.hold) raw.push({ type: 'hold', w: this.textW('HOLD', 0.2, 800) + s * 0.18 });
     if (node.repeat) raw.push({ type: 'repeat', w: this.textW(`×${node.repeat}`, 0.34) + s * 0.12, count: node.repeat });
     const pad = s * 0.12;
-    const gap = s * 0.06;
+    const gap = s * PART_GAP;
     let x = pad;
     const parts = raw.map((p) => {
       const placed = { ...p, x } as Part;
@@ -324,6 +359,7 @@ export function layoutCombo(result: ParseResult, options: LayoutOptions): Layout
     height: Math.ceil(boxes.length ? y - rowGap + pad : pad * 2),
     size: b.s,
     boxes,
+    motionFrame: options.motionFrame ?? false,
   };
 }
 

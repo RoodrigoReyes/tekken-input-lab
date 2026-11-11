@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
+import { MotionFrameToggle } from '../../components/combos/MotionFrameToggle';
 import { SideToggle } from '../../components/combos/SideToggle';
 import { Button } from '../../components/ui/Button';
 import { Segmented, ToggleChip } from '../../components/ui/Chip';
@@ -255,6 +256,11 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
         <Group label="Player side">
           <SideToggle />
           <p className="text-xs text-fg-muted">2P mirrors forward/back arrows in the results. The notation stays the same.</p>
+        </Group>
+
+        <Group label="Motions">
+          <MotionFrameToggle className="self-start" />
+          <p className="text-xs text-fg-muted">Draw qcf, cd, ff… inside a frame instead of bare arrows.</p>
         </Group>
 
         <Field label="Starter">

@@ -12,6 +12,8 @@ export interface ExportOptions {
   expandNamed: boolean;
   /** Player side: 2P mirrors forward/back arrows. */
   side?: Side;
+  /** Draw motion inputs (qcf, cd, ff, …) inside a frame. */
+  motionFrame?: boolean;
   /** Maximum image width before wrapping. */
   width?: number;
   measure?: MeasureFn;
@@ -39,6 +41,7 @@ export function comboSvgMarkup(parsed: ParsedCombo, heading: { title: string; su
     size: options.size,
     expandNamed: options.expandNamed,
     sectionHeaders: parsed.headers,
+    motionFrame: options.motionFrame,
     measure,
   });
   // Widen the image when the heading is longer than the commands, so it is never clipped.

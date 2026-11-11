@@ -14,6 +14,8 @@ export interface CommandSequenceProps {
   className?: string;
   /** Player side: 2P mirrors forward/back arrows. */
   side?: Side;
+  /** Draw motion inputs (qcf, cd, ff, …) inside a frame. */
+  motionFrame?: boolean;
 }
 
 function useElementWidth<T extends HTMLElement>(): [React.RefObject<T | null>, number] {
@@ -56,14 +58,14 @@ function useFontsReady(): number {
 
 /** Live, responsive arcade rendering of a parsed combo. Wraps to the container width. */
 export const CommandSequence = forwardRef<SVGSVGElement, CommandSequenceProps>(function CommandSequence(
-  { result, size = 40, expandNamed = false, sectionHeaders, className, side = 'left' },
+  { result, size = 40, expandNamed = false, sectionHeaders, className, side = 'left', motionFrame = false },
   svgRef,
 ) {
   const [ref, width] = useElementWidth<HTMLDivElement>();
   const fontsTick = useFontsReady();
   const layout = useMemo(
-    () => layoutCombo(result, { width: width || 640, size, expandNamed, sectionHeaders, measure: measureText }),
-    [result, width, size, expandNamed, sectionHeaders, fontsTick], // eslint-disable-line react-hooks/exhaustive-deps
+    () => layoutCombo(result, { width: width || 640, size, expandNamed, sectionHeaders, motionFrame, measure: measureText }),
+    [result, width, size, expandNamed, sectionHeaders, motionFrame, fontsTick], // eslint-disable-line react-hooks/exhaustive-deps
   );
   return (
     <div ref={ref} className={className} style={{ width: '100%', overflowX: 'auto' }}>

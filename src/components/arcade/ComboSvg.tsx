@@ -28,7 +28,9 @@ function PartView({ part, box, size, side }: { part: Part; box: Box; size: numbe
     case 'direction':
       return <DirectionIcon direction={part.direction} held={part.held} size={part.w} side={side} x={part.x} y={(h - part.w) / 2} />;
     case 'motion':
-      return <MotionIcon motion={part.motion} sequence={part.sequence} width={part.w} height={h} size={size} side={side} x={part.x} />;
+      return (
+        <MotionIcon motion={part.motion} sequence={part.sequence} width={part.w} height={h} arrow={part.arrow} gap={part.gap} framed={part.framed} side={side} x={part.x} />
+      );
     case 'plus':
       return <PlusMark {...common} />;
     case 'buttons':
@@ -112,6 +114,7 @@ export const ComboSvg = forwardRef<SVGSVGElement, ComboSvgProps>(function ComboS
       role="img"
       aria-label={title ?? 'Combo notation'}
       data-side={side}
+      data-motion-frame={layout.motionFrame ? 'on' : 'off'}
     >
       {background && <rect width={width} height={height} fill={COLORS.background} />}
       {heading && (

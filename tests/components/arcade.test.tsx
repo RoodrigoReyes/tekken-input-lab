@@ -2,6 +2,7 @@
 import { cleanup, render } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 import { ArcadeButtons } from '../../src/components/arcade/ArcadeButtons';
+import { DirectionIcon } from '../../src/components/arcade/DirectionIcon';
 import { CommandSequence } from '../../src/components/arcade/CommandSequence';
 import { parseNotation } from '../../src/parser';
 import { BUTTON_COLORS, COLORS } from '../../src/render/theme';
@@ -91,5 +92,72 @@ describe('CommandSequence', () => {
     const { container } = render(<CommandSequence result={result} />);
     const texts = [...container.querySelectorAll('text')].map((t) => t.textContent);
     expect(texts).toEqual(expect.arrayContaining(['EWGF', 'T!', 'TORNADO']));
+  });
+});
+
+describe('MotionIcon', () => {
+  it.each(['qcf', 'qcb', 'hcf', 'hcb', 'cd', 'ff', 'bb', 'fff'])('draws only arrows for %s, no letters', (motion) => {
+    const { container } = render(<CommandSequence result={parseNotation(`${motion}+1`, { game: 'ttt2' })} />);
+    const icon = container.querySelector(`[aria-label="${motion}"]`);
+    expect(icon).not.toBeNull();
+    expect(icon?.querySelectorAll('text')).toHaveLength(0);
+    expect(icon?.querySelectorAll('[data-direction], [aria-label="neutral"]').length).toBeGreaterThan(0);
+  });
+});
+
+describe('DirectionIcon neutral', () => {
+  it('is a solid white 5-point star with one point straight up and no outline', () => {
+    const { container } = render(
+      <svg>
+        <DirectionIcon direction="n" size={40} />
+      </svg>,
+    );
+    const icon = container.querySelector('[aria-label="neutral"]');
+    const shapes = icon?.querySelectorAll('path, polygon, circle, rect') ?? [];
+    expect(shapes).toHaveLength(1);
+    const star = shapes[0] as Element;
+    expect(star.tagName).toBe('polygon');
+    expect(star.getAttribute('fill')).toBe('#ffffff');
+    expect(star.getAttribute('stroke') ?? 'none').toBe('none');
+    const pts = (star.getAttribute('points') ?? '').trim().split(/\s+/).map((p) => p.split(',').map(Number));
+    expect(pts).toHaveLength(10);
+    const [tipX, tipY] = pts[0] as [number, number];
+    expect(tipX).toBeCloseTo(20);
+    expect(tipY).toBe(Math.min(...pts.map(([, py]) => py as number)));
+    for (const [px, py] of pts) {
+      expect(px).toBeGreaterThanOrEqual(0);
+      expect(px).toBeLessThanOrEqual(40);
+      expect(py).toBeGreaterThanOrEqual(0);
+      expect(py).toBeLessThanOrEqual(40);
+    }
+  });
+});
+
+describe('event & mechanic labels', () => {
+  const ys = (container: Element, text: string) => {
+    const main = [...container.querySelectorAll('text')].find((t) => t.textContent === text);
+    const caption = main?.nextElementSibling;
+    return { main: Number(main?.getAttribute('y')), caption: Number(caption?.getAttribute('y')), captionText: caption?.textContent };
+  };
+
+  it.each([
+    ['B!', 'ttt2', 'BOUND'],
+    ['W!', 't7', 'WALL SPLAT'],
+    ['T!', 't8', 'TORNADO'],
+    ['HB', 't8', 'HEAT BURST'],
+    ['RA', 't7', 'RAGE ART'],
+  ] as const)('%s and its caption are centered in the box (y=20 / y=35.5 at size 40)', (abbr, game, caption) => {
+    const { container } = render(<CommandSequence result={parseNotation(`1 ${abbr}`, { game })} size={40} />);
+    const y = ys(container, abbr);
+    expect(y.captionText).toBe(caption);
+    expect(y.main).toBeCloseTo(20);
+    expect(y.caption).toBeCloseTo(35.5);
+  });
+
+  it('scales with the command size', () => {
+    const { container } = render(<CommandSequence result={parseNotation('1 B!', { game: 'ttt2' })} size={64} />);
+    const y = ys(container, 'B!');
+    expect(y.main).toBeCloseTo(80 * 0.4);
+    expect(y.caption).toBeCloseTo(80 * 0.71);
   });
 });

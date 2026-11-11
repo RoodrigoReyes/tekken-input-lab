@@ -54,6 +54,27 @@ describe('layoutCombo', () => {
     expect([event.text, event.caption]).toEqual(['T!', 'TORNADO']);
   });
 
+  it('unframed motions (default) use the same arrow size and spacing as plain direction inputs', () => {
+    const l = layout('f+1, cd+4');
+    const [plain, motionBox] = items(l.boxes);
+    const dir = partsOf(plain, 'direction')[0] as Extract<Part, { type: 'direction' }>;
+    const motion = partsOf(motionBox, 'motion')[0] as Extract<Part, { type: 'motion' }>;
+    expect(motion.framed).toBe(false);
+    expect(motion.arrow).toBeCloseTo(dir.w);
+    // Arrows sit side by side like separate inputs inside one box: n arrows + (n - 1) part gaps.
+    const partGap = 40 * 0.06;
+    expect(motion.gap).toBeCloseTo(partGap);
+    expect(motion.w).toBeCloseTo(4 * dir.w + 3 * partGap);
+  });
+
+  it('framed motions keep the compact pill', () => {
+    const motion = partsOf(items(layout('cd+4', 't8', { motionFrame: true }).boxes)[0], 'motion')[0] as Extract<Part, { type: 'motion' }>;
+    expect(motion.framed).toBe(true);
+    expect(motion.arrow).toBeLessThan(40 * 0.78);
+    expect(motion.gap).toBe(0);
+    expect(motion.w).toBeGreaterThan(4 * motion.arrow);
+  });
+
   it('named moves are not expanded unless requested', () => {
     expect(items(layout('EWGF', 't8').boxes)).toHaveLength(1);
     const expanded = layoutCombo(parseNotation('EWGF', { game: 't8' }), { width: 2000, size: 40, expandNamed: true });
