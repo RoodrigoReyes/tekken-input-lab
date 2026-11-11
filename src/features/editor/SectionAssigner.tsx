@@ -26,18 +26,18 @@ export function SectionAssigner({ parsed, characters, manual, onChange }: Sectio
     onChange(next);
   };
   return (
-    <fieldset className="space-y-2 rounded-xl border border-ink-700 p-3">
-      <legend className="px-1 text-xs font-semibold tracking-wide text-ink-400 uppercase">Character sections</legend>
+    <fieldset className="space-y-3 rounded-[4px] border border-line bg-surface p-4">
+      <legend className="label-md px-1 text-fg-muted">Character sections</legend>
       {sections.map((section, i) => {
         const auto = parsed.assignments[i];
         const text = parsed.result.original.slice(section.span.start, section.span.end).trim();
         return (
           <div key={i} className="grid items-center gap-2 sm:grid-cols-[7rem_1fr_14rem]">
-            <span className="text-sm font-semibold">
+            <span className="label-md text-fg">
               Section {i + 1}
-              {section.boundary === 'tagAssault' && <span className="ml-1 text-xs text-emerald-400">TA</span>}
+              {section.boundary === 'tagAssault' && <span className="ml-1.5 rounded-[2px] bg-[#16a34a] px-1 py-px text-[10px] text-on-primary">TA</span>}
             </span>
-            <code className="truncate font-mono text-xs text-ink-400" title={text}>
+            <code className="truncate font-mono text-[13px] text-fg-muted" title={text}>
               {text || '—'}
             </code>
             <Select aria-label={`Character for section ${i + 1}`} value={manual[i] ?? ''} onChange={(e) => set(i, e.target.value)}>

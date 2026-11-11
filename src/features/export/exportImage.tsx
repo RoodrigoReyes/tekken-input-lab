@@ -3,33 +3,49 @@ import { ComboSvg } from '../../components/arcade/ComboSvg';
 import { getGame } from '../../notation/games';
 import { layoutCombo } from '../../render/layout';
 import { measureText, type MeasureFn } from '../../render/measure';
+import type { Side } from '../../render/side';
 import type { Combo } from '../../types/combo';
 import type { ParsedCombo } from '../combo/parseCombo';
 
 export interface ExportOptions {
   size: number;
   expandNamed: boolean;
+  /** Player side: 2P mirrors forward/back arrows. */
+  side?: Side;
   /** Maximum image width before wrapping. */
   width?: number;
   measure?: MeasureFn;
 }
 
-export function exportHeading(combo: Pick<Combo, 'name' | 'game' | 'character' | 'partner' | 'damage'>): { title: string; subtitle: string } {
+export function exportHeading(
+  combo: Pick<Combo, 'name' | 'game' | 'character' | 'partner' | 'damage'>,
+  side: Side = 'left',
+): { title: string; subtitle: string } {
   const who = [combo.character, combo.partner].filter(Boolean).join(' + ');
-  const parts = [getGame(combo.game).name, who, combo.damage !== undefined ? `${combo.damage} dmg` : ''].filter(Boolean);
+  const parts = [
+    getGame(combo.game).name,
+    who,
+    combo.damage !== undefined ? `${combo.damage} dmg` : '',
+    side === 'right' ? '2P side' : '',
+  ].filter(Boolean);
   return { title: combo.name, subtitle: parts.join(' · ') };
 }
 
 /** Self-contained SVG document for a combo (same renderer as the screen). */
 export function comboSvgMarkup(parsed: ParsedCombo, heading: { title: string; subtitle?: string }, options: ExportOptions): string {
+  const measure = options.measure ?? measureText;
   const layout = layoutCombo(parsed.result, {
     width: options.width ?? 1200,
     size: options.size,
     expandNamed: options.expandNamed,
     sectionHeaders: parsed.headers,
-    measure: options.measure ?? measureText,
+    measure,
   });
-  const svg = renderToStaticMarkup(<ComboSvg layout={layout} heading={heading} background title={parsed.result.original} />);
+  // Widen the image when the heading is longer than the commands, so it is never clipped.
+  const s = layout.size;
+  const headingW = Math.max(measure(heading.title, s * 0.42, 800), heading.subtitle ? measure(heading.subtitle, s * 0.28, 600) : 0) + s * 0.4;
+  const sized = { ...layout, width: Math.ceil(Math.max(layout.width, headingW)) };
+  const svg = renderToStaticMarkup(<ComboSvg layout={sized} heading={heading} background title={parsed.result.original} side={options.side} />);
   // C0 control characters are invalid in XML 1.0 and would break SVG/PNG export.
   // eslint-disable-next-line no-control-regex
   const clean = svg.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '');

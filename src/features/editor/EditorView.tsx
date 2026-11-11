@@ -1,90 +1,79 @@
-import { lazy, Suspense, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { DiagnosticsList } from '../../components/combos/DiagnosticsList';
 import { ComboVisual, DEFAULT_VISUAL, VisualControls } from '../../components/combos/ComboVisual';
 import { Button, LinkButton } from '../../components/ui/Button';
 import { ComboBox, Field, Select, TextArea, TextInput } from '../../components/ui/Field';
+import { Eyebrow, PageTitle, Panel, PanelHeader } from '../../components/ui/Panel';
 import { TagInput } from '../../components/ui/TagInput';
 import { useToast } from '../../components/ui/Toast';
 import { errorMessage, useCombo, useCombos, useRepository } from '../../hooks/useCombos';
 import { paths } from '../../hooks/useHashRoute';
 import { dialectsForGame, getDialect } from '../../notation/dialects';
 import { GAMES, getGame } from '../../notation/games';
-import { DIFFICULTIES, type Combo, type ComboDraft } from '../../types/combo';
+import { DIFFICULTIES, type ComboDraft } from '../../types/combo';
 import type { GameId } from '../../types/notation';
 import { parseCombo } from '../combo/parseCombo';
+import { clearHandoff, peekEditorDraft, peekPendingGenerated, stashEditorDraft } from '../generator/handoff';
 import { collectTags } from '../library/filters';
-import type { GeneratedCombo } from '../../ttt2/generator';
-import { GUIDE_SOURCE } from '../../ttt2/guideData';
+import { draftFromGenerated, NEW_DRAFT, toDraft } from './draft';
 import { NotationReference } from './NotationReference';
+import { NotationToolbar } from './NotationToolbar';
 import { SectionAssigner } from './SectionAssigner';
 
-/** Loaded on demand: the generator bundles the TTT2 guide. */
-const GeneratorPanel = lazy(() => import('../generator/GeneratorPanel').then((m) => ({ default: m.GeneratorPanel })));
-
-/** Draft fields filled from a generated combo (notation verbatim; verification list in notes). */
-export function draftFromGenerated(draft: ComboDraft, combo: GeneratedCombo, team: { point: string; partner: string }): ComboDraft {
-  const verify = combo.flags.map((f) => `- ${f.piece}: ${f.text}`);
-  const notes = [
-    `Generated from the "${GUIDE_SOURCE.title}" guide. Not tested yet: try it in practice mode.`,
-    ...(verify.length ? ['To verify:', ...verify] : []),
-  ].join('\n');
-  const name = `${team.point} + ${team.partner}: ${combo.route.starter ?? 'route'} → TA!`;
-  return {
-    ...draft,
-    game: 'ttt2',
-    dialect: 'standard',
-    character: team.point,
-    partner: team.partner,
-    notation: combo.notation,
-    sectionCharacters: [],
-    name: draft.name.trim() ? draft.name : name.slice(0, 120),
-    tags: draft.tags.includes('generated') ? draft.tags : [...draft.tags, 'generated'],
-    notes: draft.notes.trim() ? `${draft.notes}\n\n${notes}` : notes,
-  };
-}
-
-const NEW_DRAFT: ComboDraft = {
-  game: 't8',
-  character: '',
-  name: '',
-  notation: '',
-  dialect: 'standard',
-  sectionCharacters: [],
-  tags: [],
-  difficulty: 'beginner',
-  notes: '',
-  favorite: false,
-};
-
-function toDraft(combo: Combo): ComboDraft {
-  const { id: _id, createdAt: _c, updatedAt: _u, ...draft } = combo;
-  void _id;
-  void _c;
-  void _u;
-  return draft;
-}
+export { draftFromGenerated } from './draft';
 
 /** Create (id = null) or edit an existing combo. */
 export function EditorView({ id, navigate }: { id: string | null; navigate: (hash: string) => void }) {
   const { data, loading, error } = useCombo(id);
-  if (id !== null && loading) return <p className="text-ink-400">Loading…</p>;
+  if (id !== null && loading) return <p className="label-sm text-fg-muted">Loading…</p>;
   if (id !== null && (error || !data)) {
-    return <p className="text-red-300">{error ?? 'This combo no longer exists.'}</p>;
+    return (
+      <Panel className="flex flex-col items-center gap-3 px-6 py-[58px] text-center">
+        <p className="font-condensed text-2xl font-bold uppercase">{error ?? 'This combo no longer exists.'}</p>
+        <LinkButton href={paths.library()}>← Back to library</LinkButton>
+      </Panel>
+    );
   }
-  return <EditorForm key={id ?? 'new'} id={id} initial={data ? toDraft(data) : NEW_DRAFT} navigate={navigate} />;
+  return <EditorForm key={id ?? 'new'} id={id} initial={data ? toDraft(data) : null} navigate={navigate} />;
 }
 
-function EditorForm({ id, initial, navigate }: { id: string | null; initial: ComboDraft; navigate: (hash: string) => void }) {
+/**
+ * New combos resume the draft stashed before opening the generator, and merge
+ * the combo chosen there ("Use this combo") into it.
+ */
+function initialDraft(initial: ComboDraft | null): { draft: ComboDraft; generated: boolean } {
+  if (initial) return { draft: initial, generated: false };
+  const base = peekEditorDraft() ?? NEW_DRAFT;
+  const pending = peekPendingGenerated();
+  return pending ? { draft: draftFromGenerated(base, pending.combo, pending.team), generated: true } : { draft: base, generated: false };
+}
+
+interface EditorFormProps {
+  id: string | null;
+  initial: ComboDraft | null;
+  navigate: (hash: string) => void;
+}
+
+/** Damage field text → number, or undefined when empty/invalid (validated on save). */
+function damageValue(text: string): number | undefined {
+  const n = Number(text);
+  return text.trim() === '' || !Number.isInteger(n) ? undefined : n;
+}
+
+function EditorForm({ id, initial, navigate }: EditorFormProps) {
   const repo = useRepository();
   const toast = useToast();
   const { data: library } = useCombos();
-  const [draft, setDraft] = useState<ComboDraft>(initial);
-  const [damage, setDamage] = useState(initial.damage?.toString() ?? '');
+  const [start] = useState(() => initialDraft(initial));
+  const [draft, setDraft] = useState<ComboDraft>(start.draft);
+  const [damage, setDamage] = useState(start.draft.damage?.toString() ?? '');
   const [visual, setVisual] = useState(DEFAULT_VISUAL);
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const errorRef = useRef<HTMLParagraphElement>(null);
-  const previewRef = useRef<HTMLElement>(null);
+  const notationRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => clearHandoff(), []);
   useEffect(() => {
     if (formError) errorRef.current?.focus();
   }, [formError]);
@@ -93,9 +82,11 @@ function EditorForm({ id, initial, navigate }: { id: string | null; initial: Com
   const dialects = dialectsForGame(draft.game);
   const parsed = useMemo(
     () => parseCombo(draft),
-    [draft.game, draft.dialect, draft.notation, draft.character, draft.partner, draft.sectionCharacters],
+    [draft.game, draft.dialect, draft.notation, draft.character, draft.partner, draft.sectionCharacters], // eslint-disable-line react-hooks/exhaustive-deps
   );
   const team = [draft.character, draft.partner].filter((c): c is string => Boolean(c?.trim()));
+  const diagnostics = parsed.result.diagnostics;
+  const warnings = diagnostics.filter((d) => d.severity === 'warning').length;
 
   const set = <K extends keyof ComboDraft>(key: K, value: ComboDraft[K]) => setDraft((d) => ({ ...d, [key]: value }));
 
@@ -133,11 +124,47 @@ function EditorForm({ id, initial, navigate }: { id: string | null; initial: Com
     }
   };
 
-  return (
-    <form onSubmit={submit} className="space-y-4" noValidate>
-      <h1 className="text-2xl font-extrabold">{id ? 'Edit combo' : 'New combo'}</h1>
+  const cancelHref = id ? paths.details(id) : paths.library();
 
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+  return (
+    <form onSubmit={submit} className="flex flex-col gap-4" noValidate>
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div className="space-y-1">
+          <Eyebrow>
+            <a href={paths.library()} className="hover:text-fg">
+              Combo Library
+            </a>
+            <span aria-hidden>/</span>
+            <span className="text-primary">{id ? 'Edit' : 'New'}</span>
+          </Eyebrow>
+          <PageTitle>{id ? 'Edit combo' : 'New combo'}</PageTitle>
+        </div>
+        <div className="flex items-center gap-4">
+          <LinkButton href={cancelHref} variant="link">
+            Cancel
+          </LinkButton>
+          <Button type="submit" variant="primary" disabled={saving}>
+            {saving ? 'Saving…' : 'Save combo'}
+          </Button>
+        </div>
+      </div>
+
+      {start.generated && (
+        <p className="rounded-[4px] border border-warning/50 bg-warning/5 px-3 py-2 text-sm text-warning">
+          ⚠ Generated from the TTT2 guide and not tested yet. Review the preview and the “to verify” notes before saving.
+        </p>
+      )}
+
+      {formError && (
+        <p ref={errorRef} tabIndex={-1} role="alert" className="rounded-[4px] border border-danger bg-danger-surface p-3 text-sm text-fg">
+          {formError}
+        </p>
+      )}
+
+      <Panel className="grid gap-4 p-4 sm:grid-cols-2 xl:grid-cols-4">
+        <Field label="Combo name" aside="Required" className="sm:col-span-2 xl:col-span-1">
+          <TextInput value={draft.name} onChange={(e) => set('name', e.target.value)} placeholder="e.g. Midscreen BnB" maxLength={120} required />
+        </Field>
         <Field label="Game">
           <Select value={draft.game} onChange={(e) => changeGame(e.target.value as GameId)}>
             {GAMES.map((g) => (
@@ -150,14 +177,16 @@ function EditorForm({ id, initial, navigate }: { id: string | null; initial: Com
         <Field label="Character">
           <ComboBox id="character" options={game.roster} value={draft.character} onChange={(e) => set('character', e.target.value)} placeholder="e.g. Kazuya" />
         </Field>
-        {game.tag && (
-          <Field label="Partner">
+        {game.tag ? (
+          <Field label="Partner" aside="TTT2 only">
             <ComboBox id="partner" options={game.roster} value={draft.partner ?? ''} onChange={(e) => set('partner', e.target.value)} placeholder="e.g. Armor King" />
           </Field>
+        ) : (
+          <div className="hidden xl:block" />
         )}
         {dialects.length > 1 && (
-          <Field label="Notation dialect" hint={getDialect(draft.dialect).description}>
-            <Select value={draft.dialect} onChange={(e) => set('dialect', e.target.value)}>
+          <Field label="Notation dialect" hint={getDialect(draft.dialect).description} className="sm:col-span-2 xl:col-span-4">
+            <Select value={draft.dialect} onChange={(e) => set('dialect', e.target.value)} className="max-w-md">
               {dialects.map((d) => (
                 <option key={d.id} value={d.id}>
                   {d.name}
@@ -166,94 +195,109 @@ function EditorForm({ id, initial, navigate }: { id: string | null; initial: Com
             </Select>
           </Field>
         )}
-      </div>
+      </Panel>
 
-      {game.tag && (
-        <details className="rounded-xl border border-ink-700 bg-ink-900 p-3" open={!draft.notation.trim()}>
-          <summary className="cursor-pointer font-semibold text-ink-200">Generate from guide (TTT2 team combos)</summary>
-          <div className="mt-3">
-            <Suspense fallback={<p className="text-sm text-ink-400">Loading the generator…</p>}>
-              <GeneratorPanel
-                character={draft.character}
-                partner={draft.partner ?? ''}
-                onUse={(combo, team) => {
-                  setDraft((d) => draftFromGenerated(d, combo, team));
-                  toast('Combo inserted. Review it in the preview before saving.', 'success');
-                  window.setTimeout(() => previewRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
-                }}
+      <div className="grid items-start gap-4 lg:grid-cols-2">
+        <div className="flex min-w-0 flex-col gap-4">
+          <Panel className="flex flex-col gap-3 p-4">
+            <PanelHeader title="Notation input" />
+            <NotationToolbar
+              game={draft.game}
+              target={notationRef}
+              onInsert={(next, caret) => {
+                set('notation', next);
+                window.requestAnimationFrame(() => {
+                  notationRef.current?.focus();
+                  notationRef.current?.setSelectionRange(caret, caret);
+                });
+              }}
+            />
+            <Field label="Notation" hint="The original text is saved exactly as typed.">
+              <TextArea
+                ref={notationRef}
+                value={draft.notation}
+                onChange={(e) => set('notation', e.target.value)}
+                rows={5}
+                spellCheck={false}
+                autoCapitalize="off"
+                autoCorrect="off"
+                className="min-h-36 font-mono text-sm leading-[22px] font-medium"
+                placeholder="qcf+1 > uf+2,1 B! > SSL 1~b~uf+4 > f+1,2,1+2"
               />
-            </Suspense>
-          </div>
-        </details>
-      )}
+            </Field>
+            <div className="label-sm flex flex-wrap items-center justify-between gap-2 text-[11px] text-fg-muted">
+              <span className="flex items-center gap-2">
+                <span aria-hidden className={`size-2 rounded-full ${warnings ? 'bg-warning' : draft.notation.trim() ? 'bg-success' : 'bg-fg-muted'}`} />
+                {!draft.notation.trim() ? 'Waiting for notation' : warnings ? `${warnings} warning${warnings > 1 ? 's' : ''} detected` : 'No warnings'}
+              </span>
+              <span>
+                {draft.notation.length} chars · {getDialect(draft.dialect).name}
+              </span>
+            </div>
+            {game.tag && (
+              <a href={paths.generator()} onClick={() => id === null && stashEditorDraft({ ...draft, damage: damageValue(damage) })} className="flex items-center justify-between gap-3 rounded-[4px] border border-line-strong bg-neutral px-3 py-2.5 text-sm text-fg-muted hover:border-line hover:text-fg">
+                <span>
+                  <strong className="label-md mr-2 text-fg">Generate from guide</strong>
+                  Build a TTT2 team combo from the bundled “TTT2 BNB Combos” guide.
+                </span>
+                <span aria-hidden className="text-primary">→</span>
+              </a>
+            )}
+          </Panel>
 
-      <Field label="Combo name">
-        <TextInput value={draft.name} onChange={(e) => set('name', e.target.value)} placeholder="e.g. Midscreen BnB" maxLength={120} required />
-      </Field>
+          <Panel className="flex flex-col gap-4 p-4">
+            <PanelHeader title="Combo details" aside={<span className="label-sm text-[11px] text-fg-muted uppercase">Optional</span>} />
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Field label="Difficulty">
+                <Select value={draft.difficulty} onChange={(e) => set('difficulty', e.target.value as ComboDraft['difficulty'])}>
+                  {DIFFICULTIES.map((d) => (
+                    <option key={d} value={d}>
+                      {d[0]?.toUpperCase() + d.slice(1)}
+                    </option>
+                  ))}
+                </Select>
+              </Field>
+              <Field label="Damage (optional)" aside="0–999">
+                <TextInput type="number" inputMode="numeric" min={0} max={999} value={damage} onChange={(e) => setDamage(e.target.value)} />
+              </Field>
+            </div>
+            <Field label="Tags">
+              <TagInput id="tags" value={draft.tags} onChange={(t) => set('tags', t)} suggestions={collectTags(library)} />
+            </Field>
+            <Field label="Notes">
+              <TextArea value={draft.notes} onChange={(e) => set('notes', e.target.value)} rows={4} placeholder="Timing tips, wall/ground conditions…" />
+            </Field>
+          </Panel>
 
-      <Field label="Notation" hint="The original text is saved exactly as typed.">
-        <TextArea
-          value={draft.notation}
-          onChange={(e) => set('notation', e.target.value)}
-          rows={3}
-          spellCheck={false}
-          autoCapitalize="off"
-          autoCorrect="off"
-          className="font-mono"
-          placeholder="qcf+1 > uf+2,1 B! > SSL 1~b~uf+4 > f+1,2,1+2"
-        />
-      </Field>
-
-      <section ref={previewRef} className="space-y-2" aria-label="Live preview">
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <h2 className="text-sm font-bold text-ink-400 uppercase">Preview</h2>
-          <VisualControls value={visual} onChange={setVisual} />
+          <NotationReference game={draft.game} dialect={draft.dialect} characters={team} />
         </div>
-        <ComboVisual parsed={parsed} options={visual} />
-        <DiagnosticsList diagnostics={parsed.result.diagnostics} notation={draft.notation} />
-      </section>
 
-      {game.tag && parsed.result.ast.sections.length > 1 && (
-        <SectionAssigner parsed={parsed} characters={team} manual={draft.sectionCharacters} onChange={(m) => set('sectionCharacters', m)} />
-      )}
+        <div className="flex min-w-0 flex-col gap-4 lg:sticky lg:top-[72px]">
+          <Panel aria-label="Live preview" className="flex flex-col gap-3 p-4">
+            <PanelHeader
+              title="Live arcade display"
+              icon={<span aria-hidden className="size-2 rounded-full bg-success" />}
+              aside={<VisualControls value={visual} onChange={setVisual} />}
+            />
+            <ComboVisual parsed={parsed} options={visual} />
+          </Panel>
 
-      <NotationReference game={draft.game} dialect={draft.dialect} characters={team} />
+          {diagnostics.length > 0 && (
+            <Panel className="flex flex-col gap-3 p-4">
+              <PanelHeader
+                title={`Problems & diagnostics (${diagnostics.length})`}
+                icon={<span aria-hidden className="text-warning">⚠</span>}
+                aside={<span className="label-sm text-[11px] text-fg-muted uppercase">{game.name}</span>}
+              />
+              <DiagnosticsList diagnostics={diagnostics} notation={draft.notation} />
+              <p className="text-sm text-fg-muted">Warnings never block saving and never change your text.</p>
+            </Panel>
+          )}
 
-      <div className="grid gap-3 sm:grid-cols-3">
-        <Field label="Difficulty">
-          <Select value={draft.difficulty} onChange={(e) => set('difficulty', e.target.value as ComboDraft['difficulty'])}>
-            {DIFFICULTIES.map((d) => (
-              <option key={d} value={d}>
-                {d[0]?.toUpperCase() + d.slice(1)}
-              </option>
-            ))}
-          </Select>
-        </Field>
-        <Field label="Damage (optional)">
-          <TextInput type="number" inputMode="numeric" min={0} max={999} value={damage} onChange={(e) => setDamage(e.target.value)} />
-        </Field>
-        <Field label="Tags">
-          <TagInput id="tags" value={draft.tags} onChange={(t) => set('tags', t)} suggestions={collectTags(library)} />
-        </Field>
-      </div>
-
-      <Field label="Notes">
-        <TextArea value={draft.notes} onChange={(e) => set('notes', e.target.value)} rows={3} placeholder="Timing tips, wall/ground conditions…" />
-      </Field>
-
-      {formError && (
-        <p ref={errorRef} tabIndex={-1} role="alert" className="rounded-lg border border-red-800 bg-red-950 p-3 text-sm text-red-200">
-          {formError}
-        </p>
-      )}
-
-      <div className="flex gap-2">
-        <Button type="submit" variant="primary" disabled={saving}>
-          {saving ? 'Saving…' : 'Save combo'}
-        </Button>
-        <LinkButton href={id ? paths.details(id) : paths.library()} variant="ghost">
-          Cancel
-        </LinkButton>
+          {game.tag && parsed.result.ast.sections.length > 1 && (
+            <SectionAssigner parsed={parsed} characters={team} manual={draft.sectionCharacters} onChange={(m) => set('sectionCharacters', m)} />
+          )}
+        </div>
       </div>
     </form>
   );

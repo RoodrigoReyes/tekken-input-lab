@@ -1,22 +1,29 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 
-type Variant = 'primary' | 'secondary' | 'ghost' | 'danger';
+export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'link';
+export type ButtonSize = 'sm' | 'md';
 
-const VARIANTS: Record<Variant, string> = {
-  primary: 'bg-arcade text-white hover:bg-red-500 focus-visible:outline-red-300',
-  secondary: 'bg-ink-800 text-ink-100 hover:bg-ink-700 border border-ink-700',
-  ghost: 'text-ink-200 hover:bg-ink-800',
-  danger: 'bg-red-900/60 text-red-100 hover:bg-red-800 border border-red-800',
+/** Frame Zero buttons: hover changes the fill tone only, no motion. */
+const VARIANTS: Record<ButtonVariant, string> = {
+  primary: 'bg-primary text-on-primary hover:bg-primary-hover',
+  secondary: 'border border-line bg-muted text-fg hover:bg-line-strong',
+  ghost: 'text-fg-muted hover:bg-muted hover:text-fg',
+  danger: 'border border-danger bg-danger-surface text-danger hover:bg-[#4a1c17]',
+  link: 'px-0! text-fg-muted underline underline-offset-4 hover:text-fg',
 };
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: Variant;
-  size?: 'sm' | 'md';
+const SIZES: Record<ButtonSize, string> = {
+  sm: 'h-[30px] px-2.5',
+  md: 'h-10 px-4',
+};
+
+export function buttonClass(variant: ButtonVariant = 'secondary', size: ButtonSize = 'md', extra = ''): string {
+  return `label-md inline-flex shrink-0 items-center justify-center gap-1.5 rounded-[4px] transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${SIZES[size]} ${VARIANTS[variant]} ${extra}`;
 }
 
-function buttonClass(variant: Variant, size: 'sm' | 'md', extra: string): string {
-  const sizing = size === 'sm' ? 'px-2.5 py-1 text-xs' : 'px-3.5 py-2 text-sm';
-  return `inline-flex items-center justify-center gap-1.5 rounded-lg font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${sizing} ${VARIANTS[variant]} ${extra}`;
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
 }
 
 export function Button({ variant = 'secondary', size = 'md', className = '', type = 'button', ...props }: ButtonProps) {
@@ -25,8 +32,8 @@ export function Button({ variant = 'secondary', size = 'md', className = '', typ
 
 export interface LinkButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
-  variant?: Variant;
-  size?: 'sm' | 'md';
+  variant?: ButtonVariant;
+  size?: ButtonSize;
 }
 
 /** A link styled as a button (navigation must stay a link). */

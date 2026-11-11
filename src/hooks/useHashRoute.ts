@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 export type Route =
   | { name: 'library' }
   | { name: 'new' }
+  | { name: 'generator' }
   | { name: 'details'; id: string }
   | { name: 'edit'; id: string };
 
@@ -13,12 +14,14 @@ export function parseRoute(hash: string): Route {
   const details = /^\/combo\/([^/]+)$/.exec(path);
   if (details?.[1]) return { name: 'details', id: decodeURIComponent(details[1]) };
   if (path === '/new') return { name: 'new' };
+  if (path === '/generator') return { name: 'generator' };
   return { name: 'library' };
 }
 
 export const paths = {
   library: () => '#/',
   new: () => '#/new',
+  generator: () => '#/generator',
   details: (id: string) => `#/combo/${encodeURIComponent(id)}`,
   edit: (id: string) => `#/combo/${encodeURIComponent(id)}/edit`,
 };

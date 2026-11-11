@@ -1,6 +1,7 @@
 import { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import { layoutCombo, type SectionHeaderInfo } from '../../render/layout';
-import { measureText } from '../../render/measure';
+import { clearMeasureCache, measureText } from '../../render/measure';
+import type { Side } from '../../render/side';
 import type { ParseResult } from '../../types/notation';
 import { ComboSvg } from './ComboSvg';
 
@@ -11,6 +12,8 @@ export interface CommandSequenceProps {
   expandNamed?: boolean;
   sectionHeaders?: readonly SectionHeaderInfo[];
   className?: string;
+  /** Player side: 2P mirrors forward/back arrows. */
+  side?: Side;
 }
 
 function useElementWidth<T extends HTMLElement>(): [React.RefObject<T | null>, number] {
@@ -31,19 +34,40 @@ function useElementWidth<T extends HTMLElement>(): [React.RefObject<T | null>, n
   return [ref, width];
 }
 
+/** Re-render once web fonts are ready so tiles are sized for Archivo, not the fallback. */
+function useFontsReady(): number {
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    let active = true;
+    const fonts = typeof document !== 'undefined' ? document.fonts : undefined;
+    fonts?.ready
+      .then(() => {
+        if (!active) return;
+        clearMeasureCache();
+        setTick((t) => t + 1);
+      })
+      .catch(() => undefined);
+    return () => {
+      active = false;
+    };
+  }, []);
+  return tick;
+}
+
 /** Live, responsive arcade rendering of a parsed combo. Wraps to the container width. */
 export const CommandSequence = forwardRef<SVGSVGElement, CommandSequenceProps>(function CommandSequence(
-  { result, size = 40, expandNamed = false, sectionHeaders, className },
+  { result, size = 40, expandNamed = false, sectionHeaders, className, side = 'left' },
   svgRef,
 ) {
   const [ref, width] = useElementWidth<HTMLDivElement>();
+  const fontsTick = useFontsReady();
   const layout = useMemo(
     () => layoutCombo(result, { width: width || 640, size, expandNamed, sectionHeaders, measure: measureText }),
-    [result, width, size, expandNamed, sectionHeaders],
+    [result, width, size, expandNamed, sectionHeaders, fontsTick], // eslint-disable-line react-hooks/exhaustive-deps
   );
   return (
     <div ref={ref} className={className} style={{ width: '100%', overflowX: 'auto' }}>
-      <ComboSvg ref={svgRef} layout={layout} title={result.original} />
+      <ComboSvg ref={svgRef} layout={layout} title={result.original} side={side} />
     </div>
   );
 });

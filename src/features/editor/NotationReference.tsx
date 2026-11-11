@@ -28,26 +28,29 @@ export function NotationReference({ game, dialect, characters }: { game: GameId;
   const words = Object.values(MECHANIC_WORDS);
   const entries = characters.flatMap((c) => entriesForCharacter(game, c).map((e) => ({ ...e, who: c })));
   return (
-    <details className="rounded-xl border border-ink-700 bg-ink-900 p-3 text-sm">
-      <summary className="cursor-pointer font-semibold text-ink-200">Notation reference — {getGame(game).name}</summary>
-      <div className="mt-3 grid gap-4 md:grid-cols-3">
+    <details className="group rounded-[4px] border border-line bg-surface text-sm">
+      <summary className="label-md flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3.5 text-fg [&::-webkit-details-marker]:hidden">
+        <span>Help &amp; notation reference — {getGame(game).name}</span>
+        <span aria-hidden className="text-fg-muted transition-transform group-open:rotate-180">▾</span>
+      </summary>
+      <div className="grid gap-5 border-t border-line-strong p-4 md:grid-cols-3">
         <section>
-          <h4 className="mb-1 text-xs font-bold text-ink-400 uppercase">Operators</h4>
+          <h4 className="label-md mb-2 text-fg-muted">Operators</h4>
           <dl className="space-y-0.5">
             {OPERATORS.map(([op, text]) => (
               <div key={op} className="flex gap-2">
-                <dt className="w-24 shrink-0 font-mono text-ink-100">{op}</dt>
+                <dt className="w-24 shrink-0 font-mono text-fg">{op}</dt>
                 <dd className="text-ink-400">{text}</dd>
               </div>
             ))}
             <div className="flex gap-2">
-              <dt className="w-24 shrink-0 font-mono text-ink-100">;</dt>
+              <dt className="w-24 shrink-0 font-mono text-fg">;</dt>
               <dd className="text-ink-400">{d.semicolon === 'tagAssault' ? 'Tag Assault (this dialect)' : 'character section break'}</dd>
             </div>
           </dl>
         </section>
         <section>
-          <h4 className="mb-1 text-xs font-bold text-ink-400 uppercase">Events &amp; mechanics</h4>
+          <h4 className="label-md mb-2 text-fg-muted">Events &amp; mechanics</h4>
           <ul className="space-y-0.5">
             {events.map(([abbr, mech]) => {
               const a = availabilityOf(mech, game);
@@ -76,7 +79,7 @@ export function NotationReference({ game, dialect, characters }: { game: GameId;
           </ul>
         </section>
         <section>
-          <h4 className="mb-1 text-xs font-bold text-ink-400 uppercase">Character notation</h4>
+          <h4 className="label-md mb-2 text-fg-muted">Character notation</h4>
           {entries.length === 0 ? (
             <p className="text-ink-500">Select a character to see named moves and stances.</p>
           ) : (

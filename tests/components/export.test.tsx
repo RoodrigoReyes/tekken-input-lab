@@ -51,3 +51,27 @@ describe('SVG export', () => {
     expect(safeFilename('!!!')).toBe('combo');
   });
 });
+
+describe('SVG export from the 2P side', () => {
+  const p2 = { ...combo, notation: 'df+1, f+2' };
+  const svg = comboSvgMarkup(parseCombo(p2), exportHeading(p2, 'right'), { size: 40, expandNamed: false, side: 'right', measure: estimateText });
+
+  it('mirrors the arrows and says so in the heading', () => {
+    expect(svg).toContain('data-side="right"');
+    expect(svg).toMatch(/rotate\(135 /);
+    expect(svg).toMatch(/rotate\(180 /);
+    expect(svg).not.toMatch(/rotate\(45 /);
+    expect(svg).toContain('2P side');
+  });
+
+  it('is never narrower than its heading', () => {
+    const short = { ...p2, notation: '1', name: 'A very long combo name that is much wider than one button' };
+    const out = comboSvgMarkup(parseCombo(short), exportHeading(short, 'right'), { size: 40, expandNamed: false, side: 'right', measure: estimateText });
+    const width = Number(/<svg[^>]* width="(\d+)"/.exec(out)?.[1]);
+    expect(width).toBeGreaterThan(estimateText(short.name, 40 * 0.42, 800));
+  });
+
+  it('leaves the 1P heading unchanged', () => {
+    expect(exportHeading(p2).subtitle).not.toContain('2P');
+  });
+});

@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { CommandSequence } from '../../components/arcade';
 import { DifficultyBadge, GameBadge } from '../../components/combos/GameBadge';
 import { paths } from '../../hooks/useHashRoute';
+import { usePlayerSide } from '../../hooks/usePlayerSide';
 import type { Combo } from '../../types/combo';
 import { parseCombo } from '../combo/parseCombo';
 
@@ -10,48 +11,58 @@ export interface ComboCardProps {
   onToggleFavorite: (combo: Combo) => void;
 }
 
+/** Library card: fully clickable (stretched link), favorite toggle above the link layer. */
 export function ComboCard({ combo, onToggleFavorite }: ComboCardProps) {
   const parsed = useMemo(() => parseCombo(combo), [combo]);
+  const [side] = usePlayerSide();
   const warnings = parsed.result.diagnostics.filter((d) => d.severity === 'warning').length;
+  const characters = [combo.character || 'No character', combo.partner].filter(Boolean).join(' + ');
   return (
-    <article className="group relative flex flex-col gap-2 rounded-xl border border-ink-700 bg-ink-850 p-3 transition-colors hover:border-ink-500 focus-within:ring-2 focus-within:ring-red-400">
-      <header className="flex items-start gap-2">
-        <div className="min-w-0 flex-1">
-          <h3 className="truncate font-bold">
+    <article className="relative flex min-w-0 flex-col gap-3 rounded-[4px] border border-line bg-surface p-4 transition-colors hover:border-fg-muted/60 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-primary">
+      <header className="flex items-start gap-3">
+        <div className="min-w-0 flex-1 space-y-1.5">
+          <h3 className="truncate text-lg leading-[22px] font-semibold">
             <a href={paths.details(combo.id)} className="after:absolute after:inset-0 focus-visible:outline-none">
               {combo.name}
             </a>
           </h3>
-          <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-ink-400">
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-fg-muted">
             <GameBadge game={combo.game} />
-            <span>{[combo.character || 'No character', combo.partner].filter(Boolean).join(' + ')}</span>
+            <span className="text-fg">{characters}</span>
             <DifficultyBadge difficulty={combo.difficulty} />
-            {combo.damage !== undefined && <span>{combo.damage} dmg</span>}
-            {warnings > 0 && <span className="text-amber-300">⚠ {warnings}</span>}
+            {warnings > 0 && (
+              <span className="label-sm rounded-[2px] border border-dashed border-warning px-1.5 py-0.5 text-[11px] text-warning" title={`${warnings} notation warning(s)`}>
+                ⚠ {warnings}
+              </span>
+            )}
           </p>
         </div>
-        <button
-          type="button"
-          onClick={() => onToggleFavorite(combo)}
-          aria-pressed={combo.favorite}
-          aria-label="Favorite"
-          className={`relative z-10 text-xl leading-none ${combo.favorite ? 'text-amber-400' : 'text-ink-500 hover:text-ink-200'}`}
-        >
-          {combo.favorite ? '★' : '☆'}
-        </button>
+        <div className="flex shrink-0 items-center gap-3">
+          {combo.damage !== undefined && <span className="font-mono text-sm font-medium text-primary">{combo.damage} dmg</span>}
+          <button
+            type="button"
+            onClick={() => onToggleFavorite(combo)}
+            aria-pressed={combo.favorite}
+            aria-label="Favorite"
+            className={`relative z-10 text-xl leading-none ${combo.favorite ? 'text-primary' : 'text-fg-muted hover:text-fg'}`}
+          >
+            {combo.favorite ? '★' : '☆'}
+          </button>
+        </div>
       </header>
-      <div className="pointer-events-none overflow-hidden rounded-lg bg-ink-900 p-1">
-        <CommandSequence result={parsed.result} size={24} sectionHeaders={parsed.headers} />
+      <div className="pointer-events-none overflow-hidden rounded-[4px] border border-line-strong bg-neutral p-1">
+        <CommandSequence result={parsed.result} size={24} sectionHeaders={parsed.headers} side={side} />
       </div>
-      {combo.tags.length > 0 && (
-        <p className="flex flex-wrap gap-1">
-          {combo.tags.map((t) => (
-            <span key={t} className="rounded bg-ink-800 px-1.5 py-0.5 text-[11px] text-ink-200">
-              #{t}
-            </span>
-          ))}
-        </p>
-      )}
+      <footer className="mt-auto flex flex-wrap items-center gap-1.5 border-t border-line-strong pt-3">
+        <code className="min-w-0 flex-1 truncate font-mono text-[13px] text-fg-muted" title={combo.notation}>
+          {combo.notation.replace(/\s*\n\s*/g, ' ')}
+        </code>
+        {combo.tags.map((t) => (
+          <span key={t} className="label-sm rounded-full bg-line-strong px-2 py-1 text-[11px] leading-none text-fg">
+            #{t}
+          </span>
+        ))}
+      </footer>
     </article>
   );
 }

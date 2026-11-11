@@ -2,19 +2,22 @@
  * Visual constants for the arcade renderer. Everything is applied as SVG
  * attributes (not CSS classes) so exported SVG/PNG files look identical.
  */
-export const FONT_SANS = 'Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
-export const FONT_MONO = 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+export const FONT_SANS = 'Archivo, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+export const FONT_MONO = '"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+/** Arcade labels use Archivo SemiCondensed so long captions fit compact tiles. */
+export const FONT_STRETCH = '87.5%';
 
 export const COLORS = {
-  background: '#0b0d12',
+  background: '#0e1013',
   panel: '#161a23',
   panelStroke: '#2a303d',
-  text: '#e6e8ee',
-  muted: '#8a93a6',
-  dark: '#0b0d12',
+  text: '#e9e7e2',
+  muted: '#8b93a0',
+  dark: '#08090b',
   /** Unpressed button (dark, as in the in-game command list). */
   buttonInactive: '#3d4a4c',
-  buttonInactiveStroke: '#1b2224',
+  /** Every button sits inside one merged black silhouette. */
+  buttonOutline: '#000000',
   /** Arrows are white with a dark outline; held directions get a yellow outline. */
   arrow: '#f4f2ef',
   arrowOutline: '#15191d',
@@ -29,19 +32,20 @@ export const COLORS = {
   unknown: '#ef4444',
   note: '#94a3b8',
   relation: '#9aa3b5',
-  stage: '#e6e8ee',
+  stage: '#e9e7e2',
   bracket: '#64748b',
 } as const;
 
 /**
  * Pressed-button colors by position, matching the in-game command list:
- * 1 (top-left) pink, 2 (top-right) teal, 3 (bottom-left) light blue, 4 (bottom-right) magenta.
+ * 1 (top-left) pink, 2 (top-right) teal, 3 (bottom-left) lavender blue, 4 (bottom-right) coral red.
+ * Flat fills; the outline is the shared black silhouette (COLORS.buttonOutline).
  */
-export const BUTTON_COLORS: Readonly<Record<1 | 2 | 3 | 4, { fill: string; stroke: string }>> = {
-  1: { fill: '#ec9ac4', stroke: '#7a3a5c' },
-  2: { fill: '#1fc4a6', stroke: '#0c5e50' },
-  3: { fill: '#64b4e4', stroke: '#235a7a' },
-  4: { fill: '#d93a78', stroke: '#6e1638' },
+export const BUTTON_COLORS: Readonly<Record<1 | 2 | 3 | 4, { fill: string }>> = {
+  1: { fill: '#de7fb7' },
+  2: { fill: '#29b1a9' },
+  3: { fill: '#7996ca' },
+  4: { fill: '#f14b46' },
 };
 
 /** Event colors by mechanic id. */
@@ -61,7 +65,7 @@ export const EVENT_COLORS: Readonly<Record<string, string>> = {
 
 export const MECHANIC_COLORS: Readonly<Record<string, string>> = {
   rageArt: '#dc2626',
-  rageDrive: '#b91c1c',
+  rageDrive: '#dc2626',
   heatBurst: '#ea580c',
   heatSmash: '#ea580c',
   heatDash: '#ea580c',

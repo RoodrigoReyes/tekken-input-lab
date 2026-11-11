@@ -44,11 +44,11 @@ export function BackupActions({ onImported }: { onImported: () => Promise<void> 
 
   return (
     <>
-      <Button size="sm" onClick={() => input.current?.click()}>
-        Import JSON
+      <Button onClick={() => input.current?.click()}>
+        <span aria-hidden>↑</span> Import JSON
       </Button>
-      <Button size="sm" onClick={exportJson}>
-        Export JSON
+      <Button onClick={exportJson}>
+        <span aria-hidden>↓</span> Export JSON
       </Button>
       <input
         ref={input}

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '../../components/ui/Button';
 import { useToast } from '../../components/ui/Toast';
 import { errorMessage } from '../../hooks/useCombos';
+import { usePlayerSide } from '../../hooks/usePlayerSide';
 import type { DetailsExtraProps } from '../details/DetailsView';
 import { downloadBlob } from './download';
 
@@ -11,9 +12,10 @@ const loadExporter = () => import('./exportImage');
 export function ExportButtons({ combo, parsed, visual }: DetailsExtraProps) {
   const toast = useToast();
   const [busy, setBusy] = useState(false);
+  const [side] = usePlayerSide();
   const build = async () => {
     const { comboSvgMarkup, exportHeading, safeFilename } = await loadExporter();
-    const svg = comboSvgMarkup(parsed, exportHeading(combo), { size: visual.size, expandNamed: visual.expandNamed });
+    const svg = comboSvgMarkup(parsed, exportHeading(combo, side), { size: visual.size, expandNamed: visual.expandNamed, side });
     return { svg, filename: safeFilename(combo.name) };
   };
 
@@ -41,10 +43,10 @@ export function ExportButtons({ combo, parsed, visual }: DetailsExtraProps) {
 
   return (
     <>
-      <Button size="sm" onClick={() => void exportSvg()}>
+      <Button onClick={() => void exportSvg()}>
         Export SVG
       </Button>
-      <Button size="sm" onClick={() => void exportPng()} disabled={busy}>
+      <Button onClick={() => void exportPng()} disabled={busy}>
         {busy ? 'Exporting…' : 'Export PNG'}
       </Button>
     </>

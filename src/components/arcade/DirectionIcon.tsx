@@ -1,4 +1,5 @@
 import type { Direction } from '../../types/notation';
+import type { Side } from '../../render/side';
 import { COLORS } from '../../render/theme';
 
 export interface DirectionIconProps {
@@ -6,6 +7,8 @@ export interface DirectionIconProps {
   /** Held directions (uppercase in notation) keep the white arrow with a yellow outline. */
   held?: boolean;
   size: number;
+  /** 2P side mirrors forward/back (the notation direction itself is unchanged). */
+  side?: Side;
   x?: number;
   y?: number;
 }
@@ -22,10 +25,18 @@ export const DIRECTION_ANGLE: Readonly<Record<Exclude<Direction, 'n'>, number>> 
   uf: 315,
 };
 
+/** On-screen rotation for a notation direction; the 2P side mirrors it horizontally. */
+export function directionAngle(direction: Exclude<Direction, 'n'>, side: Side): number {
+  const angle = DIRECTION_ANGLE[direction];
+  return side === 'right' ? (540 - angle) % 360 : angle;
+}
+
 /** Arrow pointing right inside a unit box (0..1). */
 const ARROW_PATH = 'M0.14 0.42 H0.56 V0.22 L0.88 0.5 L0.56 0.78 V0.58 H0.14 Z';
 
-export function DirectionIcon({ direction, held = false, size, x = 0, y = 0 }: DirectionIconProps) {
+export function DirectionIcon({ direction, held = false, size, side = 'left', x = 0, y = 0 }: DirectionIconProps) {
+  // Accessible name and data-direction stay in notation terms (what the player reads and types);
+  // only the drawing is mirrored on the 2P side.
   const label = held ? `hold ${direction}` : direction;
   if (direction === 'n') {
     return (
@@ -36,7 +47,7 @@ export function DirectionIcon({ direction, held = false, size, x = 0, y = 0 }: D
       </g>
     );
   }
-  const angle = DIRECTION_ANGLE[direction];
+  const angle = directionAngle(direction, side);
   return (
     <g transform={`translate(${x} ${y})`} role="img" aria-label={label} data-direction={direction}>
       <g transform={`rotate(${angle} ${size / 2} ${size / 2}) scale(${size})`}>

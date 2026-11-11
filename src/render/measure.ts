@@ -22,6 +22,11 @@ function canvasContext(): CanvasRenderingContext2D | null {
 export const estimateText: MeasureFn = (text, fontSize, weight = 400) =>
   text.length * fontSize * (weight >= 600 ? 0.64 : 0.58);
 
+/** Drop cached widths (call once web fonts finish loading; earlier widths used the fallback font). */
+export function clearMeasureCache(): void {
+  cache.clear();
+}
+
 export const measureText: MeasureFn = (text, fontSize, weight = 400) => {
   const key = `${weight}|${fontSize}|${text}`;
   const hit = cache.get(key);

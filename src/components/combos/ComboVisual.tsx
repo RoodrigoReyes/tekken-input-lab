@@ -1,6 +1,8 @@
 import { forwardRef } from 'react';
 import type { ParsedCombo } from '../../features/combo/parseCombo';
+import { usePlayerSide } from '../../hooks/usePlayerSide';
 import { CommandSequence } from '../arcade';
+import { SideToggle } from './SideToggle';
 
 export interface VisualOptions {
   size: number;
@@ -9,10 +11,17 @@ export interface VisualOptions {
 
 export const DEFAULT_VISUAL: VisualOptions = { size: 40, expandNamed: false };
 
-export function VisualControls({ value, onChange }: { value: VisualOptions; onChange: (v: VisualOptions) => void }) {
+export interface VisualControlsProps {
+  value: VisualOptions;
+  onChange: (v: VisualOptions) => void;
+}
+
+/** Player side, command size (20–72 px per cluster) and the "Expand named moves" toggle. */
+export function VisualControls({ value, onChange }: VisualControlsProps) {
   return (
-    <div className="flex flex-wrap items-center gap-4 text-xs text-ink-400">
-      <label className="flex items-center gap-2">
+    <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+      <SideToggle />
+      <label className="label-md flex items-center gap-2 text-fg-muted">
         Size
         <input
           type="range"
@@ -21,16 +30,17 @@ export function VisualControls({ value, onChange }: { value: VisualOptions; onCh
           step={2}
           value={value.size}
           onChange={(e) => onChange({ ...value, size: Number(e.target.value) })}
-          className="accent-red-500"
+          className="w-28 accent-primary"
           aria-label="Command size"
         />
+        <span className="label-sm w-9 text-[11px] text-fg">{value.size}px</span>
       </label>
-      <label className="flex items-center gap-1.5">
+      <label className="label-md flex cursor-pointer items-center gap-2 text-fg-muted select-none">
         <input
           type="checkbox"
           checked={value.expandNamed}
           onChange={(e) => onChange({ ...value, expandNamed: e.target.checked })}
-          className="accent-red-500"
+          className="size-4 accent-primary"
         />
         Expand named moves
       </label>
@@ -38,15 +48,16 @@ export function VisualControls({ value, onChange }: { value: VisualOptions; onCh
   );
 }
 
-/** The arcade rendering of a parsed combo inside a dark panel. */
+/** The arcade rendering of a parsed combo inside the arcade display container. */
 export const ComboVisual = forwardRef<SVGSVGElement, { parsed: ParsedCombo; options: VisualOptions }>(function ComboVisual({ parsed, options }, ref) {
+  const [side] = usePlayerSide();
   const empty = parsed.result.ast.sections.every((s) => s.stages.length === 0);
   return (
-    <div className="rounded-xl border border-ink-700 bg-ink-900 p-0.5 sm:p-1">
+    <div className="rounded-[4px] border border-line bg-surface p-1">
       {empty ? (
-        <p className="p-4 text-sm text-ink-500">Type notation to see the arcade commands.</p>
+        <p className="p-6 text-sm text-fg-muted">Type or paste notation to see the arcade commands.</p>
       ) : (
-        <CommandSequence ref={ref} result={parsed.result} size={options.size} expandNamed={options.expandNamed} sectionHeaders={parsed.headers} />
+        <CommandSequence ref={ref} result={parsed.result} size={options.size} expandNamed={options.expandNamed} sectionHeaders={parsed.headers} side={side} />
       )}
     </div>
   );

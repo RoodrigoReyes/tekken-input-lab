@@ -1,18 +1,60 @@
 @import "tailwindcss";
 
+/* Frame Zero tokens (docs/DESIGN.md). Arcade display colors live in src/render/theme.ts. */
 @theme {
-  --color-ink-950: #0b0d12;
-  --color-ink-900: #11141b;
-  --color-ink-850: #161a23;
-  --color-ink-800: #1d2230;
-  --color-ink-700: #2a303d;
-  --color-ink-500: #5b6375;
-  --color-ink-400: #8a93a6;
-  --color-ink-200: #cfd3dc;
-  --color-ink-100: #e6e8ee;
-  --color-arcade: #e0262b;
-  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --color-neutral: #08090b;
+  --color-surface: #0e1013;
+  --color-muted: #21262d;
+  --color-line: #333a45;
+  --color-line-strong: #21262e;
+  --color-fg: #e9e7e2;
+  --color-fg-muted: #8b93a0;
+  --color-primary: #ff571f;
+  --color-primary-hover: #ff5f2a;
+  --color-on-primary: #08090b;
+  --color-danger: #ff5a1f;
+  --color-danger-surface: #3a1410;
+  --color-warning: #f5a524;
+  --color-success: #22c55e;
+  --color-tile: #161a23;
+  --color-tile-line: #2a303d;
+
+  /* Legacy ink scale, remapped onto Frame Zero so older markup stays on-palette. */
+  --color-ink-950: #08090b;
+  --color-ink-900: #0e1013;
+  --color-ink-850: #0e1013;
+  --color-ink-800: #21262d;
+  --color-ink-700: #333a45;
+  --color-ink-500: #5d6572;
+  --color-ink-400: #8b93a0;
+  --color-ink-200: #cfccc6;
+  --color-ink-100: #e9e7e2;
+  --color-arcade: #ff571f;
+
+  --font-sans: Archivo, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* Archivo Condensed (width axis) for large headlines. */
+@utility font-condensed {
+  font-stretch: 75%;
+}
+
+/* label-md: field labels, button text, section headers. */
+@utility label-md {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* label-sm: badges, chips, counts, credits (JetBrains Mono). */
+@utility label-sm {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.12em;
 }
 
 html,
@@ -22,6 +64,14 @@ body,
 }
 
 body {
-  @apply bg-ink-950 text-ink-100 antialiased;
+  @apply bg-neutral text-fg antialiased;
   color-scheme: dark;
+}
+
+/* In the base layer so utilities (inputs use a border instead) can override it. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
 }

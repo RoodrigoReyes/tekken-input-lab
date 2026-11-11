@@ -1,5 +1,6 @@
 import { forwardRef, type ReactNode } from 'react';
 import type { Box, Layout, Part } from '../../render/layout';
+import type { Side } from '../../render/side';
 import { COLORS, FONT_SANS } from '../../render/theme';
 import { ArcadeButtons } from './ArcadeButtons';
 import { DirectionIcon } from './DirectionIcon';
@@ -14,18 +15,20 @@ export interface ComboSvgProps {
   /** Paint a background rectangle (exports). */
   background?: boolean;
   title?: string;
+  /** Player side: 2P mirrors forward/back arrows. */
+  side?: Side;
 }
 
-function PartView({ part, box, size }: { part: Part; box: Box; size: number }): ReactNode {
+function PartView({ part, box, size, side }: { part: Part; box: Box; size: number; side: Side }): ReactNode {
   const h = box.h;
   const common = { x: part.x, w: part.w, h, size };
   switch (part.type) {
     case 'prefix':
       return <PrefixChip {...common} text={part.text} kind={part.kind} />;
     case 'direction':
-      return <DirectionIcon direction={part.direction} held={part.held} size={part.w} x={part.x} y={(h - part.w) / 2} />;
+      return <DirectionIcon direction={part.direction} held={part.held} size={part.w} side={side} x={part.x} y={(h - part.w) / 2} />;
     case 'motion':
-      return <MotionIcon motion={part.motion} sequence={part.sequence} width={part.w} height={h} size={size} x={part.x} />;
+      return <MotionIcon motion={part.motion} sequence={part.sequence} width={part.w} height={h} size={size} side={side} x={part.x} />;
     case 'plus':
       return <PlusMark {...common} />;
     case 'buttons':
@@ -59,7 +62,7 @@ function ItemPanel({ box }: { box: Box }) {
   );
 }
 
-function BoxView({ box, size }: { box: Box; size: number }) {
+function BoxView({ box, size, side }: { box: Box; size: number; side: Side }) {
   let content: ReactNode = null;
   switch (box.kind) {
     case 'item':
@@ -67,7 +70,7 @@ function BoxView({ box, size }: { box: Box; size: number }) {
         <>
           <ItemPanel box={box} />
           {box.parts.map((part, i) => (
-            <PartView key={i} part={part} box={box} size={size} />
+            <PartView key={i} part={part} box={box} size={size} side={side} />
           ))}
         </>
       );
@@ -94,7 +97,7 @@ function BoxView({ box, size }: { box: Box; size: number }) {
 }
 
 /** Renders a computed layout as a single, self-contained SVG (also used for export). */
-export const ComboSvg = forwardRef<SVGSVGElement, ComboSvgProps>(function ComboSvg({ layout, heading, background, title }, ref) {
+export const ComboSvg = forwardRef<SVGSVGElement, ComboSvgProps>(function ComboSvg({ layout, heading, background, title, side = 'left' }, ref) {
   const s = layout.size;
   const headH = heading ? Math.round(s * (heading.subtitle ? 1.25 : 0.9)) : 0;
   const width = layout.width;
@@ -108,6 +111,7 @@ export const ComboSvg = forwardRef<SVGSVGElement, ComboSvgProps>(function ComboS
       viewBox={`0 0 ${width} ${height}`}
       role="img"
       aria-label={title ?? 'Combo notation'}
+      data-side={side}
     >
       {background && <rect width={width} height={height} fill={COLORS.background} />}
       {heading && (
@@ -124,7 +128,7 @@ export const ComboSvg = forwardRef<SVGSVGElement, ComboSvgProps>(function ComboS
       )}
       <g transform={`translate(0 ${headH})`}>
         {layout.boxes.map((box) => (
-          <BoxView key={box.id} box={box} size={s} />
+          <BoxView key={box.id} box={box} size={s} side={side} />
         ))}
       </g>
     </svg>

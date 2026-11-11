@@ -1,7 +1,9 @@
 import { useMemo, useRef, useState, type ReactNode } from 'react';
 import { DiagnosticsList } from '../../components/combos/DiagnosticsList';
 import { ComboVisual, DEFAULT_VISUAL, VisualControls } from '../../components/combos/ComboVisual';
-import { DifficultyBadge, GameBadge } from '../../components/combos/GameBadge';
+import { GameBadge } from '../../components/combos/GameBadge';
+import { Chip } from '../../components/ui/Chip';
+import { Eyebrow, PageTitle, Panel, PanelHeader } from '../../components/ui/Panel';
 import { Button, LinkButton } from '../../components/ui/Button';
 import { ConfirmDialog } from '../../components/ui/ConfirmDialog';
 import { useToast } from '../../components/ui/Toast';
@@ -30,14 +32,16 @@ export function DetailsView({
   renderExtraActions?: (props: DetailsExtraProps) => ReactNode;
 }) {
   const { data: combo, loading, error, reload } = useCombo(id);
-  if (loading) return <p className="text-ink-400">Loading…</p>;
-  if (error) return <p className="text-red-300">{error}</p>;
-  if (!combo) {
+  if (loading) return <p className="label-sm text-fg-muted">Loading…</p>;
+  if (error || !combo) {
     return (
-      <div className="space-y-3">
-        <p className="text-ink-400">This combo no longer exists.</p>
-        <LinkButton href={paths.library()}>Back to library</LinkButton>
-      </div>
+      <Panel className="flex flex-col items-center gap-3 px-6 py-[58px] text-center">
+        <p className="font-condensed text-2xl font-bold uppercase">{error ?? 'This combo no longer exists.'}</p>
+        <p className="text-sm text-fg-muted">It may have been deleted.</p>
+        <LinkButton href={paths.library()} variant="primary">
+          Back to library
+        </LinkButton>
+      </Panel>
     );
   }
   return <Details combo={combo} navigate={navigate} reload={reload} renderExtraActions={renderExtraActions} />;
@@ -97,84 +101,104 @@ function Details({
       await reload();
     }, 'Could not update favorite');
 
+  const characters = [combo.character || 'No character', combo.partner].filter(Boolean).join(' + ');
+  const warnings = parsed.result.diagnostics.filter((d) => d.severity === 'warning').length;
+
   return (
-    <article className="space-y-5">
-      <header className="space-y-2">
-        <a href={paths.library()} className="text-sm text-ink-400 hover:text-white">
-          ← Library
-        </a>
-        <div className="flex flex-wrap items-start gap-3">
-          <div className="min-w-0 flex-1">
-            <h1 className="text-2xl font-extrabold break-words">{combo.name}</h1>
-            <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-400">
-              <GameBadge game={combo.game} />
-              <span>{game.name}</span>
-              <span className="text-ink-100">{[combo.character || 'No character', combo.partner].filter(Boolean).join(' + ')}</span>
-              <DifficultyBadge difficulty={combo.difficulty} />
-              {combo.damage !== undefined && <span>{combo.damage} damage</span>}
-            </p>
+    <article className="flex flex-col gap-4">
+      <nav aria-label="Breadcrumb">
+        <Eyebrow>
+          <a href={paths.library()} className="hover:text-fg">
+            ← Library
+          </a>
+          <span aria-hidden>/</span>
+          <span>{game.name}</span>
+        </Eyebrow>
+      </nav>
+
+      <header className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+        <div className="min-w-0 space-y-2">
+          <div className="flex items-start gap-3">
+            <PageTitle className="min-w-0">{combo.name}</PageTitle>
+            <button
+              type="button"
+              onClick={toggleFavorite}
+              aria-pressed={combo.favorite}
+              aria-label="Favorite"
+              className={`mt-0.5 text-[28px] leading-none ${combo.favorite ? 'text-primary' : 'text-fg-muted hover:text-fg'}`}
+            >
+              {combo.favorite ? '★' : '☆'}
+            </button>
           </div>
-          <button
-            type="button"
-            onClick={toggleFavorite}
-            aria-pressed={combo.favorite}
-            aria-label="Favorite"
-            className={`text-2xl ${combo.favorite ? 'text-amber-400' : 'text-ink-500 hover:text-ink-200'}`}
-          >
-            {combo.favorite ? '★' : '☆'}
-          </button>
+          <dl className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm">
+            <div className="flex items-center gap-2">
+              <dt className="sr-only">Game</dt>
+              <dd>
+                <GameBadge game={combo.game} />
+              </dd>
+            </div>
+            <Meta label="Characters">{characters}</Meta>
+            <Meta label="Difficulty">
+              <span className="capitalize">{combo.difficulty}</span>
+            </Meta>
+            {combo.damage !== undefined && (
+              <Meta label="Damage">
+                <span className="font-mono text-primary">{combo.damage}</span>
+              </Meta>
+            )}
+          </dl>
         </div>
-        <div className="flex flex-wrap gap-2">
-          <LinkButton href={paths.edit(combo.id)} size="sm">
-            Edit
-          </LinkButton>
-          <Button size="sm" onClick={duplicate}>
-            Duplicate
-          </Button>
-          <Button size="sm" onClick={copy}>
-            Copy notation
-          </Button>
+        <div className="flex flex-wrap items-center gap-2">
+          <LinkButton href={paths.edit(combo.id)}>Edit</LinkButton>
+          <Button onClick={duplicate}>Duplicate</Button>
+          <Button onClick={copy}>Copy notation</Button>
           {renderExtraActions?.({ combo, parsed, visual })}
-          <Button size="sm" variant="danger" onClick={() => setConfirming(true)}>
+          <Button variant="danger" onClick={() => setConfirming(true)}>
             Delete
           </Button>
         </div>
       </header>
 
-      <section className="space-y-2" aria-label="Commands">
-        <div className="flex justify-end">
-          <VisualControls value={visual} onChange={setVisual} />
-        </div>
+      <Panel aria-label="Commands" className="flex flex-col gap-3 p-4">
+        <PanelHeader title="Arcade display" aside={<VisualControls value={visual} onChange={setVisual} />} />
         <ComboVisual ref={svgRef} parsed={parsed} options={visual} />
-        <DiagnosticsList diagnostics={parsed.result.diagnostics} notation={combo.notation} />
-      </section>
+        {parsed.result.diagnostics.length > 0 ? (
+          <DiagnosticsList diagnostics={parsed.result.diagnostics} notation={combo.notation} />
+        ) : (
+          <p className="label-sm flex items-center gap-2 text-[11px] text-fg-muted uppercase">
+            <span aria-hidden className="size-2 rounded-full bg-success" /> No notation warnings for {game.name}
+          </p>
+        )}
+      </Panel>
 
-      <section className="space-y-1">
-        <h2 className="text-xs font-bold tracking-wide text-ink-400 uppercase">Original notation</h2>
-        <pre className="overflow-x-auto rounded-lg border border-ink-700 bg-ink-900 p-3 font-mono text-sm whitespace-pre-wrap">{combo.notation}</pre>
-        <p className="text-xs text-ink-500">Dialect: {getDialect(combo.dialect).name}</p>
-      </section>
-
-      {combo.tags.length > 0 && (
-        <p className="flex flex-wrap gap-1.5">
-          {combo.tags.map((t) => (
-            <span key={t} className="rounded-md bg-ink-800 px-2 py-0.5 text-xs">
-              #{t}
-            </span>
-          ))}
-        </p>
-      )}
-
-      {combo.notes && (
-        <section className="space-y-1">
-          <h2 className="text-xs font-bold tracking-wide text-ink-400 uppercase">Notes</h2>
-          <p className="text-sm whitespace-pre-wrap text-ink-200">{combo.notes}</p>
-        </section>
-      )}
-
-      <p className="text-xs text-ink-500">
-        Created {new Date(combo.createdAt).toLocaleString()} · Updated {new Date(combo.updatedAt).toLocaleString()}
-      </p>
+      <div className="grid items-start gap-4 lg:grid-cols-12">
+        <div className="flex flex-col gap-4 lg:col-span-7">
+          <Panel className="flex flex-col gap-3 p-4">
+            <PanelHeader title="Original notation" aside={<span className="label-sm text-[11px] text-fg-muted uppercase">Dialect: {getDialect(combo.dialect).name}</span>} />
+            <pre className="overflow-x-auto rounded-[4px] border border-line-strong bg-neutral p-3 font-mono text-sm leading-[22px] font-medium whitespace-pre-wrap text-fg">{combo.notation}</pre>
+          </Panel>
+          {combo.tags.length > 0 && (
+            <Panel className="flex flex-col gap-3 p-4">
+              <PanelHeader title="Tags" />
+              <p className="flex flex-wrap gap-1.5">
+                {combo.tags.map((t) => (
+                  <Chip key={t}>#{t}</Chip>
+                ))}
+              </p>
+            </Panel>
+          )}
+        </div>
+        <div className="flex flex-col gap-4 lg:col-span-5">
+          <Panel className="flex flex-col gap-3 p-4">
+            <PanelHeader title="Notes" />
+            {combo.notes ? <Notes text={combo.notes} /> : <p className="text-sm text-fg-muted">No notes.</p>}
+          </Panel>
+          <p className="label-sm px-1 text-[11px] text-fg-muted">
+            Created {new Date(combo.createdAt).toLocaleString()} · Updated {new Date(combo.updatedAt).toLocaleString()}
+            {warnings > 0 && <span className="text-warning"> · ⚠ {warnings} warning{warnings > 1 ? 's' : ''}</span>}
+          </p>
+        </div>
+      </div>
 
       <ConfirmDialog
         open={confirming}
@@ -186,4 +210,35 @@ function Details({
       />
     </article>
   );
+}
+
+function Meta({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <div className="flex items-center gap-2">
+      <dt className="label-md text-fg-muted">{label}</dt>
+      <dd className="text-fg">{children}</dd>
+    </div>
+  );
+}
+
+/** Notes text; a generated combo's "To verify:" list is highlighted in the warning color. */
+function Notes({ text }: { text: string }) {
+  const [before, after] = splitVerify(text);
+  return (
+    <div className="space-y-3 text-sm whitespace-pre-wrap text-fg">
+      {before && <p>{before}</p>}
+      {after && (
+        <div className="rounded-[4px] border border-warning/50 bg-warning/5 p-3 text-warning">
+          <p className="label-md mb-1">To verify</p>
+          <p>{after}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function splitVerify(text: string): [string, string] {
+  const marker = text.indexOf('To verify:');
+  if (marker < 0) return [text, ''];
+  return [text.slice(0, marker).trim(), text.slice(marker + 'To verify:'.length).trim()];
 }

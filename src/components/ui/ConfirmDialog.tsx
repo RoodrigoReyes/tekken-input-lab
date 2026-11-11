@@ -26,12 +26,19 @@ export function ConfirmDialog({ open, title, message, confirmLabel, onConfirm, o
         e.preventDefault();
         onCancel();
       }}
-      className="m-auto w-[min(92vw,26rem)] rounded-xl border border-ink-700 bg-ink-850 p-5 text-ink-100 backdrop:bg-black/70"
+      className="m-auto w-[min(92vw,30rem)] rounded-lg border border-line bg-surface p-5 text-fg backdrop:bg-black/70"
     >
-      <h2 className="text-lg font-bold">{title}</h2>
-      <p className="mt-2 text-sm text-ink-400">{message}</p>
-      <div className="mt-5 flex justify-end gap-2">
-        <Button variant="ghost" onClick={onCancel}>
+      <div className="flex items-start gap-3">
+        <span aria-hidden className="flex size-10 shrink-0 items-center justify-center rounded-full bg-danger-surface text-lg text-danger">
+          ✕
+        </span>
+        <div>
+          <h2 className="text-xl leading-6 font-semibold">{title}</h2>
+          <p className="mt-2 text-sm text-fg-muted">{message}</p>
+        </div>
+      </div>
+      <div className="mt-6 flex items-center justify-end gap-4">
+        <Button variant="link" onClick={onCancel}>
           Cancel
         </Button>
         <Button variant="danger" onClick={onConfirm} autoFocus>
