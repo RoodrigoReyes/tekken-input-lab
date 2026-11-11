@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TekkenInputLab — Combo Editor</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #08090b;
+        color: #e3e2e5;
+        font-family: 'Archivo', sans-serif;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0e1013;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333a45;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #475262;
+      }
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body class="bg-[#08090b] text-[#e3e2e5] antialiased selection:bg-[#ff571f] selection:text-white">
+<!-- ============================================================== -->
+<!-- 1. STICKY TOP APP SHELL BAR                                    -->
+<!-- ============================================================== -->
+<header class="sticky top-0 z-50 w-full bg-[#08090b] border-b border-[#333a45]/80">
+<div class="h-14 w-full px-4 md:px-6 flex items-center justify-between gap-4">
+<!-- Brand & Left Nav -->
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-2.5 group focus:outline-none" href="#">
+<!-- Tilted 2x2 Arcade Cluster Logo (All 4 lit: 1 pink #de7fb7, 2 teal #29b1a9, 3 lavender #7996ca, 4 coral #f14b46; right col raised ~14%) -->
+<div class="w-8 h-8 bg-black rounded p-0.5 border border-[#333a45] flex items-center justify-center group-hover:border-[#ff571f] transition-colors shrink-0">
+<svg class="w-6 h-6" viewbox="0 0 40 40">
+<!-- Left Column: Button 1 (Pink LP), Button 3 (Lavender LK) -->
+<circle cx="12" cy="14" fill="#de7fb7" r="6.8" stroke="#ffffff" stroke-width="1.2"></circle>
+<text fill="#000000" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="900" text-anchor="middle" x="12" y="16.5">1</text>
+<circle cx="12" cy="28" fill="#7996ca" r="6.8" stroke="#ffffff" stroke-width="1.2"></circle>
+<text fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="900" text-anchor="middle" x="12" y="30.5">3</text>
+<!-- Right Column (Raised by ~14%): Button 2 (Teal RP), Button 4 (Coral RK) -->
+<circle cx="28" cy="9.5" fill="#29b1a9" r="6.8" stroke="#ffffff" stroke-width="1.2"></circle>
+<text fill="#000000" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="900" text-anchor="middle" x="28" y="12">2</text>
+<circle cx="28" cy="23.5" fill="#f14b46" r="6.8" stroke="#ffffff" stroke-width="1.2"></circle>
+<text fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="900" text-anchor="middle" x="28" y="26">4</text>
+</svg>
+</div>
+<span class="font-bold text-sm tracking-wider uppercase font-mono-code text-white group-hover:text-[#ff571f] transition-colors">
+            TekkenInputLab
+          </span>
+</a>
+<!-- Section Nav Indicator -->
+<nav class="hidden md:flex items-center gap-1 text-xs font-semibold uppercase tracking-wider font-mono-code">
+<a class="px-2.5 py-1 text-[#8b93a0] hover:text-white transition-colors" href="#">Library</a>
+<a class="px-2.5 py-1 text-white bg-[#21262d] rounded border border-[#333a45]" href="#">Combos / Editor</a>
+<a class="px-2.5 py-1 text-[#8b93a0] hover:text-white transition-colors" href="#">Reference</a>
+</nav>
+</div>
+<!-- Right Nav Actions -->
+<div class="flex items-center gap-3 shrink-0">
+<button class="h-8 px-3 bg-[#ff571f] text-white hover:bg-[#ff6e3d] active:bg-[#e0450f] rounded font-bold text-xs uppercase tracking-wider font-mono-code flex items-center gap-1.5 transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>+ New</span>
+</button>
+<div class="w-8 h-8 rounded bg-[#21262d] border border-[#333a45] flex items-center justify-center text-xs font-mono-code text-[#ff571f] font-bold">
+          P1
+        </div>
+</div>
+</div>
+</header>
+<!-- ============================================================== -->
+<!-- STATE SIMULATOR BAR                                            -->
+<!-- ============================================================== -->
+<aside aria-label="Review State Simulator" class="w-full bg-[#0e1013] border-b border-[#333a45] px-4 md:px-6 py-1.5 flex flex-wrap items-center justify-between gap-2 text-xs font-mono-code z-40">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-[#ff571f] font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[15px]">tune</span>
+        State:
+      </span>
+<span class="text-[#8b93a0] hidden sm:inline">Interactive test switcher:</span>
+</div>
+<div class="flex items-center flex-wrap gap-1.5" id="state-buttons">
+<button class="state-btn h-6 px-2.5 rounded text-[11px] uppercase font-bold tracking-wider bg-[#ff571f] text-white transition-all" id="btn-state-active" onclick="setEditorState('active')" type="button">
+        1. Active T7 Screw Route
+      </button>
+<button class="state-btn h-6 px-2.5 rounded text-[11px] uppercase font-semibold tracking-wider bg-[#21262d] text-[#8b93a0] hover:text-white border border-[#333a45] transition-all" id="btn-state-empty" onclick="setEditorState('empty')" type="button">
+        2. Empty State
+      </button>
+<button class="state-btn h-6 px-2.5 rounded text-[11px] uppercase font-semibold tracking-wider bg-[#21262d] text-[#8b93a0] hover:text-white border border-[#333a45] transition-all" id="btn-state-error" onclick="setEditorState('error')" type="button">
+        3. Save Error Banner
+      </button>
+</div>
+</aside>
+<!-- GLOBAL SAVE ERROR BANNER (CONDITIONAL) -->
+<div class="hidden w-full bg-[#3a1410] border-b border-[#ef4444] px-4 md:px-6 py-2 flex items-center justify-between gap-3 text-xs font-mono-code text-[#ffb4ab]" id="save-error-banner">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#ef4444] text-[18px]">error</span>
+<span class="font-bold uppercase tracking-wider">Validation Error:</span>
+<span>Combo Name is required before saving route.</span>
+</div>
+<button class="text-[#ffb4ab] hover:text-white" onclick="dismissBanner()"><span class="material-symbols-outlined text-[16px]">close</span></button>
+</div>
+<!-- MAIN WORKSPACE -->
+<main class="w-full max-w-[1560px] mx-auto px-4 md:px-6 py-4 flex flex-col gap-4">
+<!-- ============================================================== -->
+<!-- 2. ESSENTIAL BAR (ALWAYS VISIBLE, COMPACT TOP SECTION)          -->
+<!-- ============================================================== -->
+<section class="w-full bg-[#0e1013] border border-[#333a45] rounded p-3.5 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
+<!-- Left Essential Elements: Name, Game, Character, Partner -->
+<div class="flex flex-wrap items-center gap-3 grow">
+<!-- Combo Name Field -->
+<div class="flex flex-col gap-1 min-w-[220px] grow sm:grow-0">
+<div class="flex items-center justify-between text-[11px] font-mono-code uppercase text-[#8b93a0]">
+<span>Combo Name <span class="text-[#ff571f]">*</span></span>
+</div>
+<input class="h-8 px-2.5 bg-[#21262d] border border-[#333a45] rounded text-sm text-white font-mono-code font-bold uppercase focus:outline-none focus:border-[#ff571f] transition-colors" id="combo-name-input" placeholder="e.g. Old screw route" type="text" value="Old screw route"/>
+</div>
+<!-- Game Selector -->
+<div class="flex flex-col gap-1 min-w-[180px]">
+<div class="text-[11px] font-mono-code uppercase text-[#8b93a0]">Fighting Game</div>
+<div class="relative">
+<select class="w-full h-8 px-2.5 bg-[#21262d] border border-[#333a45] rounded text-xs text-white font-mono-code font-semibold uppercase appearance-none pr-8 focus:outline-none focus:border-[#ff571f]" id="select-game" onchange="handleGameChange(this.value)">
+<option value="T8">Tekken 8 (Heat System)</option>
+<option selected="" value="T7">Tekken 7 (Screw System)</option>
+<option value="TTT2">Tekken Tag Tournament 2</option>
+<option value="T6">Tekken 6 (Bloodline Rebellion)</option>
+</select>
+<span class="material-symbols-outlined absolute right-1.5 top-1.5 text-[#8b93a0] pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Character Input + Quick Chips -->
+<div class="flex flex-col gap-1 grow">
+<div class="text-[11px] font-mono-code uppercase text-[#8b93a0] flex items-center justify-between">
+<span>Fighter <span class="text-[#ff571f]">*</span></span>
+<div class="flex items-center gap-1">
+<span class="text-[10px] text-[#6b7280]">Quick:</span>
+<button class="hover:text-[#ff571f] font-mono-code text-[10px] text-white underline" onclick="setCharacter('Lars Alexandersson')" type="button">Lars</button>
+<span class="text-[#333a45]">·</span>
+<button class="hover:text-[#ff571f] font-mono-code text-[10px] text-[#8b93a0]" onclick="setCharacter('Jin Kazama')" type="button">Jin</button>
+<span class="text-[#333a45]">·</span>
+<button class="hover:text-[#ff571f] font-mono-code text-[10px] text-[#8b93a0]" onclick="setCharacter('Kazuya Mishima')" type="button">Kazuya</button>
+<span class="text-[#333a45]">·</span>
+<button class="hover:text-[#ff571f] font-mono-code text-[10px] text-[#8b93a0]" onclick="setCharacter('Reina')" type="button">Reina</button>
+</div>
+</div>
+<div class="relative">
+<input class="w-full h-8 px-2.5 bg-[#21262d] border border-[#333a45] rounded text-xs text-white font-mono-code focus:outline-none focus:border-[#ff571f]" id="char-input" placeholder="e.g. Lars Alexandersson" type="text" value="Lars Alexandersson"/>
+</div>
+</div>
+<!-- Partner Input (Conditional TTT2 Only, hidden/disabled cleanly here) -->
+<div class="opacity-40 flex flex-col gap-1 min-w-[170px] transition-opacity" id="partner-container">
+<div class="text-[11px] font-mono-code uppercase text-[#8b93a0] flex items-center gap-1">
+<span>Tag Partner</span>
+<span class="text-[9px] text-[#8b93a0]">(TTT2 only)</span>
+</div>
+<input class="h-8 px-2.5 bg-[#161a23] border border-[#333a45] rounded text-xs text-[#8b93a0] font-mono-code cursor-not-allowed" disabled="" id="partner-input" placeholder="Inactive for Tekken 7" type="text"/>
+</div>
+</div>
+<!-- Right Essential Actions -->
+<div class="flex items-center gap-2 self-end lg:self-center shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-[#21262d] w-full lg:w-auto justify-end">
+<a class="h-8 px-3 text-[#8b93a0] hover:text-white font-mono-code text-xs uppercase font-semibold flex items-center transition-colors" href="#">
+          Cancel
+        </a>
+<button class="h-8 px-4 bg-[#ff571f] hover:bg-[#ff6e3d] active:bg-[#e0450f] text-white rounded font-mono-code font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors focus:outline-none" id="btn-save-combo" onclick="triggerSave()" type="button">
+<span class="material-symbols-outlined text-[16px]" id="save-icon">save</span>
+<span id="save-text">Save Combo</span>
+</button>
+</div>
+</section>
+<!-- ============================================================== -->
+<!-- 3. PRIMARY SECTION: SIDE-BY-SIDE NOTATION INPUT & ARCADE VIEW -->
+<!-- ============================================================== -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+<!-- LEFT COLUMN (6 COLS): MONOSPACE NOTATION INPUT -->
+<div class="lg:col-span-6 flex flex-col gap-3">
+<!-- CARD: NOTATION EDITOR -->
+<div class="bg-[#0e1013] border border-[#333a45] rounded p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between border-b border-[#21262d] pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#ff571f] text-[18px]">terminal</span>
+<h2 class="font-mono-code text-xs uppercase font-bold text-white tracking-wider">Notation Input</h2>
+</div>
+<span class="text-[11px] font-mono-code text-[#8b93a0] italic">The original text is saved exactly as typed.</span>
+</div>
+<!-- Quick Syntax Tokens Row -->
+<div class="flex items-center gap-1 overflow-x-auto py-1 px-1.5 bg-[#161a23] border border-[#2a303d] rounded text-xs font-mono-code">
+<span class="text-[10px] text-[#8b93a0] uppercase tracking-wider mr-1 shrink-0">Tokens:</span>
+<!-- Operators -->
+<button class="px-2 py-0.5 rounded bg-[#21262d] hover:bg-[#333a45] text-[#16d61f] font-bold border border-[#333a45] shrink-0" onclick="insertToken('&gt; ')" title="Stage Separator" type="button">&gt;</button>
+<button class="px-2 py-0.5 rounded bg-[#21262d] hover:bg-[#333a45] text-white font-bold border border-[#333a45] shrink-0" onclick="insertToken('+')" title="Simultaneous" type="button">+</button>
+<button class="px-2 py-0.5 rounded bg-[#21262d] hover:bg-[#333a45] text-white font-bold border border-[#333a45] shrink-0" onclick="insertToken(', ')" title="Sequential" type="button">,</button>
+<button class="px-2 py-0.5 rounded bg-[#21262d] hover:bg-[#333a45] text-white font-bold border border-[#333a45] shrink-0" onclick="insertToken('~ ')" title="Slide Input" type="button">~</button>
+<button class="px-2 py-0.5 rounded bg-[#ffd166]/20 hover:bg-[#ffd166]/40 text-[#ffd166] font-bold border border-[#ffd166]/50 shrink-0" onclick="insertToken(':')" title="Just Frame" type="button">:</button>
+<div class="h-4 w-px bg-[#333a45] mx-1 shrink-0"></div>
+<!-- Mechanics -->
+<button class="px-2 py-0.5 rounded bg-[#06b6d4]/20 hover:bg-[#06b6d4]/40 text-[#06b6d4] font-bold border border-[#06b6d4]/50 shrink-0" onclick="insertToken('S! ')" title="Tekken 7 Screw" type="button">S!</button>
+<button class="px-2 py-0.5 rounded bg-[#f97316]/20 hover:bg-[#f97316]/40 text-[#f97316] font-bold border border-[#f97316]/50 shrink-0" onclick="insertToken('B! ')" title="Tekken Bound" type="button">B!</button>
+<button class="px-2 py-0.5 rounded bg-[#14b8a6]/20 hover:bg-[#14b8a6]/40 text-[#14b8a6] font-bold border border-[#14b8a6]/50 shrink-0" onclick="insertToken('T! ')" title="Tekken 8 Tornado" type="button">T!</button>
+<div class="h-4 w-px bg-[#333a45] mx-1 shrink-0"></div>
+<!-- Buttons -->
+<button class="w-6 h-6 rounded bg-[#21262d] hover:bg-[#333a45] text-[#de7fb7] font-bold border border-[#de7fb7]/40 shrink-0 flex items-center justify-center" onclick="insertToken('1')" type="button">1</button>
+<button class="w-6 h-6 rounded bg-[#21262d] hover:bg-[#333a45] text-[#29b1a9] font-bold border border-[#29b1a9]/40 shrink-0 flex items-center justify-center" onclick="insertToken('2')" type="button">2</button>
+<button class="w-6 h-6 rounded bg-[#21262d] hover:bg-[#333a45] text-[#7996ca] font-bold border border-[#7996ca]/40 shrink-0 flex items-center justify-center" onclick="insertToken('3')" type="button">3</button>
+<button class="w-6 h-6 rounded bg-[#21262d] hover:bg-[#333a45] text-[#f14b46] font-bold border border-[#f14b46]/40 shrink-0 flex items-center justify-center" onclick="insertToken('4')" type="button">4</button>
+<button class="px-1.5 h-6 rounded bg-[#21262d] hover:bg-[#333a45] text-[#ff571f] font-bold border border-[#ff571f]/40 shrink-0 flex items-center justify-center text-[11px]" onclick="insertToken('1+2')" type="button">1+2</button>
+</div>
+<!-- Large Monospace Textarea (JetBrains Mono, 14px) -->
+<div class="relative">
+<textarea class="w-full p-3 bg-[#21262d] border border-[#333a45] rounded text-white font-mono-code text-[14px] leading-relaxed tracking-wide focus:outline-none focus:border-[#ff571f] transition-colors resize-y" id="notation-textarea" oninput="handleNotationInput(this.value)" placeholder="e.g.: qcf+1 &gt; uf+2,1 B! &gt; SSL 1~b~uf+4 &gt; f+1,2,1+2" rows="5">qcf+1 &gt; uf+2,1 B! &gt; SSL 1~b~uf+4 &gt; f+1,2,1+2</textarea>
+<span class="absolute bottom-2.5 right-3 text-[11px] font-mono-code text-[#8b93a0] select-none pointer-events-none" id="char-counter">47 chars</span>
+</div>
+<!-- Syntax Parser Telemetry Footer -->
+<div class="flex items-center justify-between text-xs font-mono-code text-[#8b93a0] pt-1">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#f5a524]" id="syntax-indicator-dot"></span>
+<span>Validation: <strong class="text-[#f5a524]" id="parser-status">1 Warning detected</strong></span>
+</span>
+<span class="text-[11px]">Dialect: <span class="text-white">Zaibatsu / T7 Strict</span></span>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 4. SECONDARY SECTION (QUIET & GROUPED COLLAPSIBLES)            -->
+<!-- ============================================================== -->
+<div class="bg-[#0e1013] border border-[#333a45] rounded p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between border-b border-[#21262d] pb-2">
+<h3 class="font-mono-code text-xs uppercase font-bold text-[#8b93a0] tracking-wider">Secondary Attributes</h3>
+<span class="text-[10px] font-mono-code text-[#6b7280]">Optional Metadata</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<!-- Difficulty -->
+<div class="flex flex-col gap-1">
+<label class="text-[11px] font-mono-code uppercase text-[#8b93a0]" for="select-diff">Execution Difficulty</label>
+<div class="relative">
+<select class="w-full h-8 px-2.5 bg-[#21262d] border border-[#333a45] rounded text-xs text-white font-mono-code appearance-none pr-8 focus:outline-none focus:border-[#ff571f]" id="select-diff">
+<option selected="">Beginner (Standard BnB)</option>
+<option>Intermediate (Strict Just-Frames)</option>
+<option>Advanced (Tight Micro-Dash)</option>
+</select>
+<span class="material-symbols-outlined absolute right-1.5 top-1.5 text-[#8b93a0] pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Damage Output -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between text-[11px] font-mono-code uppercase text-[#8b93a0]">
+<label for="damage-input">Damage Output</label>
+<span class="text-[10px]">HP scale</span>
+</div>
+<div class="relative">
+<input class="w-full h-8 px-2.5 bg-[#21262d] border border-[#333a45] rounded text-xs text-white font-mono-code font-bold pr-12 focus:outline-none focus:border-[#ff571f]" id="damage-input" max="999" min="0" type="number" value="68"/>
+<span class="absolute right-2.5 top-2 text-[10px] font-mono-code text-[#8b93a0] font-bold">PTS</span>
+</div>
+</div>
+</div>
+<!-- Tags -->
+<div class="flex flex-col gap-1.5 pt-1">
+<span class="text-[11px] font-mono-code uppercase text-[#8b93a0]">Lab Tags</span>
+<div class="flex items-center flex-wrap gap-1.5 min-h-[34px] p-1.5 bg-[#161a23] border border-[#333a45] rounded">
+<div class="flex items-center flex-wrap gap-1.5" id="active-tags-list">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#21262d] border border-[#333a45] text-xs font-mono-code text-[#ff571f]">
+                  #screw-test
+                  <button class="hover:text-red-400 text-[#8b93a0]" onclick="this.parentElement.remove()" type="button"><span class="material-symbols-outlined text-[13px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#21262d] border border-[#333a45] text-xs font-mono-code text-[#ff571f]">
+                  #lars
+                  <button class="hover:text-red-400 text-[#8b93a0]" onclick="this.parentElement.remove()" type="button"><span class="material-symbols-outlined text-[13px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#21262d] border border-[#333a45] text-xs font-mono-code text-[#ff571f]">
+                  #mid-launcher
+                  <button class="hover:text-red-400 text-[#8b93a0]" onclick="this.parentElement.remove()" type="button"><span class="material-symbols-outlined text-[13px]">close</span></button>
+</span>
+</div>
+<input class="bg-transparent border-none text-xs font-mono-code text-white focus:outline-none min-w-[90px] px-1 py-0.5" id="add-tag-input" onkeydown="handleTagKeydown(event)" placeholder="+ Add tag..." type="text"/>
+</div>
+</div>
+<!-- Tactical / Execution Notes -->
+<div class="flex flex-col gap-1 pt-1">
+<span class="text-[11px] font-mono-code uppercase text-[#8b93a0]">Tactical &amp; Execution Notes</span>
+<textarea class="w-full p-2 bg-[#21262d] border border-[#333a45] rounded text-xs text-white font-mono-code leading-normal focus:outline-none focus:border-[#ff571f]" placeholder="Add micro-dash timing notes, axis alignments, wall carry tips..." rows="2">Deep dash required after screw. Can substitute ender with fb+2,1 for wall carry.</textarea>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- 5. ON DEMAND DRAWERS / ACCORDIONS                              -->
+<!-- ============================================================== -->
+<div class="bg-[#0e1013] border border-[#333a45] rounded divide-y divide-[#21262d]">
+<!-- Drawer 1: Notation Dialect -->
+<details class="group p-3">
+<summary class="flex items-center justify-between cursor-pointer font-mono-code text-xs uppercase font-bold text-[#8b93a0] hover:text-white select-none list-none">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-[#ff571f]">translate</span>
+<span>Notation Dialect: Standard (Wavu Wiki) / Zaibatsu</span>
+</span>
+<span class="material-symbols-outlined text-[18px] group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-2 text-xs font-mono-code text-[#8b93a0] leading-relaxed">
+<p>Standard Zaibatsu / Wavu Wiki dialect maps 1,2,3,4 to square, triangle, X, circle respectively. Separators (<code class="text-white">&gt;</code>) signify distinct juggle steps, commas (<code class="text-white">,</code>) denote strings, and tildes (<code class="text-white">~</code>) represent slide/feint inputs.</p>
+</div>
+</details>
+<!-- Drawer 2: Help / Notation Reference -->
+<details class="group p-3">
+<summary class="flex items-center justify-between cursor-pointer font-mono-code text-xs uppercase font-bold text-[#8b93a0] hover:text-white select-none list-none">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-[#ff571f]">help_outline</span>
+<span>Help &amp; Syntax Reference</span>
+</span>
+<span class="material-symbols-outlined text-[18px] group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-3 space-y-3 text-xs font-mono-code">
+<!-- Operators cheatsheet -->
+<div>
+<span class="text-[11px] font-bold uppercase text-white block mb-1">Execution Operators</span>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-[11px]">
+<div class="p-1 bg-[#161a23] rounded border border-[#2a303d]"><strong class="text-[#ff571f]">+</strong> : Simultaneous</div>
+<div class="p-1 bg-[#161a23] rounded border border-[#2a303d]"><strong class="text-white">,</strong> : Sequence string</div>
+<div class="p-1 bg-[#161a23] rounded border border-[#2a303d]"><strong class="text-white">~</strong> : Slide input</div>
+<div class="p-1 bg-[#161a23] rounded border border-[#2a303d]"><strong class="text-[#ffd166]">:</strong> : Just-frame</div>
+<div class="p-1 bg-[#161a23] rounded border border-[#2a303d]"><strong class="text-white">&gt;</strong> : Juggle step</div>
+<div class="p-1 bg-[#161a23] rounded border border-[#2a303d]"><strong class="text-white">*</strong> : Held button</div>
+<div class="p-1 bg-[#161a23] rounded border border-[#2a303d]"><strong class="text-white">&lt;</strong> : Delayed</div>
+<div class="p-1 bg-[#161a23] rounded border border-[#2a303d]"><strong class="text-white">;</strong> : Tag split</div>
+</div>
+</div>
+<!-- Tekken 7 Mechanic Matrix -->
+<div>
+<span class="text-[11px] font-bold uppercase text-white block mb-1">Tekken 7 Mechanic Matrix</span>
+<div class="flex flex-col gap-1 text-[11px]">
+<div class="flex items-center justify-between p-1.5 rounded bg-[#161a23] border border-[#2a303d]">
+<span class="font-bold text-[#06b6d4]">S! (Screw)</span>
+<span class="text-[#16d61f] font-semibold">Active Universal Juggle Extender (T7)</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-[#161a23] border border-[#2a303d]">
+<span class="font-bold text-[#f97316]">B! (Bound)</span>
+<span class="text-[#f5a524] font-semibold">Conditional: Low parry / Floor break only</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded bg-[#161a23] border border-[#2a303d]">
+<span class="font-bold text-[#14b8a6]">T! (Tornado)</span>
+<span class="text-[#ef4444] font-semibold">Unavailable in T7 (Tekken 8 only)</span>
+</div>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+<!-- RIGHT COLUMN (6 COLS): LIVE COMBO PREVIEW & DIAGNOSTICS -->
+<div class="lg:col-span-6 flex flex-col gap-3">
+<!-- CARD: LIVE ARCADE DISPLAY -->
+<div class="bg-[#0e1013] border border-[#333a45] rounded p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between border-b border-[#21262d] pb-2 flex-wrap gap-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#16d61f] animate-pulse"></span>
+<h2 class="font-mono-code text-xs uppercase font-bold text-white tracking-wider">
+                Live Arcade Display
+              </h2>
+</div>
+<!-- Toolbar: Scale (S/M/L) and Named Moves Toggle -->
+<div class="flex items-center gap-3">
+<!-- Scale buttons -->
+<div class="flex items-center bg-[#161a23] p-0.5 rounded border border-[#2a303d]">
+<button class="scale-btn px-2 py-0.5 text-[11px] font-mono-code rounded text-[#8b93a0] hover:text-white transition-colors" id="scale-btn-sm" onclick="setTileScale('sm')" type="button">S</button>
+<button class="scale-btn px-2 py-0.5 text-[11px] font-mono-code rounded bg-[#ff571f] text-white font-bold transition-colors" id="scale-btn-md" onclick="setTileScale('md')" type="button">M</button>
+<button class="scale-btn px-2 py-0.5 text-[11px] font-mono-code rounded text-[#8b93a0] hover:text-white transition-colors" id="scale-btn-lg" onclick="setTileScale('lg')" type="button">L</button>
+</div>
+<!-- Named Moves Toggle -->
+<label class="inline-flex items-center gap-1.5 cursor-pointer select-none">
+<input checked="" class="sr-only peer" id="toggle-named-moves" onchange="toggleNamedMoveLabels(this.checked)" type="checkbox"/>
+<span class="w-6 h-3.5 bg-[#21262d] peer-checked:bg-[#ff571f] rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-2.5 after:w-2.5 after:transition-all relative border border-[#333a45]"></span>
+<span class="font-mono-code text-[11px] text-[#8b93a0] uppercase">Move Names</span>
+</label>
+</div>
+</div>
+<!-- THE VIRTUAL ARCADE STICK CANVAS VIEWPORT -->
+<div class="w-full bg-[#161a23] border border-[#2a303d] rounded-lg p-3 min-h-[175px] flex items-center overflow-x-auto overflow-y-hidden" id="arcade-viewport">
+<!-- POPULATED STATE STRIP -->
+<div class="flex items-center gap-2.5 py-2 shrink-0" id="preview-populated-strip">
+<!-- 1. qcf+1 -->
+<div class="flex flex-col items-center gap-1 shrink-0 tile-container">
+<span class="move-label text-[10px] font-mono-code text-[#8b93a0] tracking-tight">Surging Gale</span>
+<div class="tile-ground h-[66px] px-2.5 bg-[#0e1013] border border-[#333a45] rounded-lg flex items-center gap-2">
+<!-- Motion pill qcf with mini curved/quarter-circle arrow and abbreviation -->
+<div class="flex items-center gap-1 px-1.5 py-1 bg-[#21262d] rounded border border-[#333a45] text-white">
+<svg class="w-3.5 h-3.5 text-[#ff571f] stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M7 6v6a5 5 0 0 0 5 5h6"></path>
+<polyline points="15 14 18 17 15 20"></polyline>
+</svg>
+<span class="font-mono-code font-bold text-[11px] uppercase tracking-wider">qcf</span>
+</div>
+<span class="text-[#8b93a0] font-mono-code font-bold text-xs">+</span>
+<!-- Tilted 2x2 Cluster Button 1 lit (Pink #de7fb7), 2,3,4 dark gray #3d4a4c -->
+<div class="cluster-graphic relative w-[40px] h-[40px] bg-black p-0.5 rounded flex items-center justify-center border border-[#21262d]" title="Button 1 (LP)">
+<svg class="w-8 h-8" viewbox="0 0 40 40">
+<!-- 1: pink -->
+<circle cx="12" cy="14" fill="#de7fb7" r="6.8" stroke="#ffffff" stroke-width="1.3"></circle>
+<text fill="#000000" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="900" text-anchor="middle" x="12" y="16.5">1</text>
+<!-- 2: dark -->
+<circle cx="28" cy="9.5" fill="#3d4a4c" r="6.2"></circle>
+<!-- 3: dark -->
+<circle cx="12" cy="28" fill="#3d4a4c" r="6.2"></circle>
+<!-- 4: dark -->
+<circle cx="28" cy="23.5" fill="#3d4a4c" r="6.2"></circle>
+</svg>
+</div>
+</div>
+<span class="font-mono-code text-xs text-white font-bold">qcf+1</span>
+</div>
+<!-- Separator > (Solid green right-pointing triangle #16d61f) -->
+<div class="flex flex-col items-center justify-center shrink-0 px-0.5">
+<span class="move-label text-[10px] text-transparent select-none"> </span>
+<div class="h-[66px] flex items-center justify-center">
+<svg class="w-3.5 h-3.5 text-[#16d61f] fill-current" viewbox="0 0 24 24">
+<polygon points="5,3 19,12 5,21"></polygon>
+</svg>
+</div>
+<span class="font-mono-code text-[11px] text-[#16d61f] font-bold">&gt;</span>
+</div>
+<!-- 2. uf+2,1 (Sequential separation! uf + 2, then comma, then 1) -->
+<div class="flex flex-col items-center gap-1 shrink-0 tile-container">
+<span class="move-label text-[10px] font-mono-code text-[#8b93a0] tracking-tight">Flurry Strike</span>
+<div class="tile-ground h-[66px] px-2.5 bg-[#0e1013] border border-[#333a45] rounded-lg flex items-center gap-1.5">
+<!-- uf diagonal arrow -->
+<div class="w-7 h-7 bg-[#21262d] rounded flex items-center justify-center border border-[#333a45] text-white">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M7 7h8v2H9.41L17 16.59 15.59 18 8 10.41V16H6V8c0-.55.45-1 1-1z"></path>
+</svg>
+</div>
+<span class="text-[#8b93a0] font-mono-code font-bold text-xs">+</span>
+<!-- Button 2 lit (Teal #29b1a9) -->
+<div class="cluster-graphic relative w-[40px] h-[40px] bg-black p-0.5 rounded flex items-center justify-center border border-[#21262d]" title="Button 2 (RP)">
+<svg class="w-8 h-8" viewbox="0 0 40 40">
+<circle cx="12" cy="14" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="28" cy="9.5" fill="#29b1a9" r="6.8" stroke="#ffffff" stroke-width="1.3"></circle>
+<text fill="#000000" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="900" text-anchor="middle" x="28" y="12">2</text>
+<circle cx="12" cy="28" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="28" cy="23.5" fill="#3d4a4c" r="6.2"></circle>
+</svg>
+</div>
+<!-- Gray chevron/comma -->
+<span class="text-[#8b93a0] font-mono-code font-bold text-xs">,</span>
+<!-- Button 1 lit (Pink #de7fb7) -->
+<div class="cluster-graphic relative w-[40px] h-[40px] bg-black p-0.5 rounded flex items-center justify-center border border-[#21262d]" title="Button 1 (LP)">
+<svg class="w-8 h-8" viewbox="0 0 40 40">
+<circle cx="12" cy="14" fill="#de7fb7" r="6.8" stroke="#ffffff" stroke-width="1.3"></circle>
+<text fill="#000000" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="900" text-anchor="middle" x="12" y="16.5">1</text>
+<circle cx="28" cy="9.5" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="12" cy="28" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="28" cy="23.5" fill="#3d4a4c" r="6.2"></circle>
+</svg>
+</div>
+</div>
+<span class="font-mono-code text-xs text-white font-bold">uf+2,1</span>
+</div>
+<!-- 3. B! (BOUND EVENT BADGE WITH PROMINENT DASHED AMBER OUTLINE) -->
+<div class="flex flex-col items-center gap-1 shrink-0 tile-container" id="preview-b-tile">
+<span class="move-label text-[10px] font-mono-code text-[#f5a524] tracking-tight">Warning</span>
+<div class="tile-ground h-[66px] px-3 bg-[#0e1013] border-2 border-dashed border-[#f5a524] rounded-lg flex flex-col items-center justify-center gap-1 relative" title="Bound [B!]: Flagged in Tekken 7">
+<div class="px-2 py-0.5 rounded bg-[#f97316] text-[#08090b] font-bold font-mono-code text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+<span>B!</span>
+</div>
+<span class="text-[9px] uppercase tracking-wider font-bold text-[#f5a524] font-mono-code">BOUND</span>
+<div class="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 bg-[#f5a524] text-black rounded-full flex items-center justify-center text-[10px] font-bold">!</div>
+</div>
+<span class="font-mono-code text-xs text-[#f5a524] font-bold underline decoration-dashed">B!</span>
+</div>
+<!-- Separator > -->
+<div class="flex flex-col items-center justify-center shrink-0 px-0.5">
+<span class="move-label text-[10px] text-transparent select-none"> </span>
+<div class="h-[66px] flex items-center justify-center">
+<svg class="w-3.5 h-3.5 text-[#16d61f] fill-current" viewbox="0 0 24 24">
+<polygon points="5,3 19,12 5,21"></polygon>
+</svg>
+</div>
+<span class="font-mono-code text-[11px] text-[#16d61f] font-bold">&gt;</span>
+</div>
+<!-- 4. SSL: Standalone movement label without tile in solid sky blue #0284c7 -->
+<div class="flex flex-col items-center gap-1 shrink-0 tile-container">
+<span class="move-label text-[10px] font-mono-code text-[#0284c7] tracking-tight">Movement</span>
+<div class="h-[66px] flex items-center justify-center px-1">
+<span class="px-2.5 py-1.5 rounded bg-[#0284c7]/20 border border-[#0284c7] text-[#0284c7] font-mono-code font-bold text-xs uppercase tracking-wider">
+                    SSL
+                  </span>
+</div>
+<span class="font-mono-code text-xs text-[#0284c7] font-bold">SSL</span>
+</div>
+<!-- 5. 1~b~uf+4: button 1 -> wave ~ -> b arrow -> wave ~ -> uf arrow + button 4 -->
+<div class="flex flex-col items-center gap-1 shrink-0 tile-container">
+<span class="move-label text-[10px] font-mono-code text-[#8b93a0] tracking-tight">Feint Extension</span>
+<div class="tile-ground h-[66px] px-2.5 bg-[#0e1013] border border-[#333a45] rounded-lg flex items-center gap-1.5">
+<!-- Button 1 (Pink) -->
+<div class="cluster-graphic relative w-[40px] h-[40px] bg-black p-0.5 rounded flex items-center justify-center border border-[#21262d]" title="Button 1">
+<svg class="w-8 h-8" viewbox="0 0 40 40">
+<circle cx="12" cy="14" fill="#de7fb7" r="6.8" stroke="#ffffff" stroke-width="1.3"></circle>
+<text fill="#000000" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="900" text-anchor="middle" x="12" y="16.5">1</text>
+<circle cx="28" cy="9.5" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="12" cy="28" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="28" cy="23.5" fill="#3d4a4c" r="6.2"></circle>
+</svg>
+</div>
+<!-- Gray wave ~ -->
+<span class="text-[#8b93a0] font-mono-code font-bold text-xs">~</span>
+<!-- b arrow -->
+<div class="w-7 h-7 bg-[#21262d] rounded flex items-center justify-center border border-[#333a45] text-white">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+</svg>
+</div>
+<!-- Gray wave ~ -->
+<span class="text-[#8b93a0] font-mono-code font-bold text-xs">~</span>
+<!-- uf arrow -->
+<div class="w-7 h-7 bg-[#21262d] rounded flex items-center justify-center border border-[#333a45] text-white">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M7 7h8v2H9.41L17 16.59 15.59 18 8 10.41V16H6V8c0-.55.45-1 1-1z"></path>
+</svg>
+</div>
+<span class="text-[#8b93a0] font-mono-code font-bold text-xs">+</span>
+<!-- Button 4 lit (Coral #f14b46) -->
+<div class="cluster-graphic relative w-[40px] h-[40px] bg-black p-0.5 rounded flex items-center justify-center border border-[#21262d]" title="Button 4">
+<svg class="w-8 h-8" viewbox="0 0 40 40">
+<circle cx="12" cy="14" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="28" cy="9.5" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="12" cy="28" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="28" cy="23.5" fill="#f14b46" r="6.8" stroke="#ffffff" stroke-width="1.3"></circle>
+<text fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="900" text-anchor="middle" x="28" y="26">4</text>
+</svg>
+</div>
+</div>
+<span class="font-mono-code text-xs text-white font-bold">1~b~uf+4</span>
+</div>
+<!-- Separator > -->
+<div class="flex flex-col items-center justify-center shrink-0 px-0.5">
+<span class="move-label text-[10px] text-transparent select-none"> </span>
+<div class="h-[66px] flex items-center justify-center">
+<svg class="w-3.5 h-3.5 text-[#16d61f] fill-current" viewbox="0 0 24 24">
+<polygon points="5,3 19,12 5,21"></polygon>
+</svg>
+</div>
+<span class="font-mono-code text-[11px] text-[#16d61f] font-bold">&gt;</span>
+</div>
+<!-- 6. f+1,2,1+2 (f + 1 -> chevron -> 2 -> chevron -> SIMULTANEOUS 1+2 in ONE single cluster!) -->
+<div class="flex flex-col items-center gap-1 shrink-0 tile-container">
+<span class="move-label text-[10px] font-mono-code text-[#8b93a0] tracking-tight">Lightning Assault</span>
+<div class="tile-ground h-[66px] px-2.5 bg-[#0e1013] border border-[#333a45] rounded-lg flex items-center gap-1.5">
+<!-- f arrow -->
+<div class="w-7 h-7 bg-[#21262d] rounded flex items-center justify-center border border-[#333a45] text-white">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
+</svg>
+</div>
+<span class="text-[#8b93a0] font-mono-code font-bold text-xs">+</span>
+<!-- Button 1 (Pink) -->
+<div class="cluster-graphic relative w-[40px] h-[40px] bg-black p-0.5 rounded flex items-center justify-center border border-[#21262d]" title="Button 1">
+<svg class="w-8 h-8" viewbox="0 0 40 40">
+<circle cx="12" cy="14" fill="#de7fb7" r="6.8" stroke="#ffffff" stroke-width="1.3"></circle>
+<text fill="#000000" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="900" text-anchor="middle" x="12" y="16.5">1</text>
+<circle cx="28" cy="9.5" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="12" cy="28" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="28" cy="23.5" fill="#3d4a4c" r="6.2"></circle>
+</svg>
+</div>
+<!-- Gray chevron/comma -->
+<span class="text-[#8b93a0] font-mono-code font-bold text-xs">,</span>
+<!-- Button 2 (Teal) -->
+<div class="cluster-graphic relative w-[40px] h-[40px] bg-black p-0.5 rounded flex items-center justify-center border border-[#21262d]" title="Button 2">
+<svg class="w-8 h-8" viewbox="0 0 40 40">
+<circle cx="12" cy="14" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="28" cy="9.5" fill="#29b1a9" r="6.8" stroke="#ffffff" stroke-width="1.3"></circle>
+<text fill="#000000" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="900" text-anchor="middle" x="28" y="12">2</text>
+<circle cx="12" cy="28" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="28" cy="23.5" fill="#3d4a4c" r="6.2"></circle>
+</svg>
+</div>
+<!-- Gray chevron/comma -->
+<span class="text-[#8b93a0] font-mono-code font-bold text-xs">,</span>
+<!-- SIMULTANEOUS 1+2 in ONE single cluster with both 1 pink and 2 teal lit! -->
+<div class="cluster-graphic relative w-[40px] h-[40px] bg-black p-0.5 rounded flex items-center justify-center border border-[#21262d]" title="Simultaneous 1+2 (LP+RP)">
+<svg class="w-8 h-8" viewbox="0 0 40 40">
+<!-- 1: pink -->
+<circle cx="12" cy="14" fill="#de7fb7" r="6.8" stroke="#ffffff" stroke-width="1.3"></circle>
+<text fill="#000000" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="900" text-anchor="middle" x="12" y="16.5">1</text>
+<!-- 2: teal -->
+<circle cx="28" cy="9.5" fill="#29b1a9" r="6.8" stroke="#ffffff" stroke-width="1.3"></circle>
+<text fill="#000000" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="900" text-anchor="middle" x="28" y="12">2</text>
+<!-- 3 & 4 dark -->
+<circle cx="12" cy="28" fill="#3d4a4c" r="6.2"></circle>
+<circle cx="28" cy="23.5" fill="#3d4a4c" r="6.2"></circle>
+</svg>
+</div>
+</div>
+<span class="font-mono-code text-xs text-white font-bold">f+1,2,1+2</span>
+</div>
+</div>
+<!-- EMPTY STATE PLACEHOLDER (VARIATION A) -->
+<div class="hidden w-full flex-col items-center justify-center py-6 text-center" id="preview-empty-state">
+<span class="material-symbols-outlined text-[36px] text-[#8b93a0] mb-1">sports_esports</span>
+<p class="font-mono-code text-xs uppercase font-bold text-white">Empty Canvas — Awaiting Input</p>
+<p class="font-mono-code text-[11px] text-[#8b93a0] max-w-sm mt-1">
+                Paste or type a combo, e.g. <button class="text-[#ff571f] underline hover:text-[#ff6e3d]" onclick="insertSampleRoute()" type="button">df+2 &gt; 1,2 &gt; T! &gt; f+2,1</button> to render hardware arcade tiles in real-time.
+              </p>
+</div>
+</div>
+<!-- Color Legend for 2x2 Button Matrix -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 border-t border-[#21262d] text-[11px] font-mono-code text-[#8b93a0]">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#de7fb7]"></span>
+<span>1 = LP (Pink)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#29b1a9]"></span>
+<span>2 = RP (Teal)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#7996ca]"></span>
+<span>3 = LK (Blue)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#f14b46]"></span>
+<span>4 = RK (Coral)</span>
+</div>
+</div>
+</div>
+<!-- ============================================================== -->
+<!-- PROBLEMS / DIAGNOSTICS RIGHT BELOW PREVIEW                     -->
+<!-- ============================================================== -->
+<div class="bg-[#0e1013] border border-[#333a45] rounded p-4 flex flex-col gap-2.5" id="diagnostics-container">
+<div class="flex items-center justify-between border-b border-[#21262d] pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#f5a524] text-[18px]">warning</span>
+<h3 class="font-mono-code text-xs uppercase font-bold text-white tracking-wider">
+                Problems &amp; Diagnostics (1 Warning)
+              </h3>
+</div>
+<span class="text-[11px] font-mono-code text-[#8b93a0]">Tekken 7 Compatibility Engine</span>
+</div>
+<!-- Prominent Amber Warning Card for [B!] -->
+<div class="bg-[#1f1911] border border-[#f5a524]/70 rounded p-3 flex flex-col gap-2" id="amber-diagnostic-card">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-[#f5a524] text-black font-mono-code text-[10px] font-bold uppercase tracking-wider">
+                  ⚠ Warning
+                </span>
+<span class="font-mono-code font-bold text-xs bg-[#2e2316] text-[#ffd166] px-1.5 py-0.5 rounded border border-[#f5a524]/40">
+                  Token: [B!]
+                </span>
+</div>
+<span class="text-[10px] font-mono-code text-[#8b93a0]">Col 15..17</span>
+</div>
+<p class="font-mono-code text-xs text-[#f5a524]/90 leading-relaxed">
+              Bound is not a juggle extender in Tekken 7 (Screw replaced it). It only occurs after low parries or certain strings on standing opponents.
+            </p>
+<div class="flex items-center justify-between pt-1 border-t border-[#f5a524]/20">
+<button class="px-2.5 py-1 rounded bg-[#ff571f] hover:bg-[#ff6e3d] text-white text-xs font-mono-code uppercase font-bold flex items-center gap-1.5 transition-colors" onclick="replaceBoundWithScrew()" type="button">
+<span class="material-symbols-outlined text-[14px]">auto_fix_high</span>
+<span>Replace with S! (Screw)</span>
+</button>
+<button class="text-xs font-mono-code text-[#8b93a0] hover:text-white underline" onclick="dismissDiagnostic()" type="button">
+                Dismiss warning
+              </button>
+</div>
+</div>
+<!-- Neutral AST Note -->
+<div class="flex items-center gap-2 text-[11px] font-mono-code text-[#8b93a0] px-1">
+<span class="material-symbols-outlined text-[15px] text-[#06b6d4]">info</span>
+<span>AST validation: 5 combo steps parsed cleanly. 1 token flagged for T7 spec.</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- TOAST FEEDBACK CONTAINER -->
+<div class="fixed bottom-4 right-4 z-50 flex flex-col gap-2 pointer-events-none" id="toast-viewport"></div>
+<!-- ============================================================== -->
+<!-- JAVASCRIPT STATE CONTROLLER & INTERACTIVITY                    -->
+<!-- ============================================================== -->
+<script>
+    // State switcher controller
+    function setEditorState(state) {
+      const buttons = document.querySelectorAll('.state-btn');
+      buttons.forEach(btn => {
+        btn.className = "state-btn h-6 px-2.5 rounded text-[11px] uppercase font-semibold tracking-wider bg-[#21262d] text-[#8b93a0] hover:text-white border border-[#333a45] transition-all";
+      });
+
+      const activeBtn = document.getElementById('btn-state-' + state);
+      if (activeBtn) {
+        activeBtn.className = "state-btn h-6 px-2.5 rounded text-[11px] uppercase font-bold tracking-wider bg-[#ff571f] text-white transition-all";
+      }
+
+      const nameInput = document.getElementById('combo-name-input');
+      const notationTextarea = document.getElementById('notation-textarea');
+      const previewStrip = document.getElementById('preview-populated-strip');
+      const previewEmpty = document.getElementById('preview-empty-state');
+      const errorBanner = document.getElementById('save-error-banner');
+      const amberCard = document.getElementById('amber-diagnostic-card');
+      const parserStatus = document.getElementById('parser-status');
+      const syntaxDot = document.getElementById('syntax-indicator-dot');
+      const charCounter = document.getElementById('char-counter');
+
+      // Reset base indicators
+      nameInput.classList.remove('border-[#ef4444]', 'bg-[#3a1410]');
+      nameInput.classList.add('border-[#333a45]', 'bg-[#21262d]');
+      errorBanner.classList.add('hidden');
+
+      if (state === 'active') {
+        nameInput.value = "Old screw route";
+        notationTextarea.value = "qcf+1 > uf+2,1 B! > SSL 1~b~uf+4 > f+1,2,1+2";
+        previewStrip.classList.remove('hidden');
+        previewStrip.classList.add('flex');
+        previewEmpty.classList.add('hidden');
+        previewEmpty.classList.remove('flex');
+        if (amberCard) amberCard.classList.remove('hidden');
+        parserStatus.innerText = "1 Warning detected";
+        parserStatus.className = "text-[#f5a524]";
+        syntaxDot.className = "w-2 h-2 rounded-full bg-[#f5a524]";
+        charCounter.innerText = notationTextarea.value.length + " chars";
+      } 
+      else if (state === 'empty') {
+        nameInput.value = "";
+        notationTextarea.value = "";
+        previewStrip.classList.add('hidden');
+        previewStrip.classList.remove('flex');
+        previewEmpty.classList.remove('hidden');
+        previewEmpty.classList.add('flex');
+        if (amberCard) amberCard.classList.add('hidden');
+        parserStatus.innerText = "Awaiting input...";
+        parserStatus.className = "text-[#8b93a0]";
+        syntaxDot.className = "w-2 h-2 rounded-full bg-[#8b93a0]";
+        charCounter.innerText = "0 chars";
+      } 
+      else if (state === 'error') {
+        nameInput.value = "";
+        nameInput.classList.remove('border-[#333a45]', 'bg-[#21262d]');
+        nameInput.classList.add('border-[#ef4444]', 'bg-[#3a1410]');
+        errorBanner.classList.remove('hidden');
+        nameInput.focus();
+      }
+    }
+
+    function dismissBanner() {
+      document.getElementById('save-error-banner').classList.add('hidden');
+    }
+
+    function dismissDiagnostic() {
+      const card = document.getElementById('amber-diagnostic-card');
+      if (card) card.classList.add('hidden');
+    }
+
+    // Auto-replace B! with S!
+    function replaceBoundWithScrew() {
+      const textarea = document.getElementById('notation-textarea');
+      textarea.value = textarea.value.replace(/B!/g, 'S!');
+      
+      const bTile = document.getElementById('preview-b-tile');
+      if (bTile) {
+        bTile.innerHTML = `
+          <span class="move-label text-[10px] font-mono-code text-[#06b6d4] tracking-tight">Screw (T7)</span>
+          <div class="tile-ground h-[66px] px-3 bg-[#0e1013] border border-[#06b6d4] rounded-lg flex flex-col items-center justify-center gap-1" title="Screw [S!]: Valid T7 Juggle Extender">
+            <div class="px-2 py-0.5 rounded bg-[#06b6d4] text-[#08090b] font-bold font-mono-code text-xs">
+              S!
+            </div>
+            <span class="text-[9px] uppercase tracking-wider font-bold text-[#06b6d4] font-mono-code">SCREW</span>
+          </div>
+          <span class="font-mono-code text-xs text-[#06b6d4] font-bold">S!</span>
+        `;
+      }
+
+      const card = document.getElementById('amber-diagnostic-card');
+      if (card) {
+        card.className = "bg-[#111f18] border border-[#16d61f]/60 rounded p-3 flex items-center justify-between";
+        card.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[#16d61f] text-[18px]">check_circle</span>
+            <span class="text-xs font-mono-code text-[#16d61f] font-bold">Replaced with S! (Screw) — Tekken 7 Spec Validated!</span>
+          </div>
+          <span class="text-[10px] font-mono-code text-[#8b93a0]">0 Warnings</span>
+        `;
+      }
+
+      const parserStatus = document.getElementById('parser-status');
+      parserStatus.innerText = "0 Warnings (T7 Validated)";
+      parserStatus.className = "text-[#16d61f]";
+      document.getElementById('syntax-indicator-dot').className = "w-2 h-2 rounded-full bg-[#16d61f]";
+
+      showToast("Updated syntax: Replaced Bound (B!) with Tekken 7 Screw (S!)");
+    }
+
+    // Token Insertion
+    function insertToken(token) {
+      const textarea = document.getElementById('notation-textarea');
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+      const val = textarea.value;
+      textarea.value = val.substring(0, start) + token + val.substring(end);
+      textarea.focus();
+      textarea.selectionStart = textarea.selectionEnd = start + token.length;
+      handleNotationInput(textarea.value);
+    }
+
+    function insertSampleRoute() {
+      const textarea = document.getElementById('notation-textarea');
+      textarea.value = "df+2 > 1,2 > T! > f+2,1";
+      document.getElementById('combo-name-input').value = "Ark Blast Starter";
+      handleNotationInput(textarea.value);
+    }
+
+    function handleNotationInput(val) {
+      document.getElementById('char-counter').innerText = val.length + " chars";
+      const previewStrip = document.getElementById('preview-populated-strip');
+      const previewEmpty = document.getElementById('preview-empty-state');
+      
+      if (val.trim() === "") {
+        previewStrip.classList.add('hidden');
+        previewStrip.classList.remove('flex');
+        previewEmpty.classList.remove('hidden');
+        previewEmpty.classList.add('flex');
+      } else {
+        previewStrip.classList.remove('hidden');
+        previewStrip.classList.add('flex');
+        previewEmpty.classList.add('hidden');
+        previewEmpty.classList.remove('flex');
+      }
+    }
+
+    // Game change logic
+    function handleGameChange(val) {
+      const partnerContainer = document.getElementById('partner-container');
+      const partnerInput = document.getElementById('partner-input');
+
+      if (val === 'TTT2') {
+        partnerContainer.classList.remove('opacity-40');
+        partnerInput.disabled = false;
+        partnerInput.placeholder = "e.g. Alisa Bosconovitch";
+        partnerInput.classList.remove('cursor-not-allowed');
+      } else {
+        partnerContainer.classList.add('opacity-40');
+        partnerInput.disabled = true;
+        partnerInput.value = "";
+        partnerInput.placeholder = "Inactive for " + val;
+        partnerInput.classList.add('cursor-not-allowed');
+      }
+    }
+
+    function setCharacter(name) {
+      document.getElementById('char-input').value = name;
+    }
+
+    // Scale toggle
+    function setTileScale(scale) {
+      document.querySelectorAll('.scale-btn').forEach(btn => {
+        btn.className = "scale-btn px-2 py-0.5 text-[11px] font-mono-code rounded text-[#8b93a0] hover:text-white transition-colors";
+      });
+      document.getElementById('scale-btn-' + scale).className = "scale-btn px-2 py-0.5 text-[11px] font-mono-code rounded bg-[#ff571f] text-white font-bold transition-colors";
+      
+      const graphics = document.querySelectorAll('.cluster-graphic');
+      const grounds = document.querySelectorAll('.tile-ground');
+
+      graphics.forEach(el => {
+        if (scale === 'sm') {
+          el.style.width = '30px';
+          el.style.height = '30px';
+        } else if (scale === 'lg') {
+          el.style.width = '48px';
+          el.style.height = '48px';
+        } else {
+          el.style.width = '40px';
+          el.style.height = '40px';
+        }
+      });
+
+      grounds.forEach(g => {
+        if (scale === 'sm') g.style.height = '52px';
+        else if (scale === 'lg') g.style.height = '78px';
+        else g.style.height = '66px';
+      });
+    }
+
+    // Toggle Move Names
+    function toggleNamedMoveLabels(checked) {
+      const labels = document.querySelectorAll('.move-label');
+      labels.forEach(l => {
+        l.style.display = checked ? 'block' : 'none';
+      });
+    }
+
+    // Save combo
+    function triggerSave() {
+      const name = document.getElementById('combo-name-input').value.trim();
+      if (!name) {
+        setEditorState('error');
+        return;
+      }
+
+      const saveBtn = document.getElementById('btn-save-combo');
+      const saveText = document.getElementById('save-text');
+      const saveIcon = document.getElementById('save-icon');
+
+      saveBtn.disabled = true;
+      saveIcon.innerText = "sync";
+      saveIcon.classList.add('animate-spin');
+      saveText.innerText = "Saving...";
+
+      setTimeout(() => {
+        saveBtn.disabled = false;
+        saveIcon.innerText = "save";
+        saveIcon.classList.remove('animate-spin');
+        saveText.innerText = "Save Combo";
+        showToast("Combo Route successfully saved to Tekken 7 Library.");
+      }, 700);
+    }
+
+    // Tag handlers
+    function handleTagKeydown(e) {
+      if (e.key === 'Enter' || e.key === ',') {
+        e.preventDefault();
+        const val = e.target.value.trim();
+        if (val) {
+          addTag(val.startsWith('#') ? val : '#' + val);
+          e.target.value = '';
+        }
+      }
+    }
+
+    function addTag(tagText) {
+      const container = document.getElementById('active-tags-list');
+      const span = document.createElement('span');
+      span.className = "inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#21262d] border border-[#333a45] text-xs font-mono-code text-[#ff571f]";
+      span.innerHTML = `${tagText} <button type="button" onclick="this.parentElement.remove()" class="hover:text-red-400 text-[#8b93a0]"><span class="material-symbols-outlined text-[13px]">close</span></button>`;
+      container.appendChild(span);
+    }
+
+    function showToast(message) {
+      const toastPort = document.getElementById('toast-viewport');
+      const toast = document.createElement('div');
+      toast.className = "bg-[#0e1013] border border-[#ff571f] text-white px-3.5 py-2 rounded shadow-lg flex items-center gap-2 font-mono-code text-xs pointer-events-auto";
+      toast.innerHTML = `<span class="material-symbols-outlined text-[#16d61f] text-[16px]">check_circle</span> <span>${message}</span>`;
+      toastPort.appendChild(toast);
+      setTimeout(() => toast.remove(), 3500);
+    }
+  </script>
+</body></html>
