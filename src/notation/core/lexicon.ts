@@ -62,6 +62,12 @@ export const MOTIONS: Readonly<Record<MotionId, MotionDef>> = {
   ff: { id: 'ff', label: 'Forward dash input', sequence: ['f', 'f'] },
   bb: { id: 'bb', label: 'Backdash input', sequence: ['b', 'b'] },
   fff: { id: 'fff', label: 'Run input', sequence: ['f', 'f', 'f'] },
+  // Guide shorthand: bf+2 = b,f+2 · fb+2 = f,b+2 · fn,3 = f,n,3
+  bf: { id: 'bf', label: 'Back, forward', sequence: ['b', 'f'] },
+  fb: { id: 'fb', label: 'Forward, back', sequence: ['f', 'b'] },
+  fn: { id: 'fn', label: 'Forward, neutral', sequence: ['f', 'n'] },
+  fcf: { id: 'fcf', label: 'Full circle forward', sequence: ['b', 'db', 'd', 'df', 'f', 'uf', 'u', 'ub'] },
+  fcb: { id: 'fcb', label: 'Full circle back', sequence: ['f', 'df', 'd', 'db', 'b', 'ub', 'u', 'uf'] },
 };
 
 export function lookupMotion(word: string): MotionDef | null {
@@ -92,6 +98,7 @@ export const HEAT_PREFIX: WordDef = { id: 'heat', abbr: 'H.', label: 'During Hea
 export const MOVEMENTS: Readonly<Record<string, WordDef>> = {
   dash: { id: 'dash', abbr: 'dash', label: 'Dash' },
   micro: { id: 'microdash', abbr: 'micro', label: 'Microdash' },
+  microdash: { id: 'microdash', abbr: 'micro', label: 'Microdash' },
   ss: { id: 'sidestep', abbr: 'SS', label: 'Sidestep' },
   ssl: { id: 'sidestepLeft', abbr: 'SSL', label: 'Sidestep left' },
   ssr: { id: 'sidestepRight', abbr: 'SSR', label: 'Sidestep right' },
@@ -99,8 +106,10 @@ export const MOVEMENTS: Readonly<Record<string, WordDef>> = {
   swl: { id: 'sidewalkLeft', abbr: 'SWL', label: 'Sidewalk left' },
   swr: { id: 'sidewalkRight', abbr: 'SWR', label: 'Sidewalk right' },
   bd: { id: 'backdash', abbr: 'BD', label: 'Backdash' },
+  backdash: { id: 'backdash', abbr: 'BD', label: 'Backdash' },
   bdc: { id: 'backdashCancel', abbr: 'BDC', label: 'Backdash cancel' },
   wd: { id: 'wavedash', abbr: 'WD', label: 'Wavedash' },
+  wavedash: { id: 'wavedash', abbr: 'WD', label: 'Wavedash' },
   cc: { id: 'crouchCancel', abbr: 'CC', label: 'Crouch cancel' },
   run: { id: 'run', abbr: 'run', label: 'Run' },
   jump: { id: 'jump', abbr: 'jump', label: 'Jump' },

@@ -7,7 +7,7 @@ export type GameId = 't6' | 't7' | 't8' | 'ttt2';
 
 export type Direction = 'f' | 'b' | 'u' | 'd' | 'df' | 'db' | 'uf' | 'ub' | 'n';
 
-export type MotionId = 'qcf' | 'qcb' | 'hcf' | 'hcb' | 'cd' | 'ff' | 'bb' | 'fff';
+export type MotionId = 'qcf' | 'qcb' | 'hcf' | 'hcb' | 'cd' | 'ff' | 'bb' | 'fff' | 'bf' | 'fb' | 'fn' | 'fcf' | 'fcb';
 
 export type AttackButton = 1 | 2 | 3 | 4;
 

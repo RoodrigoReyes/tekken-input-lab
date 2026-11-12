@@ -96,7 +96,7 @@ describe('CommandSequence', () => {
 });
 
 describe('MotionIcon', () => {
-  it.each(['qcf', 'qcb', 'hcf', 'hcb', 'cd', 'ff', 'bb', 'fff'])('draws only arrows for %s, no letters', (motion) => {
+  it.each(['qcf', 'qcb', 'hcf', 'hcb', 'cd', 'ff', 'bb', 'fff', 'bf', 'fb', 'fn', 'fcf', 'fcb'])('draws only arrows for %s, no letters', (motion) => {
     const { container } = render(<CommandSequence result={parseNotation(`${motion}+1`, { game: 'ttt2' })} />);
     const icon = container.querySelector(`[aria-label="${motion}"]`);
     expect(icon).not.toBeNull();

@@ -40,8 +40,35 @@ describe('guide notation (TTT2 BNB Combos)', () => {
     expect(compact('VTSc 2', ['Marduk'])).toBe('VTSc.2');
   });
 
-  it('Lars uses DE/SE in TTT2 and DEN/SEN in Tekken 7', () => {
-    expect(warnings('DEN 1', ['Lars'])).toContain('unknown-word');
+  it('Lars: TTT2 accepts DE/SE (guide) and DEN/SEN (kagewebsite); Tekken 7 only DEN/SEN', () => {
+    expect(warnings('DEN 1 > SEN 3 > DE 1 > SE 1', ['Lars'])).toEqual([]);
     expect(parseNotation('DEN 1', { game: 't7', characters: ['Lars'] }).diagnostics).toEqual([]);
+    expect(parseNotation('DE 1', { game: 't7', characters: ['Lars'] }).diagnostics.map((d) => d.code)).toContain('unknown-word');
+  });
+
+  it('bf, fb and fn are direction shorthands', () => {
+    expect(compact('bf+2,1')).toBe('bf+2 , 1');
+    expect(warnings('fb+2,1 B!', ['Lars'])).toEqual([]);
+    expect(warnings('fn,3,4', ['Lee'])).toEqual([]);
+  });
+
+  it('long movement spellings', () => {
+    expect(warnings('b+2,1+2 B! > microdash > df+1+2')).toEqual([]);
+    expect(warnings('CH df+2 > wavedash WS+2')).toEqual([]);
+    expect(warnings('3 W! > backdash > df+2 W!')).toEqual([]);
+  });
+
+  it('HS is Hell Sweep in TTT2, never Heat Smash', () => {
+    const r = parse('CH HS,4 B!', ['Devil Jin']);
+    expect(r.diagnostics.filter((d) => d.severity !== 'info')).toEqual([]);
+    expect(compact('CH HS,4 B!', ['Devil Jin'])).toContain('named(HS)');
+  });
+
+  it('stance names from ttt2combo.kagewebsite.com', () => {
+    expect(warnings('dash f 4 F KDE 4', ['Kunimitsu'])).toEqual([]);
+    expect(warnings('f+4~f > SET 1,2,4', ['Kunimitsu'])).toEqual([]);
+    expect(warnings('GEN 3', ['Jun'])).toEqual([]);
+    expect(warnings('DRU b 1+2,PLDs 1+2', ['Lei'])).toEqual([]);
+    expect(warnings('d/f 1 ~ B,SWY d 4', ['Paul'])).toEqual([]);
   });
 });

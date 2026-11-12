@@ -107,7 +107,7 @@ Pasé las 1,466 piezas por el parser actual con el juego TTT2:
 RDS (Xiaoyu, Miharu) · IZU (Jun, Unknown) · FLA (Baek) · ISW (Jaycee, Michelle) · CES (Jaycee, Michelle) · CDS (Jin) · SAV (Miguel) · DUCK (Steve) · MAD (Dr. B) · **SE/DE (Lars)** · FLY (Alisa, Jinpachi, True Ogre) · CDc (Dragunov) · SET (Kunimitsu) · MTS (Bruce) · BOK (Leo) · DSS (Marshall Law) · ROC, AGF (Alex, Roger Jr.) · CJM (Anna) · GS (Armor King, King) · CRN (Lei) · VTSc (Marduk) · EWHF, tgf (Heihachi) · DEWGF (Kazuya/Devil).
 
 **Correcciones a mi diccionario actual:**
-- En TTT2, Lars usa **DE/SE**, no DEN/SEN.
+- En TTT2, Lars se escribe **DE/SE** (esta guía) o **DEN/SEN** (la guía también, y ttt2combo.kagewebsite.com). Las dos formas son válidas; ver `docs/TTT2_SIGLAS.md`.
 - **RDS** sí existe en TTT2 (Xiaoyu y Miharu).
 - **EWHF** existe en TTT2 (Heihachi).
 
