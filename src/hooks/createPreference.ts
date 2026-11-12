@@ -11,6 +11,7 @@ export interface PreferenceConfig<T> {
 export interface Preference<T> {
   get: () => T;
   set: (value: T) => void;
+  subscribe: (listener: () => void) => () => void;
   use: () => [T, (value: T) => void];
 }
 
@@ -64,5 +65,5 @@ export function createPreference<T>({ key, parse, serialize }: PreferenceConfig<
 
   const use = (): [T, (value: T) => void] => [useSyncExternalStore(subscribe, get, get), set];
 
-  return { get, set, use };
+  return { get, set, subscribe, use };
 }
