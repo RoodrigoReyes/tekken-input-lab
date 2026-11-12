@@ -4,10 +4,10 @@ const NOTATION = 'qcf+1 > uf+2,1 B! > SSL 1~b~uf+4 > f+1,2,1+2';
 
 test('create, view, persist, and delete a combo', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { name: 'Combo Library' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Turn notation into arcade commands' })).toBeVisible();
   await expect(page.getByText('No combos yet')).toBeVisible();
 
-  await page.getByRole('link', { name: 'Create a combo' }).click();
+  await page.getByRole('link', { name: /^Create a combo/ }).click();
   // Wait for the editor: the library also has a "Game" filter.
   await expect(page.getByRole('heading', { name: 'New combo' })).toBeVisible();
   await page.getByLabel('Game').selectOption('t6');

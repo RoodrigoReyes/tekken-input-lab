@@ -13,6 +13,7 @@ export function LogoMark({ size = 28 }: { size?: number }) {
 }
 
 const NAV: ReadonlyArray<{ label: string; href: string; match: ReadonlyArray<Route['name']> }> = [
+  { label: 'Home', href: paths.home(), match: ['home'] },
   { label: 'Library', href: paths.library(), match: ['library', 'details'] },
   { label: 'TTT2 Generator', href: paths.generator(), match: ['generator'] },
 ];
@@ -22,14 +23,14 @@ export interface AppShellProps {
   children: ReactNode;
 }
 
-/** Sticky top bar (logo, wordmark, navigation, "+ New") and the full-width content area. */
+/** Sticky top bar (logo, wordmark, navigation, "+ New" outside home and the editor) and the full-width content area. */
 export function AppShell({ route, children }: AppShellProps) {
   return (
     <div className="min-h-screen bg-neutral">
       <header className="sticky top-0 z-20 border-b border-line-strong bg-neutral">
         <div className="flex h-14 items-center justify-between gap-3 px-2 sm:px-4">
           <div className="flex min-w-0 items-center gap-4 sm:gap-6">
-            <a href={paths.library()} className="flex shrink-0 items-center gap-2.5" aria-label="TekkenInputLab — Combo Library">
+            <a href={paths.home()} className="flex shrink-0 items-center gap-2.5" aria-label="TekkenInputLab — Home">
               <LogoMark />
               <span className="font-condensed hidden text-[20px] font-extrabold tracking-[0.02em] text-fg uppercase min-[420px]:inline">TekkenInputLab</span>
             </a>
@@ -49,7 +50,8 @@ export function AppShell({ route, children }: AppShellProps) {
               })}
             </nav>
           </div>
-          {route.name !== 'new' && (
+          {/* The single "create" entry point (home has its own large card for it). */}
+          {route.name !== 'new' && route.name !== 'home' && (
             <LinkButton href={paths.new()} variant="primary" aria-label="New combo">
               + New
             </LinkButton>

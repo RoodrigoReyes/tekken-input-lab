@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 export type Route =
+  | { name: 'home' }
   | { name: 'library' }
   | { name: 'new' }
   | { name: 'generator' }
@@ -15,11 +16,13 @@ export function parseRoute(hash: string): Route {
   if (details?.[1]) return { name: 'details', id: decodeURIComponent(details[1]) };
   if (path === '/new') return { name: 'new' };
   if (path === '/generator') return { name: 'generator' };
-  return { name: 'library' };
+  if (path === '/library') return { name: 'library' };
+  return { name: 'home' };
 }
 
 export const paths = {
-  library: () => '#/',
+  home: () => '#/',
+  library: () => '#/library',
   new: () => '#/new',
   generator: () => '#/generator',
   details: (id: string) => `#/combo/${encodeURIComponent(id)}`,

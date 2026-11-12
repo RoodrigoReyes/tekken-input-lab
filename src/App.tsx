@@ -4,6 +4,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import { ToastProvider } from './components/ui/Toast';
 import { DetailsView } from './features/details/DetailsView';
 import { EditorView } from './features/editor/EditorView';
+import { HomeView } from './features/home/HomeView';
 import { ExportButtons } from './features/export/ExportButtons';
 import { LibraryView } from './features/library/LibraryView';
 import { RepositoryProvider } from './hooks/useCombos';
@@ -21,6 +22,7 @@ export function App() {
     <RepositoryProvider repository={repository}>
       <ToastProvider>
         <AppShell route={route}>
+          {route.name === 'home' && <HomeView />}
           {route.name === 'library' && <LibraryView />}
           {route.name === 'new' && <EditorView key="new" id={null} navigate={navigate} />}
           {route.name === 'edit' && <EditorView key={`edit-${route.id}`} id={route.id} navigate={navigate} />}

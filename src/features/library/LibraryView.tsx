@@ -2,13 +2,12 @@ import { useMemo, useState } from 'react';
 import { LogoMark } from '../../components/AppShell';
 import { Button, LinkButton } from '../../components/ui/Button';
 import { Eyebrow, PageTitle, Panel } from '../../components/ui/Panel';
-import { useToast } from '../../components/ui/Toast';
-import { errorMessage, useCombos, useRepository } from '../../hooks/useCombos';
+import { useCombos } from '../../hooks/useCombos';
 import { paths } from '../../hooks/useHashRoute';
-import type { Combo } from '../../types/combo';
 import { BackupActions } from './BackupActions';
 import { ComboCard } from './ComboCard';
 import { Filters } from './Filters';
+import { useToggleFavorite } from './useToggleFavorite';
 import { collectCharacters, collectPartners, collectTags, EMPTY_FILTERS, filterCombos, type LibraryFilters } from './filters';
 
 function EmptyState({ title, body, action }: { title: string; body?: string; action: React.ReactNode }) {
@@ -23,20 +22,10 @@ function EmptyState({ title, body, action }: { title: string; body?: string; act
 }
 
 export function LibraryView() {
-  const repo = useRepository();
-  const toast = useToast();
   const { data: combos, loading, error, reload } = useCombos();
+  const toggleFavorite = useToggleFavorite(reload);
   const [filters, setFilters] = useState<LibraryFilters>(EMPTY_FILTERS);
   const visible = useMemo(() => filterCombos(combos, filters), [combos, filters]);
-
-  const toggleFavorite = async (combo: Combo) => {
-    try {
-      await repo.setFavorite(combo.id, !combo.favorite);
-      await reload();
-    } catch (e) {
-      toast(`Could not update favorite: ${errorMessage(e)}`, 'error');
-    }
-  };
 
   return (
     <div className="flex flex-col gap-4">
@@ -56,9 +45,6 @@ export function LibraryView() {
         </div>
         <div className="flex flex-wrap gap-2">
           <BackupActions onImported={reload} />
-          <LinkButton href={paths.new()} variant="primary">
-            + New combo
-          </LinkButton>
         </div>
       </Panel>
 
