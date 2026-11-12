@@ -3,6 +3,7 @@ import { DiagnosticsList } from '../../components/combos/DiagnosticsList';
 import { ComboVisual, DEFAULT_VISUAL, VisualControls } from '../../components/combos/ComboVisual';
 import { Button, LinkButton } from '../../components/ui/Button';
 import { ComboBox, Field, Select, TextArea, TextInput } from '../../components/ui/Field';
+import { Collapsible } from '../../components/ui/Collapsible';
 import { Eyebrow, PageTitle, Panel, PanelHeader } from '../../components/ui/Panel';
 import { TagInput } from '../../components/ui/TagInput';
 import { useToast } from '../../components/ui/Toast';
@@ -52,6 +53,22 @@ interface EditorFormProps {
   id: string | null;
   initial: ComboDraft | null;
   navigate: (hash: string) => void;
+}
+
+/** Whether a draft already carries optional details (then that section starts open). */
+function hasDetails(draft: ComboDraft): boolean {
+  return draft.tags.length > 0 || draft.notes.trim() !== '' || draft.damage !== undefined || draft.difficulty !== NEW_DRAFT.difficulty;
+}
+
+/** One-line recap of the optional details, shown while the section is folded. */
+function detailsSummary(draft: ComboDraft, damage: string): string {
+  const parts = [
+    `Difficulty: ${draft.difficulty}`,
+    damage.trim() && `${damage.trim()} dmg`,
+    draft.tags.length > 0 && `${draft.tags.length} tag${draft.tags.length > 1 ? 's' : ''}`,
+    draft.notes.trim() && 'Notes',
+  ];
+  return parts.filter(Boolean).join(' · ');
 }
 
 /** Damage field text → number, or undefined when empty/invalid (validated on save). */
@@ -197,7 +214,7 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
         )}
       </Panel>
 
-      <div className="grid items-start gap-4 lg:grid-cols-2">
+      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
         <div className="flex min-w-0 flex-col gap-4">
           <Panel className="flex flex-col gap-3 p-4">
             <PanelHeader title="Notation input" />
@@ -245,8 +262,12 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
             )}
           </Panel>
 
-          <Panel className="flex flex-col gap-4 p-4">
-            <PanelHeader title="Combo details" aside={<span className="label-sm text-[11px] text-fg-muted uppercase">Optional</span>} />
+          <Collapsible
+            title="Combo details"
+            summary={detailsSummary(draft, damage)}
+            defaultOpen={hasDetails(start.draft)}
+            aside={<span className="label-sm text-[11px] text-fg-muted uppercase">Optional</span>}
+          >
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Difficulty">
                 <Select value={draft.difficulty} onChange={(e) => set('difficulty', e.target.value as ComboDraft['difficulty'])}>
@@ -267,7 +288,7 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
             <Field label="Notes">
               <TextArea value={draft.notes} onChange={(e) => set('notes', e.target.value)} rows={4} placeholder="Timing tips, wall/ground conditions…" />
             </Field>
-          </Panel>
+          </Collapsible>
 
           <NotationReference game={draft.game} dialect={draft.dialect} characters={team} />
         </div>

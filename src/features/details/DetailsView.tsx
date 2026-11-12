@@ -3,6 +3,7 @@ import { DiagnosticsList } from '../../components/combos/DiagnosticsList';
 import { ComboVisual, DEFAULT_VISUAL, VisualControls } from '../../components/combos/ComboVisual';
 import { GameBadge } from '../../components/combos/GameBadge';
 import { Chip } from '../../components/ui/Chip';
+import { Collapsible } from '../../components/ui/Collapsible';
 import { Eyebrow, PageTitle, Panel, PanelHeader } from '../../components/ui/Panel';
 import { Button, LinkButton } from '../../components/ui/Button';
 import { ConfirmDialog } from '../../components/ui/ConfirmDialog';
@@ -60,7 +61,7 @@ function Details({
 }) {
   const repo = useRepository();
   const toast = useToast();
-  const [visual, setVisual] = useState(DEFAULT_VISUAL);
+  const [visual, setVisual] = useState<VisualOptions>(DETAILS_VISUAL);
   const [confirming, setConfirming] = useState(false);
   const svgRef = useRef<SVGSVGElement>(null);
   const parsed = useMemo(() => parseCombo(combo), [combo]);
@@ -173,26 +174,27 @@ function Details({
 
       <div className="grid items-start gap-4 lg:grid-cols-12">
         <div className="flex flex-col gap-4 lg:col-span-7">
-          <Panel className="flex flex-col gap-3 p-4">
-            <PanelHeader title="Original notation" aside={<span className="label-sm text-[11px] text-fg-muted uppercase">Dialect: {getDialect(combo.dialect).name}</span>} />
+          <Collapsible
+            title="Original notation"
+            defaultOpen
+            storageKey="details-notation"
+            bodyClassName="flex flex-col gap-3"
+            aside={<span className="label-sm text-[11px] text-fg-muted uppercase">Dialect: {getDialect(combo.dialect).name}</span>}
+          >
             <pre className="overflow-x-auto rounded-[4px] border border-line-strong bg-neutral p-3 font-mono text-sm leading-[22px] font-medium whitespace-pre-wrap text-fg">{combo.notation}</pre>
-          </Panel>
+          </Collapsible>
           {combo.tags.length > 0 && (
-            <Panel className="flex flex-col gap-3 p-4">
-              <PanelHeader title="Tags" />
-              <p className="flex flex-wrap gap-1.5">
-                {combo.tags.map((t) => (
-                  <Chip key={t}>#{t}</Chip>
-                ))}
-              </p>
-            </Panel>
+            <Collapsible title="Tags" summary={combo.tags.map((t) => `#${t}`).join(' ')} defaultOpen storageKey="details-tags" bodyClassName="flex flex-wrap gap-1.5">
+              {combo.tags.map((t) => (
+                <Chip key={t}>#{t}</Chip>
+              ))}
+            </Collapsible>
           )}
         </div>
         <div className="flex flex-col gap-4 lg:col-span-5">
-          <Panel className="flex flex-col gap-3 p-4">
-            <PanelHeader title="Notes" />
+          <Collapsible title="Notes" summary={combo.notes ? undefined : 'No notes'} defaultOpen storageKey="details-notes" bodyClassName="">
             {combo.notes ? <Notes text={combo.notes} /> : <p className="text-sm text-fg-muted">No notes.</p>}
-          </Panel>
+          </Collapsible>
           <p className="label-sm px-1 text-[11px] text-fg-muted">
             Created {new Date(combo.createdAt).toLocaleString()} · Updated {new Date(combo.updatedAt).toLocaleString()}
             {warnings > 0 && <span className="text-warning"> · ⚠ {warnings} warning{warnings > 1 ? 's' : ''}</span>}
@@ -211,6 +213,9 @@ function Details({
     </article>
   );
 }
+
+/** The details page favors the arcade display: commands start larger than in the editor. */
+const DETAILS_VISUAL: VisualOptions = { ...DEFAULT_VISUAL, size: 48 };
 
 function Meta({ label, children }: { label: string; children: ReactNode }) {
   return (

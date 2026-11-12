@@ -1,4 +1,5 @@
 import { entriesForCharacter } from '../../notation/characters/dictionary';
+import { Collapsible } from '../../components/ui/Collapsible';
 import { EVENT_SPELLING, getDialect } from '../../notation/dialects';
 import { getGame } from '../../notation/games';
 import { availabilityOf, MECHANICS, MECHANIC_WORDS } from '../../notation/mechanics';
@@ -28,12 +29,7 @@ export function NotationReference({ game, dialect, characters }: { game: GameId;
   const words = Object.values(MECHANIC_WORDS);
   const entries = characters.flatMap((c) => entriesForCharacter(game, c).map((e) => ({ ...e, who: c })));
   return (
-    <details className="group rounded-[4px] border border-line bg-surface text-sm">
-      <summary className="label-md flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3.5 text-fg [&::-webkit-details-marker]:hidden">
-        <span>Help &amp; notation reference — {getGame(game).name}</span>
-        <span aria-hidden className="text-fg-muted transition-transform group-open:rotate-180">▾</span>
-      </summary>
-      <div className="grid gap-5 border-t border-line-strong p-4 md:grid-cols-3">
+    <Collapsible title={`Help & notation reference — ${getGame(game).name}`} storageKey="editor-reference" className="text-sm" bodyClassName="grid gap-5 md:grid-cols-3">
         <section>
           <h4 className="label-md mb-2 text-fg-muted">Operators</h4>
           <dl className="space-y-0.5">
@@ -93,7 +89,6 @@ export function NotationReference({ game, dialect, characters }: { game: GameId;
             </ul>
           )}
         </section>
-      </div>
-    </details>
+    </Collapsible>
   );
 }
