@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
-import { ComboVisual, DEFAULT_VISUAL, VisualControls, type VisualOptions } from '../../components/combos/ComboVisual';
+import { ArcadeDisplay, DEFAULT_VISUAL, type VisualOptions } from '../../components/combos/ComboVisual';
 import { Button } from '../../components/ui/Button';
-import { Panel, PanelHeader } from '../../components/ui/Panel';
+import { Panel } from '../../components/ui/Panel';
 import type { GeneratedCombo } from '../../ttt2/generator';
 import { parseCombo } from '../combo/parseCombo';
 
@@ -23,8 +23,7 @@ export function ComboResult({ combo, point, partner, onUse, onCopy }: ComboResul
   const toVerify = combo.flags.length;
   return (
     <Panel aria-label="Built combo" className="flex flex-col gap-3 p-3 sm:p-4">
-      <PanelHeader title="Your combo" aside={<VisualControls value={visual} onChange={setVisual} />} />
-      <ComboVisual parsed={parsed} options={visual} />
+      <ArcadeDisplay title="Your combo" parsed={parsed} visual={visual} onVisualChange={setVisual} />
       <div className="flex items-start justify-between gap-3 rounded-lg border border-line-strong bg-muted/50 py-1 pr-1 pl-3">
         <pre aria-label="Combo notation" className="min-w-0 overflow-x-auto py-1 font-mono text-base leading-[22px] font-medium whitespace-pre-wrap text-fg">
           {combo.notation}
@@ -36,7 +35,7 @@ export function ComboResult({ combo, point, partner, onUse, onCopy }: ComboResul
       <div className="flex flex-wrap items-center justify-between gap-3">
         {toVerify > 0 ? (
           <p className="label-sm flex items-center gap-2 text-warning uppercase">
-            <span aria-hidden>⚠</span> {toVerify} thing{toVerify > 1 ? 's' : ''} to verify · see the phases above
+            <span aria-hidden>⚠</span> {toVerify} thing{toVerify > 1 ? 's' : ''} to verify · see the phases below
           </p>
         ) : (
           <p className="label-sm flex items-center gap-2 text-fg-muted uppercase">

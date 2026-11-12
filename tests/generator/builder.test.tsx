@@ -52,8 +52,8 @@ describe('ComboBuilder', () => {
   it('renders the three phases with their performers', () => {
     render(<ComboBuilder pools={pools} pick={pick} onPick={() => {}} />);
     expect(screen.getByRole('region', { name: 'Phase 1: Route' })).toBeTruthy();
-    expect(within(screen.getByRole('region', { name: 'Phase 2: TA filler' })).getByText(/^Nina · /)).toBeTruthy();
-    expect(within(screen.getByRole('region', { name: 'Phase 3: Ender' })).getByText(/^Kazuya · /)).toBeTruthy();
+    expect(within(screen.getByRole('region', { name: 'Phase 2: TA filler' })).getByText(/^Nina · \d+\/\d+$/)).toBeTruthy();
+    expect(within(screen.getByRole('region', { name: 'Phase 3: Ender' })).getByText(/^Kazuya · \d+\/\d+$/)).toBeTruthy();
   });
 
   it('groups routes by kind and reports the chosen piece', () => {

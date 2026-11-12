@@ -42,6 +42,7 @@ test('create, view, persist, and delete a combo', async ({ page }) => {
   await page.getByLabel('Search combos').fill('');
 
   await page.getByRole('link', { name: 'T6 test combo' }).click();
+  await page.getByRole('button', { name: 'More' }).click();
   await page.getByRole('button', { name: 'Delete' }).click();
   await page.getByRole('dialog').getByRole('button', { name: 'Delete' }).click();
   await expect(page.getByText('No combos yet')).toBeVisible();

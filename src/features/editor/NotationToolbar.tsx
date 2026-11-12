@@ -53,7 +53,7 @@ export function NotationToolbar({ game, target, onInsert }: NotationToolbarProps
     onInsert(value.slice(0, start) + token + value.slice(end), start + token.length);
   };
   return (
-    <div role="toolbar" aria-label="Insert notation" className="flex flex-wrap items-center gap-1.5 rounded-lg border border-line-strong bg-neutral p-2">
+    <div role="toolbar" aria-label="Insert notation" className="-mx-4 flex items-center gap-1.5 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0">
       <span className="label-sm mr-1 text-fg-muted uppercase">Tokens</span>
       {tokens.map((t) => (
         <button
@@ -62,7 +62,7 @@ export function NotationToolbar({ game, target, onInsert }: NotationToolbarProps
           title={t.title}
           aria-label={t.tone === 'button' ? undefined : `${t.text.trim()} (${t.title})`}
           onClick={() => insert(t.text)}
-          className={`h-8 min-w-8 rounded-lg border px-2 font-mono text-base font-semibold hover:border-primary active:bg-neutral pointer-coarse:h-11 pointer-coarse:min-w-11 ${TONE[t.tone]}`}
+          className={`h-8 min-w-8 shrink-0 rounded-lg border px-2 font-mono text-base font-semibold hover:border-primary active:bg-neutral pointer-coarse:h-11 pointer-coarse:min-w-11 ${TONE[t.tone]}`}
         >
           {t.text.trim()}
         </button>

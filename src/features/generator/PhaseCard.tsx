@@ -1,4 +1,4 @@
-import { useId } from 'react';
+import { useId, useState } from 'react';
 import { Select } from '../../components/ui/Field';
 import type { InfoLine } from '../../ttt2/pieceInfo';
 
@@ -35,6 +35,9 @@ const STEP_BUTTON = 'label-md flex size-11 shrink-0 items-center justify-center 
 /** One layer of a team combo: pick a piece from a dropdown (or step through them) and read what it is. */
 export function PhaseCard({ step, title, performer, options, value, onChange, info }: PhaseCardProps) {
   const selectId = useId();
+  const infoId = useId();
+  const [more, setMore] = useState(false);
+  const warned = info.some((line) => line.tone === 'warning');
   const index = options.findIndex((o) => o.id === value);
   const go = (delta: number) => {
     const next = options[(index + delta + options.length) % options.length];
@@ -79,7 +82,23 @@ export function PhaseCard({ step, title, performer, options, value, onChange, in
           ›
         </button>
       </div>
-      <dl aria-label={`About this ${title.toLowerCase()}`} className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 text-sm">
+      {/* Phones: one summary line that unfolds the sheet; from sm up the sheet is always shown. */}
+      {info.length > 0 && (
+        <button
+          type="button"
+          aria-expanded={more}
+          aria-controls={infoId}
+          onClick={() => setMore(!more)}
+          className={`flex min-h-11 items-center gap-2 text-left text-sm sm:hidden ${warned ? 'text-warning' : 'text-fg-muted'}`}
+        >
+          <span className="min-w-0 flex-1 truncate">
+            {warned && '⚠ '}
+            {info.map((line) => line.value).join(' · ')}
+          </span>
+          <span aria-hidden>{more ? '▴' : '▾'}</span>
+        </button>
+      )}
+      <dl id={infoId} aria-label={`About this ${title.toLowerCase()}`} className={`${more ? 'grid' : 'hidden'} grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 text-sm sm:grid`}>
         {info.map((line, i) => (
           <div key={`${line.label}-${i}`} className="contents">
             <dt className={`label-sm leading-5 ${line.tone === 'warning' ? 'text-warning' : 'text-fg-muted'}`}>

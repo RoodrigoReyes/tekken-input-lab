@@ -67,6 +67,7 @@ body {
   /* Tailwind's preflight leaves buttons on the arrow cursor; every enabled control shows the hand. */
   a[href],
   button,
+  summary,
   select,
   label[for],
   [role="radio"],

@@ -52,7 +52,7 @@ export function ComboCard({ combo, onToggleFavorite }: ComboCardProps) {
           </button>
         </div>
       </header>
-      <div className="pointer-events-none overflow-hidden rounded-lg border border-line-strong bg-neutral p-1">
+      <div className="pointer-events-none overflow-hidden">
         <CommandSequence result={parsed.result} size={24} sectionHeaders={parsed.headers} side={side} motionFrame={motionFrame} />
       </div>
       <footer className="mt-auto flex flex-wrap items-center gap-1.5 border-t border-line-strong pt-3">

@@ -3,7 +3,7 @@ import { Button } from '../../components/ui/Button';
 import { Segmented } from '../../components/ui/Chip';
 import { Collapsible } from '../../components/ui/Collapsible';
 import { Checkbox, Field, Select } from '../../components/ui/Field';
-import { Eyebrow, PageTitle, Panel } from '../../components/ui/Panel';
+import { PageTitle, Panel } from '../../components/ui/Panel';
 import { useToast } from '../../components/ui/Toast';
 import { errorMessage } from '../../hooks/useCombos';
 import { paths } from '../../hooks/useHashRoute';
@@ -97,15 +97,9 @@ export function GeneratorView({ navigate }: { navigate: (hash: string) => void }
   return (
     <div className="flex flex-col gap-4">
       <header className="flex flex-col gap-1.5">
-        <Eyebrow>
-          <span>Tekken Tag Tournament 2</span>
-          <span aria-hidden>/</span>
-          <span className="text-fg">Team combo generator</span>
-        </Eyebrow>
         <PageTitle>TTT2 Combo Generator</PageTitle>
-        <p className="max-w-5xl text-sm text-fg-muted">
-          Build a team combo in three phases from the bundled guide <strong className="text-fg">“{GUIDE_SOURCE.title}”</strong>: the point character’s route up to a
-          Bound (B!), a TA filler after the Tag Assault (TA!), and an ender. <span className="text-warning">⚠ Suggestions until tested in practice mode.</span>
+        <p className="text-sm text-fg-muted">
+          Team combos built from the bundled guide <strong className="text-fg">“{GUIDE_SOURCE.title}”</strong>. <span className="text-warning">⚠ Untested suggestions.</span>
         </p>
       </header>
 
@@ -182,7 +176,7 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div aria-label="Generator options" role="group" className="grid grid-cols-1 items-start gap-3 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
+      <div aria-label="Generator options" role="group" className="flex flex-col gap-3">
         <Collapsible
           title="Team & setup"
           summary={teamSummary}
@@ -194,7 +188,7 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
             </button>
           }
         >
-          <div className="grid items-start gap-3 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
+          <div className="grid items-start gap-3 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto]">
             <div className="flex flex-col gap-3">
               <Field label="Point character" aside="Starts the combo">
                 <Select value={point} onChange={(e) => update({ point: e.target.value, pointForm: '' })}>
@@ -249,18 +243,18 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
                 </Field>
               )}
             </div>
+            <Group label="Where">
+              <Segmented
+                label="Where"
+                value={context}
+                onChange={(v) => update({ context: v })}
+                options={[
+                  { value: 'open', label: 'Open ground' },
+                  { value: 'wall', label: 'At the wall' },
+                ]}
+              />
+            </Group>
           </div>
-          <Group label="Where">
-            <Segmented
-              label="Where"
-              value={context}
-              onChange={(v) => update({ context: v })}
-              options={[
-                { value: 'open', label: 'Open ground' },
-                { value: 'wall', label: 'At the wall' },
-              ]}
-            />
-          </Group>
         </Collapsible>
 
         <Collapsible title="Advanced" summary={advancedSummary} storageKey="generator-advanced">
@@ -283,16 +277,14 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
         ) : (
           pools && (
             <>
+              {combo && pick && <ComboResult combo={combo} point={point} partner={mate} onUse={(c) => onUse(c, { point, partner: mate })} onCopy={onCopy} />}
               <p className="label-sm text-fg-muted" role="status">
                 <span aria-hidden className="mr-2 inline-block size-2 rounded-xs bg-fg-muted align-middle" />
                 {pools.routes.length} routes reaching B! · {pools.fillers.length} TA fillers · {pools.enders.length} enders
                 <span className="text-fg-muted"> ({pools.routes.length * pools.fillers.length * pools.enders.length} possible combos)</span>
               </p>
               {combo && pick ? (
-                <>
-                  <ComboBuilder pools={pools} pick={pick} onPick={(patch) => update(patch)} />
-                  <ComboResult combo={combo} point={point} partner={mate} onUse={(c) => onUse(c, { point, partner: mate })} onCopy={onCopy} />
-                </>
+                <ComboBuilder pools={pools} pick={pick} onPick={(patch) => update(patch)} />
               ) : (
                 <StateCard
                   title="No combos for these options"

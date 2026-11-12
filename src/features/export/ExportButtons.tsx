@@ -45,10 +45,10 @@ export function ExportButtons({ combo, parsed, visual }: DetailsExtraProps) {
 
   return (
     <>
-      <Button onClick={() => void exportSvg()}>
+      <Button variant="ghost" onClick={() => void exportSvg()}>
         Export SVG
       </Button>
-      <Button onClick={() => void exportPng()} disabled={busy}>
+      <Button variant="ghost" onClick={() => void exportPng()} disabled={busy}>
         {busy ? 'Exporting…' : 'Export PNG'}
       </Button>
     </>

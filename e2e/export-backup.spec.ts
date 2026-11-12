@@ -13,12 +13,14 @@ test('export SVG/PNG and back up / restore the library', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Export me' })).toBeVisible();
 
   const svgDownload = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Export' }).click();
   await page.getByRole('button', { name: 'Export SVG' }).click();
   const svg = await readFile(await (await svgDownload).path(), 'utf8');
   expect(svg).toContain('<svg');
   expect(svg).toContain('TORNADO');
 
   const pngDownload = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Export' }).click();
   await page.getByRole('button', { name: 'Export PNG' }).click();
   const png = await readFile(await (await pngDownload).path());
   expect(png.subarray(1, 4).toString()).toBe('PNG');

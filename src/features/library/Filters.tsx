@@ -1,3 +1,5 @@
+import { useId, useState } from 'react';
+import { Button } from '../../components/ui/Button';
 import { GAMES, getGame } from '../../notation/games';
 import { DIFFICULTIES } from '../../types/combo';
 import type { GameId } from '../../types/notation';
@@ -31,54 +33,71 @@ export function Filters({ value, onChange, characters, partners, tags, count }: 
   const roster = value.game === 'all' ? characters : [...new Set([...characters, ...getGame(value.game).roster])].sort();
   const showPartner = value.game === 'all' || value.game === 'ttt2';
   const active = hasActiveFilters(value);
+  const [more, setMore] = useState(false);
+  const panelId = useId();
   const games: ReadonlyArray<[GameId | 'all', string]> = [['all', 'All'], ...GAMES.map((g): [GameId, string] => [g.id, g.shortName])];
 
+  // Filters folded behind the "Filters" button; the count on it says how many are on.
+  const folded = [value.favoritesOnly, value.character, value.partner, value.difficulty !== 'all', ...value.tags].filter(Boolean).length;
+
   return (
-    <Panel aria-label="Filters" className="flex flex-col gap-4 p-4">
-      <div className="relative">
-        <SearchIcon />
-        <input
-          type="search"
-          className={`${CONTROL} pl-10`}
-          placeholder="Search by name, notation (e.g. EWGF, B!) or tag…"
-          value={value.query}
-          onChange={(e) => set('query', e.target.value)}
-          aria-label="Search combos"
-        />
+    <Panel aria-label="Filters" className="flex flex-col gap-3 p-3 sm:p-4">
+      <div className="flex gap-2">
+        <div className="relative min-w-0 flex-1">
+          <SearchIcon />
+          <input
+            type="search"
+            className={`${CONTROL} pl-10`}
+            placeholder="Search by name, notation (e.g. EWGF, B!) or tag…"
+            value={value.query}
+            onChange={(e) => set('query', e.target.value)}
+            aria-label="Search combos"
+          />
+        </div>
+        <Button aria-expanded={more} aria-controls={panelId} onClick={() => setMore(!more)} className="h-auto! min-h-11">
+          Filters{folded > 0 && ` · ${folded}`}
+        </Button>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2">
-        <div role="group" aria-label="Game" className="flex flex-wrap gap-1">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+        <div role="group" aria-label="Game" className="flex gap-1 overflow-x-auto">
           {games.map(([id, label]) => (
             <ToggleChip key={id} active={value.game === id} onClick={() => set('game', id)} title={id === 'all' ? 'All games' : getGame(id).name}>
               {label}
             </ToggleChip>
           ))}
         </div>
-        <ToggleChip active={value.favoritesOnly} onClick={() => set('favoritesOnly', !value.favoritesOnly)}>
-          ★ Favorites only
-        </ToggleChip>
-      </div>
-
-      <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
-        <ComboBox id="filter-character" aria-label="Character" placeholder="Any character" options={roster} value={value.character} onChange={(e) => set('character', e.target.value)} />
-        {showPartner ? (
-          <ComboBox id="filter-partner" aria-label="Partner" placeholder="Any partner (TTT2)" options={partners} value={value.partner} onChange={(e) => set('partner', e.target.value)} />
-        ) : (
-          <div className="hidden sm:block" />
+        {active && (
+          <button type="button" className="label-md inline-flex min-h-7 items-center text-fg-muted underline underline-offset-4 hover:text-fg pointer-coarse:min-h-11" onClick={() => onChange(EMPTY_FILTERS)}>
+            Clear filters
+          </button>
         )}
-        <Select aria-label="Difficulty" value={value.difficulty} onChange={(e) => set('difficulty', e.target.value as LibraryFilters['difficulty'])}>
-          <option value="all">Any difficulty</option>
-          {DIFFICULTIES.map((d) => (
-            <option key={d} value={d}>
-              {d[0]?.toUpperCase() + d.slice(1)}
-            </option>
-          ))}
-        </Select>
+        {count && (
+          <p className="label-sm ml-auto text-fg-muted" role="status">
+            {count.visible} of {count.total} combos
+          </p>
+        )}
       </div>
 
-      {(tags.length > 0 || active || count) && (
+      <div id={panelId} hidden={!more} className="flex flex-col gap-3 border-t border-line-strong pt-3">
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
+          <ComboBox id="filter-character" aria-label="Character" placeholder="Any character" options={roster} value={value.character} onChange={(e) => set('character', e.target.value)} />
+          {showPartner && (
+            <ComboBox id="filter-partner" aria-label="Partner" placeholder="Any partner (TTT2)" options={partners} value={value.partner} onChange={(e) => set('partner', e.target.value)} />
+          )}
+          <Select aria-label="Difficulty" value={value.difficulty} onChange={(e) => set('difficulty', e.target.value as LibraryFilters['difficulty'])}>
+            <option value="all">Any difficulty</option>
+            {DIFFICULTIES.map((d) => (
+              <option key={d} value={d}>
+                {d[0]?.toUpperCase() + d.slice(1)}
+              </option>
+            ))}
+          </Select>
+        </div>
         <div className="flex flex-wrap items-center gap-1.5">
+          <ToggleChip active={value.favoritesOnly} onClick={() => set('favoritesOnly', !value.favoritesOnly)}>
+            ★ Favorites only
+          </ToggleChip>
           {tags.map((tag) => {
             const on = value.tags.includes(tag);
             return (
@@ -87,18 +106,8 @@ export function Filters({ value, onChange, characters, partners, tags, count }: 
               </ToggleChip>
             );
           })}
-          {active && (
-            <button type="button" className="label-md ml-1 inline-flex min-h-7 items-center text-fg-muted underline underline-offset-4 hover:text-fg pointer-coarse:min-h-11" onClick={() => onChange(EMPTY_FILTERS)}>
-              Clear filters
-            </button>
-          )}
-          {count && (
-            <p className="label-sm ml-auto text-fg-muted" role="status">
-              {count.visible} of {count.total} combos
-            </p>
-          )}
         </div>
-      )}
+      </div>
     </Panel>
   );
 }

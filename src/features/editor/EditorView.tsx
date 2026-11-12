@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { DiagnosticsList } from '../../components/combos/DiagnosticsList';
-import { ComboVisual, DEFAULT_VISUAL, VisualControls } from '../../components/combos/ComboVisual';
+import { ArcadeDisplay, DEFAULT_VISUAL } from '../../components/combos/ComboVisual';
 import { Button, LinkButton } from '../../components/ui/Button';
 import { ComboBox, Field, Select, TextArea, TextInput } from '../../components/ui/Field';
 import { Collapsible } from '../../components/ui/Collapsible';
@@ -79,6 +79,9 @@ function damageValue(text: string): number | undefined {
   const n = Number(text);
   return text.trim() === '' || !Number.isInteger(n) ? undefined : n;
 }
+
+/** Metadata fields wrap into a compact row: each grows from its basis, so phones get two per line where they fit. */
+const NARROW = 'min-w-0 flex-[1_1_10rem]';
 
 function EditorForm({ id, initial, navigate }: EditorFormProps) {
   const repo = useRepository();
@@ -159,7 +162,8 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
           </Eyebrow>
           <PageTitle>{id ? 'Edit combo' : 'New combo'}</PageTitle>
         </div>
-        <div className="flex items-center gap-4">
+        {/* Phones: a save bar fixed at the bottom (the tab bar is hidden here), so saving never needs a scroll back up. */}
+        <div className="fixed inset-x-0 bottom-0 z-30 flex items-center justify-end gap-4 border-t border-line-strong bg-neutral px-2 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] sm:static sm:z-auto sm:border-0 sm:bg-transparent sm:p-0">
           <LinkButton href={cancelHref} variant="link">
             Cancel
           </LinkButton>
@@ -181,128 +185,58 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
         </p>
       )}
 
-      <Panel className="grid gap-4 p-4 sm:grid-cols-2 xl:grid-cols-4">
-        <Field label="Combo name" aside="Required" className="sm:col-span-2 xl:col-span-1">
-          <TextInput value={draft.name} onChange={(e) => set('name', e.target.value)} placeholder="e.g. Midscreen BnB" maxLength={120} required />
-        </Field>
-        <Field label="Game">
-          <Select value={draft.game} onChange={(e) => changeGame(e.target.value as GameId)}>
-            {GAMES.map((g) => (
-              <option key={g.id} value={g.id}>
-                {g.name}
-              </option>
-            ))}
-          </Select>
-        </Field>
-        <Field label="Character">
-          <ComboBox id="character" options={game.roster} value={draft.character} onChange={(e) => set('character', e.target.value)} placeholder="e.g. Kazuya" />
-        </Field>
-        {game.tag ? (
-          <Field label="Partner" aside="TTT2 only">
-            <ComboBox id="partner" options={game.roster} value={draft.partner ?? ''} onChange={(e) => set('partner', e.target.value)} placeholder="e.g. Armor King" />
-          </Field>
-        ) : (
-          <div className="hidden xl:block" />
-        )}
-        {dialects.length > 1 && (
-          <Field label="Notation dialect" hint={getDialect(draft.dialect).description} className="sm:col-span-2 xl:col-span-4">
-            <Select value={draft.dialect} onChange={(e) => set('dialect', e.target.value)} className="max-w-md">
-              {dialects.map((d) => (
-                <option key={d.id} value={d.id}>
-                  {d.name}
-                </option>
-              ))}
-            </Select>
-          </Field>
-        )}
-      </Panel>
-
-      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-        <div className="flex min-w-0 flex-col gap-4">
-          <Panel className="flex flex-col gap-3 p-4">
-            <PanelHeader title="Notation input" />
-            <NotationToolbar
-              game={draft.game}
-              target={notationRef}
-              onInsert={(next, caret) => {
-                set('notation', next);
-                window.requestAnimationFrame(() => {
-                  notationRef.current?.focus();
-                  notationRef.current?.setSelectionRange(caret, caret);
-                });
-              }}
+      {/* The HTML is in reading order for phones (notation, preview, then the rest), so Tab follows what is seen.
+          lg: grid placement makes two columns; the last row is 1fr so a tall preview column never stretches the left rows. */}
+      <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:grid-rows-[auto_auto_auto_auto_1fr] lg:items-start">
+        <Panel className="flex flex-col gap-3 p-4 lg:col-start-1 lg:row-start-1">
+          <PanelHeader title="Notation input" />
+          <NotationToolbar
+            game={draft.game}
+            target={notationRef}
+            onInsert={(next, caret) => {
+              set('notation', next);
+              window.requestAnimationFrame(() => {
+                notationRef.current?.focus();
+                notationRef.current?.setSelectionRange(caret, caret);
+              });
+            }}
+          />
+          <Field label="Notation" hint="The original text is saved exactly as typed.">
+            <TextArea
+              ref={notationRef}
+              value={draft.notation}
+              onChange={(e) => set('notation', e.target.value)}
+              rows={5}
+              spellCheck={false}
+              autoCapitalize="off"
+              autoCorrect="off"
+              className="min-h-36 font-mono text-sm leading-[22px] font-medium"
+              placeholder="qcf+1 > uf+2,1 B! > SSL 1~b~uf+4 > f+1,2,1+2"
             />
-            <Field label="Notation" hint="The original text is saved exactly as typed.">
-              <TextArea
-                ref={notationRef}
-                value={draft.notation}
-                onChange={(e) => set('notation', e.target.value)}
-                rows={5}
-                spellCheck={false}
-                autoCapitalize="off"
-                autoCorrect="off"
-                className="min-h-36 font-mono text-sm leading-[22px] font-medium"
-                placeholder="qcf+1 > uf+2,1 B! > SSL 1~b~uf+4 > f+1,2,1+2"
-              />
-            </Field>
-            <div className="label-sm flex flex-wrap items-center justify-between gap-2 text-fg-muted">
-              <span className="flex items-center gap-2">
-                <span aria-hidden className={`size-2 rounded-full ${warnings ? 'bg-warning' : draft.notation.trim() ? 'bg-success' : 'bg-fg-muted'}`} />
-                {!draft.notation.trim() ? 'Waiting for notation' : warnings ? `${warnings} warning${warnings > 1 ? 's' : ''} detected` : 'No warnings'}
-              </span>
+          </Field>
+          <div className="label-sm flex flex-wrap items-center justify-between gap-2 text-fg-muted">
+            <span className="flex items-center gap-2">
+              <span aria-hidden className={`size-2 rounded-full ${warnings ? 'bg-warning' : draft.notation.trim() ? 'bg-success' : 'bg-fg-muted'}`} />
+              {!draft.notation.trim() ? 'Waiting for notation' : warnings ? `${warnings} warning${warnings > 1 ? 's' : ''} detected` : 'No warnings'}
+            </span>
+            <span>
+              {draft.notation.length} chars · {getDialect(draft.dialect).name}
+            </span>
+          </div>
+          {game.tag && (
+            <a href={paths.generator()} onClick={() => id === null && stashEditorDraft({ ...draft, damage: damageValue(damage) })} className="flex min-h-11 items-center justify-between gap-3 rounded-lg border border-line-control bg-neutral px-3 py-2.5 text-sm text-fg-muted hover:bg-muted hover:text-fg">
               <span>
-                {draft.notation.length} chars · {getDialect(draft.dialect).name}
+                <strong className="label-md mr-2 text-fg">Generate from guide</strong>
+                Build a TTT2 team combo from the bundled “TTT2 BNB Combos” guide.
               </span>
-            </div>
-            {game.tag && (
-              <a href={paths.generator()} onClick={() => id === null && stashEditorDraft({ ...draft, damage: damageValue(damage) })} className="flex min-h-11 items-center justify-between gap-3 rounded-lg border border-line-control bg-neutral px-3 py-2.5 text-sm text-fg-muted hover:bg-muted hover:text-fg">
-                <span>
-                  <strong className="label-md mr-2 text-fg">Generate from guide</strong>
-                  Build a TTT2 team combo from the bundled “TTT2 BNB Combos” guide.
-                </span>
-                <span aria-hidden className="text-primary">→</span>
-              </a>
-            )}
-          </Panel>
+              <span aria-hidden className="text-primary">→</span>
+            </a>
+          )}
+        </Panel>
 
-          <Collapsible
-            title="Combo details"
-            summary={detailsSummary(draft, damage)}
-            defaultOpen={hasDetails(start.draft)}
-            aside={<span className="label-sm text-fg-muted uppercase">Optional</span>}
-          >
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Field label="Difficulty">
-                <Select value={draft.difficulty} onChange={(e) => set('difficulty', e.target.value as ComboDraft['difficulty'])}>
-                  {DIFFICULTIES.map((d) => (
-                    <option key={d} value={d}>
-                      {d[0]?.toUpperCase() + d.slice(1)}
-                    </option>
-                  ))}
-                </Select>
-              </Field>
-              <Field label="Damage" aside="0 to 999">
-                <TextInput type="number" inputMode="numeric" min={0} max={999} value={damage} onChange={(e) => setDamage(e.target.value)} />
-              </Field>
-            </div>
-            <Field label="Tags">
-              <TagInput id="tags" value={draft.tags} onChange={(t) => set('tags', t)} suggestions={collectTags(library)} />
-            </Field>
-            <Field label="Notes">
-              <TextArea value={draft.notes} onChange={(e) => set('notes', e.target.value)} rows={4} placeholder="Timing tips, wall/ground conditions…" />
-            </Field>
-          </Collapsible>
-
-          <NotationReference game={draft.game} dialect={draft.dialect} characters={team} />
-        </div>
-
-        <div className="flex min-w-0 flex-col gap-4 lg:sticky lg:top-[72px]">
+        <div className="contents lg:sticky lg:top-[72px] lg:col-start-2 lg:row-start-1 lg:row-end-6 lg:flex lg:min-w-0 lg:flex-col lg:gap-4">
           <Panel aria-label="Live preview" className="flex flex-col gap-3 p-4">
-            <PanelHeader
-              title="Live arcade display"
-              aside={<VisualControls value={visual} onChange={setVisual} />}
-            />
-            <ComboVisual parsed={parsed} options={visual} />
+            <ArcadeDisplay title="Live arcade display" parsed={parsed} visual={visual} onVisualChange={setVisual} />
           </Panel>
 
           {diagnostics.length > 0 && (
@@ -320,6 +254,73 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
           {game.tag && parsed.result.ast.sections.length > 1 && (
             <SectionAssigner parsed={parsed} characters={team} manual={draft.sectionCharacters} onChange={(m) => set('sectionCharacters', m)} />
           )}
+        </div>
+
+        <Panel className="flex flex-wrap gap-4 p-4 lg:col-start-1 lg:row-start-2">
+          <Field label="Combo name" aside="Required" className="min-w-0 flex-[2_1_16rem]">
+            <TextInput value={draft.name} onChange={(e) => set('name', e.target.value)} placeholder="e.g. Midscreen BnB" maxLength={120} required />
+          </Field>
+          <Field label="Game" className={NARROW}>
+            <Select value={draft.game} onChange={(e) => changeGame(e.target.value as GameId)}>
+              {GAMES.map((g) => (
+                <option key={g.id} value={g.id}>
+                  {g.name}
+                </option>
+              ))}
+            </Select>
+          </Field>
+          <Field label="Character" className={NARROW}>
+            <ComboBox id="character" options={game.roster} value={draft.character} onChange={(e) => set('character', e.target.value)} placeholder="e.g. Kazuya" />
+          </Field>
+          {game.tag && (
+            <Field label="Partner" aside="TTT2 only" className={NARROW}>
+              <ComboBox id="partner" options={game.roster} value={draft.partner ?? ''} onChange={(e) => set('partner', e.target.value)} placeholder="e.g. Armor King" />
+            </Field>
+          )}
+          {dialects.length > 1 && (
+            <Field label="Notation dialect" hint={getDialect(draft.dialect).description} className="min-w-0 flex-[1_1_14rem]">
+              <Select value={draft.dialect} onChange={(e) => set('dialect', e.target.value)}>
+                {dialects.map((d) => (
+                  <option key={d.id} value={d.id}>
+                    {d.name}
+                  </option>
+                ))}
+              </Select>
+            </Field>
+          )}
+        </Panel>
+
+        <Collapsible
+          className="lg:col-start-1 lg:row-start-3"
+          title="Combo details"
+          summary={detailsSummary(draft, damage)}
+          defaultOpen={hasDetails(start.draft)}
+          aside={<span className="label-sm text-fg-muted uppercase">Optional</span>}
+        >
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Field label="Difficulty">
+              <Select value={draft.difficulty} onChange={(e) => set('difficulty', e.target.value as ComboDraft['difficulty'])}>
+                {DIFFICULTIES.map((d) => (
+                  <option key={d} value={d}>
+                    {d[0]?.toUpperCase() + d.slice(1)}
+                  </option>
+                ))}
+              </Select>
+            </Field>
+            <Field label="Damage" aside="0 to 999">
+              <TextInput type="number" inputMode="numeric" min={0} max={999} value={damage} onChange={(e) => setDamage(e.target.value)} />
+            </Field>
+          </div>
+          <Field label="Tags">
+            <TagInput id="tags" value={draft.tags} onChange={(t) => set('tags', t)} suggestions={collectTags(library)} />
+          </Field>
+          <Field label="Notes">
+            <TextArea value={draft.notes} onChange={(e) => set('notes', e.target.value)} rows={4} placeholder="Timing tips, wall/ground conditions…" />
+          </Field>
+        </Collapsible>
+
+        <div className="lg:col-start-1 lg:row-start-4">
+          <NotationReference game={draft.game} dialect={draft.dialect} characters={team} />
         </div>
       </div>
     </form>

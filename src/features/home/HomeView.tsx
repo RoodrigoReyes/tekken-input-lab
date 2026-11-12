@@ -1,6 +1,5 @@
 import { useMemo, type ReactNode } from 'react';
 import { CommandSequence } from '../../components/arcade';
-import { LogoMark } from '../../components/AppShell';
 import { PageTitle, Panel } from '../../components/ui/Panel';
 import { useCombos } from '../../hooks/useCombos';
 import { useMotionFrame } from '../../hooks/useMotionFrame';
@@ -28,12 +27,7 @@ export function HomeView() {
 
   return (
     <div className="flex flex-col gap-6">
-      <header className="flex items-center gap-4">
-        <span className="hidden size-14 shrink-0 items-center justify-center rounded-lg border border-line bg-surface sm:flex">
-          <LogoMark size={34} />
-        </span>
-        <PageTitle className="min-w-0">Turn notation into arcade commands</PageTitle>
-      </header>
+      <PageTitle>Turn notation into arcade commands</PageTitle>
 
       <nav aria-label="Get started" className="grid gap-4 md:grid-cols-2">
         <EntryCard href={paths.new()} title="Create a combo" cta="Open the editor" description="Type or paste a combo from any Tekken and see it as arcade commands while you write.">
@@ -44,7 +38,7 @@ export function HomeView() {
               </li>
             ))}
           </ul>
-          <div aria-hidden className="overflow-hidden rounded-lg border border-line-strong bg-neutral p-1">
+          <div aria-hidden className="overflow-hidden">
             <CommandSequence result={sample} size={26} side={side} motionFrame={motionFrame} />
           </div>
         </EntryCard>
@@ -78,7 +72,7 @@ export function HomeView() {
         ) : recent.length === 0 ? (
           <Panel className="px-4 py-6 text-sm text-fg-muted">No combos yet. The combos you save appear here and in the library.</Panel>
         ) : (
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="grid grid-cols-1 items-start gap-4 md:grid-cols-2">
             {recent.map((c) => (
               <ComboCard key={c.id} combo={c} onToggleFavorite={toggleFavorite} />
             ))}

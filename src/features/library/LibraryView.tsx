@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { LogoMark } from '../../components/AppShell';
 import { Button, LinkButton } from '../../components/ui/Button';
-import { Eyebrow, PageTitle, Panel } from '../../components/ui/Panel';
+import { PageTitle, Panel } from '../../components/ui/Panel';
 import { useCombos } from '../../hooks/useCombos';
 import { paths } from '../../hooks/useHashRoute';
 import { BackupActions } from './BackupActions';
@@ -30,24 +30,7 @@ export function LibraryView() {
 
   return (
     <div className="flex flex-col gap-4">
-      <Panel as="div" className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:p-5">
-        <div className="flex min-w-0 flex-1 items-center gap-4">
-          <span className="hidden size-14 shrink-0 items-center justify-center rounded-lg border border-line bg-neutral sm:flex">
-            <LogoMark size={34} />
-          </span>
-          <div className="min-w-0 space-y-1">
-            <Eyebrow>
-              <span className="text-fg">Local library</span>
-              <span aria-hidden>/</span>
-              <span>Stored in this browser</span>
-            </Eyebrow>
-            <PageTitle>Combo Library</PageTitle>
-          </div>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <BackupActions onImported={reload} />
-        </div>
-      </Panel>
+      <PageTitle>Combo Library</PageTitle>
 
       <Filters
         value={filters}
@@ -82,7 +65,7 @@ export function LibraryView() {
           }
         />
       ) : (
-        <section aria-labelledby="library-results" className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <section aria-labelledby="library-results" className="grid grid-cols-1 items-start gap-4 md:grid-cols-2">
           <h2 id="library-results" className="sr-only">
             Combos
           </h2>
@@ -91,6 +74,11 @@ export function LibraryView() {
           ))}
         </section>
       )}
+
+      <section aria-label="Backup" className="flex flex-wrap items-center gap-2 border-t border-line-strong pt-4">
+        <p className="mr-auto text-sm text-fg-muted">Combos are stored in this browser. Back them up as a JSON file.</p>
+        <BackupActions onImported={reload} />
+      </section>
     </div>
   );
 }

@@ -22,12 +22,12 @@ export function MotionFrameToggle({ className = '' }: { className?: string }) {
       aria-label="Frame motions"
       title={framed ? 'Motions are framed. Click to show bare arrows.' : 'Motions are bare arrows. Click to frame them.'}
       onClick={() => setFramed(!framed)}
-      className={`label-md flex h-11 items-center gap-2 rounded-lg border px-3 whitespace-nowrap transition-colors ${
+      className={`label-md flex h-11 items-center gap-2 rounded-lg border px-3 whitespace-nowrap sm:h-9 pointer-coarse:h-11 transition-colors ${
         framed ? 'border-primary bg-primary text-on-primary' : 'border-line-control bg-neutral text-fg-muted hover:bg-muted hover:text-fg'
       } ${className}`}
     >
       <FramePreview framed={framed} />
-      Frame motions
+      Frame
     </button>
   );
 }

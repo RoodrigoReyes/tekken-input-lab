@@ -1,12 +1,13 @@
-import { useMemo, useRef, useState, type ReactNode } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import { DiagnosticsList } from '../../components/combos/DiagnosticsList';
-import { ComboVisual, DEFAULT_VISUAL, VisualControls } from '../../components/combos/ComboVisual';
+import { ArcadeDisplay, DEFAULT_VISUAL } from '../../components/combos/ComboVisual';
 import { GameBadge } from '../../components/combos/GameBadge';
 import { Chip } from '../../components/ui/Chip';
 import { Collapsible } from '../../components/ui/Collapsible';
-import { Eyebrow, PageTitle, Panel, PanelHeader } from '../../components/ui/Panel';
+import { Eyebrow, PageTitle, Panel } from '../../components/ui/Panel';
 import { Button, LinkButton } from '../../components/ui/Button';
 import { ConfirmDialog } from '../../components/ui/ConfirmDialog';
+import { Menu } from '../../components/ui/Menu';
 import { useToast } from '../../components/ui/Toast';
 import { errorMessage, useCombo, useRepository } from '../../hooks/useCombos';
 import { paths } from '../../hooks/useHashRoute';
@@ -65,7 +66,6 @@ function Details({
   const toast = useToast();
   const [visual, setVisual] = useState<VisualOptions>(DETAILS_VISUAL);
   const [confirming, setConfirming] = useState(false);
-  const svgRef = useRef<SVGSVGElement>(null);
   const parsed = useMemo(() => parseCombo(combo), [combo]);
   const game = getGame(combo.game);
 
@@ -149,22 +149,36 @@ function Details({
                 <span className="font-label text-base font-semibold">{combo.damage}</span>
               </Meta>
             )}
+            {combo.tags.length > 0 && (
+              <Meta label="Tags">
+                <span className="flex flex-wrap gap-1.5">
+                  {combo.tags.map((t) => (
+                    <Chip key={t}>#{t}</Chip>
+                  ))}
+                </span>
+              </Meta>
+            )}
           </dl>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <LinkButton href={paths.edit(combo.id)}>Edit</LinkButton>
-          <Button onClick={duplicate}>Duplicate</Button>
+        <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center max-sm:[&_button]:w-full">
+          <LinkButton href={paths.edit(combo.id)} variant="primary">
+            Edit
+          </LinkButton>
           <Button onClick={copy}>Copy notation</Button>
-          {renderExtraActions?.({ combo, parsed, visual })}
-          <Button variant="danger" onClick={() => setConfirming(true)}>
-            Delete
-          </Button>
+          {renderExtraActions && <Menu label="Export">{renderExtraActions({ combo, parsed, visual })}</Menu>}
+          <Menu label="More">
+            <Button variant="ghost" onClick={duplicate}>
+              Duplicate
+            </Button>
+            <Button variant="ghost" className="text-danger! hover:bg-danger-surface!" onClick={() => setConfirming(true)}>
+              Delete
+            </Button>
+          </Menu>
         </div>
       </header>
 
       <Panel aria-label="Commands" className="flex flex-col gap-3 p-4">
-        <PanelHeader title="Arcade display" aside={<VisualControls value={visual} onChange={setVisual} />} />
-        <ComboVisual ref={svgRef} parsed={parsed} options={visual} />
+        <ArcadeDisplay title="Arcade display" parsed={parsed} visual={visual} onVisualChange={setVisual} />
         {parsed.result.diagnostics.length > 0 ? (
           <DiagnosticsList diagnostics={parsed.result.diagnostics} notation={combo.notation} />
         ) : (
@@ -174,35 +188,20 @@ function Details({
         )}
       </Panel>
 
-      <div className="grid items-start gap-4 lg:grid-cols-12">
-        <div className="flex flex-col gap-4 lg:col-span-7">
-          <Collapsible
-            title="Original notation"
-            defaultOpen
-            storageKey="details-notation"
-            bodyClassName="flex flex-col gap-3"
-            aside={<span className="label-sm text-fg-muted uppercase">Dialect: {getDialect(combo.dialect).name}</span>}
-          >
-            <pre className="overflow-x-auto rounded-lg border border-line-strong bg-neutral p-3 font-mono text-sm leading-[22px] font-medium whitespace-pre-wrap text-fg">{combo.notation}</pre>
-          </Collapsible>
-          {combo.tags.length > 0 && (
-            <Collapsible title="Tags" summary={combo.tags.map((t) => `#${t}`).join(' ')} defaultOpen storageKey="details-tags" bodyClassName="flex flex-wrap gap-1.5">
-              {combo.tags.map((t) => (
-                <Chip key={t}>#{t}</Chip>
-              ))}
-            </Collapsible>
-          )}
-        </div>
-        <div className="flex flex-col gap-4 lg:col-span-5">
-          <Collapsible title="Notes" summary={combo.notes ? undefined : 'No notes'} defaultOpen storageKey="details-notes" bodyClassName="">
-            {combo.notes ? <Notes text={combo.notes} /> : <p className="text-sm text-fg-muted">No notes.</p>}
-          </Collapsible>
-          <p className="label-sm px-1 text-fg-muted">
-            Created {new Date(combo.createdAt).toLocaleString()} · Updated {new Date(combo.updatedAt).toLocaleString()}
-            {warnings > 0 && <span className="text-warning"> · ⚠ {warnings} warning{warnings > 1 ? 's' : ''}</span>}
-          </p>
-        </div>
-      </div>
+      <Collapsible
+        title={combo.notes ? 'Notation & notes' : 'Original notation'}
+        defaultOpen
+        storageKey="details-notation-notes"
+        bodyClassName="grid items-start gap-3 lg:grid-cols-2"
+        aside={<span className="label-sm text-fg-muted uppercase">Dialect: {getDialect(combo.dialect).name}</span>}
+      >
+        <pre className="overflow-x-auto font-mono text-sm leading-[22px] font-medium whitespace-pre-wrap text-fg">{combo.notation}</pre>
+        {combo.notes && <Notes text={combo.notes} />}
+      </Collapsible>
+      <p className="label-sm px-1 text-fg-muted">
+        Created {new Date(combo.createdAt).toLocaleString()} · Updated {new Date(combo.updatedAt).toLocaleString()}
+        {warnings > 0 && <span className="text-warning"> · ⚠ {warnings} warning{warnings > 1 ? 's' : ''}</span>}
+      </p>
 
       <ConfirmDialog
         open={confirming}

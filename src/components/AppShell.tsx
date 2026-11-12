@@ -32,26 +32,24 @@ export interface AppShellProps {
 }
 
 /**
- * Sticky top bar and the full-width content area. Phones get two rows: logo and "+ New" on top,
- * then the navigation as three full-width 44px tabs; from sm up everything sits on one row.
+ * Top bar with the logo; the navigation sits beside it from sm up and becomes a bottom tab bar on phones
+ * (thumb reach, frees the top). The editor hides the tab bar on phones: its save bar takes that place.
  */
 export function AppShell({ route, children }: AppShellProps) {
   const showNew = route.name !== 'new' && route.name !== 'home';
+  const editing = route.name === 'new' || route.name === 'edit';
   return (
     <div className="min-h-screen bg-neutral">
       <header className="sticky top-0 z-20 border-b border-line-strong bg-neutral">
-        <div className="flex flex-wrap items-center justify-between gap-x-3 px-2 sm:h-14 sm:flex-nowrap sm:gap-6 sm:px-4">
-          <a href={paths.home()} className="flex h-14 min-w-11 shrink-0 items-center justify-center gap-2.5" aria-label="TekkenInputLab home">
+        <div className="flex h-14 items-center gap-6 px-2 sm:px-4">
+          <a href={paths.home()} className="flex h-14 min-w-11 shrink-0 items-center gap-2.5" aria-label="TekkenInputLab home">
             <LogoMark />
-            <span className="hidden text-[20px] font-bold tracking-[0.02em] text-fg uppercase min-[360px]:inline">TekkenInputLab</span>
+            <span className="text-[20px] font-bold tracking-[0.02em] text-fg uppercase">TekkenInputLab</span>
           </a>
-          {/* The single "create" entry point (home has its own large card for it). Before the nav in the DOM so phones tab in visual order. */}
-          {showNew && (
-            <LinkButton href={paths.new()} variant="primary" aria-label="New combo" className="sm:order-last">
-              + New
-            </LinkButton>
-          )}
-          <nav aria-label="Main" className="order-last -mx-2 grid w-[calc(100%+1rem)] grid-cols-3 border-t border-line-strong sm:order-none sm:mx-0 sm:flex sm:w-auto sm:flex-1 sm:gap-1 sm:border-0">
+          <nav
+            aria-label="Main"
+            className={`fixed inset-x-0 bottom-0 z-20 grid auto-cols-fr grid-flow-col border-t border-line-strong bg-neutral pb-[env(safe-area-inset-bottom)] sm:static sm:flex sm:flex-1 sm:items-center sm:gap-1 sm:border-0 sm:pb-0 ${editing ? 'max-sm:hidden' : ''}`}
+          >
             {NAV.map((item) => {
               const current = item.match.includes(route.name);
               return (
@@ -60,7 +58,7 @@ export function AppShell({ route, children }: AppShellProps) {
                   href={item.href}
                   aria-current={current ? 'page' : undefined}
                   aria-label={item.short ? item.label : undefined}
-                  className={`label-md flex h-11 items-center justify-center px-3 whitespace-nowrap transition-colors sm:rounded-lg ${
+                  className={`label-md flex h-14 items-center justify-center px-3 whitespace-nowrap transition-colors sm:h-11 sm:rounded-lg ${
                     current ? 'bg-muted text-fg' : 'text-fg-muted hover:bg-muted/60 hover:text-fg'
                   }`}
                 >
@@ -75,10 +73,16 @@ export function AppShell({ route, children }: AppShellProps) {
                 </a>
               );
             })}
+            {/* The single "create" entry point (home has its own large card for it). */}
+            {showNew && (
+              <LinkButton href={paths.new()} variant="primary" aria-label="New combo" className="m-1.5 h-auto! sm:m-0 sm:ml-auto sm:h-11!">
+                + New
+              </LinkButton>
+            )}
           </nav>
         </div>
       </header>
-      <main className="w-full px-2 py-5 sm:px-4 sm:py-6">{children}</main>
+      <main className="w-full px-2 pt-5 pb-24 sm:px-4 sm:py-6">{children}</main>
     </div>
   );
 }

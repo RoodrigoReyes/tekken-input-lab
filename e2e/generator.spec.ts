@@ -23,8 +23,8 @@ test('build a TTT2 team combo phase by phase, use it and save it', async ({ page
   const route = result.getByRole('region', { name: 'Phase 1: Route' });
   const filler = result.getByRole('region', { name: 'Phase 2: TA filler' });
   const ender = result.getByRole('region', { name: 'Phase 3: Ender' });
-  await expect(route.getByText(/^Kazuya · 1\//)).toBeVisible();
-  await expect(filler.getByText(/^Nina · /)).toBeVisible();
+  await expect(route.getByText(/^Kazuya · 1\/\d+$/)).toBeVisible();
+  await expect(filler.getByText(/^Nina · \d+\/\d+$/)).toBeVisible();
   await expect(route.getByLabel('About this route')).toContainText('When');
 
   // Pick the EWGF route from the dropdown.
