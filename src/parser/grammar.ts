@@ -1,5 +1,5 @@
 /**
- * TekkenInputLab notation grammar (EBNF). Implemented by parser.ts as a
+ * Tekken Input Lab notation grammar (EBNF). Implemented by parser.ts as a
  * recursive-descent parser over the tokens from tokenizer.ts.
  *
  *   combo    := section ( (';' | LABEL) section )*

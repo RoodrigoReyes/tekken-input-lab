@@ -48,9 +48,9 @@ export function serializeBackup(backup: BackupFile): string {
 /** Migrate any supported version to the current one. */
 function migrate(data: unknown): unknown {
   const version = (data as { schemaVersion?: unknown } | null)?.schemaVersion;
-  if (typeof version !== 'number') throw new BackupError('This file is not a TekkenInputLab backup (missing schemaVersion).');
+  if (typeof version !== 'number') throw new BackupError('This file is not a Tekken Input Lab backup (missing schemaVersion).');
   if (version > SCHEMA_VERSION) {
-    throw new BackupError(`This backup was made by a newer version of TekkenInputLab (schema ${version}). Please update the app.`);
+    throw new BackupError(`This backup was made by a newer version of Tekken Input Lab (schema ${version}). Please update the app.`);
   }
   // Future: if (version === 1) data = migrateV1toV2(data); …
   return data;

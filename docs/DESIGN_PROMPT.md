@@ -1,7 +1,7 @@
 ---
 version: alpha
-name: Frame Zero — TekkenInputLab
-description: A stark dark-mode editorial system with bold techno-gaming contrast and restrained motion, extended with the arcade command display used by TekkenInputLab.
+name: Frame Zero — Tekken Input Lab
+description: A stark dark-mode editorial system with bold techno-gaming contrast and restrained motion, extended with the arcade command display used by Tekken Input Lab.
 colors:
   primary: "#ff571f"
   primary-hover: "#ff5f2a"
@@ -308,11 +308,11 @@ components:
     padding: "12px"
 ---
 
-# Frame Zero — TekkenInputLab
+# Frame Zero — Tekken Input Lab
 
 ## Overview
 
-TekkenInputLab is a local-first tool for Tekken players covering Tekken 6, Tekken 7, Tekken 8 and Tekken Tag Tournament 2. It turns written combo notation, such as `qcf+1 > uf+2,1 B! > SSL 1~b~uf+4`, into arcade-style command graphics. It also keeps a personal combo library and generates TTT2 team combos from a bundled guide.
+Tekken Input Lab is a local-first tool for Tekken players covering Tekken 6, Tekken 7, Tekken 8 and Tekken Tag Tournament 2. It turns written combo notation, such as `qcf+1 > uf+2,1 B! > SSL 1~b~uf+4`, into arcade-style command graphics. It also keeps a personal combo library and generates TTT2 team combos from a bundled guide.
 
 The interface uses **Frame Zero**: a dark, cinematic tech-publication look with a strong editorial point of view. The tone is confident, minimal and slightly industrial. Typography and color carry the hierarchy, not decoration or motion.
 
@@ -405,7 +405,7 @@ Abbreviations are always shown exactly as written (`EWGF`, `B!`, `W!`, `TA!`, `c
 ## Layout & Spacing
 
 - **Full width.** The app has no max-width container. Content spans the viewport with 8px gutters on mobile and 16px on desktop, so long combos have room before wrapping.
-- **Sticky top bar.** On the left: the logo, which is the tilted arcade button cluster with all four buttons lit (see Components), plus the "TekkenInputLab" wordmark. On the right: a primary "+ New" button. The bar sits on the neutral background with a 1px bottom border.
+- **Sticky top bar.** On the left: the logo, which is the tilted arcade button cluster with all four buttons lit (see Components), plus the "Tekken Input Lab" wordmark. On the right: a primary "+ New" button. The bar sits on the neutral background with a 1px bottom border.
 - **Screens are a single column.** Within a screen, use responsive grids: 2–4 columns of fields in forms, and 2 columns of combo cards on desktop (1 on mobile).
 - **Spacing:**
   - `xs` (8px) and `sm` (16px) inside components.

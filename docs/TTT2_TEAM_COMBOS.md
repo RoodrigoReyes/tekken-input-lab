@@ -1,6 +1,6 @@
 # TTT2: cómo se arman y conectan los combos de equipo
 
-Análisis de la guía **"TTT2 BNB Combos"** (Google Doc compartido por el usuario) y propuesta para que TekkenInputLab permita crear combos para cualquier pareja de personajes.
+Análisis de la guía **"TTT2 BNB Combos"** (Google Doc compartido por el usuario) y propuesta para que Tekken Input Lab permita crear combos para cualquier pareja de personajes.
 
 ## 1. Qué contiene la guía
 

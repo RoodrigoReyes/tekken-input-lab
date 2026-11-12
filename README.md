@@ -1,4 +1,4 @@
-# TekkenInputLab
+# Tekken Input Lab
 
 A local-first web app that turns Tekken combo notation into arcade-style command
 graphics and keeps a personal combo library. Supports **Tekken 6**, **Tekken 7**,

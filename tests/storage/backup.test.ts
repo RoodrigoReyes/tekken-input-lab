@@ -58,7 +58,7 @@ describe('JSON backup', () => {
 
   it('refuses non-JSON, foreign files and newer schema versions', () => {
     expect(() => parseBackupText('{nope')).toThrow(BackupError);
-    expect(() => readBackup({ hello: 1 })).toThrow(/not a TekkenInputLab backup/);
+    expect(() => readBackup({ hello: 1 })).toThrow(/not a Tekken Input Lab backup/);
     expect(() => readBackup({ ...createBackup([]), app: 'other' })).toThrow(/Invalid backup/);
     expect(() => readBackup({ ...createBackup([]), schemaVersion: 99 })).toThrow(/newer version/);
     expect(() => readBackup(null)).toThrow(BackupError);

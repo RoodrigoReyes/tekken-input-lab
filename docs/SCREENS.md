@@ -1,4 +1,4 @@
-# TekkenInputLab — Screen content specification
+# Tekken Input Lab — Screen content specification
 
 This document lists **what each screen must contain**: purpose, information, actions, states and rules.
 It deliberately says **nothing about layout, order, grouping or visual treatment**. Those decisions are left to the designer (Google Stitch).
@@ -15,7 +15,7 @@ Conventions:
 **Purpose:** identify the app and give access to the main actions from anywhere.
 
 Must contain:
-- The app name "TekkenInputLab" and its logo, which links back to the Combo Library.
+- The app name "Tekken Input Lab" and its logo, which links back to the Combo Library.
 - An action to create a new combo.
 - A place for transient feedback messages (toasts):
   - **success:** "Combo saved", "Notation copied"

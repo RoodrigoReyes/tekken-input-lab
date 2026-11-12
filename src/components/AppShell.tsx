@@ -42,9 +42,9 @@ export function AppShell({ route, children }: AppShellProps) {
     <div className="min-h-screen bg-neutral">
       <header className="sticky top-0 z-20 border-b border-line-strong bg-neutral">
         <div className="flex h-14 items-center gap-6 px-2 sm:px-4">
-          <a href={paths.home()} className="flex h-14 min-w-11 shrink-0 items-center gap-2.5" aria-label="TekkenInputLab home">
+          <a href={paths.home()} className="flex h-14 min-w-11 shrink-0 items-center gap-2.5" aria-label="Tekken Input Lab home">
             <LogoMark />
-            <span className="text-[20px] font-bold tracking-[0.02em] text-fg uppercase">TekkenInputLab</span>
+            <span className="text-[20px] font-bold tracking-[0.02em] text-fg uppercase">Tekken Input Lab</span>
           </a>
           <nav
             aria-label="Main"
@@ -75,7 +75,7 @@ export function AppShell({ route, children }: AppShellProps) {
             })}
             {/* The single "create" entry point (home has its own large card for it). */}
             {showNew && (
-              <LinkButton href={paths.new()} variant="primary" aria-label="New combo" className="m-1.5 h-auto! sm:m-0 sm:ml-auto sm:h-11!">
+              <LinkButton href={paths.new()} variant="primary" aria-label="New combo" className="m-1.5 h-auto! whitespace-nowrap sm:m-0 sm:ml-auto sm:h-11!">
                 + New
               </LinkButton>
             )}
