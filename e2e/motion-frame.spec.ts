@@ -17,14 +17,13 @@ test('motions are bare arrows by default; the frame toggle is shared and remembe
   // The notation text is never rewritten.
   await expect(page.getByLabel('Notation', { exact: true })).toHaveValue('cd+4,1, ff+3');
 
-  // Same preference in the generator, which has its own toggle.
+  // Same preference in the generator's combo display.
   await page.getByRole('link', { name: 'TTT2 Generator' }).click();
-  const options = page.getByRole('complementary', { name: 'Generator options' });
-  await expect(options.getByRole('button', { name: 'Frame motions' })).toHaveAttribute('aria-pressed', 'true');
-  const first = page.getByRole('listitem', { name: 'Generated combo 1', exact: true });
-  await expect(first.locator('svg[data-motion-frame]')).toHaveAttribute('data-motion-frame', 'on');
+  const built = page.getByRole('region', { name: 'Built combo' });
+  await expect(built.getByRole('button', { name: 'Frame motions' })).toHaveAttribute('aria-pressed', 'true');
+  await expect(built.locator('svg[data-motion-frame]')).toHaveAttribute('data-motion-frame', 'on');
 
   // Survives a reload.
   await page.reload();
-  await expect(page.getByRole('complementary', { name: 'Generator options' }).getByRole('button', { name: 'Frame motions' })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.getByRole('region', { name: 'Built combo' }).getByRole('button', { name: 'Frame motions' })).toHaveAttribute('aria-pressed', 'true');
 });

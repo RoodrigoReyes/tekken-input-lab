@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { generateCombos, type GeneratorOptions } from '../../src/ttt2/generator';
+import { assembleCombo, bestPick, collectPieces, generateCombos, type GeneratorOptions } from '../../src/ttt2/generator';
 import { importGuide, rosterName, splitAdditional } from '../../src/ttt2/guideImporter';
 import { analyzeRoute } from '../../src/ttt2/routeAnalysis';
 import type { GuideLibrary } from '../../src/ttt2/types';
@@ -187,5 +187,56 @@ describe('generateCombos', () => {
 
   it('returns nothing for unknown characters', () => {
     expect(generateCombos(library, { ...base, partner: 'Nobody' }).combos).toEqual([]);
+  });
+});
+
+describe('layered builder (collectPieces / assembleCombo / bestPick)', () => {
+  const base: GeneratorOptions = {
+    point: 'Kazuya',
+    partner: 'Nina',
+    context: 'open',
+    routeKinds: ['normal', 'counterHit', 'lowParry'],
+    fillerBy: 'partner',
+    enderBy: 'point',
+  };
+
+  it('exposes the usable pieces of each phase with their performers', () => {
+    const pools = collectPieces(library, base)!;
+    expect(pools.routes).toHaveLength(2);
+    expect(pools.fillers).toHaveLength(9);
+    expect(pools.enders).toHaveLength(2);
+    expect(pools.fillers.every((f) => f.piece.character === 'Nina')).toBe(true);
+    expect(pools.enders.every((e) => e.piece.character === 'Kazuya')).toBe(true);
+    expect(pools).toMatchObject({ point: 'Kazuya', fillerCharacter: 'Nina', enderCharacter: 'Kazuya' });
+  });
+
+  it('returns null for unknown characters', () => {
+    expect(collectPieces(library, { ...base, point: 'Nobody' })).toBeNull();
+  });
+
+  it('assembles exactly the combo the full generator would build for the same pieces', () => {
+    const pools = collectPieces(library, base)!;
+    for (const combo of generateCombos(library, base).combos) {
+      const built = assembleCombo(pools, { routeId: combo.route.id, fillerId: combo.filler.id, enderId: combo.ender.id });
+      expect(built).toEqual(combo);
+    }
+  });
+
+  it('returns null when a chosen piece is not available', () => {
+    const pools = collectPieces(library, base)!;
+    const pick = bestPick(pools)!;
+    expect(assembleCombo(pools, { ...pick, enderId: 'missing' })).toBeNull();
+  });
+
+  it('picks, by default, a combo with as few things to verify as the best ranked one', () => {
+    const pools = collectPieces(library, base)!;
+    const best = assembleCombo(pools, bestPick(pools)!)!;
+    expect(best.flags.length).toBe(generateCombos(library, base).combos[0]!.flags.length);
+    expect(best.route.routeKind).toBe('normal');
+  });
+
+  it('has no default pick when a phase is empty', () => {
+    const pools = collectPieces(library, base)!;
+    expect(bestPick({ ...pools, enders: [] })).toBeNull();
   });
 });

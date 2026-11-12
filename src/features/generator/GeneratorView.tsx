@@ -1,37 +1,27 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
-import { MotionFrameToggle } from '../../components/combos/MotionFrameToggle';
-import { SideToggle } from '../../components/combos/SideToggle';
 import { Button } from '../../components/ui/Button';
-import { Segmented, ToggleChip } from '../../components/ui/Chip';
+import { Segmented } from '../../components/ui/Chip';
+import { Collapsible } from '../../components/ui/Collapsible';
 import { Checkbox, Field, Select } from '../../components/ui/Field';
-import { Eyebrow, PageTitle, Panel, PanelHeader } from '../../components/ui/Panel';
+import { Eyebrow, PageTitle, Panel } from '../../components/ui/Panel';
 import { useToast } from '../../components/ui/Toast';
 import { errorMessage } from '../../hooks/useCombos';
 import { paths } from '../../hooks/useHashRoute';
-import { generateCombos, type GeneratedCombo, type GeneratorOptions, type Performer } from '../../ttt2/generator';
+import { assembleCombo, bestPick, collectPieces, type ComboPick, type GeneratedCombo, type GeneratorOptions, type Performer } from '../../ttt2/generator';
 import { GUIDE_SOURCE, loadGuideLibrary } from '../../ttt2/guideData';
 import type { GuideLibrary, PieceContext, RouteKind } from '../../ttt2/types';
-import { GeneratedComboItem } from './GeneratedComboItem';
+import { ComboBuilder } from './ComboBuilder';
+import { ComboResult } from './ComboResult';
 import { peekEditorDraft, setPendingGenerated } from './handoff';
-import { swapTeam } from './teamSwap';
+import { swapTeam, type TeamFields } from './teamSwap';
 
-const PAGE = 10;
-const ROUTE_KINDS: ReadonlyArray<[RouteKind, string]> = [
-  ['normal', 'Normal'],
-  ['counterHit', 'Counter hit'],
-  ['lowParry', 'Low parry'],
-];
+/** Every route kind is offered: the route dropdown groups them (Normal, Counter hit, Low parry, Wall). */
+const ROUTE_KINDS: readonly RouteKind[] = ['normal', 'counterHit', 'lowParry'];
 /** Default team when the guide has them (the spec's sample combo). */
 const DEFAULT_TEAM = ['Kazuya', 'Nina'] as const;
 
-interface Settings {
-  point: string;
-  mate: string;
+interface Settings extends TeamFields {
   context: PieceContext;
-  kinds: RouteKind[];
-  starter: string;
-  pointForm: string;
-  partnerForm: string;
   fillerBy: Performer;
   enderBy: Performer;
   includeAdditional: boolean;
@@ -51,10 +41,11 @@ function defaultSettings(names: readonly string[]): Settings {
     point,
     mate,
     context: 'open',
-    kinds: ['normal', 'counterHit', 'lowParry'],
-    starter: '',
     pointForm: '',
     partnerForm: '',
+    routeId: '',
+    fillerId: '',
+    enderId: '',
     fillerBy: 'partner',
     enderBy: 'point',
     includeAdditional: false,
@@ -104,20 +95,17 @@ export function GeneratorView({ navigate }: { navigate: (hash: string) => void }
   };
 
   return (
-    <div className="flex flex-col gap-5">
-      <header className="flex flex-col gap-2">
+    <div className="flex flex-col gap-4">
+      <header className="flex flex-col gap-1.5">
         <Eyebrow>
           <span>Tekken Tag Tournament 2</span>
           <span aria-hidden>/</span>
           <span className="text-primary">Team combo generator</span>
         </Eyebrow>
         <PageTitle>TTT2 Combo Generator</PageTitle>
-        <p className="max-w-4xl text-sm text-fg-muted">
-          Build Tekken Tag Tournament 2 team combos from the bundled guide <strong className="text-fg">“{GUIDE_SOURCE.title}”</strong>: the point character’s route up
-          to a Bound (B!), then Tag Assault (TA!), a TA filler and an ender.
-        </p>
-        <p className="flex items-center gap-2 rounded-[4px] border border-warning/50 bg-warning/5 px-3 py-2 text-sm text-warning">
-          <span aria-hidden>⚠</span> Results are suggestions until tested in practice mode.
+        <p className="max-w-5xl text-sm text-fg-muted">
+          Build a team combo in three phases from the bundled guide <strong className="text-fg">“{GUIDE_SOURCE.title}”</strong>: the point character’s route up to a
+          Bound (B!), a TA filler after the Tag Assault (TA!), and an ender. <span className="text-warning">⚠ Suggestions until tested in practice mode.</span>
         </p>
       </header>
 
@@ -143,219 +131,181 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
   const [settings, setSettings] = useState<Settings>(() =>
     remembered && names.includes(remembered.point) && names.includes(remembered.mate) ? remembered : defaultSettings(names),
   );
-  const [shown, setShown] = useState(PAGE);
   useEffect(() => {
     remembered = settings;
   }, [settings]);
 
-  const { point, mate, context, kinds, starter, pointForm, partnerForm, fillerBy, enderBy, includeAdditional, onlyClean } = settings;
+  const { point, mate, context, pointForm, partnerForm, fillerBy, enderBy, includeAdditional, onlyClean } = settings;
   const update = (patch: Partial<Settings>) => setSettings((s) => ({ ...s, ...patch }));
-
-  const starters = useMemo(() => {
-    const kit = library.kits.find((k) => k.character === point);
-    return [...new Set(kit?.pieces.filter((p) => p.role === 'route' && p.starter).map((p) => p.starter as string))];
-  }, [library, point]);
 
   const options: GeneratorOptions = {
     point,
     partner: mate,
     context,
-    routeKinds: context === 'wall' ? [...kinds, 'wall'] : kinds,
+    routeKinds: context === 'wall' ? [...ROUTE_KINDS, 'wall'] : ROUTE_KINDS,
     fillerBy,
     enderBy,
     includeAdditional,
     onlyClean,
-    ...(starter ? { starter } : {}),
     ...(pointForm && pointForm !== point ? { pointForm } : {}),
     ...(partnerForm && partnerForm !== mate ? { partnerForm } : {}),
   };
   const key = JSON.stringify(options);
   const sameCharacter = point === mate;
-  const result = useMemo(() => (point && mate && !sameCharacter ? generateCombos(library, options) : null), [library, key]); // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => setShown(PAGE), [key]);
+  const pools = useMemo(() => (point && mate && !sameCharacter ? collectPieces(library, options) : null), [library, key]); // eslint-disable-line react-hooks/exhaustive-deps
+  const best = useMemo(() => (pools ? bestPick(pools) : null), [pools]);
+
+  // A remembered choice that is no longer available (team, context or filters changed) falls back to the best pick.
+  const pick: ComboPick | null =
+    pools && best
+      ? {
+          routeId: pools.routes.some((r) => r.piece.id === settings.routeId) ? settings.routeId : best.routeId,
+          fillerId: pools.fillers.some((f) => f.piece.id === settings.fillerId) ? settings.fillerId : best.fillerId,
+          enderId: pools.enders.some((e) => e.piece.id === settings.enderId) ? settings.enderId : best.enderId,
+        }
+      : null;
+  const combo = pools && pick ? assembleCombo(pools, pick) : null;
 
   const reset = () => setSettings(defaultSettings(names));
-
   const pointForms = formsOf(library, point);
   const partnerForms = formsOf(library, mate);
-  const toggleKind = (k: RouteKind) => update({ kinds: kinds.includes(k) ? kinds.filter((x) => x !== k) : [...kinds, k] });
   const performers = [
     { value: 'point' as const, label: `Point (${point || '—'})` },
     { value: 'partner' as const, label: `Teammate (${mate || '—'})` },
   ];
+  const performerName = (p: Performer) => (p === 'point' ? point : mate);
+  const formLabel = (form: string, name: string) => (form && form !== name ? form : name);
+  const teamSummary = `${formLabel(pointForm, point)} → ${formLabel(partnerForm, mate)} · ${context === 'wall' ? 'At the wall' : 'Open ground'}`;
+  const advancedSummary = [`Filler: ${performerName(fillerBy)}`, `Ender: ${performerName(enderBy)}`, includeAdditional && 'Conditional on', onlyClean && 'Clean only']
+    .filter(Boolean)
+    .join(' · ');
 
   return (
-    <div className="flex flex-col items-start gap-5 xl:flex-row">
-      <Panel as="aside" aria-label="Generator options" className="flex w-full shrink-0 flex-col gap-4 p-4 xl:sticky xl:top-[72px] xl:max-h-[calc(100dvh-88px)] xl:w-[380px] xl:overflow-y-auto [scrollbar-width:thin] *:shrink-0">
-        <PanelHeader
-          title="Generator options"
+    <div className="flex flex-col gap-4">
+      <div aria-label="Generator options" role="group" className="grid items-start gap-3 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
+        <Collapsible
+          title="Team & setup"
+          summary={teamSummary}
+          defaultOpen
+          storageKey="generator-team"
           aside={
             <button type="button" className="label-md text-fg-muted underline underline-offset-4 hover:text-fg" onClick={reset}>
               Reset
             </button>
           }
-        />
-        <Field label="Point character" aside="Starts the combo">
-          <Select
-            value={point}
-            onChange={(e) => update({ point: e.target.value, starter: '', pointForm: '' })}
-          >
-            {names.map((n) => (
-              <option key={n} value={n}>
-                {n}
-              </option>
-            ))}
-          </Select>
-        </Field>
-        {pointForms.length > 0 && (
-          <Field label={`${point} form`}>
-            <Select value={pointForm || point} onChange={(e) => update({ pointForm: e.target.value })}>
-              {pointForms.map((f) => (
-                <option key={f} value={f}>
-                  {f}
-                </option>
-              ))}
-            </Select>
-          </Field>
-        )}
-        <div className="flex justify-center">
-          <Button
-            size="sm"
-            onClick={() => setSettings(swapTeam)}
-            disabled={!point || !mate || sameCharacter}
-            aria-label="Swap point and teammate"
-            title={`Let ${mate || 'the teammate'} start the combo and ${point || 'the point character'} tag in`}
-          >
-            <span aria-hidden>⇅</span> Swap
-          </Button>
-        </div>
-        <Field label="Tag-in teammate" aside="Tag Assault" hint="Only characters in the guide. Point and teammate must be different.">
-          <Select
-            value={mate}
-            onChange={(e) => update({ mate: e.target.value, partnerForm: '' })}
-          >
-            {names.map((n) => (
-              <option key={n} value={n}>
-                {n}
-              </option>
-            ))}
-          </Select>
-        </Field>
-        {partnerForms.length > 0 && (
-          <Field label={`${mate} form`}>
-            <Select value={partnerForm || mate} onChange={(e) => update({ partnerForm: e.target.value })}>
-              {partnerForms.map((f) => (
-                <option key={f} value={f}>
-                  {f}
-                </option>
-              ))}
-            </Select>
-          </Field>
-        )}
-
-        <Group label="Where">
-          <Segmented
-            label="Where"
-            value={context}
-            onChange={(v) => update({ context: v })}
-            options={[
-              { value: 'open', label: 'Open ground' },
-              { value: 'wall', label: 'At the wall' },
-            ]}
-          />
-        </Group>
-
-        <Group label="Player side">
-          <SideToggle />
-          <p className="text-xs text-fg-muted">2P mirrors forward/back arrows in the results. The notation stays the same.</p>
-        </Group>
-
-        <Group label="Motions">
-          <MotionFrameToggle className="self-start" />
-          <p className="text-xs text-fg-muted">Draw qcf, cd, ff… inside a frame instead of bare arrows.</p>
-        </Group>
-
-        <Field label="Starter">
-          <Select value={starter} onChange={(e) => update({ starter: e.target.value })}>
-            <option value="">Any starter</option>
-            {starters.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
-            ))}
-          </Select>
-        </Field>
-
-        <Group label="Starter types">
-          <div role="group" aria-label="Starter types" className="flex flex-wrap gap-1.5">
-            {ROUTE_KINDS.map(([k, label]) => (
-              <ToggleChip key={k} active={kinds.includes(k)} onClick={() => toggleKind(k)}>
-                {kinds.includes(k) && <span aria-hidden>✓ </span>}
-                {label}
-              </ToggleChip>
-            ))}
+        >
+          <div className="grid items-start gap-3 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
+            <div className="flex flex-col gap-3">
+              <Field label="Point character" aside="Starts the combo">
+                <Select value={point} onChange={(e) => update({ point: e.target.value, pointForm: '' })}>
+                  {names.map((n) => (
+                    <option key={n} value={n}>
+                      {n}
+                    </option>
+                  ))}
+                </Select>
+              </Field>
+              {pointForms.length > 0 && (
+                <Field label={`${point} form`}>
+                  <Select value={pointForm || point} onChange={(e) => update({ pointForm: e.target.value })}>
+                    {pointForms.map((f) => (
+                      <option key={f} value={f}>
+                        {f}
+                      </option>
+                    ))}
+                  </Select>
+                </Field>
+              )}
+            </div>
+            <Button
+              className="self-center sm:mt-6 sm:self-start"
+              onClick={() => setSettings(swapTeam)}
+              disabled={!point || !mate || sameCharacter}
+              aria-label="Swap point and teammate"
+              title={`Let ${mate || 'the teammate'} start the combo and ${point || 'the point character'} tag in`}
+            >
+              <span aria-hidden className="sm:hidden">⇅</span>
+              <span aria-hidden className="hidden sm:inline">⇄</span> Swap
+            </Button>
+            <div className="flex flex-col gap-3">
+              <Field label="Tag-in teammate" aside="Tag Assault">
+                <Select value={mate} onChange={(e) => update({ mate: e.target.value, partnerForm: '' })}>
+                  {names.map((n) => (
+                    <option key={n} value={n}>
+                      {n}
+                    </option>
+                  ))}
+                </Select>
+              </Field>
+              {partnerForms.length > 0 && (
+                <Field label={`${mate} form`}>
+                  <Select value={partnerForm || mate} onChange={(e) => update({ partnerForm: e.target.value })}>
+                    {partnerForms.map((f) => (
+                      <option key={f} value={f}>
+                        {f}
+                      </option>
+                    ))}
+                  </Select>
+                </Field>
+              )}
+            </div>
           </div>
-        </Group>
+          <Group label="Where">
+            <Segmented
+              label="Where"
+              value={context}
+              onChange={(v) => update({ context: v })}
+              options={[
+                { value: 'open', label: 'Open ground' },
+                { value: 'wall', label: 'At the wall' },
+              ]}
+            />
+          </Group>
+        </Collapsible>
 
-        <div className="flex flex-col gap-3 rounded-[4px] border border-line-strong bg-neutral p-3">
-          <p className="label-md text-fg">After TA!</p>
+        <Collapsible title="Advanced" summary={advancedSummary} storageKey="generator-advanced">
           <Group label="Filler by">
             <Segmented label="Filler by" value={fillerBy} onChange={(v) => update({ fillerBy: v })} options={performers} />
           </Group>
           <Group label="Ender by">
             <Segmented label="Ender by" value={enderBy} onChange={(v) => update({ enderBy: v })} options={performers} />
           </Group>
-        </div>
+          <div className="flex flex-col gap-2.5 border-t border-line-strong pt-3">
+            <Checkbox label="Include conditional (“Additional”) options" checked={includeAdditional} onChange={(e) => update({ includeAdditional: e.target.checked })} />
+            <Checkbox label="Only pieces without notation warnings" checked={onlyClean} onChange={(e) => update({ onlyClean: e.target.checked })} />
+          </div>
+        </Collapsible>
+      </div>
 
-        <div className="flex flex-col gap-2.5 border-t border-line-strong pt-3">
-          <Checkbox label="Include conditional (“Additional”) options" checked={includeAdditional} onChange={(e) => update({ includeAdditional: e.target.checked })} />
-          <Checkbox label="Only pieces without notation warnings" checked={onlyClean} onChange={(e) => update({ onlyClean: e.target.checked })} />
-        </div>
-      </Panel>
-
-      <section aria-label="Generated combos" className="flex w-full min-w-0 flex-1 flex-col gap-4">
+      <section aria-label="Generated combo" className="flex min-w-0 flex-col gap-3">
         {sameCharacter ? (
           <StateCard title="Same character chosen twice" body="Pick two different characters for the point and the tag-in teammate." tone="error" />
-        ) : kinds.length === 0 && context === 'open' ? (
-          <StateCard title="No starter types selected" body="Select at least one starter type: Normal, Counter hit or Low parry." />
         ) : (
-          result && (
+          pools && (
             <>
-              <Panel className="flex flex-col gap-1 p-4">
-                <h2 className="label-md flex items-center gap-2 text-fg">
-                  <span aria-hidden className="size-2 rounded-[1px] bg-primary" /> Generated combos
-                </h2>
-                <p className="label-sm text-fg-muted" role="status">
-                  <strong className="text-fg">{result.stats.valid}</strong> combos · {result.stats.routes} routes reaching B! × {result.stats.fillers} TA fillers ×{' '}
-                  {result.stats.enders} enders
-                </p>
-              </Panel>
-              {result.stats.valid === 0 ? (
+              <p className="label-sm text-fg-muted" role="status">
+                <span aria-hidden className="mr-2 inline-block size-2 rounded-[1px] bg-primary align-middle" />
+                {pools.routes.length} routes reaching B! · {pools.fillers.length} TA fillers · {pools.enders.length} enders
+                <span className="text-fg-muted/70"> ({pools.routes.length * pools.fillers.length * pools.enders.length} possible combos)</span>
+              </p>
+              {combo && pick ? (
+                <>
+                  <ComboBuilder pools={pools} pick={pick} onPick={(patch) => update(patch)} />
+                  <ComboResult combo={combo} point={point} partner={mate} onUse={(c) => onUse(c, { point, partner: mate })} onCopy={onCopy} />
+                </>
+              ) : (
                 <StateCard
                   title="No combos for these options"
                   body={[
-                    result.stats.routes === 0 && `The guide has no ${point} route reaching a Bound (B!) for these starters.`,
-                    result.stats.fillers === 0 && 'No TA fillers for this side/context.',
-                    result.stats.enders === 0 && 'No enders for this side/context.',
+                    pools.routes.length === 0 && `The guide has no ${point} route reaching a Bound (B!) here.`,
+                    pools.fillers.length === 0 && 'No TA fillers for this side/context.',
+                    pools.enders.length === 0 && 'No enders for this side/context.',
                   ]
                     .filter(Boolean)
                     .join(' ')}
                 />
-              ) : (
-                <ol className="flex flex-col gap-4">
-                  {result.combos.slice(0, shown).map((c, i) => (
-                    <GeneratedComboItem key={c.id} combo={c} rank={i + 1} point={point} partner={mate} onUse={(combo) => onUse(combo, { point, partner: mate })} onCopy={onCopy} />
-                  ))}
-                </ol>
               )}
-              <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
-                {shown < result.combos.length ? (
-                  <Button onClick={() => setShown((n) => n + PAGE)}>Show more ({result.combos.length - shown} left)</Button>
-                ) : (
-                  <span />
-                )}
-                <p className="label-sm text-[11px] text-fg-muted sm:text-right">Source: {GUIDE_SOURCE.credits}</p>
-              </div>
+              <p className="label-sm text-[11px] text-fg-muted">Source: {GUIDE_SOURCE.credits}</p>
             </>
           )
         )}

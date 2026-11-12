@@ -4,13 +4,16 @@ export interface TeamFields {
   mate: string;
   pointForm: string;
   partnerForm: string;
-  starter: string;
+  /** Chosen route, TA filler and ender ('' = automatic pick). */
+  routeId: string;
+  fillerId: string;
+  enderId: string;
 }
 
 /**
  * The teammate becomes the point character (and vice versa), each keeping their form.
- * The starter resets because starters belong to the point character's routes; every other
- * option (context, starter types, who does the filler/ender, …) is kept as is.
+ * The chosen pieces reset because they belong to the old roles (routes are the point
+ * character's); every other option (context, who does the filler/ender, …) is kept as is.
  */
 export function swapTeam<T extends TeamFields>(settings: T): T {
   return {
@@ -19,6 +22,8 @@ export function swapTeam<T extends TeamFields>(settings: T): T {
     mate: settings.point,
     pointForm: settings.partnerForm,
     partnerForm: settings.pointForm,
-    starter: '',
+    routeId: '',
+    fillerId: '',
+    enderId: '',
   };
 }

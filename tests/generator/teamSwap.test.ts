@@ -6,7 +6,9 @@ const base = {
   mate: 'Nina',
   pointForm: 'Devil Kazuya',
   partnerForm: '',
-  starter: 'EWGF',
+  routeId: 'Kazuya/route/1',
+  fillerId: 'Nina/ta/2',
+  enderId: 'Kazuya/ender/1',
   fillerBy: 'partner' as const,
   enderBy: 'point' as const,
   context: 'wall' as const,
@@ -18,9 +20,9 @@ describe('swapTeam', () => {
     expect(swapped).toMatchObject({ point: 'Nina', mate: 'Kazuya', pointForm: '', partnerForm: 'Devil Kazuya' });
   });
 
-  it('resets the starter (starters belong to the point character) and keeps every other option', () => {
+  it('resets the chosen pieces (they belong to the old roles) and keeps every other option', () => {
     const swapped = swapTeam(base);
-    expect(swapped.starter).toBe('');
+    expect(swapped).toMatchObject({ routeId: '', fillerId: '', enderId: '' });
     expect(swapped).toMatchObject({ fillerBy: 'partner', enderBy: 'point', context: 'wall' });
   });
 
@@ -28,6 +30,6 @@ describe('swapTeam', () => {
     const copy = { ...base };
     const twice = swapTeam(swapTeam(base));
     expect(base).toEqual(copy);
-    expect(twice).toEqual({ ...base, starter: '' });
+    expect(twice).toEqual({ ...base, routeId: '', fillerId: '', enderId: '' });
   });
 });

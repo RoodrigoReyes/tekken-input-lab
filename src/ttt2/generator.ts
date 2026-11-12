@@ -69,7 +69,7 @@ export interface GeneratorResult {
   stats: { routes: number; fillers: number; enders: number; candidates: number; valid: number; rejected: Record<string, number> };
 }
 
-const KIND_ORDER: Readonly<Record<RouteKind, number>> = { normal: 0, counterHit: 1, lowParry: 2, wall: 3 };
+export const KIND_ORDER: Readonly<Record<RouteKind, number>> = { normal: 0, counterHit: 1, lowParry: 2, wall: 3 };
 
 function findKit(library: GuideLibrary, character: string): CharacterKit | undefined {
   return library.kits.find((k) => k.character.localeCompare(character, undefined, { sensitivity: 'base' }) === 0);
@@ -119,15 +119,45 @@ function assemble(segments: ReadonlyArray<{ who: string; text: string }>): strin
   return merged.map((s) => `${s.who}:\n${s.text}`).join('\n');
 }
 
-export function generateCombos(library: GuideLibrary, options: GeneratorOptions): GeneratorResult {
+export interface PoolPiece {
+  piece: ComboPiece;
+  /** Things to verify for this piece alone. */
+  flags: Flag[];
+}
+
+export interface PoolRoute extends PoolPiece {
+  analysis: RouteAnalysis;
+}
+
+/** Every piece usable for a team and set of options, per phase, in guide order. */
+export interface PiecePools {
+  /** Roster names: who performs the route (point), the filler and the ender. */
+  point: string;
+  fillerCharacter: string;
+  enderCharacter: string;
+  routes: PoolRoute[];
+  fillers: PoolPiece[];
+  enders: PoolPiece[];
+  rejected: Record<string, number>;
+}
+
+export interface ComboPick {
+  routeId: string;
+  fillerId: string;
+  enderId: string;
+}
+
+const CARRY_FLAG: Flag = { kind: 'condition', piece: 'route', text: 'Open-ground route: check that it carries the opponent to the wall before the TA.' };
+
+/** Applies the hard rules (R1–R6) once per piece; any route × filler × ender left is a valid combo. */
+export function collectPieces(library: GuideLibrary, options: GeneratorOptions): PiecePools | null {
   const pointKit = findKit(library, options.point);
   const partnerKit = findKit(library, options.partner);
+  if (!pointKit || !partnerKit) return null;
   const rejected: Record<string, number> = {};
   const reject = (rule: string) => {
     rejected[rule] = (rejected[rule] ?? 0) + 1;
   };
-  const empty: GeneratorResult = { combos: [], stats: { routes: 0, fillers: 0, enders: 0, candidates: 0, valid: 0, rejected } };
-  if (!pointKit || !partnerKit) return empty;
 
   const who = (p: Performer) => (p === 'point' ? { kit: pointKit, form: options.pointForm } : { kit: partnerKit, form: options.partnerForm });
   const usable = (p: ComboPiece) => (options.includeAdditional || !p.additional) && (!options.onlyClean || pieceWarnings(p).length === 0);
@@ -147,9 +177,14 @@ export function generateCombos(library: GuideLibrary, options: GeneratorOptions)
       const issue = fatalIssue(piece, analysis.opener as string, true);
       if (issue) reject(issue);
       return !issue;
-    });
+    })
+    .map(({ piece, analysis }) => ({
+      piece,
+      analysis,
+      flags: [...(options.context === 'wall' && piece.context === 'open' ? [CARRY_FLAG] : []), ...pieceFlags(piece, 'route', analysis.opener)],
+    }));
 
-  const listFor = (role: 'taFiller' | 'ender', performer: Performer) => {
+  const listFor = (role: 'taFiller' | 'ender', performer: Performer, which: Flag['piece']): PoolPiece[] => {
     const { kit, form } = who(performer);
     return kit.pieces
       .filter((p) => p.role === role && p.context === options.context && formMatches(p, form, kit.character) && usable(p))
@@ -157,43 +192,62 @@ export function generateCombos(library: GuideLibrary, options: GeneratorOptions)
         const issue = fatalIssue(p, p.notation, false);
         if (issue) reject(issue);
         return !issue;
-      });
+      })
+      .map((piece) => ({ piece, flags: pieceFlags(piece, which) }));
   };
-  const fillers = listFor('taFiller', options.fillerBy);
-  const enders = listFor('ender', options.enderBy);
 
-  const carryFlag: Flag = { kind: 'condition', piece: 'route', text: 'Open-ground route: check that it carries the opponent to the wall before the TA.' };
-  const routeFlags = new Map(
-    routes.map(({ piece, analysis }) => [
-      piece.id,
-      [...(options.context === 'wall' && piece.context === 'open' ? [carryFlag] : []), ...pieceFlags(piece, 'route', analysis.opener)],
+  return {
+    point: pointKit.character,
+    fillerCharacter: who(options.fillerBy).kit.character,
+    enderCharacter: who(options.enderBy).kit.character,
+    routes,
+    fillers: listFor('taFiller', options.fillerBy, 'filler'),
+    enders: listFor('ender', options.enderBy, 'ender'),
+    rejected,
+  };
+}
+
+function compose(pools: PiecePools, route: PoolRoute, filler: PoolPiece, ender: PoolPiece): GeneratedCombo {
+  return {
+    id: `${route.piece.id}+${filler.piece.id}+${ender.piece.id}`,
+    route: route.piece,
+    filler: filler.piece,
+    ender: ender.piece,
+    analysis: route.analysis,
+    notation: assemble([
+      { who: pools.point, text: `${route.analysis.opener} > TA!` },
+      { who: pools.fillerCharacter, text: filler.piece.notation },
+      { who: pools.enderCharacter, text: ender.piece.notation },
     ]),
-  );
-  const fillerFlags = new Map(fillers.map((p) => [p.id, pieceFlags(p, 'filler')]));
-  const enderFlags = new Map(enders.map((p) => [p.id, pieceFlags(p, 'ender')]));
-  const combos: GeneratedCombo[] = [];
-  let candidates = 0;
-  for (const { piece: route, analysis } of routes) {
-    for (const filler of fillers) {
-      for (const ender of enders) {
-        candidates++;
-        const notation = assemble([
-          { who: pointKit.character, text: `${analysis.opener} > TA!` },
-          { who: who(options.fillerBy).kit.character, text: filler.notation },
-          { who: who(options.enderBy).kit.character, text: ender.notation },
-        ]);
-        combos.push({
-          id: `${route.id}+${filler.id}+${ender.id}`,
-          route,
-          filler,
-          ender,
-          analysis,
-          notation,
-          flags: [...routeFlags.get(route.id)!, ...fillerFlags.get(filler.id)!, ...enderFlags.get(ender.id)!],
-        });
-      }
-    }
-  }
+    flags: [...route.flags, ...filler.flags, ...ender.flags],
+  };
+}
+
+/** The combo made of the chosen pieces, or null when one of them is not in the pools. */
+export function assembleCombo(pools: PiecePools, pick: ComboPick): GeneratedCombo | null {
+  const route = pools.routes.find((r) => r.piece.id === pick.routeId);
+  const filler = pools.fillers.find((f) => f.piece.id === pick.fillerId);
+  const ender = pools.enders.find((e) => e.piece.id === pick.enderId);
+  return route && filler && ender ? compose(pools, route, filler, ender) : null;
+}
+
+function fewestFlags<T extends PoolPiece>(list: readonly T[], tieBreak: (a: T, b: T) => number = () => 0): T | undefined {
+  return [...list].sort((a, b) => a.flags.length - b.flags.length || tieBreak(a, b))[0];
+}
+
+/** Default pick: per phase, the piece with the fewest things to verify (plain starters before CH/LP/wall). */
+export function bestPick(pools: PiecePools): ComboPick | null {
+  const route = fewestFlags(pools.routes, (a, b) => KIND_ORDER[a.piece.routeKind ?? 'normal'] - KIND_ORDER[b.piece.routeKind ?? 'normal']);
+  const filler = fewestFlags(pools.fillers);
+  const ender = fewestFlags(pools.enders);
+  return route && filler && ender ? { routeId: route.piece.id, fillerId: filler.piece.id, enderId: ender.piece.id } : null;
+}
+
+export function generateCombos(library: GuideLibrary, options: GeneratorOptions): GeneratorResult {
+  const pools = collectPieces(library, options);
+  if (!pools) return { combos: [], stats: { routes: 0, fillers: 0, enders: 0, candidates: 0, valid: 0, rejected: {} } };
+  const { routes, fillers, enders } = pools;
+  const combos = routes.flatMap((route) => fillers.flatMap((filler) => enders.map((ender) => compose(pools, route, filler, ender))));
 
   // Fewest things to verify first, then plain starters before CH/LP/wall.
   const ranked = [...combos].sort(
@@ -204,6 +258,6 @@ export function generateCombos(library: GuideLibrary, options: GeneratorOptions)
   );
   return {
     combos: options.limit ? ranked.slice(0, options.limit) : ranked,
-    stats: { routes: routes.length, fillers: fillers.length, enders: enders.length, candidates, valid: combos.length, rejected },
+    stats: { routes: routes.length, fillers: fillers.length, enders: enders.length, candidates: combos.length, valid: combos.length, rejected: pools.rejected },
   };
 }
