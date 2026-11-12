@@ -38,7 +38,7 @@ test('create, view, persist, and delete a combo', async ({ page }) => {
   await page.getByLabel('Search combos').fill('ssl 1~b');
   await expect(page.getByRole('link', { name: 'T6 test combo' })).toBeVisible();
   await page.getByLabel('Search combos').fill('nothing matches');
-  await expect(page.getByText('No combos match these filters.')).toBeVisible();
+  await expect(page.getByText('No combos match these filters')).toBeVisible();
   await page.getByLabel('Search combos').fill('');
 
   await page.getByRole('link', { name: 'T6 test combo' }).click();

@@ -1,6 +1,6 @@
 import 'fake-indexeddb/auto';
 import { describe, expect, it } from 'vitest';
-import { BackupError, createBackup, importBackup, parseBackupText, readBackup, serializeBackup } from '../../src/storage/backup';
+import { BackupError, createBackup, describeSkipped, importBackup, parseBackupText, readBackup, serializeBackup } from '../../src/storage/backup';
 import { createDexieRepository } from '../../src/storage/comboRepository';
 import { InputLabDatabase } from '../../src/storage/db';
 import type { Combo } from '../../src/types/combo';
@@ -42,6 +42,18 @@ describe('JSON backup', () => {
     const r = readBackup(data);
     expect(r.combos.map((c) => c.id)).toEqual(['abc']);
     expect(r.skipped.map((s) => s.index)).toEqual([1, 2]);
+  });
+
+  it('summarizes skipped combos with their position and the first reason', () => {
+    expect(describeSkipped([])).toBe('');
+    const data = { ...createBackup([combo]), combos: [combo, { ...combo, id: 'x', difficulty: 'medium' }] };
+    const one = describeSkipped(readBackup(data).skipped);
+    expect(one).toMatch(/^1 invalid combo skipped \(combo 2: difficulty: /);
+    const many = describeSkipped([
+      { index: 0, reason: 'name: Name is required' },
+      { index: 4, reason: 'game: bad' },
+    ]);
+    expect(many).toBe('2 invalid combos skipped (combo 1: name: Name is required; and 1 more)');
   });
 
   it('refuses non-JSON, foreign files and newer schema versions', () => {

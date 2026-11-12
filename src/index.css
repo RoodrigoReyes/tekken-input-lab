@@ -7,6 +7,8 @@
   --color-muted: #21262d;
   --color-line: #333a45;
   --color-line-strong: #21262e;
+  /* Boundary of inputs, buttons and chips: 3.24:1 on surface, 3.39:1 on neutral (WCAG 1.4.11 needs 3:1). */
+  --color-line-control: #5d6572;
   --color-fg: #e9e7e2;
   --color-fg-muted: #8b93a0;
   --color-primary: #ff571f;
@@ -19,25 +21,11 @@
   --color-tile: #161a23;
   --color-tile-line: #2a303d;
 
-  /* Legacy ink scale, remapped onto Frame Zero so older markup stays on-palette. */
-  --color-ink-950: #08090b;
-  --color-ink-900: #0e1013;
-  --color-ink-850: #0e1013;
-  --color-ink-800: #21262d;
-  --color-ink-700: #333a45;
-  --color-ink-500: #5d6572;
-  --color-ink-400: #8b93a0;
-  --color-ink-200: #cfccc6;
-  --color-ink-100: #e9e7e2;
-  --color-arcade: #ff571f;
-
-  --font-sans: Archivo, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-}
-
-/* Archivo Condensed (width axis) for large headlines. */
-@utility font-condensed {
-  font-stretch: 75%;
+  /* Chakra Petch for display and UI labels, Rajdhani for metadata (docs/DESIGN.md, Typography). */
+  --font-sans: "Chakra Petch", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-label: Rajdhani, ui-sans-serif, system-ui, sans-serif;
+  /* Notation: Rajdhani draws ~ almost like -. shortcut: system monospace differs per OS, self-host one if pixel parity matters. */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 }
 
 /* label-md: field labels, button text, section headers. */
@@ -49,11 +37,12 @@
   text-transform: uppercase;
 }
 
-/* label-sm: badges, chips, counts, credits (JetBrains Mono). */
+/* label-sm: badges, chips, counts, credits (Rajdhani). */
 @utility label-sm {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 12px;
   line-height: 16px;
+  font-weight: 500;
   letter-spacing: 0.12em;
 }
 
@@ -73,5 +62,30 @@ body {
   :focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
+  }
+
+  /* Tailwind's preflight leaves buttons on the arrow cursor; every enabled control shows the hand. */
+  a[href],
+  button,
+  select,
+  label[for],
+  [role="radio"],
+  input[type="checkbox"],
+  input[type="range"] {
+    cursor: pointer;
+  }
+
+  :disabled {
+    cursor: not-allowed;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

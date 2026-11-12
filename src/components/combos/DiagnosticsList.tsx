@@ -10,14 +10,14 @@ export function DiagnosticsList({ diagnostics, notation }: { diagnostics: readon
         return (
           <li
             key={`${d.code}-${i}`}
-            className={`flex gap-2.5 rounded-[4px] border px-3 py-2 text-sm ${warning ? 'border-warning/40 bg-warning/5 text-warning' : 'border-line-strong text-fg-muted'}`}
+            className={`flex gap-2.5 rounded-lg border px-3 py-2 text-sm ${warning ? 'border-warning/40 bg-warning/5 text-warning' : 'border-line-strong text-fg-muted'}`}
           >
             <span aria-hidden className="leading-5">
               {warning ? '⚠' : 'ℹ'}
             </span>
             <span className="leading-5">
               {d.span && d.span.end > d.span.start && (
-                <code className="mr-2 rounded-[2px] border border-line bg-line-strong px-1.5 py-0.5 font-mono text-xs text-fg">
+                <code className="mr-2 rounded-sm border border-line bg-line-strong px-1.5 py-0.5 font-mono text-xs text-fg">
                   {notation.slice(d.span.start, d.span.end)}
                 </code>
               )}

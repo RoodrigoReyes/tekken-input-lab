@@ -29,29 +29,29 @@ export function NotationReference({ game, dialect, characters }: { game: GameId;
   const words = Object.values(MECHANIC_WORDS);
   const entries = characters.flatMap((c) => entriesForCharacter(game, c).map((e) => ({ ...e, who: c })));
   return (
-    <Collapsible title={`Help & notation reference — ${getGame(game).name}`} storageKey="editor-reference" className="text-sm" bodyClassName="grid gap-5 md:grid-cols-3">
+    <Collapsible title={`Help & notation reference: ${getGame(game).name}`} storageKey="editor-reference" className="text-sm" bodyClassName="grid gap-5 md:grid-cols-3">
         <section>
-          <h4 className="label-md mb-2 text-fg-muted">Operators</h4>
+          <h3 className="label-md mb-2 text-fg-muted">Operators</h3>
           <dl className="space-y-0.5">
             {OPERATORS.map(([op, text]) => (
               <div key={op} className="flex gap-2">
                 <dt className="w-24 shrink-0 font-mono text-fg">{op}</dt>
-                <dd className="text-ink-400">{text}</dd>
+                <dd className="text-fg-muted">{text}</dd>
               </div>
             ))}
             <div className="flex gap-2">
               <dt className="w-24 shrink-0 font-mono text-fg">;</dt>
-              <dd className="text-ink-400">{d.semicolon === 'tagAssault' ? 'Tag Assault (this dialect)' : 'character section break'}</dd>
+              <dd className="text-fg-muted">{d.semicolon === 'tagAssault' ? 'Tag Assault (this dialect)' : 'character section break'}</dd>
             </div>
           </dl>
         </section>
         <section>
-          <h4 className="label-md mb-2 text-fg-muted">Events &amp; mechanics</h4>
+          <h3 className="label-md mb-2 text-fg-muted">Events &amp; mechanics</h3>
           <ul className="space-y-0.5">
             {events.map(([abbr, mech]) => {
               const a = availabilityOf(mech, game);
               return (
-                <li key={abbr} className={a.status === 'no' ? 'text-ink-500 line-through' : 'text-ink-200'} title={a.status === 'yes' ? '' : a.message}>
+                <li key={abbr} className={a.status === 'no' ? 'text-fg-muted line-through' : 'text-fg'} title={a.status === 'yes' ? '' : a.message}>
                   <span className="mr-1 inline-block w-4">{mark(a.status)}</span>
                   <span className="font-mono">{EVENT_SPELLING[abbr] ?? `${abbr}!`}</span> {MECHANICS[mech].label}
                 </li>
@@ -60,14 +60,14 @@ export function NotationReference({ game, dialect, characters }: { game: GameId;
             {words.map((w) => {
               const a = availabilityOf(w.mechanic, game);
               return (
-                <li key={w.abbr} className={a.status === 'no' ? 'text-ink-500 line-through' : 'text-ink-200'} title={a.status === 'yes' ? '' : a.message}>
+                <li key={w.abbr} className={a.status === 'no' ? 'text-fg-muted line-through' : 'text-fg'} title={a.status === 'yes' ? '' : a.message}>
                   <span className="mr-1 inline-block w-4">{mark(a.status)}</span>
                   <span className="font-mono">{w.abbr}</span> {MECHANICS[w.mechanic].label}
                 </li>
               );
             })}
             {getGame(game).tag && (
-              <li className="text-ink-200">
+              <li className="text-fg">
                 <span className="mr-1 inline-block w-4">✓</span>
                 <span className="font-mono">5</span> TAG button
               </li>
@@ -75,15 +75,15 @@ export function NotationReference({ game, dialect, characters }: { game: GameId;
           </ul>
         </section>
         <section>
-          <h4 className="label-md mb-2 text-fg-muted">Character notation</h4>
+          <h3 className="label-md mb-2 text-fg-muted">Character notation</h3>
           {entries.length === 0 ? (
-            <p className="text-ink-500">Select a character to see named moves and stances.</p>
+            <p className="text-fg-muted">Select a character to see named moves and stances.</p>
           ) : (
             <ul className="space-y-0.5">
               {entries.map((e) => (
-                <li key={`${e.who}-${e.abbr}`} className="text-ink-200">
+                <li key={`${e.who}-${e.abbr}`} className="text-fg">
                   <span className="font-mono">{e.abbr}</span> {e.label}
-                  <span className="text-ink-500"> · {e.kind === 'named' ? 'move' : 'stance'}{characters.length > 1 ? ` · ${e.who}` : ''}</span>
+                  <span className="text-fg-muted"> · {e.kind === 'named' ? 'move' : 'stance'}{characters.length > 1 ? ` · ${e.who}` : ''}</span>
                 </li>
               ))}
             </ul>

@@ -29,7 +29,7 @@ const JIN_EWGF: readonly GameId[] = ['ttt2', 't7', 't8'];
 const MISHIMA_WIND_GOD = ['Kazuya', 'Heihachi', 'Devil Jin'] as const;
 
 export const CHARACTER_ENTRIES: readonly CharacterEntry[] = [
-  // --- Mishima named moves -------------------------------------------------
+  // Mishima named moves
   { abbr: 'EWGF', label: 'Electric Wind God Fist', kind: 'named', characters: MISHIMA_WIND_GOD, games: ALL, expansion: 'f,n,d,df:2' },
   { abbr: 'EWGF', label: 'Electric Wind God Fist', kind: 'named', characters: ['Jin'], games: JIN_EWGF, expansion: 'f,n,d,df:2' },
   { abbr: 'PEWGF', label: 'Perfect Electric Wind God Fist', kind: 'named', characters: MISHIMA_WIND_GOD, games: ALL, expansion: 'f,n,d,df:2' },
@@ -43,7 +43,7 @@ export const CHARACTER_ENTRIES: readonly CharacterEntry[] = [
   { abbr: 'TGF', label: 'TGF', kind: 'named', characters: ['Heihachi', 'Devil Jin'], games: TTT2 },
   { abbr: 'AGF', label: 'AGF', kind: 'named', characters: ['Alex', 'Roger Jr.'], games: TTT2 },
 
-  // --- Stances ---------------------------------------------------------------
+  // Stances
   { abbr: 'ZEN', label: 'Zenshin', kind: 'stance', characters: ['Jin'], games: MODERN },
   { abbr: 'AOP', label: 'Art of Phoenix', kind: 'stance', characters: ['Xiaoyu'], games: ALL },
   { abbr: 'HYP', label: 'Hypnotist', kind: 'stance', characters: ['Xiaoyu'], games: ALL },
@@ -83,7 +83,7 @@ export const CHARACTER_ENTRIES: readonly CharacterEntry[] = [
   { abbr: 'MIA', label: 'Miare', kind: 'stance', characters: ['Jun'], games: ['t8'] },
   { abbr: 'LIB', label: 'Libertador', kind: 'stance', characters: ['Azucena'], games: ['t8'] },
 
-  // --- TTT2 abbreviations as written in the bundled "TTT2 BNB Combos" guide ----
+  // TTT2 abbreviations as written in the bundled "TTT2 BNB Combos" guide
   // Labels are given only where the meaning is certain; otherwise the
   // abbreviation itself is the label (never an invented meaning).
   ...ttt2Stances([

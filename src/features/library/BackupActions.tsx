@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { Button } from '../../components/ui/Button';
 import { useToast } from '../../components/ui/Toast';
 import { errorMessage, useRepository } from '../../hooks/useCombos';
-import { createBackup, importBackup, parseBackupText, serializeBackup } from '../../storage/backup';
+import { createBackup, describeSkipped, importBackup, parseBackupText, serializeBackup } from '../../storage/backup';
 import { downloadBlob } from '../export/download';
 
 const MAX_BACKUP_BYTES = 10 * 1024 * 1024;
@@ -33,8 +33,8 @@ export function BackupActions({ onImported }: { onImported: () => Promise<void> 
       await onImported();
       const parts = [`${added} added`, `${updated} updated`];
       if (keptLocal) parts.push(`${keptLocal} kept (your copy is newer)`);
-      if (result.skipped.length) parts.push(`${result.skipped.length} invalid skipped`);
-      toast(`Import: ${parts.join(', ')}`, result.skipped.length ? 'info' : 'success');
+      if (result.skipped.length) parts.push(describeSkipped(result.skipped));
+      toast(`Import: ${parts.join(', ')}`, result.skipped.length ? 'warning' : 'success');
     } catch (e) {
       toast(`Import failed: ${errorMessage(e)}`, 'error');
     } finally {

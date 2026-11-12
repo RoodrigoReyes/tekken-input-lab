@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { parseNotation } from '../../src/parser';
-import { layoutCombo, type Box, type Part } from '../../src/render/layout';
+import { headerFont, layoutCombo, type Box, type Part } from '../../src/render/layout';
+import { estimateText } from '../../src/render/measure';
 import type { GameId } from '../../src/types/notation';
 
 function layout(text: string, game: GameId = 't8', opts: Partial<Parameters<typeof layoutCombo>[1]> = {}, characters?: string[]) {
@@ -40,6 +41,14 @@ describe('layoutCombo', () => {
   it('stages are separated by stage boxes', () => {
     const l = layout('df+2 > 1,2 > T!');
     expect(l.boxes.map((b) => b.kind)).toEqual(['item', 'stage', 'item', 'relation', 'item', 'stage', 'item']);
+  });
+
+  it('drops event captions below the readable size (a 0.2 caption at size 24 would be under 5px)', () => {
+    const label = (size: number) => items(layout('T!', 't8', { size }).boxes)[0]?.parts[0] as Extract<Part, { type: 'label' }>;
+    expect(label(24).caption).toBeUndefined();
+    expect(label(38).caption).toBeUndefined();
+    expect(label(40).caption).toBe('TORNADO');
+    expect(label(24).text).toBe('T!');
   });
 
   it('labels: named moves, events, movements, prefixes, motions, hold', () => {
@@ -128,6 +137,15 @@ describe('layoutCombo', () => {
       { title: 'Kazuya', tagAssault: false, unassigned: false, tagWidth: 0 },
       { title: 'Armor King', tagAssault: true, unassigned: false, tagWidth: expect.any(Number) },
     ]);
+  });
+
+  it('section header text never drops below 10px, and the box makes room for it', () => {
+    expect(headerFont(40, 0.3)).toBe(12);
+    expect(headerFont(24, 0.3)).toBe(10);
+    const r = parseNotation('1,2 ; 3,4', { game: 'ttt2' });
+    const head = layoutCombo(r, { width: 2000, size: 24, sectionHeaders: [{ title: 'Kazuya' }, { title: 'Nina' }] }).boxes.find((b) => b.kind === 'sectionHeader');
+    expect(head?.w).toBeCloseTo(estimateText('KAZUYA', 10, 700) + 24 * 0.4);
+    expect(head?.h).toBeGreaterThanOrEqual(14);
   });
 
   it('single-section combos have no header', () => {

@@ -26,6 +26,16 @@ describe('SVG export', () => {
     expect(svg).toContain('Tekken Tag Tournament 2 · Kazuya + Armor King · 81 dmg');
   });
 
+  it('embeds Chakra Petch (400, 600, 700) so the file renders the same without the font installed', () => {
+    const faces = svg.match(/@font-face\{[^}]*\}/g) ?? [];
+    expect(faces.map((f) => /font-weight:(\d+)/.exec(f)?.[1])).toEqual(['400', '600', '700']);
+    for (const face of faces) {
+      expect(face).toContain('font-family:"Chakra Petch"');
+      expect(face).toMatch(/src:url\(data:font\/woff2;base64,[A-Za-z0-9+/=]{1000,}\) format\("woff2"\)/);
+    }
+    expect(svg.indexOf('<style>')).toBeLessThan(svg.indexOf('<text'));
+  });
+
   it('uses attributes only (no CSS classes) so it renders anywhere', () => {
     expect(svg).not.toContain('class=');
   });

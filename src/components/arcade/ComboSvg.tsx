@@ -119,7 +119,7 @@ export const ComboSvg = forwardRef<SVGSVGElement, ComboSvgProps>(function ComboS
       {background && <rect width={width} height={height} fill={COLORS.background} />}
       {heading && (
         <g transform={`translate(${s * 0.2} 0)`}>
-          <text y={s * 0.62} fontFamily={FONT_SANS} fontWeight={800} fontSize={s * 0.42} fill={COLORS.text}>
+          <text y={s * 0.62} fontFamily={FONT_SANS} fontWeight={700} fontSize={s * 0.42} fill={COLORS.text}>
             {heading.title}
           </text>
           {heading.subtitle && (

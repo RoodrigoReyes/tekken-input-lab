@@ -36,7 +36,7 @@ function useElementWidth<T extends HTMLElement>(): [React.RefObject<T | null>, n
   return [ref, width];
 }
 
-/** Re-render once web fonts are ready so tiles are sized for Archivo, not the fallback. */
+/** Re-render once web fonts are ready so tiles are sized for Chakra Petch, not the fallback. */
 function useFontsReady(): number {
   const [tick, setTick] = useState(0);
   useEffect(() => {

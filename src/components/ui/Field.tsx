@@ -1,8 +1,8 @@
 import { cloneElement, useId, type ComponentProps, type InputHTMLAttributes, type ReactElement, type ReactNode, type SelectHTMLAttributes } from 'react';
 
-/** Inputs: muted-surface fill, 1px border, orange border on focus (no glow). */
+/** Inputs: muted-surface fill, 1px control border (3:1), orange border on focus (no glow). */
 export const CONTROL =
-  'w-full rounded-[4px] border border-line bg-muted px-3 py-2.5 text-base text-fg placeholder:text-fg-muted/70 focus:border-primary focus:outline-none focus-visible:outline-none disabled:opacity-50';
+  'min-h-11 w-full rounded-lg border border-line-control bg-muted px-3 py-2.5 text-base text-fg placeholder:text-fg-muted focus:border-primary focus:outline-none focus-visible:outline-none disabled:opacity-50';
 
 export interface FieldProps {
   label: string;
@@ -28,7 +28,7 @@ export function Field({ label, hint, aside, children, className = '' }: FieldPro
         <label htmlFor={id} className="label-md text-fg-muted">
           {label}
         </label>
-        {aside && <span className="label-sm text-[10px] text-fg-muted/80 uppercase">{aside}</span>}
+        {aside && <span className="label-sm text-fg-muted uppercase">{aside}</span>}
       </div>
       {control}
       {hint && (
@@ -80,8 +80,8 @@ export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement
 
 export function Checkbox({ label, className = '', ...props }: CheckboxProps) {
   return (
-    <label className={`flex cursor-pointer items-center gap-2 text-sm text-fg select-none ${className}`}>
-      <input type="checkbox" className="size-4 cursor-pointer accent-primary" {...props} />
+    <label className={`flex min-h-8 cursor-pointer items-center gap-2 text-sm text-fg select-none pointer-coarse:min-h-11 ${className}`}>
+      <input type="checkbox" className="size-4 accent-primary" {...props} />
       {label}
     </label>
   );

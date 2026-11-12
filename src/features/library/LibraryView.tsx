@@ -6,6 +6,7 @@ import { useCombos } from '../../hooks/useCombos';
 import { paths } from '../../hooks/useHashRoute';
 import { BackupActions } from './BackupActions';
 import { ComboCard } from './ComboCard';
+import { LibraryError } from './LibraryError';
 import { Filters } from './Filters';
 import { useToggleFavorite } from './useToggleFavorite';
 import { collectCharacters, collectPartners, collectTags, EMPTY_FILTERS, filterCombos, type LibraryFilters } from './filters';
@@ -14,7 +15,7 @@ function EmptyState({ title, body, action }: { title: string; body?: string; act
   return (
     <Panel className="flex flex-col items-center gap-3 px-6 py-[58px] text-center">
       <LogoMark size={44} />
-      <p className="font-condensed text-2xl font-bold uppercase">{title}</p>
+      <p className="text-2xl font-bold uppercase">{title}</p>
       {body && <p className="max-w-md text-sm text-fg-muted">{body}</p>}
       <div className="mt-2">{action}</div>
     </Panel>
@@ -29,14 +30,14 @@ export function LibraryView() {
 
   return (
     <div className="flex flex-col gap-4">
-      <Panel as="div" className="flex flex-wrap items-center gap-4 p-4 sm:p-5">
+      <Panel as="div" className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:p-5">
         <div className="flex min-w-0 flex-1 items-center gap-4">
-          <span className="hidden size-14 shrink-0 items-center justify-center rounded-[4px] border border-line bg-neutral sm:flex">
+          <span className="hidden size-14 shrink-0 items-center justify-center rounded-lg border border-line bg-neutral sm:flex">
             <LogoMark size={34} />
           </span>
           <div className="min-w-0 space-y-1">
             <Eyebrow>
-              <span className="text-primary">Local library</span>
+              <span className="text-fg">Local library</span>
               <span aria-hidden>/</span>
               <span>Stored in this browser</span>
             </Eyebrow>
@@ -57,12 +58,9 @@ export function LibraryView() {
         count={!loading && combos.length > 0 ? { visible: visible.length, total: combos.length } : undefined}
       />
 
-      {error && (
-        <p role="alert" className="rounded-[4px] border border-danger bg-danger-surface p-3 text-sm text-fg">
-          {error}
-        </p>
-      )}
-      {loading ? (
+      {error ? (
+        <LibraryError message={error} />
+      ) : loading ? (
         <p className="label-sm text-fg-muted">Loading…</p>
       ) : combos.length === 0 ? (
         <EmptyState
@@ -76,7 +74,7 @@ export function LibraryView() {
         />
       ) : visible.length === 0 ? (
         <EmptyState
-          title="No combos match these filters."
+          title="No combos match these filters"
           action={
             <Button variant="secondary" onClick={() => setFilters(EMPTY_FILTERS)}>
               Clear filters
@@ -84,11 +82,14 @@ export function LibraryView() {
           }
         />
       ) : (
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <section aria-labelledby="library-results" className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <h2 id="library-results" className="sr-only">
+            Combos
+          </h2>
           {visible.map((c) => (
             <ComboCard key={c.id} combo={c} onToggleFavorite={toggleFavorite} />
           ))}
-        </div>
+        </section>
       )}
     </div>
   );

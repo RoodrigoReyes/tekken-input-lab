@@ -37,8 +37,10 @@ export function DetailsView({
   if (error || !combo) {
     return (
       <Panel className="flex flex-col items-center gap-3 px-6 py-[58px] text-center">
-        <p className="font-condensed text-2xl font-bold uppercase">{error ?? 'This combo no longer exists.'}</p>
-        <p className="text-sm text-fg-muted">It may have been deleted.</p>
+        <p className="text-2xl font-bold uppercase" role={error ? 'alert' : undefined}>
+          {error ? 'Could not load this combo' : 'This combo no longer exists'}
+        </p>
+        <p className="max-w-md text-sm text-fg-muted">{error ? `${error}. Reload the page to try again.` : 'It may have been deleted, or the link is out of date.'}</p>
         <LinkButton href={paths.library()} variant="primary">
           Back to library
         </LinkButton>
@@ -109,7 +111,7 @@ function Details({
     <article className="flex flex-col gap-4">
       <nav aria-label="Breadcrumb">
         <Eyebrow>
-          <a href={paths.library()} className="hover:text-fg">
+          <a href={paths.library()} className="inline-flex min-h-7 items-center hover:text-fg pointer-coarse:min-h-11">
             ← Library
           </a>
           <span aria-hidden>/</span>
@@ -126,7 +128,7 @@ function Details({
               onClick={toggleFavorite}
               aria-pressed={combo.favorite}
               aria-label="Favorite"
-              className={`mt-0.5 text-[28px] leading-none ${combo.favorite ? 'text-primary' : 'text-fg-muted hover:text-fg'}`}
+              className={`flex size-11 shrink-0 items-center justify-center rounded-lg text-[28px] leading-none hover:bg-muted ${combo.favorite ? 'text-primary' : 'text-fg-muted hover:text-fg'}`}
             >
               {combo.favorite ? '★' : '☆'}
             </button>
@@ -144,7 +146,7 @@ function Details({
             </Meta>
             {combo.damage !== undefined && (
               <Meta label="Damage">
-                <span className="font-mono text-primary">{combo.damage}</span>
+                <span className="font-label text-base font-semibold">{combo.damage}</span>
               </Meta>
             )}
           </dl>
@@ -166,7 +168,7 @@ function Details({
         {parsed.result.diagnostics.length > 0 ? (
           <DiagnosticsList diagnostics={parsed.result.diagnostics} notation={combo.notation} />
         ) : (
-          <p className="label-sm flex items-center gap-2 text-[11px] text-fg-muted uppercase">
+          <p className="label-sm flex items-center gap-2 text-fg-muted uppercase">
             <span aria-hidden className="size-2 rounded-full bg-success" /> No notation warnings for {game.name}
           </p>
         )}
@@ -179,9 +181,9 @@ function Details({
             defaultOpen
             storageKey="details-notation"
             bodyClassName="flex flex-col gap-3"
-            aside={<span className="label-sm text-[11px] text-fg-muted uppercase">Dialect: {getDialect(combo.dialect).name}</span>}
+            aside={<span className="label-sm text-fg-muted uppercase">Dialect: {getDialect(combo.dialect).name}</span>}
           >
-            <pre className="overflow-x-auto rounded-[4px] border border-line-strong bg-neutral p-3 font-mono text-sm leading-[22px] font-medium whitespace-pre-wrap text-fg">{combo.notation}</pre>
+            <pre className="overflow-x-auto rounded-lg border border-line-strong bg-neutral p-3 font-mono text-sm leading-[22px] font-medium whitespace-pre-wrap text-fg">{combo.notation}</pre>
           </Collapsible>
           {combo.tags.length > 0 && (
             <Collapsible title="Tags" summary={combo.tags.map((t) => `#${t}`).join(' ')} defaultOpen storageKey="details-tags" bodyClassName="flex flex-wrap gap-1.5">
@@ -195,7 +197,7 @@ function Details({
           <Collapsible title="Notes" summary={combo.notes ? undefined : 'No notes'} defaultOpen storageKey="details-notes" bodyClassName="">
             {combo.notes ? <Notes text={combo.notes} /> : <p className="text-sm text-fg-muted">No notes.</p>}
           </Collapsible>
-          <p className="label-sm px-1 text-[11px] text-fg-muted">
+          <p className="label-sm px-1 text-fg-muted">
             Created {new Date(combo.createdAt).toLocaleString()} · Updated {new Date(combo.updatedAt).toLocaleString()}
             {warnings > 0 && <span className="text-warning"> · ⚠ {warnings} warning{warnings > 1 ? 's' : ''}</span>}
           </p>
@@ -233,7 +235,7 @@ function Notes({ text }: { text: string }) {
     <div className="space-y-3 text-sm whitespace-pre-wrap text-fg">
       {before && <p>{before}</p>}
       {after && (
-        <div className="rounded-[4px] border border-warning/50 bg-warning/5 p-3 text-warning">
+        <div className="rounded-lg border border-warning/50 bg-warning/5 p-3 text-warning">
           <p className="label-md mb-1">To verify</p>
           <p>{after}</p>
         </div>

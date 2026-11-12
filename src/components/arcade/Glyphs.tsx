@@ -35,7 +35,7 @@ export function TagIndicator({ x, w, h, size }: Placed) {
   return (
     <g role="img" aria-label="TAG">
       <rect x={x} y={(h - tagH) / 2} width={w} height={tagH} rx={tagH * 0.28} fill={COLORS.tag} />
-      <text x={x + w / 2} y={h / 2} dy="0.35em" textAnchor="middle" fontFamily={FONT_SANS} fontWeight={800} fontSize={size * 0.32} fill={COLORS.dark}>
+      <text x={x + w / 2} y={h / 2} dy="0.35em" textAnchor="middle" fontFamily={FONT_SANS} fontWeight={700} fontSize={size * 0.32} fill={COLORS.dark}>
         TAG
       </text>
     </g>
@@ -100,14 +100,14 @@ export function LabelGlyph({ x, w, h, size, text, caption, fill, style }: Placed
         dy="0.35em"
         textAnchor="middle"
         fontFamily={FONT_SANS}
-        fontWeight={800}
+        fontWeight={700}
         fontSize={size * 0.4}
         fill={color}
       >
         {text}
       </text>
       {caption && (
-        <text x={x + w / 2} y={h * CAPTIONED_CAPTION_Y} textAnchor="middle" fontFamily={FONT_SANS} fontWeight={700} fontSize={size * 0.2} fill={color} opacity={0.85}>
+        <text x={x + w / 2} y={h * CAPTIONED_CAPTION_Y} textAnchor="middle" fontFamily={FONT_SANS} fontWeight={700} fontSize={size * 0.2} fill={color}>
           {caption}
         </text>
       )}

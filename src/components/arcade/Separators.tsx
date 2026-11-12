@@ -1,5 +1,5 @@
 /** Relation marks (, ~ : < implicit), stage separators (>), brackets and section headers. */
-import type { Box } from '../../render/layout';
+import { headerFont, type Box } from '../../render/layout';
 import { COLORS, FONT_SANS } from '../../render/theme';
 
 export function RelationMark({ box, size }: { box: Box; size: number }) {
@@ -18,7 +18,7 @@ export function RelationMark({ box, size }: { box: Box; size: number }) {
     }
     case 'justFrame':
       return (
-        <text x={cx} y={cy} dy="0.35em" textAnchor="middle" fontFamily={FONT_SANS} fontWeight={800} fontSize={size * 0.28} fill={COLORS.arrowHeld}>
+        <text x={cx} y={cy} dy="0.35em" textAnchor="middle" fontFamily={FONT_SANS} fontWeight={700} fontSize={size * 0.28} fill={COLORS.arrowHeld}>
           JF
         </text>
       );
@@ -75,7 +75,7 @@ export function SectionHeader({ box, size }: { box: Box; size: number }) {
       {header.tagAssault && (
         <g role="img" aria-label="Tag Assault">
           <rect x={0} y={0} width={pillW} height={box.h} rx={box.h * 0.3} fill={COLORS.tag} />
-          <text x={pillW / 2} y={box.h / 2} dy="0.35em" textAnchor="middle" fontFamily={FONT_SANS} fontWeight={800} fontSize={size * 0.26} fill={COLORS.dark}>
+          <text x={pillW / 2} y={box.h / 2} dy="0.35em" textAnchor="middle" fontFamily={FONT_SANS} fontWeight={700} fontSize={headerFont(size, 0.26)} fill={COLORS.dark}>
             TAG ASSAULT
           </text>
         </g>
@@ -85,8 +85,8 @@ export function SectionHeader({ box, size }: { box: Box; size: number }) {
         y={box.h / 2}
         dy="0.35em"
         fontFamily={FONT_SANS}
-        fontWeight={800}
-        fontSize={size * 0.3}
+        fontWeight={700}
+        fontSize={headerFont(size, 0.3)}
         letterSpacing={size * 0.02}
         fill={header.unassigned ? COLORS.warning : COLORS.muted}
       >

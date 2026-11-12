@@ -5,20 +5,21 @@ export type ButtonSize = 'sm' | 'md';
 
 /** Frame Zero buttons: hover changes the fill tone only, no motion. */
 const VARIANTS: Record<ButtonVariant, string> = {
-  primary: 'bg-primary text-on-primary hover:bg-primary-hover',
-  secondary: 'border border-line bg-muted text-fg hover:bg-line-strong',
-  ghost: 'text-fg-muted hover:bg-muted hover:text-fg',
-  danger: 'border border-danger bg-danger-surface text-danger hover:bg-[#4a1c17]',
-  link: 'px-0! text-fg-muted underline underline-offset-4 hover:text-fg',
+  primary: 'bg-primary text-on-primary hover:bg-primary-hover active:bg-primary/85',
+  secondary: 'border border-line-control bg-muted text-fg hover:bg-line-strong active:bg-neutral',
+  ghost: 'text-fg-muted hover:bg-muted hover:text-fg active:bg-line-strong',
+  danger: 'border border-danger bg-danger-surface text-danger hover:bg-[#4a1c17] active:bg-[#2c0f0b]',
+  link: 'rounded-none! px-0! text-fg-muted underline underline-offset-4 hover:text-fg active:text-fg',
 };
 
+/** md is 44px, the minimum touch target; sm stays compact for pointers but grows to 44px on touch screens. */
 const SIZES: Record<ButtonSize, string> = {
-  sm: 'h-[30px] px-2.5',
-  md: 'h-10 px-4',
+  sm: 'h-[30px] px-2.5 pointer-coarse:h-11',
+  md: 'h-11 px-4',
 };
 
 export function buttonClass(variant: ButtonVariant = 'secondary', size: ButtonSize = 'md', extra = ''): string {
-  return `label-md inline-flex shrink-0 items-center justify-center gap-1.5 rounded-[4px] transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${SIZES[size]} ${VARIANTS[variant]} ${extra}`;
+  return `label-md inline-flex shrink-0 items-center justify-center gap-1.5 rounded-lg transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${SIZES[size]} ${VARIANTS[variant]} ${extra}`;
 }
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

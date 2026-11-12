@@ -23,6 +23,12 @@ import type {
 import { estimateText, type MeasureFn } from './measure';
 import { COLORS, EVENT_COLORS, MECHANIC_COLORS } from './theme';
 
+/** Event captions (BOUND, TORNADO, ...) are 0.2 of the size: below 40 they would render under 8px, so they are left out. */
+const MIN_CAPTION_SIZE = 40;
+
+/** Section header text (KAZUYA, TAG ASSAULT) as a fraction of the size, but never under 10px. */
+export const headerFont = (size: number, scale: number): number => Math.max(size * scale, 10);
+
 export type Part =
   | { type: 'prefix'; x: number; w: number; text: string; kind: PrefixKind }
   | { type: 'direction'; x: number; w: number; direction: Direction; held: boolean }
@@ -155,16 +161,17 @@ class Builder {
     return this.measure(text, this.s * scale, weight);
   }
 
-  // -- parts -------------------------------------------------------------------
+  // Parts
 
   private prefixParts(prefixes: readonly Prefix[]): PartDraft[] {
     return prefixes.map((p) => ({ type: 'prefix', w: this.textW(p.abbr, 0.32) + this.s * 0.26, text: p.abbr, kind: p.kind }) as const);
   }
 
-  private labelPart(text: string, fill: string, style: LabelStyle, caption?: string): PartDraft {
-    const main = this.textW(text, style === 'note' ? 0.3 : 0.4, style === 'note' ? 400 : 800);
+  private labelPart(text: string, fill: string, style: LabelStyle, rawCaption?: string): PartDraft {
+    const caption = this.s >= MIN_CAPTION_SIZE ? rawCaption : undefined;
+    const main = this.textW(text, style === 'note' ? 0.3 : 0.4, style === 'note' ? 400 : 700);
     const cap = caption ? this.textW(caption, 0.2, 700) : 0;
-    return { type: 'label', w: Math.max(main, cap) + this.s * 0.36, text, fill, style, ...(caption ? { caption } : {}) }
+    return { type: 'label', w: Math.max(main, cap) + this.s * 0.36, text, fill, style, ...(caption ? { caption } : {}) };
   }
 
   /** Framed: compact pill. Unframed (default): arrows sized and spaced like separate direction inputs. */
@@ -217,7 +224,7 @@ class Builder {
   private itemDraft(node: ItemNode): Draft {
     const s = this.s;
     const raw: PartDraft[] = [...this.prefixParts(node.prefixes), ...this.coreParts(node)];
-    if (node.hold) raw.push({ type: 'hold', w: this.textW('HOLD', 0.2, 800) + s * 0.18 });
+    if (node.hold) raw.push({ type: 'hold', w: this.textW('HOLD', 0.2, 700) + s * 0.18 });
     if (node.repeat) raw.push({ type: 'repeat', w: this.textW(`×${node.repeat}`, 0.34) + s * 0.12, count: node.repeat });
     const pad = s * 0.12;
     const gap = s * PART_GAP;
@@ -231,7 +238,7 @@ class Builder {
     return { kind: 'item', w, h: this.h, parts, nodeType: node.type, flagged: this.flagged(node.span), title: node.raw, breakAfter: false };
   }
 
-  // -- stream --------------------------------------------------------------------
+  // Stream
 
   steps(steps: readonly Step[], out: Draft[]): void {
     steps.forEach((step, i) => {
@@ -274,12 +281,12 @@ class Builder {
 
   header(info: { title: string | null }, tagAssault: boolean): Draft {
     const title = info.title ?? 'Unassigned';
-    const tagW = tagAssault ? this.textW('TAG ASSAULT', 0.26) + this.s * 0.5 : 0;
-    const w = tagW + this.textW(title.toUpperCase(), 0.3) + this.s * 0.4;
+    const tagW = tagAssault ? this.measure('TAG ASSAULT', headerFont(this.s, 0.26), 700) + this.s * 0.5 : 0;
+    const w = tagW + this.measure(title.toUpperCase(), headerFont(this.s, 0.3), 700) + this.s * 0.4;
     return {
       kind: 'sectionHeader',
       w,
-      h: Math.round(this.s * 0.6),
+      h: Math.max(Math.round(this.s * 0.6), Math.ceil(headerFont(this.s, 0.3) * 1.4)),
       parts: [],
       header: { title, tagAssault, unassigned: info.title === null, tagWidth: tagW },
       flagged: false,

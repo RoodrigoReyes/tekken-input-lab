@@ -26,7 +26,7 @@ export function ConfirmDialog({ open, title, message, confirmLabel, onConfirm, o
         e.preventDefault();
         onCancel();
       }}
-      className="m-auto w-[min(92vw,30rem)] rounded-lg border border-line bg-surface p-5 text-fg backdrop:bg-black/70"
+      className="m-auto w-[min(92vw,30rem)] rounded-xl border border-line bg-surface p-5 text-fg backdrop:bg-black/70"
     >
       <div className="flex items-start gap-3">
         <span aria-hidden className="flex size-10 shrink-0 items-center justify-center rounded-full bg-danger-surface text-lg text-danger">

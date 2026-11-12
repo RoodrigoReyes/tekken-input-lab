@@ -79,7 +79,7 @@ class Parser {
     this.toks = sig;
   }
 
-  // -- token helpers ---------------------------------------------------------
+  // Token helpers
 
   private peek(offset = 0): SigToken | undefined {
     return this.toks[this.pos + offset];
@@ -101,7 +101,7 @@ class Parser {
     return { span: { start, end }, raw: this.text.slice(start, end) };
   }
 
-  // -- combo / sections / stages ------------------------------------------------
+  // Combo / sections / stages
 
   parseCombo(): ComboNode {
     const sections: SectionNode[] = [];
@@ -163,7 +163,7 @@ class Parser {
     return stages;
   }
 
-  // -- chains -----------------------------------------------------------------------
+  // Chains
 
   private parseChain(stops: StopSet): StageNode {
     const steps: Step[] = [];
@@ -229,7 +229,7 @@ class Parser {
     }
   }
 
-  // -- steps --------------------------------------------------------------------------
+  // Steps
 
   private parseItem(): ItemNode {
     const start = (this.peek() as SigToken).span.start;

@@ -20,10 +20,10 @@ export function MotionFrameToggle({ className = '' }: { className?: string }) {
       type="button"
       aria-pressed={framed}
       aria-label="Frame motions"
-      title={framed ? 'Motions are framed — click to show bare arrows' : 'Motions are bare arrows — click to frame them'}
+      title={framed ? 'Motions are framed. Click to show bare arrows.' : 'Motions are bare arrows. Click to frame them.'}
       onClick={() => setFramed(!framed)}
-      className={`label-md flex h-[42px] items-center gap-2 rounded-[4px] border px-3 whitespace-nowrap transition-colors ${
-        framed ? 'border-primary bg-primary text-on-primary' : 'border-line bg-neutral text-fg-muted hover:text-fg'
+      className={`label-md flex h-11 items-center gap-2 rounded-lg border px-3 whitespace-nowrap transition-colors ${
+        framed ? 'border-primary bg-primary text-on-primary' : 'border-line-control bg-neutral text-fg-muted hover:bg-muted hover:text-fg'
       } ${className}`}
     >
       <FramePreview framed={framed} />

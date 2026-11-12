@@ -30,7 +30,10 @@ export function EditorView({ id, navigate }: { id: string | null; navigate: (has
   if (id !== null && (error || !data)) {
     return (
       <Panel className="flex flex-col items-center gap-3 px-6 py-[58px] text-center">
-        <p className="font-condensed text-2xl font-bold uppercase">{error ?? 'This combo no longer exists.'}</p>
+        <p className="text-2xl font-bold uppercase" role={error ? 'alert' : undefined}>
+          {error ? 'Could not load this combo' : 'This combo no longer exists'}
+        </p>
+        <p className="max-w-md text-sm text-fg-muted">{error ? `${error}. Reload the page to try again.` : 'It may have been deleted, or the link is out of date.'}</p>
         <LinkButton href={paths.library()}>← Back to library</LinkButton>
       </Panel>
     );
@@ -148,11 +151,11 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div className="space-y-1">
           <Eyebrow>
-            <a href={paths.library()} className="hover:text-fg">
+            <a href={paths.library()} className="inline-flex min-h-7 items-center hover:text-fg pointer-coarse:min-h-11">
               Combo Library
             </a>
             <span aria-hidden>/</span>
-            <span className="text-primary">{id ? 'Edit' : 'New'}</span>
+            <span className="text-fg">{id ? 'Edit' : 'New'}</span>
           </Eyebrow>
           <PageTitle>{id ? 'Edit combo' : 'New combo'}</PageTitle>
         </div>
@@ -167,13 +170,13 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
       </div>
 
       {start.generated && (
-        <p className="rounded-[4px] border border-warning/50 bg-warning/5 px-3 py-2 text-sm text-warning">
+        <p className="rounded-lg border border-warning/50 bg-warning/5 px-3 py-2 text-sm text-warning">
           ⚠ Generated from the TTT2 guide and not tested yet. Review the preview and the “to verify” notes before saving.
         </p>
       )}
 
       {formError && (
-        <p ref={errorRef} tabIndex={-1} role="alert" className="rounded-[4px] border border-danger bg-danger-surface p-3 text-sm text-fg">
+        <p ref={errorRef} tabIndex={-1} role="alert" className="rounded-lg border border-danger bg-danger-surface p-3 text-sm text-fg">
           {formError}
         </p>
       )}
@@ -242,7 +245,7 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
                 placeholder="qcf+1 > uf+2,1 B! > SSL 1~b~uf+4 > f+1,2,1+2"
               />
             </Field>
-            <div className="label-sm flex flex-wrap items-center justify-between gap-2 text-[11px] text-fg-muted">
+            <div className="label-sm flex flex-wrap items-center justify-between gap-2 text-fg-muted">
               <span className="flex items-center gap-2">
                 <span aria-hidden className={`size-2 rounded-full ${warnings ? 'bg-warning' : draft.notation.trim() ? 'bg-success' : 'bg-fg-muted'}`} />
                 {!draft.notation.trim() ? 'Waiting for notation' : warnings ? `${warnings} warning${warnings > 1 ? 's' : ''} detected` : 'No warnings'}
@@ -252,7 +255,7 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
               </span>
             </div>
             {game.tag && (
-              <a href={paths.generator()} onClick={() => id === null && stashEditorDraft({ ...draft, damage: damageValue(damage) })} className="flex items-center justify-between gap-3 rounded-[4px] border border-line-strong bg-neutral px-3 py-2.5 text-sm text-fg-muted hover:border-line hover:text-fg">
+              <a href={paths.generator()} onClick={() => id === null && stashEditorDraft({ ...draft, damage: damageValue(damage) })} className="flex min-h-11 items-center justify-between gap-3 rounded-lg border border-line-control bg-neutral px-3 py-2.5 text-sm text-fg-muted hover:bg-muted hover:text-fg">
                 <span>
                   <strong className="label-md mr-2 text-fg">Generate from guide</strong>
                   Build a TTT2 team combo from the bundled “TTT2 BNB Combos” guide.
@@ -266,7 +269,7 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
             title="Combo details"
             summary={detailsSummary(draft, damage)}
             defaultOpen={hasDetails(start.draft)}
-            aside={<span className="label-sm text-[11px] text-fg-muted uppercase">Optional</span>}
+            aside={<span className="label-sm text-fg-muted uppercase">Optional</span>}
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Difficulty">
@@ -278,7 +281,7 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
                   ))}
                 </Select>
               </Field>
-              <Field label="Damage (optional)" aside="0–999">
+              <Field label="Damage" aside="0 to 999">
                 <TextInput type="number" inputMode="numeric" min={0} max={999} value={damage} onChange={(e) => setDamage(e.target.value)} />
               </Field>
             </div>
@@ -297,7 +300,6 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
           <Panel aria-label="Live preview" className="flex flex-col gap-3 p-4">
             <PanelHeader
               title="Live arcade display"
-              icon={<span aria-hidden className="size-2 rounded-full bg-success" />}
               aside={<VisualControls value={visual} onChange={setVisual} />}
             />
             <ComboVisual parsed={parsed} options={visual} />
@@ -308,7 +310,7 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
               <PanelHeader
                 title={`Problems & diagnostics (${diagnostics.length})`}
                 icon={<span aria-hidden className="text-warning">⚠</span>}
-                aside={<span className="label-sm text-[11px] text-fg-muted uppercase">{game.name}</span>}
+                aside={<span className="label-sm text-fg-muted uppercase">{game.name}</span>}
               />
               <DiagnosticsList diagnostics={diagnostics} notation={draft.notation} />
               <p className="text-sm text-fg-muted">Warnings never block saving and never change your text.</p>

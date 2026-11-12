@@ -12,7 +12,7 @@ export interface FiltersProps {
   characters: readonly string[];
   partners: readonly string[];
   tags: readonly string[];
-  /** "12 of 40 combos" — shown when the library is not empty. */
+  /** "12 of 40 combos", shown when the library is not empty. */
   count?: { visible: number; total: number };
 }
 
@@ -88,12 +88,12 @@ export function Filters({ value, onChange, characters, partners, tags, count }: 
             );
           })}
           {active && (
-            <button type="button" className="label-md ml-1 text-fg-muted underline underline-offset-4 hover:text-fg" onClick={() => onChange(EMPTY_FILTERS)}>
+            <button type="button" className="label-md ml-1 inline-flex min-h-7 items-center text-fg-muted underline underline-offset-4 hover:text-fg pointer-coarse:min-h-11" onClick={() => onChange(EMPTY_FILTERS)}>
               Clear filters
             </button>
           )}
           {count && (
-            <p className="label-sm ml-auto text-[11px] text-fg-muted" role="status">
+            <p className="label-sm ml-auto text-fg-muted" role="status">
               {count.visible} of {count.total} combos
             </p>
           )}

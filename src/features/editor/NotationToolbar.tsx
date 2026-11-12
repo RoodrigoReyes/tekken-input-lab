@@ -26,9 +26,9 @@ const EVENTS: Record<GameId, readonly string[]> = {
 const BUTTONS = ['1', '2', '3', '4', '1+2', '3+4'];
 
 const TONE: Record<Token['tone'], string> = {
-  relation: 'border-line bg-muted text-fg',
-  event: 'border-line bg-line-strong text-fg',
-  button: 'border-line bg-neutral text-fg',
+  relation: 'border-line-control bg-muted text-fg',
+  event: 'border-line-control bg-line-strong text-fg',
+  button: 'border-line-control bg-neutral text-fg',
 };
 
 export interface NotationToolbarProps {
@@ -53,8 +53,8 @@ export function NotationToolbar({ game, target, onInsert }: NotationToolbarProps
     onInsert(value.slice(0, start) + token + value.slice(end), start + token.length);
   };
   return (
-    <div role="toolbar" aria-label="Insert notation" className="flex flex-wrap items-center gap-1.5 rounded-[4px] border border-line-strong bg-neutral p-2">
-      <span className="label-sm mr-1 text-[11px] text-fg-muted uppercase">Tokens</span>
+    <div role="toolbar" aria-label="Insert notation" className="flex flex-wrap items-center gap-1.5 rounded-lg border border-line-strong bg-neutral p-2">
+      <span className="label-sm mr-1 text-fg-muted uppercase">Tokens</span>
       {tokens.map((t) => (
         <button
           key={t.text}
@@ -62,7 +62,7 @@ export function NotationToolbar({ game, target, onInsert }: NotationToolbarProps
           title={t.title}
           aria-label={t.tone === 'button' ? undefined : `${t.text.trim()} (${t.title})`}
           onClick={() => insert(t.text)}
-          className={`h-7 min-w-7 rounded-[4px] border px-2 font-mono text-[13px] font-medium hover:border-primary ${TONE[t.tone]}`}
+          className={`h-8 min-w-8 rounded-lg border px-2 font-mono text-base font-semibold hover:border-primary active:bg-neutral pointer-coarse:h-11 pointer-coarse:min-w-11 ${TONE[t.tone]}`}
         >
           {t.text.trim()}
         </button>

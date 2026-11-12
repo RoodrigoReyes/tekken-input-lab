@@ -37,6 +37,15 @@ describe('Collapsible', () => {
     expect(toggle.getAttribute('aria-expanded')).toBe('false');
   });
 
+  it('puts the toggle inside an h2', () => {
+    render(
+      <Collapsible title="Notes">
+        <p>Body</p>
+      </Collapsible>,
+    );
+    expect(screen.getByRole('heading', { level: 2, name: /notes/i }).querySelector('button[aria-expanded]')).not.toBeNull();
+  });
+
   it('respects defaultOpen and shows the summary only while closed', () => {
     render(
       <Collapsible title="Team" summary="Kazuya → Nina" defaultOpen>

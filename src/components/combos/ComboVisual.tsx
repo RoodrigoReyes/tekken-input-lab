@@ -18,7 +18,7 @@ export interface VisualControlsProps {
   onChange: (v: VisualOptions) => void;
 }
 
-/** Player side, motion frame, command size (20–72 px per cluster) and the "Expand named moves" toggle. */
+/** Player side, motion frame, command size (20 to 72 px per cluster) and the "Expand named moves" toggle. */
 export function VisualControls({ value, onChange }: VisualControlsProps) {
   return (
     <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
@@ -33,12 +33,12 @@ export function VisualControls({ value, onChange }: VisualControlsProps) {
           step={2}
           value={value.size}
           onChange={(e) => onChange({ ...value, size: Number(e.target.value) })}
-          className="w-28 accent-primary"
+          className="h-11 w-28 accent-primary"
           aria-label="Command size"
         />
-        <span className="label-sm w-9 text-[11px] text-fg">{value.size}px</span>
+        <span className="label-sm w-10 text-fg">{value.size}px</span>
       </label>
-      <label className="label-md flex cursor-pointer items-center gap-2 text-fg-muted select-none">
+      <label className="label-md flex min-h-11 cursor-pointer items-center gap-2 text-fg-muted select-none">
         <input
           type="checkbox"
           checked={value.expandNamed}
@@ -57,7 +57,7 @@ export const ComboVisual = forwardRef<SVGSVGElement, { parsed: ParsedCombo; opti
   const [motionFrame] = useMotionFrame();
   const empty = parsed.result.ast.sections.every((s) => s.stages.length === 0);
   return (
-    <div className="rounded-[4px] border border-line bg-surface p-1">
+    <div className="rounded-lg border border-line bg-surface p-1">
       {empty ? (
         <p className="p-6 text-sm text-fg-muted">Type or paste notation to see the arcade commands.</p>
       ) : (

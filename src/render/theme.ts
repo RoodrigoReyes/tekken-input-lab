@@ -2,10 +2,7 @@
  * Visual constants for the arcade renderer. Everything is applied as SVG
  * attributes (not CSS classes) so exported SVG/PNG files look identical.
  */
-export const FONT_SANS = 'Archivo, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
-export const FONT_MONO = '"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
-/** Arcade labels use Archivo SemiCondensed so long captions fit compact tiles. */
-export const FONT_STRETCH = '87.5%';
+export const FONT_SANS = '"Chakra Petch", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
 
 export const COLORS = {
   background: '#0e1013',
@@ -24,7 +21,7 @@ export const COLORS = {
   arrowHeld: '#ffd166',
   /** Neutral (n): solid white star, no outline. */
   neutralStar: '#ffffff',
-  /** Stage separator (>) — green triangle as in the in-game command list. */
+  /** Stage separator (>): green triangle as in the in-game command list. */
   stageMarker: '#16d61f',
   named: '#7c5cff',
   movement: '#0284c7',
@@ -74,12 +71,26 @@ export const MECHANIC_COLORS: Readonly<Record<string, string>> = {
   heatEngager: '#ea580c',
 };
 
-/** Readable text color for a given fill. */
+function channel(value: number): number {
+  const c = value / 255;
+  return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+}
+
+/** WCAG 2.x relative luminance of a #rrggbb color. */
+function luminance(hex: string): number {
+  const h = hex.replace('#', '');
+  const [r, g, b] = [0, 2, 4].map((i) => channel(parseInt(h.slice(i, i + 2), 16)));
+  return 0.2126 * (r ?? 0) + 0.7152 * (g ?? 0) + 0.0722 * (b ?? 0);
+}
+
+/** WCAG 2.x contrast ratio between two #rrggbb colors (1 to 21). */
+export function contrastRatio(a: string, b: string): number {
+  const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+  return ((hi ?? 0) + 0.05) / ((lo ?? 0) + 0.05);
+}
+
+/** Label text color for a fill: dark or white, whichever contrasts more (WCAG AA for every arcade fill). */
 export function textOn(fill: string): string {
-  const hex = fill.replace('#', '');
-  if (hex.length !== 6) return COLORS.text;
-  const r = parseInt(hex.slice(0, 2), 16);
-  const g = parseInt(hex.slice(2, 4), 16);
-  const b = parseInt(hex.slice(4, 6), 16);
-  return 0.299 * r + 0.587 * g + 0.114 * b > 150 ? COLORS.dark : '#ffffff';
+  if (!/^#[0-9a-f]{6}$/i.test(fill)) return COLORS.text;
+  return contrastRatio(COLORS.dark, fill) > contrastRatio('#ffffff', fill) ? COLORS.dark : '#ffffff';
 }

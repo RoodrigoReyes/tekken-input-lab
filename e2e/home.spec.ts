@@ -20,7 +20,7 @@ test('home: two entry points, recent combos and a single create button', async (
   await expect(page.getByRole('heading', { name: 'Home test' })).toBeVisible();
 
   // Saved combos show up on the home page, with a link to the library.
-  await page.getByRole('link', { name: 'TekkenInputLab — Home' }).click();
+  await page.getByRole('link', { name: 'TekkenInputLab home' }).click();
   const recent = page.getByRole('region', { name: 'Recent combos' });
   await expect(recent.getByRole('link', { name: 'Home test' })).toBeVisible();
   await recent.getByRole('link', { name: /View library/ }).click();

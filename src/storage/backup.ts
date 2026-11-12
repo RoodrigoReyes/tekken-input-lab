@@ -117,3 +117,12 @@ export async function importBackup(repo: ComboRepository, result: BackupReadResu
   await repo.putMany(toWrite);
   return summary;
 }
+
+/** One line for the import toast: how many combos were skipped and why (the first reason, 1-based position). */
+export function describeSkipped(skipped: BackupReadResult['skipped']): string {
+  const [first] = skipped;
+  if (!first) return '';
+  const count = `${skipped.length} invalid combo${skipped.length > 1 ? 's' : ''} skipped`;
+  const more = skipped.length > 1 ? `; and ${skipped.length - 1} more` : '';
+  return `${count} (combo ${first.index + 1}: ${first.reason}${more})`;
+}

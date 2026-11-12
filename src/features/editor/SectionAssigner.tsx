@@ -26,7 +26,7 @@ export function SectionAssigner({ parsed, characters, manual, onChange }: Sectio
     onChange(next);
   };
   return (
-    <fieldset className="space-y-3 rounded-[4px] border border-line bg-surface p-4">
+    <fieldset className="space-y-3 rounded-lg border border-line bg-surface p-4">
       <legend className="label-md px-1 text-fg-muted">Character sections</legend>
       {sections.map((section, i) => {
         const auto = parsed.assignments[i];
@@ -35,10 +35,10 @@ export function SectionAssigner({ parsed, characters, manual, onChange }: Sectio
           <div key={i} className="grid items-center gap-2 sm:grid-cols-[7rem_1fr_14rem]">
             <span className="label-md text-fg">
               Section {i + 1}
-              {section.boundary === 'tagAssault' && <span className="ml-1.5 rounded-[2px] bg-[#16a34a] px-1 py-px text-[10px] text-on-primary">TA</span>}
+              {section.boundary === 'tagAssault' && <span className="ml-1.5 rounded-sm bg-[#16a34a] px-1 py-px text-xs text-on-primary">TA</span>}
             </span>
             <code className="truncate font-mono text-[13px] text-fg-muted" title={text}>
-              {text || '—'}
+              {text || '(empty)'}
             </code>
             <Select aria-label={`Character for section ${i + 1}`} value={manual[i] ?? ''} onChange={(e) => set(i, e.target.value)}>
               <option value="">

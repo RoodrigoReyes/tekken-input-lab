@@ -30,7 +30,7 @@ function groupsOf(options: readonly PhaseOption[]): Array<{ group?: string; opti
   }, []);
 }
 
-const STEP_BUTTON = 'label-md flex size-10 shrink-0 items-center justify-center rounded-[4px] border border-line bg-muted text-fg hover:bg-line-strong disabled:cursor-not-allowed disabled:opacity-40';
+const STEP_BUTTON = 'label-md flex size-11 shrink-0 items-center justify-center rounded-lg border border-line-control bg-muted text-fg hover:bg-line-strong active:bg-neutral disabled:cursor-not-allowed disabled:opacity-40';
 
 /** One layer of a team combo: pick a piece from a dropdown (or step through them) and read what it is. */
 export function PhaseCard({ step, title, performer, options, value, onChange, info }: PhaseCardProps) {
@@ -42,13 +42,13 @@ export function PhaseCard({ step, title, performer, options, value, onChange, in
   };
   const single = options.length < 2;
   return (
-    <section aria-label={`Phase ${step}: ${title}`} className="flex min-w-0 flex-col gap-3 rounded-[4px] border border-line bg-surface p-3 sm:p-4">
+    <section aria-label={`Phase ${step}: ${title}`} className="flex min-w-0 flex-col gap-3 rounded-lg border border-line bg-surface p-3 sm:p-4">
       <header className="flex items-baseline justify-between gap-2">
         <h3 className="label-md flex items-center gap-2 text-fg">
-          <span className="font-condensed flex size-6 items-center justify-center rounded-[2px] bg-primary text-sm font-extrabold text-on-primary">{step}</span>
+          <span className="flex size-6 items-center justify-center rounded-sm border border-line-control bg-muted text-sm font-bold text-fg">{step}</span>
           <label htmlFor={selectId}>{title}</label>
         </h3>
-        <span className="label-sm text-[11px] text-fg-muted">
+        <span className="label-sm text-fg-muted">
           {performer} · {index + 1}/{options.length}
         </span>
       </header>
@@ -82,7 +82,7 @@ export function PhaseCard({ step, title, performer, options, value, onChange, in
       <dl aria-label={`About this ${title.toLowerCase()}`} className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 text-sm">
         {info.map((line, i) => (
           <div key={`${line.label}-${i}`} className="contents">
-            <dt className={`label-sm text-[11px] leading-5 ${line.tone === 'warning' ? 'text-warning' : 'text-fg-muted'}`}>
+            <dt className={`label-sm leading-5 ${line.tone === 'warning' ? 'text-warning' : 'text-fg-muted'}`}>
               {line.tone === 'warning' && <span aria-hidden>⚠ </span>}
               {line.label}
             </dt>

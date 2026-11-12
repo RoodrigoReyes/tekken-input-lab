@@ -11,13 +11,15 @@ export interface ToggleChipProps extends Omit<ButtonHTMLAttributes<HTMLButtonEle
   active: boolean;
 }
 
-/** Filter chip: orange with dark text when active. */
+/** Filter chip: orange with dark text when active; 28px tall, 44px on touch screens. */
 export function ToggleChip({ active, className = '', ...props }: ToggleChipProps) {
   return (
     <button
       type="button"
       aria-pressed={active}
-      className={`${BASE} transition-colors ${active ? 'bg-primary text-on-primary' : 'bg-line-strong text-fg hover:bg-muted'} ${className}`}
+      className={`${BASE} min-h-7 justify-center border transition-colors pointer-coarse:min-h-11 pointer-coarse:min-w-11 pointer-coarse:px-3.5 ${
+        active ? 'border-primary bg-primary text-on-primary hover:bg-primary-hover' : 'border-line-control bg-line-strong text-fg hover:bg-muted active:bg-neutral'
+      } ${className}`}
       {...props}
     />
   );
@@ -53,7 +55,7 @@ export function Segmented<T extends string>({ value, options, onChange, label, c
     group.current?.querySelectorAll<HTMLButtonElement>('[role="radio"]')[next]?.focus();
   };
   return (
-    <div ref={group} role="radiogroup" aria-label={label} onKeyDown={onKeyDown} className={`flex gap-1 rounded-[4px] border border-line bg-neutral p-1 ${className}`}>
+    <div ref={group} role="radiogroup" aria-label={label} onKeyDown={onKeyDown} className={`flex gap-1 rounded-lg border border-line-control bg-neutral p-1 ${className}`}>
       {options.map((o) => {
         const on = o.value === value;
         return (
@@ -64,7 +66,7 @@ export function Segmented<T extends string>({ value, options, onChange, label, c
             aria-checked={on}
             tabIndex={on ? 0 : -1}
             onClick={() => onChange(o.value)}
-            className={`label-md flex h-8 flex-1 items-center justify-center gap-1.5 rounded-[3px] px-3 whitespace-nowrap transition-colors ${on ? 'bg-primary text-on-primary' : 'text-fg-muted hover:text-fg'}`}
+            className={`label-md flex h-8 flex-1 items-center justify-center gap-1.5 rounded-md px-3 whitespace-nowrap transition-colors pointer-coarse:h-11 ${on ? 'bg-primary text-on-primary' : 'text-fg-muted hover:bg-muted hover:text-fg'}`}
           >
             {o.label}
           </button>

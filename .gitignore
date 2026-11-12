@@ -6,3 +6,6 @@ coverage
 tsconfig.tsbuildinfo
 test-results
 playwright-report
+
+# antislop audit reports (local only)
+anti-slop/

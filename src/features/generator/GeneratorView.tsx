@@ -100,7 +100,7 @@ export function GeneratorView({ navigate }: { navigate: (hash: string) => void }
         <Eyebrow>
           <span>Tekken Tag Tournament 2</span>
           <span aria-hidden>/</span>
-          <span className="text-primary">Team combo generator</span>
+          <span className="text-fg">Team combo generator</span>
         </Eyebrow>
         <PageTitle>TTT2 Combo Generator</PageTitle>
         <p className="max-w-5xl text-sm text-fg-muted">
@@ -170,8 +170,8 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
   const pointForms = formsOf(library, point);
   const partnerForms = formsOf(library, mate);
   const performers = [
-    { value: 'point' as const, label: `Point (${point || '—'})` },
-    { value: 'partner' as const, label: `Teammate (${mate || '—'})` },
+    { value: 'point' as const, label: point ? `Point (${point})` : 'Point' },
+    { value: 'partner' as const, label: mate ? `Teammate (${mate})` : 'Teammate' },
   ];
   const performerName = (p: Performer) => (p === 'point' ? point : mate);
   const formLabel = (form: string, name: string) => (form && form !== name ? form : name);
@@ -182,14 +182,14 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div aria-label="Generator options" role="group" className="grid items-start gap-3 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
+      <div aria-label="Generator options" role="group" className="grid grid-cols-1 items-start gap-3 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
         <Collapsible
           title="Team & setup"
           summary={teamSummary}
           defaultOpen
           storageKey="generator-team"
           aside={
-            <button type="button" className="label-md text-fg-muted underline underline-offset-4 hover:text-fg" onClick={reset}>
+            <button type="button" className="label-md inline-flex min-h-11 items-center px-1 text-fg-muted underline underline-offset-4 hover:text-fg" onClick={reset}>
               Reset
             </button>
           }
@@ -284,9 +284,9 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
           pools && (
             <>
               <p className="label-sm text-fg-muted" role="status">
-                <span aria-hidden className="mr-2 inline-block size-2 rounded-[1px] bg-primary align-middle" />
+                <span aria-hidden className="mr-2 inline-block size-2 rounded-xs bg-fg-muted align-middle" />
                 {pools.routes.length} routes reaching B! · {pools.fillers.length} TA fillers · {pools.enders.length} enders
-                <span className="text-fg-muted/70"> ({pools.routes.length * pools.fillers.length * pools.enders.length} possible combos)</span>
+                <span className="text-fg-muted"> ({pools.routes.length * pools.fillers.length * pools.enders.length} possible combos)</span>
               </p>
               {combo && pick ? (
                 <>
@@ -305,7 +305,7 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
                     .join(' ')}
                 />
               )}
-              <p className="label-sm text-[11px] text-fg-muted">Source: {GUIDE_SOURCE.credits}</p>
+              <p className="label-sm text-fg-muted">Source: {GUIDE_SOURCE.credits}</p>
             </>
           )
         )}
@@ -328,7 +328,7 @@ function Group({ label, children }: { label: string; children: ReactNode }) {
 function StateCard({ title, body, tone }: { title: string; body?: string; tone?: 'error' }) {
   return (
     <Panel className={`flex flex-col items-center gap-2 px-6 py-[58px] text-center ${tone === 'error' ? 'border-danger/60' : ''}`}>
-      <p className={`font-condensed text-2xl font-bold uppercase ${tone === 'error' ? 'text-danger' : 'text-fg'}`} role={tone === 'error' ? 'alert' : undefined}>
+      <p className={`text-2xl font-bold uppercase ${tone === 'error' ? 'text-danger' : 'text-fg'}`} role={tone === 'error' ? 'alert' : undefined}>
         {title}
       </p>
       {body && <p className="max-w-lg text-sm text-fg-muted">{body}</p>}
