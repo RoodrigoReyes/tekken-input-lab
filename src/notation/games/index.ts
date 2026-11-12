@@ -7,8 +7,8 @@ import type { GameConfig } from './types';
 
 export type { GameConfig } from './types';
 
-/** Display order used by selectors. */
-export const GAMES: readonly GameConfig[] = [T8, T7, TTT2, T6];
+/** Display order used by selectors: release order, oldest first (T6 2007, TTT2 2011, T7 2015, T8 2024). */
+export const GAMES: readonly GameConfig[] = [T6, TTT2, T7, T8];
 
 const BY_ID: Readonly<Record<GameId, GameConfig>> = { t6: T6, t7: T7, t8: T8, ttt2: TTT2 };
 
