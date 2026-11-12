@@ -13,6 +13,7 @@ import { GUIDE_SOURCE, loadGuideLibrary } from '../../ttt2/guideData';
 import type { GuideLibrary, PieceContext, RouteKind } from '../../ttt2/types';
 import { GeneratedComboItem } from './GeneratedComboItem';
 import { peekEditorDraft, setPendingGenerated } from './handoff';
+import { swapTeam } from './teamSwap';
 
 const PAGE = 10;
 const ROUTE_KINDS: ReadonlyArray<[RouteKind, string]> = [
@@ -217,6 +218,17 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
             </Select>
           </Field>
         )}
+        <div className="flex justify-center">
+          <Button
+            size="sm"
+            onClick={() => setSettings(swapTeam)}
+            disabled={!point || !mate || sameCharacter}
+            aria-label="Swap point and teammate"
+            title={`Let ${mate || 'the teammate'} start the combo and ${point || 'the point character'} tag in`}
+          >
+            <span aria-hidden>⇅</span> Swap
+          </Button>
+        </div>
         <Field label="Tag-in teammate" aside="Tag Assault" hint="Only characters in the guide. Point and teammate must be different.">
           <Select
             value={mate}

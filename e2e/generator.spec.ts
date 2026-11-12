@@ -36,6 +36,20 @@ test('generate a TTT2 team combo from the guide, use it and save it', async ({ p
   await expect(results.getByText('Same character chosen twice')).toBeVisible();
   await options.getByLabel('Tag-in teammate').selectOption('Nina');
 
+  // Swap: the teammate starts the combo instead (starter resets to "Any starter").
+  await options.getByRole('button', { name: 'Swap point and teammate' }).click();
+  await expect(options.getByLabel('Point character')).toHaveValue('Nina');
+  await expect(options.getByLabel('Tag-in teammate')).toHaveValue('Kazuya');
+  await expect(options.getByLabel('Starter', { exact: true })).toHaveValue('');
+  // The first section of each combo now belongs to Nina.
+  await expect(results.getByRole('listitem', { name: 'Generated combo 1', exact: true }).locator('[data-kind="sectionHeader"]').first()).toContainText(/nina/i);
+  await expect(status).not.toContainText('18 combos');
+  // Swap back to the original team.
+  await options.getByRole('button', { name: 'Swap point and teammate' }).click();
+  await expect(options.getByLabel('Point character')).toHaveValue('Kazuya');
+  await options.getByLabel('Starter', { exact: true }).selectOption('EWGF');
+  await expect(status).toContainText('18 combos');
+
   await results.getByRole('listitem', { name: 'Generated combo 1', exact: true }).getByRole('button', { name: 'Use this combo' }).click();
   await expect(page.getByRole('heading', { name: 'New combo' })).toBeVisible();
   const notation = page.getByLabel('Notation', { exact: true });
