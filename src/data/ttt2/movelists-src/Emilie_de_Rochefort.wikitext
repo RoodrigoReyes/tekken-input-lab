@@ -1,0 +1,481 @@
+This is a list of every move that [[Emilie de Rochefort|Lili]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Movelist==
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Kiss of Devotion]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Femme Fatale]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Soleil]]
+!1+3 (or 2+4)
+!Left
+!42
+!1
+|-
+![[Monaco Mixer]]
+!1+3 (or 2+4)
+!Right
+!43
+!2
+|-
+![[Ravaging Beauty]]
+!1+3 (or 2+4)
+!Back
+!60
+!
+|-
+![[Rafflesia]]
+!d/f+1+2
+!Front
+!40
+!1+2
+|-
+![[Larkspur]]
+!During enemy wall stun 1+3 (or 2+4)
+!Front
+!38
+!
+|-
+![[Attack Reversal]]
+!Synchro with the opponent's punch b+1+3 (or b+2+4)
+!Parry
+!25
+!
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+|[[Left Right Back Strike]]
+|1, 2, 3
+|7, 12, 10
+|High, high, low
+|-
+|[[Left Right Piercing Thorn]]
+|1, 2, 4
+|7, 12, 20
+|High, high, mid
+|-
+|[[Sunrise Sunset]]
+|2, 3
+|8, 10
+|High, low
+|-
+|[[Bed Time]]
+|2, 4
+|8, 20
+|High, high
+|-
+|[[Peacock Waltz]]
+|3, 1
+|12, 20
+|Mid, mid
+|-
+|[[Peacock Jive]]
+|3, 2, 3
+|12, 8, 22
+|Mid, high, high
+|-
+|[[Broken Heart]]
+|1+2
+|25
+|Mid
+|-
+|[[Divine Step]]
+|3+4
+|18, 5, 5
+|Mid
+|-
+|[[Supercharger|Ki Charge]]
+|1+2+3+4
+| -
+| -
+|-
+|[[Mars Sword]]
+|f+2, 3
+|12, 20
+|High, mid
+|-
+|[[Circle Knee]]
+|f+3
+|26
+|Mid
+|-
+|[[Bélier Attaque]]
+|f+4
+|23
+|Mid
+|-
+|[[Kitty Claws]]
+|f+1+2
+|17
+|Mid
+|-
+|[[Sundial]]
+|f+3+4
+|8, 22
+|Mid, mid
+|-
+|[[Delayed Sundial]]
+|f+3+4, 3
+|8, 20
+|Mid, mid
+|-
+|[[Garland Kick Combo]]
+|f+3+4, 3, 4
+|8, 20, 20
+|Mid, mid, mid
+|-
+|[[Direct Persuasion]]
+|d/f+1
+|12
+|Mid
+|-
+|[[Orleans Sword]]
+|d/f+2
+|16
+|Mid
+|-
+|[[Submissive Heel]]
+|d/f+3
+|23
+|Mid
+|-
+|[[Dominating Heel]]
+|d/f+4, 4
+|13, 21
+|Mid, low
+|-
+|[[Backflip Spinning Edge]]
+|d/f+3+4, 3+4
+|13, 5, 20
+|Mid, mid, mid
+|-
+|[[Heavy Languish to Mirror Image]]
+|d+1, 2, b
+|10, 8
+|Low, high
+|-
+|[[Heavy Languish]]
+|d+1, 2, 4
+|10, 8, 23
+|Low, high, mid
+|-
+|[[Bloody Masquerade Piton]]
+|d+2, 2, 3
+|16, 10, 23
+|Mid, high, high
+|-
+|[[Bloody Masquerade Lance]]
+|d+2, 2, 4
+|16, 10, 23
+|Mid, high, mid
+|-
+|[[Thorn Whip]]
+|d+3
+|13
+|Low
+|-
+|[[Matterhorn Ascension]]
+|d+3+4
+|23
+|Mid
+|-
+|[[Twist of Fate]]
+|d/b+3
+|20
+|High
+|-
+|[[Edelweiss]]
+|d/b+4
+|20
+|Low
+|-
+|[[Freesia Thrust]]
+|d/b+3+4
+|20
+|Low
+|-
+|[[Élysée Le Bras Allongé]]
+|b+1
+|16
+|Mid
+|-
+|[[Élysée Le Bras Allongé Caracole|Elysee Le Bras Allonge Caracole]]
+|b+1, 4
+|16, 22
+|Mid, mid
+|-
+|[[Heliotrope]]
+|b+2, 1
+|15, 10
+|High, high
+|-
+|[[Feisty Rabbit]]
+|b+3 (or b+4)
+| -
+| -
+|-
+|[[Feisty Rabbit to Dew Glide]]
+|During Feisty Rabbit f
+| -
+| -
+|-
+|[[Rabbit's Foot]]
+|During Feisty Rabbit 3
+|25
+|Low
+|-
+|[[Rabbit Thorn]]
+|During Feisty Rabbit 4
+|27
+|Mid
+|-
+|[[Dendrobium]]
+|b+1+2
+|23
+|Mid
+|-
+|[[Mirror Image]]
+|b+3+4
+| -
+| -
+|-
+|[[Piercing Thorn Fortissimo]]
+|b+1+4
+|50
+|!
+|-
+|[[Moonsault to Dew Glide]]
+|u (or u/b)+3+4, f
+|25
+|Mid
+|-
+|[[Moonsault Narcissus to Dew Glide]]
+|u (or u/b)+3+4, 3, f
+|25, 15
+|Mid, mid
+|-
+|[[Moonsault Alstroemeria]]
+|u (or u/b)+3+4, 3, 3+4
+|25, 15, 4, 13
+|Mid, mid, mid, mid
+|-
+|[[Capricorn Kick]]
+|u/f (or u or u/b)+3
+|13
+|Mid
+|-
+|[[Sunflower Lance]]
+|u/f+4, 3
+|18, 23
+|Mid, mid
+|-
+|[[Angel Knee]]
+|u/f+3+4
+|15
+|Mid
+|-
+|[[Angel Knee to Front Kick]]
+|u/f+3+4, 3
+|15, 18
+|Mid, high
+|-
+|[[Angel Knee Ascension]]
+|u/f+3+4, 3+4
+|15, 22
+|Mid, mid
+|-
+|[[Allonger le Bras|Allonger Le Bras]]
+|f, f+2
+|28
+|Mid
+|-
+|[[Narcissus to Dew Glide]]
+|f, f+3, f
+|9
+|Mid
+|-
+|[[Alstroemeria]]
+|f, f+3, 3+4
+|15, 5, 20
+|Mid, mid, mid
+|-
+|[[Root of Evil]]
+|f, f+4
+|23
+|Low
+|-
+|[[Piercing Thorn]]
+|f, f+3+4
+|30
+|Mid
+|-
+|[[Dew Glide]]
+|qcf
+| -
+| -
+|-
+|[[Sabre Slash]]
+|f, f, f+3
+|30
+|Mid
+|-
+|[[Sullen Daisy]]
+|WS+1, 2, 4
+|15, 16, 20
+|Mid, high, low
+|-
+|[[Delicate Uprising]]
+|WS+2
+|17
+|Mid
+|-
+|[[Honeysuckle]]
+|WS+3, 4
+|20, 25
+|Mid, mid
+|-
+|[[Slashing Vine]]
+|FC+d/f+1
+|25
+|Mid
+|-
+|[[Horizon Slide]]
+|FC+d/f+3
+|18
+|Low
+|-
+|[[Stunning Toe Kick]]
+|'''During side step 3'''
+|20
+|Mid
+|-
+|[[Minuet]]
+|'''During side step 1+2'''
+|21
+|Mid
+|}
+
+===[[Mirror Image|Back Turned Attacks]]===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+|[[Mirror Image]]
+|b+3+4
+| -
+| -
+|-
+|[[Monte Carlo Snap]]
+|Back to the opponent 1
+|8
+|High
+|-
+|[[Cancer Une-Deux]]
+|Back to the opponent 1, 2
+|8, 13
+|High, high
+|-
+|[[Rompez Fleuret]]
+|Back to the opponent 2
+|17
+|Mid
+|-
+|[[Shears to Spinning Edge]]
+|Back to the opponent 4, 3+4
+|10, 20, 10, 20
+|Mid, mid, mid, mid
+|-
+|[[Tempest (Lili)|Tempest]]
+|Back to the opponent 1+2
+|5, 20
+|Mid, mid
+|-
+|[[Twist Backflip Fleuret]]
+|Back to the opponent 3+4, 2
+|18, 21
+|Mid, mid
+|-
+|[[Autumn Wind]]
+|Back to the opponent d+3, 4
+|16, 22
+|Low, mid
+|-
+|[[Orchid Ring]]
+|Back to the opponent d+3+4
+|22
+|Low
+|}
+
+===During [[Dew Glide]]===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+|[[Dew Glide]]
+|qcf
+| -
+| -
+|-
+|[[Rose Pique]]
+|qcf+1, 2
+|16, 20
+|Mid, mid
+|-
+|[[Angel Heart]]
+|qcf+2
+|23
+|Mid
+|-
+|[[Cloisonne]]
+|qcf+3+4
+|12, 13
+|High, high
+|}
+
+==10 Hit Combo==
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+|[[10 Hit Combo 1 (Lili and Sebastian)|4, 1, 3, 4, 4, 3, 4, 4, 3 + 4]]
+|84
+|hhmmllmmm <small>Short throw</small>
+|-
+|[[10 Hit Combo 2 (Lili and Sebastian)|4, 1, 3, 3+4, 3, 4, 3, 1, 3+4, 4]]
+|104
+|hhmmmllmm!
+|-
+|[[10 Hit Combo 3 (Lili and Sebastian)|4, 1, 3, 3+4]]
+|51
+|hhmmm
+|}
+
+[[Category:Moves Lists]]
+[[Category:Emilie de Rochefort Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { assembleCombo, bestPick, collectPieces, generateCombos, type GeneratorOptions } from '../../src/ttt2/generator';
+import { assembleCombo, bestPick, collectPieces, generateCombos, reachesBound, type GeneratorOptions } from '../../src/ttt2/generator';
 import { importGuide, rosterName, splitAdditional } from '../../src/ttt2/guideImporter';
 import { analyzeRoute } from '../../src/ttt2/routeAnalysis';
 import type { GuideLibrary } from '../../src/ttt2/types';
@@ -99,7 +99,7 @@ describe('generateCombos', () => {
     expect(r.stats).toMatchObject({ routes: 2, fillers: 9, enders: 2, candidates: 36, valid: 36 });
     expect(r.combos.every((c) => c.notation.split('B!').length === 2)).toBe(true);
     expect(r.stats.rejected['R1 route has no B!']).toBeGreaterThan(0);
-    const first = r.combos.find((c) => c.filler.notation === 'f+4,3,3' && c.ender.notation === 'cd+4,1');
+    const first = r.combos.find((c) => c.filler?.notation === 'f+4,3,3' && c.ender?.notation === 'cd+4,1');
     expect(first?.notation).toBe('Kazuya:\nEWGF > b+2,4 > db+2 B! > TA!\nNina:\nf+4,3,3\nKazuya:\ncd+4,1');
   });
 
@@ -127,7 +127,7 @@ describe('generateCombos', () => {
 
   it('ranks combos with fewer things to verify first', () => {
     const { combos } = generateCombos(synthetic(), leeOpts);
-    expect(combos.map((c) => c.filler.id)).toEqual(['ok', 'bad']);
+    expect(combos.map((c) => c.filler?.id)).toEqual(['ok', 'bad']);
     expect(combos[1]?.flags.map((f) => f.kind).sort()).toEqual(['notation', 'note']);
     const flags = generateCombos(library, base).combos.map((c) => c.flags.length);
     expect(flags).toEqual([...flags].sort((a, b) => a - b));
@@ -135,7 +135,7 @@ describe('generateCombos', () => {
 
   it('onlyClean drops pieces whose notation has warnings', () => {
     const r = generateCombos(synthetic(), { ...leeOpts, onlyClean: true });
-    expect(r.combos.map((c) => c.filler.id)).toEqual(['ok']);
+    expect(r.combos.map((c) => c.filler?.id)).toEqual(['ok']);
   });
 
   it('Nina\'s TA list from the guide is entirely clean now', () => {
@@ -144,13 +144,13 @@ describe('generateCombos', () => {
 
   it('respects forms', () => {
     const devil = generateCombos(library, { ...base, point: 'Nina', partner: 'Kazuya', partnerForm: 'Devil Kazuya', fillerBy: 'partner' });
-    expect(new Set(devil.combos.map((c) => c.filler.notation))).toEqual(new Set(['cd+4,1', 'b+4,1', 'uf+1+2']));
+    expect(new Set(devil.combos.map((c) => c.filler?.notation))).toEqual(new Set(['cd+4,1', 'b+4,1', 'uf+1+2']));
   });
 
   it('wall context: wall lists, wall routes, and open routes flagged to verify the carry', () => {
     const opts = { ...base, context: 'wall' as const, routeKinds: ['normal', 'wall'] as const };
     const r = generateCombos(library, opts);
-    expect(r.combos.every((c) => c.filler.context === 'wall' && c.ender.context === 'wall')).toBe(true);
+    expect(r.combos.every((c) => c.filler?.context === 'wall' && c.ender?.context === 'wall')).toBe(true);
     const open = r.combos.filter((c) => c.route.context === 'open');
     expect(open.length).toBeGreaterThan(0);
     expect(open.every((c) => c.flags.some((f) => f.text.includes('carries the opponent to the wall')))).toBe(true);
@@ -185,6 +185,19 @@ describe('generateCombos', () => {
     expect(r.stats.rejected['R4 extender-repeated']).toBe(1);
   });
 
+  it('air throws end the combo only with the character who started it', () => {
+    const lib = importGuide(
+      ['# Armor King', '## Solo Combos', '1. d+2 B! > f+1+4', '## Ender', 'WR3', 'Additional Air Ender: f,hcf+1. Air throw (Muscle Driver).', '# Kazuya', '## TA!', 'b+4,1', '## Ender', 'cd+4,1'].join('\n'),
+    );
+    const air = lib.kits[0]!.pieces.find((p) => p.airThrow);
+    expect(air).toMatchObject({ role: 'ender', context: 'open', notation: 'f,hcf+1', additional: true });
+    const opts = { ...base, point: 'Armor King', partner: 'Kazuya', includeAdditional: true };
+    const byStarter = collectPieces(lib, { ...opts, enderBy: 'point' })!;
+    expect(byStarter.enders.map((e) => e.piece.notation)).toEqual(['WR3', 'f,hcf+1']);
+    const byMate = collectPieces(lib, { ...opts, point: 'Kazuya', partner: 'Armor King', fillerBy: 'point', enderBy: 'partner' })!;
+    expect(byMate.enders.map((e) => e.piece.notation)).toEqual(['WR3']);
+  });
+
   it('returns nothing for unknown characters', () => {
     expect(generateCombos(library, { ...base, partner: 'Nobody' }).combos).toEqual([]);
   });
@@ -202,7 +215,7 @@ describe('layered builder (collectPieces / assembleCombo / bestPick)', () => {
 
   it('exposes the usable pieces of each phase with their performers', () => {
     const pools = collectPieces(library, base)!;
-    expect(pools.routes).toHaveLength(2);
+    expect(pools.routes.filter(reachesBound)).toHaveLength(2);
     expect(pools.fillers).toHaveLength(9);
     expect(pools.enders).toHaveLength(2);
     expect(pools.fillers.every((f) => f.piece.character === 'Nina')).toBe(true);
@@ -217,7 +230,7 @@ describe('layered builder (collectPieces / assembleCombo / bestPick)', () => {
   it('assembles exactly the combo the full generator would build for the same pieces', () => {
     const pools = collectPieces(library, base)!;
     for (const combo of generateCombos(library, base).combos) {
-      const built = assembleCombo(pools, { routeId: combo.route.id, fillerId: combo.filler.id, enderId: combo.ender.id });
+      const built = assembleCombo(pools, { routeId: combo.route.id, fillerId: combo.filler!.id, enderId: combo.ender!.id });
       expect(built).toEqual(combo);
     }
   });
@@ -235,8 +248,33 @@ describe('layered builder (collectPieces / assembleCombo / bestPick)', () => {
     expect(best.route.routeKind).toBe('normal');
   });
 
-  it('has no default pick when a phase is empty', () => {
+  it('falls back to a solo route when no team combo can be built, and has no pick without routes', () => {
     const pools = collectPieces(library, base)!;
-    expect(bestPick({ ...pools, enders: [] })).toBeNull();
+    const solo = assembleCombo(pools, bestPick({ ...pools, enders: [] })!)!;
+    expect(solo.filler).toBeUndefined();
+    expect(bestPick({ ...pools, enders: [], routes: pools.routes.filter(reachesBound) })).toBeNull();
+  });
+
+  it('offers routes without B! (e.g. low parry) as solo combos: the whole route, no TA', () => {
+    const pools = collectPieces(library, base)!;
+    const lp = pools.routes.find((r) => r.piece.routeKind === 'lowParry')!;
+    expect(reachesBound(lp)).toBe(false);
+    const combo = assembleCombo(pools, { routeId: lp.piece.id, fillerId: '', enderId: '' })!;
+    expect(combo.notation).toBe(`Kazuya:\n${lp.piece.notation}`);
+    expect(combo.filler ?? combo.ender).toBeUndefined();
+    // At the wall, open-ground solo routes are left out (they would ignore the wall lists).
+    const wall = collectPieces(library, { ...base, context: 'wall', routeKinds: ['normal', 'counterHit', 'lowParry', 'wall'] })!;
+    expect(wall.routes.some((r) => !reachesBound(r) && r.piece.context === 'open')).toBe(false);
+  });
+});
+
+describe('personally verified enders', () => {
+  it('keeps verified moves without heuristic suggestions and scopes them to the selected form', () => {
+    const lib = importGuide(text, 'excerpt');
+    const opts = { point: 'Kazuya', partner: 'Nina', context: 'open' as const, routeKinds: ['normal' as const], fillerBy: 'partner' as const, enderBy: 'point' as const, verifiedEnders: [{ character: 'Kazuya', form: 'Kazuya', notation: 'd/f+1,2' }] };
+    const pools = collectPieces(lib, opts)!;
+    expect(pools.enders.some((e) => e.piece.notation === 'd/f+1,2')).toBe(true);
+    expect(collectPieces(lib, { ...opts, pointForm: 'Devil Kazuya' })!.enders.some((e) => e.piece.notation === 'd/f+1,2')).toBe(false);
+    expect(collectPieces(lib, { ...opts, enderBy: 'partner' })!.enders.some((e) => e.piece.notation === 'd/f+1,2')).toBe(false);
   });
 });

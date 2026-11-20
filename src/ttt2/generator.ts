@@ -4,7 +4,8 @@
  *   [point] route up to B!  →  TA!  →  TA filler  →  ender
  *
  * Hard rules (a candidate is discarded when one fails):
- *   R1 the route reaches a Bound (B!) — required before a Tag Assault
+ *   R1 the route reaches a Bound (B!) — required before a Tag Assault; routes
+ *      without B! are still offered, as solo combos (no TA, filler or ender)
  *   R2 context: open-ground pieces with open routes, wall pieces with wall routes
  *   R3 forms: pieces/routes restricted to a form (Kazuya / Devil Kazuya) must match
  *   R4 the assembled combo passes the notation engine (one Bound per combo,
@@ -16,10 +17,14 @@
  */
 import { parseNotation } from '../parser';
 import { flattenNodes } from '../parser/validate';
+import { candidateEnders, enderKey, type MovelistMove } from './candidateEnders';
+import { moveKey, routeMoves, startAtMove } from './movePatterns';
 import { analyzeRoute } from './routeAnalysis';
 import type { CharacterKit, ComboPiece, GuideLibrary, PieceContext, RouteAnalysis, RouteKind } from './types';
 
 export type Performer = 'point' | 'partner';
+
+export interface VerifiedEnder { character: string; form: string; notation: string }
 
 export interface GeneratorOptions {
   point: string;
@@ -31,6 +36,8 @@ export interface GeneratorOptions {
   routeKinds: readonly RouteKind[];
   /** Only routes with this exact starter (e.g. "EWGF"). */
   starter?: string;
+  /** Only routes using this move before B!, offered from that move onward (e.g. a move landed on the fly). */
+  move?: string;
   /** Who performs the TA filler and the ender after the Tag Assault. */
   fillerBy: Performer;
   enderBy: Performer;
@@ -42,6 +49,13 @@ export interface GeneratorOptions {
   wallRoutes?: 'any' | 'wallOnly';
   onlyClean?: boolean;
   limit?: number;
+  /** Suggest extra enders for the STARTING character from their move list (heuristic, untested). Only when enderBy==='point' and open ground. */
+  suggestEnders?: boolean;
+  /** The point character's move list, used only when `suggestEnders` is on. */
+  enderCatalog?: readonly MovelistMove[];
+  /** Max suggested enders to add (default 12). */
+  enderSuggestLimit?: number;
+  verifiedEnders?: readonly VerifiedEnder[];
 }
 
 export type FlagKind = 'condition' | 'note' | 'notation';
@@ -56,8 +70,9 @@ export interface GeneratedCombo {
   id: string;
   /** The full guide route (its `analysis.opener` is the part used before TA!). */
   route: ComboPiece;
-  filler: ComboPiece;
-  ender: ComboPiece;
+  /** Undefined for a solo combo (a route without B! cannot lead into a Tag Assault). */
+  filler?: ComboPiece;
+  ender?: ComboPiece;
   analysis: RouteAnalysis;
   /** Labeled notation ready for the editor (original piece text kept verbatim). */
   notation: string;
@@ -93,7 +108,7 @@ function fatalIssue(piece: ComboPiece, text: string, isRoute: boolean): string |
   return null;
 }
 
-function formMatches(piece: ComboPiece, form: string | undefined, character: string): boolean {
+export function formMatches(piece: ComboPiece, form: string | undefined, character: string): boolean {
   const selected = form ?? character;
   if (piece.forms) return piece.forms.includes(selected);
   return (piece.form ?? character) === selected;
@@ -135,11 +150,15 @@ export interface PiecePools {
   point: string;
   fillerCharacter: string;
   enderCharacter: string;
+  /** Every route in guide order; those without B! are solo combos (see `reachesBound`). */
   routes: PoolRoute[];
   fillers: PoolPiece[];
   enders: PoolPiece[];
   rejected: Record<string, number>;
 }
+
+/** True when the route reaches a Bound, so it can lead into a Tag Assault. */
+export const reachesBound = (route: PoolRoute): boolean => Boolean(route.analysis.opener);
 
 export interface ComboPick {
   routeId: string;
@@ -160,6 +179,7 @@ export function collectPieces(library: GuideLibrary, options: GeneratorOptions):
   };
 
   const who = (p: Performer) => (p === 'point' ? { kit: pointKit, form: options.pointForm } : { kit: partnerKit, form: options.partnerForm });
+  const query = moveKey(options.move ?? '');
   const usable = (p: ComboPiece) => (options.includeAdditional || !p.additional) && (!options.onlyClean || pieceWarnings(p).length === 0);
 
   const routes = pointKit.pieces
@@ -167,27 +187,31 @@ export function collectPieces(library: GuideLibrary, options: GeneratorOptions):
     .filter((p) => (options.context === 'open' ? p.context === 'open' : p.context === 'wall' || options.wallRoutes !== 'wallOnly'))
     .filter((p) => !options.starter || p.starter === options.starter)
     .filter((p) => formMatches(p, options.pointForm, pointKit.character))
-    .map((p) => ({ piece: p, analysis: analyzeRoute(p.notation, p.character) }))
-    .filter(({ analysis }) => {
-      if (!analysis.opener) reject('R1 route has no B!');
-      return Boolean(analysis.opener);
+    .flatMap((p) => {
+      const piece = query ? startAtMove(p, query) : p;
+      return piece ? [piece] : [];
     })
+    .map((p) => ({ piece: p, analysis: analyzeRoute(p.notation, p.character) }))
+    // A solo combo ignores the TA lists, so at the wall only wall routes make sense.
+    .filter(({ piece, analysis }) => analysis.opener || options.context === 'open' || piece.context === 'wall')
     .filter(({ piece, analysis }) => (options.includeAdditional || !piece.additional) && (!options.onlyClean || pieceWarnings(piece, analysis.opener).length === 0))
     .filter(({ piece, analysis }) => {
-      const issue = fatalIssue(piece, analysis.opener as string, true);
+      const issue = fatalIssue(piece, analysis.opener ?? piece.notation, true);
       if (issue) reject(issue);
       return !issue;
     })
     .map(({ piece, analysis }) => ({
       piece,
       analysis,
-      flags: [...(options.context === 'wall' && piece.context === 'open' ? [CARRY_FLAG] : []), ...pieceFlags(piece, 'route', analysis.opener)],
+      flags: [...(options.context === 'wall' && piece.context === 'open' && analysis.opener ? [CARRY_FLAG] : []), ...pieceFlags(piece, 'route', analysis.opener)],
     }));
 
   const listFor = (role: 'taFiller' | 'ender', performer: Performer, which: Flag['piece']): PoolPiece[] => {
     const { kit, form } = who(performer);
     return kit.pieces
       .filter((p) => p.role === role && p.context === options.context && formMatches(p, form, kit.character) && usable(p))
+      // Air throws end the combo with the character who started it.
+      .filter((p) => !p.airThrow || performer === 'point')
       .filter((p) => {
         const issue = fatalIssue(p, p.notation, false);
         if (issue) reject(issue);
@@ -196,15 +220,49 @@ export function collectPieces(library: GuideLibrary, options: GeneratorOptions):
       .map((piece) => ({ piece, flags: pieceFlags(piece, which) }));
   };
 
+  const point = pointKit;
+  const enders = [...listFor('ender', options.enderBy, 'ender'), ...suggestedEnders()];
+
   return {
     point: pointKit.character,
     fillerCharacter: who(options.fillerBy).kit.character,
     enderCharacter: who(options.enderBy).kit.character,
     routes,
     fillers: listFor('taFiller', options.fillerBy, 'filler'),
-    enders: listFor('ender', options.enderBy, 'ender'),
+    enders,
     rejected,
   };
+
+  /**
+   * Extra enders for the starting character, mined from their move list by the
+   * gravity heuristic (candidateEnders). Suggestions only: every one is flagged.
+   */
+  function suggestedEnders(): PoolPiece[] {
+    if (options.enderBy !== 'point' || options.context !== 'open') return [];
+    const form = options.pointForm ?? point.character;
+    const verified = (options.verifiedEnders ?? []).filter((e) => e.character === point.character && e.form === form);
+    const openEnders = point.pieces.filter((p) => p.role === 'ender' && p.context === 'open' && formMatches(p, options.pointForm, point.character)).map((p) => p.notation);
+    const routeFinishers = point.pieces
+      .filter((p) => p.role === 'route')
+      .flatMap((p) => { const moves = routeMoves(p.notation, point.character); const last = moves[moves.length - 1]; return last ? [last.raw] : []; });
+    const candidates = options.suggestEnders && options.enderCatalog
+      ? candidateEnders({ movelist: options.enderCatalog, confirmedEnders: [...openEnders, ...verified.map((e) => e.notation)], routeFinishers }).slice(0, options.enderSuggestLimit ?? 12)
+      : [];
+    return [...verified.map((e) => ({ command: e.notation, verified: true })), ...candidates.map((c) => ({ command: c.command, verified: false }))]
+      .filter((c) => !openEnders.some((e) => enderKey(e) === enderKey(c.command)))
+      .map((c): ComboPiece => ({
+        id: `${point.character}/suggested-ender/${form}/${enderKey(c.command)}`,
+        character: point.character,
+        role: 'ender',
+        context: 'open',
+        notation: c.command,
+        additional: true,
+        notes: [],
+        condition: c.verified ? 'Personally verified ender: check it connects with this filler.' : 'Suggested ender (move list heuristic): verify it connects after the filler.',
+      }))
+      .filter((piece) => !fatalIssue(piece, piece.notation, false) && (!options.onlyClean || pieceWarnings(piece).length === 0))
+      .map((piece) => ({ piece, flags: pieceFlags(piece, 'ender') }));
+  }
 }
 
 function compose(pools: PiecePools, route: PoolRoute, filler: PoolPiece, ender: PoolPiece): GeneratedCombo {
@@ -223,9 +281,21 @@ function compose(pools: PiecePools, route: PoolRoute, filler: PoolPiece, ender: 
   };
 }
 
+/** The guide route on its own: no B!, so no Tag Assault. */
+function composeSolo(pools: PiecePools, route: PoolRoute): GeneratedCombo {
+  return {
+    id: route.piece.id,
+    route: route.piece,
+    analysis: route.analysis,
+    notation: assemble([{ who: pools.point, text: route.piece.notation }]),
+    flags: route.flags,
+  };
+}
+
 /** The combo made of the chosen pieces, or null when one of them is not in the pools. */
 export function assembleCombo(pools: PiecePools, pick: ComboPick): GeneratedCombo | null {
   const route = pools.routes.find((r) => r.piece.id === pick.routeId);
+  if (route && !reachesBound(route)) return composeSolo(pools, route);
   const filler = pools.fillers.find((f) => f.piece.id === pick.fillerId);
   const ender = pools.enders.find((e) => e.piece.id === pick.enderId);
   return route && filler && ender ? compose(pools, route, filler, ender) : null;
@@ -235,18 +305,27 @@ function fewestFlags<T extends PoolPiece>(list: readonly T[], tieBreak: (a: T, b
   return [...list].sort((a, b) => a.flags.length - b.flags.length || tieBreak(a, b))[0];
 }
 
-/** Default pick: per phase, the piece with the fewest things to verify (plain starters before CH/LP/wall). */
+/**
+ * Default pick: per phase, the piece with the fewest things to verify (plain starters before CH/LP/wall).
+ * A team combo when one can be built, otherwise a solo route.
+ */
 export function bestPick(pools: PiecePools): ComboPick | null {
-  const route = fewestFlags(pools.routes, (a, b) => KIND_ORDER[a.piece.routeKind ?? 'normal'] - KIND_ORDER[b.piece.routeKind ?? 'normal']);
+  const byKind = (a: PoolRoute, b: PoolRoute) => KIND_ORDER[a.piece.routeKind ?? 'normal'] - KIND_ORDER[b.piece.routeKind ?? 'normal'];
+  const route = fewestFlags(pools.routes.filter(reachesBound), byKind);
   const filler = fewestFlags(pools.fillers);
   const ender = fewestFlags(pools.enders);
-  return route && filler && ender ? { routeId: route.piece.id, fillerId: filler.piece.id, enderId: ender.piece.id } : null;
+  if (route && filler && ender) return { routeId: route.piece.id, fillerId: filler.piece.id, enderId: ender.piece.id };
+  const solo = fewestFlags(pools.routes.filter((r) => !reachesBound(r)), byKind);
+  return solo ? { routeId: solo.piece.id, fillerId: filler?.piece.id ?? '', enderId: ender?.piece.id ?? '' } : null;
 }
 
 export function generateCombos(library: GuideLibrary, options: GeneratorOptions): GeneratorResult {
   const pools = collectPieces(library, options);
   if (!pools) return { combos: [], stats: { routes: 0, fillers: 0, enders: 0, candidates: 0, valid: 0, rejected: {} } };
-  const { routes, fillers, enders } = pools;
+  const { fillers, enders } = pools;
+  const routes = pools.routes.filter(reachesBound);
+  const solo = pools.routes.length - routes.length;
+  const rejected = solo ? { ...pools.rejected, 'R1 route has no B!': solo } : pools.rejected;
   const combos = routes.flatMap((route) => fillers.flatMap((filler) => enders.map((ender) => compose(pools, route, filler, ender))));
 
   // Fewest things to verify first, then plain starters before CH/LP/wall.
@@ -258,6 +337,6 @@ export function generateCombos(library: GuideLibrary, options: GeneratorOptions)
   );
   return {
     combos: options.limit ? ranked.slice(0, options.limit) : ranked,
-    stats: { routes: routes.length, fillers: fillers.length, enders: enders.length, candidates: combos.length, valid: combos.length, rejected: pools.rejected },
+    stats: { routes: routes.length, fillers: fillers.length, enders: enders.length, candidates: combos.length, valid: combos.length, rejected },
   };
 }

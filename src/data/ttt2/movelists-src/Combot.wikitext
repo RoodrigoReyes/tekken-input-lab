@@ -1,0 +1,2169 @@
+Unlike ''[[Tekken 4]]'', [[Combot]] no longer mimics a single character's moveset. Instead, in ''[[Tekken Tag Tournament 2]]'', Combot can mimic multiple character moves. More moves are unlocked by completing the levels of [[Fight Lab]], but special moves are only available after earning high ranks in the mode.
+
+== Development techniques ==
+
+=== Techniques with command 1 ===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+! style="background-color:#AC0A0A" |Cost
+|-
+![[Goliath's Tooth]]
+!d/b+1 <sup>True Ogre</sup>
+!17
+!Mid
+!5,000
+|-
+![[Storming Flower]]
+!d/b+1 <sup>Ling Xiaoyu</sup>
+!22
+!Mid
+!7,500
+|-
+![[Dancing Hatchet]]
+!d/b+1 <sup>Jaycee</sup>
+!16
+!Mid
+!5,000
+|-
+![[Double Wild Slap]]
+!d/b+1, 2 <sup>Kuma/Panda</sup>
+!11, 15
+!High, mif
+!7,500
+|-
+![[Ishizuewari]]
+!d+1 <sup>Jinpachi Mishima</sup>
+!15
+!Mid
+!10,000
+|-
+![[Dunk Elbow]]
+!d+1 <sup>Craig Marduk</sup>
+!20
+!Mid
+!5,000
+|-
+![[Knee Blaster]]
+!d+1 <sup>Steve Fox</sup>
+!13
+!Low
+!7,500
+|-
+![[Coupé Chop]]
+!d+1 <sup>Bob</sup>
+!18
+!Mid
+!10,000
+|-
+![[Heavy Languish]]
+!d+1, 2, 4 <sup>Lili</sup>
+!10, 8, 23
+!Low, high, mid
+!7,500
+|-
+![[Low Blow]]
+!d/f+1 <sup>Jaycee</sup>
+!16
+!Mid
+!5,000
+|-
+![[Minced Liver]]
+!d/f+1 <sup>Armor King</sup>
+!12
+!Mid
+!/
+|-
+![[Lion's Roar]]
+!d/f+1, 1, 2 <sup>Paul Phoenix</sup>
+!12, 8, 22
+!Mid, high, mid
+!10,000
+|-
+![[Elbow Slap Combo]]
+!d/f+1, 2 <sup>Roger Jr.</sup>
+!15, 12
+!Mid, mid
+!7,500
+|-
+![[Twin Lancer]]
+!d/f+1, 2 <sup>Devil Jin</sup>
+!11, 15
+!Mid, mid
+!10,000
+|-
+![[Chopping Elbow]]
+!b+1 <sup>Bryan Fury</sup>
+!21
+!Mid
+!10,000
+|-
+![[Iron Palm]]
+!b+1 <sup>Feng Wei</sup>
+!17
+!High
+!10,000
+|-
+![[Diamond Reamer]]
+!b+1, 1 <sup>Jack-6</sup>
+!13, 20
+!Mid, mid
+!5,000
+|-
+![[Funkei Uraken]]
+!b+1, 2 <sup>Heihachi Mishima</sup>
+!12, 20
+!High, high
+!5,000
+|-
+![[Quick Hook Uppercut]]
+!b+1, 2 <sup>King</sup>
+!13, 20
+!High, high
+!7,500
+|-
+![[Flash Punch Combo (Jinpachi)|Flash Punch Combo]]
+!1, 2 <sup>Jinpachi Mishima</sup>
+!7, 20
+!High, mid
+!5,000
+|-
+![[Coil Punch Combo]]
+!1, 2, 2 <sup>Alisa Bosconovitch</sup>
+!7, 10 ,17
+!High, high, low
+!7,500
+|-
+![[Demon Slayer (Mishima)|Demon Slayer]]
+!1, 2, 2 <sup>Kazuya Mishima</sup>
+!7, 8, 12
+!High, high, high
+!/
+|-
+![[Fast Break]]
+!1, 2, 1+2 <sup>Bob</sup>
+!7, 10, 20
+!High, high, mid
+!10,000
+|-
+![[Martillo]]
+!1, 2, 1+2 <sup>Miguel</sup>
+!7, 10, 30
+!High, high, mid
+!7,500
+|-
+![[Water Parting Chop]]
+!u/b+1 <sup>King</sup>
+!30
+!High
+!7,500
+|-
+![[Cougar Punch]]
+!u/b+1 <sup>Steve Fox</sup>
+!10
+!Mid
+!5,000
+|-
+![[Gate Keeper]]
+!u/b+1, 2 <sup>Raven</sup>
+!11, 13
+!Mid, mid
+!10,000
+|-
+![[Kinsakou]]
+!u/b+1, 2 <sup>Jinpachi Mishima</sup>
+!10, 10
+!Mid, mid
+!10,000
+|-
+![[Sky Sweeper]]
+!u/f+1 <sup>Jack-6</sup>
+!45
+!!
+!10,000
+|-
+![[Jamming Palm]]
+!u/f+1 <sup>Ganryu</sup>
+!15
+!Mid
+!5,000
+|-
+![[Eye Blast]]
+!u/f+1 <sup>Sergei Dragunov</sup>
+!18
+!High
+!7,500
+|-
+![[Lapis Dagger]]
+!u/f+1 <sup>Zafina</sup>
+!20
+!High
+!7,500
+|-
+![[Obús]]
+!u/f+1 <sup>Miguel</sup>
+!27
+!High
+!10,000
+|-
+![[Blackout Muggin']]
+!u/f+1, 3 <sup>Marshall Law</sup>
+!10, 10
+!High, low
+!10,000
+|-
+![[Quick Iron Fist]]
+!WS+1 <sup>Heihachi Mishima</sup>
+!20
+!Mid
+!10,000
+|-
+![[Killing Uppercut]]
+!WS+1 <sup>Jack-6</sup>
+!20
+!Mid
+!10,000
+|-
+![[Twin Lancer]]
+!WS+1, 2 <sup>Jin Kazama</sup>
+!10, 16
+!Mid, mid
+!7,500
+|-
+![[Wildman]]
+!WS+1, 2 <sup>Steve Fox</sup>
+!10, 20
+!Mid, mid
+!10,000
+|-
+![[Cross Butcher]]
+!WS+1, 2 <sup>Bob</sup>
+!12, 18
+!Mid, high
+!7,500
+|-
+![[Jackhammer]]
+!f, f+1 <sup>Jack-6</sup>
+!28
+!Mid
+!10,000
+|-
+![[Elbow Skyscraper Kick]]
+!f, f+1, 4 <sup>Jaycee</sup>
+!8,17
+!Mid, high
+!7,500
+|-
+![[Flaming Arrow]]
+!f, f, f+1 <sup>Jaycee</sup>
+!28
+!High
+!10,000
+|-
+![[Animal Uppercut]]
+!f, N, d, d/f+1 <sup>Roger Jr.</sup>
+!40
+!Mid
+!10,000
+|-
+![[Langue Washer]]
+!f, N, d, d/f+1 <sup>Bob</sup>
+!20
+!High
+!7,500
+|-
+![[Rose Pique]]
+!d, d/f, f+1, 2 <sup>Lili</sup>
+!16, 20
+!Mid, mid
+!7,500
+|-
+![[Thruster]]
+!d, d/f, f+1<sup>Paul Phoenix</sup>
+!21
+!High
+!10,000
+|-
+![[Assassin's Dagger (Anna)|Assassin's Dagger]]
+!d, d/f, f+1<sup>Anna Williams</sup>
+!23
+!High
+!7,500
+|-
+![[Cocked Hammer]]
+!d, d/f, f+1<sup>Sergei Dragunov</sup>
+!20
+!High
+!10,000
+|-
+![[Excellent Rush]]
+!f, d/f, d, d/b, b+1 <sup>Combot</sup>
+!37
+!Mid
+!/
+|-
+
+|}
+
+===Techniques with command 2===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+! style="background-color:#AC0A0A" |Cost
+|-
+![[Flash Hook]]
+!d/b+2 <sup>Craig Marduk</sup>
+!20
+!Mid
+!10,000
+|-
+![[Bite Uppercut]]
+!d/b+2 <sup>Bob</sup>
+!17
+!Mid
+!7,500
+|-
+![[Ouha]]
+!d/b+2 <sup>Paul Phoenix</sup>
+!17
+!Mid
+!7,500
+|-
+![[Assassin's Sting Combo]]
+!d/b+2, 1 <sup>Raven</sup>
+!13, 8
+!Mid, high
+!5,000
+|-
+![[Twister Mirage]]
+!d/b+2, 3 <sup>Christie Monteiro</sup>
+!13, 22
+!Low, mid
+!7,500
+|-
+![[Heaven's Hammer]]
+!d+2 <sup>Asuka Kazama</sup>
+!18
+!Mid
+!10,000
+|-
+![[Tactical Sword]]
+!d+2 <sup>Lars Alexandersson</sup>
+!16
+!Mid
+!7,500
+|-
+![[Moujanobe]]
+!d+2, 1 <sup>Jinpachi Mishima</sup>
+!13, 17
+!Mid, mid
+!10,000
+|-
+![[Cutthroat]]
+!d+2, 3 <sup>Nina Williams</sup>
+!15, 20
+!Low, high
+!7,500
+|-
+![[Combination Ble]]
+!d+2, 3 <sup>Bob</sup>
+!12, 21
+!Mid, mid
+!5,000
+|-
+![[Deadlock]]
+!d+2, 4 <sup>Alisa Bosconovitch</sup>
+!17, 23
+!Mid, mid
+!7,500
+|-
+![[Scimitar]]
+!d/f+2 <sup>Sergei Dragunov</sup>
+!13
+!Mid
+!/
+|-
+!/
+!d/f+2 <sup>Paul Phoenix</sup>
+!14
+!Mid
+!10,000
+|-
+![[Double Impact (Marduk)|Double Impact]]
+!d/f+2, 1 <sup>Craig Marduk</sup>
+!16, 21
+!Mid, mid
+!5,000
+|-
+![[Hachazo]]
+!d/f+2, 2 <sup>Miguel</sup>
+!10, 22
+!Mid, mid
+!7,500
+|-
+![[Wrecking Ball]]
+!b+2 <sup>Paul Phoenix</sup>
+!23
+!Mid
+!10,000
+|-
+![[Body Bomb]]
+!b+2 <sup>Steve Fox</sup>
+!15
+!Mid
+!7,500
+|-
+![[Wu Hu Chu Dong]]
+!b+2, 1 <sup>Leo</sup>
+!11, 11
+!Mid, high
+!5,000
+|-
+![[Gilbert Cannon]]
+!b+2, 3 <sup>Lars Alexandersson</sup>
+!12,21
+!Mid, high
+!7,500
+|-
+![[Jab Uppercut]]
+!2, 1 <sup>King</sup>
+!10, 12
+!High, mid
+!5,000
+|-
+![[One Two Scud Kick]]
+!2, 1, 3 <sup>Sergei Dragunov</sup>
+!10, 8, 23
+!High, high, high
+!7,500
+|-
+![[Basho Oroshi]]
+!2, 1, 1+2 <sup>Asuka Kazama</sup>
+!8, 10, 23
+!High, high, mid
+!10,000
+|-
+![[Demon Backhand Spin]]
+!2, 2 <sup>Heihachi Mishima</sup>
+!10,18
+!High, high
+!/
+|-
+![[Switch Blade]]
+!2, 4 <sup>Jin Kazama</sup>
+!8, 20
+!High, high
+!7,500
+|-
+![[Pinpoint Assault]]
+!f+2 <sup>Jack-6</sup>
+!20
+!High
+!5,000
+|-
+![[Ducking Palm]]
+!f+2 <sup>Ganryu</sup>
+!13
+!Mid
+!5,000
+|-
+![[Death Mask]]
+!f+2, 4 <sup>Lars Alexandersson</sup>
+!10, 22
+!High, high
+!10,000
+|-
+![[Stun Gun (Sergei Dragunov)|Stun Gun]]
+!f+2, 4 <sup>Sergei Dragunov</sup>
+!16, 23
+!High, mid
+!7,500
+|-
+![[Decapitating Sword]]
+!u/b+2 <sup>Devil Jin</sup>
+!25
+!Mid
+!10,000
+|-
+![[Leaping Hammer Fist]]
+!u+2 <sup>Feng Wei</sup>
+!30
+!Mid
+!7,500
+|-
+![[Evading Middle Strike]]
+!u/f+2 <sup>Jin Kazama</sup>
+!18
+!Mid
+!5,000
+|-
+![[Super Knuckle]]
+!u/f+2 <sup>Jaycee</sup>
+!25
+!Mid
+!7,500
+|-
+![[Binding Whip]]
+!u/f+2, 1 <sup>Nina Williams</sup>
+!13, 15
+!Mid, mid
+!10,000
+|-
+![[Yue Bu Si Quan]]
+!u/f+2, 1 <sup>Leo</sup>
+!15, 13
+!Mid, mid
+!10,000
+|-
+![[Spinning Backfists]]
+!u/f+2, 2 <sup>Kazuya Mishima</sup>
+!18, 18
+!High, low
+!7,500
+|-
+![[Chanko Spin Okawari]]
+!u/f+2, 1+2 <sup>Ganryu</sup>
+!17, 22
+!Mid, mid
+!7,500
+|-
+![[Dragon Uppercut (Law)|Dragon Uppercut]]
+!WS+2 <sup>Marshall Law</sup>
+!18
+!Mid
+!10,000
+|-
+![[Dark Thrust]]
+!WS+2 <sup>Heihachi Mishima</sup>
+!20
+!Mid
+!7,500
+|-
+![[Thunder Palm (Paul)|Thunder Palm]]
+!WS+2 <sup>Paul Phoenix</sup>
+!20
+!Mid
+!10,000
+|-
+![[Multiplied Force]]
+!WS+2, 1 <sup>Lars Alexandersson</sup>
+!10, 17
+!Mid, mid
+!7,500
+|-
+![[Round Trip Chop]]
+!WS+2, 2 <sup>King</sup>
+!11, 25
+!Mid, mid
+!5,000
+|-
+![[Demon Uppercut]]
+!f, f+2 <sup>Kuma/Panda</sup>
+!23
+!Mid
+!10,000
+|-
+![[Mauling Dragon]]
+!f, f+2 <sup>Lei Wulong</sup>
+!23
+!Mid
+!7,500
+|-
+![[Demon's Paw]]
+!f, f+2 <sup>Jin Kazama</sup>
+!23
+!Mid
+!7,500
+|-
+![[Rocket Uppercut]]
+!f, f+2 <sup>Jack-6</sup>
+!21
+!Mid
+!7,500
+|-
+![[Cross Straight]]
+!f, f+2 <sup>Bruce Irvin</sup>
+!18
+!High
+!5,000
+|-
+![[Eraser]]
+!f, f, f+2 <sup>Steve Fox</sup>
+!30
+!Mid
+!7,500
+|-
+![[Russian Assault]]
+!f, f, f+2 <sup>Sergei Dragunov</sup>
+!20
+!Mid
+!10,000
+|-
+![[Linear Punch]]
+!f, f, f+2 <sup>Alisa Bosconovitch</sup>
+!28
+!High
+!10,000
+|-
+![[Right Roundhouse Punch]]
+!f, N, d, d/f+2 <sup>Jin Kazama</sup>
+!20
+!High
+!7,500
+|-
+![[Spiral Rocky]]
+!f, N, d, d/f+2 <sup>Bob</sup>
+!23
+!Mid
+!7,500
+|-
+![[Ducking Elbow]]
+!f, N, d, d/f+2 <sup>Bruce Irvin</sup>
+!20
+!Mid
+!10,000
+|-
+![[Mountain Crusher (Feng)|Mountain Crusher]]
+!d, d/f, f+2 <sup>Feng Wei</sup>
+!22
+!Mid
+!10,000
+|-
+![[Angel Heart]]
+!d, d/f, f+2 <sup>Lili</sup>
+!23
+!Mid
+!7,500
+|-
+![[Stinger Elbow]]
+!d, d/f, f+2 <sup>Sergei Dragunov</sup>
+!23
+!Mid
+!10,000
+|-
+![[Artemis Arrow]]
+!d, d/f, f+2, 1 <sup>Anna Williams</sup>
+!17, 20
+!Mid, mid
+!7,500
+|}
+
+===Techniques with command 3===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+! style="background-color:#AC0A0A" |Cost
+|-
+![[Sliding Low Kick]]
+!d/b+3 <sup>Kazuya Mishima</sup>
+!13
+!Low
+!5,000
+|-
+![[Killer Bee]]
+!d/b+3 <sup>Raven</sup>
+!18
+!Low
+!7,500
+|-
+![[Bump Kick]]
+!d/b+3 <sup>Lee Chaolan</sup>
+!15
+!Low
+!7,500
+|-
+![[Lie Huo Fan Jiao]]
+!d/b+3 <sup>Leo</sup>
+!23
+!High
+!10,000
+|-
+![[Revolving Hammer]]
+!d/b+3, 1, 1 <sup>Craig Marduk</sup>
+!10, 17, 23
+!Low, high, mid
+!10,000
+|-
+![[Jamming Low Kick]]
+!d+3 <sup>Jaycee</sup>
+!10
+!Low
+!5,000
+|-
+![[Silver Low]]
+!d+3 <sup>Lee Chaolan</sup>
+!13
+!Low
+!7,500
+|-
+![[Jichinsai]]
+!d+3 <sup>Heihachi Mishima</sup>
+!25
+!Mid
+!10,000
+|-
+![[Triple Click]]
+!d+3, 3, 3 <sup>Alisa Bosconovitch</sup>
+!13, 5, 13
+!Low, low, low
+!7,500
+|-
+![[Panini Sweep]]
+!d+3, 4 <sup>Bob</sup>
+!13, 20
+!Low high
+!7,500
+|-
+![[Left Knee (Julia)|Left Knee]]
+!d/f+3 <sup>Jaycee</sup>
+!16
+!Mid
+!/
+|-
+![[Minazuki]]
+!d/f+3 <sup>Asuka Kazama</sup>
+!22
+!Mid
+!5,000
+|-
+![[Arakantsui]]
+!d/f+3, 1 <sup>Jinpachi Mishima</sup>
+!12, 20
+!Mid, mid
+!7,500
+|-
+![[Tunda]]
+!d/f+3, 2 <sup>Miguel</sup>
+!11, 13
+!Mid, mid
+!10,000
+|-
+![[Mercury Drive]]
+!d/f+3, 2, 3 <sup>Lee Chaolan</sup>
+!15, 11, 21
+!Mid, high, mid
+!10,000
+|-
+![[Side Kick Combo Middle]]
+!d/f+3, 3 <sup>Hwoarang</sup>
+!13, 15
+!Mid, mid
+!5,000
+|-
+![[Toll Kick]]
+!b+3 <sup>Armor King</sup>
+!23
+!High
+!5,000
+|-
+![[Spinning Top]]
+!b+3 <sup>Alisa Bosconovitch</sup>
+!26
+!Mid
+!7,500
+|-
+![[Ereshkigal Stomp]]
+!b+3 <sup>Zafina</sup>
+!25
+!Mid
+!7,500
+|-
+![[Oleaje]]
+!b+3 <sup>Miguel</sup>
+!25
+!Mid
+!10,000
+|-
+![[Cloud Kick]]
+!3 <sup>Ling Xiaoyu</sup>
+!20
+!High
+!7,500
+|-
+![[Disconnector Combo Middle|Disconnector]]
+!3, 1, 2 <sup>Sergei Dragunov</sup>
+!10, 8, 23
+!Mid, high, mid
+!10,000
+|-
+![[Kisshin Rekko|Kishin Rekko]]
+!3, 1, 4 <sup>Jin Kazama</sup>
+!19, 7, 18
+!High, high, low
+!5,000
+|-
+![[Piston Fire]]
+!3, 2 <sup>Paul Phoenix</sup>
+!14, 17
+!Mid, high
+!/
+|-
+![[Gancho Chibata]]
+!3, 4 <sup>Christie Monteiro</sup>
+!20, 25
+!High, mid
+!5,000
+|-
+![[Knee Strike]]
+!f+3 <sup>Bryan Fury</sup>
+!18
+!Mid
+!7,500
+|-
+![[Front Kick to DDT]]
+!f+3, during the attack from the front, 1+2 <sup>King</sup>
+!18, 20
+!Mid, throw
+!10,000
+|-
+![[Howling Dog Rush]]
+!f+3, 1, 2 <sup>Lei Wulong</sup>
+!20, 12, 12
+!Mid, high, mid
+!10,000
+|-
+![[Mammoth Charge]]
+!f+3, 2 <sup>Craig Marduk</sup>
+!17, 20
+!Mid, mid
+!7,500
+|-
+![[Wheel of Fate]]
+!u/b+3 <sup>Lee Chaolan</sup>
+!21
+!Mid
+!7,500
+|-
+![[Dragon Wheel Kick]]
+!u/b+3 <sup>True Ogre</sup>
+!20
+!Mid
+!10,000
+|-
+![[Reverse Duck Flip]]
+!u/b+3 <sup>Bob</sup>
+!18, 15
+!Mid, mid
+!5,000
+|-
+![[Somersault|Fake]]
+!u+3 <sup>Lee Chaolan</sup>
+!-
+!-
+!5,000
+|-
+![[Knee Sling]]
+!u/f+3 <sup>Craig Marduk</sup>
+!25
+!Mid
+!10,000
+|-
+![[Searing Edge]]
+!u/f+3 <sup>Kazuya Mishima</sup>
+!25
+!Mid
+!7,500
+|-
+![[Che Bu Shuang Ji]]
+!u/f+3, 1 <sup>Wang Jinrei</sup>
+!16, 20
+!Mid, mid
+!7,500
+|-
+![[Jump-in Foot Stomp Right Hook]]
+!u/f+3, 2 <sup>Steve Fox</sup>
+!20, 13
+!Low, high
+!5,000
+|-
+![[Hell Axle]]
+!u/f+3 <sup>Heihachi Mishima</sup>
+!20, 20
+!Mid, mid
+!10,000
+|-
+![[Iron Heel]]
+!WS+3 <sup>Hwoarang</sup>
+!20
+!Mid
+!7,500
+|-
+![[Engetsusen]]
+!WS+3 <sup>Kazuya Mishima</sup>
+!23
+!Mid
+!5,000
+|-
+![[Liang Yi Er Tui Ya Zhou]]
+!WS+3, 1, 2 <sup>Leo</sup>
+!13, 11, 18
+!Mid, mid, high
+!7,500
+|-
+![[Double High Knee Kick]]
+!WS+3, 4 <sup>Bryan Fury</sup>
+!18, 22
+!Mid, mid
+!10,000
+|-
+![[Brioche Star]]
+!WS+3, 3+4 <sup>Bob</sup>
+!17, 28
+!High, mid
+!10,000
+|-
+![[Jumping Beans]]
+!f, f+3 <sup>Bob</sup>
+!18
+!Mid
+!5,000
+|-
+![[Tremor Stomp]]
+!f ,f+3 <sup>Feng Wei</sup>
+!30
+!Mid
+!7,500
+|-
+![[Bad Habit]]
+!f, f+3 <sup>Nina Williams</sup>
+!25
+!Mid
+!5,00
+|-
+![[Sudden Strike]]
+!f, f+3 <sup>Raven</sup>
+!20
+!Mid
+!10,000
+|-
+![[Left Splits Kick]]
+!f, f+3 <sup>Heihachi Mishima</sup>
+!25
+!Mid
+!10,000
+|-
+![[Bicycle Kick]]
+!f, f, f+3 <sup>Craig Marduk</sup>
+!30
+!Mid
+!7,500
+|-
+![[Leaping Sidekick]]
+!f, f, f+3 <sup>Kazuya Mishima</sup>
+!30
+!Mid
+!10,000
+|-
+![[Waxing Crescent]]
+!f, f, f+3, 4 <sup>Lee Chaolan</sup>
+!25
+!Mid
+!10,000
+|-
+![[Rocket Shooter]]
+!f, N, d, d/f+3 <sup>Baek Doo San</sup>
+!21
+!Mid
+!7,500
+|-
+![[Hell Lancer]]
+!f, N, d, d/f+3 <sup>Kazuya Mishima</sup>
+!35
+!High
+!7,500
+|-
+![[Jumping Mid Kick]]
+!f, N, d, d/f+3 <sup>Heihachi Mishima</sup>
+!35
+!Mid
+!5,000
+|-
+![[Demon's Hoof]]
+!f, N, d, d/f+3 <sup>Devil Jin</sup>
+!20
+!Mid
+!10,000
+|-
+![[Gambero Knee]]
+!f, N, d, d/f+3, 2 <sup>Bob</sup>
+!13, 22
+!Mid, high
+!7,500
+|-
+![[Gengetsu]]
+!d, d/f, f+3 <sup>Paul Phoenix</sup>
+!15
+!Low
+!5,000
+|-
+![[Poison Needle]]
+!d, d/f, f+3 <sup>Raven</sup>
+!20
+!High
+!7,500
+|-
+![[Slay Ride]]
+!d, d/f, f+3 <sup>Sergei Dragunov</sup>
+!15
+!Low
+!5,000
+|-
+![[Paralyzing Needle]]
+!d, d/f, f+3, 2 <sup>Anna Williams</sup>
+!13, 25
+!Mid, high
+!7,500
+|}
+
+===Techniques with command 4===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+! style="background-color:#AC0A0A" |Cost
+|-
+![[Sway High Kick]]
+!d/b+4 <sup>Bruce Irvin</sup>
+!20
+!High
+!5,000
+|-
+![[Stature Smash]]
+!d/b+4 <sup>Kazuya Mishima</sup>
+!18
+!Low
+!7,500
+|-
+![[Big Boot]]
+!d/b+4 <sup>Jack-6</sup>
+!13
+!Low
+!5,000
+|-
+![[Shinobi Cyclone]]
+!d/b+4 <sup>Raven</sup>
+!21
+!Low
+!10,000
+|-
+![[Sweep Kick (Feng Wei)|Sweep Kick]]
+!d/b+4 <sup>Feng Wei</sup>
+!25
+!Low
+!10,000
+|-
+![[Right Sweep]]
+!d+4 <sup>Jin Kazama</sup>
+!15
+!Low
+!7,500
+|-
+![[Low Kick (Bryan)|Low Kick]]
+!d+4 <sup>Bryan Fury</sup>
+!11
+!Low
+!5,000
+|-
+![[Stiletto]]
+!d+4, 4 <sup>Sergei Dragunov</sup>
+!12, 23
+!Low, high
+!10,000
+|-
+![[Firecracker (Hwoarang)|Firecracker]]
+!d+4, 4 <sup>Hwoarang</sup>
+!7, 22
+!Low, high
+!7,500
+|-
+![[Wolf's Tail]]
+!d/f+4 <sup>Bryan Fury</sup>
+!23
+!Mid
+!7,500
+|-
+!/
+!d/f+4 <sup>Lars Alexandersson</sup>
+!12
+!Mid
+!/
+|-
+!/
+!d/f+4 <sup>Yoshimitsu</sup>
+!12
+!Mid
+!5,000
+|-
+![[Compressor Swing|Compressor]]
+!d/f+4, 2 <sup>Craig Marduk</sup>
+!12, 20
+!Mid, high
+!7,500
+|-
+![[Dominating Heel]]
+!d/f+4, 4 <sup>Lili</sup>
+!13, 21
+!Mid, low
+!7,500
+|-
+![[Fish Hook]]
+!b+4 <sup>Feng Wei</sup>
+!15
+!Mid
+!7,500
+|-
+![[Spear Kick]]
+!b+4 <sup>Nina Williams</sup>
+!15
+!High
+!5,000
+|-
+![[Toe Kick to Stunner]]
+!b+4 during the attack from the front 1+2 <sup>Armor King</sup>
+!15, 15
+!Mid
+!10,000
+|-
+![[Double Threading]]
+!b+4, 3 <sup>Alisa Bosconovitch</sup>
+!17, 15
+!Mid, mid
+!7,500
+|-
+![[Ji Dan Tui]]
+!b+4, 4 <sup>Ling Xiaoyu</sup>
+!13, 17
+!Mid, high
+!5,000
+|-
+![[Accelerator]]
+!4 <sup>Alisa Bosconovitch</sup>
+!23
+!High
+!7,500
+|-
+![[High Right Roundhouse]]
+!4 <sup>Jin Kazama</sup>
+!18
+!High
+!5,000
+|-
+![[Karnov Kick]]
+!4, 3 <sup>Sergei Dragunov</sup>
+!15, 20
+!High, mid
+!10,000
+|-
+![[Machinegun Kicks (Lee)|Machinegun Kicks]]
+!4, 4, 4 <sup>Lee Chaolan</sup>
+!16, 6, 6
+!High, high, high
+!/
+|-
+![[Rolling Sobat]]
+!f+4 <sup>King</sup>
+!23
+!Mid
+!7,500
+|-
+![[Getsukankyaku]]
+!f+4 <sup>Jun Kazama</sup>
+!21
+!High
+!7,500
+|-
+![[Bélier Attaque]]
+!f+4 <sup>Lili</sup>
+!23
+!Mid
+!5,000
+|-
+![[Logic Bomb]]
+!f+4, 1, 4 <sup>Alisa Bosconovitch</sup>
+!13, 13, 20
+!Mid, high, mid
+!10,000
+|-
+![[Scythe Kick]]
+!u/b+4 <sup>Lei Wulong</sup>
+!20
+!Mid
+!10,000
+|-
+![[Fade-Away Kick]]
+!u/b+4 <sup>Hwoarang</sup>
+!18
+!Mid
+!5,000
+|-
+![[Family Jewels]]
+!u/b+4 <sup>Baek Doo San</sup>
+!18
+!Mid
+!7,500
+|-
+![[Kendatsuba]]
+!u+4 <sup>Jinpachi Mishima</sup>
+!23
+!Mid
+!10,000
+|-
+![[Destruction]]
+!u+4, 3 <sup>Baek Doo San</sup>
+!13, 20
+!High, high
+!5,000
+|-
+![[Wraith Kick]]
+!u/f+4 <sup>Devil Jin</sup>
+!21
+!Mid
+!10,000
+|-
+![[Roundhouse (Eddy, Tiger and Christie)|Roundhouse]]
+!u/f+4 <sup>Christie Monteiro</sup>
+!25
+!Mid
+!7,500
+|-
+![[Avoiding the Puddle]]
+!u/f+4 <sup>Yoshimitsu</sup>
+!21
+!Mid
+!10,000
+|-
+![[Slicing Sobat]]
+!u/f+4 <sup>Sergei Dragunov</sup>
+!21
+!Mid
+!7,500
+|-
+![[Condor's Bite]]
+!u/f+4 (when the opponent is standing or crouching) <sup>True Ogre</sup>
+!40
+!Mid
+!7,500
+|-
+![[Skyscraper Kick]]
+!WS+4 <sup>Jaycee</sup>
+!21
+!Mid
+!7,500
+|-
+!/
+!WS+4 <sup>King</sup>
+!13
+!Mid
+!5,000
+|-
+![[Skyscraper Kick]]
+!WS+4 <sup>Ling Xiaoyu</sup>
+!20
+!Mid
+!7,500
+|-
+![[Tsunami Kick (Mishima)|Tsunami Kick]]
+!WS+4, 4 <sup>Devil Jin</sup>
+!10, 16
+!Mid, mid
+!10,000
+|-
+![[Iron Maul]]
+!f, f+4 <sup>Raven</sup>
+!21
+!Mid
+!10,000
+|-
+![[Rolling Thunder]]
+!f, f+4 <sup>Sergei Dragunov</sup>
+!21
+!Mid
+!5,000
+|-
+![[Mach Kick]]
+!f, f+4 <sup>Bryan Fury</sup>
+!32
+!High
+!10,000
+|-
+![[Stork Spin]]
+!f, f+4,3  <sup>Baek Doo San</sup>
+!17, 23
+!Mid, high
+!7,500
+|-
+![[Knee Vault]]
+!f, N, d, d/f+4 <sup>Armor King</sup>
+!22
+!Mid
+!10,000
+|-
+![[Black Hole]]
+!d, d/f, f+4 <sup>Raven</sup>
+!15
+!Mid
+!10,000
+|-
+![[Pinpoint Fracture]]
+!d, d/f, f+4 during the attack 1, 3, 4, 2 (or 2, 4, 3, 1) <sup>Sergei Dragunov</sup>
+!25, 10, 20
+!Mid
+!10,000
+|-
+
+|}
+
+===Techniques with command 1+2 ===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+! style="background-color:#AC0A0A" |Cost
+|-
+![[Double Arm Stinger]]
+!d/b+1+2 <sup>Christie Monteiro</sup>
+!12
+!Mid
+!5,000
+|-
+![[Annihilator Hammer]]
+!d/b+1+2 <sup>Craig Marduk</sup>
+!23
+!Mid
+!7,500
+|-
+![[Kangaroo Attack]]
+!d/b+1+2 <sup>Roger Jr.</sup>
+!32
+!Mid
+!5,000
+|-
+![[Abats Snipe]]
+!d/b+1+2 <sup>Bob</sup>
+!16
+!Mid
+!7,500
+|-
+![[Katon (Kunimitsu)|Katon]]
+!d/b+1+2 <small><sup>Kunimitsu</sup></small>
+!15
+!!
+!10,000
+|-
+![[Power Lift]]
+!d/b+1+2, 1+2 <sup>Jaycee</sup>
+!23
+!Mid
+!7,500
+|-
+![[Battering Ram (Marduk)|Battering Ram]]
+!d+1+2 <sup>Craig Marduk</sup>
+!23
+!Mid
+!7,500
+|-
+![[Shoulder Smash (Paul)|Shoulder Smash]]
+!d+1+2 <sup>Paul Phoenix</sup>
+!30
+!Mid
+!10,000
+|-
+![[Oni Juji]]
+!d+1+2 <sup>Heihachi Mishima</sup>
+!20
+!Mid
+!7,500
+|-
+![[Cannonball (Marduk)|Cannonball]]
+!d/f+1+2 <sup>Craig Marduk</sup>
+!23
+!Mid
+!5,000
+|-
+![[Animal Headbutt]]
+!d/f+1+2 <sup>Roger Jr.</sup>
+!15
+!Mid
+!7,500
+|-
+![[Buffalo Horn]]
+!d/f+1+2 <sup>True Ogre</sup>
+!25
+!Mid
+!10,000
+|-
+![[Twist and Shout]]
+!d/f+1+2 <sup>Paul Phoenix</sup>
+!40
+!High
+!10,000
+|-
+![[Cannonball (Lei Wulong)|Cannonball]]
+!b+1+2 <sup>Lei Wulong</sup>
+!25
+!Mid
+!5,000
+|-
+![[Inanna's Fury]]
+!b+1+2 <sup>Zafina</sup>
+!12
+!Low
+!7,500
+|-
+![[Kumo Kiri]]
+!b+1+2 <sup>Kazuya Mishima</sup>
+!21
+!Mid
+!7,500
+|-
+![[Headbutt]]
+!b+1+2 <sup>Ganryu</sup>
+!18
+!High
+!7,500
+|-
+![[Back Hand Blow]]
+!b+1+2 <sup>Bruce Irvin</sup>
+!21
+!High
+!10,000
+|-
+![[Birds Flock]]
+!1+2 <sup>Ling Xiaoyu</sup>
+!23
+!Mid
+!5,000
+|-
+![[Demon Breath]]
+!1+2 <sup>Heihachi Mishima</sup>
+!25
+!Mid
+!10,000
+|-
+![[Spinning Axe Combo]]
+!1+2, 4 <sup>Baek Doo San</sup>
+!12, 17
+!Mid, mid
+!7,500
+|-
+![[Black Poêlé]]
+!1+2, 1+2 <sup>Bob</sup>
+!18, 20
+!Mid, mid
+!10,000
+|-
+![[Clouded Peak]]
+!f+1+2 <sup>Ling Xiaoyu</sup>
+!25
+!Mid
+!7,500
+|-
+![[Cross Cut Saw (Jack)|Double Claw]]
+!f+1+2 <sup>Kuma/Panda</sup>
+!20
+!Mid
+!10,000
+|-
+![[Hammer of the Gods]]
+!f+1+2 <sup>Paul Phoenix</sup>
+!22
+!Mid
+!7,500
+|-
+![[Tyulpan Blast]]
+!f+1+2 <sup>Jack-6</sup>
+!22
+!Mid
+!5,000
+|-
+![[Scabbard]]
+!f+1+2 <sup>Sergei Dragunov</sup>
+!20
+!High
+!7,500
+|-
+![[Barrel Jacket Hammer]]
+!u/b+1+2 <sup>Jack-6</sup>
+!35
+!High
+!5,000
+|-
+![[Patriot Fist]]
+!u+1+2 <sup>Jack-6</sup>
+!20
+!High
+!10,000
+|-
+![[Hatching Punch]]
+!u+1+2, 1 <sup>Bob</sup>
+!21
+!Mid
+!5,000
+|-
+![[Capital Punishment]]
+!u/f+1+2 <sup>Roger Jr.</sup>
+!25
+!Mid
+!7,500
+|-
+![[Mongolian Chop]]
+!u/f+1+2 <sup>Craig Marduk</sup>
+!21
+!High
+!7,500
+|-
+![[Big Bear Attack]]
+!u/f+1+2 <sup>Kuma/Panda</sup>
+!28
+!Mid
+!5,000
+|-
+![[Air Inferno]]
+!u/f+1+2 <sup>Angel</sup>
+!20
+!!
+!10,000
+|-
+![[Pound Cake]]
+!u/f+1+2, 1 <small><sup>Bob</sup></small>
+!15, 17
+!Mid, mid
+!7,500
+|-
+![[Snap Uppercut (King)|Snap Uppercut]]
+!WS+1+2 <sup>King</sup>
+!18
+!Mid
+!7,500
+|-
+![[Le Kua Kao]]
+!WS+1+2 <sup>Leo</sup>
+!22
+!Mid
+!5,000
+|-
+![[Double Hammer Alternate|Rising Double Hammer]]
+!WS+1+2, 1+2 <sup>Ganryu</sup>
+!13, 17
+!Mid, mid
+!5,000
+|-
+![[Double Hammer Thrash]]
+!WS+1+2,  1+2, 1+2 <sup>Jack-6</sup>
+!13, 15, 26
+!Mid, mid, low
+!7,500
+|-
+![[Tokkei]]
+!f, f+1+2 <sup>Jun Kazama</sup>
+!21
+!Mid
+!5,000
+|-
+![[Elbow Corona]]
+!f, f+1+2 <sup>Lars Alexandersson</sup>
+!20
+!Mid
+!7,500
+|-
+![[Cut Saw Blast|Cross Cut Blast]]
+!f, f+1+2, 2 <sup>Jack-6</sup>
+!20,23
+!Mid, mid
+!10,000
+|-
+![[X Marks the Spot]]
+!f, f+1+2, 1+2 <sup>Ling Xiaoyu</sup>
+!12, 21
+!Mid, mid
+!7,500
+|-
+![[Flying Cask]]
+!f, f+1+2 <sup>Bob</sup>
+!30
+!High
+!10,000
+|-
+![[Ozuchi Strike]]
+!f, f, f+1+2 <sup>Ganryu</sup>
+!35
+!Mid
+!7,500
+|-
+![[Granchi Canon]]
+!f, N, d, d/f+1+2 <sup>Bob</sup>
+!25
+!Mid
+!7,500
+|-
+![[Black Bomb]]
+!f, N, d, D/F+1+2 <sup>King</sup>
+!23
+!Mid
+!5,000
+|-
+![[Yan Wang's Wrath]]
+!d, d/f, f+1+2 <sup>Feng Wei</sup>
+!23
+!Mid
+!7,500
+|}
+
+===Techniques with command 3+4 ===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+! style="background-color:#AC0A0A" |Cost
+|-
+![[Frogman]]
+!d/b+3+4 <sup>Marshall Law</sup>
+!25
+!Mid
+!5,000
+|-
+![[Bull Tornado]]
+!d/b+3+4 <sup>Bruce Irvin</sup>
+!18
+!Low
+!7,500
+|-
+![[Freesia Thrust]]
+!d/b+3+4 <sup>Lili</sup>
+!20
+!Low
+!7,500
+|-
+![[Double Lift Kick (Kazama)|Double Lift Kick]]
+!d+3+4 <sup>Jin Kazama</sup>
+!5, 20
+!Mid, mid
+!10,000
+|-
+![[Low Tail Spinner]]
+!d+3+4 <sup>True Ogre</sup>
+!20
+!Low
+!7,500
+|-
+![[Anjaneya]]
+!d+3+4 <sup>Bruce Irvin</sup>
+!25
+!Mid
+!5,000
+|-
+![[Dumptruck]]
+!d/f+3+4 <sup>Jack-6</sup>
+!30
+!Mid
+!7,500
+|-
+![[Mirage]]
+!d/f+3+4 <sup>Christie Monteiro</sup>
+!17
+!Mid
+!10,000
+|-
+![[Ruinous Halberd]]
+!d/f+3+4 <sup>Feng Wei</sup>
+!23
+!Mid
+!7,500
+|-
+![[Runner Flip]]
+!d/f+3+4, 4 <sup>Bob</sup>
+!13, 22
+!Mid, mid, mid
+!10,000
+|-
+![[Overhead Kick]]
+!d/f+3+4 (opponent in the air) <sup>Hwoarang</sup>
+!10,15
+!High
+!10,000
+|-
+![[Dragon Arrow]]
+!b+3+4 <sup>Marshall Law</sup>
+!25
+!Mid
+!5,000
+|-
+![[Queixada]]
+!b+3+4 <sup>Christie Monteiro</sup>
+!30
+!Mid
+!7,500
+|-
+![[High Jinks]]
+!b+3+4 <sup>Kuma/Panda</sup>
+!23, 3
+!Mid
+!7,500
+|-
+![[Back Handspring (Eddy, Christie and Tiger)|Back Handspring]]
+!3+4 <sup>Christie Monteiro</sup>
+!20
+!Mid
+!5,000
+|-
+![[Middle Side Kick]]
+!3+4 <sup>Bryan Fury</sup>
+!22
+!Mid
+!10,000
+|-
+![[Castanet Kick]]
+!3+4 <sup>Roger Jr.</sup>
+!23
+!Mid
+!7,500
+|-
+![[Saiuntsui]]
+!3+4 <sup>Jun Kazama</sup>
+!5, 21
+!Mid, mid
+!7,500
+|-
+![[Round Out Elbow]]
+!3+4, 2 <sup>Armor King</sup>
+!18, 25
+!Mid, mid
+!10,000
+|-
+![[Reversão|Reversao]]
+!f+3+4 <sup>Christie Monteiro</sup>
+!13, 15
+!Mid, mid
+!5,000
+|-
+![[Sumo Rush]]
+!f+3+4 <sup>Ganryu</sup>
+!28
+!Mid
+!7,500
+|-
+![[Hard Reset]]
+!f+3+4, 1, 2, 1+2 <sup>True Ogre</sup>
+!10, 12, 21
+!Mid, mid, mid
+!10,000
+|-
+![[Garland Kick Combo]]
+!f+3+4, 3, 4 <sup>Lili</sup>
+!8, 20, 20
+!Mid, mid, mid
+!7,500
+|-
+![[Backflip (Ling Xiaoyu)|Backflip]]
+!u/b+3+4 <sup>Ling Xiaoyu</sup>
+!23
+!Mid
+!7,500
+|-
+![[Docking Bay]]
+!u/b+3+4, 1+2 <sup>Alisa Bosconovitch</sup>
+!20
+!Mid, mid
+!7,500
+|-
+![[Guillotine Crow Kick]]
+!u+3+4 <sup>Yoshimitsu</sup>
+!10,12
+!Mid, mid
+!7,500
+|-
+![[Strainer]]
+!u+3+4 <sup>Bob</sup>
+!20
+!Mid
+!7,500
+|-
+![[Cyclone Launcher]]
+!u+3+4 <sup>Baek Doo San</sup>
+!21
+!High
+!5,000
+|-
+![[Evil Wheel]]
+!u+3+4 <sup>True Ogre</sup>
+!25
+!Mid
+!7,500
+|-
+![[Kangaroo Stomp]]
+!u/f+3+4 <sup>Roger Jr.</sup>
+!25
+!Mid
+!5,000
+|-
+![[Rapid Double Knee|Dteh Kao Pa Jong]]
+!u/f+3+4 <sup>Bruce Irvin</sup>
+!10, 23
+!Mid, mid
+!7,500
+|-
+![[Flashing Trident]]
+!u/f+3+4, 4 <sup>Hwoarang</sup>
+!10, 8, 13
+!Mid, high, mid
+!10,000
+|-
+![[Di Gong Jiao]]
+!WS+3+4 <sup>Lei Wulong</sup>
+!13
+!Mid
+!7,500
+|-
+![[Spinning Middle Kick]]
+!WS+3+4 <sup>Raven</sup>
+!23
+!Mid
+!5,000
+|-
+![[Exploder]]
+!f, f+3+4 <sup>Roger Jr.</sup>
+!25
+!High
+!7,500
+|-
+![[Solar Kick Shark Attack]]
+!f, f+3+4, 1+2, 3+4 <sup>Yoshimitsu</sup>
+!15, 15, 20
+!Mid, mid, mid
+!10,000
+|-
+![[Knee Lift (throw)|Knee Lift]]
+!f, f+3+4 <sup>Marshall Law</sup>
+!5
+!High
+!10,000
+|-
+![[Running Exploder]]
+!f, f, f+3+4 <sup>King</sup>
+!40
+!Mid
+!7,500
+|-
+![[Supersize Missile]]
+!f, f, f+3+4 <sup>Bob</sup>
+!27
+!Mid
+!10,000
+|-
+![[Ducking Knee Launcher High]]
+!f, N, d, d/f+3+4, 3+4 <sup>Bruce Irvin</sup>
+!25, 25
+!Mid, mid
+!10,000
+|-
+![[Mountain Raze]]
+!d, d/f, f+3+4 <sup>Paul Phoenix</sup>
+!30
+!Mid
+!7,500
+|-
+![[Cloisonne]]
+!d, d/f, f+3+4 <sup>Lili</sup>
+!12, 13
+!High, high
+!7,500
+|-
+![[Swallow Step]]
+!d, d/f, f+3+4 <sup>Leo</sup>
+!6, 20
+!Mid, mid
+!10,000
+|}
+
+===Techniques with command 1+3===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Cost
+|-
+![[Forearm Drop]]
+!1+3 <sup>Lee Chaolan</sup>
+!Front
+!35
+!/
+|-
+![[Double Foot Stomp]]
+!1+3 <sup>Lei Wulong</sup>
+!Front
+!35
+!5,000
+|-
+![[Gravity Brain Buster]]
+!1+3 <sup>Bryan Fury</sup>
+!Front
+!35
+!7,500
+|}
+
+===Techniques with command 2+4===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Cost
+|-
+![[Axle Throw]]
+!2+4 <sup>Lee Chaolan</sup>
+!Front
+!35
+!/
+|-
+![[Salamander]]
+!2+4 <sup>Raven</sup>
+!Front
+!35
+!10,000
+|-
+![[Jumping Powerbomb]]
+!2+4 <sup>Heihachi Mishima</sup>
+!Front
+!35
+!7,500
+|}
+
+==Level techniques==
+
+===Level 1===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+! style="background-color:#AC0A0A" |Rang
+|-
+![[Abolishing Fist]]
+!d/f+2 <sup>Kazuya Mishima</sup>
+!20
+!Mid
+!S
+|-
+![[Snake Pit]]
+!1+2, 2 <sup>Bryan Fury</sup>
+!16, 20
+!Mid, mid
+!A
+|-
+![[Circle Knee]]
+!f+3 <sup>Lili</sup>
+!26
+!Mid
+!B
+|-
+![[Shingetsusen]]
+!b+4 <sup>Heihachi Mishima</sup>
+!20
+!Mid
+!C
+|-
+
+|}
+
+===Level 2===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+! style="background-color:#AC0A0A" |Rang
+|-
+![[Mach Breaker]]
+!f, f+2 <sup>Bryan Fury</sup>
+!32
+!High
+!S
+|-
+![[Sonic Fang]]
+!d/f+1+2 <sup>Steve Fox</sup>
+!12, 20
+!Mid, mid
+!A
+|-
+![[Angry Bull]]
+!d+1+2 <sup>Jaycee</sup>
+!27
+!Mid
+!B
+|-
+![[Shun Masatsu]]
+!b+2, 1 <sup>Jin Kazama</sup>
+!12, 10
+!Mid, mid
+!C
+|-
+
+|}
+
+===Level 3===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+! style="background-color:#AC0A0A" |Rang
+|-
+![[Muso Tettsui]]
+!d/f+1, 2 <sup>Heihachi Mishima</sup>
+!10, 21
+!Mid, mid
+!S
+|-
+![[Boa Crusher]]
+!f+3, 1 <sup>Bryan Fury</sup>
+!15, 20
+!Mid, mid
+!A
+|-
+![[Chong Tian Zhang to Fu Bo]]
+!d/b+2, 2 <sup>Leo</sup>
+!11, 17
+!High, mid
+!B
+|-
+![[Tiger Swat]]
+!b+1 <sup>Jaycee</sup>
+!18
+!Mid
+!C
+|-
+![[Requiem]]
+!d, d/f, f+1+2 <sup>Bryan Fury</sup>
+!23
+!Mid
+!S
+|-
+![[Pulse Blast]]
+!f, f+3 <sup>Lee Chaolan</sup>
+!28
+!Mid
+!A
+|-
+![[Rocket Kick]]
+!f, f+4 <sup>Jack-6</sup>
+!35
+!Mid
+!B
+|-
+![[Whopping Kick]]
+!b+3 <sup>Bob</sup>
+!18
+!Mid
+!C
+|-
+
+|}
+
+===Level 4===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+! style="background-color:#AC0A0A" |Rang
+|-
+![[Thrusting Uppercut (Jin Kazama)|Thrusting Uppercut]]
+!f, N, d, d/f+1 <sup>Jin Kazama</sup>
+!20
+!High
+!S
+|-
+![[Matterhorn Ascension]]
+!d+3+4 <sup>Lili</sup>
+!23
+!Mid
+!A
+|-
+![[Geyser Cannon]]
+!d/b+3+4 <sup>Nina Williams</sup>
+!21
+!High
+!B
+|-
+![[Demon Slayer (Kazama)|Demon Slayer]]
+!f+2 <sup>Asuka Kazama</sup>
+!20
+!Mid
+!C
+|-
+
+|}
+
+===Level 5===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+! style="background-color:#AC0A0A" |Rang
+|-
+![[Wind God Fist]]
+!f, N, d, d/f+2 <sup>Kazuya Mishima</sup>
+!23
+!High
+!S
+|-
+![[Sky Rocket]]
+!f, N, d, d/f+4 <sup>Hwoarang</sup>
+!21
+!High
+!A
+|-
+![[Demolition Man]]
+!d+4, during attack, 2, during attack 1+2 <sup>Paul Phoenix</sup>
+!10, 20, 24
+!Low, mid, mid
+!B
+|-
+![[Spinning Demon to Left Hook]]
+!f, N, d, d/f+4, 1 <sup>Kazuya Mishima</sup>
+!15, 30
+!Low, mid
+!C
+|-
+![[Heavy Power Punch|Phoenix Smasher]]
+!d, d/f, f+2 <sup>Paul Phoenix</sup>
+!33
+!Mid
+!S
+|-
+![[Landslide]]
+!d, d/f, f+1 <sup>Feng Wei</sup>
+!25
+!Low
+!A
+|-
+![[Dynamic Range]]
+!b+3+4, 3+4 <sup>Alisa Bosconovitch</sup>
+!20,25
+!Mid, mid
+!B
+|-
+![[Hisou]]
+!f+3+4 <sup>Devil Jin</sup>
+!10,23
+!Mid, mid
+!C
+|-
+
+|}
+<br />
+
+[[Category:Combot Moves]]
+[[Category:Moves Lists]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

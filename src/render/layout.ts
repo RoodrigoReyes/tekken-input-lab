@@ -73,6 +73,8 @@ export interface Box {
   relation?: RelationKind;
   bracket?: { side: 'open' | 'close'; style: 'optional' | 'expansion' };
   header?: { title: string; tagAssault: boolean; unassigned: boolean; tagWidth: number };
+  /** Named move with a known input: `key` toggles it via LayoutOptions.expandedNamed. */
+  expandable?: { key: number; open: boolean };
   /** Overlaps a warning diagnostic. */
   flagged: boolean;
   /** Tooltip / accessible text. */
@@ -99,6 +101,8 @@ export interface LayoutOptions {
   size?: number;
   /** Render named moves followed by their expansion. */
   expandNamed?: boolean;
+  /** Keys (span start) of named moves expanded one by one, on top of expandNamed. */
+  expandedNamed?: ReadonlySet<number>;
   /** One entry per section; when provided (or when there are several sections) headers are drawn. */
   sectionHeaders?: readonly SectionHeaderInfo[];
   /** Draw motion inputs (qcf, cd, ff, …) as a compact framed pill instead of full-size arrows. */
@@ -235,7 +239,14 @@ class Builder {
       return placed;
     });
     const w = Math.max(x - gap + pad, s * 0.5);
-    return { kind: 'item', w, h: this.h, parts, nodeType: node.type, flagged: this.flagged(node.span), title: node.raw, breakAfter: false };
+    const expandable = node.type === 'namedMove' && node.expansion && !this.inExpansion ? { key: node.span.start, open: this.isExpanded(node) } : undefined;
+    return { kind: 'item', w, h: this.h, parts, nodeType: node.type, flagged: this.flagged(node.span), title: node.raw, breakAfter: false, ...(expandable ? { expandable } : {}) };
+  }
+
+  private isExpanded(node: ItemNode): boolean {
+    if (this.options.expandNamed) return true;
+    // Expansion spans are relative to the expansion text, so they cannot be keyed.
+    return !this.inExpansion && (this.options.expandedNamed?.has(node.span.start) ?? false);
   }
 
   // Stream
@@ -262,7 +273,7 @@ class Builder {
       return;
     }
     out.push(this.itemDraft(node));
-    if (node.type === 'namedMove' && this.options.expandNamed && node.expansion) {
+    if (node.type === 'namedMove' && node.expansion && this.isExpanded(node)) {
       const expanded = parseNotation(node.expansion, { game: this.result.game, dialect: this.result.dialect });
       this.bracket('open', 'expansion', out);
       this.inExpansion = true;

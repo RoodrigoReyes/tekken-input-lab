@@ -66,3 +66,15 @@ describe('ComboBuilder', () => {
     expect(onPick).toHaveBeenCalledWith({ fillerId: other.piece.id });
   });
 });
+
+it('lets the player mark a suggested ender as tested', () => {
+  const library = importGuide(text, 'excerpt');
+  const pools = collectPieces(library, { point: 'Kazuya', partner: 'Nina', context: 'open', routeKinds: ['normal'], fillerBy: 'partner', enderBy: 'point', verifiedEnders: [{ character: 'Kazuya', form: 'Kazuya', notation: 'd/f+1,2' }] })!;
+  const ender = pools.enders.find((e) => e.piece.notation === 'd/f+1,2')!;
+  const onVerify = vi.fn();
+  render(<ComboBuilder pools={pools} pick={{ ...bestPick(pools)!, enderId: ender.piece.id }} onPick={() => {}} verified onVerify={onVerify} />);
+  const checkbox = screen.getByRole('checkbox', { name: 'I tested this ender' }) as HTMLInputElement;
+  expect(checkbox.checked).toBe(true);
+  fireEvent.click(checkbox);
+  expect(onVerify).toHaveBeenCalledWith(false);
+});

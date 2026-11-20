@@ -1,0 +1,887 @@
+'''Christie Monteiro/Tekken Tag Tournament 2 Movelist''' is a list of moves [[Christie Monteiro]] is able to perform in ''[[Tekken Tag Tournament 2]]''.
+==Moves List==
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Rotacao Throw]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Caranguejo Throw]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Role Throw]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Garganta Throw]]
+!1+3 (or 2+4)
+!Right
+!42
+!2
+|-
+![[Air Mail]]
+!1+3 (or 2+4)
+!Back
+!60
+!
+|-
+![[Cabra Macaco Throw]]
+!d/f+1+2
+!Front
+!40
+!1+2
+|-
+![[Rodeo Spin]]
+!b, d/b, d, d/f, f+1+2
+!Front
+!50
+!1+2
+|-
+![[Adeus]]
+!Crouching opponent d+1+3 (or d+2+4)
+!Front
+!45
+!1 or 2
+|-
+![[Batucada]]
+!During Handstand 3+4
+!Front
+!30
+!
+|-
+|}
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[One Two Elbows]]
+!1, 2
+!7, 12
+!High, high
+|-
+![[Combo Jilar]]
+!1, 2, 4
+!7, 12
+!High, high
+|-
+![[Left Jab to Island Mirage]]
+!1, 3
+!7, 15
+!High, mid
+|-
+![[Left Jab Island Mirage to Negativa]]
+!1, 3, d
+!7, 15
+!High, mid
+|-
+![[Gancho Chibata]]
+!3, 4
+!20, 25
+!High, mid
+|-
+![[Slippery Kick]]
+![3~4]
+!10, 10
+!Low, low
+|-
+![[Slippery Kick to Handstand]]
+![3~4], b
+!10, 10
+!Low, low
+|-
+![[Slippery Kick to Heran Bago]]
+![3~4], 3
+!10, 10, 20
+!Low, low, mid
+|-
+![[Slippery Kick to Side Flop]]
+![3~4], 4
+!10, 10, 15
+!Low, low, low
+|-
+![[Slippery Kick to Front Stinger]]
+![3~4], 3+4
+!10, 10, 17
+!Low, low, mid
+|-
+![[Satellite Moon]]
+![4~3]
+!16
+!Mid
+|-
+![[Satellite Moon Hot Plate Special]]
+![4~3], 3
+!16, 17
+!Mid, mid
+|-
+![[Satellite Moon Roundhouse]]
+![4~3], 4
+!16, 25
+!Mid, mid
+|-
+![[Handslaps]]
+!1+2
+!12, 15
+!High, high
+|-
+![[Handslaps Island Mirage]]
+!1+2, N, 3
+!12, 15, 13
+!High, high, mid
+|-
+![[Handslaps Island Mirage to Negativa]]
+!1+2, N, d
+!12, 15, 13
+!High, high, mid
+|-
+![[Handslaps Mirage]]
+![1+2~3]
+!12, 15, 13
+!High, high, mid
+|-
+![[Back Handspring (Eddy, Christie and Tiger)|Back Handspring]]
+!3+4
+!20
+!Mid
+|-
+![[Back Handspring to Handstand Kick]]
+!3+4, 3
+!15
+!Mid
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Shin Cutter Combo]]
+!f+2, 1, 4
+!11, 11, 21
+!High, high, mid
+|-
+![[Handstand Kick (Eddy, Christie and Tiger)|Handstand Kick]]
+!f+3
+!15
+!Mid
+|-
+![[Samba]]
+!f+4
+!10
+!Mid
+|-
+![[Samba Handstand]]
+!f+4, b
+!10
+!Mid
+|-
+![[Au de Sol]]
+!f+4, 3, 3+4
+!10, 17, 7, 21
+!Mid, mid, mid, mid
+|-
+![[Samba Slippery Kick]]
+!f+4, 3+4
+!10, 10, 10
+!Mid, low, low
+|-
+![[Handstand]]
+!f+1+2
+!-
+!-
+|-
+![[Reversão]]
+!f+3+4
+!13, 15
+!Mid, mid
+|-
+![[Mão Esquerda]]
+!d/f+1
+!10
+!Mid
+|-
+![[Mão Esquerda to Handstand]]
+!d/f+1, f
+!10
+!Mid
+|-
+![[Combinação Mão]]
+!d/f+1, 1
+!10, 8
+!Mid, high
+|-
+![[Elbow Uppercut]]
+!d/f+2
+!15
+!Mid
+|-
+![[Island Mirage]]
+!d/f+3
+!15
+!Mid
+|-
+![[Island Mirage to Negativa]]
+!d/f+3, d
+!15
+!Mid
+|-
+![[Kneecap Crusher]]
+!d/f+4
+!15
+!Low
+|-
+![[Mirage]]
+!d/f+3+4
+!17
+!Mid
+|-
+![[Palmares Giro]]
+!d+2, 3
+!11, 18
+!Mid, mid
+|-
+![[Heran Bago]]
+!d (or f, f)+[3~3]
+!21
+!Mid
+|-
+![[Relógio]]
+!d+[3~4]
+!12
+!Low
+|-
+![[Au de Bico]]
+!d+4, 3
+!11, 23
+!Low, mid
+|-
+![[Negativa]]
+!d+3+4
+!-
+!-
+|-
+![[Twister Mirage]]
+!d/b+2, 3
+!13, 22
+!Low, mid
+|-
+![[Rasteila]]
+!d/b+3
+!10
+!Low
+|-
+![[Rasteila to Handstand]]
+!d/b+3, b
+!10
+!Low
+|-
+![[Rasteila Chibata]]
+!d/b+3, 3
+!10, 25
+!Low, mid
+|-
+![[Rasteila Hot Plate Special]]
+!d/b+3, N, 3
+!10, 17
+!Low, mid
+|-
+![[Rasteila to Circle Kick]]
+!d/b+3, 4
+!10, 17
+!Low, high
+|-
+![[Rasteila to Low Kick 2]]
+!d/b+3, d/b+4
+!10, 15
+!Low, low
+|-
+![[Thong Bikini to Low Kick 2]]
+!d/b+3, d/b+4, 4
+!10, 15, 15
+!Low, low, low
+|-
+![[Rasteila to Heran Bago]]
+!d/b+3, d/b+4, 3
+!10, 21
+!Low, mid
+|-
+![[Rasteila to Crying Needle]]
+!d/b+3, d/b+4, 1+2
+!10, 15, 11
+!Low, low, mid, mid
+|-
+![[Barbed Wire]]
+!d/b+4, 4, 4,...
+!18, 18, 18...
+!Mid, mid, mid...
+|-
+![[Barbed Wire Infinite Upside Down Kick]]
+!d/b+4, b+4
+!18, 18
+!Mid, mid
+|-
+![[Double Arm Stinger]]
+!d/b+1+2
+!12
+!Mid
+|-
+![[Meia Lua de Compasso|Meia-Lua de Compasso]]
+!d/b+3+4, 4, 3
+!12, 12, 10, 25
+!Mid, mid, high, high
+|-
+![[Gato to Au Batido]]
+!b+1, 4
+!16, 10
+!Mid, mid
+|-
+![[Gato to Au Batido to Handstand]]
+!b+1, 4, b
+!16, 10
+!Mid, mid
+|-
+![[Asfixiante]]
+!b+2
+!23
+!Mid
+|-
+![[Knee Thruster]]
+!b+3
+!10
+!Mid
+|-
+![[Knee Thruster to Heran Bago]]
+!b+3, 3
+!10, 21
+!Mid, mid
+|-
+![[Bênção Fake-out]]
+!b+3, f
+!10, 15
+!Mid, mid
+|-
+![[Armada]]
+!b+4
+!17
+!High
+|-
+![[Armada to Rasteila]]
+!b+4, 3
+!17, 12
+!High, low
+|-
+![[Armada to Macaco]]
+!b+4, 4
+!17, 7, 17
+!High, mid, mid
+|-
+![[Armada to Macaco to Negativa]]
+!b+4, 4, d
+!17, 7, 17
+!High, mid, mid
+|-
+![[Leg Whip Mars Attack Flip]]
+!b+4, 4, 3+4
+!17, 7, 17, 12
+!High, mid, mid, mid
+|-
+![[Queixada]]
+!b+3+4
+!30
+!Mid
+|-
+![[Acrobacia]]
+!u+3
+!35
+!Mid
+|-
+![[Back Summy]]
+!u+4
+!-
+!-
+|-
+![[Back Summy to Firekick]]
+!u+4, 3
+!20
+!Low
+|-
+![[Back Summy to Scoot Kick]]
+!u+4, 4
+!27
+!High
+|-
+![[Firekick]]
+!u (or u/b)+3+4
+!15
+!Mid
+|-
+![[Firekick to Negativa]]
+!u (or u/b)+3+4, d
+!15
+!Mid
+|-
+![[Jumping Jacks]]
+!u/f+3
+!25
+!Mid
+|-
+![[Jumping Jacks to Negativa]]
+!u/f+3, d
+!25
+!Mid
+|-
+![[Jumping Jacks Mirage]]
+!u/f+3, 3
+!25, 17
+!Mid, mid
+|-
+![[Jumping Jacks Evil Stinger]]
+!u/f+3, 3+4
+!25, 15
+!Mid, low
+|-
+![[Roundhouse (Eddy, Tiger and Christie)|Roundhouse]]
+!u/f+4
+!25
+!Mid
+|-
+![[Vasuuna]]
+!u/f (or u or u/b)+1+2
+!20
+!High
+|-
+![[Meia-Lua Pulando]]
+!u/f+3+4
+!18, 25
+!Mid, mid
+|-
+![[Batuque Direito|Derecho Batuque]]
+!f, f+2, 3
+!18, 15
+!Mid, low
+|-
+![[Lunging Brush Fire]]
+!f, f+3
+!30
+!Mid
+|-
+![[Lunging Brush Fire to Negativa]]
+!f, f+3, d
+!30
+!Mid
+|-
+![[Lunging Brush Fire to Handstand]]
+!f, f+3, b
+!30
+!Mid
+|-
+![[Lunging Brush Fire to Perch Flop Kick]]
+!f, f+3, b+3+4
+!30, 25
+!Mid, mid
+|-
+![[Folha Attaque]]
+!f, f+4
+!25
+!Mid
+|-
+![[Boomerang]]
+!f, f+3+4
+!30
+!Mid
+|-
+![[Fruit Picker]]
+!b, b+3+4 (b, b to cancel)
+!20, 40
+!!, !
+|-
+![[Cartão Vermelho|Tarjeta Roja]]
+!f, f, f+3
+!18
+!Low
+|-
+![[Cotovelo to Ponteira]]
+!WS+1, 3
+!7, 20
+!High, mid
+|-
+![[Rising Batida]]
+!WS+2
+!12
+!Mid
+|-
+![[Martelo]]
+!WS+3
+!15
+!Mid
+|-
+![[Circle Kick]]
+!WS+4
+!15
+!Mid
+|-
+![[Crying Needle]]
+!FC+1+2
+!11
+!Mid
+|-
+![[Crying Needle Impact]]
+!FC+1+2, 1+2
+!11, 12
+!Mid, mid
+|-
+![[Front Stinger]]
+!FC+3+4
+!18
+!Mid
+|-
+![[Front Stinger to Negativa]]
+!FC+3+4, d
+!18
+!Mid
+|-
+![[Front Stinger to Handstand]]
+!FC+3+4, b
+!18
+!Mid
+|-
+![[Bananeira Rolar]]
+!FC+d/f+4
+!17
+!Low
+|-
+![[Haule]]
+!FC+d/b+4
+!18
+!Mid
+|-
+![[Passo para Trás|Atras Passo]]
+!Back to opponent 3+4
+!30
+!Mid
+|-
+|}
+===During side step (Ginga)===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Queda de Escorpion]]
+!SS+2,4
+!15, 21
+!Mid, high
+|-
+![[Hot Plate Special]]
+!SS+3
+!17
+!Mid
+|-
+![[Hot Plate Special Cancel to Negativa]]
+!SS+3, d
+!-
+!-
+|-
+![[Hot Plate Special Cancel to Handstand]]
+!SS+3, b
+!-
+!-
+|-
+![[Hot Plate Special to Handstand]]
+!SS+3, N, b
+!17
+!Mid
+|-
+![[Hot Plate Special to Perch Flop Kick]]
+!SS+3, N, b+3+4
+!17, 25
+!Mid, mid
+|-
+![[Twister]]
+!SS+4
+!10, 7
+!Low, low
+|-
+![[Twister to Handstand]]
+!SS+4, b
+!10
+!Low
+|-
+![[Twister Sweep]]
+!SS+4, N, 3
+!10, 25
+!Low, low
+|-
+![[Twister Sweep to Handstand]]
+!SS+4, N, 3, b
+!10
+!Low
+|-
+![[Dos Sole]]
+!SS+[4~3]
+!45
+!High
+|-
+![[Dos Sole to Handstand]]
+!SS+[4~3], b
+!45
+!High
+|-
+![[Twister Front Stinger]]
+!SS+3, 3+4
+!10, 18
+!Low, mid
+|-
+![[Twister Front Stinger to Negativa]]
+!SS+3, 3+4, d
+!10, 18
+!Low, mid
+|-
+![[Twister Front Stinger to Handstand]]
+!SS+3, 3+4, b
+!10, 18
+!Low, mid
+|-
+![[Wheel Kicks]]
+!SS+3+4
+!16
+!High
+|-
+![[Wheel Kicks São Paulo Special]]
+!SS+3+4, 3+4, 3+4, u/f+3+4
+!6, 6, 25, 20, 20
+!High, mid, mid, mid, mid
+|-
+![[Banda]]
+!SS+1+4
+!20
+!Low
+|-
+|}
+===During [[Handstand]]===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Handstand]]
+!f+1+2
+!-
+!-
+|-
+![[Crouch to Handstand]]
+!FC+d/f+1+2
+!-
+!-
+|-
+![[Down to Handstand]]
+!On the ground (on the back) 1+2
+!-
+!-
+|-
+![[Faisão]]
+!During Handstand 1
+!20
+!Mid
+|-
+![[Flop Right]]
+!During Handstand 2
+!10
+!Mid
+|-
+![[Circus]]
+!During Handstand 2, 4
+!10, 10
+!Mid, low
+|-
+![[Hot Plate Special]]
+!During Handstand 3
+!17
+!Mid
+|-
+![[Slippery Kick]]
+!During Handstand [3~4]
+!10, 10
+!Low, low
+|-
+![[Helicopter]]
+!During Handstand 4
+!10, 12
+!Mid, high
+|-
+![[Helicopter to Slippery Kick]]
+!During Handstand 4, 3+4
+!10, 12, 10, 10
+!Mid, high, low, low
+|-
+![[Quick Jab]]
+!During Handstand f+1
+!6
+!High
+|-
+![[Mola Vermelha|Vermelha Mola]]
+!During Handstand f+3+4
+!20
+!Mid
+|-
+![[Perch]]
+!During Handstand d
+!-
+!-
+|-
+![[Perch Flop Kick]]
+!During Handstand d+3+4
+!20
+!Mid
+|-
+![[Scoot Kick]]
+!During Handstand b+3
+!15
+!Low
+|-
+![[Handstand Tilt]]
+!During Handstand u, N (or d, N)
+!-
+!-
+|-
+![[Drop Kick (Eddy, Christie and Tiger)|Drop Kick]]
+!During Handstand u, N, 3 (or u, N, 4)
+!25
+!Low
+|-
+![[Straight Flop]]
+!During Handstand u+3 (or u+4)
+!10
+!Mid
+|-
+![[Tilt Twist Sweep]]
+!During Handstand u+3, d (or u+4, d)
+!10
+!Mid
+|-
+|}
+
+===During [[Negativa]]===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Negativa]]
+!d+3+4
+!-
+!-
+|-
+![[Negativa to Meia-Iua Combo]]
+!During Negativa 1, 3
+!10, 15
+!Low, mid
+|-
+![[Negativa to Armada Combo]]
+!During Negativa 1, 4
+!10, 15
+!Low, high
+|-
+![[Negativa to Flare Combo]]
+!During Negativa 2, 3
+!15, 15
+!Mid, mid
+|-
+![[Negativa to Lunging Brush Fire Combo]]
+!During Negativa 2, f+3
+!15, 30
+!Mid, mid
+|-
+![[Negativa to Au Batido]]
+!During Negativa 2, 4
+!15, 10
+!Mid, mid
+|-
+![[Rio Delight Knee Slicer]]
+!During Negativa 3, N, 4
+!13, 28
+!Low, mid
+|-
+![[S-Dobrado]]
+!During Negativa [3~4]
+!20
+!Mid
+|-
+![[Knee Slicer Low Front Stinger]]
+!During Negativa 4, 3+4
+!17, 20
+!Mid, mid
+|-
+![[Ipanema Wings]]
+!During Negativa [4~3]
+!7, 8
+!Low, low
+|-
+![[Ipanema Wings to Slippery Kick]]
+!During Negativa [4~3], 3+4
+!7, 8, 10, 10
+!Low, low, low, low
+|-
+![[Low Front Stinger]]
+!During Negativa 3+4
+!20
+!Mid
+|-
+![[Low Front Stinger Cancel]]
+!During Negativa 3+4, 3
+!15
+!Mid
+|-
+![[Mola Vermelha|Vermelha Mola]]
+!During Negativa f+3+4
+!20
+!Mid
+|-
+![[Headspring to Handstand]]
+!During Negativa b+1+2
+!-
+!-
+|-
+![[Side Roll to Sit]]
+!During Negativa u (or d)
+!-
+!-
+|-
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="10 hit combo" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Eddy, Christie and Tiger)|[4~3], 4, 2, 4, 4, 3+4, 3+4, 3+4, d/b+3+4, u/f+3+4]]
+!152
+!mmmhhmmmhmmmm
+|-
+![[10 Hit Combo 2 (Eddy, Christie and Tiger)|[4~3], 4, 2, 4, 3]]
+!71
+!mmmhhl
+|-
+|}
+[[Category:Moves Lists]]
+[[Category:Christie Monteiro Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

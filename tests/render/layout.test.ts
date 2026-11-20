@@ -91,6 +91,16 @@ describe('layoutCombo', () => {
     expect(items(expanded.boxes).length).toBeGreaterThan(4);
   });
 
+  it('expands only the named moves whose key is in expandedNamed', () => {
+    const closed = layout('EWGF > EWGF', 't8');
+    const keys = items(closed.boxes).map((b) => b.expandable?.key);
+    expect(keys).toEqual([0, 7]);
+    expect(closed.boxes.filter((b) => b.kind === 'bracket')).toHaveLength(0);
+    const one = layout('EWGF > EWGF', 't8', { expandedNamed: new Set([7]) });
+    expect(one.boxes.filter((b) => b.kind === 'bracket')).toHaveLength(2);
+    expect(items(one.boxes).filter((b) => b.expandable).map((b) => b.expandable?.open)).toEqual([false, true]);
+  });
+
   it('optional groups get brackets', () => {
     const l = layout('df+2 [dash] f+2');
     expect(l.boxes.map((b) => b.kind)).toEqual(['item', 'relation', 'bracket', 'item', 'bracket', 'relation', 'item']);

@@ -1,4 +1,4 @@
-import { forwardRef, type ReactNode } from 'react';
+import { forwardRef, type KeyboardEvent, type ReactNode } from 'react';
 import type { Box, Layout, Part } from '../../render/layout';
 import type { Side } from '../../render/side';
 import { COLORS, FONT_SANS } from '../../render/theme';
@@ -17,6 +17,8 @@ export interface ComboSvgProps {
   title?: string;
   /** Player side: 2P mirrors forward/back arrows. */
   side?: Side;
+  /** Makes named moves with a known input clickable to show or hide it. */
+  onToggleNamed?: (key: number) => void;
 }
 
 function PartView({ part, box, size, side }: { part: Part; box: Box; size: number; side: Side }): ReactNode {
@@ -64,7 +66,7 @@ function ItemPanel({ box }: { box: Box }) {
   );
 }
 
-function BoxView({ box, size, side }: { box: Box; size: number; side: Side }) {
+function BoxView({ box, size, side, onToggleNamed }: { box: Box; size: number; side: Side; onToggleNamed?: (key: number) => void }) {
   let content: ReactNode = null;
   switch (box.kind) {
     case 'item':
@@ -90,8 +92,26 @@ function BoxView({ box, size, side }: { box: Box; size: number; side: Side }) {
       content = <SectionHeader box={box} size={size} />;
       break;
   }
+  const toggle = box.expandable && onToggleNamed ? () => onToggleNamed(box.expandable!.key) : undefined;
   return (
-    <g transform={`translate(${box.x} ${box.y})`} data-kind={box.kind} data-node={box.nodeType}>
+    <g
+      transform={`translate(${box.x} ${box.y})`}
+      data-kind={box.kind}
+      data-node={box.nodeType}
+      {...(toggle && {
+        role: 'button',
+        tabIndex: 0,
+        'aria-expanded': box.expandable!.open,
+        'aria-label': `${box.title}: ${box.expandable!.open ? 'hide' : 'show'} input`,
+        style: { cursor: 'pointer' },
+        onClick: toggle,
+        onKeyDown: (e: KeyboardEvent) => {
+          if (e.key !== 'Enter' && e.key !== ' ') return;
+          e.preventDefault();
+          toggle();
+        },
+      })}
+    >
       <title>{box.title}</title>
       {content}
     </g>
@@ -99,7 +119,7 @@ function BoxView({ box, size, side }: { box: Box; size: number; side: Side }) {
 }
 
 /** Renders a computed layout as a single, self-contained SVG (also used for export). */
-export const ComboSvg = forwardRef<SVGSVGElement, ComboSvgProps>(function ComboSvg({ layout, heading, background, title, side = 'left' }, ref) {
+export const ComboSvg = forwardRef<SVGSVGElement, ComboSvgProps>(function ComboSvg({ layout, heading, background, title, side = 'left', onToggleNamed }, ref) {
   const s = layout.size;
   const headH = heading ? Math.round(s * (heading.subtitle ? 1.25 : 0.9)) : 0;
   const width = layout.width;
@@ -131,7 +151,7 @@ export const ComboSvg = forwardRef<SVGSVGElement, ComboSvgProps>(function ComboS
       )}
       <g transform={`translate(0 ${headH})`}>
         {layout.boxes.map((box) => (
-          <BoxView key={box.id} box={box} size={s} side={side} />
+          <BoxView key={box.id} box={box} size={s} side={side} onToggleNamed={onToggleNamed} />
         ))}
       </g>
     </svg>

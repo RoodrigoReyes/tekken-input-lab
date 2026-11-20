@@ -1,0 +1,611 @@
+'''Miguel Caballero Rojo/''Tekken Tag Tournament 2'' Moves List''' is a list of all of the moves that [[Miguel]] can perform in ''[[Tekken Tag Tournament 2]]''.
+==Moves List==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Paseo]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Masaje]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Caricia]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Regalo]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Detalle]]
+!1+3 (or 2+4)
+!Back
+!60
+!
+|-
+![[Exciter]]
+!d/f+1+2
+!Front
+!40
+!1+2
+|-
+![[Ultimate Tackle]]
+!FC+1+2
+!Front
+!5
+!1+2
+|-
+![[Ultimate Punch]]
+!During Tackle 2, 1, 2, 1
+!Front
+!25
+!1 or 2
+|-
+
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Resorte]]
+!1, 2
+!7, 10
+!High, high
+|-
+![[Up-stroke]]
+!1, 2, 4
+!7, 10, 16
+!High, high, high
+|-
+![[Up-stroke to Savage Stance]]
+!1, 2, 4, f
+!7, 10, 16
+!High, high, high
+|-
+![[Martillo]]
+!1, 2, 1+2
+!7, 10, 30
+!High, high, mid
+|-
+![[Bombo]]
+!1, 3
+!7, 12
+!High, low
+|-
+![[Gancho doble]]
+!2, 1
+!15, 15
+!High, high
+|-
+![[Gancho doble to Savage Stance]]
+!2, 1, f
+!15, 15
+!High, high
+|-
+![[Mariposa]]
+!3, 4
+!13, 20
+!High, mid
+|-
+![[Martillo doble]]
+!1+2, 1+2
+!20, 20
+!Mid, mid
+|-
+![[Savage Stance]]
+!3+4
+!-
+!-
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Telefonazo]]
+!f+2
+!20
+!High
+|-
+![[Emblema]]
+!f+3, 4
+!13, 20
+!Mid, mid
+|-
+![[Ciclón]]
+!f+4, 2
+!15, 20
+!Mid, mid
+|-
+![[Calambre]]
+!f+1+2
+!20
+!High
+|-
+![[Burla]]
+!f+3+4, f
+!178
+!!
+|-
+![[Rude Charge]]
+!f+2+3
+!30
+!Mid
+|-
+![[Flanco]]
+!d/f+1
+!12
+!Mid
+|-
+![[Flanco to Savage Stance]]
+!d/f+1, f
+!12
+!Mid
+|-
+![[Double Choking]]
+!d/f+1, 1
+!12, 13
+!Mid, high
+|-
+![[Double Choking to Savage Stance]]
+!d/f+1, 1, f
+!12, 13
+!Mid, high
+|-
+![[Double Choking Body]]
+!d/f+1, 1, 2
+!12, 13, 18
+!Mid, high, mid
+|-
+![[Flanco y patada]]
+!d/f+1, 1, 3
+!12, 13, 13
+!Mid, high, low
+|-
+![[Flanco y patada to Savage Stance]]
+!d/f+1, 1, 3, f
+!12, 13, 13
+!Mid, high, low
+|-
+![[Uno-dos]]
+!d/f+1, 2
+!12, 18
+!Mid, mid
+|-
+![[Campeón]]
+!d/f+2, 1
+!10, 10
+!Mid, mid
+|-
+![[Hachazo]]
+!d/f+2, 2
+!10, 22
+!Mid, mid
+|-
+![[Tunda]]
+!d/f+3, 2
+!11, 13
+!Mid, mid
+|-
+![[Espada]]
+!d/f+4, 1
+!13, 8
+!Mid, high
+|-
+![[Espada to Savage Stance]]
+!d/f+4, 1, f
+!13, 8
+!Mid, high
+|-
+![[Sable]]
+!d/f+4, 1, 1
+!13, 8, 23
+!Mid, high, mid
+|-
+![[Codazo]]
+!d+2
+!23
+!Mid
+|-
+![[Bajeza]]
+!d+3
+!15
+!Low
+|-
+![[Bajeza con cabeza]]
+!d+4, 1+2
+!10, 20
+!Low, high
+|-
+![[Bajeza con cabeza to Savage Stance]]
+!d+4, 1+2, f
+!10, 20
+!Low, high
+|-
+![[Rompeolas]]
+!d+1+2
+!30
+!Mid
+|-
+![[Tortura]]
+!d/b+1
+!15
+!Low
+|-
+![[Zancadilla]]
+!d/b+3
+!12
+!Low
+|-
+![[Zancadilla to Savage Stance]]
+!d/b+3, f
+!12
+!Low
+|-
+![[Paso de baile]]
+!d/b+3, 4
+!12, 13
+!Low, low
+|-
+![[Segada (d/b+4)|Segada]]
+!d/b+4
+!18
+!Low
+|-
+![[Tambor]]
+!b+1
+!15
+!Mid
+|-
+![[Tambor to Savage Stance]]
+!b+1, f
+!15
+!Mid
+|-
+![[Tambor y platillos]]
+!b+1, 4
+!15, 17
+!Mid, low
+|-
+![[Coraje]]
+!b+2, 2
+!12, 22
+!High, mid
+|-
+![[Oleaje]]
+!b+3
+!25
+!Mid
+|-
+![[Oleaje to Savage Stance]]
+!b+3, f
+!25
+!Mid
+|-
+![[Bota en la cara]]
+!b+4
+!25
+!Mid
+|-
+![[Guantazo]]
+!b+1+2
+!17
+!High
+|-
+![[Guantazo to Savage Stance]]
+!b+1+2, f
+!17
+!High
+|-
+![[Obús]]
+!u/f+1
+!27
+!High
+|-
+![[Obús to Savage Stance]]
+!u/f+1, f
+!27
+!High
+|-
+![[Patadón]]
+!u/f (or u or u/b)+3
+!17
+!Mid
+|-
+![[Patada atrás]]
+!u/f (or u or u/b)+4
+!13
+!Mid
+|-
+![[Megawatt Uppercut]]
+!f, f+2, 1
+!13, 25
+!Mid, high
+|-
+![[Megawatt Uppercut - Amplified]]
+!f, f+2, 2
+!13, 23
+!Mid, mid
+|-
+![[Direct Drive]]
+!f, f+3
+!20
+!High
+|-
+![[Manotazo]]
+!b, f+3
+!23
+!High
+|-
+![[Taconeo]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Rasgado]]
+!WS+1
+!16
+!Mid
+|-
+![[Rasgado to Savage Stance]]
+!WS+1, f
+!16
+!Mid
+|-
+![[Trinidad]]
+!WS+2, 2, 2
+!12, 12, 20
+!Mid, high, mid
+|-
+![[Cabriola]]
+!WS+3
+!23
+!Mid
+|-
+![[Cejilla]]
+!WS+1+2
+!15
+!High
+|-
+![[Palmeo]]
+!FC+d/f+2
+!23
+!Mid
+|-
+![[Punteo]]
+!FC+d/f+4
+!23
+!Low
+|-
+![[Pedaleo]]
+!(With the opponent down) d+3
+!21
+!Low
+|-
+![[Chuleria|Chulería]]
+!1+4
+!-
+!-
+|-
+
+|}
+
+===During [[Savage Stance]]===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Savage Stance]]
+!3+4
+!-
+!-
+|-
+![[Puño flecha]]
+!During Savage Stance 1
+!12
+!High
+|-
+![[Puño flecha to Savage Stance]]
+!During Savage Stance 1, f
+!12
+!High
+|-
+![[Puños dobles]]
+!During Savage Stance 1, 1
+!12, 20
+!High, high
+|-
+![[Puños combinados]]
+!During Savage Stance 1, 2
+!12, 8
+!High, mid
+|-
+![[Puños combinados to Savage Stance]]
+!During Savage Stance 1, 2, f
+!12, 8
+!High, mid
+|-
+![[Puños en secuencia]]
+!During Savage Stance 1, 2, 1
+!12, 8, 20
+!High, mid, mid
+|-
+![[Puños bomba]]
+!During Savage Stance 1, 4
+!12, 25
+!High, mid
+|-
+![[Machaque]]
+!During Savage Stance 2
+!27
+!Mid
+|-
+![[Traste]]
+!During Savage Stance 3
+!12
+!Mid
+|-
+![[Traste to Savage Stance]]
+!During Savage Stance 3, f
+!12
+!Mid
+|-
+![[Traste doble]]
+!During Savage Stance 3, 3
+!12, 17
+!Mid, high
+|-
+![[Traste doble to Savage Stance]]
+!During Savage Stance 3, 3, f
+!12, 17
+!Mid, high
+|-
+![[Vuelta con ritmo]]
+!During Savage Stance 4
+!27
+!High
+|-
+![[Campana]]
+!During Savage Stance 1+2
+!25,5
+!Mid
+|-
+![[Bucking]]
+!During Savage Stance f+1+2
+!22
+!High
+|-
+![[Bucking to Savage Stance]]
+!During Savage Stance f+1+2, f
+!22
+!High
+|-
+![[Flanqueo]]
+!During Savage Stance d/f+1
+!17
+!Mid
+|-
+![[Flanqueo to Savage Stance]]
+!During Savage Stance d/f+1, f
+!17
+!Mid
+|-
+![[Cumbre]]
+!During Savage Stance d/f+2
+!23
+!Mid
+|-
+![[Pateo]]
+!During Savage Stance d+4
+!8
+!Low
+|-
+![[Pateo to Savage Stance]]
+!During Savage Stance d+4, f
+!8
+!Low
+|-
+![[Pisoteo]]
+!During Savage Stance d+4, 3
+!8, 12
+!Low, mid
+|-
+![[Pisoteo to Savage Stance]]
+!During Savage Stance d+4, 3, f
+!8, 12
+!Low, mid
+|-
+![[Segada (d/b+3)|Segada]]
+!During Savage Stance d/b+3
+!16
+!Low
+|-
+![[Segada to Savage Stance]]
+!During Savage Stance d/b+3, f
+!16
+!Low
+|-
+![[Barrida]]
+!During Savage Stance d/b+4
+!20
+!Low
+|-
+![[Garra]]
+!During Savage Stance b+1
+!13
+!Mid
+|-
+![[Garra to Savage Stance]]
+!During Savage Stance b+1, f
+!13
+!Mid
+|-
+![[Choke Down]]
+!During Savage Stance b+1, 2
+!13, 25
+!Mid, low
+|-
+![[Choke Up]]
+!During Savage Stance b+1, 4
+!13, 17
+!Mid, mid
+|-
+![[Tornillo]]
+!During Savage Stance b+2
+!20
+!Mid
+|-
+![[Explosión]]
+!During Savage Stance b+3
+!23
+!High
+|-
+![[Explosión to Savage Stance]]
+!During Savage Stance b+3, f
+!23
+!High
+|-
+![[Crazy Skip]]
+!During Savage Stance u/f+3
+!22
+!Mid
+|-
+
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="10 hit combo" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo (Miguel)|WS+1+2, 4, 1, 1, 2, 1, 4, 1, 2, 1]]
+!115
+!hmhhmmllmh
+|-
+|}
+[[Category:Moves Lists]]
+[[Category:Tekken Tag Tournament 2 Movelists]]
+[[Category:Miguel Caballero Rojo Moves]]

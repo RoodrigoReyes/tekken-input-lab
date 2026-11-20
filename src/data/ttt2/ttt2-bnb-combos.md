@@ -461,6 +461,10 @@ Starter: f+2,1 (Wall Splat)
 
 WR3 | ISW | GS | uf+3 GS | WR3+4
 
+Additional Air Ender: f,hcf+1. Air throw (Muscle Driver): the character who started the combo grabs the opponent while still airborne to end it.
+
+Additional Air Ender: fff+2+4. Air throw (Running Cross Driver): the character who started the combo grabs the opponent while still airborne to end it.
+
 ## Wall TA\!
 
 3 | 4,1 | ss2,1 | uf+2 | db+2,3
@@ -620,6 +624,8 @@ uf+3,4,3 | f,F+4,3 | u+4,3
 df+3+4 | uf+3,4,3 | f,F+4,3
 
 Note: For max damage, try df+3+4; use uf+3,4,3 for early TA and ff+4,3 for wall carry.
+
+Additional Air Ender: d/f+3+4. Air throw (Heel Hunter): the character who started the combo grabs the opponent while still airborne to end it.
 
 ## Wall TA\!
 
@@ -1735,6 +1741,8 @@ f+2,2,1 | f,F+3 | db+2 | d/b+1+2, Bridge 1+2 | d,d/f+1\~4, d/f+4,2,3 | d df1,4 f
 
 WR1 | ISW
 
+Additional Air Ender: fff+2+4. Air throw (Burning Hammer): the character who started the combo grabs the opponent while still airborne to end it.
+
 ## Wall TA\!
 
 1+2,4,b,f+1+2 | df+4,2,b,f+1 | 3\~b,f, 1+2,4,b,f+1+2 | d/b+1+2, Bridge 1+2
@@ -1895,6 +1903,8 @@ df+2,1 | ub+1,2\~f,3,4 | db+2,1
 
 WR3 | Air Throw | uf+3+4,1,2,4 | uf+3+4,3,4 | uf+3,4 | f+2,1,1+2 | ub+1,2,f124
 
+Additional Air Ender: 1+3. Air throw (Raging Tempest): the character who started the combo grabs the opponent while still airborne to end it.
+
 ## Wall TA\!
 
 db+3,1 | df+2,1 | f2,1,1+2
@@ -1997,7 +2007,7 @@ Kazuya and his Devil transformation share this character section. Form restricti
 
 Starter: EWGF
 
-1\. Kazuya / Devil: EWGF \> 3,1,4 \> db+2 \> CD+4,1
+1\. Kazuya / Devil: EWGF \> 3,1,4 \> db+2 B\! \> CD+4,1
 
 2\. Kazuya only: EWGF ×2 \> df+1,2 \> CD+4,1
 
@@ -2015,7 +2025,7 @@ Starter: ff+3
 
 Starter: CH df+2
 
-1\. Kazuya / Devil: CH df+2 \> 1,2,4,3 \> db+2 \> CD+4,1
+1\. Kazuya / Devil: CH df+2 \> 1,2,4,3 \> db+2 B\! \> CD+4,1
 
 ## Low Parry Combos
 
@@ -2042,6 +2052,8 @@ b+4,1 | wgf | ss cd4,1
 ## Ender
 
 cd+4,1 | cd3
+
+Additional Ender: EWGF
 
 ## Wall TA\!
 
@@ -2128,6 +2140,12 @@ b+1,2 | f+2,2,1 | df+2,1 | 1+2,3 | 1+2,1 | b+2,4 | b+1,4 | cd\~ws2,2 | df+4,3,4 
 ISW | GS | b+3 | FCdf+2\~5 | d+1+2\~5 | groundgrab | f+2+3 | b+4
 
 Note: b+3 sends opponent away; f+2+3 is reliable; b+4 leaves King back-turned; throws can improve oki.
+
+Additional Air Ender: 1+3. Air throw (Inverted Leg Lace): the character who started the combo grabs the opponent while still airborne to end it.
+
+Additional Air Ender: 2+4. Air throw (Leg Whipdown): the character who started the combo grabs the opponent while still airborne to end it.
+
+Additional Air Ender: d+1+3. Air throw (Catching Ankle Breaker): the character who started the combo grabs the opponent while still airborne to end it.
 
 ## Wall TA\!
 
@@ -2416,6 +2434,8 @@ Additional TA\!: fF+2\~f SE 1. Throw-back filler option.
 ## Ender
 
 ISW | ff2\~f SE 1 | f3 DE 1\~f SE 1 | f2,1\~f SE 1
+
+Additional Air Ender: fff+2+4. Air throw (Rejection): the character who started the combo grabs the opponent while still airborne to end it.
 
 ## Wall TA\!
 
@@ -2759,6 +2779,12 @@ Note: Try f+2,1 for maximum damage; 1,2 VTS 4 offers good wall carry.
 
 f,F+1+2(any airgrab) | b+4 | u/f+3, 1,2, VTSc | 1,2,VTSc | uf+3 fF1+2
 
+Additional Air Ender: 1+3. Air throw (Gator Slam): the character who started the combo grabs the opponent while still airborne to end it.
+
+Additional Air Ender: 2+4. Air throw (Corkscrew): the character who started the combo grabs the opponent while still airborne to end it.
+
+Additional Air Ender: f,f+1+2. Air throw (Mid-Air Suplex): the character who started the combo grabs the opponent while still airborne to end it.
+
 ## Wall TA\!
 
 df+4,2 | F1+2,2 | uf+3+4 | ss4 df+3,1+2 | d+2,4
@@ -2872,6 +2898,8 @@ d+2,3,1 | (d+2)3,1 | f+2,1,2 | b2,3,1+2
 ## Ender
 
 WR1 | ISW
+
+Additional Air Ender: fff+2+4. Air throw (Aerial Bomb): the character who started the combo grabs the opponent while still airborne to end it.
 
 ## Wall TA\!
 

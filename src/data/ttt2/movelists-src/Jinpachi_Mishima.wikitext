@@ -1,0 +1,425 @@
+'''Jinpachi Mishima/Tekken Tag Tournament 2 Movelist''' is a list of all of the moves that [[Jinpachi Mishima|Jinpachi]] can perform in ''[[Tekken Tag Tournament 2]].''
+
+==Movelist==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Hadaka Jigoku]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Vajra Destroyer]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Jigokumeguri]]
+!1+3 (o 2+4)
+!Left
+!40
+!1
+|-
+![[Kongou Rakuchu]]
+!1+3 (o 2+4)
+!Right
+!40
+!2
+|-
+![[Dankenraku]]
+!1+3 (o 2+4)
+!Back
+!50
+!
+|-
+![[Stonehead]]
+!f, f+1+2
+!Front
+!35
+!1+2
+|-
+![[Dark Purification]]
+!During Astral Projection, 1+2
+!Front
+!40
+!1+2
+|-
+![[Gokurakumeguri]]
+!Crouching opponent, d+1+3
+!Front
+!10
+!1
+|-
+![[Mugen Kongou Otoshi]]
+!Crouching opponent, d+2+4
+!Front
+!45
+!2
+|-
+![[Raging Tempest]]
+!Opponent in the air, 1+3 (or 2+4)
+!Aerial catch
+!15
+!
+|-
+![[Inner Torment]]
+!Synchro with the opponent's punch, b+1+3 (or b+2+4)
+!Parry
+!36
+!
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Flash Punch Combo (Jinpachi)|Flash Punch Combo]]
+!1, 2
+!7, 20
+!High, high
+|-
+![[Tamonsatsu]]
+!1, b+2
+!7, 21
+!High, mid
+|-
+![[Demon Backhand Spin]]
+!2, 2
+!10, 17
+!High, high
+|-
+![[Enma's Fury]]
+!1+2
+!40
+!(!)
+|-
+![[Susano's Wrath]]
+!f+2, 1, 1+2
+!15, 12, 25
+!Mid, mid, mid
+|-
+![[Karura]]
+!f+3
+!20
+!Mid
+|-
+![[Right Splits Kick]]
+!f+4
+!20
+!Mid
+|-
+![[Gasshouken]]
+!f+1+2
+!22
+!Mid
+|-
+![[Astral Projection]]
+!f+3+4 (or b+3+4)
+!-
+!-
+|-
+![[Astral Impact]]
+!During Astral Projection, 1
+!30
+!Mid
+|-
+![[Astral Mace]]
+!During Astral Projection, 2
+!23
+!High
+|-
+![[Fallen Kingdom]]
+!f+1+4
+!32
+!Mid
+|-
+![[Danzaishu]]
+!f+2+3
+!50
+!(!)
+|-
+![[Niren Shouha]]
+!d/f+1, 1
+!12, 10
+!Mid, high
+|-
+![[Wind God Fist]]
+!d/f+2
+!20
+!High
+|-
+![[Furaibou]]
+!d/f+2, 1
+!20, 20
+!High, mid
+|-
+![[Arakantsui]]
+!d/f+3, 1
+!12, 20
+!Mid, mid
+|-
+![[Arakantotsu]]
+!d/f+3, 2
+!12, 22
+!Mid, high
+|-
+![[Rakan Kick]]
+!d/f+4
+!15
+!Mid
+|-
+![[Elkeid]]
+!d/f+1+2
+!21
+!Mid
+|-
+![[Ishizuewari]]
+!d+1
+!15
+!Mid
+|-
+![[Moujanobe]]
+!d+2, 1
+!13, 17
+!Mid, mid
+|-
+![[Oni Claw]]
+!d+3
+!20
+!Low
+|-
+![[Tenchigaeshi]]
+!d+1+2
+!27
+!Mid
+|-
+![[Hatsurai]]
+!d+3+4
+!-
+!-
+|-
+![[Dragon Uppercut (Mishima)|Dragon Uppercut]]
+!d+3+4, 1
+!30
+!Mid
+|-
+![[Wind God Fist]]
+!d+3+4, 2
+!25
+!High
+|-
+![[Nanda Renken]]
+!d/b+1, 2
+!5, 20
+!Mid, mid
+|-
+![[Andira Palm Strike]]
+!d/b+2 ,1
+!7, 12
+!Low, high
+|-
+![[Mettai]]
+!d/b+3, 1
+!12, 22
+!Low, mid
+|-
+![[Koumoku Kick]]
+!d/b+4
+!13
+!Low
+|-
+![[Sankou Reppu]]
+!d/b+1+2
+!30
+!High
+|-
+![[Relic Defiler]]
+!b+1, 2
+!12, 27
+!High, high
+|-
+![[Agama's Nail]]
+!b+2
+!20
+!Mid
+|-
+![[Cursed Land]]
+!b+3
+!23
+!Mid
+|-
+![[Shingetsusen]]
+!b+4
+!25
+!High
+|-
+![[Skull Crack]]
+!b+1+2
+!21
+!Mid
+|-
+![[Kinsakou]]
+!u/b+1, 2
+!10, 10
+!Mid, mid
+|-
+![[Kinsakou to Nyoishou]]
+!u/b+1, 2, f
+!10, 10
+!Mid, mid
+|-
+![[Kendatsuba]]
+!u+4
+!23
+!Mid
+|-
+![[Vajra Kick]]
+!u/f+3
+!20
+!Mid
+|-
+![[Hell Axle]]
+!u/f+3, 4
+!20, 20
+!Mid, mid
+|-
+![[Spinning Rakan Kick]]
+!u/f+4
+!30
+!Mid
+|-
+![[Nyoishou]]
+!u/f+3+4
+!-
+!-
+|-
+![[Tendou]]
+!During Nyoishou, 1, 1, 2
+!7, 7, 20
+!High, high, high
+|-
+![[Dairinne Kongou Otoshi]]
+!During Nyoishou, 1, 1, 2, during an aerial strike, 2
+!7, 6, 20, 10
+!High, high, high, aerial catch
+|-
+![[Jigokudou]]
+!During Nyoishou, 1, 2, 4
+!7, 10, 25
+!High, high, mid
+|-
+![[Gakidou]]
+!During Nyoishou, 2
+!23
+!Mid
+|-
+![[Shuradou]]
+!During Nyoishou, 3, 4
+!16, 26
+!Mid, mid
+|-
+![[Chikushoudou]]
+!During Nyoishou, 4
+!23
+!Low
+|-
+![[Scorching Impale]]
+!f, f+2
+!32
+!Mid
+|-
+![[Broken Vow]]
+!f, f+3
+!20
+!Mid
+|-
+![[Taizokai]]
+!f, f+4
+!25
+!Mid
+|-
+![[Leaping Sidekick|Leaping Side Kick]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Gundarichu]]
+!WS+1, 1
+!16, 22
+!Mid, mid
+|-
+![[Shouraiha]]
+!WS+2
+!20
+!Mid
+|-
+![[Bonten]]
+!WS+2,during the attack, 1+2
+!20, 35
+!Mid, !
+|-
+![[Kendatsu Kick]]
+!WS+3
+!12
+!Mid
+|-
+![[Souma Gouren]]
+!WS+4, 4, 1
+!12, 13, 20
+!Mid, mid, mid
+|-
+![[Demon Snare]]
+!FC+d/f+1
+!17
+!Low
+|-
+![[Stupa Splitter]]
+!FC+d/f+2
+!23
+!Mid
+|-
+![[Roppukai Raijinken]]
+!SS+2, 1
+!15, 25
+!Mid, mid
+|-
+![[Geta Stomp]]
+!(With opponent down) d+4
+!24
+!Low
+|-
+![[Taunt 1 (Jinpachi)|Taunt 1]]
+!1+2+3
+!-
+!-
+|-
+![[Taunt 2 (Jinpachi)|Taunt 2]]
+!1+2+4
+!-
+!-
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo (Jinpachi)|b+3, 2, 1, 1, 2, 1, 2, 1, 1+2, 1+2]]
+!128
+!mmmmlhmmm(!)
+|}
+[[Category:Moves Lists]]
+[[Category:Jinpachi Mishima Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

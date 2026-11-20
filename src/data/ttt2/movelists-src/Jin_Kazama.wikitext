@@ -1,0 +1,544 @@
+
+The following is a list of all moves that [[Jin Kazama]] can perform in ''[[Tekken Tag Tournament 2]]''.
+==Movelist==
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Double Face Kick]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Over the Shoulder Reverse]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Shoulder Flip]]
+!1+3 (or 2+4)
+!Left
+!43
+!1
+|-
+![[Over the Limit]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Pivoting Hip Throw]]
+!1+3 (or 2+4)
+!Back
+!50
+!
+|-
+![[Shun Ren Dan]]
+!d/f+2+3
+!Front
+!40
+!2
+|-
+![[Tidal Wave]]
+!u/f+1+2
+!Front
+!40
+!1+2
+|-
+![[Complicated Wire]]
+!d, d/b, b+1+3
+!Front
+!40
+!1
+|-
+![[Parry (Jin)|Parry]]
+!Synchro with the opponent's attack, b+1+3 (or b+2+4)
+!Parry
+!-
+!
+|}
+
+===Moves===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" | Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Left Right Combo]]
+!1, 2
+!7, 12
+!High, high
+|-
+![[Left Right Axe Kick]]
+!1, 2, 3
+!7, 12, 20
+!High, high, mid
+|-
+![[Left Right to Spinning Hook Kick]]
+!1, 2, 4
+!7, 12, 30
+!High, high, high
+|-
+![[Kazama Style 5 Hit Combo]]
+!1, 3, 2, 1, 4
+!7, 10, 10, 10, 10
+!High, high, mid, mid, low
+|-
+![[Ni Rengeki Sen]]
+!1, 3, b
+!7, 10
+!High, high
+|-
+![[Feint Kick Combo]]
+!1,[3~3], d/f+3
+!7, 20, 13
+!High, mid, mid
+|-
+![[Left Jab to Double Low]]
+!1, d+3, 4
+!7, 7, 17
+!High, low, low
+|-
+![[Double Thrust Roundhouse]]
+!2, 1, 4
+!8, 8, 18
+!High, mid, mid
+|-
+![[Double Thrust Low Trick Kick]]
+!2, 1, [4~4]
+!8, 8, 18
+!High, mid, low
+|-
+![[Switch Blade]]
+!2, 4
+!8, 20
+!High, high
+|-
+![[Kisshin Rekko|Kishin Rekko]]
+!3, 1, 4
+!19, 7, 18 
+!High, high, low
+|-
+![[High Right Roundhouse]]
+!4
+!18
+!High
+|-
+![[Spinning Flare Kick]]
+![4~3]
+!27
+!Mid
+|-
+![[Median Line Destruction]]
+!1+2
+!5, 5, 20
+!Mid, mid, high
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Right Elbow]]
+!f+2
+!12
+!High
+|-
+![[Left Roundhouse]]
+!f+3
+!16
+!Mid
+|-
+![[Stinger]]
+!f+[3~3]
+!20
+!Mid
+|-
+![[Heat Seeker]]
+!f+[3~3], d/f+3
+!20, 13
+!Mid, mid
+|-
+![[Front Thrust Kick]]
+!f+4
+!21
+!Mid
+|-
+![[Double Chamber Punch]]
+!f+1+2
+!12, 22
+!High, high
+|-
+![[Mid Left Punch to High Roundhouse Kick]]
+!d/f+1, 4
+!10, 20
+!Mid, high
+|-
+![[Mid Left Punch to Mid Sidekick]]
+!d/f+1, [4~4]
+!10, 23
+!Mid, mid
+|-
+![[Uppercut (Jin)|Uppercut]]
+!d/f+2
+!15
+!Mid
+|-
+![[Left Sidekick]]
+!d/f+3
+!12
+!Mid
+|-
+![[Left Sidekick to Stinger]]
+!d/f+3, 3
+!12, 13
+!Mid, high
+|-
+![[Left Sidekick to Stinger Sen]]
+!d/f+3, 3, b
+!12, 13
+!Mid, high
+|-
+![[Right Spinning Axe Kick]]
+!d/f+4
+!22
+!Mid
+|-
+![[Suigetsu Strike]]
+!d/f+1+2
+!20
+!Mid
+|-
+![[Corpse Thrust]]
+!d+1
+!23
+!Mid
+|-
+![[Knee Popper to Sidekick]]
+!d+3, 3
+!7, 10
+!Low, mid
+|-
+![[Right Sweep]]
+!d+4
+!15
+!Low
+|-
+![[Zenshin]]
+!d+1+2
+!-
+!-
+|-
+![[Double Lift Kick (Kazama)|Double Lift Kick]]
+!d+3+4
+!5, 20
+!Mid, mid
+|-
+![[Savage Sword]]
+!d/b+2, 2, 3
+!12, 11, 21 
+!Mid, high, mid
+|-
+![[Tensho Rakufu]]
+!d/b+2, 3
+!12, 18
+!Mid, mid
+|-
+![[Left Spinning Back Kick 2]]
+!d/b+3
+!28
+!High
+|-
+![[Right Low Roundhouse]]
+!d/b+4
+!18
+!Low
+|-
+![[Mental Alertness (2)]]
+!b+1
+!-
+!-
+|-
+![[Shun Masatsu]]
+!b+2, 1
+!12, 10
+!Mid, mid
+|-
+![[Left Knee (Jin)|Left Knee]]
+!b+3
+!17
+!Mid
+|-
+![[Spinning Sidekick]]
+!b+4
+!21
+!Mid
+|-
+![[Power Stance]]
+!b+1+2
+!-
+!Mid
+|-
+![[Omen|Omen Stance]]
+!B+1+2~1~4
+!-
+!-
+|-
+![[Electric Transformation]]
+!u/b~TAG
+!-
+!-
+|-
+![[Avenger]]
+!u/b+1+2 (b, b to cancel)
+!70
+!!
+|-
+![[Evading Middle Strike]]
+!u/f+2
+!18
+!Mid
+|-
+![[Left Spinning Jump Kick]]
+!u/f (or u or u/b)+3
+!17
+!Mid
+|-
+![[Front Jump Kick]]
+!u/f (or u)+4
+!17
+!Mid
+|-
+![[Demon's Paw]]
+!f, f+2
+!23
+!Mid
+|-
+![[Left Axe Kick]]
+!f, f+3
+!20
+!Mid
+|-
+![[Kazama Style 6 Hit Combo]]
+!f, f+3, 1, 3, 2, 1, 4
+!20, 5, 10, 10, 10, 10
+!Mid, high, high, mid, mid, low
+|-
+![[Right Axe Kick]]
+!f, f+4
+!19
+!Mid
+|-
+![[Evil Intent]]
+!b, f+2, 1, 2
+!15, 10, 20
+!Mid, high, mid
+|-
+![[Keito]]
+!b, f+2, 3
+!15, 10
+!Mid, mid
+|-
+![[Thrusting Uppercut (Jin Kazama)|Thrusting Uppercut]]
+!f, N, d, d/f+1
+!20
+!Mid
+|-
+![[Thrusting Uppercut (Jin Kazama)|Thrusting Uppercut]]
+!f, N, d, d/f+1 (press at the same time)
+!20
+!Mid
+|-
+![[Right Roundhouse Punch]]
+!f, N, d, d/f+2
+!20
+!High
+|-
+![[Electric Wind Hook Fist]]
+!f, N, d, d/f+2 (press at the same time)
+!25
+!High
+|-
+![[Low Trick Kick|Lunging Low Roundhouse Kick (L.L.R.K)]]
+!f, N, d, d/f+4
+!13
+!Low
+|-
+![[L.L.R.K to Spinning Flare Kick]]
+!f, N, d, d/f+4, 3+4
+!13, 27
+!Low, mid
+|-
+![[Leaping Side Kick]]
+!f, f, f+3
+!25
+!Mid
+|-
+![[Twin Lancer]]
+!WS+1,2
+!10, 16
+!Mid, mid
+|-
+![[Crouching Uppercut (Jin)|Crouching Uppercut]]
+!WS+2
+!14
+!Mid
+|-
+![[Bamboo Splitter]]
+!WS+3
+!20
+!Mid
+|-
+![[Black Out]]
+!(With opponent down) d+2
+!24
+!Low
+|-
+![[Mental Alertness|Mental Alertness 1]]
+!1+3+4
+!-
+!-
+|}
+
+===During [[Mental Alertness (2)|Mental Alertness 2]]===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Mental Alertness (2)]]
+!b+1
+!-
+!-
+|-
+![[Zenshin]]
+!d+1+2
+!-
+!-
+|-
+![[Left Drill Punch]]
+!During Mental Alertness 2 1
+!13
+!Mid
+|-
+![[Spine Cracker]]
+!During Mental Alertness 2 1, 2
+!13, 21
+!Mid, mid
+|-
+![[Swaying Willow]]
+!During Mental Alertness 2 2
+!27
+!Mid
+|-
+![[Leaping Side Kick]]
+!During Mental Alertness 2 3
+!25
+!High
+|-
+![[Right Sweep (2)]]
+!During Mental Alertness 2 4
+!20
+!Low
+|-
+![[Joudan Tsukiage Niren]]
+!During Mental Alertness 2 1+2
+!20
+!High, high
+|}
+
+===During [[Omen|Omen Stance]]===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Omen|Omen Stance]]
+!B+1+2~1~4
+!-
+!-
+|-
+![[Flash Punch Combo]]
+!1, 1, 2
+!7, 6, 12
+!High, high, mid
+|-
+![[Left Right Combo]]
+!1, 2
+!7, 8
+!High, high
+|-
+![[Demon Slayer]]
+!1, 2, 2
+!7, 8, 12
+!High, high, high
+|-
+![[Omen 7 Hit Combo]]
+!1, 2, 2, 3, 2, 4, 3
+!3, 4, 5, 13, 4, 4,21
+!High, high, high, high, high, mid, high
+|-
+![[One Two Front Kick]]
+!1, 2, 4
+!7, 8, 10
+!High, high, mid
+|-
+![[Corpse Thrust]]
+!1+2
+!20
+!Mid
+|-
+![[Omen Stonehead|Stonehead]]
+!f, f+1+2
+!35
+!High
+|-
+![[Laser Cannon]]
+!b, f+2, 1, 2
+!19, 12, 25
+!Mid, mid, mid
+|-
+![[Laser Scraper]]
+!b, f+2, 1, d/f+2
+!12, 12, 10
+!Mid, mid, mid
+|-
+![[Omen to Dragon Uppercut|Dragon Uppercut]]
+!f, N, d, d/f+1
+!28
+!Mid
+|-
+![[Omen Rising Uppercut|Omen Wind God Fist]]
+!f, N, d, d/f+2
+!24
+!High
+|-
+![[Omen Spinning Demon]]
+!f, N, d, d/f+4, 4, 4
+!16, 12, 10
+!Low, mid, mid
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo (Jin)|f+2, 3, 3, 3, 2, 1, 2, 3, 4, 2]]
+!113
+!hlmhmmmhlh
+|}
+<br />
+[[Category:Jin Kazama 2 Moves]]
+[[Category:Moves Lists]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

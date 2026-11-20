@@ -30,7 +30,7 @@ export function draftFromGenerated(draft: ComboDraft, combo: GeneratedCombo, tea
     `Generated from the "${GUIDE_SOURCE.title}" guide. Not tested yet: try it in practice mode.`,
     ...(verify.length ? ['To verify:', ...verify] : []),
   ].join('\n');
-  const name = `${team.point} + ${team.partner}: ${combo.route.starter ?? 'route'} → TA!`;
+  const name = `${team.point} + ${team.partner}: ${combo.route.starter ?? 'route'}${combo.filler ? ' → TA!' : ' (solo)'}`;
   return {
     ...draft,
     game: 'ttt2',

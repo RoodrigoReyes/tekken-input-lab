@@ -28,6 +28,8 @@ export interface ComboPiece {
   notation: string;
   /** "Additional …" pieces: extra options the guide marks with a condition. */
   additional: boolean;
+  /** Ender that grabs the airborne opponent ("Additional Air Ender"); only the character who started the combo performs it. */
+  airThrow?: boolean;
   /** Condition text from the guide (e.g. "Ogre/big-body option"). */
   condition?: string;
   /** Guide notes that apply to this piece. */

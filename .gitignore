@@ -9,3 +9,6 @@ playwright-report
 
 # antislop audit reports (local only)
 anti-slop/
+
+# graphify knowledge-graph output (generated, local only)
+graphify-out/

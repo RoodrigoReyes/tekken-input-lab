@@ -1,0 +1,509 @@
+'''Robert Richards/''Tekken Tag Tournament 2'' Moves List''' is a list of all of the moves that [[Robert Richards]] can perform in ''[[Tekken Tag Tournament 2]]''.
+==Moves List==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Quarter Deck]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Cooler Shaker]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Corkscrew (Bob)|Corkscrew]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Eye Opener]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Déglacer Throw]]
+!1+3 (or 2+4)
+!Back
+!50
+!
+|-
+![[Flying Cask]]
+!f, f+1+2
+!Front
+!30
+!1+2
+|-
+![[Sparkling Death]]
+!FC+d/f, d, d/f+1+2
+!Front
+!30
+!1+2
+|-
+
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Straight Rondel]]
+!1, 1, 2
+!7, 7, 10
+!High, high, high
+|-
+![[Left Right Combo|One Two Punch]]
+!1, 2
+!7, 10
+!High, high
+|-
+![[Fast Break]]
+!1, 2, 1+2
+!7, 10, 20
+!High, high, mid
+|-
+![[Course Picante]]
+!1, 3, 3
+!7, 10, 18
+!High, low, mid
+|-
+![[Course Sarat]]
+!1, 4
+!7, 15
+!High, high
+|-
+![[Course Achuto]]
+!1, d+4
+!7, 13
+!High, low
+|-
+![[Barista Swirl]]
+!2, 1, 4
+!8, 10, 20
+!High, mid, mid
+|-
+![[Croque-Monsieur]]
+!3, 4
+!13, 17
+!High, mid
+|-
+![[Sparkling Hop]]
+!4, 3, 3+4
+!15, 12, 13
+!High, mid, mid
+|-
+![[Black Poêlé]]
+!1+2, 1+2
+!18, 20
+!Mid, mid
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Sucre Tile]]
+!1+2+3+4, 4
+!36
+!!
+|-
+![[Circle Whopper]]
+!f+2, 3
+!13, 18
+!High, mid
+|-
+![[Merguez Kick Combo]]
+!f+3, 4
+!18, 22
+!Mid, mid
+|-
+![[Spinning Linguine]]
+!f+4
+!20
+!High
+|-
+![[Giga Jacker]]
+!f+1+2
+!25
+!Mid
+|-
+![[Spinner Ball]]
+!f+3+4
+!-
+!-
+|-
+![[Lyonnaise Break]]
+!During Spinner Ball 1
+!18
+!Mid
+|-
+![[Galette Slicer]]
+!During Spinner Ball 2
+!21
+!Mid
+|-
+![[Snail Kick]]
+!During Spinner Ball 3
+!30
+!High
+|-
+![[Stealing Home]]
+!During Spinner Ball 4
+!13
+!Low
+|-
+![[Perfect Press]]
+!During Spinner Ball 3+4
+!28
+!Mid
+|-
+![[Escalope Elbow]]
+!d/f+1, 2
+!13, 15
+!Mid, mid
+|-
+![[Slash Darne]]
+!d/f+2
+!13
+!Mid
+|-
+![[Gaufrettes Cutter]]
+!d/f+3, 1, 1
+!13, 12, 16
+!Mid, high, mid
+|-
+![[Gaufrettes Punch]]
+!d/f+3, 2
+!13, 20
+!Mid, high
+|-
+![[Gaufrettes Kick]]
+!d/f+3, 4, 4
+!13, 10, 16
+!Mid, low, high
+|-
+![[Overpound]]
+!d/f+1+2
+!25
+!Mid
+|-
+![[Runner Flip]]
+!d/f+3+4, 4
+!13, 22
+!Mid, mid, mid
+|-
+![[Coupé Chop]]
+!d+1
+!18
+!Mid
+|-
+![[Combination Mince]]
+!d+2, 1, 2, 2
+!12, 13, 18, 21
+!Mid, mid, mid, mid
+|-
+![[Combination Ble]]
+!d+2, 3
+!12, 21
+!Mid, mid
+|-
+![[Combination Baldo]]
+!d+2, 4
+!12, 13
+!Mid, mid
+|-
+![[Panini Sweep]]
+!d+3, 4
+!13, 20
+!Low, high
+|-
+![[Tornado Mixer]]
+!d+4, 3, 4
+!11, 15, 23
+!Low, high, mid
+|-
+![[Apicius Special]]
+!d+1+2, 2, 1
+!5, 5, 5, 20
+!High, high, mid, high
+|-
+![[Duck Flip]]
+!d+3+4
+!11, 15
+!Mid, mid
+|-
+![[Bite Uppercut]]
+!d/b+2
+!17
+!Mid
+|-
+![[Liaison Spike]]
+!d/b+3
+!15
+!Low
+|-
+![[Contorno Farce]]
+!d/b+4, 4, 3, 3
+!15, 13, 12, 18
+!Low, mid, high, mid
+|-
+![[Contorno Mist]]
+!d/b+4, 4, 4
+!15, 13, 10
+!Low, mid, low
+|-
+![[Abats Snipe]]
+!d/b+1+2
+!16
+!Mid
+|-
+![[Huile Slip]]
+!d/b+3+4, 4
+!13, 12
+!Low, low
+|-
+![[Ravenous]]
+!b+1, 2
+!15, 16
+!Mid, mid
+|-
+![[Combination Bitter]]
+!b+2, 2, 4, 4
+!10, 12, 16, 20
+!Mid, high, mid, high
+|-
+![[Whopping Kick]]
+!b+3
+!18
+!Mid
+|-
+![[Pretzel Crush]]
+!b+4, 1
+!15, 17
+!Mid, mid
+|-
+![[Three Star Combo]]
+!b+1+2, 1, 2
+!20, 10, 20
+!Mid, mid, high
+|-
+![[Reverse Spinner Ball]]
+!b+3+4
+!-
+!-
+|-
+![[Reverse Duck Flip]]
+!u/b+3
+!18, 15
+!Mid, mid
+|-
+![[Egg Bound]]
+!u+1+2
+!-
+!-
+|-
+![[Hatching Punch]]
+!u+1+2, 1
+!21
+!Mid
+|-
+![[Strainer]]
+!u+3+4
+!20
+!Mid
+|-
+![[Flying Jambon]]
+!u/f (or u)+3
+!20
+!Mid
+|-
+![[Faisan Crow]]
+!u/f (or u)+4, 4
+!13, 18
+!Mid, mid
+|-
+![[Pound Cake]]
+!u/f+1+2, 1
+!15, 17
+!Mid, mid
+|-
+![[Cracker Jacker]]
+!u/f+1+2, 1+2
+!15, 25
+!Mid, mid
+|-
+![[Rolling Kebab]]
+!u/f+3+4, 4
+!10, 12, 20
+!Low, high, high
+|-
+![[Zip Cutter]]
+!f, f+2
+!25
+!High
+|-
+![[Jumping Beans]]
+!f, f+3
+!18
+!Mid
+|-
+![[Double Chapati]]
+!f, f+4, 4
+!12, 20
+!Mid, mid
+|-
+![[Huitres Crush]]
+!f, f+3+4
+!16, 12
+!Mid, mid
+|-
+![[Hot Cross Bun]]
+!b, f+1
+!25
+!Mid
+|-
+![[Langouste Tail]]
+!b, b+4
+!20
+!Mid
+|-
+![[Grater Langouste]]
+!b, b+3+4 (b to cancel)
+!80
+!!
+|-
+![[Grater Langouste Feint Knuckle]]
+!b, b+3+4,2
+!28
+!Mid
+|-
+![[Quick Langouste]]
+!b, b+2+3
+!40
+!!
+|-
+![[Langue Washer]]
+!f, N, d, d/f+1
+!20
+!High
+|-
+![[Spiral Rocky]]
+!f, N, d, d/f+2
+!23
+!Mid
+|-
+![[Gambero Knee]]
+!f, N, d, d/f+3, 2
+!13, 22
+!Mid, high
+|-
+![[Apres Sweep]]
+!f, N, d, d/f+4
+!16
+!Low
+|-
+![[Cutting Coppa]]
+!f, N, d, d/f+4, 1+2
+!16, 25
+!Low, mid
+|-
+![[Granchi Canon]]
+!f, N, d, d/f+1+2
+!25
+!Mid
+|-
+![[Perfect Slash]]
+!f, f, f (or more than three steps) +3
+!30
+!Mid
+|-
+![[Supersize Missile]]
+!f, f, f+3+4
+!27
+!Mid
+|-
+![[Cross Butcher]]
+!WS+1, 2
+!12, 18
+!Mid, high
+|-
+![[Hot Guimauve]]
+!WS+1, 3
+!12, 20
+!Mid, mid
+|-
+![[Spinach Upper]]
+!WS+2, 1
+!10, 12
+!Mid, mid
+|-
+![[Spinach Hammer]]
+!WS+2, 2
+!10, 20
+!Mid, mid
+|-
+![[Brioche Star]]
+!WS+3, 3+4
+!17, 28
+!High, mid
+|-
+![[Rising Matzo]]
+!WS+1+2
+!20
+!Mid
+|-
+![[Polpo Swing]]
+!FC+d/f+2, 1, 1+2
+!13, 12, 20
+!Mid, mid, mid
+|-
+![[Seppia Swing]]
+!FC+d/f+2, 4, 1+2
+!13, 12, 20
+!Mid, low, mid
+|-
+![[Bánh mì Strike]]
+!SS+1+2
+!23
+!Mid
+|-
+![[Plague Pick]]
+!Back to opponent d+2
+!17
+!Mid
+|-
+
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="10 hit combo" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Bob)|u/f+2, 1, 2, 2, 1, 1+2, 3, 1, 2, 3+4]]
+!116
+!hhhmmmlmhm
+|-
+![[10 Hit Combo 2 (Bob)|u/f+2, 3, 3+4, 4]]
+!69
+!hlmmm
+|-
+|}
+[[Category:Moves Lists]]
+[[Category:Robert Richards Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

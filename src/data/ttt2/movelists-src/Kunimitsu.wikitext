@@ -1,0 +1,483 @@
+'''Kunimitsu/Tekken Tag Tournament 2 Movelist'''  is a list of all of the moves that [[Kunimitsu]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Movelist==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Tamaki]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Mizore]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Avalanche (Kunimitsu)|Avalanche]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Tornado (Move)|Tornado]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Yamikazan]]
+!1+3 (or 2+4)
+!Back
+!50
+!
+|-
+![[Manji Rana]]
+!f+1+4 (or during Setsunagake, 1+4)
+!Front
+!40
+!d or d/b or d/f
+|-
+![[Manji Cartwheel]]
+!u/f+1+2 (or during Setsunagake, 1+2)
+!Front
+!-
+!1+2
+|-
+![[Chakra Drop]]
+!During Setsunagake, opponent in the air, 4
+!Front
+!23
+!
+|-
+![[Secret Flower]]
+!Synchro with the opponent's attack, b+1+3 (or b+2+4)
+!Parry
+!42
+!
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Memai Tsuki]]
+!1, 1
+!7, 12
+!High, mid
+|-
+![[Flash Kick Combination]]
+!1, 2, 4
+!7, 12, 20
+!High, high, mid
+|-
+![[Lotus Blade]]
+!2, 2
+!10, 13
+!High, mid
+|-
+![[Oni Kick Combo]]
+!3, 3
+!23, 16
+!High, low
+|-
+![[Zig Zag]]
+!3, 4
+!23, 30
+!High, mid
+|-
+![[Triple Roundhouse Combo]]
+!4, 4, 4
+!20, 20, 21
+!High, high, high
+|-
+![[Supreme Thrust]]
+!1+2
+!22
+!Mid
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Phoenix Tail (Kunimitsu)|Phoenix Tail]]
+!f+2, 3
+!12, 20
+!High, high
+|-
+![[Setsunagake]]
+!f+3
+!-
+!-
+|-
+!'''[[Moon Light Dance]]'''
+!During Setsunagake, 1, 2, 4
+!7, 10, 21
+!High, high, mid
+|-
+![[Kasumi Slash]]
+!During Setsunagake, 2
+!17
+!Mid
+|-
+![[Musasabi]]
+!During Setsunagake, 3
+!-
+!-
+|-
+![[Tsumujikaze]]
+!During Setsunagake, 4
+!13
+!Mid
+|-
+![[Kusabiyuki]]
+!f+4
+!13
+!Mid
+|-
+![[Kusabiyuki to Setsunagake]]
+!f+4, f
+!13
+!Mid
+|-
+![[Kanameishi]]
+!f+1+2
+!23
+!Mid
+|-
+![[Growling Jewel]]
+!f+3+4
+!20
+!High
+|-
+![[Muten Cannon]]
+!d/f+1, 3
+!12, 20
+!Mid, high
+|-
+![[Ice Cleaver]]
+!d/f+3, 2
+!12, 20
+!Mid, low
+|-
+![[Asura Blade]]
+!d/f+1+2
+!8, 20
+!Mid, mid
+|-
+![[Falling Hail]]
+!d/f+3+4
+!10, 10
+!Mid, mid
+|-
+![[Sakumaishi]]
+!d+1
+!20
+!Mid
+|-
+![[Amamikanameishi]]
+!d+2, 1, 2, 1+2
+!11, 7, 7, 20
+!Mid, mid, mid, mid
+|-
+![[Frost Slide]]
+!d+3
+!12
+!Low
+|-
+![[Doton]]
+!d+1+2
+!-
+!-
+|-
+![[Sajin Kaisen]]
+!During Doton, 2, 4
+!13, 20
+!Mid, mid
+|-
+![[Icicle Drop]]
+!During Doton, 3
+!30
+!Mid
+|-
+![[Cumulonimbi]]
+!During Doton, 4
+!-
+!-
+|-
+![[Manji Spin Low Kicks]]
+!D/B+3, 3, 3, 3, 3, 3
+!10, 7, 7, 5, 5
+!Low, low, low, low, low
+|-
+![[Manji Spin Low Kicks Front Kick]]
+!During Manji Spin Low Kicks, 4
+!15
+!Mid
+|-
+![[Yamashiro Kuzushi]]
+!d/b+4
+!13
+!Low
+|-
+![[Katon (Kunimitsu)|Katon]]
+!d/b+1+2
+!15
+!!
+|-
+![[Stone Fists|Slap U Silly]]
+!b+1, 1, 1, 1, 1, 1
+!8, 8, 8, 5, 5
+!High, high, high, high, high
+|-
+![[Hakkouen]]
+!b+2
+!20
+!Mid
+|-
+![[Kodama Flip]]
+!b+3, 4
+!10, 20
+!Mid, mid
+|-
+![[Tenrou]]
+!b+4
+!12
+!Mid
+|-
+![[Uratenrou]]
+!b+4, 3
+!12, 23
+!Mid, mid
+|-
+![[Cycle of Rebirth]]
+!b+1+2
+!10, 20
+!High, mid
+|-
+![[Disengage|Urakarin]]
+!b+3+4
+!-
+!-
+|-
+![[Aratama Slash]]
+!Back to opponent, 1, 2
+!16, 18
+!High, mid
+|-
+![[Phoenix Tail (Kunimitsu)|Phoenix Tail]]
+!Back to opponent, 2, 3
+!12, 20
+!High, high
+|-
+![[Tobitengu]]
+!Back to the opponent, 3
+!20
+!Mid
+|-
+![[Lycoris radiata]]
+!Back to opponent, 1+2
+!10, 10
+!Mid, mid
+|-
+![[Kitsunegokoro]]
+!Back to opponent, 3+4
+!-
+!-
+|-
+![[Araremaki]]
+!Back to opponent, d+4
+!10, 15
+!Low, low
+|-
+![[Nigemizu]]
+!u/b+3
+!-
+!-
+|-
+![[Hiryu]]
+!u/b+3+4
+!23
+!Mid
+|-
+![[Tobikage]]
+!u+3
+!-
+!-
+|-
+![[Tobikage Ura]]
+!u+3, u
+!-
+!-
+|-
+![[Tenton]]
+!u+1+2
+!21
+!!
+|-
+![[Guillotine Crow Kick]]
+!u+3+4
+!10, 12
+!Mid, mid
+|-
+![[Kurama Itto]]
+!u/f+2
+!18
+!Low
+|-
+![[Rising Knee]]
+!u/f+3
+!15
+!Mid
+|-
+![[Double Rising Knee]]
+!u/f+3, 4
+!15, 15
+!Mid, high
+|-
+![[Manji Urachidori]]
+!u/f+4
+!21
+!High
+|-
+![[Poison Wind]]
+!u/f+3+4
+!20
+!Mid
+|-
+![[Poison Wind Eclipse Kick]]
+!u/f+3+4, 3+4
+!20, 8, 12
+!Mid, mid, mid
+|-
+![[Rising Kazura]]
+!f, f+2
+!22
+!Mid
+|-
+![[Rising Kazura to Katon]]
+!f, f+2, during the attack, u
+!22, 15
+!Mid, !
+|-
+![[Musasabi]]
+!f, f+3
+!-
+!-
+|-
+![[Sasabibarai]]
+!During Musasabi, 2
+!20
+!Low
+|-
+![[Sasabikujiki]]
+!During Musasabi, 4
+!40
+!High
+|-
+![[Fubuki]]
+!f, f+4
+!15
+!Mid
+|-
+![[Deadly Stab|Deadly Smash]]
+!f, f+1+2
+!20
+!!
+|-
+![[Ninpo Shinkiro]]
+!f, f+3+4
+!17
+!Mid
+|-
+![[Ninpo Shinkiro Ura]]
+!f, f+3+4, b
+!17
+!Mid
+|-
+![[Ninpo Shinkiro to Sajinkaisen]]
+!f, f+3+4, 2, 4
+!17, 13, 20
+!Mid, mid, mid
+|-
+![[Ninpo Shinkiro to Tobitengu]]
+!f, f+3+4, 3
+!17, 20
+!Mid, mid
+|-
+![[Ninpo Shinkiro to Tobikage]]
+!f, f+3+4, u
+!17
+!Mid
+|-
+![[Sakekuga]]
+!u/b, b+3
+!30
+!Mid
+|-
+![[Sword Smash (Kunimitsu)|Sword Smash]]
+!f, f, f+2
+!44
+!Mid
+|-
+![[Kuga]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Shigure]]
+!WS+1, 1
+!12, 13
+!Mid, mid
+|-
+![[Kogetsu]]
+!WS+2
+!21
+!Mid
+|-
+![[Kaede]]
+!WS+3
+!13
+!Mid
+|-
+![[Knee Cap|Spinning Sweep]]
+!FC+d/f+3
+!13
+!Low
+|-
+![[Wintry Wind]]
+!SS+1+2
+!21
+!Mid
+|-
+![[Will-O-the-Wisp]]
+!SS+3+4
+!21
+!Low
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="10 hit combo" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo (Kunimitsu)|1, b+2, 1, 4, 4, 4, 1, 2, 3, 2]]
+!102
+!hmhhhlmhm!
+|}
+[[Category:Moves Lists]]
+[[Category:Kunimitsu Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

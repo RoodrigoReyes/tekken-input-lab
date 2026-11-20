@@ -1,0 +1,790 @@
+This is a list of every move that [[Miharu Hirano]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Move List==
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Jade]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Ruby (Xiaoyu)|Ruby]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Arm Flip]]
+!1+3 (or 2+4)
+!Left
+!45
+!1
+|-
+![[Dump the Bucket]]
+!1+3 (or 2+4)
+!Right
+!38
+!2
+|-
+![[Crank Up]]
+!1+3 (or 2+4)
+!Back
+!50
+!
+|-
+![[Miharu Unlimited]]
+!d/f+1+2
+!Front
+!35
+!1+2
+|-
+![[Dragon Fall]]
+!d/f+2+4
+!Front
+!35
+!2
+|-
+![[So Shoe Me]]
+!f+2+3
+!Front
+!15
+!2
+|-
+![[Cradle Throw]]
+!During [[Phoenix]] 1+3 (or 2+4)
+!Front
+!35
+!1 or 2
+|-
+![[Bei Shen Zhuan Wu|Reverse Throw]]
+!Back to the opponent f, f+1+3 (or 2+4)
+!Front
+!35
+!1 or 2
+|-
+![[High Mid Parry]]
+!Synchro with opponent's attack 1+4
+!Parry
+!-
+!
+|-
+![[Rain Dance to High Mid Parry]]
+!Back to opponent 1+4
+!Parry
+!-
+!
+|-
+![[Low Parry (Xiaoyu)|Rain Dance to Low Parry]]
+!Back to opponent d+1+4
+!Parry
+!-
+!
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Bayonet]]
+!1, 2
+!7, 8
+!High, high
+|-
+![[Bayonet Thruster]]
+!1,2,1
+!7, 8, 17
+!High, high, mid
+|-
+![[Fan Dance to Rain Dance]]
+!1, d+2
+!7, 10
+!High, mid
+|-
+![[Bayonet McTwist]]
+!1, d+2
+!7, 10
+!High, mid
+|-
+![[Fan Dance to Pushing Hands]]
+!1, d+2, 1+2
+!7, 10, 23
+!High, mid, mid
+|-
+![[April Showers]]
+!2, 1
+!8, 10
+!High, mid
+|-
+![[May Flowers]]
+!2, d/f+1
+!8, 10
+!High, mid
+|-
+![[Cloud Kick]]
+!3
+!20
+!High
+|-
+![[Crescent Moon Kick]]
+![4~3]
+!20
+!Mid
+|-
+![[Crescent Moon Kick to Phoenix]]
+![4~3], d+1+2
+!20
+!Mid
+|-
+![[Birds Flock]]
+!1+2
+!23
+!Mid
+|-
+![[Spinner]]
+!3+4 (or d+3+4)
+!-
+!-
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Bai Yang Zhuan Wu]]
+!f+2, 1, 4
+!16, 13, 20
+!Mid, high, mid
+|-
+![[Wings of Fury]]
+!f+3, 1, 1+2
+!13, 8, 6, 20
+!Mid, mid, mid, mid
+|-
+![[Li He Double Sweep]]
+!f+4, 4
+!18, 17
+!High, low
+|-
+![[Clouded Peak]]
+!f+1+2
+!25
+!Mid
+|-
+![[Somersault (Ling Xiaoyu)|Somersault]]
+!f+3+4
+!-
+!-
+|-
+![[Somersault to Phoenix]]
+!f+3+4, d+1+2
+!-
+!-
+|-
+![[Belly Chop Backward|Belly Chop to Rain Dance]]
+!d/f+1
+!15
+!Mid
+|-
+![[Belly Chop]]
+!d/f+1
+!15
+!Mid
+|-
+![[Doki Doki Elbow]]
+!d/f+[1, f~1]
+!21
+!Mid
+|-
+![[Butter the Bread]]
+!d/f+2
+!15
+!Mid
+|-
+![[Cross Lifting Palms]]
+!d/f+[2~1]
+!8, 12
+!Mid, mid
+|-
+![[Tiao Tui Bai Ji]]
+!d/f+3,4
+!17, 13
+!Mid, mid
+|-
+![[Right Front Kick]]
+!d/f+4
+!12
+!Mid
+|-
+![[Sunset Fan]]
+!d+1
+!7, 7, 7
+!Mid, mid, mid
+|-
+![[Flapping Wings]]
+!d+1
+!7,7,7
+!Mid, mid, mid
+|-
+![[Street Sweeper Combo]]
+!d+3, 4
+!11,18
+!Low, high
+|-
+![[Storming Flower]]
+!d/b+1
+!22
+!Mid
+|-
+![[Knee Cracker]]
+!d/b+3
+!-
+!Low
+|-
+![[Nutcracker]]
+!d/b+4
+!10
+!Low
+|-
+![[Great Wall Left]]
+!b+1
+!10
+!Mid
+|-
+![[Seven Star Fist]]
+!b+2, 2
+!13, 10
+!Mid, low
+|-
+![[Peacock Kick (Ling Xiaoyu)|Peacock Kick]]
+!b+3
+!21
+!High
+|-
+![[Phoenix Twin Kick|Phoenix Twin Kick to Rain Dance]]
+!b+4
+!13, 17
+!High, high
+|-
+![[Phoenix Twin Kick]]
+!b+4
+!13, 17
+!High, high
+|-
+![[Hypnotist]]
+!b+1+2
+!-
+!-
+|-
+![[Backflip (Ling Xiaoyu)|Backflip]]
+!u/b+3+4
+!23
+!Mid
+|-
+![[Backflip to Phoenix]]
+!u/b+3+4, d+1+2
+!23
+!Mid
+|-
+![[Single Fan|Single Fan to Rain Dance]]
+!u+1
+!13
+!Mid
+|-
+![[Single Fan Forward|Single Fan]]
+!u+1
+!13
+!Mid
+|-
+![[Double Fan]]
+!u+1+2
+!5, 5
+!Mid, mid
+|-
+![[Hydrangea]]
+!u+1+2, 2
+!5, 5, 12
+!Mid, mid, mid
+|-
+![[Fortune Cookie]]
+!u+1+2, 2, 1
+!5, 5, 12, 23
+!Mid, mid, mid, mid
+|-
+![[Ginger Snap]]
+!u+1+2, 3+4
+!5, 5
+!Mid, mid
+|-
+![[Bolting Rabbit]]
+!u/f (or u or u/b)+3
+!13
+!Mid
+|-
+![[Cyanide]]
+!u/f (or u)+4
+!23
+!Mid
+|-
+![[Flare Kick to Phoenix]]
+!u/f+4, d+1+2
+!23
+!Mid
+|-
+![[Phoenix Flight]]
+!u/f+1+2
+!23
+!Mid
+|-
+![[Shooting Star]]
+!u/f+3+4
+!8, 10, 12
+!Mid, mid, mid
+|-
+![[Poison Flower]]
+!f, f+1, 3
+!18, 20
+!Mid
+|-
+![[Eclipsing Moon]]
+!f, f+1, 4
+!18, 20
+!Mid, mid
+|-
+![[Fortune]]
+!f, f+2, 1
+!12, 23
+!Mid, mid
+|-
+![[Raccoon Swing]]
+!f, f+3
+!13
+!Mid
+|-
+![[Step Kick (Xiaoyu)|Step Kick]]
+!f, f+4
+!25
+!Mid
+|-
+![[Swallow Dance]]
+!f, f+4, With the opponent on guard 4
+!-
+!-
+|-
+![[X Marks the Spot]]
+!f, f+1+2, 1+2
+!12, 21
+!Mid, mid
+|-
+![[Front Layout]]
+!f, f+3+4
+!25
+!Mid
+|-
+![[Diving Falcon]]
+!f, f, f+3
+!20
+!Mid
+|-
+![[Sunflower]]
+!WS+2
+!17
+!Mid
+|-
+![[Jasmine Blossom]]
+!WS+2 Hold
+!20
+!Mid
+|-
+![[Rising Axe Kick]]
+!WS+3
+!22
+!Mid
+|-
+![[Skyscraper Kick]]
+!WS+4
+!20
+!Mid
+|-
+![[Rising Spin Kick]]
+!WS+b+4
+!20
+!High
+|-
+![[Fire Dancer]]
+!FC+3, 2, 1, 4
+!11, 6, 6, 12
+!Low, high, high, mid
+|-
+![[Lotus Twist]]
+!FC+d/f+2, 1
+!10, 13
+!Low, low
+|-
+![[Surprise Sweep Kick]]
+!FC+d/f+4
+!20
+!Low
+|-
+![[Low Back Turn]]
+!FC+d/b+3+4
+!-
+!-
+|-
+![[Phoenix Tail (Xiaoyu)|Phoenix Tail]]
+!During side step 3
+!20
+!Low
+|-
+![[Phoenix Tail to Phoenix]]
+!During side step 3, d+1+2
+!20
+!Low
+|-
+![[Street Sweeper]]
+!During side step 4
+!17
+!Low
+|-
+![[Rain Dance]]
+!b+3+4
+!-
+!-
+|-
+![[Phoenix]]
+!d+1+2
+!-
+!-
+|-
+![[Schoolgirl Stomp]]
+!(With opponent down) d+4
+!20
+!Low
+|-
+![[Taunt 1 (Miharu)|Taunt 1]]
+!1+3+4
+!-
+!-
+|-
+![[Taunt 2 (Miharu)|Taunt 2]]
+!2+3+4
+!-
+!-
+|-
+|}
+
+===During [[The Phoenix|Phoenix]]===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Phoenix]]
+!d+1+2
+!-
+!-
+|-
+![[Double Serving]]
+!During Phoenix 1, 2
+!11, 15
+!Mid, high
+|-
+![[Right Handful]]
+!During Phoenix 2
+!10
+!Mid
+|-
+![[Phoenix Double Palm]]
+!During Phoenix 2, 1
+!10, 23
+!Mid, mid
+|-
+![[Knee Stabber]]
+!During Phoenix 3
+!15
+!Low
+|-
+![[Rising Front Kick]]
+!During Phoenix 4
+!13
+!Mid
+|-
+![[Firecracker (Xiaoyu)|Firecracker]]
+!During Phoenix [4~3]
+!18
+!Low
+|-
+![[Firecracker Roll]]
+!During Phoenix [4~3], u (or d)
+!18
+!Low
+|-
+![[Phoenix Cannon]]
+!During Phoenix 1+2
+!11, 15
+!Mid, mid
+|-
+![[Phoenix Talon]]
+!During Phoenix 3+4
+!8, 8, 13
+!Mid, mid, mid
+|-
+![[Flower Garden]]
+!During Phoenix f+4, 4
+!10, 10
+!Low, low
+|-
+![[Roll Ball]]
+!During Phoenix f+3+4
+!-
+!-
+|-
+![[Forward Roll to Phoenix]]
+!During Phoenix f+3+4, d+1+2
+!-
+!-
+|-
+![[Butterfly]]
+!During Phoenix d
+!-
+!-
+|-
+![[Phoenix Swipe]]
+!During Phoenix d+1
+!13
+!Low
+|-
+![[Wave Crest]]
+!During Phoenix d+1+2
+!21
+!Mid
+|-
+![[Phoenix to Rain Dance]]
+!During Phoenix b+3+4
+!-
+!-
+|-
+![[Jump (Ling Xiaoyu)|Jump]]
+!During Phoenix u/f (or u or u/b)
+!-
+!-
+|-
+![[Alley-Oop]]
+!During Phoenix u/f (or u or u/b)+3, 1
+!16,22
+!Mid, mid
+|-
+![[Double Barrel Shotgun]]
+!During Phoenix u/f (or u or u/b)+3, 3
+!16, 25
+!Mid, high
+|-
+![[Double Scissor Kick]]
+!During Phoenix u/f (or u or u/b)+3, 4
+!16, 18
+!Mid, mid
+|-
+![[Flower Power]]
+!During Phoenix u/f (or u)+4, 4
+!12,12
+!Mid, mid
+|-
+![[Sky Kick]]
+!During Phoenix u/f (or u or u/b) falling 3
+!18
+!Low
+|-
+![[Jumping Pirouette]]
+!During Phoenix u/f (or u or u/b), N, 3
+!30
+!Mid
+|-
+![[Jumping Pirouette to Phoenix]]
+!During Phoenix u/f (or u or u/b), N, 3, d+1+2
+!30
+!Mid
+|-
+![[Crane Kick (Ling Xiaoyu)|Crane Kick]]
+!During Phoenix u/ f (or u or u / b), N, 4
+!25
+!Mid
+|}
+
+===[[Rain Dance|Back to the opponent]]===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Rain Dance]]
+!b+3+4
+!-
+!-
+|-
+![[Falcon's Beak]]
+!Back to the opponent 1
+!17
+!Mid
+|-
+![[Hidden Fortune]]
+!Back to the opponent 1, 4
+!17, 23
+!Mid, high
+|-
+![[Dark & Stormy]]
+!Back to the opponent 2, 1, 4
+!8, 8, 15
+!High, high, mid
+|-
+![[Turn of Fortune]]
+!Back to the opponent 2, 2, 1
+!8, 12, 7, 7, 7
+!High, high, mid, mid, mid
+|-
+![[Turn of Fortune to Phoenix]]
+!Back to the opponent 2, 2, 1, d
+!8, 12, 7, 7, 7
+!High, high, mid, mid, mid
+|-
+![[Monkey Kick]]
+!Back to the opponent 3
+!20
+!Mid
+|-
+![[Mistrust]]
+!Back to the opponent 4
+!17
+!Mid
+|-
+![[Battering Winds]]
+!Back to opponent 1+2, 1+2
+!6, 6, 6, 6
+!Mid, mid, mid, mid
+|-
+![[Spin Tornado Up|Spin Tornado Up (Down)]]
+!Back to the opponent 3+4 (or b+3+4)
+!-
+!-
+|-
+![[Spinning Push Hands]]
+!Back to the opponent f+1+2
+!21
+!Mid
+|-
+![[California Roll]]
+!Back to the opponent f+3+4
+!-
+!-
+|-
+![[Cyclone Left]]
+!Back to the opponent f+3+4, 3+4
+!22
+!Mid
+|-
+![[Back Circle Breaker Backward]]
+!Back to the opponent d+3
+!13
+!Low
+|-
+![[Back Circle Breaker]]
+!Back to the opponent d+3
+!13
+!Low
+|-
+![[Hou Sao Tui]]
+!Back to the opponent d+4
+!10
+!Low
+|-
+![[Spin Tornado]]
+!Back to the opponent d+1+2
+!-
+!-
+|-
+![[Guard Breaker (Xiaoyu)|Guard Breaker]]
+!Back to the opponent d/b (or d/f)+4
+!-
+!Low
+|-
+![[Silver Needle]]
+!Back to opponent f, f+1
+!17
+!Low
+|-
+![[Peg Leg]]
+!Back to the opponent f, f+3
+!18
+!Mid
+|-
+![[Miharu Attack]]
+!Back to the opponent f, f+3+4
+!20
+!Mid
+|-
+|}
+
+===During [[Hypnotist]]===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Hypnotist]]
+!b+1+2
+!-
+!-
+|-
+![[Spin Sticker]]
+!During Hypnotist 2
+!30
+!Mid
+|-
+![[Falling Tiger Kick]]
+!During Hypnotist 4
+!20
+!High
+|-
+![[Thunder Strike (Xiaoyu)|Thunder Strike]]
+!During Hypnotist 2+3
+!40, 10
+!(!)
+|-
+![[Deadly Orchid]]
+!During Hypnotist 3+4
+!26
+!High
+|-
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="10 hit combo" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Xiaoyu)|u+4, 1, 2, 1+2, 1, 3, 4, 4, 4, 1]]
+!117
+!mhhmmhllmm
+|-
+![[10 Hit Combo 2 (Xiaoyu)|u+4, 1, 2, 4, 4, 2, 1+2, 1, 4, 2]]
+!117
+!mhhllmmlmm
+|-
+|}
+
+[[Category:Moves Lists]]
+[[Category:Miharu Hirano Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]
+[[es:Miharu Hirano/Tekken Tag Tournament 2 Movelist]]

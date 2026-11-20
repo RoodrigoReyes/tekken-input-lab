@@ -1,0 +1,524 @@
+'''Feng Wei/Tekken Tag Tournament 2 Movelist''' is a list of all the moves that [[Feng Wei]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Movelist==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Neck Twister]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Serpent Slayer]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Jaws of Death]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Wandering Soul]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Violent Storm]]
+!1+3 (or 2+4)
+!Back
+!50
+!
+|-
+![[Avalanche (Feng Wei)|Avalanche]]
+!d/f+1+2
+!Front
+!40
+!1+2
+|-
+![[Pao Lau Impaler]]
+!Back to opponent 1+4 (or 2+3)
+!Front
+!50
+!1+2
+|-
+![[Attack Reversal]]
+!Synchro with the opponent's punch b+1+3 (or b+2+4)
+!Parry
+!25
+!
+|-
+![[Shifting Clouds]]
+!Synchro with opponent's attack f+3+4
+!Parry
+!-
+!
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Jab Spear Fist]]
+!1, 1
+!7, 21
+!High, mid
+|-
+![[Firestorm]]
+!1, 2, 2
+!7, 8, 10
+!High, high, high
+|-
+![[Jab Roundhouse Combo]]
+!1, 3
+!7, 17
+!High, high
+|-
+![[San Lian Heng]]
+!2, 4, 1
+!8, 10, 20
+!High, mid, mid
+|-
+![[Peacock Sweep]]
+!3, 3, 4
+!15, 18, 23
+!High, high, low
+|-
+![[Pummeling Windmill]]
+![2~1]
+!10
+!Mid
+|-
+![[Mad Windmill]]
+![2~1], 1
+!10, 20
+!Mid, mid
+|-
+![[Leaping Whirlwind Combo]]
+![3~4], 3
+!32, 20
+!Mid, low
+|-
+![[Headspring]]
+![4~3]
+!25
+!Mid
+|-
+![[Iron Shield]]
+!1+2
+!23
+!Mid
+|-
+![[Xuan Jiao Xiao Yan Shou]]
+!1+4
+!7, 10
+!Low, high
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Boar's Tusk]]
+!f+2, 1, 2
+!12, 13, 20
+!Mid, mid, mid
+|-
+![[Front Kick (Feng)|Front Kick]]
+!f+3
+!10
+!Mid
+|-
+![[Climbing Dragon]]
+!f+3, 4
+!10, 20
+!Mid, mid
+|-
+![[Tornado Reverse]]
+!f+4
+!15
+!High
+|-
+![[Tornado Stomp]]
+!f+4, 3
+!15, 20
+!High, mid
+|-
+![[Tornado Sweep]]
+!f+4, 4
+!15, 10
+!High, low
+|-
+![[Reverse Backfist]]
+!f+1+2
+!35
+!High
+|-
+![[Shifting Clouds]]
+!f (or d, d/f, f)+3+4
+!-
+!-
+|-
+![[Bao Dan Po]]
+!f+3+4, 1
+!20
+!Mid
+|-
+![[Poison Chalice]]
+!f+3+4, 2
+!15
+!Mid
+|-
+![[Scorpion Sting]]
+!f+3+4, 3
+!30
+!High
+|-
+![[Jin Bu Zhen]]
+!f+3+4, 4
+!20
+!Low
+|-
+![[Feng Ya Lian Ji]]
+!f+3+4, 1+2, 1, 2
+!7, 8, 18
+!Mid, high, high
+|-
+![[Stunning Palm]]
+!d/f+1
+!12
+!Mid
+|-
+![[God Fist]]
+!d/f+2, 2
+!15, 21
+!Mid, mid
+|-
+![[Lift Kick (Feng)|Lift Kick]]
+!d/f+3
+!21
+!Mid
+|-
+![[Front Kick (Feng)|Front Kick]]
+!d/f+4
+!15
+!Mid
+|-
+![[Ruinous Halberd]]
+!d/f+3+4
+!23
+!Mid
+|-
+![[Heavy Hammer]]
+!d+2
+!17
+!Low
+|-
+![[Parting Heavens]]
+!d+4, 1+2
+!7, 22
+!Low, mid
+|-
+![[Torrential Pain]]
+!d+1+2, 1, 2
+!5, 6, 7, 12
+!Mid, high, high, mid
+|-
+![[Spear of Lu Bu]]
+!d/b+1, 2
+!12, 18
+!Mid, mid
+|-
+![[Hellwinds]]
+!d/b+2, 2, 2
+!5, 10, 20
+!High, high, mid
+|-
+![[Piercing Arrow]]
+!d/b+3
+!12
+!Low
+|-
+![[Sweep Kick (Feng Wei)|Sweep Kick]]
+!d/b+4
+!25
+!Low
+|-
+![[Dragon Slayer]]
+!d/b+1+2, 2
+!15, 15
+!Mid, low
+|-
+![[Iron Palm]]
+!b+1
+!17
+!High
+|-
+![[Hungry Tiger]]
+!b+2, 3, 4, 2
+!15, 8, 12, 20
+!Mid, low, mid, mid
+|-
+![[Zhuan Shen Lian Wu]]
+!b+3, 3
+!12, 15
+!Mid, high
+|-
+![[Zhuan Shen Huan Wu]]
+!b+[3~4]
+!-
+!-
+|-
+![[Backfist (Feng Wei)|Backfist]]
+!Back to opponent 1
+!12
+!High
+|-
+![[Circling Tiger]]
+!Back to opponent 2, 2
+!12, 17
+!Mid, mid
+|-
+![[Tremor Stomp]]
+!Back to opponent 3
+!30
+!Mid
+|-
+![[Hustle Elbow]]
+!Back to opponent 1+2
+!22
+!Mid
+|-
+![[Reverse Sweep Kick]]
+!Back to opponent d+3
+!9
+!Low
+|-
+![[Fish Hook]]
+!b+4
+!15
+!Mid
+|-
+![[Iron Fortress]]
+!b+1+2
+!30
+!Mid
+|-
+![[Deceptive Step]]
+!b+3+4
+!-
+!-
+|-
+![[Fractured Diamond]]
+!b+3+4, 1
+!15
+!Low
+|-
+![[Fei He Zhang]]
+!b+3+4, 2
+!20
+!High
+|-
+![[Rising Swallow Kick]]
+!b+3+4, 3
+!17
+!Mid
+|-
+![[Leaping Lion]]
+!b+3+4, 4, 3+4
+!30
+!Mid, mid
+|-
+![[Throat Gouge]]
+!u/b+2
+!13, 21
+!Mid, high
+|-
+![[Death Palm]]
+!u/b+1+2
+!50
+!!
+|-
+![[Leaping Hammer Fist]]
+!u+2
+!30
+!Mid
+|-
+![[Eagle Claw]]
+!u/f (or u or u/b)+1
+!12
+!Mid
+|-
+![[Evading Palm Strike]]
+!u/f+2
+!18
+!Mid
+|-
+![[Side Swipe]]
+!u/f (or u or u/b)+3
+!22
+!High
+|-
+![[Soaring Eagle]]
+!u/f (or u or u/b)+4
+!13
+!Mid
+|-
+![[Assassin's Bow]]
+!u/f+3+4, 3
+!10, 10, 10, 20
+!Mid, high, high, high
+|-
+![[Exploding Dagger]]
+!f, f+2
+!23
+!Mid
+|-
+![[Tremor Stomp]]
+!f, f+3
+!30
+!Mid
+|-
+![[Spreading Wings]]
+!f, f+4, 3
+!13, 20
+!Mid, mid
+|-
+![[Nian Zhang Mie Ba]]
+!f, f+1+2
+!28
+!Mid
+|-
+![[Falcon's Beak (Feng Wei)|Falcon's Beak]]
+!b,f+1
+!25
+!Mid
+|-
+![[Lingering Shadow]]
+!d, d/f, f
+!-
+!-
+|-
+![[Landslide]]
+!d, d/f, f+1
+!25
+!Low
+|-
+![[Mountain Crusher (Feng)|Mountain Crusher]]
+!d, d/f, f+2
+!22
+!Mid
+|-
+![[Yan Wang's Wrath]]
+!d, d/f, f+1+2
+!23
+!Mid
+|-
+![[Shifting Clouds]]
+!d, d/f, f+3+4
+!-
+!-
+|-
+![[Severing Sword]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Dancing Dragon]]
+!WS+1, 2, 1
+!13, 13, 20
+!Mid, mid, mid
+|-
+![[Adamantine Uppercut]]
+!WS+2
+!17
+!Mid
+|-
+![[Bow Kick]]
+!WS+3
+!20
+!Mid
+|-
+![[Rising Heel Kick]]
+!WS+4
+!18
+!Mid
+|-
+![[Push Hands (Feng Wei)|Push Hands]]
+!WS+1+2
+!25
+!Mid
+|-
+![[Silent Arrow]]
+!FC+d/f+1
+!18
+!Low
+|-
+![[Hidden Intentions]]
+!SS+2
+!18
+!High
+|-
+![[Jade Spear to Hustle Elbow]]
+!SS+3, 2
+!12, 20
+!High, mid
+|-
+![[Sweep Kick (Feng)|Sweep Kick]]
+!SS+4
+!9
+!Low
+|-
+![[Enlightened Circle]]
+!SS+1+2
+!23
+!Mid
+|-
+![[Spring Up (Feng)|Spring Up]]
+!On the ground (on the back) 3+4
+!17
+!Mid
+|-
+![[Thunder Stomp]]
+!(With the opponent down) d+3+4
+!24
+!Low
+|-
+![[Taunt (Feng Wei)|Taunt]]
+!1+3+4
+!-
+!-
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Feng Wei)|f+1, 1, 2, 1, 3, 4, 2, 2, 2, 2]]
+!112
+!hmmmlmllmm
+|-
+![[10 Hit Combo 2 (Feng Wei)|f+1, 1, 2, 1, 3, 4, 2, 4, 3, 1+2]]
+!110
+!hmmmlmlhmh
+|}
+
+<br />
+[[Category:Moves Lists]]
+[[Category:Feng Wei Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

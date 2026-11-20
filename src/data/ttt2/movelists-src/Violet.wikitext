@@ -1,0 +1,506 @@
+'''Violet/Tekken Tag Tournament 2 Movelist''' is a list of all the moves that [[Violet]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Movelist==
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Forearm Drop]]
+!1+3  (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Axle Throw]]
+!2+4  (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Lee Harassment|Violet Harassment]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Lee Stunner|Violet Stunner]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Face Crusher]]
+!1+3 (or 2+4)
+!Back
+!60
+!
+|-
+![[Knee Lift (throw)|Knee Drive]]
+!f, f+3+4
+!Front
+!20
+!1+2
+|-
+![[Mist Illusion]]
+!Synchro with the opponent's punch b+1+2
+!Parry
+!-
+!
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Left Right Combo]]
+!1, 2
+!7, 8
+!High, high
+|-
+![[Left Right Combo to Revolution Zwei]]
+!1, 2, 2, 3
+!7, 8, 13, 23
+!High, high, mid, high
+|-
+![[Left Right Mid Kick]]
+!1, 2, 4
+!7, 8, 10
+!High, high, mid
+|-
+![[Left Right Max Mid]]
+!1, 2, 4 Mantain
+!7, 8, 22
+!High, high, mid
+|-
+![[Left Right Combo to Mist Step]]
+!1, 2, f, N
+!7, 8
+!High, high
+|-
+![[Combination Drei]]
+!2, 1, 1
+!10, 8, 18
+!High, high, mid
+|-
+![[Combination Vier]]
+!2, 1, 4
+!10 ,8, 18
+!High, high, low
+|-
+![[Right Cross to Revolution Zwei]]
+!2, 2, 3
+!10, 13, 23
+!High, mid, high
+|-
+![[Mist Kick]]
+!3
+!18
+!Mid
+|-
+![[Mist Wolf Combination]]
+!3, 3
+!18, 18
+!Mid, high
+|-
+![[Trick Kick]]
+![3~3]
+!18
+!High
+|-
+![[Mist Trap Throw]]
+![3 ~ 3], (on receiving a blow or on guard) 4
+!18, 15, 5
+!High
+|-
+![[Spinning Hammer Kick]]
+!4, 3, 3
+!16, 12, 15
+!High, mid, mid
+|-
+![[Spin Kick Somersault Combo]]
+!4, 3, 4
+!16, 12, 21
+!High, high, mid
+|-
+![[Machinegun Kicks (Lee)|Machinegun Kicks]]
+!4, 4, 4
+!16, 6, 6
+!High, high, high
+|-
+![[Lee Somersault|Violet Somersault]]
+!4, u+3
+!16, 25
+!High, mid
+|-
+![[Pirouette Punch]]
+!1+2
+!22
+!Mid
+|-
+![[Hit Man|Hitman]]
+!3+4
+!-
+!-
+|-
+![[Freaker Jab]]
+!During Hitman 1
+!10
+!High
+|-
+![[Freaker Jab Rush]]
+!During Hitman 1, 1, 1, 1
+!10, 10, 10, 10
+!High, high, high, high
+|-
+![[Excellent Combo]]
+!During Hitman 1, 4
+!10, 15
+!High, mid
+|-
+![[Scatter Blow]]
+!During Hitman 2
+!23
+!Mid
+|-
+![[Scatter Kick]]
+!During Hitman 3
+!21, 13
+!High
+|-
+![[Shin Slicer]]
+!During Hitman 4
+!23
+!Low
+|-
+![[Poison Touch]]
+!During Hitman 1+2
+!12, 12
+!Mid, mid
+|-
+![[Silver Slash|Silver Rush]]
+!During Hitman u/f+3
+!23
+!Mid
+|-
+![[Silver Circle]]
+!During Hitman u/f+4
+!20
+!Mid
+|-
+![[Supercharger|Hit Spark]]
+!1+2+3+4
+!-
+!-
+|-
+![[Double Signal]]
+!f+2, 1
+!13, 21
+!Mid, high
+|-
+![[Acid Rain Kick Combination]]
+!f+3, during attack 3, during attack 3
+!13, 8, 5
+!High, mid, high
+|-
+![[Silver Whip]]
+!f+4
+!13
+!High
+|-
+![[Deadly Arc]]
+!f+4, 3
+!13, 18
+!High, mid
+|-
+![[Revolution Zwei]]
+!f+1+2, 3
+!18, 23
+!Mid, high
+|-
+![[Feather Landing]]
+!f+3+4
+!13, 16
+!Mid, mid
+|-
+![[Mist Step (Lee)|Mist Step]]
+!f,N
+!-
+!-
+|-
+![[Cossack Kick Combo]]
+!During Mist Step 3, 4
+!10, 16
+!Mid, mid
+|-
+![[Lee Sliding|Violet Sliding]]
+!During Mist Step 3+4
+!15
+!Low
+|-
+![[Sway (Lee)|Sway]]
+!During Mist Step b,N
+!-
+!-
+|-
+![[Stutter Kick]]
+!During Mist Step b,N,4
+!18
+!Low
+|-
+![[Mercury Drive]]
+!d/f+3, 2, 3
+!15, 11, 21
+!Mid, high, mid
+|-
+![[Front Kick (Lee)|Front Kick]]
+!d/f+4
+!15
+!Mid
+|-
+![[Gut Polisher]]
+!d+2
+!18
+!Mid
+|-
+![[Silver Low]]
+!d+3
+!13
+!Low
+|-
+![[Shin to Head Kick]]
+!d+4, N, 4
+!7, 16
+!Low, high
+|-
+![[Shin to Spinning Hammer Kick]]
+!d+4, N, 4, 3, 3
+!7, 16, 12, 15
+!Low, high, high, mid
+|-
+![[Shin to Spin Kick Somersault Combo]]
+!d+4, N, 4, 3, 4
+!7, 16, 12, 21
+!Low, high, high, mid
+|-
+![[Laser Edge Machine Gun Kick]]
+!d+4, N, 4, 4, 4
+!7, 16, 8, 8
+!Low, high, high, high
+|-
+![[Laser Edge Lee Somersault]]
+!d+4, N, 4, u+3
+!7, 16, 25
+!Low, high, mid
+|-
+![[Laser Edge Kick Combo]]
+!d+4, 4, 4, 4
+!7, 8, 5, 21
+!Low, low, low, mid
+|-
+![[Silver Cyclone]]
+!d+3+4
+!80
+!!
+|-
+![[Bump Kick]]
+!d/b+3
+!15
+!Low
+|-
+![[Death Touch]]
+!d/b+1+2 (u, u to cancel)
+!20,45
+!<nowiki>!!</nowiki>
+|-
+![[Grass Snake]]
+!d/b+3+4
+!20
+!Low
+|-
+![[Triple Fang]]
+!b+1, 1, 2
+!8, 6, 15
+!High, mid, high
+|-
+![[Triple Fang to Hitman]]
+!b+1, 1, 3+4
+!8, 6
+!High, mid
+|-
+![[Triple Fang to Mist Step]]
+!b+1, 1 ,f, N
+!8
+!High
+|-
+![[Rear Cross Punch]]
+!b+2
+!11
+!High
+|-
+![[Right Cross to Mist Step]]
+!b+2 ,f ,N
+!11
+!High
+|-
+![[Super High Combination]]
+!b+2, 4 ,3
+!11, 17, 30
+!High, high, high
+|-
+![[Axe Kick Combination]]
+!b+3, 4
+!15, 18
+!Mid, high
+|-
+![[Silver Heel]]
+!b+4
+!22
+!Mid
+|-
+![[Wheel of Fate]]
+!u/b+3
+!21
+!Mid
+|-
+![[Somersault|Fake]]
+!u+3
+!-
+!-
+|-
+![[Brilliant Rosé]]
+!u/f+3, 1
+!16, 18
+!Mid, mid
+|-
+![[Double Mazurek]]
+!u/f+3, 4
+!16, 21
+!Mid, high
+|-
+![[Silver Arrow]]
+!u/f+4
+!13
+!Mid
+|-
+![[Silver Bullet|Silver Sting]]
+!u/f+3+4
+!18
+!High
+|-
+![[Pulse Blast]]
+!f, f+3
+!28
+!Mid
+|-
+![[Deadly Edge]]
+!f, f+4
+!22
+!High
+|-
+![[Aggressive One-Two]]
+!f, f+1+2
+!10, 20
+!High, high
+|-
+![[Blazing Kick]]
+!d, d/b+4
+!20
+!Mid
+|-
+![[Lee Cutter|Violet Cutter]]
+!b, b+4
+!23
+!High
+|-
+![[Back Handspring to Hitman]]
+!u/b, b
+!-
+!-
+|-
+![[Waxing Crescent]]
+!f, f, f+3, 4
+!16, 25 
+!Mid
+|-
+![[Rocket Heel]]
+!WS+2, 3
+!10, 20
+!Mid, mid
+|-
+![[Infinite Kick Chain]]
+!WS+3, 3, d+3, N, 3, 3, ...
+!16, 11, 8, 10...
+!Mid, mid, low, mid, high...
+|-
+![[Infinite Kick Chain|Infinite Kick Chain 2]]
+!WS+3, 3, d/f+3, N, 3, 3, ...
+!16, 11, 10, 10....
+!Mid, mid, mid, high, mid...
+|-
+![[Low Variation]]
+!During Infinite Kick Chain d+3, 3, ...
+!16, 11, 8, 10, 10, 10...
+!Low, mid, high...
+|-
+![[High Variation]]
+!During Infinite Kick Chain u+3, 3, ...
+!16, 11, 8, 10, 15...
+!Mid, mid, high...
+|-
+![[Silver Tail]]
+!FC+d/f+4
+!17
+!Low
+|-
+![[Somersault Flip|Catapult Kick Low]]
+!FC+u/f (or u or u/b)+4
+!25
+!Mid
+|-
+![[High Somersault Kick|Catapult Kick High]]
+!FC+U/F (or U or U/B)+4
+!30
+!Mid
+|-
+![[Rainbow Kick|Catapult Drop]]
+!FC+u/f (or U or U/B)+3+4
+!30, 30
+!Mid, mid
+|-
+![[Slide Kick|Sliding]]
+!FC+d/f, d, d/f+3
+!22
+!Low
+|-
+![[Lee Screw Left|Violet Screw Left]]
+!SS+ (right) 3+4
+!35
+!High
+|-
+![[Lee Screw Right|Violet Screw Right]]
+!SS+ (left) 3+4
+!30
+!High
+|}
+
+==10 Hit Combo==
+{| class="wikitable sortable" id="10 hit combo" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo (Lee)|d/f+1, 2, 2, 1, 3, 3, 3, 4, 3, 4]]
+!88
+!mhhhhlhhhm
+|}
+
+[[Category:Moves Lists]]
+[[Category:Violet Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

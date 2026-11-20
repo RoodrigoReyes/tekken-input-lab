@@ -1,0 +1,449 @@
+'''Paul Phoenix/Tekken Tag Tournament 2 Movelist''' is a list of all of the moves that [[Paul Phoenix|Paul]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Movelist==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Over The Shoulder]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Shoulder Pop]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Dragon Screw]]
+!1+3 (or 2+4)
+!Left
+!45
+!1
+|-
+![[Fall Away]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Reverse Neck Throw]]
+!1+3 (or f+1+3)
+!Back
+!50
+!
+|-
+![[Piggyback Throw]]
+!2+4 (or f+2+4)
+!Back
+!50
+!
+|-
+![[Chest Crusher]]
+!2+4, b
+!Front
+!40
+!2
+|-
+![[Twist and Shout]]
+!d/f+1+2
+!Front
+!40
+!1+2
+|-
+![[Kongo Blast]]
+!d/f+1+3, qcf+2
+!Front
+!38
+!1
+|-
+![[Foot Launch]]
+!b+1+4
+!Front
+!40
+!1
+|-
+![[Push Away]]
+!f, f+1+2
+!Front
+!38
+!1+2
+|-
+![[Ultimate Tackle]]
+!d/b+1+2
+!Front
+!5
+!1+2
+|-
+![[Ultimate Punch]] to [[Cross Arm Lock|Arm Breaker]]
+!During tackle 2, 1, 2, 1+2
+!Front
+!45
+!1 or 2
+|-
+![[Ultimate Punch]]
+!During tackle 2, 1, 2, 1
+!Front
+!35
+!
+|-
+![[Ultimate Punishment]]
+!During tackle 2, d+1, 1, N, 4, 1, 1+2
+!Front
+!61
+!
+|-
+![[Cross Arm Lock|Arm Breaker]]
+!During tackle 1+2
+!Front
+!30
+!1+2
+|-
+![[Attack Reversal]]
+!Synchro with the opponent's attack b+1+3 (or b+2+4)
+!Parry
+!25
+!
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Left Right Combo]]
+!1, 2
+!7, 12
+!High, high
+|-
+![[Reverse PDK Combo]]
+!1, 4
+!7, 7
+!High, low
+|-
+![[Jab Roundhouse]]
+!2, 3
+!12, 21
+!High, high
+|-
+![[Jab Sweep]]
+!2, d+3
+!12, 11
+!High, low
+|-
+![[Piston Fire]]
+!3, 2
+!14, 17
+!Mid, high
+|-
+![[Supercharger|KI Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Quick PK Smash]]
+!f+2, 3, 1
+!10, 16, 22
+!High, high, mid
+|-
+![[Hammer of the Gods]]
+!f+1+2
+!22
+!Mid
+|-
+![[Shoulder Tackle (Paul)|Shoulder Tackle]]
+!f+1+4
+!26
+!Mid
+|-
+![[Lion's Roar]]
+!d/f+1, 1, 2
+!12, 8, 22
+!Mid, high, mid
+|-
+![[Body Blow (Paul Phoenix)|Body Blow to Sway]]
+!d/f+1, b
+!12
+!Mid
+|-
+![[Phoenix Wings]]
+!d/f+3, 4
+!13, 17
+!Mid, mid
+|-
+![[The Boot]]
+!d/f+4
+!23
+!Mid
+|-
+![[Hammer Punch]]
+!d+1
+!16
+!Mid
+|-
+![[Hammer Punch to Power Punch]]
+!d+1, 2
+!16, 26
+!Mid, mid
+|-
+![[Hang Over]]
+!d+1, 4, 2
+!16, 15, 21
+!Mid, low, mid
+|-
+![[Bone Breaker]]
+!d+4, 2
+!10, 17
+!Low, mid
+|-
+![[Demolition Man]]
+!d+4, 2, 1+2
+!10, 20, 24
+!Low, mid, mid
+|-
+![[Shoulder Smash (Paul)|Shoulder Smash]]
+!d+1+2
+!30
+!Mid
+|-
+![[Ouha]]
+!d/b+2
+!17
+!Mid
+|-
+![[Sweep Kick]]
+!d/b+3
+!12
+!Low
+|-
+![[Double Strike]]
+!b+1, 2
+!12, 20
+!High, mid
+|-
+![[Wrecking Ball]]
+!b+2
+!23
+!Mid
+|-
+![[Lights Out]]
+!b+3
+!16
+!High
+|-
+![[Leg Sweep]]
+!b+4
+!13
+!Low
+|-
+![[Hassou Strike]]
+!b+1+2
+!35
+!High
+|-
+![[Mortar Punch]]
+!u/f+2
+!35
+!Mid
+|-
+![[Shredder (Paul)|Shredder]]
+!u/f+3, 4
+!13, 20
+!Mid, mid
+|-
+![[Flash Elbow]]
+!f, f (or FC+d/f)+2
+!13
+!Mid
+|-
+![[Juggernaut]]
+!f, f (or FC+d/f)+2, 1
+!13, 20
+!Mid, mid
+|-
+![[Phoenix Bone Breaker]]
+!f, f (or FC+d/f)+2, during attack 1
+!13, 23
+!Mid, high
+|-
+![[Bulldozer]]
+!f, f (or FC+d/f)+2, 2
+!13, 21
+!Mid, low
+|-
+![[Double Hop Kick High]]
+!f, f+3, 4, 4
+!17, 15, 12
+!Mid, mid, high
+|-
+![[Triple Kick Combo (Paul)|Triple Kick Combo]]
+!f, f+3, 4, f+4
+!17, 15, 10
+!Mid, mid, mid
+|-
+![[Double Hop Kick Low]]
+!f, f+3, 4, d+4
+!17, 15, 4
+!Mid, mid, low
+|-
+![[Neutron Bomb]]
+!f, f+4
+!16
+!Mid
+|-
+![[Burning Spear]]
+!b, f+1
+!30
+!High
+|-
+![[Burning Fist]]
+!b, b+1+2
+!50
+!!
+|-
+![[Thruster]]
+!qcf+1
+!21
+!High
+|-
+![[Heavy Power Punch|Phoenix Smasher]]
+!qcf+2
+!33
+!Mid
+|-
+![[Gengetsu]]
+!qcf+3
+!15
+!Low
+|-
+![[Gunba]]
+!qcf+1+2
+!20
+!Low
+|-
+![[Mountain Raze]]
+!qcf+3+4
+!30
+!Mid
+|-
+![[Sway (Paul Phoenix)|Sway]]
+![[Sway (Paul Phoenix)|qcb]]
+!-
+!-
+|-
+![[God Hammer Punch]]
+![[Sway (Paul Phoenix)|qcb]]+1
+!23
+!Mid
+|-
+![[Rubber Band Attack]]
+![[Sway (Paul Phoenix)|qcb]]+2
+!20
+!Mid
+|-
+![[Sway and Low Kick]]
+![[Sway (Paul Phoenix)|qcb]]+3
+!13
+!Low
+|-
+![[Rapid Fire]]
+![[Sway (Paul Phoenix)|qcb]]+3, 2
+!13, 20
+!Low, mid
+|-
+![[Rapid Fire to Phoenix Smasher]]
+![[Sway (Paul Phoenix)|qcb]]+3, 2, 1
+!13, 20, 25
+!Low, mid, high
+|-
+![[Rapid Fire to Lightning Bolt]]
+![[Sway (Paul Phoenix)|qcb]]+3, 2, 3
+!13, 20, 15
+!Low, mid, low
+|-
+![[Kawaragoma]]
+![[Sway (Paul Phoenix)|qcb]]+4
+!27
+!High
+|-
+![[Higaku]]
+![[Sway (Paul Phoenix)|qcb]]+1+2
+!22
+!Mid
+|-
+![[Thunder Palm (Paul)|Thunder Palm]]
+!WS+2
+!20
+!Mid
+|-
+![[Shioh]]
+!WS+3, 2
+!16, 21
+!Mid, high
+|-
+![[Jaw Breaker (Paul)|Jaw Breaker]]
+!FC+d/f+2
+!16
+!Mid
+|-
+![[Gut Buster]]
+!FC+d/f+2, 1
+!16, 25
+!Mid, mid
+|-
+![[Stone Breaker]]
+!FC+d/f+2, 2
+!16, 21
+!Mid, low
+|-
+![[Incomplete Somersault]]
+!FC+d, (1 sec.) u+3+4
+!41
+!Mid
+|-
+![[Turn Thruster]]
+!SS+1
+!22
+!High
+|-
+![[Pump in Pedal]]
+!SS+3
+!17
+!Low
+|-
+![[Down Strike]]
+!(With opponent down) d+2
+!21
+!Low
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="10 hit combo" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Paul Phoenix)|1, 2, 3, 2, 1, 2, 1, 4, 2, 1]]
+!90
+!hhmhmhhlmm
+|-
+![[10 Hit Combo 2 (Paul Phoenix)|1, 2, 3, 1, 4, 2, 1, 4, 2, 1]]
+!100
+!hhmmlmhmlm
+|-
+![[10 Hit Combo 3 (Paul Phoenix)|1, 2, 3, 1, 2]]
+!64
+!hhmmm
+|}
+[[Category:Moves Lists]]
+[[Category:Paul Phoenix Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

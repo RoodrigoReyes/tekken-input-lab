@@ -1,0 +1,621 @@
+'''Armor King II/''Tekken Tag Tournament 2'' Moves List''' is a list of all of the moves that [[Armor King II]] can perform in ''[[Tekken Tag Tournament 2]]''.
+==Moves List==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Knee Bash]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Suplex]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Jumping Pile Driver|Jaguar Screwdriver]]
+!During Suplex d, d, d+1+2
+!Front
+!40
+!2
+|-
+![[Reverse Death Valley Bomb]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Heavy Fall Reverse DDT]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Reverse DDT (Armor King)|Reverse DDT]]
+!1+3 (or 2+4)
+!Back
+!60
+!
+|-
+![[Driving Headbutt]]
+!d/f+2+3
+!Front
+!40
+!2
+|-
+![[Tombstone Pile Driver|Tombstone Piledriver]]
+!d/b, f+2+4
+!Front
+!58
+!2
+|-
+![[DDT]]
+!d/b, d/b+1+2
+!Front
+!45
+!1+2
+|-
+![[Hades Drop]]
+!qcb+1+2
+!Front
+!45
+!1+2
+|-
+![[Double Arm Swing]]
+!f, b, d/b, d, d/f, f+1
+!Front
+!65
+!1
+|-
+![[Brilliant Brawler Kick]]
+!f, f, f+2+4
+!Front
+!40
+!1+2
+|-
+![[Armor King Driver]]
+!FC+d/b, d, d/b+1+2
+!Front
+!45
+!1+2
+|-
+![[Demon Bomb]]
+!Crouching opponent d+1+3
+!Front
+!45
+!1
+|-
+![[Spinning Leg Lock]]
+!Crouching opponent d+2+4
+!Front
+!45
+!2
+|-
+![[Stand Up]]
+!(With opponent down) d/b+2+4
+!Ground catch
+!-
+!2
+|-
+![[Seesaw Whip]]
+!(Opponent on the back) feet side d/b+1+3
+!Ground catch
+!30
+!1
+|-
+![[Enzui Knee]]
+!(Opponent on the back) head side d/b+1+3
+!Ground catch
+!30
+!1
+|-
+![[Turn Over]]
+!(Opponent on the back) on the opponent's side d/b+1+3 (or d/b+2+4)
+!Ground catch
+!-
+!1 or 2
+|-
+![[Standing Heel Hold (Armor King)|Standing Heel Hold]]
+!(Opponent facing down) feet side d/b+1+3
+!Ground catch
+!35
+!1
+|-
+![[Wake-Up Lariat]]
+!(Opponent facing down) head side d/b+1+3
+!Ground catch
+!40
+!1
+|-
+![[Back Mount]]
+!(Opponent face down) on the opponent's side d/b+1+3 (or d/b+2+4)
+!Ground catch
+!-
+!1 or 2
+|-
+![[Muscle Driver]]
+!Opponent in the air f, b, d/b, d, d/f, f+1
+!Air Throw
+!16
+!
+|-
+![[Running Cross Driver]]
+!Opponent in the air f, f, f+2+4
+!Air Throw
+!20
+!
+|-
+![[Catch]]
+!Synchro with the opponent's punch b+1+3 (or b+2+4)
+!Parry
+!25
+!
+|-
+
+|}
+
+===[[Mexican Magma Drive]]===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Cobra Clutch]]
+!f, N, d, d/f+1+4 (or 2+3)
+!Front
+!20
+!1 or 2
+|-
+![[Flinging Half Nelson]]
+!During Cobra Clutch 2+4, 1+2, 1+2
+!Front
+!25
+!1
+|-
+![[Sleeper]]
+!During Cobra Clutch 3+4, 3+4, 1+2
+!Front
+!15
+!2
+|-
+![[Neck Drop]]
+!During Cobra Clutch 2, 1, 1+2
+!Front
+!18
+!1+2
+|-
+![[Triple Trouble]]
+!During Sleeper 1, 1, 1+2
+!Front
+!4, 4, 12
+!1
+|-
+![[Human Necktie]]
+!During Sleeper 3, 4, 1+2, 3+4
+!Front
+!23
+!2
+|-
+![[Choke Sleeper]]
+!During Neck Drop 4, 3, 3+4, 1+2
+!Front
+!12
+!1
+|-
+![[3-Count Pound]]
+!During Neck Drop 3+4, 2, 1, 1, 1+2
+!Front
+!6, 6, 13
+!2
+|-
+
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Palm Attack|One Two Punch]]
+!1, 2
+!7, 10
+!High, high
+|-
+![[Palm Attack to Uppercut|Left Right Uppercut]]
+!1, 2, 1
+!7, 10, 15
+!High, high, mid
+|-
+![[Jab Uppercut]]
+!2, 1
+!10, 12
+!High, mid
+|-
+![[Dark Cyclone]]
+!1+2, 2
+!12, 21
+!Mid, high
+|-
+![[Dark Buzzsaw]]
+!1+2, 4
+!12, 17
+!Mid, mid
+|-
+![[Round Out Kick]]
+!3+4
+!18
+!Mid
+|-
+![[Round Out Body Press]]
+!3+4, 1
+!18, 25, 5
+!Mid, mid, throw
+|-
+![[Round Out Elbow]]
+!3+4, 2
+!18, 25
+!Mid, mid
+|-
+![[Moonsault Body Press|Moonsault Drop]]
+!1+4
+!25
+!!
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Palm Upper|Charge Dark Upper]]
+!1+2+3+4, f, N, d, d/f+2
+!27
+!Mid
+|-
+![[Flame Breath]]
+!1+2+3+4, d, d/f, f+1
+!30
+!!
+|-
+![[Dark Elbow Hook]]
+!f+2, 1
+!12, 20
+!Mid, high
+|-
+![[Switch-Kick Tornado]]
+!f+3, 4, 3
+!15, 13, 22
+!Mid, mid, high
+|-
+![[Wind-Up Stomp]]
+!f+4
+!21
+!Mid
+|-
+![[Hammer Impact]]
+!f+1+2
+!25
+!Mid
+|-
+![[Shoulder Impact]]
+!f+1+4
+!28
+!Mid
+|-
+![[Minced Liver]]
+!d/f+1
+!12
+!Mid
+|-
+![[Concussion Hook]]
+!d/f+2
+!21
+!Mid
+|-
+![[Dark Knee Lift]]
+!d/f+3
+!18
+!Mid
+|-
+![[Spinning Lariat]]
+!d/f+1+2
+!25
+!Mid
+|-
+![[Frankensteiner]]
+!d/f+3+4
+!15, 30
+!High, throw
+|-
+![[Knee Lift Combination]]
+!d+1,N,4
+!5, 13
+!Mid, mid
+|-
+![[Blackjack]]
+!d+2
+!17
+!Mid
+|-
+![[Stomp (Armor King)|Stomp]]
+!d+3
+!12
+!Low
+|-
+![[Corporate Elbow]]
+!d+1+2
+!21
+!Mid
+|-
+![[Taurus Cutter]]
+!d+3+4
+!15
+!Low
+|-
+![[Taurus Cutter Trap]]
+!d+3+4, 3
+!15, 13
+!Low, mid
+|-
+![[Shadow Step (Armor King)|Shadow Step]]
+!d+1+4 (or d+2+3)
+!-
+!-
+|-
+![[Shadow Press]]
+!During Shadow Step 1+2
+!18, 15
+!Mid, throw
+|-
+![[Bare Knuckle]]
+!d/b+2
+!15
+!Mid
+|-
+![[Killer PK Combo]]
+!d/b+2, 3
+!15, 23
+!Mid, mid
+|-
+![[Foot Sweep]]
+!d/b+3
+!20
+!Low
+|-
+![[Low Drop Kick]]
+!d/b+4
+!16
+!Low
+|-
+![[Stomping Headbutt]]
+!d/b+1+2
+!30
+!Mid
+|-
+![[Dark Jab to Hell Stab]]
+!b+1, 2
+!10, 15
+!High, mid
+|-
+![[Knife Edge Combo]]
+!b+2, 1, 2
+!10, 8, 15
+!Mid, mid, high
+|-
+![[Toll Kick]]
+!b+3
+!23
+!High
+|-
+![[Toe Kick]]
+!b+4
+!15
+!Mid
+|-
+![[Toe Kick to Stunner]]
+!b+4, during the attack from the front 1+2
+!15, 15
+!Mid, throw
+|-
+![[Blindside]]
+!b+1+2
+!-
+!Mid
+|-
+![[Straight Arrow]]
+!b+1+4
+!23
+!Mid
+|-
+![[Dark Destroyer]]
+!b+2+3 (d to cancel)
+!50
+!!
+|-
+![[Water Parting Chop]]
+!u/b+1
+!25
+!High
+|-
+![[High Elbow Drop]]
+!u/f (or u or u/b)+2
+!35
+!Mid
+|-
+![[Switch Jumping Knee Attack]]
+!u/f+3
+!18
+!Mid
+|-
+![[Rising Toe Kick]]
+!u/f+4
+!15
+!Mid
+|-
+![[Capital Punishment]]
+!u/f+1+2
+!25
+!Mid
+|-
+![[Burning Knuckle]]
+!u/f+1+2, d
+!45
+!!
+|-
+![[Scissors Kick]]
+!u/f+3+4
+!23
+!Mid
+|-
+![[Underhanded]]
+!f, f, N, 2
+!17
+!Low
+|-
+![[Solar Plexus Punch]]
+!f, f+2
+!12
+!Mid
+|-
+![[Comeback Kick]]
+!f, f+3
+!26
+!High
+|-
+![[Brawler Kick]]
+!f, f+4
+!25
+!Mid
+|-
+![[Flying Forearm]]
+!f, f+1+2
+!28
+!Mid
+|-
+![[Drop Kick]]
+!f, f+3+4
+!30
+!High
+|-
+![[Shadow Lariat (Armor King)|Shadow Lariat]]
+!f, N, d, d/f+1
+!27
+!High
+|-
+![[Palm Upper]]
+!f, N, d, d/f+2
+!21
+!High
+|-
+![[Dark Inferno]]
+!f, N, d, d/f+3
+!30
+!!
+|-
+![[Knee Vault]]
+!f, N, d, d/f+4
+!22
+!Mid
+|-
+![[Poison Mist]]
+!f, N, d, d/f+1+2
+!10
+!!
+|-
+![[Flying Brawler Kick]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Satellite Drop Kick]]
+!f, f, f+3+4
+!30
+!Mid
+|-
+![[Dashing Low Drop Kick]]
+!Run more than three steps 4
+!20
+!Low
+|-
+![[Snap Uppercut (Armor King)|Snap Uppercut]]
+!WS+1
+!16
+!Mid
+|-
+![[Jugular Thrust]]
+!WS+2
+!18
+!Mid
+|-
+![[Backhand Chop]]
+!FC+d/f+2
+!23
+!Mid
+|-
+![[Jaguar Thrust]]
+!SS+2
+!17
+!Mid
+|-
+![[Death Sandwich]]
+!SS+2, 1
+!17, 20
+!Mid, mid
+|-
+![[Buzz Saw Kick]]
+!SS+4
+! 22
+!Mid
+|-
+![[Neck Cutter Kick]]
+!SS+3+4
+!18
+!High
+|-
+![[Blind Kick]]
+!Back to opponent 3
+!15
+!Mid
+|-
+![[Turn Sobat]]
+!Back to opponent 4
+!20
+!Mid
+|-
+![[Crazy Stomp]]
+!(With opponent down) d+4, 4, 4
+!20, 7, 6 
+!Low, low, low
+|-
+
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="10 hit combo" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage 
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Armor King)|d/f+2, 1, 3, 2, 2, 4, 2, 1, 3+4, 2]]
+!98
+!mhlmmmhhm!
+|-
+![[10 Hit Combo 2 (Armor King)|d/f+2, 1, 3, 2, 2, 3, 4, 1+2, 2, d, d/f, f+1+2]]
+!100
+!mhlmmhmmh!
+|-
+|}
+[[Category:Moves Lists]]
+[[Category:Tekken Tag Tournament 2 Movelists]]
+[[Category:Armor King II Moves]]

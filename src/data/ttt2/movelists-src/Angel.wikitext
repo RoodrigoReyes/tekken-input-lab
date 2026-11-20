@@ -1,0 +1,391 @@
+'''Angel/Tekken Tag Tournament 2 Movelist''' is a list of all the moves that [[Angel]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Movelist==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Double Face Kick|Double High Sweep]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Judgement]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Steel Pedal Drop]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Skull Smash]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Reverse Neck Throw]]
+!1+3 (or 2+4)
+!Back
+!50
+!
+|-
+![[Stonehead]]
+!f, f+1+2
+!Front
+!35
+!1+2
+|-
+![[Obliteration]]
+!f, b, d/b, d, d/f, f+1+2 (or f+3, 1+2)
+!Front
+!45
+!1+2
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Flash Punch Combo]]
+!1, 1, 2
+!7, 6, 12
+!High, high, mid
+|-
+![[Left Right Combo]]
+!1, 2
+!7, 8
+!High, high
+|-
+![[Demon Slayer (Mishima)|Demon Slayer]]
+!1, 2, 2
+!7, 8, 12
+!High, high, high
+|-
+![[Spin Claw Combo]]
+!2, 2
+!10, 18
+!High, high
+|-
+![[Wheel of Pain]]
+![4~3]
+!20
+!Mid
+|-
+![[Inferno (move)|Inferno]]
+!1+2
+!40
+!(!)
+|-
+![[Fly]]
+!3+4
+!-
+!-
+|-
+![[Near Death]]
+!3+4, 1
+!23
+!High
+|-
+!'''[[Infernal Annihilation]]'''
+!3+4, 2
+!20, 30
+!(!)
+|-
+![[Amara]]
+!3+4, 3
+!30
+!Mid
+|-
+![[Devil Blaster]]
+!3+4, 1+2
+!50
+!(!)
+|-
+![[Reverse Devil Blaster]]
+!3+4, f+1+2
+!50
+!(!)
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Heaven's Drop]]
+!f+2, 1, 4
+!8, 10, 20
+!Mid, mid, mid
+|-
+![[Phantom Mist]]
+!f+3
+!-
+!-
+|-
+![[Sentence of Death]]
+!f+3, 1
+!20
+!Mid
+|-
+![[Spiral Lotus]]
+!f+3, 2, 1
+!15,25
+!Mid, mid
+|-
+![[Ground Sweep]]
+!f+3, 3
+!17
+!Low
+|-
+![[Last Rites]]
+!f+3, 4
+!32
+!High
+|-
+![[Right Splits Kick]]
+!f+4
+!20
+!Mid
+|-
+![[Tsujikaze]]
+!f+1+2
+!12, 25
+!Mid, mid
+|-
+![[Phantom Spear]]
+!f+3+4
+!10, 23
+!Mid, mid
+|-
+![[Dark Lit Moon]]
+!d/f+1, 2
+!10, 10
+!Mid, mid
+|-
+![[Hell Gate]]
+!d/f+3, 2, 2
+!10, 8, 20
+!Mid, mid, mid
+|-
+![[Infernal Jolt]]
+!d/f+4
+!17
+!Mid
+|-
+![[Aratama Strike]]
+!d/f+1+2
+!20
+!Mid
+|-
+![[Guillotine Slash]]
+!d+1
+!17
+!Mid
+|-
+![[Broken Plate]]
+!d+3
+!13
+!Low
+|-
+![[Flash Palm Blow]]
+!d/b+2
+!15
+!Mid
+|-
+![[Eternity Spin Kick]]
+!d/b+4, 3
+!15, 23
+!Low, high
+|-
+![[Double Slash]]
+!d/b+1+2
+!10, 10
+!Mid, mid
+|-
+![[Brimstone Strike]]
+!b+1, 1+2
+!10, 20
+!High, mid
+|-
+![[Arch Back Hand Blow]]
+!b+2
+!21
+!High
+|-
+![[Jambu Spear]]
+!b+3
+!24
+!Mid
+|-
+![[Cycle of Life]]
+!b+4, 1
+!8, 20
+!Mid, mid
+|-
+![[Infinite Power]]
+!b+1+2
+!15
+!Mid
+|-
+![[Demon's Spear]]
+!b+1+2 (Hold)
+!42
+!Mid
+|-
+![[Lightning Uppercut]]
+!b+1+4
+!30
+!(!)
+|-
+![[Lightning Screw Uppercut]]
+!B+1+4
+!50
+!(!)
+|-
+![[Samsara]]
+!u+4
+!20
+!Mid
+|-
+![[Reaper's Scythe]]
+!u/f+3
+!21
+!Mid
+|-
+![[Rising Sun]]
+!u/f+4, 4
+!16, 12
+!Mid, low
+|-
+![[Roundhouse to Triple Spin Kicks|Roundhouse to Triple Spin Kick]]
+!u/f+4, 4, 4, 4
+!16, 12, 10, 20
+!Mid, low, low, mid
+|-
+![[Air Inferno]]
+!u/f+1+2
+!20
+!(!)
+|-
+![[Devil Fist]]
+!f, f+2
+!20
+!Mid
+|-
+![[Angel Shoot Down]]
+!f, f+3, 4
+!11, 20
+!Mid, mid
+|-
+![[Dragon Uppercut (Mishima)|Dragon Uppercut]]
+!f, N, d, d/f+1
+!25
+!Mid
+|-
+![[Heaven's Door]]
+!f, N, d, d/f+1, U/F
+!25, 10
+!Mid
+|-
+![[Dragon Uppercut to Middle Kick]]
+!f, N, d, d/f+1, 3
+!25, 15
+!Mid, mid
+|-
+![[Dragon Uppercut to Spinning Low Kick]]
+!f, N, d, d/f+1, 4
+!25, 10
+!Mid, low
+|-
+![[Wind God Fist]]
+!f, N, d, d/f+2
+!23
+!High
+|-
+![[Electric Wind Godfist|Electric Wind God Fist]]
+!f, N, d, d / f + 2 (press at the same time)
+!23
+!High
+|-
+![[Stream Pierce]]
+!f, N, d, d/f+3
+!25
+!Mid
+|-
+![[Spinning Demon to Left Knee]]
+!f, N, d, d/f+4, 3
+!15, 20
+!Low, mid
+|-
+![[Spinning Demon]]
+!f, N, d, d/f+4, 4
+!15, 12
+!Low, low
+|-
+![[Leaping Sidekick|Leaping Side Kick]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Nagikagura]]
+!WS+1, 4
+!13, 20
+!Mid, high
+|-
+![[Let it Light]]
+!WS+2
+!17
+!Mid
+|-
+![[Tsunami Kick]]
+!WS+4, 4
+!13, 16
+!Mid, mid
+|-
+![[Devil Twister]]
+!SS+2
+!25
+!Mid
+|-
+![[Hell's Gate (Move)|Hell's Gate]]
+!SS+2, during attack U
+!25, 35, 40
+!Mid, (!),  (!)
+|-
+![[Yomigaeri]]
+!On the back 3+4
+!-
+!-
+|-
+![[Earth Inferno]]
+!(With opponent down) d+1+2
+!25
+!Low
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo (Angel)|f, f, N, 2, 1, 2, 2, 3, 2, 1, 4, 3, 2]]
+!8,8,6,8,7,8,10,7,12,20,4
+!High, high, high, high, high, mid, mid, low, high, mid
+|}
+[[Category:Moves Lists]]
+[[Category:Devil/Angel Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

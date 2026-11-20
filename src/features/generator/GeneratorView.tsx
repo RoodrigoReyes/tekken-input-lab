@@ -7,13 +7,18 @@ import { PageTitle, Panel } from '../../components/ui/Panel';
 import { useToast } from '../../components/ui/Toast';
 import { errorMessage } from '../../hooks/useCombos';
 import { paths } from '../../hooks/useHashRoute';
-import { assembleCombo, bestPick, collectPieces, type ComboPick, type GeneratedCombo, type GeneratorOptions, type Performer } from '../../ttt2/generator';
+import { assembleCombo, bestPick, collectPieces, formMatches, reachesBound, type ComboPick, type GeneratedCombo, type GeneratorOptions, type Performer } from '../../ttt2/generator';
 import { GUIDE_SOURCE, loadGuideLibrary } from '../../ttt2/guideData';
+import { loadMovelists, movesFor } from '../../ttt2/movelistData';
+import { enderKey, type MovelistMove } from '../../ttt2/candidateEnders';
+import { characterPatterns } from '../../ttt2/movePatterns';
 import type { GuideLibrary, PieceContext, RouteKind } from '../../ttt2/types';
 import { ComboBuilder } from './ComboBuilder';
 import { ComboResult } from './ComboResult';
 import { peekEditorDraft, setPendingGenerated } from './handoff';
+import { MovePatterns } from './MovePatterns';
 import { swapTeam, type TeamFields } from './teamSwap';
+import { verifiedEnders } from './verifiedEnders';
 
 /** Every route kind is offered: the route dropdown groups them (Normal, Counter hit, Low parry, Wall). */
 const ROUTE_KINDS: readonly RouteKind[] = ['normal', 'counterHit', 'lowParry'];
@@ -26,6 +31,10 @@ interface Settings extends TeamFields {
   enderBy: Performer;
   includeAdditional: boolean;
   onlyClean: boolean;
+  /** Suggest extra enders for the starting character from their move list (heuristic). */
+  suggestEnders: boolean;
+  /** Move landed on the fly: only routes using it before B! ('' = all). */
+  move: string;
 }
 
 /** Last settings, kept for the session so leaving the page (e.g. to the editor and back) does not reset them. */
@@ -48,8 +57,10 @@ function defaultSettings(names: readonly string[]): Settings {
     enderId: '',
     fillerBy: 'partner',
     enderBy: 'point',
-    includeAdditional: false,
+    includeAdditional: true,
     onlyClean: false,
+    suggestEnders: false,
+    move: '',
   };
 }
 
@@ -122,6 +133,7 @@ interface GeneratorProps {
 
 function Generator({ library, onUse, onCopy }: GeneratorProps) {
   const names = useMemo(() => library.kits.map((k) => k.character).sort((a, b) => a.localeCompare(b)), [library]);
+  const [verified, setVerified] = verifiedEnders.use();
   const [settings, setSettings] = useState<Settings>(() =>
     remembered && names.includes(remembered.point) && names.includes(remembered.mate) ? remembered : defaultSettings(names),
   );
@@ -129,8 +141,18 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
     remembered = settings;
   }, [settings]);
 
-  const { point, mate, context, pointForm, partnerForm, fillerBy, enderBy, includeAdditional, onlyClean } = settings;
+  const { point, mate, context, pointForm, partnerForm, fillerBy, enderBy, includeAdditional, onlyClean, move, suggestEnders } = settings;
   const update = (patch: Partial<Settings>) => setSettings((s) => ({ ...s, ...patch }));
+
+  // Move catalog for the suggested-enders heuristic (lazy; optional).
+  const [movelists, setMovelists] = useState<Record<string, MovelistMove[]> | null>(null);
+  useEffect(() => {
+    if (!suggestEnders || movelists) return;
+    let active = true;
+    loadMovelists().then((m) => active && setMovelists(m)).catch(() => {});
+    return () => { active = false; };
+  }, [suggestEnders, movelists]);
+  const enderCatalog = suggestEnders && enderBy === 'point' && context === 'open' && movelists ? movesFor(movelists, point) : undefined;
 
   const options: GeneratorOptions = {
     point,
@@ -141,10 +163,14 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
     enderBy,
     includeAdditional,
     onlyClean,
+    suggestEnders,
+    verifiedEnders: verified,
+    ...(enderCatalog ? { enderCatalog } : {}),
+    ...(move.trim() ? { move } : {}),
     ...(pointForm && pointForm !== point ? { pointForm } : {}),
     ...(partnerForm && partnerForm !== mate ? { partnerForm } : {}),
   };
-  const key = JSON.stringify(options);
+  const key = JSON.stringify({ ...options, enderCatalog: enderCatalog?.length ?? 0 });
   const sameCharacter = point === mate;
   const pools = useMemo(() => (point && mate && !sameCharacter ? collectPieces(library, options) : null), [library, key]); // eslint-disable-line react-hooks/exhaustive-deps
   const best = useMemo(() => (pools ? bestPick(pools) : null), [pools]);
@@ -159,6 +185,21 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
         }
       : null;
   const combo = pools && pick ? assembleCombo(pools, pick) : null;
+  const selectedEnder = pools?.enders.find((e) => e.piece.id === pick?.enderId)?.piece;
+  const currentForm = pointForm && pointForm !== point ? pointForm : point;
+  const isVerified = !!selectedEnder && verified.some((e) => e.character === point && e.form === currentForm && enderKey(e.notation) === enderKey(selectedEnder.notation));
+  const verifyEnder = (checked: boolean) => {
+    if (!selectedEnder) return;
+    const remaining = verified.filter ( (e) => !(e.character === point && e.form === currentForm && enderKey(e.notation) === enderKey(selectedEnder.notation)) );
+    setVerified(checked ? [...remaining, { character: point, form: currentForm, notation: selectedEnder.notation }] : remaining);
+  };
+  const teamRoutes = pools ? pools.routes.filter(reachesBound).length : 0;
+  const soloRoutes = pools ? pools.routes.length - teamRoutes : 0;
+  const patterns = useMemo(() => {
+    const form = pointForm && pointForm !== point ? pointForm : undefined;
+    const routes = library.kits.find((k) => k.character === point)?.pieces.filter((p) => p.role === 'route' && formMatches(p, form, point)) ?? [];
+    return characterPatterns(routes);
+  }, [library, point, pointForm]);
 
   const reset = () => setSettings(defaultSettings(names));
   const pointForms = formsOf(library, point);
@@ -170,7 +211,7 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
   const performerName = (p: Performer) => (p === 'point' ? point : mate);
   const formLabel = (form: string, name: string) => (form && form !== name ? form : name);
   const teamSummary = `${formLabel(pointForm, point)} → ${formLabel(partnerForm, mate)} · ${context === 'wall' ? 'At the wall' : 'Open ground'}`;
-  const advancedSummary = [`Filler: ${performerName(fillerBy)}`, `Ender: ${performerName(enderBy)}`, includeAdditional && 'Conditional on', onlyClean && 'Clean only']
+  const advancedSummary = [`Filler: ${performerName(fillerBy)}`, `Ender: ${performerName(enderBy)}`, includeAdditional && 'Conditional on', onlyClean && 'Clean only', suggestEnders && 'Suggested enders']
     .filter(Boolean)
     .join(' · ');
 
@@ -191,7 +232,7 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
           <div className="grid items-start gap-3 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto]">
             <div className="flex flex-col gap-3">
               <Field label="Point character" aside="Starts the combo">
-                <Select value={point} onChange={(e) => update({ point: e.target.value, pointForm: '' })}>
+                <Select value={point} onChange={(e) => update({ point: e.target.value, pointForm: '', move: '' })}>
                   {names.map((n) => (
                     <option key={n} value={n}>
                       {n}
@@ -213,7 +254,7 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
             </div>
             <Button
               className="self-center sm:mt-6 sm:self-start"
-              onClick={() => setSettings(swapTeam)}
+              onClick={() => setSettings((s) => ({ ...swapTeam(s), move: '' }))}
               disabled={!point || !mate || sameCharacter}
               aria-label="Swap point and teammate"
               title={`Let ${mate || 'the teammate'} start the combo and ${point || 'the point character'} tag in`}
@@ -257,6 +298,10 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
           </div>
         </Collapsible>
 
+        <Collapsible title="Search by move" summary={move.trim() ? `${point} landed ${move.trim()}` : `${point}'s moves before B!`} storageKey="generator-move">
+          <MovePatterns character={point} patterns={patterns} move={move} onMove={(m) => update({ move: m })} />
+        </Collapsible>
+
         <Collapsible title="Advanced" summary={advancedSummary} storageKey="generator-advanced">
           <Group label="Filler by">
             <Segmented label="Filler by" value={fillerBy} onChange={(v) => update({ fillerBy: v })} options={performers} />
@@ -267,6 +312,7 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
           <div className="flex flex-col gap-2.5 border-t border-line-strong pt-3">
             <Checkbox label="Include conditional (“Additional”) options" checked={includeAdditional} onChange={(e) => update({ includeAdditional: e.target.checked })} />
             <Checkbox label="Only pieces without notation warnings" checked={onlyClean} onChange={(e) => update({ onlyClean: e.target.checked })} />
+            <Checkbox label="Suggest enders from the starter’s move list (heuristic, untested)" checked={suggestEnders} onChange={(e) => update({ suggestEnders: e.target.checked })} />
           </div>
         </Collapsible>
       </div>
@@ -280,16 +326,16 @@ function Generator({ library, onUse, onCopy }: GeneratorProps) {
               {combo && pick && <ComboResult combo={combo} point={point} partner={mate} onUse={(c) => onUse(c, { point, partner: mate })} onCopy={onCopy} />}
               <p className="label-sm text-fg-muted" role="status">
                 <span aria-hidden className="mr-2 inline-block size-2 rounded-xs bg-fg-muted align-middle" />
-                {pools.routes.length} routes reaching B! · {pools.fillers.length} TA fillers · {pools.enders.length} enders
-                <span className="text-fg-muted"> ({pools.routes.length * pools.fillers.length * pools.enders.length} possible combos)</span>
+                {teamRoutes} routes reaching B! · {soloRoutes} solo routes (no B!) · {pools.fillers.length} TA fillers · {pools.enders.length} enders
+                <span className="text-fg-muted"> ({teamRoutes * pools.fillers.length * pools.enders.length} possible team combos)</span>
               </p>
               {combo && pick ? (
-                <ComboBuilder pools={pools} pick={pick} onPick={(patch) => update(patch)} />
+                <ComboBuilder pools={pools} pick={pick} onPick={(patch) => update(patch)} verified={isVerified} onVerify={verifyEnder} />
               ) : (
                 <StateCard
                   title="No combos for these options"
                   body={[
-                    pools.routes.length === 0 && `The guide has no ${point} route reaching a Bound (B!) here.`,
+                    pools.routes.length === 0 && (move.trim() ? `No ${point} route uses ${move.trim()} before B! here.` : `The guide has no ${point} route here.`),
                     pools.fillers.length === 0 && 'No TA fillers for this side/context.',
                     pools.enders.length === 0 && 'No enders for this side/context.',
                   ]

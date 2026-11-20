@@ -1,0 +1,686 @@
+'''Raven/Tekken Tag Tournament 2 Movelist''' is a list of all of the moves that [[Raven]] can perform in ''[[Tekken Tag Tournament 2]]''.
+==Movelist==
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Grave Digger]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Salamander]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Neck Ringer]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Swift Assassin]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Dark Matter]]
+!1+3 (or 2+4)
+!Back
+!50
+!
+|-
+![[Orbiting Moon]]
+!d/f+1+4
+!Front
+!38
+!1
+|-
+![[Undertaker]]
+!f, d/f, d, d/b, b, f+1+2
+!Front
+!48
+!1+2
+|-
+![[Ultimate Tackle]]
+!d/b+1+2
+!Front
+!5
+!1+2
+|-
+![[Ultimate Punch]]
+!During Tackle 2, 1, 2, 1
+!Front
+!30
+!1 or 2
+|-
+![[Utsusemi Escape]]
+!Synchro with the opponent's attack, b+1+3 (or b+2+4)
+!Parry
+!-
+!
+|-
+![[Sixth Sense]]
+!Back to the opponent, synchro with the opponent's attack, f+1+2
+!Parry
+!30
+!
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Left Right Combo]]
+!1, 2
+!7, 12
+!High, high
+|-
+![[Right Straight to Left Low Kick]]
+!2, 3
+!10, 10
+!High, low
+|-
+![[PK Combo (Raven)|PK Combo]]
+!2, 4
+!10, 17
+!High, high
+|-
+![[Valkyrie Lance Combo]]
+!3, 3, 4
+!12, 10, 20
+!High, high, high
+|-
+![[Brocken Connect]]
+!4, 1
+!17, 10
+!High, high
+|-
+![[Chariot]]
+![3~4]
+!13, 15
+!Mid, mid
+|-
+![[Hydra Bite]]
+![4~3]
+!8, 12
+!Mid, mid
+|-
+![[Hydra Bite Low]]
+![4~3], 1
+!8, 12, 6
+!Mid, mid, low
+|-
+![[Hydra Bite High]]
+![4~3], 3
+!8, 12, 8
+!Mid, mid, high
+|-
+![[Hydra Bite Mid]]
+![4~3], 4
+!8, 12, 7
+!Mid, mid, mid
+|-
+![[Crusader]]
+!1+2
+!25
+!Mid
+|-
+![[Haze]]
+!3+4
+!-
+!-
+|-
+![[Fatal Elbow]]
+!During Haze 1
+!18
+!Mid
+|-
+![[Fatal Blow to Doppelganger]]
+!During Haze 1, f (hit must hit)
+!18
+!Mid
+|-
+![[Fatal Blow to Haze]]
+!During Haze 1, 3+4
+!18
+!Mid
+|-
+![[Death from Above]]
+!During Haze 2
+!35
+!!
+|-
+![[Aqua Spider]]
+!During Haze 3
+!17
+!Low
+|-
+![[Blind Ghost]]
+!During Haze 4
+!25
+!Mid
+|-
+![[Crossing Paths]]
+!During Haze 1+2
+!20
+!Mid
+|-
+![[Alter Ego]]
+!During Haze 3+4
+!10, 20
+!Low, high
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Tartaros]]
+!f+2, 3 
+!12, 15
+!Mid, mid
+|-
+![[Circling Winds]]
+!f+3, 2
+!18, 21
+!Mid, mid
+|-
+![[Lance Kick]]
+!f+4
+!30
+!High
+|-
+![[Switchback]]
+!f+1+2
+!25
+!Mid
+|-
+![[Chakram]]
+!f+3+4, 4, 2
+!20, 8, 20
+!Mid, low, mid
+|-
+![[Heavy Chakram]]
+!f+3+4, f+4, 2
+!20, 12, 20
+!Mid, low, mid
+|-
+![[Chakram Shadow]]
+!f+3+4, f+4, 3
+!20,22
+!Mid, mid
+|-
+![[Spinning Chakram]]
+!f+3+4, 3+4
+!20, 15
+!Mid, mid
+|-
+![[Body Blow (Raven)|Body Blow]]
+!d/f+1
+!15
+!Mid
+|-
+![[Meat Hook]]
+!d/f+2, 3
+!16, 25
+!Mid, high
+|-
+![[Bolt Stunner]]
+!d/f+2, 4
+!16, 20
+!Mid, mid
+|-
+![[Shadow Snap Kick (d/f+3)|Shadow Snap Kick]]
+!d/f+3
+!21
+!High
+|-
+![[Pendulum Kick]]
+!d/f+4, 4
+!13, 15
+!Mid, mid
+|-
+![[Pendulum Shadow]]
+!d/f+4, 4, 3
+!13, 15, 22
+!Mid, mid, mid
+|-
+![[Shuriken Kick]]
+!d/f+3+4
+!26
+!Mid
+|-
+![[Low Kick (Raven)|Low Kick]]
+!d+3
+!12
+!Low
+|-
+![[Basilisk Fang]]
+!d+4
+!18
+!Low
+|-
+![[Summon Force]]
+!d+1+2
+!-
+!-
+|-
+![[Dead End]]
+!d+1+2, d, d/b, b, u/b, u, u/f, f+1+2
+!51
+!!
+|-
+![[Assassin's Sting]]
+!d/b+2
+!13
+!Mid
+|-
+![[Assassin's Sting Combo]]
+!d/b+2, 1
+!13, 8
+!Mid, high
+|-
+![[Killer Bee]]
+!d/b+3
+!18
+!Low
+|-
+![[Shinobi Cyclone]]
+!d/b+4
+!21
+!Low
+|-
+![[Elbow Strike]]
+!b+1
+!21
+!High
+|-
+![[Unicorn's Tail]]
+!b+2, 2, 3
+!13, 12, 20
+!High, mid, mid
+|-
+![[Deadly Talon]]
+!b+2, 2, 1+2
+!13, 12, 15
+!High, mid, low
+|-
+![[Double Vision]]
+!b+2, 4, 3+4
+!13, 17, 5, 20
+!High, high, low, high
+|-
+![[Hades Heel]]
+!b+3
+!20
+!Mid
+|-
+![[Skull Smasher (Raven)|Skull Smasher]]
+!b+4, 4
+!11, 13
+!Mid, mid
+|-
+![[Skull Smasher Feint]]
+!b+4, b+4
+!11, 23
+!Mid, mid
+|-
+![[Skull Smasher Feint Low]]
+!b+4, b+4, 3
+!11, 11
+!Mid, low
+|-
+![[Skull Rave]]
+!b+4, b+4, 3, 4, 2
+!11, 11, 8, 21
+!Mid, low, low, mid
+|-
+![[Skull Frenzy]]
+!b+4, b+4, 3, f+4, 2
+!11, 11, 12, 21
+!Mid, low, low, mid
+|-
+![[Skull Rave Shadow]]
+!b+4, b+4, 3, f+4, 3
+!11, 11, 22
+!Mid, low, mid
+|-
+![[Skull Spin]]
+!b+4, b+4, 3, 3+4
+!11, 11, 15
+!Mid, low, mid
+|-
+![[Illusion Strike]]
+!b+1+2, 2
+!28, 12
+!Mid, mid
+|-
+![[Illusion Sweep]]
+!b+1+2, 3
+!28, 17
+!Mid, low
+|-
+![[Labyrinth]]
+!b+3+4
+!-
+!-
+|-
+![[Dagger Chop]]
+!u/b+1
+!11
+!Mid
+|-
+![[Dagger Chop to Doppelganger]]
+!u/b+1, f (blow must hit)
+!11
+!Mid
+|-
+![[Gate Keeper]]
+!u/b+1, 2
+!11, 13
+!Mid, mid
+|-
+![[Deathbringer Mid]]
+!u (or u/b)+3, 3
+!25, 20
+!High, mid
+|-
+![[Deathbringer High]]
+!u (or u/b)+3, 4
+!25, 37
+!High, high
+|-
+![[Deathbringer Low]]
+!u (or u/b)+3, d+3
+!25, 18
+!High, low
+|-
+![[Deathbringer Low to Shadow|Deathbringer Low Shadow]]
+!u (or u/b)+3, d+3, 3
+!25, 18, 22
+!High, low, mid
+|-
+![[Shadow Scythe]]
+!u/f+3
+!20
+!Mid
+|-
+![[Stormbringer]]
+!u/f+4, 4
+!16, 20
+!Mid, mid
+|-
+![[Swift Justice]]
+!f, f, N, 3+4
+!18
+!Mid
+|-
+![[Shadow Spear]]
+!f, f+2
+!26
+!Mid
+|-
+![[Sudden Strike]]
+!f, f+3
+!20
+!Mid
+|-
+![[Iron Maul]]
+!f, f+4
+!21
+!Mid
+|-
+![[War Hound]]
+!b, b+2
+!15, 21
+!Mid, high
+|-
+![[Pandora Spin]]
+!u/b, b+3+4
+!60
+!!
+|-
+![[Shadow Sprint]]
+!d, d/f, f
+!-
+!-
+|-
+![[Rising Uppercut (Raven)|Rising Uppercut]]
+!WS+1
+!13
+!Mid
+|-
+![[Jackknife Elbow]]
+!WS+2
+!17
+!Mid
+|-
+![[Trident Kick]]
+!WS+3
+!21
+!Mid
+|-
+![[Shadow Snap Kick]]
+!WS+4
+!18
+!Mid
+|-
+![[Spinning Middle Kick]]
+!WS+3+4
+!23
+!Mid
+|-
+![[Quicksand]]
+!FC+d/f+3+4, 4
+!17, 32
+!Low, high
+|-
+![[Crouch Step]]
+!FC+d/f, d, d/f
+!-
+!-
+|-
+![[Evading Middle Kick]]
+!SS+3
+!18
+!Mid
+|-
+|}
+
+===During [[Shadow Sprint]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Shadow Sprint]]
+!d, d/f, f
+!-
+!-
+|-
+![[Fatal Elbow]]
+!d, d/f, f+1
+!18
+!Mid
+|-
+![[Fatal Blow to Doppelganger]]
+!d, d/f, f+1, f (blow must hit)
+!18
+!Mid
+|-
+![[Fatal Blow to Haze]]
+!d, d/f, f+1, 3+4
+!18
+!Mid
+|-
+![[Buzzsaw]]
+!d, d/f, f+2
+!8
+!Low
+|-
+![[Laevateinn]]
+!d, d/f, f+[2~1]
+!30
+!Mid
+|-
+![[Poison Needle]]
+!d, d/f, f+3
+!20
+!High
+|-
+![[Black Hole]]
+!d, d/f, f+4
+!15
+!Mid
+|-
+![[Hellhound]]
+!d, d/f, f+1+2
+!12, 21
+!Mid, mid
+|}
+
+===[[Labyrinth]]/Back Turned===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Blind Whip]]
+![[Labyrinth|Back to the opponent]] 1
+!10
+!High
+|-
+![[Blind Lance]]
+![[Labyrinth|Back to the opponent]] 1, 4
+!10, 30
+!High, high
+|-
+![[Backfist & Straight]]
+![[Labyrinth|Back to the opponent]] 2, 1
+!13, 5
+!High, high
+|-
+![[Blinding Knife]]
+![[Labyrinth|Back to the opponent]] 2, 2
+!13, 15
+!High, mid
+|-
+![[Crescent Mirage]]
+![[Labyrinth|Back to the opponent]] 3, 4, 3
+!10, 10, 22
+!High, mid, mid
+|-
+![[Fafnir]]
+![[Labyrinth|Back to the opponent]] 3, 4, 4
+!10, 10, 21
+!High, mid, mid
+|-
+![[Crusader]]
+![[Labyrinth|Back to the opponent]] 1+2
+!25
+!Mid
+|-
+![[Spiral Cannon]]
+![[Labyrinth|Back to the opponent]] 3+4
+!5, 20
+!Mid, mid
+|-
+![[Soul Steal]]
+![[Labyrinth|Back to the opponent]] f+1
+!18
+!Mid
+|-
+![[Cold Massacre]]
+![[Labyrinth|Back to the opponent]] f+2, 3
+!13, 15
+!Mid, mid
+|-
+![[Cold Grave]]
+![[Labyrinth|Back to the opponent]] f+2, 4, 3+4
+!13, 17, 5, 20
+!Mid, high, low, high
+|-
+![[Demon Knee]]
+![[Labyrinth|Back to the opponent]] f+3
+!17
+!Mid
+|-
+![[Kama Kick Combo]]
+![[Labyrinth|Back to the opponent]] f+4, 3
+!8, 21
+!Low, high
+|-
+![[Reverse Chakram]]
+![[Labyrinth|Back to the opponent]] f+3+4
+!23
+!Mid
+|-
+![[Shinobi Cyclone (d+3)|Shinobi Cyclone]]
+![[Labyrinth|Back to the opponent]] d+3
+!12
+!Low
+|-
+![[Abyss Cannon]]
+![[Labyrinth|Back to the opponent]] b+2, 3
+!17, 5, 20
+!Mid, mid, mid
+|-
+![[Abyss Spear]]
+![[Labyrinth|Back to the opponent]] b+2, 4
+!17, 13
+!Mid, high
+|-
+![[Labyrinth]]
+![[Labyrinth|Back to the opponent]] b+3+4
+!-
+!-
+|-
+![[Gremlin Smasher]]
+![[Labyrinth|Back to the opponent]] f, f+3
+!25
+!Mid
+|-
+![[Vermillion]]
+![[Labyrinth|Back to the opponent]] f, f+3+4
+!17
+!Low
+|-
+![[Phantom Warp]]
+![[Labyrinth|Back to the opponent]] f, f, f
+!-
+!-
+|}
+
+==10 Hit Combos==
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Raven)|u/b+1, 2, 2, 2, 2, 4, 2, 3, 4, 2, 1+2]]
+!104
+!mmmhhmmlm!
+|-
+![[10 Hit Combo 2 (Raven)|Back to the opponent 2, 2, 1, 2, 4, 2, 3, 4, 2, 1+2]]
+!112
+!hmmhhmmlm!
+|-
+|}
+
+[[Category:Moves Lists]]
+[[Category:Raven Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

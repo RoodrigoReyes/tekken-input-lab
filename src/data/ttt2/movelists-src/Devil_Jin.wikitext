@@ -1,0 +1,504 @@
+'''Devil Jin/Tekken Tag Tournament 2 Movelist''' is a list of all the moves that [[Devil Jin]] can perform in [[Tekken Tag Tournament 2|''Tekken Tag Tournament 2'']].
+
+== Movelist==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Double Face Kick|Double High Sweep]]
+!1+3
+!Front
+!35
+!1
+|-
+![[Over the Shoulder Reverse]]
+!2+4
+!Front
+!35
+!2
+|-
+![[Shoulder Flip]]
+!1+3 or 2+4
+!Left
+!43
+!1
+|-
+![[Over the Limit]]
+!1+3 or 2+4
+!Right
+!40
+!2
+|-
+![[Pivoting Hip Throw]]
+!1+3 or 2+4
+!Back
+!50
+!
+|-
+![[White Mountain|Wrist Chuck Slam]]
+!d/f+2+3
+!Front
+!40
+!
+|-
+![[Stonehead]]
+!f, F+1+2
+!Front
+!35
+!1+2
+|-
+![[Complicated Wire]]
+!d, d/b, b+1+3
+!Front
+!40
+!1
+|-
+![[Obliteration]]
+!f, b, d/b, d, d/f, f+1+2
+!Front
+!45
+!1+2
+|-
+![[Ultimate Tackle]]
+!d/b+1+2
+!Front
+!5
+!1+2
+|-
+![[Attack Reversal]]
+!Synchro with the opponent's attack b+1+3 (or b+2+4)
+!Parry
+!25
+!
+|-
+
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Flash Punch Combo]]
+!1, 1, 2
+!7, 6, 12
+!High, high, mid
+|-
+![[Left Right Combo]]
+!1, 2
+!7, 8
+!High, high
+|-
+![[Demon Slayer (Mishima)|Demon Slayer]]
+!1, 2, 2
+!7, 8, 12
+!High, high, high
+|-
+![[Shoot The Works|Shoot the Works]]
+!1, 2, 3, 4
+!7, 8, 25, 30 
+!High, high, mid, mid
+|-
+![[Shoot The Works Upper|Shoot the Works Upper]]
+!1, 2, 3, f+4
+!7, 8, 25, 10
+!High, high, mid, mid
+|-
+![[One Two Knee]]
+!1, 2, 4
+!7, 8, 10
+!High, high, mid
+|-
+![[Demon Backhand Spin]]
+!2, 2
+!10, 18
+!High, high
+|-
+![[Wheel of Pain]]
+!4+3
+!21
+!Mid
+|-
+![[Hellfire Blast]]
+!1+2
+!40
+!!
+|-
+![[Fly]]
+!3+4
+!-
+!-
+|-
+![[Three Ring Circus]]
+!1+4, 2, 4
+!5, 5, 10, 21
+!Mid, high, high, mid
+|-
+![[Three Ring Circus Combo]]
+!1+4, 2, d+4
+!5, 5, 10, 13
+!Mid, high, high, low
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[893P Knee Kick]]
+!f+2, 4
+!14, 17
+!Mid, mid
+|-
+![[Spinning High Kick]]
+!f+3
+!30
+!High
+|-
+![[Twisted Samsara]]
+!f+4, 3
+!10, 15
+!Mid, mid
+|-
+![[Tsujikaze]]
+!f+1+2
+!12, 25
+!Mid, mid
+|-
+![[Hisou]]
+!f+3+4
+!10, 23
+!Mid, mid
+|-
+![[Twin Lancer]]
+!d/f+1, 2
+!11, 15
+!Mid, mid
+|-
+![[Rengoku]]
+!d/f+3, 2, 4
+!10, 8, 16
+!Mid, mid, mid
+|-
+![[Tsunami Kick (Mishima)|Tsunami Kick]]
+!d/f+4, 4
+!10, 16
+!Mid, mid
+|-
+![[Aratama Strike]]
+!d/f+1+2
+!15
+!Mid
+|-
+![[Corpse Thrust]]
+!db+1
+!20
+!Mid
+|-
+![[Broken Plate]]
+!d+3
+!13
+!Low
+|-
+![[Double Lift Kick (Kazama)|Double Lift Kick]]
+!d+3+4
+!5, 20
+!Mid, mid
+|-
+![[Malicious Mace]]
+!d/b+2
+!16
+!Low
+|-
+![[Brimstone Strike]]
+!b+1, 2
+!10, 20
+!High, mid
+|-
+![[Uraken]]
+!b+2
+!16
+!High
+|-
+![[Back Fist to Side High Kick]]
+!b+2, 3
+!12, 20
+!High, high
+|-
+![[Hell Scraper]]
+!b+2, 4, 2, 1, 2
+!12, 10, 10, 10, 23
+!High, high, mid, mid, mid
+|-
+![[Jambu Spear]]
+!b+3
+!24
+!Mid
+|-
+![[Demon Steel Pedal]]
+!b+4
+!22
+!Mid
+|-
+![[Infinite Power]]
+!B+1+2
+!15
+!!
+|-
+![[Demon's Spear]]
+!B+1+2 (hold)
+!42
+!Mid
+|-
+![[Lightning Uppercut]]
+!b+1+4
+!30
+!!
+|-
+![[Lightning Screw Uppercut]]
+!B+1+4
+!50
+!!
+|-
+![[Electric Transformation]]
+!u/b~TAG
+!-
+!-
+|-
+![[Decapitating Sword]]
+!u/b+2
+!25
+!Mid
+|-
+![[Samsara]]
+!u+4
+!20
+!Mid
+|-
+![[Reaper's Scythe]]
+!u/f+3
+!21
+!Mid
+|-
+![[Wraith Kick]]
+!u/f+4
+!21
+!Mid
+|-
+![[Hellfire Cannon]]
+!u/f+1+2
+!22
+!!
+|-
+![[High Pounce]]
+!u/f+2+4 
+!35
+!Mid
+|-
+![[Demon's Paw]]
+!f, f+2
+!23
+!Mid
+|-
+![[Demon Cyclone]]
+!f, f+3, 1, 3
+!16, 11, 20
+!Mid, high, low
+|-
+![[Hell Spiral]]
+!f, f+3, 1, 4
+!16, 11, 20
+!Mid, high, mid
+|-
+![[Demon Cyclone Spear]]
+!f, f+3, 1, b+1+2
+!16, 11, 15
+!Mid, high, mid
+|-
+![[Last Rites]]
+!f, f+4
+!32
+!High
+|-
+![[Laser Cannon]]
+!b, f+2, 1, 2
+!12, 12, 23 
+!Mid, mid, mid
+|-
+![[Laser Scraper]]
+!b, f+2, 1, d/f+2
+!12, 12, 10
+!Mid, mid, mid
+|-
+![[Laser Crush]]
+!b, f+2, 1, 4
+!12, 12, 21
+!Mid, mid, mid
+|-
+![[Dragon Uppercut (Mishima)|Dragon Uppercut]]
+!f, N, d, d/f+1
+!25
+!Mid
+|-
+![[Heaven's Door]]
+!f, N, d, d/f+1, U/F
+!25, 10
+!Mid
+|-
+![[Dragon Uppercut to Middle Kick]]
+!f, N, d, d/f+1, 3
+!25,15 
+!Mid, mid
+|-
+![[Dragon Uppercut to Spinning Low Kick]]
+!f, N, d, d/f+1, 4
+!25, 10
+!Mid, low
+|-
+![[Wind God Fist]]
+!f, N, d, D/F+2
+!23
+!High
+|-
+![[Electric Wind Godfist|Electric Wind God Fist]]
+!f, N, d~d/f~2
+!23
+!High
+|-
+![[Demon's Hoof]]
+!f, N, d, d/f+3
+!20
+!Mid
+|-
+![[Demon's Tail]]
+!f, N, d, D/F+3
+!23
+!Low
+|-
+![[Spinning Demon Scythe|Spinning Demon]]
+!f, N, d, d/f+4, 4
+!12, 20
+!Low, mid
+|-
+![[Leaping Sidekick|Leaping Side Kick]]
+!f, n, d, D/F, u\f+3
+!30
+!Mid
+|-
+![[Twin Pistons (Jin)|Twin Pistons]]
+!WS+1, 2
+!12, 13
+!Mid, mid
+|-
+![[Uppercut]]
+!WS+2
+!20
+!Mid
+|-
+![[Devil Twister]]
+!SS+2
+!25
+!Mid
+|-
+![[Hell's Gate (Move)|Hell's Gate]]
+!SS+2 during the attack, U
+!25, 35, 40
+!Mid, !, !
+|-
+![[Yomigaeri]]
+!On the ground (on the back) 3+4
+!-
+!-
+|-
+![[Hellfire Incinerator]]
+!(With opponent down) d+1+2
+!21
+!Low
+|-
+
+|}
+
+===During Fly===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Fly]]
+!3+4
+!-
+!-
+|-
+![[Near Death]]
+!3+4, 1
+!23
+!High
+|-
+![[Infernal Annihilation]]
+!3+4, 2
+!20, 30
+!!
+|-
+![[Amara]]
+!3+4, 3
+!30
+!Mid
+|-
+![[Infernal Destruction]]
+!3+4, 1+2
+!50
+!!
+|-
+![[Cross Infernal Destruction]]
+!3+4, f+1+2
+!50
+!!
+|-
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Jin and Devil Jin)|3, 2, 4, 3, 1+4, 2, 2, 1, 2]]
+!116
+!hhmhlhhmmm
+|-
+![[10 Hit Combo 2 (Jin and Devil Jin)|3, 2, 4, 3, 1+4, 2, 1]]
+!91
+!hhmhlhhm
+|-
+![[10 Hit Combo 3 (Jin and Devil Jin)|b+2, 4, 4, 4, 4, 2, 1+4, 2, 1]]
+!97
+!hhmlmmlhhm
+|-
+![[10 Hit Combo 4 (Jin and Devil Jin)|b+2, 4, 4, 4, 4, 2, 1+4, 2, 3+4]]
+!98
+!hhmlmmlhhmm
+|-
+![[Mishima Style 10 Hit Combo|f, f, N, 2, 1, 2, 2, 3, 4, 4, 1, 2, 1]]
+!96
+!hhhhhmlhmm
+|-
+![[10 Hit Combo 2 (Kazuya Mishima)|f, f, N, 2, 1, 2, 2, 3, 4, 4, 3, 2, 1]]
+!113
+!hhhhhmllm(!)
+|-
+![[10 Hit Combo 3 (Kazuya Mishima)|f, f, N, 2, 1, 4, 4, 2, 4, 3, 2, 1]]
+!107
+!hhmmlmlm(!)
+|-
+
+|}
+[[Category:Devil Jin Moves]]
+[[Category:Moves Lists]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

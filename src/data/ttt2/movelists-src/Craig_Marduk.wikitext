@@ -1,0 +1,655 @@
+'''Craig Marduk/Tekken Tag Tournament 2 Movelist''' is a list of all of the moves that [[Craig Marduk]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Movelist==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Steam Roller]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Knee Breaker]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Reverse Body Lift]]
+!1+3 (or 2+4)
+!Left
+!45
+!1
+|-
+![[Toy Airplane]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Backdrop (Craig Marduk)|Backdrop]]
+!1+3 (or f+1+3)
+!Back
+!60
+!
+|-
+![[Arm Bar Flip]]
+!2+4 (or f+2+4)
+!Back
+!60
+!
+|-
+![[Around the World]]
+!f, f+1+2
+!Front
+!20
+!1+2
+|-
+![[Northern Lights Suplex]]
+!d, d/f, f+1+3
+!Front
+!25
+!1
+|-
+![[Power Slam]]
+!d, d/f, f+2+4
+!Front
+!25
+!2
+|-
+![[Back Breaker (Marduk)|Back Breaker]]
+!d, d/b, b+1+2
+!Front
+!40
+!1+2
+|-
+![[Suplex Bomb]]
+!f, b, d/b, d, d/f, f+1
+!Front
+!50
+!1
+|-
+![[Power Bomb (Marduk)|Power Bomb]]
+!Approach (crouching opponent) d+1+3
+!Front
+!45
+!1
+|-
+![[Ultimate Knee]]
+!Approach (crouching opponent) d+2+4
+!Front
+!45
+!2
+|-
+![[Gator Slam]]
+!Approach (opponent in the air) 1+3 (or f+1+3)
+!Air
+!18
+!
+|-
+![[Corkscrew (Marduk)|Corkscrew]]
+!Approach (opponent in the air) 2+4 (or f+2+4)
+!Air
+!18
+!
+|-
+![[Mid-Air Suplex]]
+!Approach (opponent in the air) f, f+1+2
+!Air
+!22
+!
+|-
+![[Angry Ape]]
+!While the opponent is knocked out against a wall 1+3 (or 2+4)
+!Wall
+!35
+!
+|-
+![[Strangle Slam]]
+!During Ready Position 1+3
+!Front
+!35
+!1
+|-
+![[Body Slam (Marduk)|Body Slam]]
+!During Ready Position 2+4
+!Front
+!35
+!2
+|-
+![[Double Leg Take Down]]
+!During Ready Position 1+2
+!Front
+!12
+!
+|-
+![[Trap]]
+!Synchro with the opponent's attack b+1+3 (or b+2+4)
+!Parry
+!8
+!
+|}
+
+===Throws during [[Mount]]===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Left Melon Masher]]
+!During Mount 1
+!Front
+!35
+!2
+|-
+![[Neck Lock]]
+!During Mount 1+3
+!Front
+!40
+!2
+|-
+![[Right Melon Masher]]
+!During Mount 2
+!Front
+!35
+!1
+|-
+![[Knee Bar]]
+!During Mount 2+4
+!Front
+!40
+!1
+|-
+![[Mount Mongolian Chop]]
+!During Mount 1+2
+!Front
+!40
+!1+2
+|-
+![[Skull Crusher]]
+!During Mount 3+4
+!Front
+!40
+!1+2
+|}
+
+===Throws during opponent down===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Hercules' Hammer]]
+!(With the opponent down) d/b+1+3 (or d/b+2+4)
+!Front
+!20
+!1
+|-
+![[Reversi Throw]]
+!(With the opponent down) feet side d/b+2+4
+!Front
+!40
+!2
+|-
+![[Alarm Knee]]
+!(With the opponent down) head side d/b+2+4
+!Front
+!40
+!2
+|-
+![[Mount Position (Marduk)|Mount Position]]
+!(Opponent on the back) on the opponent's side d/b+1+3 (or d/b+2+4)
+!Front
+!12
+!1 or 2
+|-
+![[Rib Buster]]
+!(Opponent face down) on the opponent's side d/b+1+3 (or d/b+2+4)
+!Front
+!30
+!1 or 2
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Left Right Combo]]
+!1, 2
+!7, 12
+!High, high
+|-
+![[Left Right to Gut Check]]
+!1, 2, 3, 1+2
+!7, 12, 12, 28
+!High, high, mid, high
+|-
+![[Left Right to Ready Position]]
+!1, 2, 3+4
+!7, 12
+!High, high
+|-
+![[Left Right to Power Elbow Combo]]
+!1, 2, f+1
+!7, 12, 21
+!High, high, high
+|-
+![[Jab Body Combo]]
+!1, d+2
+!7, 13
+!High, mid
+|-
+![[Quick Elbow Combo]]
+!2, 1
+!10, 12
+!High, high
+|-
+![[Catapult Tackle Combo]]
+!2, d+1+2
+!10, 23
+!High, mid
+|-
+![[Shove]]
+!1+2
+!-
+!Mid
+|-
+![[Ready Position]]
+!3+4
+!-
+!-
+|-
+![[Advance Ready Position]]
+!d/f+3+4
+!-
+!-
+|-
+![[Cornered Beast]]
+!d/b+3+4
+!-
+!-
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Double Hook Combo]]
+!f+2, 1
+!20, 25
+!High, high
+|-
+![[Hook Smash Combo]]
+!f+2, d+1, 2
+!20, 17, 16
+!High, mid, mid
+|-
+![[Knee Lift]]
+!f+3
+!17
+!Mid
+|-
+![[Mammoth Charge]]
+!f+3, 2
+!17, 20
+!Mid, mid
+|-
+![[Stampede]]
+!f+4
+!20
+!Mid
+|-
+![[Giant Brat]]
+!f+1+2, 2
+!13, 16
+!Mid, mid
+|-
+![[Shoulder Bash]]
+!f+3+4
+!30
+!!
+|-
+![[Shoulder Bash Cancel to Ready Position]]
+!f+3+4,3+4
+!-
+!-
+|-
+![[Blitz]]
+!f+1+4
+!25
+!Mid
+|-
+![[Air Lift Uppercut]]
+!d/f+1
+!15
+!Mid
+|-
+![[Double Impact (Marduk)|Double Impact]]
+!d/f+2, 1
+!16, 21
+!Mid, mid
+|-
+![[Gut Kick]]
+!d/f+3
+!13
+!Mid
+|-
+![[Raging Beast Headbutt]]
+!d/f+3, 1, 2, 3, 1+2
+!13, 5, 10, 12 ,28
+!Mid, high, high, mid, high
+|-
+![[Raging Beast Ready Position]]
+!d/f+3, 1, 2, 3+4
+!13, 5, 10
+!Mid, high, high
+|-
+![[Raging Beast Sting]]
+!d/f+3, 1, 2, f+1
+!13, 5, 10, 21
+!Mid, high, high, high
+|-
+![[Raging Beast Body Blow]]
+!d/f+3, 1, d+2
+!13, 5, 13
+!Mid, high, mid
+|-
+![[Gut Kick Combo]]
+!d/f+3, 1+2
+!13, 28
+!Mid, high
+|-
+![[Gorilla Rush]]
+!d/f+3, d/f+1, 2
+!13, 10, 20
+!Mid, mid, high
+|-
+![[Compressor Swing]]
+!d/f+4, 2
+!12, 20
+!Mid, high
+|-
+![[Cannonball (Marduk)|Cannonball]]
+!d/f+1+2
+!23
+!Mid
+|-
+![[Dunk Elbow]]
+!d+1
+!20
+!Mid
+|-
+![[Alligator Combo]]
+!d+2, 4
+!15, 20
+!Mid, mid
+|-
+![[Low Kick (Marduk)|Low Kick]]
+!d+3
+!18
+!Low
+|-
+![[Knee Slicer]]
+!d+4
+!16
+!Low
+|-
+![[Battering Ram (Marduk)|Battering Ram]]
+!d+1+2
+!23
+!Mid
+|-
+![[Flash Hook]]
+!d/b+2
+!20
+!Mid
+|-
+![[Revolving Hammer]]
+!d/b+3, 1, 1
+!10, 17, 23
+!Low, high, mid
+|-
+![[Revolving Trap Kick]]
+!d/b+3, 4
+!10, 16
+!Low, mid
+|-
+![[Crab Leg]]
+!d/b+4
+!12
+!Low
+|-
+![[Annihilator Hammer]]
+!d/b+1+2
+!23
+!Mid
+|-
+![[Double Fist Hammer]]
+!b+1, 2
+!17, 10
+!Mid, mid
+|-
+![[Spinning Backfist (Marduk)|Spinning Backfist]]
+!b+2
+!23
+!Mid
+|-
+![[Sasquatch Cannon]]
+!b+3
+!26
+!Mid
+|-
+![[Quick Bazooka]]
+!b+4
+!20
+!Mid
+|-
+![[Earthquake]]
+!b+1+2
+!21
+!Mid
+|-
+![[Death Bringer]]
+!b+2+3 (b, b to cancel)
+!70
+!!
+|-
+![[Knee Sling]]
+!u/f (or u/b or u)+3
+!25
+!Mid
+|-
+![[Jumping Mid Kick (Marduk)|Jumping Mid Kick]]
+!u/f (or u/b or u)+4
+!18
+!Mid
+|-
+![[Mongolian Chop]]
+!u/f+1+2
+!21
+!High
+|-
+![[Foot Stomp (Marduk)|Foot Stomp]]
+!u/f (or u/b or u)+3+4
+!25
+!Mid
+|-
+![[Elbow Rush]]
+!f, f+2
+!21
+!High
+|-
+![[Side Sweep]]
+!f, f+4
+!26
+!Mid
+|-
+![[Heavy Hitter]]
+!b, b+1+2
+!25
+!Mid
+|-
+![[Ballista Fist]]
+!d, d/f, f+1, 2
+!21, 25
+!Mid, mid
+|-
+![[Babel Smasher]]
+!d, d/f, f+2
+!20
+!Low
+|-
+![[Bicycle Kick]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Hell Stab]]
+!WS+1
+!13
+!Mid
+|-
+![[Heavy Artillery]]
+!WS+1, 2
+!13, 18
+!Mid, high
+|-
+![[Hell Stab to Ready Position]]
+!WS+1, 3+4
+!13
+!Mid
+|-
+![[Tornado Hook]]
+!WS+2
+!22
+!Mid
+|-
+![[Power Punt]]
+!WS+3
+!20
+!Mid
+|-
+![[Stun Knee]]
+!WS+4
+!21
+!Mid
+|-
+![[Quick Uppercut]]
+!WS+1+2
+!12
+!Mid
+|-
+![[Bull-charge]]
+!FC+1+2
+!35
+!Mid
+|-
+![[Shin Breaker (Marduk)|Shin Breaker]]
+!FC+d/f+4
+!18
+!Low
+|-
+![[Spinning Hammer]]
+!SS+2
+!18
+!Mid
+|-
+![[Spinning Hammer to Ready Position]]
+!SS+2, 3+4
+!18
+!Mid
+|-
+![[Instep Middle Kick]]
+!SS+4
+!23
+!Mid
+|-
+![[Tall Hammer]]
+!SS+1+2
+!25
+!Mid
+|-
+![[Wake Up Hammer]]
+!On the ground (facing the ground) 2
+!23
+!Mid
+|-
+![[Wake Up Sweep]]
+!On the ground (facing the ground) d+2
+!18
+!Low
+|-
+![[Quake Kick]]
+!(With opponent down) d/b+4
+!22
+!Low
+|-
+|}
+
+===During [[Ready Position]]===
+{| class="wikitable sortable" id="sidewind" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Ready Position]]
+!3+4
+!-
+!-
+|-
+![[Side Shift]]
+!During Double Leg Take Down, u (or d)
+!-
+!-
+|-
+![[Power Bump]]
+!During Ready Position f+1, 2
+!16, 20
+!Mid, mid
+|-
+![[Power Straight]]
+!During Ready Position f+2
+!22
+!Mid
+|-
+![[Python Explosion]]
+!During Ready Position d+1+2
+!20, 20
+!Low, mid
+|-
+|}
+
+==10 Hit Combo==
+{| class="wikitable sortable" id="sidewind" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Craig Marduk)|2, 1, 3, 1, 2, 1, 4, 3, 1, 4]]
+!110
+!hhmmhmlmmh
+|-
+![[10 Hit Combo 2 (Craig Marduk)|2, 1, 3, 1, 2, 1, 2, 2, 3, 2]]
+!103
+!hhmmhmmmlh
+|-
+|}
+<br />
+[[Category:Moves Lists]]
+[[Category:Craig Marduk Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

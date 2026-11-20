@@ -1,0 +1,857 @@
+'''Yoshimitsu/Tekken Tag Tournament 2 Movelist''' is a list of all of the moves that [[Yoshimitsu]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Movelist==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Oni Killer]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Sword Face Smash]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Wheels of Hell]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Neck Breaker (Yoshimitsu)|Neck Breaker]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Tornado Drop]]
+!1+3 (or 2+4)
+!Back
+!50
+!
+|-
+![[Soul Siphon]]
+!d, d/f, f+2
+!Front
+!22
+!1+2
+|-
+![[Rainbow Drop]]
+!d, d/b, b+1+2
+!Front
+!47
+!1+2
+|-
+![[Soul Possession]]
+!d, d/b, b,f+2
+!Front
+!-
+!
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="attacks" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Naguri Kabuto Wari]]
+!1, 1
+!7, 16
+!High, mid
+|-
+![[Seiken Douharai]]
+!2, 1
+!10, 23
+!High, mid
+|-
+![[Flash Punch]]
+!2, 2
+!10, 8
+!High, high
+|-
+![[Flash Attack]]
+!2, 3
+!10, 21
+!High, high
+|-
+![[Jab Sweep|Flash Punch Low Kick]]
+!2, d+3
+!10, 11
+!High, low
+|-
+![[Tobi Ushiwaka]]
+![3~4]
+!12, 16
+!Mid, mid
+|-
+![[Kangaroo Kick]]
+![4~3]
+!25
+!Mid
+|-
+![[Triple Roundhouse Combo]]
+!4, 4, 4
+!17, 17, 20
+!High, high, high
+|-
+![[Kincho]]
+!1+2 (or FC+1+2)
+!-
+!-
+|-
+![[Doushi Kiri]]
+!During Kincho 1, 1
+!10, 5, 15
+!Mid, mid, mid
+|-
+![[Tenshu Kuzushi]]
+!During Kincho 2, 1+2
+!15, 30
+!Mid, mid
+|-
+![[Shibakari]]
+!During Kincho 3
+!17
+!Low
+|-
+![[Whirlwind]]
+!During Kincho 4 (or SS+)
+!21
+!High
+|-
+![[Ashura Blade]]
+!During Kincho 1+2
+!4, 4, 23
+!Mid, mid, mid
+|-
+![[Ganto]]
+!During Kincho f+2
+!25
+!High
+|-
+![[Mumyo Juji Ken]]
+!During Kincho b+1+2
+!40
+!!
+|-
+![[Kincho Dragonfly]]
+!During Kincho u+1+2
+!-
+!-
+|-
+![[Meditation]]
+!3+4 (or back to the opponent 3+4)
+!-
+!-
+|-
+![[Back Handspring]]
+!During Meditation 3
+!15
+!Mid
+|-
+![[Meditation Healing]]
+!During Meditation 1+2
+!-
+!-
+|-
+![[Meditation Harakiri]]
+!During Meditation 1+4
+!60
+!!
+|-
+![[Yoshimitsu Flash|Soul Stealer]]
+!1+4
+!21
+!Mid
+|-
+![[Mutou no Kiwami]]
+!2+3
+!-
+!-
+|-
+![[Karakuri Uzumaki]]
+!During Mutou no Kiwami 2, 1
+!10, 5, 10
+!High, high, high
+|-
+![[Utsusemi]]
+!During Mutou no Kiwami 1+2, 1
+!15
+!Mid
+|-
+![[Battou]]
+!During Mutou no Kiwami 2+3
+!-
+!-
+|-
+![[Prison Gate]]
+!During Mutou no Kiwami f+1+2
+!25
+!Mid
+|-
+![[Ishiusu Tsubushi]]
+!During Mutou no Kiwami u+3+4
+!18
+!Low
+|-
+![[Harakiri Feint]]
+!During Mutou no Kiwami d+1+4
+!-
+!-
+|-
+![[Death Copter (fail)]]
+!During Mutou no Kiwami u/f+1+2
+!-
+!-
+|-
+![[Agonbaku]]
+!During Mutou no Kiwami FC+d/f+1, 2
+!12, 20
+!Low, low
+|-
+![[Spirit Shield]]
+!1+2+3
+!-
+!Mid
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Poison Sword Spin]]
+!1+2+3+4, b, f, u, d+1+4
+!17, 1
+!!
+|-
+![[Poison Knee Taunt]]
+!1+2+3+4, b, f, u, d+3+4
+!17, 1
+!!
+|-
+![[Manji Backfist|Manji Backfist 1]]
+!f+2 (or back to the opponent)
+!18
+!High
+|-
+![[Backfist to Stone Fist]]
+!f+2, D/B+2, 2, 2, 2, 2, 2
+!18, 7, 6, 4, 3
+!High, mid, mid, mid, mid, mid, mid
+|-
+![[Oni Kick Combo]]
+!f+3, 3
+!23, 16
+!High, low
+|-
+![[Zig Zag]]
+!f+3, 4
+!23, 20
+!High, mid
+|-
+![[Toita Daoshi]]
+!f+4
+!25
+!Mid
+|-
+![[Tsuka Splitter]]
+!f+1+2
+!22
+!Mid
+|-
+![[Kamikaze]]
+!f+3+4
+!25
+!Mid
+|-
+![[Kamikaze Feint]]
+!f+3+4, b
+!-
+!-
+|-
+![[Tsuka Atemi]]
+!d/f+1
+!13
+!Mid
+|-
+![[Kasane Wakizashi]]
+!d/f+2, 2
+!10, 13
+!Mid, mid
+|-
+![[Wood Cutter]]
+!d/f+3, 1
+!10, 20
+!Mid, mid
+|-
+![[Nebular Burst]]
+!d/f+1+2, 2
+!12, 20
+!Low, mid
+|-
+![[Quick Slash]]
+!d+1
+!15
+!Mid
+|-
+![[Death Slash]]
+!d+1, Hold N
+!40
+!!
+|-
+![[Heshikirigari]]
+!d+2, 2
+!12, 17
+!Mid, mid
+|-
+![[Heshikiribarai]]
+!d+2, 2, 1
+!12, 17, 20
+!Mid, mid, high
+|-
+![[Heshikirinagi]]
+!d+2, 2, d+1
+!12, 17, 17
+!Mid, mid, mid
+|-
+![[Heshikirimutou]]
+!d+2, 2, 2+3
+!12, 17
+!Mid, mid
+|-
+![[Flea]]
+!d+1+2 (b to cancel)
+!-
+!-
+|-
+![[Flea Roll]]
+!During Flea 1
+!-
+!-
+|-
+![[Flea to Sliding Headbutt]]
+!During Flea 2
+!20
+!Low
+|-
+![[Flea Dance]]
+!During Flea 3 (or 4)
+!-
+!-
+|-
+![[Skull Splitter (Yoshimitsu)|Skull Splitter]]
+!During Flea 1+2
+!16
+!High
+|-
+![[Flea to Kangaroo Kick]]
+!During Flea 3+4
+!25
+!Mid
+|-
+![[Flea Step]]
+!During Flea f
+!-
+!-
+|-
+![[Sakanobori]]
+!During Flea Step 3
+!27
+!Mid
+|-
+![[Tsurubebi]]
+!During Flea Step 4
+!15
+!Low
+|-
+![[Running Flea]]
+!During Flea f, f
+!3, 3, 3, 3, 3, 3
+!Mid, mid, mid, mid, mid, mid
+|-
+![[Flea Digger]]
+!During Flea d
+!-
+!-
+|-
+![[Flea Indian Stance]]
+!During Flea d+3+4
+!-
+!-
+|-
+![[Flea to Manji Dragonfly]]
+!During Flea u+1+2
+!-
+!-
+|-
+![[Flea to Dragonfly Feint]]
+!During Flea u+3+4
+!30
+!Mid
+|-
+![[Jumping Flea]]
+!During Flea u/f (or u or u/b)
+!21
+!!
+|-
+![[Indian Stance]]
+!d+3+4
+!-
+!-
+|-
+![[Indian Stance Healing]]
+!d+3+4, N
+!-
+!-
+|-
+![[Indian Stance Storm]]
+!During Indian Stance Healing 1
+!15
+!!
+|-
+![[Indian Stance Stone Fists]]
+!During Indian Stance Healing 2, D/B+2, 2, 2, 2
+!6, 5, 3
+!Mid, mid, mid
+|-
+![[Indian Stance Cannon]]
+!During Indian Stance Healing 3, 3+4
+!15
+!Mid
+|-
+![[Indian Stance Kangaroo Kick]]
+!During Indian Stance Healing 4
+!25
+!Mid
+|-
+![[Indian Levitation]]
+!During Indian Stance Healing 3+4 (Hold)
+!-
+!-
+|-
+![[Indian Stance Vacuum Dance]]
+!During Indian Stance Healing b (or f)
+!-
+!-
+|-
+![[Harakiri]]
+!d+1+4
+!60
+!!
+|-
+![[Harakiri to Manji Blood Dance]]
+!d+1+4, B+1, 1, 1, 1, 1
+!60, 18, 20, 20, 30
+!!, !, !, !, !, !
+|-
+![[Nade Kujaku]]
+!d/b+1, 1
+!16, 23
+!Mid, mid
+|-
+![[Slap U Silly|Stone Fists]]
+!D/B+2, 2, 2, 2, 2, 2
+!8, 6, 5, 4, 3
+!Mid, mid, mid, mid, mid
+|-
+![[Manji Spin Low Kicks]]
+!D/B+3, 3, 3, 3, 3, 3
+!10, 7, 7, 5, 5
+!llllll
+|-
+![[Manji Spin Low Kicks Front Kick]]
+!During Manji Spin Low Kicks 4
+!15
+!Mid
+|-
+![[Nozuchi Fumi]]
+!d/b+4
+!13
+!Low
+|-
+![[Bad Stomach]]
+!D/B+1+2
+!-
+!-
+|-
+![[Poison Breath]]
+!During Bad Stomach 1 (or 2)
+!25
+!!
+|-
+![[Bad Stomach to Backflip Kick]]
+!During Bad Stomach 3 (or 4)
+!15
+!Mid
+|-
+![[Stone Fists|Slap U Silly]]
+!b+1, 1, 1, 1, 1, 1
+!8, 8, 7, 5, 5, 5
+!High, high, high, high, high, high
+|-
+![[Slap U Silly to Side Spin]]
+!During Slap U Silly b+3 (or b+4)
+!-
+!-
+|-
+![[Oma Gehosen]]
+!b+2, 1
+!12, 20
+!Mid, mid
+|-
+![[Oma Kugiuchi]]
+!b+2, 2
+!12, 21
+!Mid, high
+|-
+![[Spinning Evade]]
+!B+3, 3, 3, 3, 3, 3 (or B+4, 4, 4, 4, 4, 4)
+!-
+!-
+|-
+![[Supreme Thrust|Oni Thrust]]
+!b+1+2
+!22
+!Mid
+|-
+![[Sword Stab]]
+!u/b+1+2
+!50
+!!
+|-
+![[Face Splitter]]
+!u/b+1+2, 1+2
+!18
+!!
+|-
+![[Sword Spin|Sword Poke Windmill]]
+!u/b+1+2, N, 1
+!22
+!!
+|-
+![[Manji Dragonfly]]
+!u+1+2
+!-
+!-
+|-
+![[Dragonfly Blade]]
+!During Manji Dragonfly 1
+!15
+!!
+|-
+![[Dragonfly Fist]]
+!During Manji Dragonfly 2
+!15
+!High
+|-
+![[Dragonfly Sweep]]
+!During Manji Dragonfly 3
+!18
+!Low
+|-
+![[Dragonfly Twister]]
+!During Manji Dragonfly 4
+!25
+!Mid
+|-
+![[Spirited Away]]
+!During Manji Dragonfly 3+4
+!17
+!!
+|-
+![[Guillotine Crow Kick]]
+!u+3+4
+!10, 12
+!Mid, mid
+|-
+![[Kurama Itto]]
+!u/f+2
+!18
+!Low
+|-
+![[Rising Knee]]
+!u/f+3
+!15
+!Mid
+|-
+![[Avoiding the Puddle]]
+!u/f (or u or u/b)+4
+!21
+!Mid
+|-
+![[Deathcopter|Death Copter]]
+!u/f+1+2
+!40
+!!
+|-
+![[Deathcopter Slice|Death Copter Slice]]
+!u/f+1+2, d
+!20
+!!
+|-
+![[Deathcopter Trick|Death Copter Trick]]
+!u/f+1+2, b
+!35
+!!
+|-
+![[Poison Wind]]
+!u/f+3+4
+!20
+!Mid
+|-
+![[Poison Wind to Kangaroo Kick]]
+!u/f+3+4, 3+4
+!20, 25
+!Mid, mid
+|-
+![[Poison Wind to Flea]]
+!u/f+3+4, d+1+2
+!20, 4
+!Mid, mid
+|-
+![[Poison Wind to Indian Stance]]
+!u/f+3+4, d+3+4
+!20
+!Mid
+|-
+![[Bronze Fist|Poison Wind Bronze Fist]]
+!u/f+3+4, b+1
+!20, 7
+!Mid, high
+|-
+![[Silver Fist|Poison Wind Silver Fist]]
+!u/f+3+4, b+1, 4
+!20, 7, 15
+!Mid, high, mid
+|-
+![[Poison Wind Gold Fist]]
+!u/f+3+4, b+1, 4, d+1
+!20, 7, 15, 15
+!Mid, high, mid, mid
+|-
+![[Steel Fist|Poison Wind Bronze Fist Steel Fist]]
+!u/f+3+4, b+1,3+4
+!20, 7, 20
+!Mid, high, mid
+|-
+![[Poison Wind Eclipse Kick]]
+!u/f+3+4, u+3+4
+!20, 10, 5
+!Mid, mid, mid
+|-
+![[Sword Smash]]
+!f, f+2
+!25
+!Mid
+|-
+![[Yomi Kakenuke]]
+!f, f+2, during attack 2
+!21
+!Mid
+|-
+![[Iwatsubute]]
+!f, f+3
+!25
+!Mid
+|-
+![[Fubuki]]
+!f, f+4
+!20
+!Mid
+|-
+![[Reverse Cartwheel|Solar Kick]]
+!f, f+1+2
+!22
+!Mid
+|-
+![[Reverse Cartwheel]]
+!f, f+3+4
+!15
+!Mid
+|-
+![[Reverse Cartwheel Shark Attack]]
+!f, f+3+4, 1+2
+!15, 15
+!Mid, mid
+|-
+![[Solar Kick Shark Attack]]
+!f, f+3+4, 1+2, 3+4
+!15, 15, 20
+!Mid, mid, mid
+|-
+![[Suicide]]
+!f, f+1+4
+!60
+!!
+|-
+![[Confusion]]
+!f, f+1+4, N
+!-
+!-
+|-
+![[Double Suicide]]
+!f ,f+1+4, f, F
+!60, 120
+!!, !
+|-
+![[Thunder Blade]]
+!b, b+1+2
+!50
+!!
+|-
+![[Gehosen]]
+!f, N, d, d/f+1
+!20
+!Mid
+|-
+![[Moonsault Slayer]]
+!d, d/f, f+1
+!25
+!!
+|-
+![[Manji Spin Kick]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Door Knocker]]
+!WS+1, 1, 1, 1
+!15, 12, 12, 23
+!Mid, high, high, mid
+|-
+![[Door Knocker to Back Knuckle]]
+!WS+1, 2
+!15, 18
+!Mid, high
+|-
+![[Door Knocker to Back Knuckle Slap U Crazy]]
+!WS+1, 2, D/B, 2, 2, 2, 2, 2, 2
+!17, 18, 7, 6, 4, 3
+!Mid, high, mid, mid, mid, mid, mid, mid
+|-
+![[Exorcism Fist]]
+!WS+2
+!16
+!Mid
+|-
+![[Scowling Aratama]]
+!WS+2, 1, 2
+!19, 19, 21
+!Mid, high, mid
+|-
+![[Scowling Spirit]]
+!WS+2, 1, 3
+!16, 16, 25
+!Mid, high, high
+|-
+![[Kimon Matagi]]
+!WS+3, 2
+!12, 20
+!Mid, mid
+|-
+![[Knee Cap]]
+!FC+d/f+4
+!15
+!Low
+|-
+![[Samurai Cutter]]
+!FC+D/F+1
+!12
+!!
+|-
+![[Inner Palm]]
+!SS+1
+!21
+!Mid
+|-
+![[Shrine]]
+!SS+2
+!20
+!Mid
+|-
+![[Whirlwind]]
+!SS+4
+!21
+!High
+|-
+![[Aratama]]
+!Back to opponent 1, 2
+!16, 18
+!High, mid
+|-
+![[Magatama]]
+!Back to opponent 1, 3
+!16, 25
+!High, high
+|-
+![[Manji Backfist|Manji Backfist 2]]
+!Back to opponent 2
+!18
+!High
+|-
+![[Perilous Spirit]]
+!Back to opponent 3
+!20
+!Mid
+|-
+![[Shisetsu Genman]]
+!Back to opponent d+1
+!20
+!Low
+|-
+![[Indian Stance Healing]]
+!On the ground (on the back) 3+4
+!-
+!-
+|-
+![[Kaishaku]]
+!(With opponent down)  u/f (or u or u / b)+1
+!24
+!Mid
+|}
+
+==10 Hit Combo==
+{| class="wikitable sortable" id="10 hit combos" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Yoshimitsu)|1, 2, 1, 4, 4, 4, 1, 1, 1, 1]]
+!106
+!<nowiki>hmhhhlm!!!</nowiki>
+|-
+![[10 Hit Combo 2 (Yoshimitsu)|1, 2, 1, 4, 2, 2, 2, 4, 1, 1]]
+!96
+!<nowiki>hmhhmmmm!!</nowiki>
+|-
+![[10 Hit Combo 3 (Yoshimitsu)|1, 2, 1, 4, 4, 4, 1, 3+4]]
+!85
+!hmhhhlmm
+|-
+![[10 Hit Combo 4 (Yoshimitsu)|4, 4, 2, 2, 4, 4, 1, 1, 1, 1]]
+!109
+!<nowiki>hhmhhlm!!!</nowiki>
+|-
+![[10 Hit Combo 5 (Yoshimitsu)|4, 4, 2, 2, 4, 4, 1, 3+4]]
+!88
+!hhmhhlmm
+|-
+![[10 Hit Combo 6 (Yoshimitsu)|4, 4, 2, 2, 1]]
+!75
+!hhmh!
+|}
+[[Category:Moves Lists]]
+[[Category:Yoshimitsu Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

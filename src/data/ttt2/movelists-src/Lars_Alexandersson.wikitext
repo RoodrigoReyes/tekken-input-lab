@@ -1,0 +1,503 @@
+All of the moves that [[Lars Alexandersson]] can perform in ''[[Tekken Tag Tournament 2]].''
+==Movelist==
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Hostile Takedown]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Raging Thunder]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Tactical Knee]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Lethal Force]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Swift Silence]]
+!1+3 (or 2+4)
+!Back
+!50
+!
+|-
+![[Apocalypse]]
+!u/f+1+2
+!Front
+!40
+!1+2
+|-
+![[SHB]]
+!f, f, f+2+4
+!Before
+!40
+!1+2
+|-
+![[Rejection (Lars)|Rejection]]
+!Approach (opponent in the air) f, f, f+2+4
+!Air
+!16
+!
+|}
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Delta Slicer]]
+!1, 1, 1
+!7, 10, 17
+!High, mid, mid
+|-
+![[One-Two Combination]]
+!1, 2
+!7, 8
+!High, high
+|-
+![[Legionnaire's Spin]]
+!1, 4
+!7, 10
+!High, low
+|-
+![[Lightning Assault Middle]]
+!2, 1, 3
+!8, 8, 18
+!High, mid, mid
+|-
+![[Lightning Assault High]]
+!2, 1, 4
+!8, 8, 22
+!High, mid, high
+|-
+![[Kick Start]]
+!3
+!16
+!High
+|-
+![[Spinning Cutter|Code Line]]
+!4
+!21
+!High
+|-
+![[Alternating Current]]
+!1+2
+!10, 20
+!Mid, mid
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Rising Force]]
+!1+2+3+4, 2
+!20
+!Mid
+|-
+![[Flash Claw]]
+!f+1, 2
+!10, 11
+!High, mid
+|-
+![[Flash Claw to Silent Entry]]
+!f+1, 2, f
+!10, 11
+!High, mid
+|-
+![[Flash Bang]]
+!f+1, 2, 3
+!10, 11, 20
+!High, mid, mid
+|-
+![[Flash Bang to Dynamic Entry]]
+!f+1, 2, 3, d
+!10, 11, 20
+!High, mid, mid
+|-
+![[Charge Factor]]
+!f+2, 1
+!10, 12
+!High, high
+|-
+![[Charge Factor to Silent Entry]]
+!f+2, 1, f
+!10, 12
+!High, high
+|-
+![[Death Mask]]
+!f+2, 4
+!10, 22
+!High, high
+|-
+![[Dynamic Entry]]
+!f+3
+!-
+!-
+|-
+![[Volcanic Lightning]]
+!f+4, 1, 2, 1
+!12, 8, 8, 20
+!Mid, mid, mid, mid
+|-
+![[Ark Blast]]
+!f+1+2
+!20
+!Mid
+|-
+![[Power Slug]]
+!f+1+4
+!28
+!Mid
+|-
+![[Alert L]]
+!d/f+1
+!13
+!Mid
+|-
+![[Power Spike]]
+!d/f+2
+!17
+!Mid
+|-
+![[Outpost]]
+!d/f+3
+!15
+!Mid
+|-
+![[Outpost to Dynamic Entry]]
+!d/f+3, d
+!15
+!Mid
+|-
+![[Outpost Blitz]]
+!d/f+3, 3
+!15, 20
+!Mid, mid
+|-
+![[X-Ray]]
+!d/f+1+2
+!18
+!Mid
+|-
+![[Tactical Sword]]
+!d+2
+!16
+!Mid
+|-
+![[Tesla Gravity]]
+!d+3, 1
+!8, 4, 10
+!Low, mid, mid
+|-
+![[Earth Battery]]
+!d+1+2
+!25
+!Low
+|-
+![[Arc Combination]]
+!d/b+1, 3
+!8, 10
+!Low, high
+|-
+![[Hollow Point]]
+!d/b+2
+!12
+!Mid
+|-
+![[Hollow Point to Silent Entry]]
+!d/b+2, f
+!12
+!Mid
+|-
+![[Double Tap]]
+!d/b+2, 1
+!12, 8
+!Mid, mid
+|-
+![[HE Combination]]
+!d/b+2, 3
+!12, 15
+!Mid, mid
+|-
+![[Shadow Cutter]]
+!d/b+4
+!17
+!Low
+|-
+![[Inductance]]
+!d/b+1+2
+!18
+!Mid
+|-
+![[Chevron Slash]]
+!b+1
+!16
+!Mid
+|-
+![[Gilbert Smash]]
+!b+2, 1
+!12, 17
+!Mid, mid
+|-
+![[Gilbert Cannon]]
+!b+2, 3
+!12, 21
+!Mid, high
+|-
+![[Impulse Kick]]
+!b+3
+!13
+!Mid
+|-
+![[Impulse Kick to Silent Entry]]
+!b+3, f
+!13
+!Mid
+|-
+![[Impulse Plus]]
+!b+3, 4
+!13, 22
+!Mid, high
+|-
+![[Magnetic Knee]]
+!b+4
+!20
+!Mid
+|-
+![[Magnetic Knee Blast]]
+!During Counterattack b+4
+!20,25
+!Mid
+|-
+![[Wind Liger]]
+!b+1+2
+!8, 20
+!Mid, mid
+|-
+![[Zeus]]
+!b+2+3
+!45
+!!
+|-
+![[Lightning Screw]]
+!u/f (or u or u/b)+3
+!8, 20
+!Mid, mid
+|-
+![[Storm Axle]]
+!u/f (or u or u/b)+4
+!20
+!Mid
+|-
+![[Avalanche Flip]]
+!u/f (or u or u/b)+3+4
+!-
+!-
+|-
+![[Avalanche Drop]]
+!u/f+3+4 Maintain
+!40
+!High
+|-
+![[Avalanche Spike]]
+!u/f+3+4, 1
+!17
+!Low
+|-
+![[Avalanche Stomp]]
+!u/f+3+4, 4
+!20
+!Mid
+|-
+![[Surge Blast]]
+!f, f+2
+!20
+!Mid
+|-
+![[Surge Blast to Silent Entry]]
+!f ,f+2, f (blow must hit)
+!20
+!Mid
+|-
+![[Electric Jolt]]
+!f, f+3
+!22
+!Mid
+|-
+![[Double Pulse]]
+!f, f+4, 3
+!13, 20
+!Low, mid
+|-
+![[Elbow Corona]]
+!f, f+1+2
+!20
+!Mid
+|-
+![[Double Action]]
+!f ,f+3+4
+!11, 15
+!Low, low
+|-
+![[Blue Bolt]]
+!f, b+2, 1
+!13, 20
+!Mid, mid
+|-
+![[Red Sprite]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Streamer]]
+!WS+1
+!16
+!Mid
+|-
+![[Streamer to Silent Entry]]
+!WS+1 f (blow must hit)
+!16
+!Mid
+|-
+![[Lightning Starter]]
+!WS+2
+!10
+!Mid
+|-
+![[Lightning Starter to Silent Entry]]
+!WS+2, f
+!10
+!Mid
+|-
+![[Lightning Starter to Dynamic Entry]]
+!WS+2, d
+!10
+!Mid
+|-
+![[Multiplied Force]]
+!WS+2, 1
+!10, 17
+!Mid, mid
+|-
+![[Tower Cannon]]
+!WS+3
+!30
+!High
+|-
+![[Double Smack]]
+!FC+d/f+1+2
+!10, 10
+!Low, low
+|-
+![[Shockwave]]
+!SS+2
+!20
+!Mid
+|-
+![[Stack Up]]
+!(With the opponent down) d+3+4
+!20
+!Low
+|-
+![[Stack Up to Silent Entry]]
+!(With the opponent down) d+3+4 Maintain f
+!20
+!Low
+|}
+===During [[Dynamic Entry]]===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Dynamic Entry]]
+!f+3
+!-
+!-
+|-
+![[Lock & Load]]
+!During Dynamic Entry 1
+!13
+!High
+|-
+![[Lock & Load to Silent Entry]]
+!During Dynamic Entry 1, f
+!13
+!High
+|-
+![[Double Barrel]]
+!During Dynamic Entry 1, 2
+!13, 20
+!High, high
+|-
+![[Rimfire]]
+!During Dynamic Entry 2
+!17
+!Mid
+|-
+![[Mjollnir]]
+!During Dynamic Entry 1+2
+!13, 20
+!High, high
+|}
+===During [[Silent Entry]]===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Lightning Thrust]]
+!During Silent Entry 1
+!27
+!Mid
+|-
+![[Bolt Smash]]
+!During Silent Entry d/f+1
+!20
+!Mid
+|-
+![[Turbine Hook]]
+!During Silent Entry 2
+!20
+!Low
+|-
+![[Rising Storm]]
+!During Silent Entry 3
+!20
+!Mid
+|}
+
+==10 Hit Combo==
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo (Lars)|u/f+1, 2, 1, 1, 2, 2, 3, 3, 3, 1]]
+!107
+!hmmmlmmmm
+|}
+[[Category:Moves Lists]]
+[[Category:Lars Alexandersson Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

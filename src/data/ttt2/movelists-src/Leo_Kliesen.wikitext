@@ -1,0 +1,551 @@
+This is a list of all of the moves that [[Leo Kliesen]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Moves List==
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Bao Hu Gui Shan]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Dan Yang Da]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Da Zhe Jiang]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Chou Bie Zi]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Yang Di Tou]]
+!1+3 (or 2+4)
+!Back
+!50
+!
+|-
+![[Shuang Pai Shou]]
+!f, f+1+2
+!Front
+!40
+!1+2
+|-
+![[Bao Zhou]]
+!Synchro with opponent's high punch u/b+1
+!Parry
+!-
+!
+|-
+![[Shi Zi Xiao Zhang Kou]]
+!Synchro with the opponent's attack b+1+2
+!Parry
+!-
+!
+|-
+![[Shi Zi Zhou]]
+!Synchro with the opponent's attack b+1+3 (or b+2+4)
+!Parry
+!32
+!
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[He Zi Shou]]
+!1, 2
+!7, 10
+!High, high
+|-
+![[Liang Yi Zhou]]
+!1, 2, 1, 1
+!7, 10, 16, 21
+!High, high, high, mid
+|-
+![[Wai Bai Tui]]
+!1, 2, 1, 4
+!7, 10, 16, 30
+!High, high, high, high
+|-
+![[Ye Chui]]
+!1, 2, 4
+!7, 10, 15
+!High, high, low
+|-
+![[Lian Tan]]
+!1, 4
+!7, 17
+!High, high
+|-
+![[Xiang Long Shi Chong Tian Zhang]]
+!2, 1
+!8, 12
+!High, high
+|-
+![[Xiang Long Shi Ling Zhou]]
+!2, 2
+!8, 20
+!High, mid
+|-
+![[Wu Dang Xuan Feng Jiao]]
+!3, 2, 3
+!15, 10, 26
+!High, high, mid
+|-
+![[Wu Dang Jin Ji Du Li]]
+!3, 2, 4
+!15, 10, 13
+!High, high, mid
+|-
+![[Ye Kua]]
+!2+3
+!21
+!Mid
+|-
+![[Lightning Glare|Shan Dian]]
+!1+2+3+4
+!-
+!-
+|-
+![[Jue Zhao Ying Mian Tui]]
+!During Shan Dian b+3, 1, 2
+!15, 16, 20
+!Mid, mid, mid
+|-
+![[Jue Zhao Qian Sao Lei Wang Quan]]
+!During Shan Dian d/b+4, 1, 2
+!13, 30, 20
+!High, mid, mid
+|-
+![[Heng Da Er Lang Dan Shan]]
+!f+2, 2
+!13, 21
+!High, mid
+|-
+![[Bai Tui]]
+!f+3
+!23
+!High
+|-
+![[Jin Ji Du Li]]
+!f+4
+!13
+!Mid
+|-
+![[Bai She Tui Chuang]]
+!During Jin Ji Du Li 1, 2
+!13, 17
+!Mid, mid
+|-
+![[Heng Quan]]
+!During Jin Ji Du Li 2
+!18
+!High
+|-
+![[Er Qi Jiao]]
+!During Jin Ji Du Li 3, 4
+!13, 17
+!Mid, mid
+|-
+![[Cuo Ti Fu Ren]]
+!During Jin Ji Du Li 4
+!18
+!Low
+|-
+![[Bei Zhe Kao]]
+!f+1+2
+!32
+!Mid
+|-
+![[Xiang Chui]]
+!f+2+3
+!21
+!High
+|-
+![[Shuang Huan Da]]
+!d/f+1, 2
+!13, 20
+!Mid, high
+|-
+![[Sheng Pao]]
+!d/f+2
+!13
+!Mid
+|-
+![[Chuan Pao]]
+!d/f+3
+!22
+!Mid
+|-
+![[Jin Gang Hua Shan Tuo Tian Zhang]]
+!d/f+1+2, 1+2, d, d/f, f+2
+!13, 11, 22
+!Mid, mid, mid
+|-
+![[Gui Xi]]
+!d/f+2+3
+!18
+!Low
+|-
+![[Fu Hu]]
+!d+1
+!18
+!Mid
+|-
+![[Pi Zhong]]
+!d+2
+!23
+!Mid
+|-
+![[Sao Tang Ti to Shang Bu Zhuang Zhang]]
+!d+4, 2
+!10, 23
+!Low, high
+|-
+![[Fo Bu]]
+!d+1+2
+!-
+!-
+|-
+![[Ya Sui]]
+!During Fo Bu 1
+!13
+!Mid
+|-
+![[Ya Sui Ying Quan]]
+!During Fo Bu 1, 2
+!13, 20
+!Mid, mid
+|-
+![[Fan Lan Chui]]
+!During Fo Bu 2
+!20
+!Mid
+|-
+![[Startled Crane]]
+!During Fo Bu 3
+!30
+!High
+|-
+![[Jin Ji Du Li]]
+!During Fo Bu 4
+!13
+!Mid
+|-
+![[Tong Bei Shi]]
+!During Fo Bu 1+2
+!30
+!High
+|-
+![[Chong Tian Zhang to Fu Bo]]
+!d/b+2, 2
+!11, 17
+!High, mid
+|-
+![[Lie Huo Fan Jiao]]
+!d/b+3
+!23
+!High
+|-
+![[Qian Sao Lei Wang Quan]]
+!d/b+4, 1
+!12, 30
+!Low, mid
+|-
+![[Ba Wang Zhe Jiang]]
+!d/b+1+2, 1
+!17, 20
+!Mid, mid
+|-
+![[Ding Zhou Jin Ji Du Li]]
+!b+1, 4
+!17, 13
+!Mid, mid
+|-
+![[Wu Hu Chu Dong]]
+!b+2, 1
+!11, 11
+!Mid, high
+|-
+![[Er Lang Dan Shan]]
+!b+2, 1+2
+!11, 21
+!Mid, mid
+|-
+![[Ying Mian Tui]]
+!b+3, 1
+!15, 16
+!Mid, mid
+|-
+![[Dragon's Impact]]
+!b+4, 1+2
+!15, 21
+!Mid, mid
+|-
+![[Tui Bu Jin Ji Du Li]]
+!b+3+4
+!-
+!-
+|-
+![[Cuo Zhang]]
+!b+1+4
+!17, 13
+!High, low
+|-
+![[Chuan Chong Quan]]
+!u/f+1, 2
+!8, 21
+!High, mid
+|-
+![[Yue Bu Si Quan]]
+!u/f+2, 1
+!15, 13
+!Mid, mid
+|-
+![[Yi Qi Jiao]]
+!u/f (or u)+3
+!21
+!Mid
+|-
+![[Yue Bu San Jing Ti]]
+!u/f (or u or u/b)+4
+!13
+!Mid
+|-
+![[Shang Bu Zhuang Quan]]
+!f, f+2
+!23
+!Mid
+|-
+![[Tiao Shan Fu Ren]]
+!f, f+3
+!20
+!Mid
+|-
+![[Tiao Shan Pu Bu]]
+!f, f+4, 3, 4
+!16, 12, 16
+!Mid, mid, low
+|-
+![[Xiao Jia Er Lu Liang Yi Zhou]]
+!b, b+1+2
+!60
+!!
+|-
+![[Jin Bu]]
+!d, d/f, f
+!-
+!-
+|-
+![[Lei Zhang]]
+!d, d/f, f+1
+!17
+!Low
+|-
+![[Shang Bu Zhuang Zhang]]
+!d, d/f, f+2
+!16
+!Mid
+|-
+![[Swallow Step]]
+!d, d/f, f+3+4
+!6, 20
+!Mid, mid
+|-
+![[Tiao Shan Jiang Jiao]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Huo Da Ding Zhou]]
+!WS+1, 4, 1
+!13, 12, 23
+!Mid, low, mid
+|-
+![[Shang Bu Gua Shan]]
+!WS+2
+!15
+!Mid
+|-
+![[Liang Yi Er Tui]]
+!WS+3, 1
+!13, 11
+!Mid, mid
+|-
+![[Liang Yi Er Tui Ya Zhou]]
+!WS+3, 1, 2
+!13, 11, 18
+!Mid, mid, high
+|-
+![[Deng Jiao]]
+!WS+4
+!15
+!Mid
+|-
+![[Le Kua Kao]]
+!WS+1+2
+!22
+!Mid
+|-
+![[Hou Sao Xuan]]
+!FC+d/f+3
+!21
+!Low
+|-
+![[Da Kai]]
+!SS+1+2
+!30
+!Mid
+|-
+![[Tui Bu Dan Yi]]
+!Back to opponent 1+2
+!21
+!Mid
+|-
+![[Zhen Jiao]]
+!(With the opponent down) d+3+4
+!24
+!Low
+|}
+
+===During [[Jin Ji Du Li]] ===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Jin Ji Du Li]]
+!f+4
+!13
+!Mid
+|-
+![[Bai She Tui Chuang]]
+!During Jin Ji Du Li 1, 2
+!13, 17
+!Mid, high, mid
+|-
+![[Heng Quan]]
+!During Jin Ji Du Li 2
+!13, 18
+!Mid, high
+|-
+![[Er Qi Jiao]]
+!During Jin Ji Du Li 3, 4
+!13, 17
+!Mid, mid
+|-
+![[Cuo Ti Fu Ren]]
+!During Jin Ji Du Li 4
+!18
+!Low
+|}
+
+===During [[Fo Bu]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Fo Bu]]
+!d+1+2
+! -
+! -
+|-
+![[Ya Sui]]
+!<small>During Fo Bu</small> 1
+!13
+!Mid
+|-
+![[Ya Sui Ying Quan]]
+!<small>During Fo Bu</small> 1, 2
+!13, 20
+!Mid, mid
+|-
+![[Fan Lan Chui]]
+!<small>During Fo Bu</small> 2
+!20
+!Mid
+|-
+![[Startled Crane]]
+!<small>During Fo Bu</small> 3
+!30
+!High
+|-
+![[Jin Ji Du Li]]
+!<small>During Fo Bu</small> 4
+!13
+!Mid
+|-
+![[Tong Bei Shi]]
+!<small>During Fo Bu</small> 1+2
+!30
+!High
+|}
+
+===During [[Jin Bu]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Jin Bu]]
+!d,d/f,f
+! -
+! -
+|-
+![[Lei Zhang]]
+!d,d/f, f+1
+!17
+!Low
+|-
+![[Shang Bu Zhuang Zhang]]
+!d,d/f, f+2
+!16
+!Mid
+|-
+![[Swallow Step]]
+!d,d/f, f+3+4
+!6, 20
+!Mid, mid
+|}
+
+==10 Hit Combo==
+{| class="wikitable sortable" id="10 hit combos" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Leo)|2, 1, 3, 2, 1, 2, 3, 1, 2, 1+2]]
+!106
+!hhhmhlmmhm
+|-
+![[10 Hit Combo 2 (Leo)|2, 1, 3, 2, 1, 3, 2, 4, 2, 1+2]]
+!108
+!hhhmhhhlmm
+|}
+
+[[Category:Leo Kliesen Moves]]
+[[Category:Moves Lists]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

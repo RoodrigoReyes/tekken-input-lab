@@ -1,4 +1,4 @@
-import { useId, useState } from 'react';
+import { useId, useState, type ReactNode } from 'react';
 import { Select } from '../../components/ui/Field';
 import type { InfoLine } from '../../ttt2/pieceInfo';
 
@@ -19,6 +19,7 @@ export interface PhaseCardProps {
   value: string;
   onChange: (id: string) => void;
   info: readonly InfoLine[];
+  children?: ReactNode;
 }
 
 function groupsOf(options: readonly PhaseOption[]): Array<{ group?: string; options: PhaseOption[] }> {
@@ -33,7 +34,7 @@ function groupsOf(options: readonly PhaseOption[]): Array<{ group?: string; opti
 const STEP_BUTTON = 'label-md flex size-11 shrink-0 items-center justify-center rounded-lg border border-line-control bg-muted text-fg hover:bg-line-strong active:bg-neutral disabled:cursor-not-allowed disabled:opacity-40';
 
 /** One layer of a team combo: pick a piece from a dropdown (or step through them) and read what it is. */
-export function PhaseCard({ step, title, performer, options, value, onChange, info }: PhaseCardProps) {
+export function PhaseCard({ step, title, performer, options, value, onChange, info, children }: PhaseCardProps) {
   const selectId = useId();
   const infoId = useId();
   const [more, setMore] = useState(false);
@@ -82,6 +83,7 @@ export function PhaseCard({ step, title, performer, options, value, onChange, in
           ›
         </button>
       </div>
+      {children}
       {/* Phones: one summary line that unfolds the sheet; from sm up the sheet is always shown. */}
       {info.length > 0 && (
         <button

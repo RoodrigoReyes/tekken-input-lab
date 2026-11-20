@@ -1,0 +1,1095 @@
+'''Lei Wulong/Tekken Tag Tournament 2 Movelist''' is a list of all of the moves that [[Lei Wulong]] can perform in ''[[Tekken Tag Tournament 2]]''.
+==Movelist==
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Double Foot Stomp]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Sleeper Hold]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Sailboat Stretch]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Closing Fan]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Windmill]]
+!1+3 (or 2+4)
+!Back
+!50
+!
+|-
+![[Dragon Falls]]
+!u/f+1+2
+!Front
+!40
+!1+2
+|-
+![[Tripping]]
+!f, f+1+2
+!Front
+!38
+!1+2
+|-
+![[Dragon Neck Snap]]
+!During Dragon 1
+!Front
+!35
+!1
+|-
+![[Out of Control]]
+!During Drunken Master Walk 1+3 (or 2+4)
+!Front
+!33
+!1+2
+|}
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Serpent Strike]]
+!1, 1
+!7, 12
+!High, high
+|-
+![[Left Right Combo|Left Right Punch]]
+!1, 2
+!7, 12
+!High, high
+|-
+![[Yue Ya Cha Shou]]
+!2, 1
+!10, 13
+!High, mid
+|-
+![[Yue Ya Lian Tui]]
+!2, 1,3+4
+!10, 13, 12, 13
+!High, mid, mid, mid
+|-
+![[High and Low Kicks]]
+!3, 3
+!30, 17
+!High, low
+|-
+![[Tornado Kick (Lei Wulong)|Tornado Kick]]
+![3~4], 4, 4
+!25, 21, 17
+!Mid, mid, mid
+|-
+![[Clean Sweep (Lei)|Clean Sweep]]
+![4~3]
+!25
+!Mid
+|-
+![[Lift Up Cannon]]
+![4~4], 3, 3
+!7, 7, 23
+!Low, low, mid
+|-
+![[Hook Punch to Spinning Back Blow]]
+!1+2, 1
+!18, 18
+!High, high
+|-
+![[Hook Punch to Spiral Upper]]
+!1+2, 2
+!18, 21
+!High, mid
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Howling Dog]]
+!f+3, 1
+!20, 12
+!Mid, high
+|-
+![[Howling Dog Rush]]
+!f+3, 1, 2
+!20, 12, 12
+!Mid, high, mid
+|-
+![[Beating Kick Low Combo]]
+!f+4, 2, 1, 2, 3
+!26, 12, 12, 8, 12
+!High, mid, mid, mid, low
+|-
+![[Beating Kick Mid Combo]]
+!f+4, 2, 1, 2, 4
+!26, 12, 12, 8, 12
+!High, mid, mid, mid, mid
+|-
+![[Beating Kick Mid Combo Crane]]
+!f+4, 2, 1, 2, 4,u (or d)
+!26, 12, 12, 8, 12
+!High, mid, mid, mid, mid
+|-
+![[Twin Snake Strikes]]
+!f+1+2
+!13, 10
+!High, high
+|-
+![[Dancing Cobra]]
+!d/f+1, 1, 1
+!13, 12, 21
+!Mid, high, mid
+|-
+![[Right Uppercut (Lei)|Right Uppercut]]
+!d/f+2
+!12
+!Mid
+|-
+![[Spinning Side Kick]]
+!d/f+3
+!27
+!Mid
+|-
+![[Tiger Fang (Lei)|Tiger Fang]]
+!d/f+1+2
+!21
+!Mid
+|-
+![[Iron Mace]]
+!d+2
+!18
+!Mid
+|-
+![[Lian Huan Tie Suo]]
+!d+2, 2
+!18, 21
+!Mid, mid
+|-
+![[Low Kick (Lei)|Low Kick]]
+!d+4
+!10
+!Low
+|-
+![[Double Stab]]
+!d+4, 4
+!10, 18
+!Low, mid
+|-
+![[She Juan Rui Ya]]
+!d/b+1
+!13
+!Low
+|-
+![[Rave Spin]]
+!d/b+4, 4
+!8, 30
+!Low, high
+|-
+![[Orchid Palm]]
+!d/b+1+2
+!26
+!Mid
+|-
+![[Mule Kick]]
+!d/b+3+4
+!22
+!Mid
+|-
+![[Dragon Spear]]
+!b+2
+!15
+!Mid
+|-
+![[Lei Gong Elbow]]
+!b+4, 1
+!17, 23
+!Low, high
+|-
+![[Cannonball (Lei Wulong)|Cannonball]]
+!b+1+2
+!25
+!Mid
+|-
+![[Scythe Kick]]
+!u/b+4
+!20
+!Mid
+|-
+![[Immortal Flight]]
+!u+1+2
+!-
+!-
+|-
+![[Sonic Strike]]
+!u/f+1
+!18
+!High
+|-
+![[Falling Tree]]
+!u/f (or u or u/b)+2
+!25
+!Mid
+|-
+![[Hopping Crane Kick]]
+!u/f (or u or u/b)+3
+!23
+!Mid
+|-
+![[Ostrich Kick]]
+!u/f (or u)+4
+!21
+!Mid
+|-
+![[Comet Kick]]
+!u/f+3+4, 4
+!10, 16, 12
+!Mid, mid, mid
+|-
+![[Razor Rush Snake]]
+!f, N, 1, u (or d)
+!8
+!Mid
+|-
+![[Razor Rush Dragon]]
+!f, N, 1, 2, u (or d)
+!8, 8
+!Mid, mid
+|-
+![[Razor Rush Panther]]
+!f, N, 1, 2, 1, u (or d)
+!8, 8, 8
+!Mid, mid, mid
+|-
+![[Razor Rush Tiger]]
+!f, N, 1, 2, 1, 2, u (or d)
+!8, 8, 8, 8
+!Mid, mid, mid, mid
+|-
+![[Razor Rush Low Kick]]
+!f, N, 1, 2, 1, 2, 3
+!8, 8, 8, 8, 12
+!Mid, mid, mid, mid, low
+|-
+![[Razor Rush Mid Kick]]
+!f, N, 1, 2, 1, 2, 4
+!8, 8, 8, 8, 12
+!Mid, mid, mid, mid, mid
+|-
+![[Razor Rush Mid Kick Crane]]
+!f, N, 1, 2, 1, 2, 4, u (or d)
+!8, 8, 8, 8, 12
+!Mid, mid, mid, mid, mid
+|-
+![[Defense Breaker]]
+!f, N, 2, 1, 2, 1 (With the opponent on guard)
+!-
+!High, mid, mid, mid
+|-
+![[One Two Kick Mid]]
+!f, N, 3, 4
+!30, 20
+!High, mid
+|-
+![[One Two Kick Low]]
+!f, N, 3, d+4
+!30, 20
+!High, low
+|-
+![[Wolf Strike]]
+!f, N, 4, 1, 2, 2, 2
+!18, 12, 8, 10, 15
+!High, mid, mid, mid, low
+|-
+![[Wolf Strike to Snake Bite Combo]]
+!f, N, 4, 1, 2, 2, 4, 3, 3
+!18, 12, 8, 10, 7, 7, 23
+!High, mid, mid, mid, low, low, mid
+|-
+![[Rush Combo Mid Kick]]
+!f, N, 4, 1, 2, 3, 4
+!18, 11, 8, 20, 20
+!High, mid, mid, high, mid
+|-
+![[Rush Combo Low Kick]]
+!f, N, 4, 1, 2, 3, d+4
+!18, 12, 8, 20, 20
+!High, mid, mid, high, low
+|-
+![[Mauling Dragon]]
+!f, f+2
+!23
+!Mid
+|-
+![[Reverse Lotus]]
+!f, f+3
+!15
+!Mid
+|-
+![[Floating Lotus]]
+!f, f+3, 4
+!15, 22
+!Mid, high
+|-
+![[Turbulent Winds]]
+!f, f+4, 3+4
+!21, 21
+!High, high
+|-
+![[Dragon's Whip]]
+!f, f+3+4
+!22
+!Mid
+|-
+![[Drunken Tiger Lash]]
+!b, b+1
+!23
+!High
+|-
+![[Drunken Tiger Stumble]]
+!b, b+1, d+2
+!23, 12
+!High, low
+|-
+![[Leaping Sidekick|Jumping Kick]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Wild Upper]]
+!WS+2, 1
+!12, 15
+!Mid, mid
+|-
+![[Di Gong Jiao]]
+!WS+3+4
+!13
+!Mid
+|-
+![[Ballroom Dance]]
+!FC+d/f+2, 1, 4
+!10, 10, 18
+!Low, mid, mid
+|-
+![[Snake Palm Fist]]
+!SS+1
+!21
+!High
+|-
+![[Crane Cannon]]
+!SS+4
+!13
+!Mid
+|-
+![[Falling Blade]]
+!SS+3+4
+!15
+!Mid
+|-
+![[Spring Up (Lei)|Spring Up]]
+!On the ground (on the back) 3+4
+!25
+!Mid
+|-
+![[Snake|Five Gates Form - Snake]]
+!3+4 or f+2+3 (ou b+2+3)
+!-
+!-
+|-
+![[Dragon|Five Gates Form - Dragon]]
+!3+4, 1
+!-
+!-
+|-
+![[Panther|Five Gates Form - Panther]]
+!3+4, 2
+!-
+!-
+|-
+![[Tiger|Five Gates Form - Tiger]]
+!3+4, 3
+!-
+!-
+|-
+![[Crane|Five Gates Form - Crane]]
+!3+4, 4
+!-
+!-
+|-
+![[Drunken Master Walk]]
+!f+3+4
+!-
+!-
+|-
+![[Phoenix Illusion]]
+!b+1+4
+!-
+!-
+|-
+![[Back Turn]]
+!b+3+4
+!-
+!-
+|-
+![[Sidewind|Sidewind (Feet first)]]
+!d+1+2
+!-
+!-
+|-
+![[Sidewind|Sidewind (Head first)]]
+!d+1+4
+!-
+!-
+|-
+![[Play Dead (Lei)|Play Dead (Feet first)]]
+!d+3+4
+!-
+!-
+|-
+![[Play Dead (Lei)|Play Dead (Head first)]]
+!d+2+3
+!-
+!-
+|-
+![[Taunt 1 (Lei Wulong)|Taunt 1]]
+!1+3+4
+!-
+!-
+|-
+![[Taunt 2 (Lei Wulong)|Taunt 2]]
+!2+3+4
+!-
+!-
+|-
+|}
+===During [[Snake]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Snake|Five Gates Form - Snake]]
+!f+2+3 (or b+2+3)
+!-
+!-
+|-
+![[Rushing Snake]]
+!During Snake 1, 1, 1, 1, 1
+!10, 8, 8, 7, 6
+!High, high, high, high, high
+|-
+![[Snapping Snake]]
+!During Snake 1, 2, 1, 2
+!10, 13, 10, 20
+!High, mid, mid, high
+|-
+![[Snake Bites]]
+!During Snake 2, 2, 2
+!15, 10, 15
+!Mid, mid, low
+|-
+![[Snake Bite Combo]]
+!During Snake 2, 2, 4, 3, 3
+!15, 10, 7, 7, 23
+!Mid, mid, low, low, mid
+|-
+![[Rattlesnake]]
+!During Snake 3
+!30
+!Mid
+|-
+![[Snake Low Kick]]
+!During Snake 4
+!11
+!Low
+|-
+![[Angry Viper]]
+!During Snake 1+2
+!25
+!Mid
+|-
+![[Dragon|Five Gates Form - Dragon]]
+!During Snake u
+!-
+!-
+|-
+![[Panther|Five Gates Form - Panther]]
+!During Snake d
+!-
+!-
+|}
+===During [[Dragon]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Dragon Roar (Lei Wulong)|Dragon Roar]]
+!During Dragon 2
+!18
+!Mid
+|-
+![[Cuju Kick]]
+!During Dragon 3
+!11
+!Low
+|-
+![[Wolf Strike]]
+!During Dragon 4, 1, 2, 2, 2
+!18, 12, 8, 10, 15
+!High, mid, mid, mid, low
+|-
+![[Dragon's Fang Attack]]
+!During Dragon 4, 1, 2, 3
+!18, 12, 8, 20
+!High, mid, mid, high
+|-
+![[Rush Combo Mid Kick]]
+!During Dragon 4, 1, 2, 3, 4
+!18, 11, 8, 20, 20
+!High, mid, mid, high, mid
+|-
+![[Rush Combo Low Kick]]
+!During Dragon 4, 1, 2, 3, d+4
+!18, 12, 8, 20, 20
+!High, mid, mid, high, low
+|-
+![[Dragon's Spite]]
+!During Dragon 1+2
+!5, 20
+!High, high
+|-
+![[Dragon Spark]]
+!During Dragon f+1+2
+!32
+!Mid
+|-
+![[Play Dead (Lei)|Play Dead (Head first)]]
+!During Dragon d+3+4
+!-
+!-
+|-
+![[Tiger|Five Gates Form - Tiger]]
+!During Dragon u
+!-
+!-
+|-
+![[Snake|Five Gates Form - Snake]]
+!During Dragon d
+!-
+!-
+|}
+===During [[Panther]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Panther's Scratch]]
+!During Panther [1~2]
+!12, 30
+!Low, high
+|-
+![[Panther's Paw]]
+!During Panther 2
+!21
+!Mid
+|-
+![[Panther Pounce]]
+!During Panther 3
+!18
+!Low
+|-
+![[Beating Kick Low Combo]]
+!During Panther 4, 2, 1, 2, 3
+!26, 12, 12, 8, 12
+!High, mid, mid, mid, low
+|-
+![[Beating Kick Mid Combo]]
+!During Panther 4, 2, 1, 2, 4
+!26, 12, 12, 8, 12
+!High, mid, mid, mid, mid
+|-
+![[Snake|Five Gates Form - Snake]]
+!During Panther u
+!-
+!-
+|-
+![[Crane|Five Gates Form - Crane]]
+!During Panther d
+!-
+!-
+|}
+===During [[Tiger]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Tiger's Strike]]
+!During Tiger 1
+!22
+!Mid
+|-
+![[Tiger's Claw (Lei)|Tiger's Claw]]
+!During Tiger 2
+!28
+!Mid
+|-
+![[Leaping Tiger]]
+!During Tiger 3
+!28
+!Mid
+|-
+![[Leaping Tiger to Coiled Snake]]
+!During Tiger 3, f+4
+!28, 8
+!Mid, low
+|-
+![[Leaping Tiger to Crouching Snake]]
+!During Tiger 3, f+1
+!28, 13
+!Mid, mid
+|-
+![[Tiger's Tail]]
+!During Tiger 4
+!12
+!Low
+|-
+![[Double Tiger Palm]]
+!During Tiger 1+2
+!32
+!Mid
+|-
+![[Snake|Five Gates Form - Snake]]
+!During Tiger u
+!-
+!-
+|-
+![[Dragon|Five Gates Form - Dragon]]
+!During Tiger d
+!-
+!-
+|}
+===During [[Crane]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Crane's Bill]]
+!During Crane 1
+!23
+!Mid
+|-
+![[Spinning Crane Swipe|Wing of Crane]]
+!During Crane 2
+!21
+!High
+|-
+![[Crane Dance]]
+!During Crane 3, 4, 2, 4
+!21, 10, 10, 15
+!Mid, low, mid, mid
+|-
+![[Crane Kick (Lei)|Crane Kick]]
+!During Crane 4
+!20
+!Low
+|-
+![[Crane Smash]]
+!During Crane 1+2
+!25
+!High
+|-
+![[Leaping Crane]]
+!During Crane u/f+4
+!21
+!Mid
+|-
+![[Panther|Five Gates Form - Panther]]
+!During Crane u
+!-
+!-
+|-
+![[Snake|Five Gates Form - Snake]]
+!During Crane d
+!-
+!-
+|}
+===During [[Drunken Master Walk]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Drunken Master Walk]]
+!f+3+4
+!-
+!-
+|-
+![[Drunken Tiger Lash]]
+!During Drunken Master Walk 1
+!25
+!Mid
+|-
+![[Drunken Rapid Fists]]
+!During Drunken Master Walk 2, 2 (or SS+2, 2)
+!12, 18
+!Mid, high
+|-
+![[Drunken Fox Kick]]
+!During Drunken Master Walk 3
+!13
+!Low
+|-
+![[Drunken Fox Combination]]
+!During Drunken Master Walk 3, 2, 4
+!13, 20, 17
+!Low, mid, mid
+|-
+![[Drunken Tiger Kick]]
+!During Drunken Master Walk 4
+!17
+!Mid
+|-
+![[Tiger Sip]]
+!During Drunken Master Walk 1+2,1+2,1+2
+!-
+!-
+|-
+![[Staggering Slide]]
+!During Drunken Master Walk 3+4
+!22
+!Low
+|-
+![[Spinning Headbutt]]
+!During Drunken Master Walk b+1+2
+!25
+!Mid
+|-
+![[Drunken Stupor]]
+!During Drunken Master Walk u/b+1+2
+!-
+!-
+|-
+![[Drunken Fake to Jab]]
+!During Drunken Master Walk u/b+1+2, 1
+!25
+!Mid
+|-
+![[Drunken Fall]]
+!During Drunken Master Walk u/f+1+2
+!21
+!Mid
+|}
+===During [[Phoenix Illusion]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Phoenix Illusion]]
+!b+1+4
+!-
+!-
+|-
+![[Phoenix Spear]]
+!During Phoenix 1
+!23
+!High
+|-
+![[Phoenix Drunken Tiger Stumble]]
+!During Phoenix 1, d+2
+!23, 10
+!High, low
+|-
+![[Phoenix Wrath]]
+!During Phoenix 2
+!23
+!Mid
+|-
+![[Phoenix Sunder]]
+!During Phoenix 3, 3
+!28, 17
+!High, low
+|-
+![[Phoenix Cutter]]
+!During Phoenix 4
+!18
+!Low
+|-
+![[Phoenix Illusion to Drunken Master Walk]]
+!During Phoenix 1+2
+!-
+!-
+|-
+![[Phoenix Strike]]
+!During Phoenix f+4
+!45
+!!
+|-
+![[Hopping Phoenix]]
+!During Phoenix b+3, 3, 3
+!17, 17, 17
+!Mid, mid, mid
+|-
+![[Tornado Kick (Lei Wulong)|Tornado Kick]]
+!During Phoenix b+4, 4, 4
+!25, 21, 17
+!Mid, mid, mid
+|-
+![[Snake|Five Gates Form - Snake]]
+!During Phoenix u (or d)+2+3
+!-
+!-
+|}
+===[[Back Turn|Back to the opponent]]===
+{| class="wikitable sortable" id="back" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Back Turn]]
+!b+3+4
+!-
+!-
+|-
+![[Dancing Spear]]
+!Back to opponent 1, 1, 3, 2
+!12, 10, 7, 15
+!High, mid, high, low
+|-
+![[Spinning Heavy Hand]]
+!Back to opponent 2
+!20
+!Mid
+|-
+![[Reverse Double Kick]]
+!Back to opponent 4, 3
+!15, 17
+!Mid, mid
+|-
+![[Reverse Watermill]]
+!Back to opponent 4, 4
+!15, 20
+!Mid, mid
+|-
+![[Backfist Elbow Drop]]
+!Back to opponent 1+2, 2
+!12, 18
+!High, mid
+|-
+![[Flit Flip Flop]]
+!Back to opponent 3+4, 3+4, 3+4
+!15, 15, 15
+!Mid, mid, mid
+|-
+![[Low Back Spin]]
+!Back to opponent d+1
+!12
+!Low
+|-
+![[Reverse Double Slicer]]
+!Back to opponent d+4, 4
+!8, 30
+!Low, high
+|-
+![[Falling Tree]]
+!Back to opponent u/f (or u/b)+2
+!25
+!Mid
+|-
+![[Sidewind]]
+!Back to opponent d+1+2 (or d+1+4)
+!-
+!-
+|-
+![[Play Dead (Lei)|Play Dead]]
+!Back to opponent d+3+4 (or d+2+3)
+!-
+!-
+|}
+===During [[Sidewind]]===
+{| class="wikitable sortable" id="sidewind" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Sidewind|Sidewind (Feet first)]]
+!d+1+2
+!-
+!-
+|-
+![[Maelstrom Sweep]]
+!During Sidewind (Feet first) 3
+!21
+!Low
+|-
+![[Low Kick to Play Dead]]
+!During Sidewind (Feet first) [3~4]
+!5
+!Low
+|-
+![[Clean Sweep (Lei)|Clean Sweep]]
+!During Sidewind (Feet first) [4~3]
+!18
+!Mid
+|-
+![[Fu Qin Tian Jiao]]
+!During Sidewind (Feet first) 3+4
+!5, 20
+!Mid, mid
+|-
+![[Sidewind|Sidewind (Head first)]]
+!d+1+4
+!-
+!-
+|-
+![[Sliding Kick (Lei)|Sliding Kick]]
+!During Sidewind (Head first) [4~3]
+!15
+!Low
+|-
+![[Bicycle Kicks]]
+!During Sidewind (Head first) 3+4
+!5, 20
+!Mid, mid
+|-
+![[Deadly Current]]
+!During Sidewind (Head first) d+3+4
+!23
+!Low
+|-
+![[Turn Over (Lei)|Turn Over]]
+!During Sidewind 1 (or d+1)
+!-
+!-
+|-
+![[Meng Xian]]
+!During Sidewind 2 (or on the ground on your back 2)
+!-
+!-
+|-
+![[Startled Drunk]]
+!During Sidewind 1+2
+!-
+!-
+|-
+|}
+===During [[Play Dead (Lei)|Play Dead]]===
+{| class="wikitable sortable" id="playdead" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Play Dead (Lei)|Play Dead (Feet first)]]
+!d+3+4
+!-
+!-
+|-
+![[Lotus Cutter]]
+!During Play Dead (Feet first) 3
+!13
+!Low
+|-
+![[Dan Jiao]]
+!During Play Dead (Feet first) 4
+!17
+!Mid
+|-
+![[Spring Up (Lei)|Spring Up]]
+!During Play Dead (feet first) 3+4
+!-
+!-
+|-
+![[Play Dead (Lei)|Play Dead (Head first)]]
+!d+2+3
+!-
+!-
+|-
+![[Leaping Double Slicer]]
+!During Play Dead (Head first) 3, 4
+!8, 30
+!Low, high
+|-
+![[Spring Kick (Lei)|Spring Kick]]
+!During Play Dead (Head first) 4
+!20
+!Mid
+|-
+![[Po Long Sheng Tui]]
+!During Play Dead (Head first) 3+4
+!12, 13
+!Low, mid
+|-
+![[Turn Over (Lei)|Turn Over]]
+!During Play Dead 1 (or d+1)
+!-
+!-
+|-
+![[Meng Xian]]
+!During Play Dead 2 (or on the back 2)
+!-
+!-
+|-
+![[Startled Drunk]]
+!During Play Dead 1+2
+!-
+!-
+|-
+![[Hangover]]
+!During Play Dead 1+2+3
+!-
+!-
+|}
+
+==10 Hit Combo==
+{| class="wikitable sortable" id="10 hit combo" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Lei Wulong)|b+1, 2, 1, 3+4, 2, 1, 4, 1, 2, 3]]
+!94
+!hhlmmmhmmh
+|-
+![[10 Hit Combo 2 (Lei Wulong)|b+1, 2, 1, 3+4, 2, 1, 4, 1, 4, 4]]
+!100
+!hhlmmmhmlh
+|-
+![[10 Hit Combo 3 (Lei Wulong)|b+1, 2, 1, 3+4, 3+4, 3+4, 1, 1, 2]]
+!92
+!hhlmmmllm
+|}
+[[Category:Moves Lists]]
+[[Category:Lei Wulong Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

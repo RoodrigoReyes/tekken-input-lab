@@ -71,4 +71,13 @@ describe('guide notation (TTT2 BNB Combos)', () => {
     expect(warnings('DRU b 1+2,PLDs 1+2', ['Lei'])).toEqual([]);
     expect(warnings('d/f 1 ~ B,SWY d 4', ['Paul'])).toEqual([]);
   });
+
+  it('grapplers: Dark Upper, Giant Swing and ground/wall throws written in prose', () => {
+    expect(compact('DU > u/f+3', ['Armor King'])).toBe('named(DU) > uf+3');
+    expect(compact('uf+3 GS', ['King'])).toContain('named(GS)');
+    for (const who of ['Armor King', 'King', 'Marduk']) expect(compact('f+1+4 > groundgrab', [who])).toContain('named(groundgrab)');
+    expect(warnings('df+2,1 > wallgrab', ['Marduk'])).toEqual([]);
+    expect(warnings('d/f+2 > 4,1 > 1 > f+3~CDc 4,3 B!', ['Dragunov'])).toEqual([]);
+    expect(warnings('ff+3 > MUS 2 > df+1', ['Kunimitsu'])).toEqual([]);
+  });
 });

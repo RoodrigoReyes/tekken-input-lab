@@ -30,7 +30,12 @@ export function describeRoute({ piece, analysis, flags }: PoolRoute): InfoLine[]
     { label: 'When', value: WHEN[piece.routeKind ?? 'normal'] },
     ...(piece.starter ? [{ label: 'Starter', value: piece.starter }] : []),
     ...(piece.forms ? [{ label: 'Only', value: piece.forms.join(', ') }] : []),
-    { label: 'Hits before TA', value: `~${analysis.preTaHits}` },
+    ...(analysis.opener
+      ? [{ label: 'Hits before TA', value: `~${analysis.preTaHits}` }]
+      : [
+          { label: 'Hits', value: `~${analysis.preTaHits}` },
+          { label: 'Tag Assault', value: 'No B! in this guide route: solo combo, no TA' },
+        ]),
     ...(analysis.boundMove ? [{ label: 'Bound', value: analysis.boundMove }] : []),
     ...(analysis.usesWall ? [{ label: 'Wall', value: 'Uses the wall (W!)' }] : []),
     ...flagLines(flags),
@@ -50,6 +55,6 @@ export function describePiece({ piece, flags }: PoolPiece, performer: string): I
 
 /** Text of a piece in a phase dropdown. */
 export function optionLabel(entry: PoolPiece | PoolRoute): string {
-  if ('analysis' in entry) return `${entry.piece.starter ?? 'Route'} · ${entry.analysis.opener ?? entry.piece.notation}`;
+  if ('analysis' in entry) return `${entry.piece.starter ?? 'Route'} · ${entry.analysis.opener ?? `${entry.piece.notation} (solo)`}`;
   return entry.piece.notation;
 }

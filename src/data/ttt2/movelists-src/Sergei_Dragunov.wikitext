@@ -1,0 +1,503 @@
+'''Dragunov/Tekken Tag Tournament 2 Moves List''' is a list of all of the moves that [[Sergei Dragunov]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Moves List==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Volk Clutch]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Purge Slam]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Tarantula Sting]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Reverse Fracture]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Absolute Silence]]
+!1+3 (or 2+4)
+!Back
+!50
+!
+|-
+![[Reverse Victor Clutch]]
+!f+1+4
+!Front
+!40
+!1
+|-
+![[Victor Clutch]]
+!f+2+3
+!Front
+!40
+!2
+|-
+![[Blizzard Rush]]
+!f, f+1+2
+!Front
+!35
+!1+2
+|-
+![[Ambush Tackle]]
+!d/b+1+2
+!Front
+!5
+!1+2
+|-
+![[Frost Bite]]
+!During tackle 1
+!Front
+!35
+!1
+|-
+![[Achilles' Hold]]
+!During tackle 2
+!Front
+!35
+!2
+|-
+![[Iron Curtain]]
+!During tackle 1+2
+!Front
+!40
+!1+2
+|-
+![[Cold Fate]]
+!(Crouching opponent) d+1+3 (or d+2+4)
+!Front
+!45
+!1 or 2
+|-
+![[Red Alert]]
+!Synchro with the opponent's attack b+1+3 (or b+2+4)
+!Parry
+!25
+!
+|-
+![[Pit Fall]]
+!Synchro with the opponent's attack d/f+1+2
+!Parry
+!35
+!
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Eye Gouge to Hilt]]
+!1, 1, 3
+!7, 8, 22
+!High, high, mid
+|-
+![[Jab to Body Blow]]
+!1, 2
+!7, 8
+!High, mid
+|-
+![[Salvo]]
+!1, 2, 1
+!7, 8, 20
+!High, mid, mid
+|-
+![[Hammer and Sickle]]
+!1, 3, 2
+!7, 13, 20
+!High, high, mid
+|-
+![[One Two Scud Kick]]
+!2, 1, 3
+!10, 8, 23
+!High, high, high
+|-
+![[One Two Mine Kick]]
+!2, 1, 4
+!10, 8, 13
+!High, high, low
+|-
+![[Disconnector Combo Middle|Disconnector]]
+!3, 1, 2
+!10, 8, 23
+!Mid, high, mid
+|-
+![[Karnov Hook]]
+!4, 1
+!15, 12
+!High, high
+|-
+![[Karnov Kick]]
+!4, 3
+!15, 20
+!High, mid
+|-
+![[Karnov Avalanche]]
+!4, 4
+!15, 28
+!High, mid
+|-
+![[Bloodhound]]
+!1+2, 4
+!15, 22
+!Mid, high
+|-
+![[Bloodhound Tackle]]
+!1+2, 1+2
+!15, 5
+!Mid, throw
+|-
+![[Iron Flail]]
+!3+4
+!35
+!High
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Stun Gun (Sergei Dragunov)|Stun Gun]]
+!f+2, 4
+!16, 23
+!High, mid
+|-
+![[High Salute]]
+!f+3
+!11
+!Mid
+|-
+![[High Salute to Sneak]]
+!f+3, d/f
+!11
+!Mid
+|-
+![[Double High Salute]]
+!f+3, 2
+!11, 18
+!Mid, high
+|-
+![[Step-in Mantis]]
+!f+3, 3
+!11, 13, 20
+!Mid, mid, throw
+|-
+![[Cougar Slash]]
+!f+4, 4
+!16, 13
+!High, high
+|-
+![[Cougar Combination|Neo Cougar Combination]]
+!f+4, 4, 3
+!16, 13, 20
+!High, high, high
+|-
+![[Cougar Maul]]
+!f+4, d+4
+!16, 12
+!High, low
+|-
+![[Scabbard]]
+!f+1+2
+!20
+!High
+|-
+![[Switchblade]]
+!d/f+1
+!13
+!Mid
+|-
+![[Switchblade Ripper]]
+!d/f+1, 4
+!13, 25
+!Mid, high
+|-
+![[Scimitar]]
+!d/f+2
+!13
+!Mid
+|-
+![[Mantis Heel]]
+!d/f+3
+!16, 20
+!Mid, throw
+|-
+![[Bunker-buster Elbow]]
+!d+1
+!18
+!Mid
+|-
+![[Razer]]
+!d+2
+!16
+!Low
+|-
+![[March of Tyranny]]
+!d+3, 4
+!13, 18
+!Low, mid
+|-
+![[Separator]]
+!d+4, 1, 3
+!12, 8, 21
+!Low, high, high
+|-
+![[Stiletto]]
+!d+4, 4
+!12, 23
+!Low, high
+|-
+![[Death's Door]]
+!d/b+2, 1, 2
+!12, 10, 20
+!Mid, mid, mid
+|-
+![[Clipping Sweep]]
+!d/b+3
+!15
+!Low
+|-
+![[Clipping Heel Hook]]
+!d/b+3 (Melee counterattack only)
+!14, 20
+!Low, throw
+|-
+![[Clipping Sweep to Feint & Catch]]
+!Approach (crouching opponent) d/b+3, 1+2
+!15, 30
+!Mid, throw
+|-
+![[Pommel Swing]]
+!b+1, 2
+!13, 18
+!Mid, mid
+|-
+![[Eye Gouge to Stingray]]
+!b+2, 1, 3
+!13, 11, 16
+!Mid, high, low
+|-
+![[Serrated Edge]]
+!b+3
+!17
+!High
+|-
+![[Death March to Ear Grab]]
+!b+4, 2, 1
+!15, 15, 17
+!Mid, mid, high
+|-
+![[Death March to Takedown]]
+!b+4, 2, 1+2
+!15, 15, 5
+!Mid, mid, throw
+|-
+![[War Machine]]
+!b+4, 3
+!15, 22
+!Mid, high
+|-
+![[Blizzard Hammer]]
+!b+1+2
+!26
+!Mid
+|-
+![[Inertia Kick]]
+!b+3+4
+!22
+!High
+|-
+![[Sub-Zero]]
+!b+2+3
+!50
+!!
+|-
+![[Counterstrike]]
+!u/b+2
+!18
+!High
+|-
+![[Eye Blast]]
+!u/f+1
+!18
+!High
+|-
+![[Under Pressure|Falcon Dive]]
+!u/f (or u)+2
+!18
+!Mid
+|-
+![[Slicing Sobat]]
+!u/f (or u or u/b)+4
+!21
+!Mid
+|-
+![[Scorpion Scissors]]
+!u/f+3+4
+!36
+!High
+|-
+![[Russian Sickle]]
+!f, f+2
+!20
+!Mid
+|-
+![[Feint & Catch]]
+!f, f+2, 1+2
+!10, 25
+!High, throw
+|-
+![[Stinger Kick]]
+!f, f+3
+!35
+!High
+|-
+![[Rolling Thunder]]
+!f, f+4
+!21
+!Mid
+|-
+![[Cocked Hammer]]
+!qcf+1
+!20
+!High
+|-
+![[Stinger Elbow]]
+!qcf+2
+!23
+!Mid
+|-
+![[Slay Ride]]
+!qcf+3
+!15
+!Low
+|-
+![[Snap Knee]]
+!qcf+4
+!25, 10
+!Mid, throw
+|-
+![[Pinpoint Fracture]]
+!qcf+4, during attack 1, 3, 4, 2 (or 2, 4, 3, 1)
+!25, 10, 20
+!Mid, throw, throw
+|-
+![[Mass Elbow]]
+!qcb+2
+!23
+!Mid
+|-
+![[Russian Assault]]
+!f, f, f+2
+!20
+!Mid
+|-
+![[Spetsnaz Assault]]
+!f, f, f+4
+!25, 25
+!Mid, throw
+|-
+![[Chernabog Sweep]]
+!Run more than three steps, 3
+!15, 20
+!Low, throw
+|-
+![[Qullion]]
+!WS+1, 2
+!12, 18
+!Mid, high
+|-
+![[Double Hilt]]
+!WS+1, 3
+!12, 20
+!Mid, mid
+|-
+![[Ballistic Upper]]
+!WS+2
+!15
+!Mid
+|-
+![[Glacial Hilt]]
+!WS+3
+!21
+!Mid
+|-
+![[Frost Tackle]]
+!WS+1+2
+!28
+!Mid
+|-
+![[Integral Slicer]]
+!SS+2, 3
+!16, 17
+!Mid, high
+|-
+![[Integral Blitz]]
+!SS+2, 1+2, 4
+!16, 8, 12, 28
+!Mid, high, mid, high
+|-
+![[Integral Takedown]]
+!SS+2, 1+2, 1+2
+!16, 8, 12, 5
+!Mid, high, mid, throw
+|-
+![[Cane Stab]]
+!Back to the opponent d+3
+!20
+!Low
+|-
+![[Living Dead]]
+!On the ground (facing the ground) 1+2
+!-
+!-
+|-
+![[Death's Embrace]]
+!On the ground (facing the ground) 1+2, 1+2
+!5
+!Low
+|-
+![[Six Feet Under]]
+!(With the opponent down) d+3+4
+!24
+!Low
+|}
+
+==10 Hit Combo==
+{| class="wikitable sortable" id="String Hits" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Dragunov)|1, 3, 1, 2, 1, 1, 4, 1, 3, 2]]
+!112
+!hhhmhmlhhm
+|-
+![[10 Hit Combo 2 (Dragunov)|1, 3, 1, 2, 4, 1+2]]
+!80
+!hhhmmm
+|}
+[[Category:Sergei Dragunov Moves]]
+[[Category:Moves Lists]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

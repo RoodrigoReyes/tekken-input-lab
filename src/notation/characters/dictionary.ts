@@ -48,6 +48,15 @@ export const CHARACTER_ENTRIES: readonly CharacterEntry[] = [
   { abbr: 'Debugger', label: 'Debugger', kind: 'named', characters: ['Prototype Jack'], games: TTT2 },
   { abbr: 'AGF', label: 'AGF', kind: 'named', characters: ['Alex', 'Roger Jr.'], games: TTT2 },
   { abbr: 'WGF', label: 'Wind God Fist', kind: 'named', characters: ['Armor King'], games: TTT2 },
+  // Inputs from the TTT2 move lists on ludo.guide (see docs/TTT2_SIGLAS.md).
+  { abbr: 'DU', label: 'Dark Upper', kind: 'named', characters: ['Armor King'], games: TTT2, expansion: 'f,n,d,df+2' },
+  { abbr: 'GS', label: 'Giant Swing', kind: 'named', characters: ['King'], games: TTT2, expansion: 'f,hcf+1' },
+  // Ground throws on a downed opponent; the exact throw depends on how the opponent lies.
+  { abbr: 'groundgrab', label: 'Ground throw', kind: 'named', characters: ['Armor King'], games: TTT2, expansion: 'db+1+3' },
+  { abbr: 'groundgrab', label: 'Ground throw', kind: 'named', characters: ['King'], games: TTT2, expansion: 'db+2+4' },
+  { abbr: 'groundgrab', label: 'Ground throw (Airlift)', kind: 'named', characters: ['Marduk'], games: TTT2, expansion: 'db+1+3' },
+  { abbr: 'wallgrab', label: 'Wall throw (Angry Ape)', kind: 'named', characters: ['Marduk'], games: TTT2, expansion: '1+3' },
+  { abbr: 'wallgrab', label: 'Wall throw', kind: 'named', characters: ['King'], games: TTT2 },
 
   // Stances
   { abbr: 'ZEN', label: 'Zenshin', kind: 'stance', characters: ['Jin'], games: MODERN },
@@ -145,17 +154,18 @@ export const CHARACTER_ENTRIES: readonly CharacterEntry[] = [
     ['PND', 'Panic Doctor', ['Dr. Bosconovitch']],
     ['PAN', 'PAN', ['Dr. Bosconovitch']],
     ['PAD', 'PAD', ['Dr. Bosconovitch']],
-    ['CDc', 'CDc', ['Dragunov']],
+    // The guide also writes it out: f+3~d/f~u.
+    ['CDc', 'Crouch Dash cancel', ['Dragunov']],
     // The guide writes SET where the site writes KDE (same strings: f+4~f > SET 1,2,4).
     ['SET', 'Setsunagake', ['Kunimitsu']],
     ['KDE', 'Setsunagake', ['Kunimitsu']],
     ['DUS', 'Duston', ['Kunimitsu']],
-    ['MUS', 'MUS', ['Kunimitsu']],
+    // ff+3 is Musasabi Flip; "MUS 2" is its follow-up (Ankle Slashout).
+    ['MUS', 'Musasabi Flip', ['Kunimitsu']],
     ['MTS', 'Muay Thai Stance', ['Bruce']],
     ['ROC', 'Rocket Stance', ['Alex', 'Roger Jr.']],
     ['AKS', 'Animal Kick Stance', ['Alex', 'Roger Jr.']],
-    ['GS', 'GS', ['Armor King', 'King']],
-    ['DU', 'DU', ['Armor King']],
+    ['GS', 'GS', ['Armor King']],
     ['SDW', 'Shadow Stance', ['Raven']],
     ['HAZ', 'Haze Stance', ['Raven']],
     ['VAN', 'VAN', ['Raven']],

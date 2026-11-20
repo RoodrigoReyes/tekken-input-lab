@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
+import { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { layoutCombo, type SectionHeaderInfo } from '../../render/layout';
 import { clearMeasureCache, measureText } from '../../render/measure';
 import type { Side } from '../../render/side';
@@ -56,6 +56,8 @@ function useFontsReady(): number {
   return tick;
 }
 
+const NONE: ReadonlySet<number> = new Set();
+
 /** Live, responsive arcade rendering of a parsed combo. Wraps to the container width. */
 export const CommandSequence = forwardRef<SVGSVGElement, CommandSequenceProps>(function CommandSequence(
   { result, size = 40, expandNamed = false, sectionHeaders, className, side = 'left', motionFrame = false },
@@ -63,13 +65,26 @@ export const CommandSequence = forwardRef<SVGSVGElement, CommandSequenceProps>(f
 ) {
   const [ref, width] = useElementWidth<HTMLDivElement>();
   const fontsTick = useFontsReady();
+  // Keys are span offsets, so they only mean something for the text they were clicked on.
+  const [opened, setOpened] = useState<{ source: string; keys: ReadonlySet<number> }>({ source: result.original, keys: NONE });
+  const expandedNamed = opened.source === result.original ? opened.keys : NONE;
+  const toggleNamed = useCallback(
+    (key: number) =>
+      setOpened((prev) => {
+        const keys = new Set(prev.source === result.original ? prev.keys : NONE);
+        if (keys.has(key)) keys.delete(key);
+        else keys.add(key);
+        return { source: result.original, keys };
+      }),
+    [result.original],
+  );
   const layout = useMemo(
-    () => layoutCombo(result, { width: width || 640, size, expandNamed, sectionHeaders, motionFrame, measure: measureText }),
-    [result, width, size, expandNamed, sectionHeaders, motionFrame, fontsTick], // eslint-disable-line react-hooks/exhaustive-deps
+    () => layoutCombo(result, { width: width || 640, size, expandNamed, expandedNamed, sectionHeaders, motionFrame, measure: measureText }),
+    [result, width, size, expandNamed, expandedNamed, sectionHeaders, motionFrame, fontsTick], // eslint-disable-line react-hooks/exhaustive-deps
   );
   return (
     <div ref={ref} className={className} style={{ width: '100%', overflowX: 'auto' }}>
-      <ComboSvg ref={svgRef} layout={layout} title={result.original} side={side} />
+      <ComboSvg ref={svgRef} layout={layout} title={result.original} side={side} onToggleNamed={expandNamed ? undefined : toggleNamed} />
     </div>
   );
 });

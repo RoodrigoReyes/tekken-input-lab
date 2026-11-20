@@ -1,0 +1,446 @@
+'''Heihachi/Tekken Tag Tournament 2 Movelist''' is a list of all of the moves that [[Heihachi Mishima|Heihachi]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Movelist==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Neck Breaker (Heihachi)|Neck Breaker]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Jumping Powerbomb]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Guillotine Chop]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Freefall]]
+!1+3 (or 2+4)
+!Right
+!46
+!2
+|-
+![[Atomic Drop]]
+!1+3 (or 2+4)
+!Back
+!60
+!
+|-
+![[Fire Starter]]
+!d/f+2+3
+!Front
+!25
+!2
+|-
+![[Stonehead]]
+!f, f+1+2
+!Front
+!35
+!1+2
+|-
+![[Headbutt Carnival]]
+!f, f+1+4
+!Front
+!33
+!1+2
+|-
+![[Broken Toy]]
+!qcf+1+3
+!Front
+!45
+!1
+|-
+![[Heaven's Wrath]]
+!Synchro with the opponent's attack b+1+4 (or b+2+3)
+!Parry
+!30
+!
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Flash Punch Combo]]
+!1, 1, 2
+!7, 6, 12
+!High, high, mid
+|-
+![[Left Right Combo]]
+!1, 2
+!7, 8
+!High, high
+|-
+![[Demon Slayer (Mishima)|Demon Slayer]]
+!1, 2, 2
+!7, 8, 12
+!High, high, high
+|-
+![[Demon Executioner]]
+!1, 2, [2~1+2]
+!7, 8, 28
+!High, high, mid
+|-
+![[Demon Executioner Feint]]
+!1, 2, 2~1+2, u (or d)
+!7 ,8
+!High, high
+|-
+![[Demon Kicker]]
+!1, 2, 4
+!7, 8, 15
+!High, high, high
+|-
+![[Demon Massacre]]
+!1, b+2, 1
+!7, 21, 20
+!High, mid, mid
+|-
+![[Demon Lair]]
+!1, b+2, 4
+!7, 21, 30
+!High, mid, mid
+|-
+![[Demon Backhand Spin]]
+!2, 2
+!10, 18
+!High, high
+|-
+![[Quick Executioner]]
+!2, [2~1+2]
+!10, 28
+!High, mid
+|-
+![[Quick Executioner Feint]]
+!2, 2~1+2, u (or d)
+!10
+!High
+|-
+![[Monzenbarai|Monzenbairai]]
+!3, 4
+!15, 20
+!High, mid
+|-
+![[Demon Scissors]]
+![4~3]
+!25
+!Mid
+|-
+![[Demon Breath]]
+!1+2
+!25
+!Mid
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Demon Shout]]
+!f+[2~1+2]
+!28
+!Mid
+|-
+![[Demon Shout Feint]]
+!f+2~1+2, u (or d)
+!-
+!-
+|-
+![[Uraken]]
+!f+2
+!28
+!High
+|-
+![[Lightning Crush]]
+!f+3
+!20
+!Mid
+|-
+![[Right Splits Kick]]
+!f+4
+!20
+!Mid
+|-
+![[Chrome Dome]]
+!f+1+2
+!15
+!High
+|-
+![[Raijin Stance]]
+!f+3+4
+!-
+!-
+|-
+![[Fusatsujin Hasaiken]]
+!During Raijin Stance 1
+!25
+!High
+|-
+![[Raijin's Wrath]]
+!During Raijin Stance 2, 1
+!20, 23
+!Mid, mid
+|-
+![[Lightning Bolt (Heihachi)|Lightning Bolt]]
+!During Raijin Stance 1+2
+!35
+!!
+|-
+![[Double Palm Strike]]
+!d/f+1, 1
+!10, 8
+!Mid, high
+|-
+![[Muso Tettsui]]
+!d/f+1, 2
+!10, 21
+!Mid, mid
+|-
+![[Demon's Wings]]
+!d/f+1+2
+!23
+!Mid
+|-
+![[Hammer Punch]]
+!d+1
+!16
+!Mid
+|-
+![[Jichinsai]]
+!d+3
+!25
+!Mid
+|-
+![[Oni Juji]]
+!d+1+2
+!20
+!Mid
+|-
+![[Lightning Hammer]]
+!d+1+4
+!50
+!!
+|-
+![[Tatarigoroshi]]
+!d+2+3
+!18
+!Mid
+|-
+![[Eisho Mon|Eishomon]]
+!d/b+2
+!22
+!l
+|-
+![[Angekisai]]
+!d/b+1+2
+!10, 20
+!Mid, mid
+|-
+![[Funkei Uraken]]
+!b+1, 2
+!12, 20
+!High, high
+|-
+![[Funkei Goshoha]]
+!b+1, [2~1+2]
+!12, 28
+!High, mid
+|-
+![[Demon's Boar|Rashomon]]
+!b+2
+!20
+!Mid
+|-
+![[Hooking Crescent Kick]]
+!b+3, 3
+!13, 25
+!High, mid
+|-
+![[Shingetsusen]]
+!b+4
+!20
+!Mid
+|-
+![[Twin Hammers]]
+!b+1+2
+!18
+!Mid
+|-
+![[Twin Hammer Volley]]
+!b+1+2, 1+2
+!18, 23
+!Mid, mid
+|-
+![[Hell Axle]]
+!u/f+3, 4
+!20, 20
+!Mid, mid
+|-
+![[Wind Slicer]]
+!u/f+4
+!25
+!Mid
+|-
+![[Demon Uppercut]]
+!f, f+2
+!25
+!Mid
+|-
+![[Left Splits Kick]]
+!f, f+3
+!25
+!Mid
+|-
+![[Tenma Destroyer]]
+!b, f+2, 1
+!13,23
+!Mid, high
+|-
+![[Subjugator]]
+!b, f+2, 2
+!13, 21
+!Mid, mid
+|-
+![[Deity Slayer]]
+!b, b+1+2
+!25
+!Mid
+|-
+![[Shadow Step]]
+!b, b+3+4
+!-
+!-
+|-
+![[Dragon Uppercut (Mishima)|Dragon Uppercut]]
+!f, N, d, d/f+1
+!25
+!Mid
+|-
+![[Wind God Fist]]
+!f, N, d, d/f+2
+!23
+!High
+|-
+![[Electric Wind Godfist|Electric Wind God Fist]]
+!f, N, d, d/f+2 (press at the same time)
+!23
+!High
+|-
+![[Jumping Mid Kick]]
+!f, N, d, d/f+3
+!35
+!Mid
+|-
+![[Jumping Low Kick]]
+!f, N, d, D/F+3
+!23
+!Low
+|-
+![[Spinning Demon Uppercut]]
+!f, N, d, d/f+4, 1
+!15, 20
+!Low, mid
+|-
+![[Spinning Demon Tsunami Kick|Tsunami Kick]]
+!f, N, d, d/f+4, N, 4, 4
+!15, 10, 20
+!Low, mid, mid
+|-
+![[Spinning Demon (Heihachi Mishima)|Spinning Demon]]
+!f, N, d, d/f+4, 4, 4
+!15, 10, 7
+!Low, low, low
+|-
+![[Iron Hand]]
+!qcf+2
+!30
+!Mid
+|-
+![[Leaping Sidekick|Leaping Side Kick]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Quick Iron Fist]]
+!WS+1
+!20
+!Mid
+|-
+![[Dark Thrust]]
+!WS+2
+!20
+!Mid
+|-
+![[Tsunami Kick (Mishima)|Tsunami Kick]]
+!WS+4, 4
+!13, 16
+!Mid, mid
+|-
+![[Crouching Dragon Kick]]
+!FC+d/f+4
+!25
+!Low
+|-
+![[Kidney Smasher]]
+!SS+2
+!15
+!Mid
+|-
+![[Kidney Crush Combo]]
+!SS+2, 1
+!15, 21
+!Mid, mid
+|-
+![[Geta Stomp]]
+!(With opponent down) d+4
+!30
+!Low
+|-
+![[Auger (Heihachi)|Auger]]
+!2+3+4
+!-
+!-
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Mishima Style 10 Hit Combo|f, f, N, 2, 1, 2, 2, 3, 4, 4, 1, 2, 1]]
+!93
+!hhhhhmlhmm
+|-
+![[10 Hit Combo 2 (Heihachi)|d/f+3, 2, 2, 4, 4, 1, 4, 1, 2, 4]]
+!105
+!mhhllmhhmm
+|-
+![[10 Hit Combo 3 (Heihachi)|d/f+3, 2, 2, 4, 4, 1, 4, 1, 2, 1]]
+!100
+!mhhllmhhmm
+|-
+![[10 Hit Combo 4 (Heihachi)|d/f+3, 2, 2, 4, 4, 1, 2, 1, 2, 1]]
+!108
+!mhhllmhmmm
+|}
+[[Category:Moves Lists]]
+[[Category:Heihachi Mishima Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

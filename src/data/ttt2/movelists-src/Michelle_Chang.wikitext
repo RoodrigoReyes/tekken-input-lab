@@ -1,0 +1,553 @@
+'''Michelle Chang/Tekken Tag Tournament 2 Movelist''' is a list of all of the moves that [[Michelle Chang]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Movelist==
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Death Valley Bomb]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Cannonball Drop]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Headlock Back Crusher]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Twisted Sister]]
+!1+3 (or 2+4)
+!Right
+!45
+!2
+|-
+![[Behind Back Suplex|German Suplex]]
+!1+3 (or f+1+3)
+!Back
+!55
+!
+|-
+![[Calf Branding]]
+!2+4 (or f+2+4)
+!Back
+!55
+!
+|-
+![[Arm Lock Suplex]]
+!d/f+1+2
+!Front
+!37
+!1+2
+|-
+![[Waist Suplex]]
+!d/f+1+3
+!Front
+!37
+!1
+|-
+![[Seesaw Toss]]
+!d, d/b+1+3
+!Front
+!20
+!1
+|-
+![[Mad Axes]]
+!d, d/b, b, f+2
+!Front
+!45
+!1+2
+|-
+![[Running Neck Breaker Drop]]
+!f, f, f+2+4
+!Front
+!40
+!1+2
+|-
+![[Cross Arm Suplex]]
+!FC+d/b, d, d/b+1+2
+!Front
+!45
+!1+2
+|-
+![[Wild Stallion]]
+!Crouching opponent d+1+3
+!Front
+!40
+!1
+|-
+![[Bulldog]]
+!Crouching opponent d+2+4
+!Front
+!40
+!2
+|-
+![[Aerial Bomb]]
+!Opponent in the air f, f, f+2+4
+!Air
+!15
+!
+|-
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[G-Clef Cannon]]
+!1, 1, 1
+!7, 12, 16
+!High, mid, mid
+|-
+![[Divine Impact]]
+!1, 1, 2
+!7, 12, 20
+!High, mid, mid
+|-
+![[Divine Intervention]]
+!1, 1, 4
+!7, 12, 12
+!High, mid, low
+|-
+![[Left Right Combo]]
+!1, 2
+!7, 8
+!High, high
+|-
+![[Baiyuan Sanshou]]
+!1, 2, 1, 1
+!7, 8, 10, 13
+!High, high, mid, low
+|-
+![[Spin Behind]]
+!2, b (shot must hit head-on)
+!8
+!High
+|-
+![[Double Fist]]
+!During Spin Behind 1+2
+!20
+!High
+|-
+![[Spinning Kicks Slash Uppercut]]
+!4, 4, 1
+!16, 12, 21
+!High, low, mid
+|-
+![[Spinning Kicks Palm Explosion]]
+!4, 4, [1~2]
+!16, 12, 20
+!Hgih, low, mid
+|-
+![[Triple Spinning Kick]]
+!4, 4, 4
+!16, 12, 23
+!Hgih, low, high
+|-
+![[Triple Spinning Low Kick]]
+!4, 4, d+4
+!16, 12, 10
+!Hgih, low, low
+|-
+![[War Drum]]
+![4~2], 1
+!7, 5, 21
+!Low, high, mid
+|-
+![[Buffalo Charge]]
+!1+2, 4, b, f+1+2
+!14, 12, 25
+!Mid, high, mid
+|-
+![[Wind Roll]]
+!3+4 (or u+3+4)
+!-
+!-
+|-
+![[War Club]]
+![[Wind Roll]] 1
+!13
+!High
+|-
+![[Palm Explosion]]
+![[Wind Roll]] 2
+!20
+!Mid
+|-
+![[Hunting Tomahawk]]
+![[Wind Roll]] 3, 1
+!18, 25
+!Mid, mid
+|-
+![[Wind Roll Explosion]]
+![[Wind Roll]] 4, 1+2
+!12, 13
+!Low, mid
+|-
+![[Tiger Swat]]
+![[Wind Roll]] 1+2
+!18
+!Mid
+|-
+![[Bear Trap]]
+!1+4
+!12, 12
+!Mid, low
+|-
+![[Buffalo Explosion]]
+!f+2, 1, 2
+!12, 5, 20
+!High, mid, mid
+|-
+![[Swift Step]]
+!f+3
+!-
+!-
+|-
+![[Lashing Arrow]]
+!f+[3~1]
+!25
+!High
+|-
+![[Swift Step Explosion]]
+!f+3, 2
+!23
+!Mid
+|-
+![[Deceptive Kick]]
+!f+3, 4
+!15
+!Low
+|-
+![[Shove It Up]]
+!f+1+2
+!23
+!Mid
+|-
+![[Heavy Uppercut]]
+!f+1+4 (B cancel)
+!30
+!!
+|-
+![[Low Blow]]
+!d/f+1
+!16
+!Mid
+|-
+![[Slow Power Punch|Twisting Arrow]]
+!d/f+2
+!8
+!Mid
+|-
+![[Slow Power Punch Combo]]
+!d/f+2, 1
+!8, 16
+!Mid, mid
+|-
+![[Twisting Arrow to Swift Step]]
+!d/f+2, 3
+!8
+!Mid
+|-
+![[Slow Power Punch to High Kick]]
+!d/f+2, 4
+!8, 18
+!Mid, high
+|-
+![[Left Knee (Julia)|Left Knee]]
+!d/f+3
+!16
+!Mid
+|-
+![[Red Orchid Combo]]
+!d/f+4, 2, 3
+!12, 8, 20
+!Mid, mid, high
+|-
+![[Mountain Crusher (Julia)|Mountain Crusher]]
+!d/f+4, 2, b, f+1
+!12, 8, 20
+!Mid, mid, mid
+|-
+![[Leaping Spin Kicks]]
+!d/f+3+4
+!6, 15
+!Mid, mid
+|-
+![[Ultimate Cannon]]
+!d+2, 3, 1
+!8, 12, 30
+!Mid, mid, mid
+|-
+![[Jamming Low Kick]]
+!d+3
+!10
+!Low
+|-
+![[Sweep]]
+!d+4
+!10
+!Low
+|-
+![[Razor's Edge]]
+!d+4, 1
+!10, 21
+!Low, mid
+|-
+![[Razor's Edge Blast]]
+!d+4, [1~2]
+!10, 20
+!Low, mid
+|-
+![[Sweep Head Kick]]
+!d+4, 4
+!10, 23
+!Low, high
+|-
+![[Sweep to Low Kick|Sweep Low Kick]]
+!d+4, d+4
+!10, 10
+!Low, low
+|-
+![[Angry Bull]]
+!d+1+2
+!27
+!Mid
+|-
+![[Dancing Hatchet]]
+!d/b+1
+!16
+!Mid
+|-
+![[Trickling Stream]]
+!d/b+2, 1
+!13, 11
+!Mid, low
+|-
+![[Raging Rapids]]
+!d/b+2, 2
+!13, 15
+!Mid, mid
+|-
+![[Sweep Kick (Julia)|Sweep Kick]]
+!d/b+3
+!12
+!Low
+|-
+![[Cross Winds]]
+!d/b+1+2, 1
+!12, 16
+!High, high
+|-
+![[Tiger Swat]]
+!b+1
+!18
+!Mid
+|-
+![[Pao Quan Swallow Combo]]
+!b+2, 3, 1+2
+!12, 13, 20
+!High, mid, mid
+|-
+![[Double Sweep]]
+!b+3, 4
+!17, 10
+!Low, low
+|-
+![[Heaven Shatter Kick]]
+!b+4
+!17
+!High
+|-
+![[Twin Arrow]]
+!b+1+2
+!23
+!Mid
+|-
+![[Double Lift Kicks (Julia)|Double Lift Kick]]
+!u/f+4, 3
+!8, 10
+!Mid, mid
+|-
+![[Mountain Breeze]]
+!u/f+4, 3, 1
+!8, 10, 25
+!Mid, mid, mid
+|-
+![[Foot Stomp]]
+!u/f+3+4
+!28
+!Mid
+|-
+![[Party Crasher]]
+!f, f+1
+!8
+!Mid
+|-
+![[Elbow Skyscraper Kick]]
+!f, f+1, 4
+!8, 17
+!Mid, high
+|-
+![[Bison Smash]]
+!f, f+2
+!21
+!Mid
+|-
+![[Lift Kick (Julia)|Lift Kick]]
+!f, f+3
+!20
+!Mid
+|-
+![[Double Palm Push]]
+!f, f+1+2
+!33
+!High
+|-
+![[Rapid Counter Attack]]
+!d, d/f+1
+!13
+!Mid
+|-
+![[Lightning Bolt (Julia)|Lightning Bolt]]
+!d, d/f+1, 2
+!13, 21
+!Mid, mid
+|-
+![[Spirit Cannon]]
+!d, d/f, f+2
+!18
+!High
+|-
+![[Flaming Arrow]]
+!f, f, f+1
+!28
+!High
+|-
+![[Super Slash]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Flash Uppercut]]
+!WS+1
+!15
+!Mid
+|-
+![[Palm Explosion]]
+!WS+[1~2]
+!20
+!Mid
+|-
+![[Tequila Sunrise]]
+!WS+2
+!17
+!Mid
+|-
+![[Tequila Sunrise Backfist]]
+!WS+2, 1
+!17, 10
+!Mid, high
+|-
+![[Tequila Sunrise Elbow Smash]]
+!WS+2, 2
+!17, 16
+!Mid, mid
+|-
+![[Tequila Sunrise Double Elbow]]
+!WS+2, 2, 1+2
+!17, 16, 15
+!Mid, mid, mid
+|-
+![[Middle Sobat]]
+!WS+3
+!21
+!Mid
+|-
+![[Skyscraper Kick]]
+!WS+4
+!21
+!Mid
+|-
+![[Body Elbow]]
+!FC+d/f+2 (or d, d/f+2)
+!21
+!Mid
+|-
+![[Spinning Sweep]]
+!FC+d/f+4
+!12
+!Low
+|-
+![[Spinning Sweep Combo]]
+!FC+d/f+4, 3
+!12, 15
+!Low, mid
+|-
+![[Burning Palm Crush]]
+!SS+1
+!18
+!Mid
+|-
+![[Snake Step (Michelle and Julia)|Snake Step]]
+!SS+2
+!18
+!Mid
+|-
+![[Inner Palm Crush]]
+!SS+[2~1]
+!18
+!Mid
+|-
+![[Side Kick (Julia)|Side Kick]]
+!SS+3
+!23
+!Mid
+|-
+![[Handstand Kick]]
+!SS+3+4
+!10, 15
+!Mid, mid
+|-
+![[Wind Roll]]
+!3+4 (or u+3+4)
+!-
+!-
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Michelle, Wang, Julia and Jaycee)|2, 1, 1, 2, 3, 3, 3, 4, 4, 1]]
+!84
+!hmmhlhmhlm
+|-
+![[10 Hit Combo 2 (Michelle, Julia and Jaycee)|2, 1, 1, 2, 3, 3, 2, 3, 2, 1]]
+!85
+!hmmhlhmlmm
+|-
+![[10 Hit Combo 3 (Michelle, Julia and Jaycee)|2, 1, 1, 2, 3, 3, 2, 1, 4, 3]]
+!87
+!hmmhlhmmlm
+|}
+
+[[Category:Moves Lists]]
+[[Category:Michelle Chang Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

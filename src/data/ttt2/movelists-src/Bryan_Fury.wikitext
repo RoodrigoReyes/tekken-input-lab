@@ -1,0 +1,541 @@
+'''Bryan Fury/Tekken Tag Tournament 2 Movelist''' is the list of all the moves that [[Bryan Fury]] can perform in ''[[Tekken Tag Tournament 2]]''.
+
+==Movelist==
+
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Gravity Brain Buster]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Guillotine]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Gravity Throw]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Knee Blast]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Neck Throw (Bryan)|Neck Throw]]
+!1+3 (or 2+4)
+!Back
+!60
+!
+|-
+![[Anaconda Assassin]]
+!f, f+1+2
+!Front
+!40
+!1+2
+|-
+![[Chains of Misery]]
+!d/f, d, d/f+1+2
+!Front
+!45
+!1+2
+|-
+![[Parry (Bryan)|Parry]]
+!Synchro with the opponent's punch b+1+2
+!Parry
+!-
+!
+|}
+
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Left Right Combo]]
+!1, 2
+!7, 8
+!High, high
+|-
+![[One Two Body Blow]]
+!1, 2, 1
+!7, 8, 18
+!High, high, mid
+|-
+![[One Two Low Kick]]
+!1, 2, 3
+!7, 8, 15
+!High, high, low
+|-
+![[One Two High Kick]]
+!1, 2, 4
+!7, 8, 23
+!High, high, high
+|-
+![[Lair's Dance]]
+!1, 4, 2, 1, 2
+!7, 13, 18, 17, 22
+!High, high, high, high, high
+|-
+![[Whipping Fury]]
+!1, 4, 2, 4
+!7, 13, 18, 21
+!High, high, high, mid
+|-
+![[Cremation]]
+!1, 4, 2, 1, 4
+!7, 13, 18, 17, 21
+!High, high, high, high, mid
+|-
+![[Jab to Double Spin Kick]]
+!1, 4, 3
+!7, 13, 15
+!High, high, mid
+|-
+![[Running Blind]]
+!1, 4, 3, 3
+!7, 13, 15, 18
+!High, high, mid, high
+|-
+![[PK Combination]]
+!2, 3
+!10, 13
+!High, mid
+|-
+![[Mid Kick to Rush]]
+!3, 2, 1, 2
+!13, 11, 10, 17
+!Mid, mid, mid, mid
+|-
+![[Gatling Combination]]
+!3, 2, 1, 4
+!13, 11, 10, 12
+!Mid, mid, mid, low
+|-
+![[Quick Spin Kick]]
+!3, 3
+!13, 13
+!Mid, high
+|-
+![[Anaconda Bite]]
+!3, 3, 2
+!13, 13, 17
+!Mid, high, high
+|-
+![[Anaconda Rage]]
+!3, 3, 4
+!13, 13, 25
+!Mid, high, mid
+|-
+![[Double Spin Tomahawk]]
+!4, 3, 4
+!16, 12, 20
+!High, mid, mid
+|-
+![[Triple Spin Kick (Bruce)|Triple Spin Kick]]
+!4, 3, f+4
+!16, 12, 18
+!High, mid, high
+|-
+![[Snake Pit]]
+!1+2, 2
+!16, 20
+!Mid, mid
+|-
+![[Middle Side Kick]]
+!3+4
+!22
+!Mid
+|-
+![[Right Left to Spin Kick]]
+!f+2, 1, 4
+!10, 12, 20
+!Mid, mid, mid
+|-
+![[Knee Strike]]
+!f+3
+!18
+!Mid
+|-
+![[Boa Crusher]]
+!f+4, 1
+!15, 20
+!Mid, mid
+|-
+![[Side Step Elbow]]
+!f+1+2
+!22
+!High
+|-
+![[Gravity Blow]]
+!f+1+4
+!21
+!!
+|-
+![[Left Body Blow]]
+!d/f+1
+!8
+!High
+|-
+![[Double Body Blow]]
+!d/f+1, 2
+!8, 8
+!Mid, mid
+|-
+![[Vulcan Cannon]]
+!D/F+1, 1, 1, 1
+!8, 2, 2, 2
+!Mid, mid, mid, mid
+|-
+![[Blackout Combo]]
+!d/f+2, 1
+!12, 12
+!Mid, high
+|-
+![[Blackout Trap]]
+!d/f+2, 3
+!12, 20
+!Mid, mid
+|-
+![[Snake Edge]]
+!d/f+3
+!20
+!Low
+|-
+![[Wolf's Tail]]
+!d/f+4
+!23
+!Mid
+|-
+![[String Stopper]]
+!d/f+1+2
+!27
+!Mid
+|-
+![[Elbow Smash (Bryan Fury)|Elbow Smash]]
+!d+2
+!13
+!Mid
+|-
+![[Python Crush]]
+!d+2 ,3
+!13, 21
+!Mid, mid
+|-
+![[Quick Left Low Kick]]
+!d+3
+!10
+!Low
+|-
+![[Quick Low Screw Punch]]
+!d+3, 2
+!10, 22
+!Low, high
+|-
+![[Low Kick (Bryan)|Low Kick]]
+!d+4
+!11
+!Low
+|-
+![[Hammer Driver]]
+!d+1+2
+!10, 15
+!Mid, mid
+|-
+![[Hammer Driver to Slither Step]]
+!d+1+2, f
+!10
+!Mid
+|-
+![[Hammer Driver Hatchet]]
+!d+1+2, 3
+!10, 15, 20
+!Mid, mid, low
+|-
+![[Snake Bomb]]
+!d+[1+2~2]
+!23
+!Mid
+|-
+![[Side Low Knuckle Whip]]
+!d+3+4, 2
+!15, 23
+!Low, mid
+|-
+![[Stomach Blow]]
+!d/b+2
+!13
+!Mid
+|-
+![[Sweeper Kick]]
+!d/b+3
+!11
+!Low
+|-
+![[Cobra Fang (Bryan)|Cobra Fang]]
+!d/b+1+2
+!10, 20
+!Mid, mid
+|-
+![[Chopping Elbow]]
+!b+1
+!21
+!Mid
+|-
+![[Gatling Rush]]
+!b+[1~2], 1, 2, 1, 2, 1, 2, 1, 2, 1, 4
+!5, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 13
+!Mid, mid, mid, mid, mid, mid, mid, mid, mid, mid, mid, mid
+|-
+![[Light Back Knuckle]]
+!b+2
+!18
+!High
+|-
+![[Double Back Knuckle]]
+!b+2, 1
+!18, 17
+!High, high
+|-
+![[Hands of Doom]]
+!b+2, 1, 2
+!18, 17, 22
+!High, high, high
+|-
+![[Wolf Call]]
+!b+2, 4
+!18, 21
+!High, mid
+|-
+![[Wolf Bite]]
+!b+2, 1, 4
+!18, 17, 20
+!High, high, mid
+|-
+![[Front Kick]]
+!b+3
+!12
+!Mid
+|-
+![[Front Kick to Slither Step]]
+!b+3, f
+!12
+!Mid
+|-
+![[Front Kick to Punch]]
+!b+3, 2
+!12, 12
+!Mid, high
+|-
+![[Front Kick to Rush]]
+!b+3, 2, 1, 2
+!12, 12, 10, 17
+!Mid, high, mid, mid
+|-
+![[Run for Cover]]
+!b+3, 2, 1, 4
+!12, 12, 10, 12
+!Mid, high, mid, low
+|-
+![[Front Kick to Knee]]
+!b+3, 4
+!12, 18
+!Mid, mid
+|-
+![[Front Kick to Double Hammer]]
+!b+3, 1+2
+!12, 25
+!Mid, mid
+|-
+![[Knee Break]]
+!b+4
+!18
+!Mid
+|-
+![[Meteor Smash]]
+!b+1+4
+!55
+!!
+|-
+![[Rolling Driver]]
+!u/f (or u)+3
+!15
+!Mid
+|-
+![[Orbital Heel Kick]]
+!u/f (or u)+4
+!22
+!Mid
+|-
+![[Mach Breaker]]
+!f, f+2
+!32
+!High
+|-
+![[Slash Kick]]
+!f, f+3
+!25
+!Mid
+|-
+![[Mach Kick]]
+!f, f+4
+!32
+!High
+|-
+![[Jet Uppercut]]
+!f, b+2
+!17
+!High
+|-
+![[Wedge Driver]]
+!b, d/f+4
+!20
+!Low
+|-
+![[Flying Knee Kick (Bryan)|Flying Knee Kick]]
+!b, b+4
+!23
+!Mid
+|-
+![[Snake Spin Mach Breaker]]
+!qcf+4, 1, 2
+!13, 13, 22
+!Mid, high, high
+|-
+![[Snake Spin Middle Kick]]
+!qcf+4, 1, 4
+!13, 13, 20
+!Mid, high, mid
+|-
+![[Requiem]]
+!qcf+1+2
+!23
+!Mid
+|-
+![[Sway (Bryan Fury)|Sway]]
+!d, d/b, b
+!-
+!-
+|-
+![[Smash and Mach Kick]]
+!d, d/b, b+2, 4
+!16, 25
+!Mid, high
+|-
+![[Hatchet Kick]]
+!d, d/b, b+3
+!20
+!Low
+|-
+![[Kickoff]]
+!d, d/b, b+4
+!21
+!Mid
+|-
+![[Snake Slash]]
+!f, f, f+3
+!30
+!Mid
+|-
+![[Left Upper]]
+!WS+1
+!18
+!Mid
+|-
+![[Right Upper]]
+!WS+2
+!18
+!Mid
+|-
+![[Fisherman's Slam]]
+!During Right Upper f+2
+!18, 15
+!Mid, throw
+|-
+![[High Knee Kick]]
+!WS+3
+!18
+!Mid
+|-
+![[Double High Knee Kick]]
+!WS+3, 4
+!18, 22
+!Mid, mid
+|-
+![[Short Upper]]
+!WS+1+2
+!12
+!Mid
+|-
+![[Headhunter]]
+!SS+1
+!33
+!High
+|-
+![[Cheap Trick]]
+!SS+[1~2]
+!23
+!Mid
+|-
+![[Shell Shock]]
+!SS+2
+!20
+!Mid
+|-
+![[Shock & Awe]]
+!SS+2, 3
+!20, 20
+!Mid, low
+|-
+![[Taunt (Bryan)|Taunt]]
+!1+3+4
+!-
+!!
+|-
+![[Fury Mach Breaker]]
+!1+3+4, after the animation f, f+2
+!12
+!!, high
+|-
+![[Bruiser Combo]]
+!1+3+4, after the animation f+2, 1, 4, 2, 1, 4, 2
+!10, 12, 16, 5, 5, 10, 28
+!!, mid, mid, mid, high, high, mid, high
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Bryan)|b+3, 4, 1, 2, 1, 4, 2, 1, 4, 2]]
+!93
+!mmmmhhhhmh
+|-
+![[10 Hit Combo 2 (Bryan)|b+3, 4, 1, 2, 1, 4, 2, 4]]
+!78
+!mmmmhhhm
+|-
+![[10 Hit Combo 3 (Bryan)|b+3, 4, 1, 2, 1, 4, 3, 3, 2]]
+!107
+!mmmmhhmhh
+|}
+<br />
+[[Category:Moves Lists]]
+[[Category:Bryan Fury Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

@@ -81,3 +81,38 @@ test('build a TTT2 team combo phase by phase, use it and save it', async ({ page
   await expect(page.getByText('#generated')).toBeVisible();
   await expect(page.getByText(/Not tested yet/)).toBeVisible();
 });
+
+test('a personally tested suggested ender survives disabling suggestions and reloading', async ({ page }) => {
+  await page.goto('/#/generator');
+  await expect(page.getByRole('heading', { name: 'TTT2 Combo Generator' })).toBeVisible();
+  await expect(page.getByText('Loading the combo guide')).toHaveCount(0);
+  await page.getByRole('button', { name: /Advanced/ }).click();
+  const suggestions = page.getByRole('checkbox', { name: /Suggest enders from/ });
+  await suggestions.check();
+  const select = page.getByLabel('Ender', { exact: true });
+  const candidate = select.locator('option[value*="/suggested-ender/"]').first();
+  await expect(candidate).toHaveCount(1, { timeout: 10000 });
+  const id = (await candidate.getAttribute('value'))!;
+  await select.selectOption(id);
+  const tested = page.getByRole('checkbox', { name: 'I tested this ender' });
+  await expect(tested).toBeVisible();
+  await tested.check();
+  await suggestions.uncheck();
+  await expect(select).toHaveValue(id);
+  await expect(tested).toBeChecked();
+  await page.reload();
+  await expect(candidate).toHaveAttribute('value', id);
+  await select.selectOption(id);
+  await expect(tested).toBeChecked();
+  await tested.click();
+  await expect(select).not.toHaveValue(id);
+});
+
+test('Kazuya EWGF ender does not show the added relaunch warning', async ({ page }) => {
+  await page.goto('/#/generator');
+  const ender = page.getByRole('region', { name: 'Phase 3: Ender' });
+  await expect(ender.getByLabel('Ender', { exact: true })).toBeVisible();
+  await ender.getByLabel('Ender', { exact: true }).selectOption({ label: 'EWGF' });
+  await expect(ender).not.toContainText('Relaunch ender');
+  await expect(ender).not.toContainText('Added by request');
+});

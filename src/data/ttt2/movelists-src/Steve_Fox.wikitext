@@ -1,0 +1,782 @@
+'''Steve Fox/Tekken Tag Tournament 2 Movelist''' is a list of all of the moves that [[Steve Fox]] can perform in ''[[Tekken Tag Tournament 2]]''.
+==Movelist==
+===Throws===
+{| class="wikitable sortable" id="throws" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Throw Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Type
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Escape
+|-
+![[Gut Wrencher]]
+!1+3 (or f+1+3)
+!Front
+!35
+!1
+|-
+![[Brain Pulverizer]]
+!2+4 (or f+2+4)
+!Front
+!35
+!2
+|-
+![[Choker Slam]]
+!1+3 (or 2+4)
+!Left
+!40
+!1
+|-
+![[Throw Down]]
+!1+3 (or 2+4)
+!Right
+!40
+!2
+|-
+![[Schoolyard Bully]]
+!1+3 (or 2+4)
+!Back
+!55
+!
+|-
+![[Armlock Throw]]
+!f, f+1+2
+!Front
+!40
+!1+2
+|-
+![[Spinning Elbow Drop]]
+!d, d/b, b+2+4
+!Front
+!40
+!2
+|-
+![[Griffin Throw]]
+!During Flicker Stance 1+2
+!Front
+!40
+!1+2
+|-
+![[Ten Count]]
+!During Peekaboo 1+2
+!Front
+!40
+!1+2
+|-
+![[Position Change]]
+!During Swaying 1+2
+!Front
+!-
+!1+2
+|-
+![[Parry (Steve)|Parry]]
+!Synchro with the opponent's punch b+1+2
+!Parry
+!-
+!
+|}
+===Attacks===
+{| class="wikitable sortable" id="moves" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Double Jab]]
+!1, 1
+!7, 5
+!High, high
+|-
+![[Double Jab Straight|Lightning Combo]]
+!1, 1, 2
+!7, 5, 13
+!High, high, high
+|-
+![[Double Jab Body Blow]]
+!1, 1, d+1
+!7,5,15
+!High, high, mid
+|-
+![[Double Jab Body Blow to Flicker]]
+!1, 1, d+1, B
+!7, 5, 15
+!High, high, mid
+|-
+![[Left Right]]
+!1, 2
+!7, 10
+!High, high
+|-
+![[Jab Body Blow]]
+!1, d+1
+!7, 15
+!High, mid
+|-
+![[Jab Body Blow to Flicker]]
+!1, d+1, B
+!7, 15
+!High, mid
+|-
+![[Left Right Left]]
+!1, 2, 1
+!7, 10, 15
+!High, high, high
+|-
+![[Left Right Left to Peekaboo]]
+!1, 2, 1, F
+!7, 10, 15
+!High, high, high
+|-
+![[Left Right Left Flicker Stance|Left Right Left to Flicker]]
+!1, 2, 1, B
+!7, 10, 15
+!High, high, high
+|-
+![[British Edge Combo]]
+!1, 2, 1, 2
+!7, 10, 15, 15
+!High, high, high, mid
+|-
+![[British Edge Combo 2]]
+!1, 2, 1, d+2
+!7, 10, 15, 15
+!High, high, high, low
+|-
+![[Straight Body to Peekaboo]]
+!2, 1, F
+!10, 12
+!High, mid
+|-
+![[Straight Body to Flicker Stance]]
+!2, 1, B
+!10, 12
+!High, mid
+|-
+![[Vanguard Rush]]
+!2, 1, 2
+!10, 12, 22
+!High, mid, mid
+|-
+![[Ducking Left]]
+!3
+!-
+!-
+|-
+![[Ducking Right]]
+!4
+!-
+!-
+|-
+![[Quick Spin]]
+!3+4
+!-
+!-
+|-
+![[Supercharger|Ki Charge]]
+!1+2+3+4
+!-
+!-
+|-
+![[Ducking Body Blow]]
+!f+2
+!11
+!Mid
+|-
+![[Ducking Body Blow to Left Hook]]
+!f+2, 1
+!11, 21
+!Mid, high
+|-
+![[Ducking Psyche-out Body]]
+!f+2, [1~2]
+!11, 13
+!Mid, mid
+|-
+![[Ducking Body Blow to Left Hook to Peekaboo]]
+!f+2, 1, F
+!11, 12
+!Mid, mid
+|-
+![[Ducking Body Blow to Left Hook to Flicker Stance]]
+!f+2, 1, B
+!11, 12
+!Mid, mid
+|-
+![[Ducking]]
+!f+3 (or f+4)
+!-
+!-
+|-
+![[Gyro Hook to Peekaboo]]
+!f+1+2, F
+!8, 8
+!Mid, mid
+|-
+![[Gyro Hook]]
+!f+1+2, 1
+!11, 12
+!Mid, mid, high
+|-
+![[Peekaboo]]
+!f+3+4
+!-
+!-
+|-
+![[Left Uppercut]]
+!d/f+1
+!10
+!Mid
+|-
+![[Uppercut Cross Combo]]
+!d/f+1, 2
+!10, 12
+!Mid, high
+|-
+![[Uppercut Psyche-out Hook]]
+!d/f+1, [2~1]
+!10, 20
+!Mid, high
+|-
+![[Uppercut Psyche-out Hook to Flicker Stance]]
+!d/f+1, [2~1], B
+!10, 20
+!Mid, high
+|-
+![[Uppercut Psyche-out Body]]
+!d/f+1, [2~2]
+!10, 13
+!Mid, mid
+|-
+![[Uppercut Psyche-out Left Right Combo]]
+!d/f+1, [2~f+1+2]
+!10, 8, 12
+!Mid, high, high
+|-
+![[Crescent Hook]]
+!d/f+2
+!17
+!Mid
+|-
+![[Sonic Fang]]
+!d/f+1+2
+!12, 20
+!Mid, mid
+|-
+![[Knee Blaster]]
+!d+1
+!13
+!Low
+|-
+![[Wildman Combo 1]]
+!D+2, 1, 2
+!13, 8, 17
+!Low, mid, high
+|-
+![[Scorpion's Claw]]
+!d, [2~1], 2
+!15, 20
+!Mid, mid
+|-
+![[Wildman Combo 2]]
+!d, [2~1], f+2
+!15, 17
+!Mid, high
+|-
+![[Knee Clipper]]
+!d/b+2
+!21
+!Low
+|-
+![[Foot Stomp (Steve)|Foot Stomp]]
+!d/b+3
+!10
+!Low
+|-
+![[Foot Stomp Right Hook]]
+!d/b+3, 2
+!10, 13
+!Low, high
+|-
+![[Quick Hook (Steve)|Quick Hook]]
+!b+1
+!17
+!High
+|-
+![[Quick Hook to Flicker Stance]]
+!b+1, B
+!17
+!High
+|-
+![[Quick Hook & Straight]]
+!b+1, 2
+!17, 10
+!High, high
+|-
+![[Quick Hook & Straight to Peekaboo]]
+!b+1, 2, F
+!17, 10
+!High, high
+|-
+![[Frigate to Peekaboo]]
+!b+1, d+2, F
+!17, 10
+!High, low
+|-
+![[Frigate Combo]]
+!b+1, 2, 1
+!17, 10, 20
+!High, low, mid
+|-
+![[Body Bomb]]
+!b+2
+!15
+!Mid
+|-
+![[Swaying]]
+!b+3 (or b+4)
+!-
+!-
+|-
+![[Flicker Stance]]
+!b+3+4
+!-
+!-
+|-
+![[Cougar Punch]]
+!u/b+1
+!10
+!Mid
+|-
+![[Over the Top]]
+!u/f+1
+!16
+!Mid
+|-
+![[Sky High]]
+!u/f (or u)+2
+!18
+!Mid
+|-
+![[Jump-in Foot Stomp]]
+!u/f (or u)+3
+!20
+!Low
+|-
+![[Jump-in Foot Stomp Right Hook]]
+!u/f (or u)+3, 2
+!20, 13
+!Low, high
+|-
+![[Jumping Duck Kick]]
+!u/f (or u)+4
+!20
+!Mid
+|-
+![[Beat Down]]
+!f, f+2
+!23
+!Mid
+|-
+![[Rocket Launcher]]
+!d, d/f, f+1
+!21
+!Mid
+|-
+![[Rocket Launcher to Flicker Stance]]
+!d, d/f, f+1, B
+!21
+!Mid
+|-
+![[Hellfire]]
+!d, d/b, b, f+2
+!70
+!!
+|-
+![[Eraser]]
+!f, f, f+2
+!30
+!Mid
+|-
+![[Sliding Low Punch]]
+!Run more than three steps 1
+!17
+!Low
+|-
+![[Wildman]]
+!WS+1, 2
+!10, 20
+!Mid, mid
+|-
+![[Right Uppercut (Steve)|Right Uppercut]]
+!WS+2
+!17
+!Mid
+|-
+![[Finishing Blow]]
+!FC+d/f+2
+!20
+!Mid
+|-
+![[Foul Play]]
+!SS+1+2
+!23
+!High
+|-
+![[Cheapshot]]
+!(With opponent down) d+1+2
+!12
+!Low
+|-
+![[Taunt (Steve)|Taunt]]
+!2+3+4
+!-
+!-
+|-
+|}
+===During [[Flicker Stance]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Flicker Stance]]
+!b+1+2
+!-
+!-
+|-
+![[Spitfire Combo]]
+!During Flicker Stance 1, 1, 1, 2
+!12, 8, 8, 22
+!High, high, high, mid
+|-
+![[Tempest Combo]]
+!During Flicker Stance 1, f+1
+!12, 17
+!High, mid
+|-
+![[Power Hook Combo]]
+!During Flicker Stance 1, d+1
+!12, 23
+!High, high
+|-
+![[Fly Swatter]]
+!During Flicker Stance 2
+!21
+!Mid
+|-
+![[British Lancer]]
+!During Flicker Stance b+2
+!25
+!High
+|}
+===During [[Ducking Left]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Ducking Left]]
+!3
+!-
+!-
+|-
+![[Double Stinger]]
+!During Ducking Left 1, 1
+!13, 22
+!Mid, mid
+|-
+![[Left Body to Flicker]]
+!During Ducking Left 1, B
+!13
+!Mid
+|-
+![[Centurion Rush]]
+!During Ducking Left 1, f+1, 1
+!13, 8, 8
+!Mid, mid, high
+|-
+![[Centurion Rush to Flicker]]
+!During Ducking Left 1, f+1, 1, B
+!13, 8, 8
+!Mid, mid, high
+|-
+![[Right Shoulder Rush]]
+!During Ducking Left 2
+!13
+!Mid
+|-
+![[Right Shoulder Rush to Peekaboo]]
+!During Ducking Left 2, F
+!13
+!Mid
+|-
+![[Right Shoulder Rush to Billy Club]]
+!During Ducking Left 2, 1
+!13, 21
+!Mid, mid
+|}
+===During [[Ducking Right]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Ducking Right]]
+!4
+!-
+!-
+|-
+![[Left Shoulder Rush]]
+!During Ducking Right 1
+!13
+!Mid
+|-
+![[Left Shoulder Rush to Peekaboo]]
+!During Ducking Right 1, F
+!13
+!Mid
+|-
+![[Left Shoulder Rush to Uppercut]]
+!During Ducking Right 1, 2
+!13, 15
+!Mid, mid
+|-
+![[Gut Drill]]
+!During Ducking Right 2
+!22
+!Mid
+|}
+===During [[Ducking]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Ducking]]
+!f+3 (or f+4)
+!-
+!-
+|-
+![[Fox Hunt]]
+!During Ducking 1
+!17
+!Mid
+|-
+![[Skyscraper]]
+!During Ducking 2
+!13
+!Mid
+|-
+![[Punisher]]
+!During Ducking f+2
+!21
+!High
+|-
+![[Gatling Gun]]
+!During Ducking 1+2, 1, 2, 1, 2, 1, 2, 1, 2, 1
+!3, 3, 3, 3, 3, 3, 3, 3, 3, 12
+!Mid, mid, mid, mid, mid, mid, mid, mid, mid, mid
+|-
+![[Ducking In]]
+!During Ducking f+3 Hold f (or f+4 Hold f)
+!-
+!-
+|-
+![[Power Fox Hunt]]
+!During Ducking In 1
+!21
+!Mid
+|-
+![[Power Skyscraper]]
+!During Ducking In 2
+!21
+!Mid
+|-
+![[Power Punisher]]
+!During Ducking In f+2
+!23
+!High
+|}
+===During [[Quick Spin]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Quick Spin]]
+!3+4
+!-
+!-
+|-
+![[Spin to Peekaboo]]
+!During Quick Spin F
+!-
+!-
+|-
+![[Cyclone Punch]]
+!During Quick Spin 2
+!22
+!Mid
+|-
+![[Cyclone Knee Clip]]
+!During Quick Spin d+2
+!17
+!Low
+|-
+![[Cyclone Left (Right)]]
+!During Quick Spin U (or D)
+!-
+!-
+|-
+![[Double Cyclone Punch]]
+!During Quick Spin U (or D)+1
+!25
+!Mid
+|-
+![[Spin to Peekaboo]]
+!During Quick Spin U (or D), F
+!-
+!-
+|-
+![[Double Cyclone Knee Punch]]
+!During Quick Spin U (or D), d+1
+!21
+!Low
+|}
+
+===During [[Peekaboo]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Peekaboo]]
+!f+3+4
+!-
+!-
+|-
+![[Albion Combination]]
+!During Peekaboo 1, 2, 1
+!10, 13, 21
+!High, high, mid
+|-
+![[Spite Hook]]
+!During Peekaboo 2
+!18
+!High
+|-
+![[Short-Range Uppercut]]
+!During Peekaboo f+2
+!18
+!Mid
+|-
+![[Break]]
+!During Peekaboo f+1+2
+!5
+!High
+|-
+![[Argos Rush]]
+!During Peekaboo d/f+1, 1, 2, 1
+!10, 13, 12, 20
+!Mid, mid, mid, mid
+|-
+![[Cross Cut]]
+!During Peekaboo d/f+1, 2
+!10, 20
+!Mid, high
+|-
+![[Cutting Elbow]]
+!During Peekaboo d/f+2
+!16
+!Mid
+|-
+![[Cobra Weave]]
+!During Peekaboo d/f+3+4, F
+!-
+!-
+|-
+![[Endless Roll]]
+!During Cobra Weave 1, 2, 1, 2, 1, 2, 1, 2,...
+!22, 22, 22, 22...
+!Mid, mid, mid, mid...
+|-
+![[Patella Smash]]
+!During Peekaboo d+1
+!12
+!Low
+|-
+![[Knuckle Plow]]
+!During Peekaboo d+2
+!23
+!Low
+|-
+![[Lancaster Combination]]
+!During Peekaboo b+1, 1, 2, 1
+!15, 10, 12, 21
+!Mid, high, mid, mid
+|-
+![[Lancaster Combination to Flicker Stance]]
+!During Peekaboo b+1, 1, 2, 1, B
+!15, 10, 12, 21
+!Mid, high, mid, mid
+|-
+![[Swaying Hook]]
+!During Peekaboo b+2
+!25
+!Mid
+|-
+![[Dreadnought Uppercut]]
+!During Peekaboo u/f (or u) +2
+!18
+!Mid
+|}
+
+===During [[Swaying]]===
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Move Name
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[Swaying]]
+!b+3 (or b+4)
+!-
+!-
+|-
+![[Billy Club]]
+!During Swaying 1
+!26
+!Mid
+|-
+![[Snake Charmer]]
+!During Swaying 2
+!30
+!Mid
+|}
+
+==10 hit combo==
+{| class="wikitable sortable" id="phoenix" style="text-align:center" width="83%" border="1"
+! style="background-color:#AC0A0A" |Command
+! style="background-color:#AC0A0A" |Damage
+! style="background-color:#AC0A0A" |Hit Range
+|-
+![[10 Hit Combo 1 (Steve Fox)|d/f+1, [2~f+1+2] 1, 1, 2, 1, 1, 2, 1, 2]]
+!114
+!mhhmmmhhlmm
+|-
+![[10 Hit Combo 2 (Steve Fox)|d/f+1, [2~f+1+2] 1, 1, 2, 1, 1, 2, 1, b+2]]
+!132
+!mhhmmmhhlm!
+|-
+![[10 Hit Combo 3 (Steve Fox)|d/f+1, [2~f+1+2] 1, 1, 2, 1, 1, 3, 2, 3+4]]
+!105
+!mhhmmmhhlh
+|}
+[[Category:Moves Lists]]
+[[Category:Steve Fox Moves]]
+[[Category:Tekken Tag Tournament 2 Movelists]]

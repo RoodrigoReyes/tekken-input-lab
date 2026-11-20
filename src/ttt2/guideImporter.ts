@@ -8,6 +8,7 @@
  *   ## TA! | Ender | Wall TA! | Wall Ender
  *   <piece> | <piece> | …           ("|" separates ALTERNATIVES, one piece each)
  *   Additional TA!: <notation>. <condition>
+ *   Additional Air Ender: <notation>. <condition>   (air throw by the combo's starter)
  *   Note: <text>                    (attached to the previous route or list)
  *   ## Tag Assaults & Enders: <Form> (following lists belong to that form)
  *
@@ -29,6 +30,7 @@ interface SectionInfo {
   role: PieceRole;
   context: PieceContext;
   routeKind?: RouteKind;
+  airThrow?: boolean;
 }
 
 function sectionInfo(title: string): SectionInfo | null {
@@ -62,6 +64,7 @@ const ADDITIONAL: Readonly<Record<string, SectionInfo>> = {
   'Additional Ender': { role: 'ender', context: 'open' },
   'Additional Wall TA!': { role: 'taFiller', context: 'wall' },
   'Additional Wall Ender': { role: 'ender', context: 'wall' },
+  'Additional Air Ender': { role: 'ender', context: 'open', airThrow: true },
 };
 
 /** True when `note` names `notation` as a whole token (not as part of a longer string). */
@@ -136,7 +139,7 @@ class Importer {
   }
 
   private line(text: string, n: number): void {
-    if (!text || text.startsWith('[Back')) return;
+    if (!text || text === 'Page' || text.startsWith('[Back')) return; // "Page": footer left by the Docs export
 
     if (text.startsWith('# ')) {
       const guideName = text.slice(2).trim();
@@ -192,7 +195,7 @@ class Importer {
       return;
     }
 
-    const additional = /^(Additional (?:Wall )?(?:TA!|Ender)):\s*(.+)$/.exec(text);
+    const additional = /^(Additional (?:Wall |Air )?(?:TA!|Ender)):\s*(.+)$/.exec(text);
     if (additional) {
       const info = ADDITIONAL[additional[1] ?? ''];
       if (!info) return this.skip(n, text, 'unknown additional section');
