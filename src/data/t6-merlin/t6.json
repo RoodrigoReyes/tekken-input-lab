@@ -276,7 +276,8 @@
           "stand": "b+2,4",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Anna",
@@ -464,7 +465,8 @@
           "stand": "",
           "crouch": "WS 2"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Armour King",
@@ -674,7 +676,8 @@
           "stand": "b+3 / CD2",
           "crouch": "WS1 / WS3"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Asuka",
@@ -894,7 +897,8 @@
           "stand": "",
           "crouch": "WS 3"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Baek",
@@ -1188,7 +1192,8 @@
           "stand": "db+2",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Bears",
@@ -1403,7 +1408,8 @@
           "stand": "uf+3",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Bob",
@@ -1580,7 +1586,8 @@
           "stand": "CD1",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Bruce",
@@ -1807,7 +1814,8 @@
           "stand": "4~f",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Bryan",
@@ -2034,7 +2042,8 @@
           "stand": "",
           "crouch": "WS 2,f+2"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Capo",
@@ -2278,7 +2287,8 @@
           "stand": "db+4 (W!)",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Devil Jin",
@@ -2464,7 +2474,8 @@
           "stand": "d+1 (W!)",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Dragunov",
@@ -2725,7 +2736,8 @@
           "stand": "f+1+2",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Feng",
@@ -2958,7 +2970,8 @@
           "stand": "f+4,3 / df+3",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Ganryu",
@@ -3193,7 +3206,8 @@
           "stand": "df+2",
           "crouch": "WS 2"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Heihachi",
@@ -3344,7 +3358,8 @@
           "stand": "f+3 / b+4",
           "crouch": "cc EWGF"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Hwoarang",
@@ -3562,7 +3577,8 @@
           "stand": "b+3",
           "crouch": "cc df+2?"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Jack-6",
@@ -3788,7 +3804,8 @@
           "stand": "df+3,2",
           "crouch": "WS 1"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Jin",
@@ -3992,7 +4009,8 @@
           "stand": "b+4",
           "crouch": "cc d+3+4"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Julia",
@@ -4204,7 +4222,8 @@
           "stand": "",
           "crouch": "WS 2,1"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Kazuya",
@@ -4390,7 +4409,8 @@
           "stand": "df+1,4 / df+1,2",
           "crouch": "WS 2"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "King",
@@ -4605,7 +4625,8 @@
           "stand": "",
           "crouch": "WS 2"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Lars",
@@ -4808,7 +4829,8 @@
           "stand": "",
           "crouch": "uf+3"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Law",
@@ -5051,7 +5073,8 @@
           "stand": "UF+4",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Lee",
@@ -5220,7 +5243,8 @@
           "stand": "f,n+3,4",
           "crouch": "cc df+2?"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Lei",
@@ -5511,7 +5535,8 @@
           "stand": "ff+3 / ff+4,3+4",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Leo",
@@ -5704,7 +5729,8 @@
           "stand": "uf+3 / b+2,1+2",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Lili",
@@ -5947,7 +5973,8 @@
           "stand": "qcf+3?",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Marduk",
@@ -6152,7 +6179,8 @@
           "stand": "qcf+1",
           "crouch": "WS 3"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Miguel",
@@ -6391,7 +6419,8 @@
           "stand": "df+2,1",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Nina",
@@ -6722,6 +6751,27 @@
           "stand": "uf+2,1",
           "crouch": "uf+2,1"
         }
+      ],
+      "hard": [
+        "df+3,2~SSR - SS1~b - uf+4 - uWS1 x3 - 1+4 - B!",
+        "dash d+4,1 - micro SSR - iWS1 x5 - 1+4 - B!",
+        "uf4 - iWS1 x 6 - 1+4  - B!",
+        "SSR 1~b - uf+4 - iWS1 x5 - 1+4 - B!",
+        "SSR - df+3,2~u - SS1~b - uf+4 - iWS1 x3 - 1+4 - B!",
+        "uf+4 - iWS1 x6 - 1+4 - B!",
+        "cc - df+3,2~SSR - SS1~f - iWS1 x4 - 1+4 - B!",
+        "ws1 - SSR - d+4,1 - iWS1 x4 - 1+4 - B!",
+        "df+1 - micro SSR - iWS1 x5 - 1+4 - B!",
+        "uf+2,1 - B! - SSR - SS1~b - uf+4 - iWS1 x3 - ff+3",
+        "(uf+4),3,(4)~SSR - d+4,1 - iWS1 x4 - 1+4",
+        "B! - SSR - SS1~b - uf+4 - iWS1 x4 - ff+3",
+        "dash d+2 - d+4,1 - 1+4 - B!",
+        "SSR - iWS1 x7 - 1+4 - B!",
+        "SSR - d+4,1 - iWS1 x5 - 1+4 - B!",
+        "d+4,1 - SSR - iWS1 x5 - 1+4 - B!",
+        "SSR - df+3,2~SSR - SS1~b - uf+4 - 1+4 - B!",
+        "SSL 1~b - uf+4 - iWS1 x5 - 1+4 - B!",
+        "SSR1~b~uf+4 - iWS1 x6 - ff+3"
       ]
     },
     {
@@ -6961,7 +7011,8 @@
           "stand": "df+3,4 (range)",
           "crouch": "WS 2"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Raven",
@@ -7192,7 +7243,8 @@
           "stand": "ff+3 / 4;3",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Roger Jr.",
@@ -7372,7 +7424,8 @@
           "stand": "d+1+2,1+2~b",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Steve",
@@ -7602,6 +7655,10 @@
           "stand": "",
           "crouch": "WS 1+2"
         }
+      ],
+      "hard": [
+        "Ext DCK 1 - df+1,(2),1 - f+2,1~b - DCKc - ws1,2 - B!",
+        "DCKc - ws1 - df+1,(2),1 - f+2,1~b - DCKc - ws1,2 - B!"
       ]
     },
     {
@@ -7826,7 +7883,8 @@
           "stand": "uf+4 / df+2",
           "crouch": "uf+4 / WS 3,2"
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Xiaoyu",
@@ -8140,7 +8198,8 @@
           "stand": "db+1",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Yoshimitu",
@@ -8348,7 +8407,8 @@
           "stand": "f,f+4",
           "crouch": ""
         }
-      ]
+      ],
+      "hard": []
     },
     {
       "name": "Zafina",
@@ -8595,7 +8655,8 @@
           "stand": "uf+4",
           "crouch": "uf+4"
         }
-      ]
+      ],
+      "hard": []
     }
   ]
 }

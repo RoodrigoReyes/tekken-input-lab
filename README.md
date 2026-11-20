@@ -132,12 +132,9 @@ To refresh the data (it downloads politely, one page at a time):
 node scripts/kage/scrapeCombos.mjs t8 t7
 ```
 
-Tekken 6 routes come from Merlin's [Tekken 6 Combo Library](https://docs.google.com/spreadsheets/d/e/2PACX-1vSrQDVLlXLCnW7Bo1LnF2yBjObEBWady8sfX4Fz8j2lUIpAINFQWa0f5-qBLUR8QMcjEX5NtCx1pgUU/pubhtml). The sheet lists combo pieces, not full combos, so the app lets you assemble a combo from the author's own launchers, routes and enders. To refresh it:
+Tekken 6 routes come from Merlin's [Tekken 6 Combo Library](https://docs.google.com/spreadsheets/d/e/2PACX-1vSrQDVLlXLCnW7Bo1LnF2yBjObEBWady8sfX4Fz8j2lUIpAINFQWa0f5-qBLUR8QMcjEX5NtCx1pgUU/pubhtml). The sheet lists combo pieces, not full combos, so the app lets you assemble a combo from the author's own launchers, routes and enders. Routes the author marked in red ("hard") carry a **Hard** label.
 
-```sh
-scripts/merlin/fetchSheet.sh
-node scripts/merlin/parseSheet.mjs
-```
+The sheet is no longer updated, so it is archived in `src/data/t6-merlin/`: every tab as CSV, plus the author's own HTML export in `archive/` (it keeps the cell colors the CSV loses; the character banner images are left out). `node scripts/merlin/parseSheet.mjs` rebuilds `t6.json` from that archive.
 
 ## Project layout
 
@@ -151,10 +148,10 @@ src/storage/     Dexie database, ComboRepository, zod schemas, JSON backup
 src/ttt2/        Guide importer, move lists and combo generator
 src/data/ttt2/   Bundled guide and move list sources
 src/data/community/  Community combos from the Kage sites
-src/data/t6-merlin/  Merlin's Tekken 6 Combo Library (CSV) and its parsed JSON
+src/data/t6-merlin/  Archived Tekken 6 Combo Library (CSV, original HTML export) and its parsed JSON
 scripts/ttt2/    Move list parser
 scripts/kage/    Community combo downloader
-scripts/merlin/  Tekken 6 sheet downloader and parser
+scripts/merlin/  Tekken 6 archive parser
 tests/, e2e/     Vitest unit tests and Playwright browser tests
 ```
 

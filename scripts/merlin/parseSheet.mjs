@@ -29,7 +29,18 @@ export function readCsv(text) {
 const lines = (cell = '') => cell.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
 const value = (row, col) => (row?.[col] ?? '').trim();
 
-export function parseSheet(text, name) {
+export function redTexts(html) {
+  const colors = new Map([...html.matchAll(/\.([\w-]+)\s*\{([^}]*)\}/g)].flatMap(([, name, rule]) => rule.match(/\bcolor\s*:\s*(#[\da-f]{6})/i) ? [[name, rule.match(/\bcolor\s*:\s*(#[\da-f]{6})/i)[1].toLowerCase()]] : []));
+  const text = (content) => content.replace(/<br\s*\/?\s*>/gi, '\n').replace(/<[^>]*>/g, '').replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&').replace(/&lt;/gi, '<').replace(/&gt;/gi, '>').split(/\n/).map(line => line.replace(/\s+/g, ' ').trim()).filter(Boolean);
+  const red = [];
+  for (const [, attrs, content] of html.matchAll(/<span\b([^>]*)>([\s\S]*?)<\/span>/gi)) if (/color\s*:\s*#ff0000\b/i.test(attrs)) red.push(...text(content));
+  for (const [, attrs, content] of html.matchAll(/<(td|th)\b([^>]*)>([\s\S]*?)<\/\1>/gi)) {
+    if (/color\s*:\s*#ff0000\b/i.test(attrs) || [...(attrs.match(/class=["']([^"']*)/)?.[1] ?? '').split(/\s+/)].some(c => colors.get(c) === '#ff0000')) red.push(...text(content));
+  }
+  return [...new Set(red)];
+}
+
+export function parseSheet(text, name, html = '') {
   const rows = readCsv(text);
   const find = (col, label) => rows.findIndex(row => value(row, col).toLowerCase() === label.toLowerCase());
   const guaranteedStart = find(1, 'Guaranteed Hits');
@@ -51,7 +62,7 @@ export function parseSheet(text, name) {
   if (boundCol === 3 && !rows.slice(wallStart + 2, punishStart).some(row => value(row, 3))) boundCol = 2;
   const playersStart = find(5, 'Players to Watch');
   const notesStart = find(10, 'Notes');
-  return {
+  const result = {
     name,
     players: playersStart < 0 ? [] : rows.slice(playersStart + 1, structureStart).flatMap(row => [...lines(row[5]), ...lines(row[6])]),
     notes: notesStart < 0 ? [] : rows.slice(notesStart + 1, structureStart).flatMap(row => lines(row[10])),
@@ -66,12 +77,25 @@ export function parseSheet(text, name) {
     },
     punish: rows.slice(punishStart + 2).flatMap(row => value(row, 1) ? [{ startup: value(row, 1), stand: value(row, 2), crouch: value(row, 3) }] : []),
   };
+  // Red text is whitespace-collapsed; stored pieces keep the sheet's spacing (e.g. "1+4  - B!").
+  const squash = (s) => s.replace(/\s+/g, ' ').trim();
+  const pieces = new Map([
+    ...result.guaranteed.flatMap(g => [...g.starters, ...g.followUps]),
+    ...result.structure.flatMap(g => [...g.launchers, ...g.routes]),
+    ...result.counterHit.flatMap(g => [...g.launchers, ...g.routes]),
+    ...result.lowParry, ...result.postBound, ...result.wall.splatToBound, ...result.wall.boundToSplat,
+  ].map(piece => [squash(piece), piece]));
+  result.hard = [...new Set(redTexts(html).filter(piece => piece !== '*' && piece !== '*?' && pieces.has(squash(piece))).map(piece => pieces.get(squash(piece))))];
+  return result;
 }
 
 async function main() {
   const dir = join(root, 'src/data/t6-merlin/csv');
   const files = (await readdir(dir)).filter(file => file.endsWith('.csv') && file !== 'INFO.csv').sort();
-  const characters = await Promise.all(files.map(async file => parseSheet(await readFile(join(dir, file), 'utf8'), basename(file, '.csv'))));
+  const characters = await Promise.all(files.map(async file => {
+    const name = basename(file, '.csv');
+    return parseSheet(await readFile(join(dir, file), 'utf8'), name, await readFile(join(root, 'src/data/t6-merlin/archive', `${name}.html`), 'utf8'));
+  }));
   await writeFile(join(root, 'src/data/t6-merlin/t6.json'), JSON.stringify({ source, author: 'Merlin', characters }, null, 2) + '\n');
 }
 

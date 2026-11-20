@@ -14,6 +14,7 @@ import { launcherOf } from '../library/filters';
 import { DEFAULT_FILTERS, filterAndSortCombos, type CommunityCombo, type CommunityGame, type ConvertedCombo, type ExploreFilters } from './filters';
 import { kageToNotation } from './kage';
 import { MerlinView } from './MerlinView';
+import { EditCopy } from './EditCopy';
 
 const files = import.meta.glob<{ default: { combos: CommunityCombo[] } }>('../../data/community/kage-*.json');
 const games = (['t8', 't7'] as const).filter((game) => `../../data/community/kage-${game}.json` in files);
@@ -76,15 +77,15 @@ function CommunityCard({ combo }: { combo: ConvertedCombo }) {
   const [side] = usePlayerSide();
   const [motionFrame] = useMotionFrame();
   const [saving, setSaving] = useState(false);
-  const save = async () => {
-    setSaving(true);
-    const draft: ComboDraft = {
+  const draft: ComboDraft = {
       name: `${combo.character} ${combo.damage == null ? '' : `${combo.damage} dmg `}#${combo.id}`,
       notation: combo.notation, game: combo.game, character: combo.character, dialect: 'standard', sectionCharacters: [],
       damage: combo.damage ?? undefined, hits: combo.hits ?? undefined,
       position: combo.tags.some((t) => t.toLowerCase() === 'wall') ? 'wall' : undefined,
       tags: combo.tags, notes: `Source: ${combo.source} — by ${combo.author} (${combo.date})`, difficulty: DIFFICULTIES[1], favorite: false,
-    };
+  };
+  const save = async () => {
+    setSaving(true);
     try { await repo.create(draft); toast('Combo saved to library', 'success'); }
     catch (error) { toast(`Could not save combo: ${errorMessage(error)}`, 'error'); }
     finally { setSaving(false); }
@@ -94,6 +95,7 @@ function CommunityCard({ combo }: { combo: ConvertedCombo }) {
     <div className="flex flex-wrap items-center gap-1.5">{combo.damage != null && <Chip>{combo.damage} dmg</Chip>}{combo.hits != null && <Chip>{(combo.hits === 1 ? `${combo.hits} hit` : `${combo.hits} hits`)}</Chip>}{combo.tags.map((tag) => <Chip key={tag}>{tag}</Chip>)}{!combo.clean && <Chip>Conversion warnings</Chip>}</div>
     <CommandSequence result={combo.result} size={24} side={side} motionFrame={motionFrame} />
     <p className="break-words font-mono text-sm text-fg-muted">{combo.raw}</p>
-    <div className="mt-auto flex flex-wrap items-center gap-3 border-t border-line-strong pt-3"><Button variant="primary" onClick={save} disabled={saving}>{saving ? 'Saving…' : 'Save to library'}</Button><a href={combo.source} target="_blank" rel="noopener noreferrer" className="text-sm text-fg-muted underline underline-offset-4 hover:text-fg">View source</a></div>
+    <div className="mt-auto flex flex-wrap items-center gap-3 border-t border-line-strong pt-3"><Button variant="primary" onClick={save} disabled={saving}>{saving ? 'Saving…' : 'Save to library'}</Button><EditCopy draft={draft} /><a href={combo.source} target="_blank" rel="noopener noreferrer" className="text-sm text-fg-muted underline underline-offset-4 hover:text-fg">View source</a></div>
   </article>;
 }
+

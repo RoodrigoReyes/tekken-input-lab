@@ -3,9 +3,12 @@ dist
 coverage
 *.log
 .DS_Store
-tsconfig.tsbuildinfo
+# TypeScript incremental build info (any tsconfig)
+*.tsbuildinfo
 test-results
 playwright-report
+# Playwright reports from sharded runs
+blob-report/
 
 # antislop audit reports (local only)
 anti-slop/

@@ -30,6 +30,17 @@ describe('Merlin sheet importer', () => {
     expect(sheet('Steve').structure[0].launchers).toContain('U/f+2');
   });
 
+  it('preserves Merlin hard marks on pieces only', () => {
+    expect(data.characters.find(c => c.name === 'Nina')?.hard).toContain('df+3,2~SSR - SS1~b - uf+4 - uWS1 x3 - 1+4 - B!');
+    const nina = data.characters.find(c => c.name === 'Nina')?.hard;
+    expect(nina).toHaveLength(19);
+    // Matches despite the sheet's double space, and both routes of a two-line red cell count.
+    expect(nina).toContain('uf4 - iWS1 x 6 - 1+4  - B!');
+    expect(nina).toEqual(expect.arrayContaining(['cc - df+3,2~SSR - SS1~f - iWS1 x4 - 1+4 - B!', 'ws1 - SSR - d+4,1 - iWS1 x4 - 1+4 - B!']));
+    expect(data.characters.find(c => c.name === 'Steve')?.hard).toHaveLength(2);
+    expect(data.characters.find(c => c.name === 'Kazuya')?.hard).toEqual([]);
+  });
+
   it('splits alternatives into individual pieces and removes wall continuation markers', () => {
     const baek = sheet('Baek');
     expect(baek.guaranteed[0].starters).toEqual(['CH U/f+2', 'CH f,F+4', '(F+2,1,)2']);
