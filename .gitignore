@@ -12,3 +12,6 @@ anti-slop/
 
 # graphify knowledge-graph output (generated, local only)
 graphify-out/
+
+# Working notes, design-tool exports and old previews (local only)
+docs/internal/

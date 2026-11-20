@@ -48,7 +48,7 @@ export const CHARACTER_ENTRIES: readonly CharacterEntry[] = [
   { abbr: 'Debugger', label: 'Debugger', kind: 'named', characters: ['Prototype Jack'], games: TTT2 },
   { abbr: 'AGF', label: 'AGF', kind: 'named', characters: ['Alex', 'Roger Jr.'], games: TTT2 },
   { abbr: 'WGF', label: 'Wind God Fist', kind: 'named', characters: ['Armor King'], games: TTT2 },
-  // Inputs from the TTT2 move lists on ludo.guide (see docs/TTT2_SIGLAS.md).
+  // Inputs from the TTT2 move lists on ludo.guide (see docs/TTT2_ABBREVIATIONS.md).
   { abbr: 'DU', label: 'Dark Upper', kind: 'named', characters: ['Armor King'], games: TTT2, expansion: 'f,n,d,df+2' },
   { abbr: 'GS', label: 'Giant Swing', kind: 'named', characters: ['King'], games: TTT2, expansion: 'f,hcf+1' },
   // Ground throws on a downed opponent; the exact throw depends on how the opponent lies.

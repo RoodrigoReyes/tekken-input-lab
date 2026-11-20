@@ -10,6 +10,11 @@ Tekken Input Lab reads notation such as `qcf+1 > uf+2,1 B! > SSL 1~b~uf+4` and d
 
 It runs entirely in the browser. Combos are stored locally in IndexedDB, with no account and no server.
 
+<p align="center">
+  <img src="docs/screenshots/editor.png" alt="Combo editor: Tekken 8 notation on the left, live arcade display on the right" width="49%">
+  <img src="docs/screenshots/generator.png" alt="TTT2 combo generator building a Kazuya and Nina team combo" width="49%">
+</p>
+
 ## Features
 
 - **Live visualizer:** Simultaneous inputs (`1+2`) share one cluster, and sequential inputs (`df+1,2`) get one each. The drawing wraps to the screen width, has adjustable size, and can mirror arrows for the 2P side.
@@ -96,7 +101,7 @@ The generator ships its sources as plain text in `src/data/ttt2/`, and they stay
 node scripts/ttt2/parseMovelists.mjs
 ```
 
-Generator rules are in [`docs/TTT2_TEAM_COMBOS.md`](docs/TTT2_TEAM_COMBOS.md), and the abbreviations used by the guide are in [`docs/TTT2_SIGLAS.md`](docs/TTT2_SIGLAS.md).
+Generator rules are in [`docs/TTT2_TEAM_COMBOS.md`](docs/TTT2_TEAM_COMBOS.md), and the abbreviations used by the guide are in [`docs/TTT2_ABBREVIATIONS.md`](docs/TTT2_ABBREVIATIONS.md).
 
 > [!IMPORTANT]
 > The guide states that its routes were not independently tested. Each generated combo is a suggestion until you try it in practice mode.
@@ -127,3 +132,4 @@ React 19, TypeScript and Vite, styled with Tailwind CSS 4. Dexie for IndexedDB s
 - The visual approach was inspired by [T8 Notation Maker](https://github.com/LinSDK/t8-notation-maker). That repository has no license, so no code or assets were reused. All icons here are original SVG components.
 - The "TTT2 BNB Combos" guide was compiled from Tekken Zaibatsu, YouTube and community contributors.
 - TTT2 move lists come from [Tekken Wiki](https://tekken.fandom.com/) on Fandom, licensed under CC BY-SA.
+- The code is released under the [MIT License](LICENSE). The bundled guide and move lists keep their original authors and terms.
