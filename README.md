@@ -1,8 +1,8 @@
 <h1 align="center">Tekken Input Lab</h1>
+<p align="center">Turn Tekken combo notation into arcade command graphics, and keep your own combo library.</p>
 <p align="center">
   <img src="docs/assets/ewgf.svg" alt="EWGF inputs: forward, neutral, down, down-forward plus 2" width="320">
 </p>
-<p align="center">Turn Tekken combo notation into arcade command graphics, and keep your own combo library.</p>
 
 Tekken Input Lab reads notation such as `qcf+1 > uf+2,1 B! > SSL 1~b~uf+4` and draws every direction, button press, transition and combo event the way an arcade stick shows it: white arrows, and a 2×2 button cluster with each pressed button in its in-game color. It supports **Tekken 6**, **Tekken Tag Tournament 2**, **Tekken 7** and **Tekken 8**.
 
