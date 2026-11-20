@@ -10,6 +10,7 @@ test('home: three entry points, recent combos and a single create button', async
   // Home has its own create card: no second "+ New" button in the top bar.
   await expect(page.getByRole('link', { name: 'New combo' })).toHaveCount(0);
   await expect(page.getByText('No combos yet')).toBeVisible();
+  await expect(page.getByRole('link', { name: /Star it on GitHub/ })).toHaveAttribute('href', 'https://github.com/RoodrigoReyes/tekken-input-lab');
 
   // The editor's game list follows the same order.
   await start.getByRole('link', { name: /^Create a combo/ }).click();

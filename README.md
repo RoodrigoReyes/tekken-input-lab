@@ -16,6 +16,10 @@ It runs entirely in the browser. Combos are stored locally in IndexedDB, with no
 
 **[Open Tekken Input Lab →](https://roodrigoreyes.github.io/tekken-input-lab/)**
 
+<img src="docs/assets/demo.gif" alt="Typing a Tekken 8 combo in the editor: the arcade command graphics update live with each input" width="880">
+
+If it helps you practice, a ⭐ on GitHub helps other players find it.
+
 ## From notation to commands
 
 Type this:

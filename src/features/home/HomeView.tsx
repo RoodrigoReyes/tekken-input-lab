@@ -15,6 +15,7 @@ import { recentCombos } from './recent';
 const RECENT = 4;
 const SAMPLE = 'qcf+1 > uf+2,1 B! > SSL 1~b~uf+4';
 const PHASES = ['Route up to B!', 'TA filler', 'Ender'] as const;
+const REPO_URL = 'https://github.com/RoodrigoReyes/tekken-input-lab';
 
 /** Landing page: the two ways to make a combo, then the latest saved ones. */
 export function HomeView() {
@@ -82,6 +83,13 @@ export function HomeView() {
           </div>
         )}
       </section>
+
+      <footer className="border-t border-line-strong pt-4 text-sm text-fg-muted">
+        Free and open source.{' '}
+        <a href={REPO_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-fg">
+          Star it on GitHub ★
+        </a>
+      </footer>
     </div>
   );
 }
