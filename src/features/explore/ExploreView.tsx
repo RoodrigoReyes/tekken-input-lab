@@ -95,7 +95,7 @@ function CommunityCard({ combo }: { combo: ConvertedCombo }) {
     <div className="flex flex-wrap items-center gap-1.5">{combo.damage != null && <Chip>{combo.damage} dmg</Chip>}{combo.hits != null && <Chip>{(combo.hits === 1 ? `${combo.hits} hit` : `${combo.hits} hits`)}</Chip>}{combo.tags.map((tag) => <Chip key={tag}>{tag}</Chip>)}{!combo.clean && <Chip>Conversion warnings</Chip>}</div>
     <CommandSequence result={combo.result} size={24} side={side} motionFrame={motionFrame} />
     <p className="break-words font-mono text-sm text-fg-muted">{combo.raw}</p>
-    <div className="mt-auto flex flex-wrap items-center gap-3 border-t border-line-strong pt-3"><Button variant="primary" onClick={save} disabled={saving}>{saving ? 'Saving…' : 'Save to library'}</Button><EditCopy draft={draft} /><a href={combo.source} target="_blank" rel="noopener noreferrer" className="text-sm text-fg-muted underline underline-offset-4 hover:text-fg">View source</a></div>
+    <div className="mt-auto flex flex-wrap items-center gap-3 border-t border-line-strong pt-3"><Button variant="primary" onClick={save} disabled={saving}>{saving ? 'Saving…' : 'Save to library'}</Button><EditCopy draft={draft} /></div>
   </article>;
 }
 
