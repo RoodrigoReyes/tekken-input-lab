@@ -3,40 +3,77 @@
 <p align="center">
   <img src="docs/assets/ewgf.svg" alt="EWGF inputs: forward, neutral, down, down-forward plus 2" width="320">
 </p>
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license">
+  <img src="https://img.shields.io/badge/React-19-149eca" alt="React 19">
+  <img src="https://img.shields.io/badge/TypeScript-strict-3178c6" alt="TypeScript strict">
+  <img src="https://img.shields.io/badge/Tekken-6%20·%20TTT2%20·%207%20·%208-e0262b" alt="Tekken 6, TTT2, 7 and 8">
+</p>
 
-Tekken Input Lab reads notation such as `qcf+1 > uf+2,1 B! > SSL 1~b~uf+4` and draws every direction, button press, transition and combo event the way an arcade stick shows it: white arrows, and a 2×2 button cluster with each pressed button in its in-game color. It supports **Tekken 6**, **Tekken Tag Tournament 2**, **Tekken 7** and **Tekken 8**.
+Tekken Input Lab reads combo notation and draws every direction, button press, transition and combo event the way an arcade stick shows it: white arrows, and a 2×2 button cluster with each pressed button in its in-game color. It supports **Tekken 6**, **Tekken Tag Tournament 2**, **Tekken 7** and **Tekken 8**.
 
 It runs entirely in the browser. Combos are stored locally in IndexedDB, with no account and no server.
 
-<p align="center">
-  <img src="docs/screenshots/editor.png" alt="Combo editor: Tekken 8 notation on the left, live arcade display on the right" width="49%">
-  <img src="docs/screenshots/generator.png" alt="TTT2 combo generator building a Kazuya and Nina team combo" width="49%">
-</p>
+## From notation to commands
+
+Type this:
+
+```text
+df+2 > 1,2 > T! > dash > f+2,1 > df+1,2 > b+1+2
+```
+
+And get this, live as you type, and exportable as SVG or PNG:
+
+<img src="docs/assets/example-t8.svg" alt="The Tekken 8 combo drawn as arcade commands: arrows, button clusters, a Tornado badge and a dash label">
+
+Tag Tournament 2 team combos get one row per character, with `B!` and the Tag Assault marked:
+
+```text
+Kazuya:
+EWGF > b+2,4 > db+2 B! TA!
+Nina:
+ss+1~f~2
+Kazuya:
+cd+4,1
+```
+
+<img src="docs/assets/example-ttt2.svg" alt="A Kazuya and Nina team combo drawn in three rows: Kazuya, Nina, Kazuya">
+
+## Screenshots
+
+<img src="docs/screenshots/editor.png" alt="Combo editor: Tekken 8 notation on the left, live arcade display on the right">
+
+<details>
+<summary><strong>TTT2 combo generator</strong></summary>
+<br>
+<img src="docs/screenshots/generator.png" alt="TTT2 combo generator building a Kazuya and Nina team combo">
+</details>
 
 ## Features
 
-- **Live visualizer:** Simultaneous inputs (`1+2`) share one cluster, and sequential inputs (`df+1,2`) get one each. The drawing wraps to the screen width, has adjustable size, and can mirror arrows for the 2P side.
-- **Named moves:** `EWGF`, `DU`, `HS` and other named moves are shown as labels. Click one to see its input, or turn on **Expand named moves** to open them all.
-- **Game-aware validation:** A mechanic that does not exist in the selected game produces a warning (`S!` in Tekken 8, `RD` outside Tekken 7, the TAG button outside TTT2). Notation is never silently reinterpreted.
-- **TTT2 team combos:** Pick a main character and a partner, then assign each section of the combo to one of them. `Name:` labels in the notation are recognized.
-- **TTT2 combo generator:** Builds team combos from the bundled "TTT2 BNB Combos" guide and the TTT2 move lists: a route to `B!`, then `TA!`, a filler and an ender. You choose the team, open ground or wall, the starter (normal, Counter Hit or Low Parry) and who does each part.
-- **Combo library:** Create, edit, duplicate and delete combos, then search and filter by game, character, partner, difficulty, tags and favorites.
-- **Export:** Save a combo as SVG or PNG, and back up or restore the whole library as versioned JSON.
+- **Live visualizer:** simultaneous inputs (`1+2`) share one cluster, and sequential inputs (`df+1,2`) get one each. The drawing wraps to the screen width, has an adjustable size, and can mirror the arrows for the 2P side.
+- **Named moves:** `EWGF`, `DU`, `HS` and others are drawn as labels. Click one to see its input, or turn on **Expand named moves** to show them all.
+- **Game-aware validation:** a mechanic that does not exist in the selected game gets a warning, such as `S!` in Tekken 8 or the TAG button outside TTT2. Notation is never silently reinterpreted.
+- **TTT2 combo generator:** builds team combos from the bundled "TTT2 BNB Combos" guide, one phase at a time: a route to `B!`, the Tag Assault filler, then the ender.
+- **Combo library:** create, edit and duplicate combos, then search and filter by game, character, partner, difficulty, tags and favorites.
+- **Export and backup:** save any combo as SVG or PNG, and back up or restore the whole library as versioned JSON.
 
-## Requirements
+## Getting started
 
-Node.js 22 or later, and npm.
-
-## Quick start
+You need Node.js 22 or later.
 
 ```sh
 npm install
 npm start
 ```
 
-Open `http://localhost:5173`.
+Then open `http://localhost:5173`.
 
-Checks:
+> [!NOTE]
+> The library lives in your browser's IndexedDB. Clearing site data deletes it, so use **Export JSON** in the library first.
+
+<details>
+<summary><strong>Tests and build</strong></summary>
 
 ```sh
 npm test            # unit tests (Vitest)
@@ -46,10 +83,11 @@ npm run e2e         # Playwright browser tests, desktop and mobile
 npm run build       # type check and production build to dist/
 ```
 
-> [!NOTE]
-> The library lives in your browser's IndexedDB. Clearing site data deletes it, so use **Export JSON** in the library before you do.
+</details>
 
 ## Notation
+
+The basics:
 
 | Symbol | Meaning | Example |
 |---|---|---|
@@ -57,52 +95,25 @@ npm run build       # type check and production build to dist/
 | `,` | next input | `df+1,2` |
 | `~` | immediately | `1~b~uf+4` |
 | `:` | just frame | `f,n,d,df:2` |
-| `<` | delayed | `df+3,2,<1` |
-| `*` | hold (uppercase directions are held too) | `df+1*`, `F+2` |
 | `>` | next combo stage | `df+2 > 1,2 > T!` |
-| `;` | section break, or Tag Assault in the TTT2 dialect | `… ; 3+4,2` |
-| `[ ]` | optional part | `df+2 [dash] f+2` |
-| `( )` | optional input, or a note when it is not notation | `(1,2),2`, `1,2 (wall)` |
-| `x3` | repeat | `b+1 x3` |
-| `5` | TAG button (TTT2) | `df+1,2~5` |
+| `B!` `T!` `W!` … | combo events | `db+2 B!` |
 
-The parser also accepts `d/f` style directions, arrows (`→ ↘`), and `df1` for `df+1`. Motions are `qcf qcb hcf hcb cd ff bb fff`. State prefixes are `WS FC BT WR CH iWS` and `H.` (Heat). Movements are `dash SSL SSR SS SW BD WD CC micro`.
+The full reference covers motions, prefixes, events by game, mechanics and dialects: [`docs/NOTATION.md`](docs/NOTATION.md).
 
-### Combo events by game
+## TTT2 combo generator
 
-| Event | Meaning | T6 | TTT2 | T7 | T8 |
-|---|---|---|---|---|---|
-| `B!` | Bound | ✓ | ✓ | ⚠ not an extender | ⚠ only after airborne Heat Burst |
-| `S!` | Screw / Tailspin | ✗ | ✗ | ✓ | ✗ |
-| `T!` | Tornado | ✗ | ✗ | ✗ | ✓ |
-| `W!` | Wall Splat | ✓ | ✓ | ✓ | ✓ |
-| `WB!` | Wall Break (default dialect) | ✓ | ✓ | ✓ | ✓ |
-| `F!` / `FB!` | Floor Break | ✓ | ✓ | ✓ | ✓ |
-| `BB!` | Balcony Break | ✗ | ✓ | ✓ | ✓ |
-| `WBl!` / `FBl!` | Wall / Floor Blast | ✗ | ✗ | ✗ | ✓ |
-| `WBo!` | Wall Bound | character-specific | ✗ | Season 2+ | ✓ |
-| `TA!` | Tag Assault | ✗ | ✓ | ✗ | ✗ |
+The generator joins three pieces at the Tag Assault: the point character's route up to `B!`, a filler from the partner's TA! list, and an ender. You pick the team, open ground or the wall, and who performs each part. Pieces that break the guide's rules are left out, and conditions such as hit counts or opponent size are flagged so you know what to check.
 
-Mechanic keywords: `RA` (Rage Art: T7, T8), `RD` (Rage Drive: T7), and `HB HS HD HE` (Heat Burst, Heat Smash, Heat Dash, Heat Engager: T8). The juggle extender (`B!`, `S!` or `T!`) is allowed once per combo.
-
-> [!TIP]
-> Community notation is not uniform. Ambiguous symbols such as `;` and `WB!` follow the **dialect** chosen in the editor: Standard ([Wavu Wiki](https://wavu.wiki/t/Notation)), TTT2 Combo ([kagewebsite](https://ttt2combo.kagewebsite.com/)), where `;` means Tag Assault, or Community, where `WB!` means Wall Bound.
-
-## TTT2 data
-
-The generator ships its sources as plain text in `src/data/ttt2/`, and they stay the source of truth:
-
-- **`ttt2-bnb-combos.md`** is the "TTT2 BNB Combos" guide, converted on first use by `src/ttt2/guideImporter.ts`. Lines the importer cannot classify are reported, never guessed.
-- **`movelists-src/`** holds the TTT2 move lists as wikitext. Rebuild `movelists.json` from them with:
+Its sources ship as plain text in `src/data/ttt2/`: the guide, and the TTT2 move lists as wikitext. To rebuild `movelists.json` from the wikitext, run:
 
 ```sh
 node scripts/ttt2/parseMovelists.mjs
 ```
 
-Generator rules are in [`docs/TTT2_TEAM_COMBOS.md`](docs/TTT2_TEAM_COMBOS.md), and the abbreviations used by the guide are in [`docs/TTT2_ABBREVIATIONS.md`](docs/TTT2_ABBREVIATIONS.md).
+How it works: [`docs/TTT2_TEAM_COMBOS.md`](docs/TTT2_TEAM_COMBOS.md). Abbreviations used by the guide: [`docs/TTT2_ABBREVIATIONS.md`](docs/TTT2_ABBREVIATIONS.md).
 
 > [!IMPORTANT]
-> The guide states that its routes were not independently tested. Each generated combo is a suggestion until you try it in practice mode.
+> The guide states that its routes were not independently tested. Treat every generated combo as a suggestion until you try it in practice mode.
 
 ## Project layout
 
@@ -119,11 +130,19 @@ scripts/ttt2/    Move list parser
 tests/, e2e/     Vitest unit tests and Playwright browser tests
 ```
 
-`parseNotation(text, { game, dialect, characters })` returns tokens with spans into the original text, the AST, normalized text and diagnostics, and never throws. `layoutCombo()` is a pure function, and the same SVG is used on screen and in exports, so exported images match the screen.
+The parser and the renderer are independent:
+
+- **Parser:** `parseNotation(text, { game, dialect, characters })` returns tokens with spans into the original text, the AST, normalized text and diagnostics. It never throws.
+- **Renderer:** `layoutCombo()` is a pure function. The same SVG is drawn on screen and in exports, so exported images match the screen exactly.
 
 ## Stack
 
-React 19, TypeScript and Vite, styled with Tailwind CSS 4. Dexie for IndexedDB storage, zod for validation, and Chakra Petch and Rajdhani from Fontsource. Vitest and Testing Library for unit tests, Playwright for browser tests.
+| Area | Tools |
+|---|---|
+| App | React 19, TypeScript and Vite |
+| Styling | Tailwind CSS 4, with Chakra Petch and Rajdhani from Fontsource |
+| Storage and validation | Dexie for IndexedDB, zod for validation |
+| Tests | Vitest and Testing Library for unit tests, Playwright for browser tests |
 
 ## Credits
 
