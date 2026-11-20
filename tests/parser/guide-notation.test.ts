@@ -36,14 +36,14 @@ describe('guide notation (TTT2 BNB Combos)', () => {
     expect(warnings('EWGF > uf+1+2', ['Angel'])).toEqual([]);
     expect(warnings('df+1 > EWHF', ['Jin'])).toEqual([]);
     expect(warnings('f+2 > RDS 2,1', ['Miharu'])).toEqual([]);
-    expect(compact('ff+3 > SE 1', ['Lars'])).toBe('ff+3 > SE.1');
+    expect(compact('ff+3 > SE 1', ['Lars'])).toBe('ff+3 > SEN.1');
     expect(compact('VTSc 2', ['Marduk'])).toBe('VTSc.2');
   });
 
-  it('Lars: TTT2 accepts DE/SE (guide) and DEN/SEN (kagewebsite); Tekken 7 only DEN/SEN', () => {
+  it('Lars: DE/SE are aliases for DEN/SEN across games', () => {
     expect(warnings('DEN 1 > SEN 3 > DE 1 > SE 1', ['Lars'])).toEqual([]);
     expect(parseNotation('DEN 1', { game: 't7', characters: ['Lars'] }).diagnostics).toEqual([]);
-    expect(parseNotation('DE 1', { game: 't7', characters: ['Lars'] }).diagnostics.map((d) => d.code)).toContain('unknown-word');
+    expect(parseNotation('DE 1', { game: 't7', characters: ['Lars'] }).diagnostics.map((d) => d.code)).not.toContain('unknown-word');
   });
 
   it('bf, fb and fn are direction shorthands', () => {

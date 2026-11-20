@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { entriesForCharacter, lookupCharacterWord } from '../../src/notation/characters/dictionary';
+import { CHARACTER_ENTRIES, entriesForCharacter, lookupCharacterWord } from '../../src/notation/characters/dictionary';
 import { dialectsForGame, getDialect } from '../../src/notation/dialects';
 import { GAMES, getGame, isGameId } from '../../src/notation/games';
 import { MECHANICS } from '../../src/notation/mechanics';
@@ -49,5 +49,34 @@ describe('notation data', () => {
     expect(r?.inContext).toBe(true);
     expect(r?.characters).toEqual(expect.arrayContaining(['Kazuya', 'Heihachi', 'Devil Jin', 'Jin']));
     expect(lookupCharacterWord('t6', 'ewgf', ['Jin'])?.inContext).toBe(false);
+  });
+
+  it('resolves alternate stance names and the double electric alias', () => {
+    expect(lookupCharacterWord('ttt2', 'de', ['Lars'])?.entry.abbr).toBe('DEN');
+    expect(lookupCharacterWord('t6', 'lfl', ['Hwoarang'])?.entry.abbr).toBe('LFS');
+    expect(lookupCharacterWord('ttt2', 'crn', ['Lei'])?.entry.abbr).toBe('CRA');
+    expect(lookupCharacterWord('t6', 'dewGF', ['Heihachi'])?.stages).toBe('EWGF > EWGF');
+    expect(CHARACTER_ENTRIES.some((entry) => entry.abbr === 'DEWGF')).toBe(false);
+  });
+
+  it('resolves an expanding alias supplied by dictionary data', () => {
+    const entries = [{ abbr: 'TEST', label: 'Test', kind: 'named' as const, characters: ['Kazuya'], games: ['ttt2' as const], aliases: [{ abbr: 'DOUBLE', expandsTo: 'TEST > TEST' }] }];
+    expect(lookupCharacterWord('ttt2', 'double', ['Kazuya'], entries)?.stages).toBe('TEST > TEST');
+    expect(lookupCharacterWord('t8', 'double', ['Kazuya'], entries)).toBeNull();
+  });
+
+  it('recognizes T6 sheet glossary terms for their characters', () => {
+    for (const [word, character, label] of [
+      ['SAV', 'Miguel', 'Savage Stance'], ['DSS', 'Law', 'Dragon Sign Stance'],
+      ['DCKc', 'Steve', 'Ducking Cancel'], ['VTSc', 'Marduk', 'Vale Tudo Stance Cancel'],
+      ['DGF', 'Yoshimitu', 'Dragon Fly'], ['GS', 'King', 'Giant Swing'],
+      ['FLA', 'Baek', 'Flamingo'],
+    ]) {
+      const entry = lookupCharacterWord('t6', word!, [character!]);
+      expect(entry?.inContext).toBe(true);
+      expect(entry?.entry.label).toBe(label);
+    }
+    expect(lookupCharacterWord('t6', 'SAV', ['Kazuya'])?.inContext).toBe(false);
+    expect(lookupCharacterWord('t6', 'RWV', ['Steve'])).toBeNull();
   });
 });

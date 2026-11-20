@@ -14,6 +14,8 @@ Tekken Input Lab reads combo notation and draws every direction, button press, t
 
 It runs entirely in the browser. Combos are stored locally in IndexedDB, with no account and no server.
 
+**[Open Tekken Input Lab →](https://roodrigoreyes.github.io/tekken-input-lab/)**
+
 ## From notation to commands
 
 Type this:
@@ -55,8 +57,13 @@ cd+4,1
 - **Named moves:** `EWGF`, `DU`, `HS` and others are drawn as labels. Click one to see its input, or turn on **Expand named moves** to show them all.
 - **Game-aware validation:** a mechanic that does not exist in the selected game gets a warning, such as `S!` in Tekken 8 or the TAG button outside TTT2. Notation is never silently reinterpreted.
 - **TTT2 combo generator:** builds team combos from the bundled "TTT2 BNB Combos" guide, one phase at a time: a route to `B!`, the Tag Assault filler, then the ender.
-- **Combo library:** create, edit and duplicate combos, then search and filter by game, character, partner, difficulty, tags and favorites.
-- **Export and backup:** save any combo as SVG or PNG, and back up or restore the whole library as versioned JSON.
+- **Explore community combos:** browse thousands of Tekken 8 and Tekken 7 combos from the Kage combo sites, filter by character, launcher, tags and damage, and save any of them to your library. Every combo links back to its source and author. For Tekken 6, build combos from the launchers, routes and enders of Merlin's Tekken 6 Combo Library.
+- **Combo library:** create, edit and duplicate combos, then search and filter by game, character, partner, difficulty, launcher, position, tags and favorites. Combos can carry damage, hits, position and a video link.
+- **Share links:** every combo has a link that opens it drawn, ready to save. No account and no server: the combo travels inside the URL.
+- **Practice mode:** step through a combo one stage at a time with the arrow keys.
+- **OBS overlay:** a transparent view of a combo to use as a browser source on stream.
+- **Installable and offline:** install it as an app on desktop or mobile, and it keeps working without a connection.
+- **Export, backup and packs:** save any combo as SVG or PNG, back up or restore the whole library as versioned JSON, or import a combo pack from a URL with `#/import?url=https://…`.
 
 ## Getting started
 
@@ -115,6 +122,23 @@ How it works: [`docs/TTT2_TEAM_COMBOS.md`](docs/TTT2_TEAM_COMBOS.md). Abbreviati
 > [!IMPORTANT]
 > The guide states that its routes were not independently tested. Treat every generated combo as a suggestion until you try it in practice mode.
 
+## Community combos
+
+The Explore page bundles combos from [tekken8combo.kagewebsite.com](https://tekken8combo.kagewebsite.com/) and [tekken7combo.kagewebsite.com](https://tekken7combo.kagewebsite.com/). The original text of each combo is kept and converted to this app's notation in the browser; anything the converter does not recognize, such as some stance names, is shown as a note instead of being guessed.
+
+To refresh the data (it downloads politely, one page at a time):
+
+```sh
+node scripts/kage/scrapeCombos.mjs t8 t7
+```
+
+Tekken 6 routes come from Merlin's [Tekken 6 Combo Library](https://docs.google.com/spreadsheets/d/e/2PACX-1vSrQDVLlXLCnW7Bo1LnF2yBjObEBWady8sfX4Fz8j2lUIpAINFQWa0f5-qBLUR8QMcjEX5NtCx1pgUU/pubhtml). The sheet lists combo pieces, not full combos, so the app lets you assemble a combo from the author's own launchers, routes and enders. To refresh it:
+
+```sh
+scripts/merlin/fetchSheet.sh
+node scripts/merlin/parseSheet.mjs
+```
+
 ## Project layout
 
 ```text
@@ -122,11 +146,15 @@ src/notation/    Lexicon, mechanics, dialects, games and character dictionaries
 src/parser/      Tokenizer, recursive-descent parser and semantic validation
 src/render/      Pure layout engine (AST to positioned boxes) and theme
 src/components/  Arcade SVG components and shared UI
-src/features/    Library, editor, details, generator and export screens
+src/features/    Library, editor, details, explore, share, import, generator and export screens
 src/storage/     Dexie database, ComboRepository, zod schemas, JSON backup
 src/ttt2/        Guide importer, move lists and combo generator
 src/data/ttt2/   Bundled guide and move list sources
+src/data/community/  Community combos from the Kage sites
+src/data/t6-merlin/  Merlin's Tekken 6 Combo Library (CSV) and its parsed JSON
 scripts/ttt2/    Move list parser
+scripts/kage/    Community combo downloader
+scripts/merlin/  Tekken 6 sheet downloader and parser
 tests/, e2e/     Vitest unit tests and Playwright browser tests
 ```
 
@@ -149,4 +177,6 @@ The parser and the renderer are independent:
 - The visual approach was inspired by [T8 Notation Maker](https://github.com/LinSDK/t8-notation-maker). That repository has no license, so no code or assets were reused. All icons here are original SVG components.
 - The "TTT2 BNB Combos" guide was compiled from Tekken Zaibatsu, YouTube and community contributors.
 - TTT2 move lists come from [Tekken Wiki](https://tekken.fandom.com/) on Fandom, licensed under CC BY-SA.
-- The code is released under the [MIT License](LICENSE). The bundled guide and move lists keep their original authors and terms.
+- Community combos in `src/data/community/` come from the Kage combo sites and belong to their authors, credited on each combo with a link to its source page.
+- Tekken 6 routes in `src/data/t6-merlin/` come from the Tekken 6 Combo Library by Merlin ([@Merlin_FGC](https://twitter.com/Merlin_FGC)).
+- The code is released under the [MIT License](LICENSE). The bundled guide, move lists, community combos and Tekken 6 routes keep their original authors and terms and are not covered by the MIT License.

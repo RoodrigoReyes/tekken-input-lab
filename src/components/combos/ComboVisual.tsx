@@ -52,14 +52,14 @@ export function VisualControls({ value, onChange }: VisualControlsProps) {
 }
 
 /** The arcade rendering of a parsed combo. */
-export function ComboVisual({ parsed, options }: { parsed: ParsedCombo; options: VisualOptions }) {
+export function ComboVisual({ parsed, options, activeStage }: { parsed: ParsedCombo; options: VisualOptions; activeStage?: number }) {
   const [side] = usePlayerSide();
   const [motionFrame] = useMotionFrame();
   const empty = parsed.result.ast.sections.every((s) => s.stages.length === 0);
   return empty ? (
     <p className="py-6 text-sm text-fg-muted">Type or paste notation to see the arcade commands.</p>
   ) : (
-    <CommandSequence result={parsed.result} size={options.size} expandNamed={options.expandNamed} sectionHeaders={parsed.headers} side={side} motionFrame={motionFrame} />
+    <CommandSequence result={parsed.result} size={options.size} expandNamed={options.expandNamed} sectionHeaders={parsed.headers} side={side} motionFrame={motionFrame} activeStage={activeStage} />
   );
 }
 
@@ -68,13 +68,14 @@ export interface ArcadeDisplayProps {
   parsed: ParsedCombo;
   visual: VisualOptions;
   onVisualChange: (v: VisualOptions) => void;
+  activeStage?: number;
 }
 
 /**
  * Panel header, display and its controls. From sm up the controls sit in the header; on phones
  * they go below the display, folded, so the commands come first.
  */
-export function ArcadeDisplay({ title, parsed, visual, onVisualChange }: ArcadeDisplayProps) {
+export function ArcadeDisplay({ title, parsed, visual, onVisualChange, activeStage }: ArcadeDisplayProps) {
   return (
     <>
       <PanelHeader
@@ -85,7 +86,7 @@ export function ArcadeDisplay({ title, parsed, visual, onVisualChange }: ArcadeD
           </div>
         }
       />
-      <ComboVisual parsed={parsed} options={visual} />
+      <ComboVisual parsed={parsed} options={visual} activeStage={activeStage} />
       <details className="border-t border-line-strong pt-1 sm:hidden">
         <summary className="label-md flex min-h-11 items-center gap-2 text-fg-muted">Display options</summary>
         <VisualControls value={visual} onChange={onVisualChange} />

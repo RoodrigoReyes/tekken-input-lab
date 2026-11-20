@@ -74,6 +74,15 @@ describe('ArcadeButtons', () => {
 });
 
 describe('CommandSequence', () => {
+  it('dims other stages only when a practice stage is active', () => {
+    const result = parseNotation('1 > 2', { game: 't8' });
+    const { container, rerender } = render(<CommandSequence result={result} />);
+    const items = () => [...container.querySelectorAll('[data-kind="item"]')];
+    expect(items().map((item) => item.getAttribute('opacity'))).toEqual([null, null]);
+    rerender(<CommandSequence result={result} activeStage={1} />);
+    expect(items().map((item) => item.getAttribute('opacity'))).toEqual(['0.25', '1']);
+  });
+
   it('df+1,2~5 renders two separate clusters and a TAG indicator', () => {
     const result = parseNotation('df+1,2~5', { game: 'ttt2' });
     const { container } = render(<CommandSequence result={result} />);

@@ -52,6 +52,9 @@ export function HomeView() {
             ))}
           </ol>
         </EntryCard>
+        <EntryCard href={paths.explore()} title="Explore community combos" cta="Browse combos" description="Find community combos and save your favorites to your library.">
+          <p className="text-sm text-fg-muted">Browse combos by character, game, and more.</p>
+        </EntryCard>
       </nav>
 
       <section aria-label="Recent combos" className="flex flex-col gap-3">
@@ -61,7 +64,7 @@ export function HomeView() {
           </h2>
           {combos.length > 0 && (
             <a href={paths.library()} className="label-md inline-flex min-h-11 items-center text-fg-muted underline underline-offset-4 hover:text-fg">
-              View library ({combos.length}) →
+              {`View library (${combos.length}) →`}
             </a>
           )}
         </div>

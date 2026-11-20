@@ -204,6 +204,20 @@ describe('generateCombos', () => {
 });
 
 describe('layered builder (collectPieces / assembleCombo / bestPick)', () => {
+  it('outputs canonical notation while retaining character sections', () => {
+    const library = { title: 'Test', skipped: [], kits: [
+      { character: 'Kazuya', guideName: 'Kazuya', sharedWith: [], pieces: [
+        { id: 'r', character: 'Kazuya', role: 'route', context: 'open', routeKind: 'normal', notation: 'DEWGF > d/f+2 B!', additional: false, notes: [] },
+        { id: 'e', character: 'Kazuya', role: 'ender', context: 'open', notation: 'CD+3', additional: false, notes: [] },
+      ] },
+      { character: 'Nina', guideName: 'Nina', sharedWith: [], pieces: [
+        { id: 'f', character: 'Nina', role: 'taFiller', context: 'open', notation: 'WS2 > cd3', additional: false, notes: [] },
+      ] },
+    ] } as GuideLibrary;
+    const pools = collectPieces(library, { point: 'Kazuya', partner: 'Nina', context: 'open', routeKinds: ['normal'], fillerBy: 'partner', enderBy: 'point' })!;
+    const combo = assembleCombo(pools, bestPick(pools)!)!;
+    expect(combo.notation).toBe('Kazuya:\nEWGF > EWGF > df+2 B! > TA!\nNina:\nWS 2 > cd+3\nKazuya:\ncd+3');
+  });
   const base: GeneratorOptions = {
     point: 'Kazuya',
     partner: 'Nina',

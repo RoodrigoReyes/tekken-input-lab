@@ -27,6 +27,17 @@ Everything the Tekken Input Lab parser understands. The original text is always 
 - **Movements:** `dash SSL SSR SS SW BD WD CC micro`.
 - **Character notation:** named moves and stances, such as `EWGF`, `PEWGF`, `ZEN`, `AOP`, `RDS` and `HMS`. Named moves are drawn as labels. Click one to see its input, or turn on **Expand named moves** to show them all.
 
+## Canonical spelling
+
+Imported combos and the parser's normalized text use a common spelling. Your original typed notation remains unchanged.
+
+- Directions are lowercase (`f`, `b`, `u`, `d`, `df`, `db`, `uf`, `ub`, `n`); uppercase marks a held direction, such as `F` or `DF`. Mixed-case diagonals such as `D/f` are not held.
+- Join a direction or motion to its buttons with `+`: `df1` becomes `df+1`, and `CD4` becomes `cd+4`.
+- Separate a state or stance prefix from its input with one space: `WS 1,2`, `FC df+1`, `CH f+3`, `iWS 1`, `ZEN 1`, `FLA b+3`. Heat uses `H.2+3`.
+- A sidestep followed by a button is one move: `SS3`, `SS 3` and `SSR,2` become `SS+3` and `SSR+2`.
+- Named moves and stances use their dictionary spelling, such as `WGF` and `ZEN`. Stages use ` > ` and sequential inputs use `,` without spaces.
+- Aliases use their canonical abbreviation: `DE` → `DEN`, `SE` → `SEN`, `PKB` → `PAB`, `DUCK` → `DCK`, `CRN` → `CRA`, `ROLL` → `ROL`, `Bridge` → `BRG`, `KDE` → `SET`, `LFL` → `LFS`, and `RFL` → `RFS`. `DEWGF` expands to `EWGF > EWGF`.
+
 ## Combo events by game
 
 | Event | Meaning | T6 | TTT2 | T7 | T8 |

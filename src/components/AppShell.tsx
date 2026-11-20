@@ -23,6 +23,7 @@ interface NavItem {
 const NAV: readonly NavItem[] = [
   { label: 'Home', href: paths.home(), match: ['home'] },
   { label: 'Library', href: paths.library(), match: ['library', 'details'] },
+  { label: 'Explore', href: paths.explore(), match: ['explore'] },
   { label: 'TTT2 Generator', short: 'Generator', href: paths.generator(), match: ['generator'] },
 ];
 

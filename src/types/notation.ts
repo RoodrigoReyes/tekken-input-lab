@@ -137,6 +137,7 @@ export interface NamedMoveNode extends NodeBase {
   characters: string[];
   /** Optional input expansion, only rendered in "expanded" display mode. */
   expansion?: string;
+  expandsTo?: string;
 }
 
 export interface MovementNode extends NodeBase {

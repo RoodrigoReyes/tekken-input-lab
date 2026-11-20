@@ -1,12 +1,15 @@
-import { useId, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
+import { liveQuery } from 'dexie';
 import { Button } from '../../components/ui/Button';
 import { GAMES, getGame } from '../../notation/games';
 import { DIFFICULTIES } from '../../types/combo';
 import type { GameId } from '../../types/notation';
+import type { Combo } from '../../types/combo';
+import { useRepository } from '../../hooks/useCombos';
 import { ToggleChip } from '../../components/ui/Chip';
 import { ComboBox, CONTROL, Select } from '../../components/ui/Field';
 import { Panel } from '../../components/ui/Panel';
-import { EMPTY_FILTERS, type LibraryFilters } from './filters';
+import { collectLaunchers, EMPTY_FILTERS, type LibraryFilters } from './filters';
 
 export interface FiltersProps {
   value: LibraryFilters;
@@ -29,6 +32,16 @@ const SearchIcon = () => (
 );
 
 export function Filters({ value, onChange, characters, partners, tags, count }: FiltersProps) {
+  const repository = useRepository();
+  const [combos, setCombos] = useState<Combo[]>([]);
+  const [launchersError, setLaunchersError] = useState(false);
+  useEffect(() => {
+    const subscription = liveQuery(() => repository.findAll()).subscribe({
+      next: (results) => { setCombos(results); setLaunchersError(false); },
+      error: () => setLaunchersError(true),
+    });
+    return () => subscription.unsubscribe();
+  }, [repository]);
   const set = <K extends keyof LibraryFilters>(key: K, v: LibraryFilters[K]) => onChange({ ...value, [key]: v });
   const roster = value.game === 'all' ? characters : [...new Set([...characters, ...getGame(value.game).roster])].sort();
   const showPartner = value.game === 'all' || value.game === 'ttt2';
@@ -38,7 +51,8 @@ export function Filters({ value, onChange, characters, partners, tags, count }: 
   const games: ReadonlyArray<[GameId | 'all', string]> = [['all', 'All'], ...GAMES.map((g): [GameId, string] => [g.id, g.shortName])];
 
   // Filters folded behind the "Filters" button; the count on it says how many are on.
-  const folded = [value.favoritesOnly, value.character, value.partner, value.difficulty !== 'all', ...value.tags].filter(Boolean).length;
+  const folded = [value.favoritesOnly, value.character, value.partner, value.difficulty !== 'all', value.launcher, value.position !== 'all', ...value.tags].filter(Boolean).length;
+  const launchers = collectLaunchers(combos, value);
 
   return (
     <Panel aria-label="Filters" className="flex flex-col gap-3 p-3 sm:p-4">
@@ -74,7 +88,7 @@ export function Filters({ value, onChange, characters, partners, tags, count }: 
         )}
         {count && (
           <p className="label-sm ml-auto text-fg-muted" role="status">
-            {count.visible} of {count.total} combos
+            {`${count.visible} of ${count.total} combos`}
           </p>
         )}
       </div>
@@ -89,9 +103,19 @@ export function Filters({ value, onChange, characters, partners, tags, count }: 
             <option value="all">Any difficulty</option>
             {DIFFICULTIES.map((d) => (
               <option key={d} value={d}>
-                {d[0]?.toUpperCase() + d.slice(1)}
+                {(d === 'beginner' ? 'Beginner' : d === 'intermediate' ? 'Intermediate' : 'Advanced')}
               </option>
             ))}
+          </Select>
+          <Select aria-label="Launcher" value={value.launcher} onChange={(e) => set('launcher', e.target.value)} disabled={launchersError}>
+            <option value="">{launchersError ? 'Launchers unavailable' : 'Any launcher'}</option>
+            {value.launcher && !launchers.includes(value.launcher) && <option value={value.launcher} disabled>{value.launcher}</option>}
+            {launchers.map((launcher) => <option key={launcher} value={launcher}>{launcher}</option>)}
+          </Select>
+          <Select aria-label="Position" value={value.position} onChange={(e) => set('position', e.target.value as LibraryFilters['position'])}>
+            <option value="all">Any position</option>
+            <option value="open">Open</option>
+            <option value="wall">Wall</option>
           </Select>
         </div>
         <div className="flex flex-wrap items-center gap-1.5">

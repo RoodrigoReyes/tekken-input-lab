@@ -22,6 +22,9 @@ export const comboDraftSchema = z.object({
   tags: z.array(z.string().trim().min(1).max(40)).max(30).default([]),
   difficulty: z.enum(DIFFICULTIES),
   damage: z.number().int().min(0).max(999).optional(),
+  hits: z.number().int().min(0).max(999).optional(),
+  position: z.enum(['open', 'wall']).optional(),
+  videoUrl: z.url({ protocol: /^https$/, error: 'Enter a valid HTTPS URL' }).max(500).optional(),
   notes: z.string().max(MAX_TEXT).default(''),
   favorite: z.boolean().default(false),
 });

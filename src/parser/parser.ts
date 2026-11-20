@@ -402,6 +402,7 @@ class Parser {
           label: entry.label,
           characters: ch.characters,
           ...(entry.expansion ? { expansion: entry.expansion } : {}),
+          ...(ch.stages ? { expandsTo: ch.stages } : {}),
         };
       }
       return { ...base, type: 'stance', kind: 'stance', id: entry.abbr, abbr: entry.abbr, label: entry.label };

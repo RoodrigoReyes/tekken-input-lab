@@ -16,6 +16,7 @@
  * notation warnings. Every result is a suggestion until tested in practice.
  */
 import { parseNotation } from '../parser';
+import { canonicalNotation } from '../notation/canonical';
 import { flattenNodes } from '../parser/validate';
 import { candidateEnders, enderKey, type MovelistMove } from './candidateEnders';
 import { moveKey, routeMoves, startAtMove } from './movePatterns';
@@ -74,7 +75,7 @@ export interface GeneratedCombo {
   filler?: ComboPiece;
   ender?: ComboPiece;
   analysis: RouteAnalysis;
-  /** Labeled notation ready for the editor (original piece text kept verbatim). */
+  /** Labeled canonical notation ready for the editor. */
   notation: string;
   flags: Flag[];
 }
@@ -124,6 +125,10 @@ function pieceFlags(piece: ComboPiece, which: Flag['piece'], text: string = piec
 }
 
 /** Merge consecutive segments of the same character into one labeled section. */
+export function canonicalPiece(text: string, character: string): string {
+  return canonicalNotation(text, { game: 'ttt2', dialect: 'kage-ttt2', characters: [character] });
+}
+
 function assemble(segments: ReadonlyArray<{ who: string; text: string }>): string {
   const merged: Array<{ who: string; text: string }> = [];
   for (const s of segments) {
@@ -131,7 +136,7 @@ function assemble(segments: ReadonlyArray<{ who: string; text: string }>): strin
     if (last && last.who === s.who) merged[merged.length - 1] = { who: s.who, text: `${last.text} > ${s.text}` };
     else merged.push({ ...s });
   }
-  return merged.map((s) => `${s.who}:\n${s.text}`).join('\n');
+  return merged.map((s) => `${s.who}:\n${canonicalPiece(s.text, s.who)}`).join('\n');
 }
 
 export interface PoolPiece {

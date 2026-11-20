@@ -16,6 +16,7 @@ export interface CommandSequenceProps {
   side?: Side;
   /** Draw motion inputs (qcf, cd, ff, …) inside a frame. */
   motionFrame?: boolean;
+  activeStage?: number;
 }
 
 function useElementWidth<T extends HTMLElement>(): [React.RefObject<T | null>, number] {
@@ -60,7 +61,7 @@ const NONE: ReadonlySet<number> = new Set();
 
 /** Live, responsive arcade rendering of a parsed combo. Wraps to the container width. */
 export const CommandSequence = forwardRef<SVGSVGElement, CommandSequenceProps>(function CommandSequence(
-  { result, size = 40, expandNamed = false, sectionHeaders, className, side = 'left', motionFrame = false },
+  { result, size = 40, expandNamed = false, sectionHeaders, className, side = 'left', motionFrame = false, activeStage },
   svgRef,
 ) {
   const [ref, width] = useElementWidth<HTMLDivElement>();
@@ -84,7 +85,7 @@ export const CommandSequence = forwardRef<SVGSVGElement, CommandSequenceProps>(f
   );
   return (
     <div ref={ref} className={className} style={{ width: '100%', overflowX: 'auto' }}>
-      <ComboSvg ref={svgRef} layout={layout} title={result.original} side={side} onToggleNamed={expandNamed ? undefined : toggleNamed} />
+      <ComboSvg ref={svgRef} layout={layout} title={result.original} side={side} onToggleNamed={expandNamed ? undefined : toggleNamed} activeStage={activeStage} />
     </div>
   );
 });

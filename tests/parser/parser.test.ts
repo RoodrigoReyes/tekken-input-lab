@@ -130,6 +130,16 @@ describe('game inputs from the spec (§13)', () => {
     expect(r.ast.sections[1]?.boundary).toBe('tagAssault');
     expect(r.ast.sections[1]?.label).toBe('Armor King');
   });
+
+  it('preserves labeled lines and Tag Assault semantics when normalizing', () => {
+    const options = { dialect: 'kage-ttt2', characters: ['Kazuya', 'Nina'] };
+    const result = parse('Kazuya:\nd/f+2 ;\nNina:\nWS2', 'ttt2', options);
+    expect(result.normalized).toBe('Kazuya:\ndf+2 ;\nNina:\nWS 2');
+    const normalized = parse(result.normalized, 'ttt2', options);
+    expect(normalized.ast.sections.map((section) => [section.boundary, section.label])).toEqual([
+      ['start', 'Kazuya'], ['tagAssault', 'Nina'],
+    ]);
+  });
 });
 
 describe('cross-game warnings (warning, not error, no reinterpretation)', () => {
@@ -225,7 +235,7 @@ describe('aliases and normalization', () => {
   });
 
   it('normalized text uses canonical tokens', () => {
-    expect(parse('d/f + 1 ,2 ↘1').normalized).toBe('df+1,2 df1');
+    expect(parse('d/f + 1 ,2 ↘1').normalized).toBe('df+1,2 df+1');
   });
 
   it('preserves the exact original string and token spans', () => {
@@ -344,5 +354,12 @@ describe('unknown and ambiguous notation', () => {
     const r = parse('');
     expect(r.ast.sections).toHaveLength(1);
     expect(r.diagnostics).toEqual([]);
+  });
+});
+
+describe('canonical sidesteps', () => {
+  it('joins a sidestep and its button whatever the source spelling', () => {
+    for (const text of ['SS3', 'SS 3', 'SS,3', 'SS+3']) expect(parseNotation(text, { game: 't6' }).normalized).toBe('SS+3');
+    expect(parseNotation('SSR,2 > SSL > 4,3', { game: 't8' }).normalized).toBe('SSR+2 > SSL > 4,3');
   });
 });

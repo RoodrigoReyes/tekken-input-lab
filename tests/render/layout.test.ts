@@ -43,6 +43,12 @@ describe('layoutCombo', () => {
     expect(l.boxes.map((b) => b.kind)).toEqual(['item', 'stage', 'item', 'relation', 'item', 'stage', 'item']);
   });
 
+  it('assigns each box to its stage across a multi-stage combo', () => {
+    const boxes = layout('df+2 > 1,2 > T! > dash > f+2,1').boxes;
+    expect(items(boxes).map((box) => box.stageIndex)).toEqual([0, 1, 1, 2, 3, 4, 4]);
+    expect(boxes.map((box) => box.stageIndex)).toEqual([0, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4]);
+  });
+
   it('drops event captions below the readable size (a 0.2 caption at size 24 would be under 5px)', () => {
     const label = (size: number) => items(layout('T!', 't8', { size }).boxes)[0]?.parts[0] as Extract<Part, { type: 'label' }>;
     expect(label(24).caption).toBeUndefined();

@@ -19,6 +19,7 @@ export interface ComboSvgProps {
   side?: Side;
   /** Makes named moves with a known input clickable to show or hide it. */
   onToggleNamed?: (key: number) => void;
+  activeStage?: number;
 }
 
 function PartView({ part, box, size, side }: { part: Part; box: Box; size: number; side: Side }): ReactNode {
@@ -66,7 +67,7 @@ function ItemPanel({ box }: { box: Box }) {
   );
 }
 
-function BoxView({ box, size, side, onToggleNamed }: { box: Box; size: number; side: Side; onToggleNamed?: (key: number) => void }) {
+function BoxView({ box, size, side, onToggleNamed, activeStage }: { box: Box; size: number; side: Side; onToggleNamed?: (key: number) => void; activeStage?: number }) {
   let content: ReactNode = null;
   switch (box.kind) {
     case 'item':
@@ -98,6 +99,7 @@ function BoxView({ box, size, side, onToggleNamed }: { box: Box; size: number; s
       transform={`translate(${box.x} ${box.y})`}
       data-kind={box.kind}
       data-node={box.nodeType}
+      opacity={activeStage === undefined ? undefined : box.stageIndex === activeStage ? 1 : 0.25}
       {...(toggle && {
         role: 'button',
         tabIndex: 0,
@@ -119,7 +121,7 @@ function BoxView({ box, size, side, onToggleNamed }: { box: Box; size: number; s
 }
 
 /** Renders a computed layout as a single, self-contained SVG (also used for export). */
-export const ComboSvg = forwardRef<SVGSVGElement, ComboSvgProps>(function ComboSvg({ layout, heading, background, title, side = 'left', onToggleNamed }, ref) {
+export const ComboSvg = forwardRef<SVGSVGElement, ComboSvgProps>(function ComboSvg({ layout, heading, background, title, side = 'left', onToggleNamed, activeStage }, ref) {
   const s = layout.size;
   const headH = heading ? Math.round(s * (heading.subtitle ? 1.25 : 0.9)) : 0;
   const width = layout.width;
@@ -151,7 +153,7 @@ export const ComboSvg = forwardRef<SVGSVGElement, ComboSvgProps>(function ComboS
       )}
       <g transform={`translate(0 ${headH})`}>
         {layout.boxes.map((box) => (
-          <BoxView key={box.id} box={box} size={s} side={side} onToggleNamed={onToggleNamed} />
+          <BoxView key={box.id} box={box} size={s} side={side} onToggleNamed={onToggleNamed} activeStage={activeStage} />
         ))}
       </g>
     </svg>

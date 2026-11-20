@@ -8,6 +8,8 @@ export interface LibraryFilters {
   character: string;
   partner: string;
   difficulty: Difficulty | 'all';
+  launcher: string;
+  position: 'all' | 'open' | 'wall';
   tags: readonly string[];
   favoritesOnly: boolean;
 }
@@ -18,6 +20,8 @@ export const EMPTY_FILTERS: LibraryFilters = {
   character: '',
   partner: '',
   difficulty: 'all',
+  launcher: '',
+  position: 'all',
   tags: [],
   favoritesOnly: false,
 };
@@ -30,9 +34,26 @@ function sameName(a: string, b: string): boolean {
   return a.localeCompare(b, undefined, { sensitivity: 'base' }) === 0;
 }
 
+export function launcherOf(notation: string): string {
+  const closers: string[] = [];
+  let end = notation.length;
+  for (let i = 0; i < notation.length; i++) {
+    const char = notation[i];
+    if (char === '[' || char === '(') closers.push(char === '[' ? ']' : ')');
+    else if (char === closers[closers.length - 1]) closers.pop();
+    else if (char === '>' && closers.length === 0) {
+      end = i;
+      break;
+    }
+  }
+  return notation.slice(0, end).trim().replace(/\s+/g, ' ');
+}
+
 export function matchesFilters(combo: Combo, f: LibraryFilters): boolean {
   if (f.game !== 'all' && combo.game !== f.game) return false;
   if (f.difficulty !== 'all' && combo.difficulty !== f.difficulty) return false;
+  if (f.position !== 'all' && combo.position !== f.position) return false;
+  if (f.launcher && launcherOf(combo.notation) !== f.launcher) return false;
   if (f.favoritesOnly && !combo.favorite) return false;
   if (f.character && !sameName(combo.character, f.character)) return false;
   if (f.partner && !(combo.partner && sameName(combo.partner, f.partner))) return false;
@@ -40,6 +61,16 @@ export function matchesFilters(combo: Combo, f: LibraryFilters): boolean {
   const q = fold(f.query);
   if (!q) return true;
   return fold(combo.name).includes(q) || squash(combo.notation).includes(squash(q)) || combo.tags.some((t) => fold(t).includes(q));
+}
+
+export function collectLaunchers(combos: readonly Combo[], filters: LibraryFilters): string[] {
+  const counts = new Map<string, number>();
+  for (const combo of combos) {
+    if (!matchesFilters(combo, { ...filters, launcher: '' })) continue;
+    const launcher = launcherOf(combo.notation);
+    if (launcher) counts.set(launcher, (counts.get(launcher) ?? 0) + 1);
+  }
+  return [...counts.keys()].sort((a, b) => counts.get(b)! - counts.get(a)! || a.localeCompare(b));
 }
 
 export function filterCombos(combos: readonly Combo[], f: LibraryFilters): Combo[] {

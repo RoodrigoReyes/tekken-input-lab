@@ -68,10 +68,11 @@ test('build a TTT2 team combo phase by phase, use it and save it', async ({ page
   await expect(options.getByLabel('Point character')).toBeHidden();
   await options.getByRole('button', { name: /Team & setup/ }).click();
 
+  await expect(notation).toContainText(/^Kazuya:\nEWGF > 3,1,4 > db\+2 B! > TA!\nNina:\n/);
   await result.getByRole('button', { name: 'Use this combo' }).click();
   await expect(page.getByRole('heading', { name: 'New combo' })).toBeVisible();
   const editorNotation = page.getByLabel('Notation', { exact: true });
-  await expect(editorNotation).toHaveValue(/^Kazuya:\nEWGF > b\+2,4 > db\+2 B! > TA!\nNina:\n/);
+  await expect(editorNotation).toHaveValue(/^Kazuya:\nEWGF > 3,1,4 > db\+2 B! > TA!\nNina:\n/);
   await expect(page.getByLabel('Combo name')).toHaveValue('Kazuya + Nina: EWGF → TA!');
   await expect(page.getByLabel('Notes')).toHaveValue(/^Keep me\n\nGenerated from/);
   await expect(page.getByRole('region', { name: 'Live preview' }).locator('svg text', { hasText: 'NINA' })).toBeVisible();

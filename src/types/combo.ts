@@ -19,6 +19,9 @@ export interface Combo {
   tags: string[];
   difficulty: Difficulty;
   damage?: number;
+  hits?: number;
+  position?: 'open' | 'wall';
+  videoUrl?: string;
   notes: string;
   favorite: boolean;
   /** ISO 8601 timestamps. */

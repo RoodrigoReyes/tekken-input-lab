@@ -2,6 +2,7 @@ import { useId } from 'react';
 import { Chip, ToggleChip } from '../../components/ui/Chip';
 import { Field, Select } from '../../components/ui/Field';
 import { matchesMove, moveKey, type CharacterPatterns, type MoveCount } from '../../ttt2/movePatterns';
+import { canonicalPiece } from '../../ttt2/generator';
 
 export interface MovePatternsProps {
   character: string;
@@ -23,7 +24,7 @@ export function MovePatterns({ character, patterns, move, onMove }: MovePatterns
         <div className="flex flex-wrap gap-1.5">
           {list.slice(0, TOP).map((m) => (
             <ToggleChip key={m.key} active={query !== '' && matchesMove(m.key, query)} onClick={() => onMove(query === m.key ? '' : m.move)} className="font-mono normal-case">
-              {m.move} ×{m.count}
+              {canonicalPiece(m.move, character)} ×{m.count}
             </ToggleChip>
           ))}
         </div>
@@ -42,7 +43,7 @@ export function MovePatterns({ character, patterns, move, onMove }: MovePatterns
           <option value="">Any move</option>
           {patterns.moves.map((m) => (
             <option key={m.key} value={m.move}>
-              {m.move} ×{m.count}
+              {canonicalPiece(m.move, character)} ×{m.count}
             </option>
           ))}
         </Select>
@@ -55,7 +56,7 @@ export function MovePatterns({ character, patterns, move, onMove }: MovePatterns
           <div className="flex flex-wrap gap-1.5">
             {patterns.juggles.slice(0, TOP).map((j) => (
               <Chip key={j.key} className="font-mono normal-case">
-                {j.move} ×{j.count}
+                {canonicalPiece(j.move, character)} ×{j.count}
               </Chip>
             ))}
           </div>

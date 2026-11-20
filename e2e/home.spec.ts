@@ -1,10 +1,10 @@
 import { expect, test } from '@playwright/test';
 
-test('home: two entry points, recent combos and a single create button', async ({ page }) => {
+test('home: three entry points, recent combos and a single create button', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { name: 'Turn notation into arcade commands' })).toBeVisible();
   const start = page.getByRole('navigation', { name: 'Get started' });
-  await expect(start.getByRole('link')).toHaveCount(2);
+  await expect(start.getByRole('link')).toHaveCount(3);
   // Games are listed oldest first.
   await expect(start.getByRole('list', { name: 'Supported games' }).getByRole('listitem')).toHaveText(['T6', 'TTT2', 'T7', 'T8']);
   // Home has its own create card: no second "+ New" button in the top bar.

@@ -1,0 +1,8601 @@
+{
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSrQDVLlXLCnW7Bo1LnF2yBjObEBWady8sfX4Fz8j2lUIpAINFQWa0f5-qBLUR8QMcjEX5NtCx1pgUU/pubhtml",
+  "author": "Merlin",
+  "characters": [
+    {
+      "name": "Alisa",
+      "players": [
+        "Channel",
+        "Ao",
+        "Ccer",
+        "Platina"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "WR1"
+          ],
+          "followUps": [
+            "F+1+2",
+            "B+3+4"
+          ]
+        },
+        {
+          "starters": [
+            "(WS3,)3",
+            "D/b+4"
+          ],
+          "followUps": [
+            "dash db+4"
+          ]
+        },
+        {
+          "starters": [
+            "(D/b+2,)2"
+          ],
+          "followUps": [
+            "f+3,2",
+            "3,2"
+          ]
+        },
+        {
+          "starters": [
+            "(2,3)4"
+          ],
+          "followUps": [
+            "D/b+3"
+          ]
+        },
+        {
+          "starters": [
+            "WS 1+2"
+          ],
+          "followUps": [
+            "Dash - D/b+3",
+            "D+3+4"
+          ]
+        },
+        {
+          "starters": [
+            "Wall Bound Note"
+          ],
+          "followUps": []
+        },
+        {
+          "starters": [
+            "Connecting B+4,3 can be hard from a distance. Use U/f+4,4 instead."
+          ],
+          "followUps": []
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2"
+          ],
+          "routes": [
+            "b+1 - ws1,2 - f+1 - b+4,3 - B!",
+            "f+2 - f+1 - f+2 - f+1 - b+4,3 - B! (Off Axis)",
+            "b+1 - ws1,2 - f+1 - dash - b+2,4 - W!",
+            "f+2 - f+1 - dash - f+1,1 - d+4,1+2 - W!",
+            "iWS1,2 - f+1 - dash - f+1 - db+2,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+4,4",
+            "B+3+4,3+4"
+          ],
+          "routes": [
+            "B! - dash - b+1 - ws1,2 - d+4,1+2",
+            "B! - f+2 - f+1 - f+2 - d+4,1+2"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+1+2"
+          ],
+          "routes": [
+            "d+1 - ws1,2 - f+1 - b+4,3 - B!",
+            "d+1 - ws1,2 - f+1 - ff - d+4,1+2 - W!",
+            "iWS1,2 - f+1 - dash - f+1 - db+2,2 - W! (Smalls)"
+          ]
+        },
+        {
+          "launchers": [
+            "WS 2"
+          ],
+          "routes": [
+            "Delay 3+4 - SBT 3 - ws4 - b+2,1 - B!",
+            "Delay 3+4 - SBT 3 - ws4 - d+4,1+2 - W!",
+            "Delay 3+4 - SBT 1,2,1,3+4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "1+2",
+            "FLY 4"
+          ],
+          "routes": [
+            "SSR - b+1 - ws1,2 - f+1 - b+4,3 - B!",
+            "iWS1,2 - f+1 - f+2 - d+4,1+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D+3+4"
+          ],
+          "routes": [
+            "iWS1,2 - f+1 - ff - f+1 - B+4,3 - B!",
+            "iWS1,2 - f+1 - f+2 - d+4,1+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "B+3+4"
+          ],
+          "routes": [
+            "f+2 - f+1,1 - b+2,1 - B!",
+            "f+2 - f+1 - f+2 - d+4,1+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "(2,3),3"
+          ],
+          "routes": [
+            "deep dash - df+1 - f+1 - f+2 - f+1 - b+4.3 - B!",
+            "deep dash - df+1 - f+1 - f+2 - d+4,1+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "DES F+1+2"
+          ],
+          "routes": [
+            "uf+1+2 - B! - uf+1+2"
+          ]
+        },
+        {
+          "launchers": [
+            "(WS 1,2,)3"
+          ],
+          "routes": [
+            "f+1 x3 - b+4,3 - ff+2,3",
+            "f+1 - b+2,1 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "Fly 3",
+            "(No Cross)"
+          ],
+          "routes": [
+            "cc - b+1 - ws1,2 - f+1 - b+4,3 - B!",
+            "ws1,2 - f+1,1 - b+2,1 - B!",
+            "cc - b+1 - ws1,2 - f+1 - dash  - b+2,4 - W!",
+            "ws1,2 - f+1 - dash - f+1 - db+2,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "Fly 3",
+            "(Cross)"
+          ],
+          "routes": [
+            "iWS1,2 - df+1 - d+4,1+2",
+            "iWS1,2 - d+4,1+2 (Smalls)"
+          ]
+        },
+        {
+          "launchers": [
+            "(B+4),3"
+          ],
+          "routes": [
+            "b+1 - ws1,2 - f+1 - b+4,3 - B!",
+            "df+1 - f+1 - f+2 - f+1 - b+4,3 - B! (Smalls)",
+            "b+1 - ws1,2 - f+1 - dash - b+2,4 - W!",
+            "iWS1,2 - f+1 - dash - f+1 - db+2,2 - W! (Smalls)"
+          ]
+        }
+      ],
+      "lowParry": [
+        "f+2 - df+1 - f+1,1 - d+4,1+2",
+        "df+1,1 - f+2,3,3"
+      ],
+      "postBound": [
+        "f, F+2,[3]",
+        "WR3,4 (oki)",
+        "b+4,3 (oki)",
+        "d/b+2,2 (carry)",
+        "b+2,4 (carry)",
+        "d+4,1+2 (carry)",
+        "ff+3,4,4 (Short Only)",
+        "f+3+4, 1,2,1,3+4 (Short Only)",
+        "u/f+3,2 (Short Only)",
+        "f+2,3,3 (Short Only)"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - b+4,3 - B! - SSR - 2,3,3",
+          "W! - uf+4,4- B! - 1 - ff+1+2,2",
+          "W! - b+4,3 - B! - 3,2 (DES Mix)",
+          "W! - b+4,3 - B! - b+4,3 (Oki)"
+        ],
+        "boundToSplat": [
+          "1 - 3,2 (DES Mix) (Male Only)",
+          "3,2 (DES Mix)(Far)(No Ling)",
+          "b+4,3",
+          "ff+2[3]",
+          "ff+3,4,4~1+2",
+          "1 - ff+1+2,2",
+          "FLY 1,2,1,3+4~1+2 (Far)"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,1",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "13f",
+          "stand": "4",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "f+3,2 ~ DES",
+          "crouch": "WS 1,2"
+        },
+        {
+          "startup": "15f",
+          "stand": "uf+4,4 - B!",
+          "crouch": "uf+4,4 - B!"
+        },
+        {
+          "startup": "16f",
+          "stand": "df+2",
+          "crouch": ""
+        },
+        {
+          "startup": "17f",
+          "stand": "",
+          "crouch": "WS 2"
+        },
+        {
+          "startup": "18f",
+          "stand": "b+2,4",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Anna",
+      "players": [
+        "200won",
+        "Hyper Sky",
+        "Ccer"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "f,F+2",
+            "fc D/f+2"
+          ],
+          "followUps": [
+            "D/b+3+4",
+            "D+3+4"
+          ]
+        },
+        {
+          "starters": [
+            "B+2,2"
+          ],
+          "followUps": [
+            "df+3,3,3,4"
+          ]
+        },
+        {
+          "starters": [
+            "CJM4"
+          ],
+          "followUps": [
+            "U/f+3+4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2",
+            "f,F+3",
+            "f,F+4",
+            "ws2",
+            "(2),(1),4",
+            "fc D/f+1"
+          ],
+          "routes": [
+            "df+1 - df+3,2~SS3 - B!",
+            "qcf+1 - d+4,1 - d+2 - B!",
+            "df+1 - df+3,2 - df+3,1,4 - W!",
+            "qcf+1 - d+4,1 - df+3,1,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+3"
+          ],
+          "routes": [
+            "ws2 - d+4,1 - d+2 - B!",
+            "cc d+4,1 - df+1 - df+3,1,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "fc D/f+2"
+          ],
+          "routes": [
+            "d+4,1 - d+2 - B!",
+            "d+4,1 - df+1 - ff3,4,3 - W!",
+            "d+4,1 - df+1 - df+3,1,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "CJM f,F+4"
+          ],
+          "routes": [
+            "ws3~B - CJM df+1 - db+1 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "CH 4"
+          ],
+          "routes": [
+            "dash w+4,1 - d+2 - B!",
+            "dash d+4,1 - df1 - ff3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "qcf+1"
+          ],
+          "routes": [
+            "qcf+1 - df+3,2~SS3 - B!",
+            "qcf1 - df+3,2 - df+3,1,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "CJM3"
+          ],
+          "routes": [
+            "df+1 - df+3,2~SS3 - B!",
+            "qcf+1 - d+4,1 - d+2 - B!",
+            "df+1 - df+3,2 - df+3,1,4 - W!",
+            "qcf+1 - d+4,1 - df+3,1,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "qcf)3),2"
+          ],
+          "routes": [
+            "SS - df+3,2~SSL3 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "Qcf+1 - d+4,1 - ff+3,4,3"
+      ],
+      "postBound": [
+        "df1 - ff3,4,3 (staple)",
+        "df3,1,4 (staple)",
+        "db2 - FCf2 (oki)",
+        "df3,2~df+1 (oki)",
+        "ff3,4,3 ( high carry)",
+        "uf(1),3,3+4 (carry)"
+      ],
+      "wall": {
+        "splatToBound": [
+          "d+2 - B! - d/f+1,2, f+2+3",
+          "d+2 - B! - d/f+3,2, f+2+3",
+          "d+2 - B! - d/f+1, f,f+3,4,3",
+          "d+2 - B! - 1, d/f+1,2,3"
+        ],
+        "boundToSplat": [
+          "d/f+1,2, f+2+3",
+          "d/f+3,2, f+2+3",
+          "d/f+1, f,f+3,4,3",
+          "1, d/f+1,2,3"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "2,3",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 3~b / WS 4"
+        },
+        {
+          "startup": "13f",
+          "stand": "df+1,2,3~b",
+          "crouch": "WS 1,2"
+        },
+        {
+          "startup": "14f",
+          "stand": "f+2,3 / f+2+3 / 3,4",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "b+2,2",
+          "crouch": "UF+4"
+        },
+        {
+          "startup": "16f",
+          "stand": "df+2",
+          "crouch": ""
+        },
+        {
+          "startup": "18f",
+          "stand": "uf+4",
+          "crouch": "uf+4"
+        },
+        {
+          "startup": "19f",
+          "stand": "",
+          "crouch": "WS 2"
+        }
+      ]
+    },
+    {
+      "name": "Armour King",
+      "players": [
+        "JDCR (Duh)",
+        "BDDJ"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "F1+2",
+            "CD1"
+          ],
+          "followUps": [
+            "d+3"
+          ]
+        },
+        {
+          "starters": [
+            "B+3"
+          ],
+          "followUps": [
+            "dash - f1+4"
+          ]
+        },
+        {
+          "starters": [
+            "CD4"
+          ],
+          "followUps": [
+            "f1+4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "U/f+4 | Dark Upper"
+          ],
+          "routes": [
+            "ssr - df+1 - 1+2,2 - d+2 - B!",
+            "1+2,2 - d+2 - B!",
+            "df+1  - df+3 - df+1 - f+2,1 - W!",
+            "iSW - FB!",
+            "df+3 - GS - FB!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+1+2"
+          ],
+          "routes": [
+            "df+1 - 1+2,2 - d+2 - B!",
+            "df+1 - df+3 - df+1 - f+2,1 - W!",
+            "df+1 - df+3 - GS - FB!",
+            "df+1 - df+1 - f+1 - iSW - FB!"
+          ]
+        },
+        {
+          "launchers": [
+            "SS2,1"
+          ],
+          "routes": [
+            "B! - df+1 - 1+2,2 - f+1+4",
+            "B! - df+3 - df+1 - f+2,1 - W!",
+            "B! - df+3 - GS - FB!"
+          ]
+        },
+        {
+          "launchers": [
+            "BT 3"
+          ],
+          "routes": [
+            "df+3 - df+1 - d+2 - B!",
+            "df+3 - df+1 - f+2,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS1"
+          ],
+          "routes": [
+            "df+3 - df+1 - d+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "fc D/f+2"
+          ],
+          "routes": [
+            "1+2-2 - d+2 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "B+1"
+          ],
+          "routes": [
+            "backdash - 3+4 - 2 - d+2 - B!",
+            "d+2 - B! - cc df+3 - GS",
+            "d+2 - B! - cc df+3 - df+1 - f+2,1 -W!"
+          ]
+        },
+        {
+          "launchers": [
+            "ws2"
+          ],
+          "routes": [
+            "df+1 - 1+2,2 - d+2 - B!",
+            "1+2,2 - d+2 - B!",
+            "df+1  - df+3 - df+1 - f+2,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F,n2"
+          ],
+          "routes": [
+            "d+2 - B!",
+            "iWS4 - d+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+3"
+          ],
+          "routes": [
+            "ws4 - d+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+3"
+          ],
+          "routes": [
+            "SSR - df+1 - 1+2,2 - d+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "b+2,1,2"
+          ],
+          "routes": [
+            "d+2 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df+3 - df+1 - GS",
+        "df+1 - 1+2 - f+1+4"
+      ],
+      "postBound": [
+        "df+1 - f+2,1 (staple carry)",
+        "iSW (style OKI staple)",
+        "df+1 - GS (easier OKI staple)",
+        "df+3 - GS (situational OKI)",
+        "db+2,3 (situational carry)",
+        "1+4 (situational BM)",
+        "df+1 - 1+2,2 - f+1+4 (1 hit bound bound)"
+      ],
+      "wall": {
+        "splatToBound": [
+          "d+2 - B! - df+1 - F+1+4",
+          "d+2 - B! - df+1 - d+1 - ws4",
+          "d+2 - B! - iSW",
+          "d+2 - B! - df+1 - df+2,1"
+        ],
+        "boundToSplat": [
+          "W! - df+1 - f+1+4",
+          "W! - df+1 - d+1 - ws4",
+          "W! - uf+1+2",
+          "W! - d+4,4,4",
+          "W! - iSW"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "2,1",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "b+2,1",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "f+1+4",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "uf+4 / f+2,1",
+          "crouch": "uf+4"
+        },
+        {
+          "startup": "16f",
+          "stand": "b+3 / CD2",
+          "crouch": "WS1 / WS3"
+        }
+      ]
+    },
+    {
+      "name": "Asuka",
+      "players": [
+        "Addung",
+        "Bebe"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "WS 1,4",
+            "3+4"
+          ],
+          "followUps": [
+            "dash - f+2 (iWR2)"
+          ]
+        },
+        {
+          "starters": [
+            "CH fc D/f+2"
+          ],
+          "followUps": [
+            "ws1,4",
+            "ws2,1"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "1+2"
+          ],
+          "routes": [
+            "b+4,2 - B!",
+            "iWS4 - 2,1 - 2,1,1+2 - B!",
+            "iWS4 - b+4,2 - B!",
+            "db+4,3 - d+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+2",
+            "F+2"
+          ],
+          "routes": [
+            "uf+3 - 2,1 - 2,1,1+2 - B!",
+            "b+2,1,3 - dash b+4,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+4"
+          ],
+          "routes": [
+            "b+2,1+2 - b+4,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "B+3"
+          ],
+          "routes": [
+            ",4,3 - 2,1,1+2 - B!",
+            ",4,3 - d+2 - B!",
+            ",4 - B+4,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+2"
+          ],
+          "routes": [
+            "db+1 - 1+4 - 2,1,1+2 - B!",
+            "b+4,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS3"
+          ],
+          "routes": [
+            "2,1,1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+4"
+          ],
+          "routes": [
+            "dash - 1+4 - b+4,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+4"
+          ],
+          "routes": [
+            "dash - b+4,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "fc df,d,df1+2"
+          ],
+          "routes": [
+            "uf+3 - 2,1 - 2,1,1+2 - B!",
+            "b+2,1,3 - dash - b+4,2 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "d+2"
+          ],
+          "routes": [
+            "df+1 - 2,1 - 2,1,1+2 - B!",
+            "b+4,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "b+4"
+          ],
+          "routes": [
+            "(b+2),4,3 - 2,1,1+2 - B!",
+            "iWS4 - 2,1 - 2,1,1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "dash - 1+4,2 - d+2 - B!",
+            "dash - 1+4,2 - dash - b+4,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SS4"
+          ],
+          "routes": [
+            "dash - db4,3 - d+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "d+3+4"
+          ],
+          "routes": [
+            "b2,1,3 - d+2 - B!",
+            "b+2,1,3 - dash - b+4,2 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "uf+3 - 2,1 - 2,1,1+2",
+        "uf+3 - 1+4 - b+2,3,4"
+      ],
+      "postBound": [
+        "db+4,3 (carry staple)",
+        "b+4,2 (OKI staple)",
+        "uf+3 - b+4,2",
+        "b+2,4,3",
+        "iWS1,4",
+        "df+1,2"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - 2,1,1+2 - B! - f+1,4",
+          "W! - 2,1,1+2 - B! - f+1,4",
+          "W! - d+2 - B! - 1+4,2,d+4",
+          "W! - b=4,2 - B! - b+2,1,4"
+        ],
+        "boundToSplat": [
+          "W! - f+1,[4]",
+          "W! - b+2,1,4",
+          "W! - 2,1,1+2",
+          "1+4,2+d+4"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "13f",
+          "stand": "2,3",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "",
+          "crouch": "WS 2,1"
+        },
+        {
+          "startup": "15f",
+          "stand": "df+2",
+          "crouch": "WS 1,4"
+        },
+        {
+          "startup": "16f",
+          "stand": "1+2 / b+3",
+          "crouch": ""
+        },
+        {
+          "startup": "19f",
+          "stand": "",
+          "crouch": "WS 3"
+        }
+      ]
+    },
+    {
+      "name": "Baek",
+      "players": [
+        "Doo Han Baek",
+        "Appado",
+        "Miya",
+        "Me 😎"
+      ],
+      "notes": [
+        "Can input 3+4 as uf3+4 (Usefull for post B!)"
+      ],
+      "guaranteed": [
+        {
+          "starters": [
+            "CH U/f+2",
+            "CH f,F+4",
+            "(F+2,1,)2"
+          ],
+          "followUps": [
+            "db+4",
+            "ff+4"
+          ]
+        },
+        {
+          "starters": [
+            "CH (4,)4",
+            "CH (1+2,)4",
+            "(D/f+4,4,)4",
+            "U/fN+3"
+          ],
+          "followUps": [
+            "d+2"
+          ]
+        },
+        {
+          "starters": [
+            "CH (D/f+1,)3",
+            "(WS 1,)3"
+          ],
+          "followUps": [
+            "2,2"
+          ]
+        },
+        {
+          "starters": [
+            "CH D/b+3,3~f"
+          ],
+          "followUps": [
+            "1,2"
+          ]
+        },
+        {
+          "starters": [
+            "(F+4,)4",
+            "(D/f+4,4,)4",
+            "(WS 3,3,)4"
+          ],
+          "followUps": [
+            "WS4,4,4",
+            "d+3,3,3"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2",
+            "U/f+4",
+            "SS3+4 *",
+            "FLA U/f+3",
+            "(D+3,3,)3"
+          ],
+          "routes": [
+            "f+2 - 4,3,3~f - FLA 3+4~f - FLA B+3 - B! (Damage)",
+            "* 4,3,3~f - FLA D/b+3,3~f - FLA 1,2,3~f - FLA B+3 - B! (Carry)",
+            "* 4,3,3~f - FLA 3+4~f - FLA 3+4~f - FLA D/b+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "CD3"
+          ],
+          "routes": [
+            "delay UF+4 - 3+4~f - FLA 3+4~f - FLA b+3 - B!",
+            "UF+4 - dash - 4,3,3~f - FLA b+3 - B!",
+            "UF+4 - 1 - f+4,3~f - B!",
+            "u+4,3 - 3+4~f - FLA b+3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+3",
+            "f,f,n 3 *"
+          ],
+          "routes": [
+            "dash - 4,3,3~f - FLA D/b+3,3~f - FLA 1,2,3~f - FLA B+3 - B!",
+            "dash - 4,3,3~f - FLA b+3 - B!",
+            "* db+3,3~f - FLA - 4,3,3~f - FLA 3+4~f - FLA b+3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+2"
+          ],
+          "routes": [
+            "db+3,3~f - FLA - 4,3,3~f - FLA 3+4~f - FLA b+3 - B!",
+            "db+3,3~ - FLA 1 - f+4,3~f - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+4"
+          ],
+          "routes": [
+            "ws2,1 - B!",
+            "ws2 - 4,3,3~f - FLA 3+4~f - FLA b+3 - B!",
+            "d+2 - ws4,4,4"
+          ]
+        },
+        {
+          "launchers": [
+            "B+4"
+          ],
+          "routes": [
+            "4,3,3~f - FLA 3+4~f - FLA b+3 - B!",
+            "4,3,3~f - FLA b+3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U+4"
+          ],
+          "routes": [
+            "SSL - 4,3,3~f - FLA b+3 - B!",
+            "SSL - f+2 - 4,3,3~f - b+3 - B!",
+            "SSL - 4,3,3~f - 3+4~f - FLA b+3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "ws2,1"
+          ],
+          "routes": [
+            "B! - 4,3,3~f - FLA 3+4~f - FLA df+3+4",
+            "B! - 4,3,3~f - FLA 3+4~f - FLA 3+4~f - FLA f+3"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "3+4~f FLA db+3,3~f - FLA 1,2,3~f - FLA b+3 - B!",
+            "3+4~f - FLA b+3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "4,3,3~f"
+          ],
+          "routes": [
+            "FLA 3+4~f - FLA 3+4~f - FLA b+3 - B!",
+            "FLA3+4~f - FLA b+3 - B!",
+            "FLA 1 - f4,3~f - FLA 3+4~f - FLA 3+4~f - FLA f+3"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+3",
+            "(F+3,3,)2",
+            "(F+3,(3,))2"
+          ],
+          "routes": [
+            "f+2 - 4,3,3~f - FLA 3+4~f - FLA B+3 - B!",
+            "4,3,3~f - FLA D/b+3,3~f - FLA 1,2,3~f - FLA B+3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "b,B+2",
+            "(2,)2"
+          ],
+          "routes": [
+            "dash b+1 - B! - 4,3,3~f - FLA 3+4~f - df+3+4",
+            "SSR - df+1,3 - FLA b+3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(F+2,1,)2",
+            "B+1"
+          ],
+          "routes": [
+            "SSL - 4,3,3~f - FLA b+3 - B!",
+            "SSL - f+2 - 4,3,3~f - b+3 - B!",
+            "SSL - 4,3,3~f - 3+4~f - FLA b+3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(F+4,)3",
+            "(D/f+4,4,)3",
+            "(D+4,3,3,)3",
+            "BT 4"
+          ],
+          "routes": [
+            "dash - 4,3,3~f - FLA D/b+3,3~f - FLA 1,2,3~f - FLA B+3 - B!",
+            "dash - 4,3,3~f - FLA b+3 - B!",
+            "db+3,3~f - FLA - 4,3,3~f - FLA 3+4~f - FLA b+3 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "dash 4,3,3~f - FLA 3+4~f - FLA df+3+4"
+      ],
+      "postBound": [
+        "D/F+3,4",
+        "D/b+3,3~f - FLA 1+2,4",
+        "CDn ws4,4,4",
+        "dash - 4,3,3~f",
+        "3+4~f - FLA df+3+4",
+        "db+3,3~f - FLA 1,2,3~f - FLA df+3+4",
+        "db+3,3~f - FLA 2,3~f - FLA df+3+4",
+        "3+4~f - FLA db+2 - W!"
+      ],
+      "wall": {
+        "splatToBound": [
+          "Bound with either f,F+3 or FLA b+3",
+          "B! - iFLA f+3 - 4 - d+4,4 (Damage)",
+          "B! - iFLA f+3 - 4,4 (OKI)",
+          "B! - 4,3,3~f - FLA d+4,4",
+          "B! - 3+4~f - FLA uf+3",
+          "Bound with f+4,3~f",
+          "B! - FLA f+3 - 4 - d+4,4",
+          "B! - FLA f+3 - 4,4"
+        ],
+        "boundToSplat": [
+          "iFLA f+3, 4, d+4,4",
+          "iFLA f+3, 4,4",
+          "4,3,3~f, d4,4",
+          "3+4~f, FLA u/f+3",
+          "3+4~f, d+4,4"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "2,2 / 1,2,3~f",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4,4"
+        },
+        {
+          "startup": "12f",
+          "stand": "4,3,3~f",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "df+1,3",
+          "crouch": "WS 1,3"
+        },
+        {
+          "startup": "14f",
+          "stand": "1+2,4",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "df+2",
+          "crouch": "WS 2,1"
+        },
+        {
+          "startup": "16f",
+          "stand": "b+4 / 3+4 (W!)",
+          "crouch": "uf+3+4"
+        },
+        {
+          "startup": "17f",
+          "stand": "3+4 (Range)",
+          "crouch": ""
+        },
+        {
+          "startup": "18f",
+          "stand": "db+2",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Bears",
+      "players": [
+        "Prince",
+        "Hankuma"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "I don’t really know these ones sorry."
+          ],
+          "followUps": [
+            "Finding info on these idiots is too tough man..."
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "U/f+4",
+            "ROL 2"
+          ],
+          "routes": [
+            "f+4 - db+1,2 - B!",
+            "df+3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+2,1"
+          ],
+          "routes": [
+            "2 - db+1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+3",
+            "WS2"
+          ],
+          "routes": [
+            "df+3,2 - B!",
+            "2 - db+1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+4"
+          ],
+          "routes": [
+            "ws+1+2,1+2~3+4 - B! - HBS d+1+2 - HBS df+2",
+            "ws+4 - df+2 - df+2,1 - W!",
+            "cc - df+4 - uf+3,4,1+2~d (oki)"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+2"
+          ],
+          "routes": [
+            "uf+1+2 - 2 - db+1,2 - B!",
+            "Ufn+4 - df+3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SIT 2",
+            "B+3+4",
+            "HBS df+2"
+          ],
+          "routes": [
+            "2 - db+1,2 - B!",
+            "df+3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "HBS 1+2"
+          ],
+          "routes": [
+            "run - df+3,2 - B!",
+            "run - uf+3,4,1+2"
+          ]
+        },
+        {
+          "launchers": [
+            "F+1+2"
+          ],
+          "routes": [
+            "db+3 - df+2 - df+2,1 - W!",
+            "db+3 - df+2 - d+1+2"
+          ]
+        },
+        {
+          "launchers": [
+            "FC df+1,2,1"
+          ],
+          "routes": [
+            "d+1+2"
+          ]
+        },
+        {
+          "launchers": [
+            "SIT 1"
+          ],
+          "routes": [
+            "fc d+1,1 - ff+2"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "db+1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+1,2,1,2"
+          ],
+          "routes": [
+            "cc - f+1 - db+1,2 - B!",
+            "uf+3,4,1+2 - FB!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+1,1,1"
+          ],
+          "routes": [
+            "df+2 - df+2 - df+2,1 (that sucks dude)",
+            "poor Bears :("
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+(3),2"
+          ],
+          "routes": [
+            "f+1 - db+1,2 - B!",
+            "df+3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "fc D/f+2,1,2"
+          ],
+          "routes": [
+            "cc - f+1 - db+1,2 - B!",
+            "cc- df+3,2 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "uf3,4,1+2~d",
+        "b+2,1,1+2"
+      ],
+      "postBound": [
+        "uf3,4,1+2~d (oki)",
+        "b+2,1,1+2 (carry+damage)",
+        "df+3,2 (oki)",
+        "df+2 - df+2,1 (carry)",
+        "HCF 2,1"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - db+1,2 - B! - uf+3,4,1+2~d",
+          "IDK dude do the funny sit move or smthn (WiP)"
+        ],
+        "boundToSplat": [
+          "uf+3,4,1+2~d"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "2,1",
+          "crouch": ""
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "db+1,2",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "f+2,1",
+          "crouch": "WS 1,1"
+        },
+        {
+          "startup": "14f",
+          "stand": "d+1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "df+2,1 / uf+4",
+          "crouch": "WS 2"
+        },
+        {
+          "startup": "16f",
+          "stand": "uf+3",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Bob",
+      "players": [
+        "BinChang",
+        "Fab",
+        "Chobob",
+        "Kor"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "f,F+3+4",
+            "CH D+1",
+            "CH B+3",
+            "WS 1,2"
+          ],
+          "followUps": [
+            "B+3",
+            "df+1+2",
+            "D+1"
+          ]
+        },
+        {
+          "starters": [
+            "CH CD1+2"
+          ],
+          "followUps": [
+            "iWR3+4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "U/f+3",
+            "ws2,1"
+          ],
+          "routes": [
+            "d+2,3 - 2 - uf+1+2,1 - B!",
+            "d+2,3 - 1 - dash - db+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "CD1"
+          ],
+          "routes": [
+            "dash - d+2.3 - 2 - uf+1+2,1 - B!",
+            "ff+3 - df1 - 2 - uf+1+2,1 - B!",
+            "deep CD3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "CD2"
+          ],
+          "routes": [
+            "ff3 - df+1 - 2 - uf+1+2,1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+3+4"
+          ],
+          "routes": [
+            "delay - d+2,3 - 2 - uf+1+2,1 - B!",
+            "uf+1+2,1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+1+2"
+          ],
+          "routes": [
+            "ws2,1 - uf+1+2,1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+1+2"
+          ],
+          "routes": [
+            "ff+3 - df+1 - 2 - uf+1+2,1 - B!",
+            "uf+1+2,1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SB4"
+          ],
+          "routes": [
+            "ws2,1 - uf+1+2,1 - dash - 1+2~f - SB4"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "uf+1+2,1 - B!",
+            "dash 2 - 1+2~f - B! - SB1 - d+2,3 - b+3"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+2"
+          ],
+          "routes": [
+            "d+2,3 - 2 - uf+1+2,1 - B!",
+            "d+2,3 - 1 - dash - db+2 - W!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "ff+3 - df+1 - d+2,3 - b+3"
+      ],
+      "postBound": [
+        "df+1,2",
+        "d+2,4",
+        "1+2~f - SB4",
+        "df+3,2",
+        "ff+3 - db+2",
+        "ff+3 - b+1+2"
+      ],
+      "wall": {
+        "splatToBound": [
+          "1+2 - B! - b+2,2 - d+3+4",
+          "b+4,1 - B! - d+2,1,2"
+        ],
+        "boundToSplat": [
+          "1 - df+1 - d+3+4",
+          "d+2,1,2",
+          "b+2,2,4",
+          "uf+3+4,4"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,1,2 / 1,4",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "f+2,3",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "df+1,2",
+          "crouch": "WS 2,1"
+        },
+        {
+          "startup": "15f",
+          "stand": "f+1+2 / ub+3",
+          "crouch": ""
+        },
+        {
+          "startup": "16f",
+          "stand": "uf+1+2, 1+2",
+          "crouch": "uf+1+2, 1+2"
+        },
+        {
+          "startup": "18f",
+          "stand": "CD1",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Bruce",
+      "players": [
+        "Sun Chip",
+        "Appado",
+        "Purizumu",
+        "Pokchop"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "d+3+4",
+            "SS4,1",
+            "WS 2,1"
+          ],
+          "followUps": [
+            "CD3",
+            "FC df+4"
+          ]
+        },
+        {
+          "starters": [
+            "CH b+3"
+          ],
+          "followUps": [
+            "d+3"
+          ]
+        },
+        {
+          "starters": [
+            "f+1+2"
+          ],
+          "followUps": [
+            "d+3+4"
+          ]
+        },
+        {
+          "starters": [
+            "U/f+1+2"
+          ],
+          "followUps": [
+            "d+4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2",
+            "U/f+4"
+          ],
+          "routes": [
+            "f+4,3,4 - BS f+1 - B!",
+            "f+3 - f+4,3,4 - BS f+1 - B!",
+            "f+3 - 2,4 - BS f+1 - B!",
+            "f+3,1 - f+3 - 3,(2)~f CD1 - 3,(2)~f CD1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "B,F+4"
+          ],
+          "routes": [
+            "b,f+4 - f+4,3,4 - BS f+1 - B!",
+            "UF+4 - b+4,3 - 3,(2)~f CD1 - d+2 - B!",
+            "UF+4 - b+4,3 - 3,(2)~f CD1 - 3,(2)~f CD1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "CD2"
+          ],
+          "routes": [
+            "f+3 - f+4,3,4 - BS f+1 - B!",
+            "f+3+4 -  3,(2)~f CD1 -  3,(2)~f CD1 -  3,(2)~f CD1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "B+1+2"
+          ],
+          "routes": [
+            "f+3 - df+4 - BS f+1 - B!",
+            "f+3 - b+4,3 - 3,(2)~f CD1 - 3,(2)~f CD1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "4~f"
+          ],
+          "routes": [
+            "f+3 - df+4 - BS f+1 - B! SSL"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "f+1+2 - 2,4 - BS f+1 - B!",
+            "f+1+2 - 3,(2)~f CD1 x 2 - 3,(2)~f CD1,1  - W! (carry)"
+          ]
+        },
+        {
+          "launchers": [
+            "B+2"
+          ],
+          "routes": [
+            "f+3 - 2,4 - BS f+1 - B!",
+            "f+3,1 - f+3 - 3,(2)~f CD1 - 3,(2)~f CD1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+3+4"
+          ],
+          "routes": [
+            "f+3 - 2,4 - BS f+1 - B!",
+            "f+3 - b+4,3 - 3,(2)~f CD1 - 3,(2)~f CD1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+3,1",
+            "B+(3),4"
+          ],
+          "routes": [
+            "f+4,3,4 - BS f+1 - B!",
+            "f+3 - 2,4 - BS f+1 - B!",
+            "f+3 - b+4,3 - 3,(2)~f CD1 - 3,(2)~f CD1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+4"
+          ],
+          "routes": [
+            "hold f - f+3 - 2,4 - BS f+1 - B!",
+            "hold f -f+3 - b+4,3 - 3,(2)~f CD1 - 3,(2)~f CD1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+3+4"
+          ],
+          "routes": [
+            "df+1,2 - B! - df+1,2 - d+3",
+            "f+3,1 - f+1,2,4 - BS 3"
+          ]
+        },
+        {
+          "launchers": [
+            "(D/f+1,(4))~4"
+          ],
+          "routes": [
+            "f+3,1 - 3,(2)~f CD1 - d+3,4",
+            "d+2 - B! - cc - d+2 - fc df+4"
+          ]
+        }
+      ],
+      "lowParry": [
+        "f+3,1 - 3,(2)~f CD1 - 3,(2)~f CD1 -3,(2)~f CD2"
+      ],
+      "postBound": [
+        "f+3 - 3,(2)~f CD1,2 / 2",
+        "f3,1 - 3,(2)~f CD1,2 / 2",
+        "3,(2)~f CD1 - f+2,4 (Far Carry)"
+      ],
+      "wall": {
+        "splatToBound": [
+          "d+3+4 - B! f+3,1 - db+2,1,4",
+          "d+3+4 - B! - 2 - d+4,3",
+          "d+3+4 - B! - df+1,4~4"
+        ],
+        "boundToSplat": [
+          "f+3 - db+2,1,4",
+          "1,2 - d+4,3",
+          "1,2,4 - BS f+1 / BS 3 / BS 4",
+          "df+3+4,3,3,3,3"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,4,3",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "f+2,4",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "",
+          "crouch": "WS 2,1"
+        },
+        {
+          "startup": "15f",
+          "stand": "uf+4 / df+2",
+          "crouch": "uf+4 / uf+3"
+        },
+        {
+          "startup": "16f",
+          "stand": "b+1+2 / 3+4",
+          "crouch": ""
+        },
+        {
+          "startup": "17f",
+          "stand": "f+1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "18f",
+          "stand": "4~f",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Bryan",
+      "players": [
+        "You already know...",
+        "Mr Naps (JimmyJ)",
+        "Sunchip",
+        "Ty 😉"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "qcb+2,4",
+            "CH qcb+3",
+            "df+4",
+            "b+(3),1+2",
+            "SS1",
+            "(1,2),3",
+            "df+1+2"
+          ],
+          "followUps": [
+            "qcb+4"
+          ]
+        },
+        {
+          "starters": [
+            "CH1+2"
+          ],
+          "followUps": [
+            "3,3,2 (?)",
+            "JU (?)"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "f, B+2"
+          ],
+          "routes": [
+            "f+1+2 - 1 / 2 - b+1 - B!",
+            "f+1+2 - f+1 - b+3~f - cc - f+1 - b+1 - B!",
+            "dash - 1+2 - db+2 - f+1 - b+3~f - qcf4,1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+4",
+            "QCB+4"
+          ],
+          "routes": [
+            "1+2 - db+2 - f+1 - b+1 - b!",
+            "1+2 - db+2 - f+1 - b+3~f - qcf4,1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+3"
+          ],
+          "routes": [
+            "ws3 - db+2 - f+1 - b+1 - b!",
+            "ws3 - db+2 - f+1 - b+3~f - qcf4,1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS1"
+          ],
+          "routes": [
+            "b+2,1 - 1 / 2 - b+1 - B!",
+            "b+2,1 - f+1 - b+3~f - qcf4,1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS2~F+2"
+          ],
+          "routes": [
+            "SSR ff+4 / b+1 - B! - db+2 - 3,3,4"
+          ]
+        },
+        {
+          "launchers": [
+            "d+1+2~2"
+          ],
+          "routes": [
+            "b+2,1 - 2 - b+1 - B!",
+            "b+2,1 - f+1 - b+3~f - qcf4,1,2 - W!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "ff+2",
+            "deep dash - f+1 - b+3~f - cc - f+1 - ff+4 / b+1 - B! (fucking hard)"
+          ]
+        },
+        {
+          "launchers": [
+            "3+4"
+          ],
+          "routes": [
+            "1+2 - db+2 - 1 / 2 - b+1 - B!",
+            "uf+3 -  db+2 - 1 / 2 - b+1 - B!",
+            "dash - uf+3 -  db+2 - 1 / 2 - b+3~f - qcf4,1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "b+1"
+          ],
+          "routes": [
+            "b+2,1 - 1 / 2 - b+1 - B!",
+            "b+2,1 - f+1 - b+3~f - qcf4,1,2 - W!",
+            "b+2,(1) - SSR - f+1 - b3~f - qcf4,1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "ws+3",
+            "d+(2),3"
+          ],
+          "routes": [
+            "db+2 - db+2 - f+1 - b+1 - b!",
+            "db+2 - db+2 - f+1 - b+3~f - qcf4,1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f+3"
+          ],
+          "routes": [
+            "SSR - db+2 - f+1 - b+1 - b!",
+            "SSR - db+2 - f+1 - b+3~f - qcf4,1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "ws+3,4"
+          ],
+          "routes": [
+            "db+2 - 1+2 - d+3,2",
+            "db+2 - 1 - ff+2"
+          ]
+        },
+        {
+          "launchers": [
+            "(1,2),1"
+          ],
+          "routes": [
+            "deep SWL - db+2 - f+1 - ff+4 - B!",
+            "ff+4 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "1+2 - db+2 - f+1 - b+3~f - qcf4,1,2"
+      ],
+      "postBound": [
+        "uf+3 - d+3,2",
+        "uf+3 - f+1 - ff+2",
+        "uf+3 - db+2 (oki)",
+        "qcb+2,4 (oki)",
+        "db+1+2 (carry)",
+        "3,3,2 (carry)",
+        "1,4 (short carry)",
+        "uf+3 - f+1 - b+3~f - qcf4,1,2 (early bound)"
+      ],
+      "wall": {
+        "splatToBound": [
+          "ff+4 - B! - iWS3,[4]",
+          "ff+4 - B! - d+1+2~f - qcf3,[4]",
+          "ff+4 - B! - d+1+2~f - qcf1+2"
+        ],
+        "boundToSplat": [
+          "b+3~f - qcf+3,[4]",
+          "d+1+2~f - qcf3,[4]",
+          "d+1+2~f - qcf1+2"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,4 / 2,3",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "",
+          "crouch": "WS 3"
+        },
+        {
+          "startup": "13f",
+          "stand": "df+2,1",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "f,b+2 / 1+2,2",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "f+2,1,4",
+          "crouch": "WS 1"
+        },
+        {
+          "startup": "16f",
+          "stand": "b+4",
+          "crouch": ""
+        },
+        {
+          "startup": "19f",
+          "stand": "",
+          "crouch": "WS 2,f+2"
+        }
+      ]
+    },
+    {
+      "name": "Capo",
+      "players": [
+        "Jeondding",
+        "GTR",
+        "Misty",
+        "SperoGin"
+      ],
+      "notes": [
+        "Capo bound structure is tricky. Typically you're going to bound with RLX 2,4. To continue after, you hold back to enter HSP, then tap forward to transition to RLX again. Then you can continue."
+      ],
+      "guaranteed": [
+        {
+          "starters": [
+            "CH ws+3+4",
+            "CH ub+3"
+          ],
+          "followUps": [
+            "qcf+3"
+          ]
+        },
+        {
+          "starters": [
+            "CH ws+3+4~d"
+          ],
+          "followUps": [
+            "RLX 1,4,4,3+4"
+          ]
+        },
+        {
+          "starters": [
+            "uf+(3),3+4"
+          ],
+          "followUps": [
+            "RLX 3~4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "df+3+4",
+            "RLX3~4"
+          ],
+          "routes": [
+            "b+3,3 - RLX 2,4~b - B!",
+            "df+1,1 - uf+1+2 - B!",
+            "f+1 - df+1,1 - uf+3+4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "RLX 4~3"
+          ],
+          "routes": [
+            "HSP 2 - ws1,3 - RLX 2,4~b - B!",
+            "HSP f - RLX 2 - b+3,3 - RLX 2,4~b - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "ws2"
+          ],
+          "routes": [
+            "qcf+3 - b+3,3 - RLX 2,4~b - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "ws1,3"
+          ],
+          "routes": [
+            "RLX 2,4~b - B! - HSP 2 - ws1,3"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+1+2",
+            "qcf+3"
+          ],
+          "routes": [
+            "b+3,3 - RLX 2,4~b - B!",
+            "uf+1+2 - B!",
+            "f+1 - df+1,1 - uf+3+4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "3~4"
+          ],
+          "routes": [
+            "RLX2 - b+3,3 - RLX 2,4~b - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "3~4~b"
+          ],
+          "routes": [
+            "HSP 1 - b+3,3 - RLX 2,4~b - B! (Unreliable)"
+          ]
+        },
+        {
+          "launchers": [
+            "3~4, 3+4"
+          ],
+          "routes": [
+            "B! - b+3,3 - RLX 2,f+3"
+          ]
+        },
+        {
+          "launchers": [
+            "4~3",
+            "f+(4),3+4"
+          ],
+          "routes": [
+            "RLX2 - b+3,3 - RLX 2,4~b - B!",
+            "HSP f - RLX 2 - b+3,3 - RLX 2,4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+3+4"
+          ],
+          "routes": [
+            "b+3,3 - RLX 2,4~b - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SS+3+4"
+          ],
+          "routes": [
+            "ws1,3 - RLX 2,4~b - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "b+3,3"
+          ],
+          "routes": [
+            "RLX 2,4~b - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "3",
+            "f+4"
+          ],
+          "routes": [
+            "b+3,3 - RLX 2,4~b - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "WR3"
+          ],
+          "routes": [
+            "RLX2 - b+3,3 - RLX 2,4~b - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "db+2,3",
+            "1+2~3"
+          ],
+          "routes": [
+            "b+3,3 - RLX 2,4~b - B!",
+            "df+1,1 - uf+1+2 - B!",
+            "f+1 - df+1,1 - uf+3+4 - W!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "b+3,3 - RLX 2,4~b - HSP d+3"
+      ],
+      "postBound": [
+        "b~f RLX 2,f+3",
+        "b~f RLX 2,3",
+        "b~f RLX 2,4 - d+4",
+        "dash - b+3,3",
+        "dash - d+2,3",
+        "RLX 2,4~b - B! - HSP f+1,2 - W!"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - uf+1+2 - B! - b+4,4,3+4",
+          "W! - uf+1+2 - B! - d+2,3 - RLX 3"
+        ],
+        "boundToSplat": [
+          "W! - b+4,4,3+4",
+          "W! - d+2,3 - RLX 3"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,2",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "f+2,1 / 4 (range)",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "b+3,f",
+          "crouch": "WS 1,3"
+        },
+        {
+          "startup": "14f",
+          "stand": "df+2",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "df+3~d",
+          "crouch": ""
+        },
+        {
+          "startup": "16f",
+          "stand": "df+3+4 / u+1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "17f",
+          "stand": "uf+3+4",
+          "crouch": ""
+        },
+        {
+          "startup": "18f",
+          "stand": "db+4 (W!)",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Devil Jin",
+      "players": [
+        "Qudans",
+        "Hole Man",
+        "Ji3moon Ace"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "U/f+4",
+            "U/b+2"
+          ],
+          "followUps": [
+            "dash SSL  - b+4",
+            "dash 4~3"
+          ]
+        },
+        {
+          "starters": [
+            "CH D/f+1+2"
+          ],
+          "followUps": [
+            "d+1+2",
+            "4~3"
+          ]
+        },
+        {
+          "starters": [
+            "4~3",
+            "FLY 3"
+          ],
+          "followUps": [
+            "d+1+2"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "EWGF"
+          ],
+          "routes": [
+            "EWGF - ff+3,1~ff - 2 - df+1+2 - B!",
+            "EWGF - Df+1+2 - B!",
+            "EWGF - f+1 - b,f+2,1,df+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS2"
+          ],
+          "routes": [
+            "DEWGF - 2 - df+1+2 - B!",
+            "ff+3,1~ff - 2 - df+1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SS2"
+          ],
+          "routes": [
+            "uf+1+2 - ff3,1~ff - 2 - df+1+2"
+          ]
+        },
+        {
+          "launchers": [
+            "D+3+4"
+          ],
+          "routes": [
+            "f+1,2,4 - df+1+2 - B!",
+            "dash - f+1 - ff+3,1~ff - 2 - df+1+2"
+          ]
+        },
+        {
+          "launchers": [
+            "U+4~U"
+          ],
+          "routes": [
+            "FLY 3 - B! - SSL - 1+4 - b,f+2,1,2",
+            "FLY 3 - B! - DEWGF - f+1 - DEWGF"
+          ]
+        },
+        {
+          "launchers": [
+            "CD3"
+          ],
+          "routes": [
+            "1+4 - 2 - df+1+2 - B!",
+            "1+4 - b,f+2,1,df+2 - W!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "Hellsweep"
+          ],
+          "routes": [
+            "B! - b,f+2,1,2",
+            "B! - ff+3,1~ff - b+4"
+          ]
+        },
+        {
+          "launchers": [
+            "B+4"
+          ],
+          "routes": [
+            "CD4,4 - B! - df+1,2",
+            "df+1,2 - B! - df+3,2,4"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+3"
+          ],
+          "routes": [
+            "df+1+2 - 1+4 - b+1,2",
+            "df+1+2 - ff+3,1,4"
+          ]
+        },
+        {
+          "launchers": [
+            "FLY 1"
+          ],
+          "routes": [
+            "ff+3,1~ff - 2 - df+1+2 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "EWGF - f+1 - ff - f+1 - df+3,2,4"
+      ],
+      "postBound": [
+        "ff+3,1~ff - 2,2",
+        "ff+3,1~ff - b+1,2",
+        "ff+3,1~ff - DEWGF",
+        "b,f+2,1,2",
+        "b,f+2,1,4",
+        "df+3,2,4"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! df+1,2 B! CD+1~U/F",
+          "W! uf+3 B! b,f+2,1[2]"
+        ],
+        "boundToSplat": [
+          "W! - b,f+2,1[2]",
+          "W! - df+3,2,4",
+          "W! - 1,2 - b+4"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,1,2 / 1,2,2 / 2,2",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4,4"
+        },
+        {
+          "startup": "12f",
+          "stand": "b+1,2",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "df+4,4",
+          "crouch": "WS 1,2"
+        },
+        {
+          "startup": "15f",
+          "stand": "d+3+4\nEWGF (hard)",
+          "crouch": "WS 2"
+        },
+        {
+          "startup": "18f",
+          "stand": "d+1 (W!)",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Dragunov",
+      "players": [
+        "Nobi",
+        "Hagrid",
+        "Gaksini"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "CH 4,3",
+            "CH d+1",
+            "b+1+2"
+          ],
+          "followUps": [
+            "d+3+4",
+            "ff+4"
+          ]
+        },
+        {
+          "starters": [
+            "CH f,F+2"
+          ],
+          "followUps": [
+            "qcf+1+2",
+            "iWR2",
+            "QCF+2"
+          ]
+        },
+        {
+          "starters": [
+            "(f+3),2"
+          ],
+          "followUps": [
+            "d+4,1,3"
+          ]
+        },
+        {
+          "starters": [
+            "CH df+1,4",
+            "b+3+4",
+            "uf+4"
+          ],
+          "followUps": [
+            "d+3+4",
+            "d+4,1,3"
+          ]
+        },
+        {
+          "starters": [
+            "(SS+2,1+2),4"
+          ],
+          "followUps": [
+            "ff+4",
+            "d+4,4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2",
+            "QCB+2"
+          ],
+          "routes": [
+            "f+4,4,3 - f+1 - ff+2 - B!",
+            "4,1 - 2,1 - f+4,4,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "QCF+2",
+            "WS 2"
+          ],
+          "routes": [
+            "f+2,4 - 3,1,4 - W!",
+            "f+2,4 - ff+2 - B!",
+            "f+2,4 - dash f+1,3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "QCF+1"
+          ],
+          "routes": [
+            "f+4,4,3 - 3,1,4 - W!",
+            "f+4,4,3 - f+1 - ff+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+1+2"
+          ],
+          "routes": [
+            "dash 3,1 - 4,1 - d+4,4 - W!",
+            "dash b+2,1 - f+1 - f+1,3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "UFn4"
+          ],
+          "routes": [
+            "f+2,4 - 3,1,4 - W!",
+            "f+2,4 - ff+2 - B!",
+            "iWS1,3 - f+1,3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "3+4"
+          ],
+          "routes": [
+            "tech left - ws4 - f+1 - f+1,3,2 - B!",
+            "tech left - ws4 - f+1 - dash f+1 - f+4,4,3 - W!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "U/b+2"
+          ],
+          "routes": [
+            "f+4,4,3 - 3,1,2 - W!",
+            "f+4,4,3 - f+1 - ff+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(4),4"
+          ],
+          "routes": [
+            "dash 3,1 - 4,1 - d+4,4 - W!",
+            "dash b+2,1 - f+1 - f+1,3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(f+2),4"
+          ],
+          "routes": [
+            "4,3 - B! - uf+4 - d+4,1,3",
+            "4,1 - d+4,1,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "(D/b+2),1,2",
+            "(1,2),1"
+          ],
+          "routes": [
+            "iWS4 - f+1 - f+1,3,2 - B!",
+            "d+2 - ws4 - d+4,1,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "WR2"
+          ],
+          "routes": [
+            "iWS4 - f+1 - dash - f+1 - f+1,3,2 - B!",
+            "iWS4 - f+1 - 3,1,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+4"
+          ],
+          "routes": [
+            "WS4 - f+1 - dash - f+1 - f+1,3,2 - B!",
+            "WS4 - f+1 - 3,1,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "(f+4),4,3"
+          ],
+          "routes": [
+            "f+1 - dash - f+1,3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "far D/b+3"
+          ],
+          "routes": [
+            "cc - d+2 - ws4 - d+4,1,3",
+            "cc - d+3,4"
+          ]
+        }
+      ],
+      "lowParry": [
+        "3,1 - 4,1 - d+4,4"
+      ],
+      "postBound": [
+        "3,1,2",
+        "qcf+4 - d+4,4",
+        "d+4,1,3",
+        "df+3",
+        "f+3,3"
+      ],
+      "wall": {
+        "splatToBound": [
+          "b+1+2 - B! - b+2 - ws1+2",
+          "b+1+2 - B! - b+2 - ws4",
+          "ff+2 - B! - 3,1,2",
+          "iWR2 - B! - b+2,1,3"
+        ],
+        "boundToSplat": [
+          "3,1 - iWS1+2 (hard)",
+          "b+2 - ws1+2 (miss on Ling)",
+          "b+2 - ws4",
+          "3,1,2",
+          "b+2,1,3"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,1 / 1,3 / 2,1",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "4,1",
+          "crouch": "WS 1+2"
+        },
+        {
+          "startup": "13f",
+          "stand": "",
+          "crouch": "WS 1,3"
+        },
+        {
+          "startup": "14f",
+          "stand": "f+4,4 / b+3",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "df+2",
+          "crouch": "WS 2"
+        },
+        {
+          "startup": "17f",
+          "stand": "f+1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "18f",
+          "stand": "f+1+2",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Feng",
+      "players": [
+        "Hao",
+        "Yuu"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "U/f+3",
+            "D/f+3+4"
+          ],
+          "followUps": [
+            "4~3"
+          ]
+        },
+        {
+          "starters": [
+            "KNP 2"
+          ],
+          "followUps": [
+            "dash - b+1+2",
+            "1+2"
+          ]
+        },
+        {
+          "starters": [
+            "CH b+1"
+          ],
+          "followUps": [
+            "ff+2",
+            "dash - b+1+2"
+          ]
+        },
+        {
+          "starters": [
+            "CH fc D/f+1"
+          ],
+          "followUps": [
+            "cc - d+3+4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "U/f+4",
+            "ws3"
+          ],
+          "routes": [
+            "df+1 - df+1 - f+4,3 - B!",
+            "df+1 - df+1 - df+1 - f+3,4 - W"
+          ]
+        },
+        {
+          "launchers": [
+            "SS4"
+          ],
+          "routes": [
+            "df+1 - df+1 - db+1+2 - B!",
+            "df+1 - f+1 - f+4,3 - B! (SSL only)"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+4,[3}"
+          ],
+          "routes": [
+            "df+1 - f+4,3 - B!",
+            "df+1 - df+1 - f+3,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+3"
+          ],
+          "routes": [
+            "f+1 - f+1 - f+4,3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+4"
+          ],
+          "routes": [
+            "df+1 - f+1 - f+4,3 - B!",
+            "df+1 - df+1 - df+1 - f+3,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+4~b",
+            "F+4"
+          ],
+          "routes": [
+            "~b - 2~1 - B! - f+3,4 - d+4,1+2"
+          ]
+        },
+        {
+          "launchers": [
+            "F+4,3"
+          ],
+          "routes": [
+            "B! - f+3,4 - d+4,1+2"
+          ]
+        },
+        {
+          "launchers": [
+            "F+3,4"
+          ],
+          "routes": [
+            "df+1 - f+1 - f+4,3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "BT D+3"
+          ],
+          "routes": [
+            "ws4 - d+4,1+2"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "(1),1"
+          ],
+          "routes": [
+            "df+1 - f+1 - f+4,3 - B!",
+            "df+1 - df+1 - df+1 - f+3,4 - W"
+          ]
+        },
+        {
+          "launchers": [
+            "ws2"
+          ],
+          "routes": [
+            "df+1 - f+4,3 - B!",
+            "df+1 - df+1 - f+3,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "b,f+1"
+          ],
+          "routes": [
+            "dash - 2~1 - B! - f+3,4 - d+4,2"
+          ]
+        },
+        {
+          "launchers": [
+            "qcf+1"
+          ],
+          "routes": [
+            "f+3,4 - d+4,2 (close only)"
+          ]
+        },
+        {
+          "launchers": [
+            "f+4,3"
+          ],
+          "routes": [
+            "f+3,4 - d+4,2"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df+1 - df+1 - f+1 - f+3,4"
+      ],
+      "postBound": [
+        "f+3,4 - db+3",
+        "f+3,4 - dash - 4~3 (Oki)",
+        "ff+4,[3]",
+        "df+1 - b+1+2",
+        "4~3",
+        "df+1 - db+1+2,2"
+      ],
+      "wall": {
+        "splatToBound": [
+          "f+4,3 - B! - f+2,1,[2]",
+          "f+4,3 - B! - f+1+2",
+          "qcf+1+2 - B! - b+2,3,4,2",
+          "db+2,2,2 - B! - f+2,1,[2]",
+          "db+2,2,2 - B! - f+1+2"
+        ],
+        "boundToSplat": [
+          "1,2 - b+1+2",
+          "f+2,1,2",
+          "b+2,3,4,2",
+          "2,4,[1]",
+          "f+1+2 (BT oki)"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,2,2~b / 1,3",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "b+4",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "b+1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "uf+4",
+          "crouch": "WS 3"
+        },
+        {
+          "startup": "16f",
+          "stand": "",
+          "crouch": ""
+        },
+        {
+          "startup": "18f",
+          "stand": "f+4,3 / df+3",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Ganryu",
+      "players": [
+        "Saint",
+        "idk dude... ...Bronson?"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "F+2~1",
+            "f, F+2~1",
+            "b,db,d,Df+2~1"
+          ],
+          "followUps": [
+            "1,2",
+            "b+1+2"
+          ]
+        },
+        {
+          "starters": [
+            "CH B+1"
+          ],
+          "followUps": [
+            "df+1,4,1 - df,4,1"
+          ]
+        },
+        {
+          "starters": [
+            "CH B+1+2"
+          ],
+          "followUps": [
+            "f+3+4"
+          ]
+        },
+        {
+          "starters": [
+            "CH 1"
+          ],
+          "followUps": [
+            "b+1+2"
+          ]
+        },
+        {
+          "starters": [
+            "U/f+2",
+            "SS1",
+            "U/f+3"
+          ],
+          "followUps": [
+            "1+2"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2",
+            "D/b+2"
+          ],
+          "routes": [
+            "b+2,1 - cc - b+2,1 - ws1+2,1+2 - B!",
+            "b+4,1 - B!",
+            "df+1,4,1 - df+1+2,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+2,1,2"
+          ],
+          "routes": [
+            "df+4,1 - 2,1,2 - B!",
+            "b+2,1 - ws+1+2,1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+1+2"
+          ],
+          "routes": [
+            "b+2,1 - cc - b+2,1 - ws1+2,1+2 - B!",
+            "df+1,4,1 - 2,1,2 - B!",
+            "df+1,4,1 - df+1+2,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "HCF+1"
+          ],
+          "routes": [
+            "uf+1+2~d - ws1 - b+2,1 - ws+1+2,1+2 - B!",
+            "uf+1+2~d - ws1 - b+2,1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "(1+2),1+2",
+            "ws1+2"
+          ],
+          "routes": [
+            "df+1,4,1 - 2,1,2 - B!",
+            "b+2,1 - cc - b+2,1 - ws1+2,1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "b,F+2"
+          ],
+          "routes": [
+            "dash under - df+1,4,1 - 2,1,2 - B!",
+            "b - df+1,4,1 - 2,1,2 - B! (oki)"
+          ]
+        },
+        {
+          "launchers": [
+            "fc D/f+2"
+          ],
+          "routes": [
+            "dash - df+1,4,1 - 2,1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(D/b+1+2),2"
+          ],
+          "routes": [
+            "df+1+2,1 - 2,1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "Grab Throw"
+          ],
+          "routes": [
+            "dash - df+2,1,2,1 - 2,1,2 - B!",
+            "dash - b+4,1 - b+2,1,2"
+          ]
+        },
+        {
+          "launchers": [
+            "SIT 2"
+          ],
+          "routes": [
+            "dash - df+2,1,2,1 - 2,1,2 - B!",
+            "dash - b+4,1 - b+2,1,2"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4",
+            "1+2"
+          ],
+          "routes": [
+            "b+2,1 - cc - b+2,1 - ws1+2,1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "4,4"
+          ],
+          "routes": [
+            "B! - df+1,4,1 - f+1+2"
+          ]
+        },
+        {
+          "launchers": [
+            "SIT 1"
+          ],
+          "routes": [
+            "b+2,1 - cc - b+2,1 - ws1+2,1+2 - B!",
+            "df+1,4,1 - 2,1,2 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df+4,1 - b+2,1,2"
+      ],
+      "postBound": [
+        "HCF+2",
+        "df+1,4,1 - f+1+2",
+        "b+2,1,2",
+        "1+2 (oki)"
+      ],
+      "wall": {
+        "splatToBound": [
+          "2,1,2 - B! - df+1+2,1",
+          "2,1,2 - B! - HCF2",
+          "2,1,2 - B! - HHS"
+        ],
+        "boundToSplat": [
+          "1,2 / 2,1 - HHS",
+          "b+2,1 - ws4",
+          "b+1,1,1"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "b+1+2",
+          "crouch": "db+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "1,2",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "df+1,4",
+          "crouch": "WS 1,2"
+        },
+        {
+          "startup": "14f",
+          "stand": "2,1 / f+1+2 / HHS",
+          "crouch": "FC df+2"
+        },
+        {
+          "startup": "15f",
+          "stand": "4,4 / ff+1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "16f",
+          "stand": "df+2",
+          "crouch": "WS 2"
+        }
+      ]
+    },
+    {
+      "name": "Heihachi",
+      "players": [
+        "JDCR (Duh)"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "F+1+2"
+          ],
+          "followUps": [
+            "df+1+2",
+            "qcf+2",
+            "Omen (unreliable?)"
+          ]
+        },
+        {
+          "starters": [
+            "CH f+4"
+          ],
+          "followUps": [
+            "d+3"
+          ]
+        },
+        {
+          "starters": [
+            "d+1+2 - 1,2"
+          ],
+          "followUps": [
+            "db+2"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "EWGF"
+          ],
+          "routes": [
+            "EWGF - b+2,1 - d+1 - B!",
+            "EWGF - df1 - d+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+2"
+          ],
+          "routes": [
+            "EWGF - EWGF - d+1 - B!",
+            "b+1,2 - df1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+3",
+            "1+2"
+          ],
+          "routes": [
+            "EWGF - d+1 - B!",
+            "CD4 n 4 - df+1,2 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "D/f+2",
+            "[b,f+2],2"
+          ],
+          "routes": [
+            "EWGF - b+2,1 - d+1 - B!",
+            "EWGF - df1 - d+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+3",
+            "CD4"
+          ],
+          "routes": [
+            "EWGF - d+1 - B!",
+            "CD4 n 4 - df+1,2 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "EWGF - f+1 - CD4,4,1"
+      ],
+      "postBound": [
+        "CD4,4,1",
+        "CD4,1",
+        "SSL 2,1",
+        "df+1 - b,f+2,1",
+        "b,f+2,1",
+        "d+1"
+      ],
+      "wall": {
+        "splatToBound": [
+          "d+1 - B! - b+1+2,[1+2]",
+          "df+1,2 - B! - b+1+2,[1+2]",
+          "d+1 - B! - CD4,4,n4"
+        ],
+        "boundToSplat": [
+          "CD4,4,n4,4",
+          "b+1+2,[1+2]"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,1,2 / 1,2,2 / 2,2",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4,4"
+        },
+        {
+          "startup": "12f",
+          "stand": "f+1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "df+1,2",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "b+3,3 / 4,3",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "bf+2,1\nEWGF (hard)",
+          "crouch": ""
+        },
+        {
+          "startup": "16f",
+          "stand": "",
+          "crouch": "WS 1"
+        },
+        {
+          "startup": "18f",
+          "stand": "f+3 / b+4",
+          "crouch": "cc EWGF"
+        }
+      ]
+    },
+    {
+      "name": "Hwoarang",
+      "players": [
+        "Mad Dog Jin"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "CD3"
+          ],
+          "followUps": [
+            "LFL db+4"
+          ]
+        },
+        {
+          "starters": [
+            "D/f+3,3"
+          ],
+          "followUps": [
+            "f+3,n,3"
+          ]
+        },
+        {
+          "starters": [
+            "D/b+4,4",
+            "RFF ff+3",
+            "WS3"
+          ],
+          "followUps": [
+            "ff+3"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2"
+          ],
+          "routes": [
+            "2,(3) - LFL1 - dash - 1,2,(4) - RFL 2 - RFF ff+3 - B!",
+            "2,(4) - RFL 1 - 2,(4) - RFL 2 - RFF ff+3 - B!",
+            "f+4 - RFL 2 - uf+3+4 - db+4,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "JFSR"
+          ],
+          "routes": [
+            "3+4 - RFF 3~4 - 1,2,(4) - RFL 2 - RFL ff+3 - B!",
+            "SSR - 3+4 - RFF 3~4~f - RFL 2 - ff+3 - B! (hard)"
+          ]
+        },
+        {
+          "launchers": [
+            "B+3",
+            "LFL U/f+4"
+          ],
+          "routes": [
+            "b+4 - b+2 - B!",
+            "3~4 - 2,(4),2 - ff+3 - B!",
+            "f+4 - (f+3+4) - 1 - dash - 2,(4),2 - ff+3 - B!",
+            "f+4 - f+3+4 - LFL 3~f - LFL 3~f - LFL f+4,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "U+3+4",
+            "RFL D/f+4"
+          ],
+          "routes": [
+            "db+4~f - RFL 2 - RFF ff+3 - B!",
+            "d+3,4 - delay RFL 2 - ff+3!",
+            "D+3,4,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "RFF f+4~4"
+          ],
+          "routes": [
+            "RFF f+3 - LFL 1 - dash 2,(4) - RFL 2 - RFL ff+3 - B!",
+            "RFF f+3 - LFL 2 - RFF b+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U+3"
+          ],
+          "routes": [
+            "F - LFL d+3,4 - delay RFL 2 - RFL ff+3 - B!",
+            "F - LFL d+3,4 - RFL f+3,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "RFL D+3",
+            "LFL D+4"
+          ],
+          "routes": [
+            "cc - db+4 - RFL 2 - RFF ff+3 - B!",
+            "cc - db+4 - RFL 2 - RFF b+4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+3,4"
+          ],
+          "routes": [
+            "2,(3) - LFL1 - dash - 2,(4) - RFL 2 - RFF ff+3 - B!",
+            "2,(3) - LFL ff+3,4 - W!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "RFF (4),4"
+          ],
+          "routes": [
+            "dash - b+4 - RFF 3,4 - RFL 2 - ff+3 - B!",
+            "iWR 3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "d+4,4"
+          ],
+          "routes": [
+            "SSL - 1,2,(3) - LFL 1 - dash - 2,(4) - RFL 2 - ff+3 - B!",
+            "2,(4), RFF 2 - 3~4~f - RFL 2 - ff+3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "LFL f+3,3"
+          ],
+          "routes": [
+            "b+4 - b+2 - B!",
+            "2,(4), RFF 2 - 3~4~f - RFL 2 - ff+3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "RFL f+4,4",
+            "B2",
+            "1+2",
+            "ss4",
+            "RFL 4"
+          ],
+          "routes": [
+            "RFF 3 - LFL 1,2,(4) - RFL 2 - RFF ff+3 - B!",
+            "RFF 3 - LFL 2,(3) - LFL 1 - dash - 2,(4) - RFL 2 - ff+3 - B!",
+            "RFF 3,4 - RFL 2 - ff+3 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "f+4,2 - 3  - uf+3+4 - df+3+4",
+        "b+4 - 3,4,f+3,4 - W!"
+      ],
+      "postBound": [
+        "LFF f+3+4 - RFF3~4~b - RFL b+4 (staple)",
+        "LFF ff+3 (oki)",
+        "LFF db+4,4 (carry)",
+        "LFF df+1 - uf+3+4",
+        "RFF 3,4 - RFL b+4",
+        "uf+3+4 - df+3+4",
+        "uf+3+4,4",
+        "d+4,4"
+      ],
+      "wall": {
+        "splatToBound": [
+          "RFF ff+3 - B! - d+3,4 - RFL b+3",
+          "RFF ff+3 - B! - f+3+4 - RFF3~4 - RFL 2 - RFF b+2",
+          "RFF ff+3 - B! - f+3+4 - RFF3~4 - delay - RFL b+3"
+        ],
+        "boundToSplat": [
+          "d+3,4 - RFL b+3",
+          "1,1 - df+3,f+4",
+          "1,2,(4) - RFL b+3",
+          "dash RFF3~4 - RFL b+3 - (hard)"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,2",
+          "crouch": "WS 1"
+        },
+        {
+          "startup": "11f",
+          "stand": "4,3",
+          "crouch": "WS 4,4"
+        },
+        {
+          "startup": "14f",
+          "stand": "uf+3+4",
+          "crouch": "WS 3"
+        },
+        {
+          "startup": "15f",
+          "stand": "df+2",
+          "crouch": ""
+        },
+        {
+          "startup": "16f",
+          "stand": "b+4 (Range)",
+          "crouch": ""
+        },
+        {
+          "startup": "17f",
+          "stand": "b+3",
+          "crouch": "cc df+2?"
+        }
+      ]
+    },
+    {
+      "name": "Jack-6",
+      "players": [
+        "Saint",
+        "Anakin / HOA"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "f/F+1"
+          ],
+          "followUps": [
+            "HCFdf 1",
+            "D/b+2"
+          ]
+        },
+        {
+          "starters": [
+            "db+2"
+          ],
+          "followUps": [
+            "D/b+2"
+          ]
+        },
+        {
+          "starters": [
+            "f,F+3"
+          ],
+          "followUps": [
+            "D/b+4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2"
+          ],
+          "routes": [
+            "b+3,2 - ff+1 - B!",
+            "b+3,2 - df+1,2,1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS1"
+          ],
+          "routes": [
+            "2 - u+1+2 - b+3,2 - ff+1 - B!",
+            "2 - u+1+2 - b+4,4 - B!",
+            "2 - u+1+2 - b+3,2,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+2",
+            "HCF df+1"
+          ],
+          "routes": [
+            "u+1+2 - u+1+2 - 2 - dash - 2 - ff+1 - B!",
+            "u+1+2 - f+4 - ff+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "HCF 2"
+          ],
+          "routes": [
+            "iWS4 - ff+1 - B!",
+            "b+3,2 - ff+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D+1+2 | F,f[2]"
+          ],
+          "routes": [
+            "WR4 - ff+1 - B!",
+            "B+3,2 - df+1,2,1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+1+2"
+          ],
+          "routes": [
+            "df1 - b3,2,2 - ff1 - B!",
+            "b+3,2 - df1,2,1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+2+4"
+          ],
+          "routes": [
+            "ff+1 - B! - b+3,2,2"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f,D/f+2+4"
+          ],
+          "routes": [
+            "b+4,4 - B! - b+3,2,2",
+            "dash under - f+4 - b+3,2 - ff+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "B+1+2",
+            "F=4~1"
+          ],
+          "routes": [
+            "b+3,2 - ff+1 - B!",
+            "ff+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SS1"
+          ],
+          "routes": [
+            "dash - 4 - ff+1 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "ff+1 - B!",
+            "b+3,2 - ff+1 - B! (close)"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+1+2,1+2"
+          ],
+          "routes": [
+            "2 - u+1+2 - b+3,2 - ff1 - B!",
+            "2 - u+1+2 - 4,4 - B!",
+            "2 - u+1+2 - b+3,2,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "fc f+1,2,df+1"
+          ],
+          "routes": [
+            "u+1+2 - f+4 - ff+1 - B!",
+            "u+1+2 - b+3,2,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "fc df+2,1,df+2"
+          ],
+          "routes": [
+            "ws4 - ff+1 - B!",
+            "cc 2 - f+4 - ff+1 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "b+3,2 - df+1,2,1,2"
+      ],
+      "postBound": [
+        "WR4 - b+3,2,2",
+        "b+3,2,2",
+        "df+1,2,1,2",
+        "ff+1",
+        "ff+2",
+        "ff+1+2,1+2"
+      ],
+      "wall": {
+        "splatToBound": [
+          "ff+1 - B! - f+4 - db+1,1,1",
+          "ff+1 - B! - f+4 - df+3+4"
+        ],
+        "boundToSplat": [
+          "f+4 - df+3+4",
+          "f+4 - db+1,1,1",
+          "low slump db+1,1,1,2"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "f+2",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "2,1",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "",
+          "crouch": "FC db+2"
+        },
+        {
+          "startup": "13f",
+          "stand": "df+3+4",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "f+1,2",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "df+2",
+          "crouch": "WS 2"
+        },
+        {
+          "startup": "16f",
+          "stand": "df+3,2",
+          "crouch": "WS 1"
+        }
+      ]
+    },
+    {
+      "name": "Jin",
+      "players": [
+        "Prince",
+        "Makoto"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "CD3",
+            "CDS 4"
+          ],
+          "followUps": [
+            "4~3",
+            "dash - d+2"
+          ]
+        },
+        {
+          "starters": [
+            "CDS 2"
+          ],
+          "followUps": [
+            "dash d+2"
+          ]
+        },
+        {
+          "starters": [
+            "CDS 3"
+          ],
+          "followUps": [
+            "ff+2"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "CD1"
+          ],
+          "routes": [
+            "b,f+2,1 - f+1,3~3 - B!",
+            "EWHF - f+1,3~3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "ws2"
+          ],
+          "routes": [
+            "b+2,1 - f+1,3~3 - B!",
+            "EWHF - b,f+2,1,[2] - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "CD4"
+          ],
+          "routes": [
+            "b+2,1 - bf+2,1,[2]",
+            "b+2,1 - b+2,1"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+4"
+          ],
+          "routes": [
+            "b+2,[1] - f+1,3~3 - B!",
+            "b+2,1 - db+2,2,3"
+          ]
+        },
+        {
+          "launchers": [
+            "d+3+4"
+          ],
+          "routes": [
+            "b+2,1 - f+1,3~3 - B!",
+            "EWHF - b+2,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+3"
+          ],
+          "routes": [
+            "b,f+2,1 - f+1,3~3 - B!",
+            "b,f+2,1 - dash - f+1,2,3 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "EWHF"
+          ],
+          "routes": [
+            "b,f+2,1 - f+1,3~3 - B!",
+            "b+2,[1] - f+1,3~3 - B!",
+            "dash - df+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+4"
+          ],
+          "routes": [
+            "b,f+2,1 - f+1,3~3 - B!",
+            "b+2,[1] - f+1,3~3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+4",
+            "D/f+2",
+            "U/f+3"
+          ],
+          "routes": [
+            "b,f+2,1 - f+1,3~3 - B!",
+            "b,f+2,1 - dash - f+1,2,3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+4"
+          ],
+          "routes": [
+            "dash - EWHF - b+2,1 - f+4",
+            "dash - b+2,1 - db=2,2,3"
+          ]
+        },
+        {
+          "launchers": [
+            "B+3",
+            "4 (char dependant)"
+          ],
+          "routes": [
+            "b,f+2,1 - f+1,3~3 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "b,f+2,1 - b,f+2,1,[2]"
+      ],
+      "postBound": [
+        "db+2,2,3",
+        "3,1 - ff - b+2,1",
+        "3,1 - ff+2",
+        "3,1 - f+4",
+        "3,1 - EWHF",
+        "bf+2,1,[2]",
+        "iWS1,2 - d+4",
+        "b,f+2 - b+2,1",
+        "ff+4"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - (1),2,3 - B! - b,f+2,1,2",
+          "High W! - EWHF - df+4 - B! - b,f+2,1,2",
+          "W! - 1,2,3 - B! - CDS 1,2"
+        ],
+        "boundToSplat": [
+          "2,1 - db+2,2,3",
+          "f+3~3 - d+4"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "2,4",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "4",
+          "crouch": "WS 1,2"
+        },
+        {
+          "startup": "14f",
+          "stand": "f+1+2",
+          "crouch": "WS 2"
+        },
+        {
+          "startup": "15f",
+          "stand": "d+3+4 / uf+4 / EWHF (hard)",
+          "crouch": ""
+        },
+        {
+          "startup": "17f",
+          "stand": "b+4",
+          "crouch": "cc d+3+4"
+        }
+      ]
+    },
+    {
+      "name": "Julia",
+      "players": [
+        "Chanel"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "1+4",
+            "f+3~1",
+            "CH b+1",
+            "f,F+3"
+          ],
+          "followUps": [
+            "ff+2"
+          ]
+        },
+        {
+          "starters": [
+            "D/f+1 on crouch opp"
+          ],
+          "followUps": [
+            "ff+3"
+          ]
+        },
+        {
+          "starters": [
+            "B+4"
+          ],
+          "followUps": [
+            "microdash - df+3+4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2,1",
+            "QCF+2"
+          ],
+          "routes": [
+            "f+3~1 - df+3 - ff+1 - b+1 - B!",
+            "f+3~1 - df+3 - ff+1 - d,df+1,(3) - WRL 1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+4,3"
+          ],
+          "routes": [
+            "4 - d,df+1,(4) - WRL 1 - d,df+1,(4) - WRL 1+2 - B!",
+            "b+2,3,1+2 - deep ff+1 - b+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+3"
+          ],
+          "routes": [
+            "ff+1 - d,df+1,(4) - WRL 1 - d,df+1,(4) - WRL 1+2 - B!",
+            "ff+1 - df+3 - ff+1 - ff+1 - ff+1 - ff+1,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "ws+2,1"
+          ],
+          "routes": [
+            "d,df+1,(4) - WRL 1 - d,df+1,(4) - WRL 1 - d,df+1,(3) - WRL 1+2 - B!",
+            "ssl - df+3 - ff+1 - d,df+1,(4) - WRL 1 - d,df+1,(3) - WRL 1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(1,2,1),1",
+            "b+1+2"
+          ],
+          "routes": [
+            "df+3+4 - d,df+1,(3) - ff+1 - d,df+1,(4) WRL 1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SS3+4"
+          ],
+          "routes": [
+            "d,df+1,(3) - ff+1 - d,df+1,(4) - 1 - d,df+1,(3) - 1+2 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "f+3~1 - ff+1 - d,df+1,(3) - WRL1 - d,df+1,(4) - WRL1+2 - B!",
+            "ff+1 - d,df+1,(3) - WRL1 - d,df+1,(4) - WRL1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+3,4"
+          ],
+          "routes": [
+            "df+3+4 - d,df+1,(3) - ff+1 - d,df+1,(4) WRL 1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "d+4,1",
+            "db+1+2",
+            "b+(2),3",
+            "b+(2),3,1+2"
+          ],
+          "routes": [
+            "d,df+1,(3) - df+3 - ff+1 - d,df+1,(4) - WRL1+2 - B!",
+            "df3 - ff+1 - d,df+1,(3) - ff+1 - d,df+1,(4) - WRL 1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "b+3",
+            "db+1"
+          ],
+          "routes": [
+            "cc - df+3+4 - d,df+1,(3) - ff+1 - d,df+1,(4) - WRL 1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+1+2 *?"
+          ],
+          "routes": [
+            "f+3~1 - df+3 - ff+1 - b+1 - B!",
+            "f+3~1 - df+3 - ff+1 - d,df+1,(3) - WRL 1+2 - B!",
+            "* iWR1 - run - df+3 - ff+1 - d,df+1,(4) - WRL 1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+(1),4"
+          ],
+          "routes": [
+            "deep dash - d,df+1,(4) - df+3 - ff+1 - d,df+1,(4) - WRL 1+2 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df+3+4 - d,df+1,(3) - ff+1 - d,df+1,(4) - ff+1,4",
+        "df+3 - d,df+1,(3) - ff+1 - ff+1 - ff+1,4"
+      ],
+      "postBound": [
+        "d,df+1,(4/3) - WRL 1+2",
+        "d,df+1,(4/3) - d+1+2",
+        "iWR1 - run - d+2,4",
+        "iWR1 - run - d+1+2 (hard)"
+      ],
+      "wall": {
+        "splatToBound": [
+          "b+1 - B! - 1+2,4,bf+1+2",
+          "b+1 - B! - df+4,2,bf+1+2"
+        ],
+        "boundToSplat": [
+          "df+4,2,[bf+1]",
+          "1+2,4,bf+1+2"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,2",
+          "crouch": ""
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "2,b,1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "b+2,3",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "uf+4,3",
+          "crouch": "uf+4,3"
+        },
+        {
+          "startup": "16f",
+          "stand": "df+2,1",
+          "crouch": "WS 1"
+        },
+        {
+          "startup": "17f",
+          "stand": "1+4 / ff+3 / qcf+2?",
+          "crouch": ""
+        },
+        {
+          "startup": "18f",
+          "stand": "",
+          "crouch": "WS 2,1"
+        }
+      ]
+    },
+    {
+      "name": "Kazuya",
+      "players": [
+        "Choksae",
+        "Ryan Hart",
+        "Ji3moon Ace",
+        "Crazy DongPal"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "CH f+3"
+          ],
+          "followUps": [
+            "4~3"
+          ]
+        },
+        {
+          "starters": [
+            "fc D/f+3+4"
+          ],
+          "followUps": [
+            "d+3"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "EWGF"
+          ],
+          "routes": [
+            "DEWGF - df+3 - df+1,2 - B!",
+            "EWGF - df+1,2 - B!",
+            "EWGF - dash jab x 3 - dash df+1,2/4 - B!/W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+3"
+          ],
+          "routes": [
+            "b+2,4 - db+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+2"
+          ],
+          "routes": [
+            "df+1,4 - db+2 - B!",
+            "df+3 - df+1,2 - B! (BT oki)"
+          ]
+        },
+        {
+          "launchers": [
+            "ws1,2"
+          ],
+          "routes": [
+            "3,1,4 - db+2 - B!",
+            "3,1,4 - dash df+1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "ws2",
+            "F+1+2"
+          ],
+          "routes": [
+            "dash 3,1,4 - dash jab - dash df+1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "df+1,2"
+          ],
+          "routes": [
+            "B! - dash 3,1,4 - DEWGF",
+            "B! - df+3 - df+1,f+2"
+          ]
+        },
+        {
+          "launchers": [
+            "df+1,4"
+          ],
+          "routes": [
+            "df+1,2 - B! - df+3 - df+1,f+2",
+            "db+2 - B! - 3,1,4 - DEWGF"
+          ]
+        },
+        {
+          "launchers": [
+            "SS3"
+          ],
+          "routes": [
+            "db+2 - B! - df+3,2,[1]"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "B+4"
+          ],
+          "routes": [
+            "DEWGF - df+1,2 - B!",
+            "3,1,4 - dash df+1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "b,b+2,2"
+          ],
+          "routes": [
+            "b+2,4 - db+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "B+1+2"
+          ],
+          "routes": [
+            "dash 3,1,4 - dash jab - dash df+1,2 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "3,1,4 - dash df+2,4"
+      ],
+      "postBound": [
+        "CD4,1",
+        "3,1 - f+3",
+        "df+3,2,[1]",
+        "f+4",
+        "df+3 - df1,f+2/4",
+        "df+3 - DEWGF"
+      ],
+      "wall": {
+        "splatToBound": [
+          "f+4 - B! - b+3,2 - df+2",
+          "f+4 - B! - EWGF - 1+2"
+        ],
+        "boundToSplat": [
+          "1 - EWGF - 1+2",
+          "EWGF - d+4 (oki)"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,1,2 / 1,2,2",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "b+1,2",
+          "crouch": "WS 4,4"
+        },
+        {
+          "startup": "12f",
+          "stand": "2,2 / 2,4 / 1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "df+4,4",
+          "crouch": "WS 1,2"
+        },
+        {
+          "startup": "14f",
+          "stand": "b+2,4",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "EWGF (hard)",
+          "crouch": ""
+        },
+        {
+          "startup": "16f",
+          "stand": "df+1,4 / df+1,2",
+          "crouch": "WS 2"
+        }
+      ]
+    },
+    {
+      "name": "King",
+      "players": [
+        "Triple H",
+        "Dr. King",
+        "Lil Majin"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "CH f,n+1+2"
+          ],
+          "followUps": [
+            "b+3",
+            "b+1,2"
+          ]
+        },
+        {
+          "starters": [
+            "CH D/f+2,1"
+          ],
+          "followUps": [
+            "df+4,3 - d+3+4,2",
+            "d+3+4,4,2"
+          ]
+        },
+        {
+          "starters": [
+            "CH (1,2),1"
+          ],
+          "followUps": [
+            "2,1",
+            "GS whut?"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "U/f+4"
+          ],
+          "routes": [
+            "df+2,1 - 1 - b+2,1+2 - B!",
+            "f+2,2 - 1 - b+2,1+2 - B!",
+            "f+3 - 1 - f+2,2,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "ws1+2"
+          ],
+          "routes": [
+            "df+2,1 - 1 - b+2,1+2 - B!",
+            "f+2,2,2 - B! (oki)"
+          ]
+        },
+        {
+          "launchers": [
+            "fc D/f+2"
+          ],
+          "routes": [
+            "df+4,3 - b+2,1+2 - B!",
+            "db+2 - B! (2),1 - f+2,2 - GS",
+            "db+2 - B! - (2),1 - f+2,2,1 - d+3+4,2",
+            "db+2 - B! - (2),1 - f+2,2,1 - df+4,3",
+            "db+2 - B! - (2),1 - f+2,2,1 - b+3",
+            "db+2 - df+4,3 - 1 - iSW"
+          ]
+        },
+        {
+          "launchers": [
+            "fc D/f+1"
+          ],
+          "routes": [
+            "ws1 - 1 - b+2,1+2 - B!",
+            "d+1 - f+1 - b+2,1+2 - B!",
+            "f+3 - df+4,3 - GS",
+            "ws4 - df+4,3 - b+1,4"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+2",
+            "uf+1+2",
+            "(b+2),1+2"
+          ],
+          "routes": [
+            "df+4,3 - 1 - GS",
+            "df+4,3 - 2 - b+1,4"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "b+1,2",
+            "b+1 - df+4,3 - B+1,4",
+            "b+1 - GS"
+          ]
+        },
+        {
+          "launchers": [
+            "b+1"
+          ],
+          "routes": [
+            "f+2 - 1 - f+2,2,2 - B!",
+            "df+4,3 - 1 - b+2,1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "db+3"
+          ],
+          "routes": [
+            "ws4 - df+4,3 - b+1,4",
+            "cc - df+4,3 - 1 - iSW"
+          ]
+        },
+        {
+          "launchers": [
+            "BT 3"
+          ],
+          "routes": [
+            "u+2",
+            "df+4,3 - 1- iSW/b+1,4"
+          ]
+        },
+        {
+          "launchers": [
+            "CD1+2"
+          ],
+          "routes": [
+            "df+2,1 - 1 - b+2,1+2 - B!",
+            "f+2,2 - 1 - b+2,1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+2",
+            "uf+1+2",
+            "(b+2),1+2"
+          ],
+          "routes": [
+            "df+4,3 - 1 - GS",
+            "df+4,3 - 2 - b+1,4"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df+4,3 - GS",
+        "df+4,3 - f+1 - iSW"
+      ],
+      "postBound": [
+        "iSW (Best Ender, Hard)",
+        "f+2+3",
+        "1+4 (Easy Damage)",
+        "d+1+2 (Oki)",
+        "CD 1+2",
+        "d+1+3/2+4",
+        "df+4,3 (Oki)",
+        "df+2,1",
+        "d+3+4,2"
+      ],
+      "wall": {
+        "splatToBound": [
+          "f+2,2,2 - B! - GS",
+          "f+2,2,2 - B! - (2),1 - GT",
+          "f+2,2,2 - B! - df+1,2",
+          "db+2 - B! - f+2,2,1",
+          "db+2 - B! - df+4,3,d+4"
+        ],
+        "boundToSplat": [
+          "f+2,2,1",
+          "iSW",
+          "1,2 ,d+2+4",
+          "1,2 - db+1+3/2+4"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,2 / 2,1",
+          "crouch": "WS 1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "b+1,2",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "uf+4 / b+4 (W!)",
+          "crouch": "FC df+2"
+        },
+        {
+          "startup": "16f",
+          "stand": "b+4 (range)",
+          "crouch": ""
+        },
+        {
+          "startup": "18f",
+          "stand": "",
+          "crouch": "WS 2"
+        }
+      ]
+    },
+    {
+      "name": "Lars",
+      "players": [
+        "Binchang",
+        "Kor",
+        "Sunchip"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "D+1+2",
+            "CH SEN 2",
+            "U/f+3+4,1"
+          ],
+          "followUps": [
+            "cc - db+4"
+          ]
+        },
+        {
+          "starters": [
+            "D/f+1+2",
+            "SS 2"
+          ],
+          "followUps": [
+            "db+4",
+            "d+3+4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "U/f+4",
+            "SEN 3"
+          ],
+          "routes": [
+            "f+1,2,3~d - DEN 1 - f,b+2,1 - B!",
+            "df+2 - db+2,1 - f,b+2,1 -B!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+1+2"
+          ],
+          "routes": [
+            "db+2 - db+2,1 - fb+2,1 -B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,b+2,1"
+          ],
+          "routes": [
+            "B! - (f+3) - DEN 2 - 1 - iSW",
+            "B! - (f+3) - DE 2 - db+2,1 - db+2~f - SE 1"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+3"
+          ],
+          "routes": [
+            "ws2 - f,b+2,1 - B!",
+            "FC d+2 - ws2,1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS 1",
+            "f,F+2"
+          ],
+          "routes": [
+            "~f - SE3 - db+2,1 - f,b+2,1 - B!",
+            "uf+3 - ws2,1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "DEN 1+2"
+          ],
+          "routes": [
+            "df+2 - db+2,1 - f,b+2,1 - b!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "D/f+2",
+            "DEN 2"
+          ],
+          "routes": [
+            "(f+1),2,3~d - DEN 1 - f,b+2,1 - B!",
+            "(f+1),2,3~d - DEN 1 - - f+2,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+1+2"
+          ],
+          "routes": [
+            "(f+3) - DEN 1 - 2 - db+2,1 - f,b+2,1 - B!",
+            "(f+3) - DEN 1 - df+1 - f,b+2,1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+4"
+          ],
+          "routes": [
+            "ws2,1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(b+2),1"
+          ],
+          "routes": [
+            "dash - db+2,1 - f,b+2,1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "FUFT 3"
+          ],
+          "routes": [
+            "cc - db+1,3~d - ws2,1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+1+2"
+          ],
+          "routes": [
+            "db+2 - db+2,1 - f,b+2,1 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "f+1,2,3~d - DEN1 - db+2~f - SEN1"
+      ],
+      "postBound": [
+        "df+1 - db+2~f - SEN 1",
+        "db+2~f - SEN 1",
+        "df+3,3",
+        "(f+3) - DEN 1~f - SEN 1",
+        "(f+3) - DEN 1,2 - W!",
+        "db+2,1 - W!",
+        "uf+3 - W!",
+        "iSW"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - f,b+2,1 - B! - f+1,2,3",
+          "W! - f,b+2,1 - B! - db+2,1 - f+1+4",
+          "W! - f,b+2,1 - B! - iSW"
+        ],
+        "boundToSplat": [
+          "W! - df+1 - db+2,1 - f+1+4",
+          "W! - df+1 - db+2,1 - d+4 (oki)",
+          "W! - 2,1,4",
+          "W! - iSW"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,2 / 2,1",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "f+2,4",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "f+1+4",
+          "crouch": "WS 2,1"
+        },
+        {
+          "startup": "14f",
+          "stand": "f,b+2,1",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "f+1+2 / db+2,3",
+          "crouch": "WS 1"
+        },
+        {
+          "startup": "16f",
+          "stand": "",
+          "crouch": "uf+3"
+        }
+      ]
+    },
+    {
+      "name": "Law",
+      "players": [
+        "RIP 🐐",
+        "Just Frame James",
+        "No Name / Malgu",
+        "ダブル (Double)"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "Slide"
+          ],
+          "followUps": [
+            "Get Up 3"
+          ]
+        },
+        {
+          "starters": [
+            "F+1+2~d",
+            "(b+2,3,)d+4"
+          ],
+          "followUps": [
+            "Slide"
+          ]
+        },
+        {
+          "starters": [
+            "D+3,3",
+            "D/b+4",
+            "SS 3+4"
+          ],
+          "followUps": [
+            "Slide",
+            "db+3",
+            "db+4"
+          ]
+        },
+        {
+          "starters": [
+            "WS 3~DSS"
+          ],
+          "followUps": [
+            "DSS f+1",
+            "DSS 2,2",
+            "DSS 2,f+2,2",
+            "DSS f,n+2",
+            "DSS f,n+1,f+1/4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2",
+            "U/f+4",
+            "ws2"
+          ],
+          "routes": [
+            "4,u+3 - b+2 - b+2,2 - B!",
+            "4,u+3 - dash - 2 - dash - 2 - b+2,2 - B!",
+            "4,u+3 - dash - 2 - 3+4 - W!",
+            "4,u+3 - dash - 2 - dash - 2,2,1+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+4,3"
+          ],
+          "routes": [
+            "2 - dash - 2 - dash - 2 - b+2,2 - B!",
+            "2 - dash - 2 - dash - 2,2,1+2 - W!",
+            "f+4,3 - DSS f+3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+3+4"
+          ],
+          "routes": [
+            "dash - 4,u+3 - b+2 - b+2,2 - B!",
+            "f+4,3 - DSS f+2 - dash - f+1 - dash - ff+1+2 - B!",
+            "dash - 4,u+3 - dash - 2 - 3+4 - W!",
+            "dash - 4,u+3 - dash - 2 - 2,2,1+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "DSS 4,3",
+            "B+(2),3,4"
+          ],
+          "routes": [
+            "f+2 - f+2,[2],2 - B!",
+            "delay - f+3+4 - f+2,2,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/F+4"
+          ],
+          "routes": [
+            "ws4 - 3+4 - f+2,2,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(uf+3),4"
+          ],
+          "routes": [
+            "b+2,3,4 - DSS 2 - B!",
+            "3+4 - 2 - b+2 - b+2,2 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "3+4 - b+2 - b+2,2 - B!",
+            "3+4 - f+2 - dash - 2,2,1+2 - W!",
+            "b+2,3,4 - DSS 2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "d+2,3"
+          ],
+          "routes": [
+            "b+2,3,4 - DSS 2 - B!",
+            "3+4 - 2 - b+2 - b+2,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+4,3",
+            "ws4,3",
+            "fc d+3,4",
+            "fc d+4,3",
+            "D+3+4,3"
+          ],
+          "routes": [
+            "ws4 - 3+4 - f+2,2,2 - B!",
+            "ws1 - 2 - 3+4 - f+1+2 - B!",
+            "ws4 - 3+4 - f+1+2 - B!",
+            "cc - f+4,3,4 - DSS f+2,2,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f+2~1",
+            "BT 2"
+          ],
+          "routes": [
+            "b+2,3,4 - DSS - f+2,2,2 - B!",
+            "b+2,3,4 - DSS 3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "(f+3),4"
+          ],
+          "routes": [
+            "f+4,3,4 - DSS (f+2),2,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+1+2",
+            "QCF 1,2,1,2"
+          ],
+          "routes": [
+            "4,u+3 - dash - 2 - dash - f+1+2 - B!",
+            "4,u+3 - dash - 2 - 3+4 - W!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df+1 - 4,3,4 - DSS f+3",
+        "f+4,3 - DSS f+2 - 3+4 - W!"
+      ],
+      "postBound": [
+        "4,3 - DSS f+3",
+        "uf+4,3",
+        "ff+2,1,3",
+        "ff+2,3",
+        "3+4",
+        "f+1+2"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - f+1+2 - B! - SSR - 4,3~DSS - f+3",
+          "W! - b+2,2 - B! - db+4,4 (Staple)",
+          "W! - DSS f,n+2 - B! - b+2,3,d+4",
+          "W! - f+1+2 - B! - b+2,3,4 (Oki)"
+        ],
+        "boundToSplat": [
+          "SSR - 4,3~DSS - f+3",
+          "db+4,4 (Staple)",
+          "b+2,3,d+4",
+          "b+2,3,4 (Oki)"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,1,2 / 2,f+2,2",
+          "crouch": "WS 1+2"
+        },
+        {
+          "startup": "11f",
+          "stand": "4,3~DSS",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "3,4 / f+2,f+2,2",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "",
+          "crouch": "WS 1,2"
+        },
+        {
+          "startup": "14f",
+          "stand": "3+4 / b+1,2~DSS",
+          "crouch": "UF+4"
+        },
+        {
+          "startup": "15f",
+          "stand": "df+2 / uf+4",
+          "crouch": "WS 2"
+        },
+        {
+          "startup": "18f",
+          "stand": "UF+4",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Lee",
+      "players": [
+        "Help Me",
+        "Fighting GM"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "ws2,3"
+          ],
+          "followUps": [
+            "ff+3"
+          ]
+        },
+        {
+          "starters": [
+            "b.b+4"
+          ],
+          "followUps": [
+            "d+3",
+            "Slide",
+            "f+3+4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2",
+            "U/f+4",
+            "F,n+3",
+            "WR3"
+          ],
+          "routes": [
+            "d+2 - b+2~f,n - b+2~f,n - b+2~f,n - b+2~f,n - f+4,3 - B!",
+            "d+2 - b+2~f,n - b+2~f,n - b+2~f,n - df+3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "F,n+3,4",
+            "WR3,4"
+          ],
+          "routes": [
+            "b+2~f,n - b+2~f,n - b+2~f,n - b+2~f,n - f+4,3 - b!",
+            "b+2~f,n - b+2~f,n - b+2~f,n - df+3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "HMS 2"
+          ],
+          "routes": [
+            "dash - d+2 - b+2~f,n - b+2~f,n - b+2~f,n - b+2~f,n - f+4,3 - B!",
+            "dash - d+2 - b+2~f,n - b+2~f,n - b+2~f,n - df+3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D,D/b+4"
+          ],
+          "routes": [
+            "UFn4 - b+2~f,n - b+2~f,n - b+2~f,n - b+2~f,n - f+4,3 - B!",
+            "Ufn4 - b+2~f,n - b+2~f,n - b+2~f,n - df+3,2,3 - W!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "b+1,1~f - 2 - b+2~f,n - b+2~f,n - b+2~f,n - f+4,3 - B!",
+            "b+1,1~f - 2 - b+2~f,n - b+2~f,n - df+3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "1+2",
+            "(uf+3),1"
+          ],
+          "routes": [
+            "dash - df+4 - f+4,3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "sway 4",
+            "ff+4",
+            "(b+3),4",
+            "HSM U/f+4"
+          ],
+          "routes": [
+            "d+2 - b+2~f,n - b+2~f,n - b+2~f,n - b+2~f,n - f+4,3 - b!",
+            "d+2 - b+2~f,n - b+2~f,n - b+2~f,n - df+3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "b+4",
+            "b+4~3"
+          ],
+          "routes": [
+            "dash / HMS f - d+2 - b+2~f,n - b+2~f,n - b+2~f,n - b+2~f,n - f+4,3 - b!",
+            "dash / HMS f - d+2 - b+2~f,n - b+2~f,n - b+2~f,n,b,n+2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "(1,2),4"
+          ],
+          "routes": [
+            "df+1 - 1,2~f,n - 2,1,1 - B!",
+            "d+2 - b+2~f,n - f+4,3 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "d+2 - b+2~f,n - b+2~f,n - b+2~f,n - df+3,2,3"
+      ],
+      "postBound": [
+        "iWS2,3",
+        "f+2,1",
+        "b+4 - d+3",
+        "df+3,2,3"
+      ],
+      "wall": {
+        "splatToBound": [
+          "f+4,3 - B! - f+4,3 - d+3",
+          "df+1 - f+4,3 - b! - b+4 - d+3",
+          "b+2~f,n - f+4,3 - b! - ssl - b+4 - ub+3"
+        ],
+        "boundToSplat": [
+          "f+4,3 - d+3",
+          "b+4 - d+3",
+          "ssl - b+4 - ub+3"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,2,4",
+          "crouch": "WS 3,3"
+        },
+        {
+          "startup": "11f",
+          "stand": "4,3",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "14f",
+          "stand": "f+2,1 / 3,3",
+          "crouch": "WS 2,3"
+        },
+        {
+          "startup": "15f",
+          "stand": "df+2 / uf+4 / f+3*5,4",
+          "crouch": ""
+        },
+        {
+          "startup": "17f",
+          "stand": "f,n+3,4",
+          "crouch": "cc df+2?"
+        }
+      ]
+    },
+    {
+      "name": "Lei",
+      "players": [
+        "Tetsuo",
+        "Kim Motive",
+        "Ranca"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "CH1+2,1"
+          ],
+          "followUps": [
+            "BT 1+2,2",
+            "BT 4,3"
+          ]
+        },
+        {
+          "starters": [
+            "CH 1+2,2"
+          ],
+          "followUps": [
+            "d+4",
+            "ff+3,4"
+          ]
+        },
+        {
+          "starters": [
+            "(3),3"
+          ],
+          "followUps": [
+            "BT d+1 x4"
+          ]
+        },
+        {
+          "starters": [
+            "Razer Rush Low"
+          ],
+          "followUps": [
+            "4~4,3,3"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2",
+            "U/f_4",
+            "PAN 2",
+            "f,F+3",
+            "BT U/f+4",
+            "PLDFA 4",
+            "PHX 2",
+            "PAN 2"
+          ],
+          "routes": [
+            "f+3,1 - f,n+2 - ff+2 - B!",
+            "f,n+4,1 - f,n+2 - ff+2 - B!",
+            "f+3,1 - f,n+2 - ff+3,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+2~f"
+          ],
+          "routes": [
+            "SNA 1 - f+2 - ff+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+3~b"
+          ],
+          "routes": [
+            "BT UFn+4 - f,n+2 - f,n+2 - ff+2 - B!",
+            "BT UFn+4 - f+3,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+4~f"
+          ],
+          "routes": [
+            "DRU 3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "CRA 1+2"
+          ],
+          "routes": [
+            "df+1+2 - B!",
+            "fc - df+2,1,4 - PHX 2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "TGR 4"
+          ],
+          "routes": [
+            "iWS2 - 2 - f,n+2 - ff+2 - B!",
+            "uf+1 - 2 - f,n+2 - ff+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "BT d+4",
+            "SWD FA 3",
+            "Low Getup Kick",
+            "CRA 1+2"
+          ],
+          "routes": [
+            "fc - df+2,1,4 - PHX 2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "BT d+4~u/d"
+          ],
+          "routes": [
+            "SNA d/u - PAN 2 - f+2 - f,n+2 - ff+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "DRU 4"
+          ],
+          "routes": [
+            "f+1 - df+1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "PLD FA 3",
+            "TGR 4"
+          ],
+          "routes": [
+            "ws2 - f+2 - f,n+2 - ff+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "PLD FT 3"
+          ],
+          "routes": [
+            "df+1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "BT 4,3"
+          ],
+          "routes": [
+            "d+1 - f+1 - ff+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+3+4"
+          ],
+          "routes": [
+            "iWS2 - f+2 - f,n+2 - ff+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "DRG 1+2",
+            "CRA (3,4,2),3"
+          ],
+          "routes": [
+            "uf+1 - f - f,n+2 - ff+2 - B!",
+            "f,n+4,1 - f,n+2 - ff+2 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "f,n+2 - f,n+2 - f,n+2 - ff+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "BT d+1"
+          ],
+          "routes": [
+            "iWS2 - f+2 - f,n+2 - ff+2"
+          ]
+        },
+        {
+          "launchers": [
+            "TGR 1",
+            "ff+2",
+            "ws(2,1)",
+            "DRG 2"
+          ],
+          "routes": [
+            "f+3,1 - f,n+2 - ff+2 - B!",
+            "f,n+4,1 - f,n+2 - ff+2 - B!",
+            "f+3,1 - f,n+2 - ff+3,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "TGR 2"
+          ],
+          "routes": [
+            "fc - df+2,1,4 - PHX 2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f+4,2",
+            "PAN 4,2"
+          ],
+          "routes": [
+            "f+3,1 - ff+2 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "uf+1 - f - f,n+2 - ff+3,4"
+      ],
+      "postBound": [
+        "ff+3,4",
+        "ss+3+4",
+        "ff+2",
+        "df+1+2",
+        "df+2~f",
+        "ff+4,(3+4)~f/b"
+      ],
+      "wall": {
+        "splatToBound": [
+          "df+1+2~f - B! - TGR 1 - ws3",
+          "df+1+2~f - B! - fc df+2,1,4",
+          "ff+2 - B! - df+1,1,[1]"
+        ],
+        "boundToSplat": [
+          "df+1,1,[1]",
+          "fc df+2,1,4",
+          "df+1+2 (oki)",
+          "1,2 - ub+4"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,2 / 1,1 / 2,1",
+          "crouch": "WS 3"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "f+2,1",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "f,n+4,1,2 / df+1,1",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "1+2,1 / 3~b",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "df+2 / uf+4",
+          "crouch": "uf+4 / WS 2,1"
+        },
+        {
+          "startup": "17f",
+          "stand": "f,n+3",
+          "crouch": ""
+        },
+        {
+          "startup": "18f",
+          "stand": "ff+3 / ff+4,3+4",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Leo",
+      "players": [
+        "Hankuma"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "f+1+2",
+            "fc D/f+3"
+          ],
+          "followUps": [
+            "ff+3"
+          ]
+        },
+        {
+          "starters": [
+            "KNK2"
+          ],
+          "followUps": [
+            "f+2,2 (?)"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2",
+            "U/f+4",
+            "WS2",
+            "f,F+4",
+            "KNK 3"
+          ],
+          "routes": [
+            "f+2 / 4 - b+1,4~df - uf+1 - b+2,1+2 - B!",
+            "3,2,4~df - uf+1 - b+2,1+2 - B!",
+            "f+4~df - uf+1 - f+4~df - uf+1 - b+2,1+2 - B!",
+            "f+2 - b+1,4~df - uf+1 - uf+1,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+4,3"
+          ],
+          "routes": [
+            "b+1,4~df - uf+1 - b+2,1+2 - B!",
+            "b+1,4~df - uf+1 - f+2,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f2,1"
+          ],
+          "routes": [
+            "iWS3 - f+4~df - uf+1 - b+2,1+2 - B!",
+            "iWS3 - f+4~df - uf+1 - uf+1,2 - W!",
+            "d+4,2"
+          ]
+        },
+        {
+          "launchers": [
+            "BOK 2"
+          ],
+          "routes": [
+            "f+3 - b+1,4~df - uf+1 - b+2,1+2 - B!",
+            "f+3~d - BOK 4~df - uf+1 - f+2,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+(4,3),4"
+          ],
+          "routes": [
+            "4 - b+1,4~df - uf+1 - b+2,1+2 - B!",
+            "df+2+3 - ws3 - f+4~df - uf+1 - b+2,1+2 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "dash 1 - f+4~df~u - uf+1 - b+2,1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "KNK 2"
+          ],
+          "routes": [
+            "ssr df+1 - b+1,4~df~u - uf+1 - b+2,1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+2+3"
+          ],
+          "routes": [
+            "hold df - ws4 - b+1,4~df~u - uf+1 - b+2,1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "d+1",
+            "d+1~d"
+          ],
+          "routes": [
+            "ws3 / df+1 - b+1,4~df~u - uf+1 - b+2,1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SS 1+2"
+          ],
+          "routes": [
+            "deep iWS3 - b+1,4~df~u - uf+1 - b+2,1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "Get Up 3"
+          ],
+          "routes": [
+            "ws4 - f+4~df~u - uf+1 - b+2,1+2 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "b+1,4~df - uf+1 - 4~df - ws3,1,2"
+      ],
+      "postBound": [
+        "df+1+2,1+2,qcf+2",
+        "ff+4,3",
+        "iWS1,4,1",
+        "iWS3,1,2",
+        "b+2,1+2",
+        "f+4~df - uf+1,2"
+      ],
+      "wall": {
+        "splatToBound": [
+          "d+2 - B! - b+1,4 - KNK 3,4",
+          "b+2,1+2 - fc 2 - ws1,4,[1] (max)",
+          "d+2 - B! - df+1+2,1+2,[qcf+2]"
+        ],
+        "boundToSplat": [
+          "df+1+2,1+2,[qcf+2] (max)",
+          "b+1,4 - KNK 3,4",
+          "1,2,1,1",
+          "fc2 - ws1,4,[1]",
+          "ff+4,3,4"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,2 / 1,4",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "2,1",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "13f",
+          "stand": "uf+1,2",
+          "crouch": "WS 3,1"
+        },
+        {
+          "startup": "14f",
+          "stand": "f+2,2",
+          "crouch": "WS 1+2"
+        },
+        {
+          "startup": "15f",
+          "stand": "df+2 / uf+4",
+          "crouch": ""
+        },
+        {
+          "startup": "16f",
+          "stand": "",
+          "crouch": "WS 2"
+        },
+        {
+          "startup": "17f",
+          "stand": "uf+3 / b+2,1+2",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Lili",
+      "players": [
+        "Only Lili",
+        "Feet",
+        "Ccer",
+        "LiLiMan"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "CH f+2,3"
+          ],
+          "followUps": [
+            "3,2,3",
+            "3,2 - df+4,4"
+          ]
+        },
+        {
+          "starters": [
+            "D/b+3+4"
+          ],
+          "followUps": [
+            "ws3"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "U/f+3",
+            "D/f+2",
+            "Ufn 4"
+          ],
+          "routes": [
+            "b+2,1~b - BT 1,2 - df+3 - B!",
+            "f+2,3 - df+3+4 - BT 1 - 3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS 2"
+          ],
+          "routes": [
+            "fc df+1 - f+1 - b+2,1 - df+3 - B!",
+            "fc df+1 - 1 - df+2 - 3,2,3 - W!",
+            "~b - uf+4 - df+2~b - BT 1,2 - df+3 / f+1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+3+4"
+          ],
+          "routes": [
+            "d+1 - ws+2~b - BT 1,2 - df+3 - B!",
+            "4 - B! - iWS2 - 1 - dash - 3,2,3",
+            "BT 1,2 - df+2 - 1 - df+3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D+3+4"
+          ],
+          "routes": [
+            "UFn4 - df+2~b - BT 1,2 - df+3 - B!",
+            "d+3+4 - 3,2 - 3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+2",
+            "f,F+3",
+            "D/b+4",
+            "(WS 3),4",
+            "BT 1+2"
+          ],
+          "routes": [
+            "db+1 - ws2~b - BT 1,2 - df+3 - B!",
+            "db+1 - ws2~b - BT 1 - 3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS 3"
+          ],
+          "routes": [
+            "f+2,3 - df+3+4 - BT 1 - 3,2,3 - W!",
+            "~4 - iWS2~b - BT 1 - 3,2,3"
+          ]
+        },
+        {
+          "launchers": [
+            "(WS 3),4"
+          ],
+          "routes": [
+            "db+1 - ws2~b - BT 1,2 - df+3 - B!",
+            "db+1 - ws2~b - BT 1 - 3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "fc D/f+1"
+          ],
+          "routes": [
+            "f+1 - iWS2~b - BT 1,2 - df+3 - B!",
+            "f+2,3 - df+3+4 - BT 1 - 3,2,3 - W!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "WS 1",
+            "D/f+3"
+          ],
+          "routes": [
+            "db+1 - ws2~b - BT 1,2 - df+3 - B!",
+            "db+1 - ws2~b - BT 1 - 3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "BT 2",
+            "D/b+3",
+            "(BT 3+4),2"
+          ],
+          "routes": [
+            "df+3+4 - BT 1,2 - df+2 - f+1+2 - B!",
+            "df+3+4 - d+1 - ws2 - 3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "U+4"
+          ],
+          "routes": [
+            "f+2,3 - dash b+2,1 - df+3 / f+1+2 - B!",
+            "f+2,3 - dash iWS2 - 3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "SS 1+2"
+          ],
+          "routes": [
+            "df+3 - B! - df+2 - 3,2,3",
+            "iWS2~b - BT 1,2 - f+1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "QCF 2",
+            "(U/f+4),3"
+          ],
+          "routes": [
+            "iWS2~b - BT 1,2 - df+3 - B!",
+            "iWS2 - f+1 - df+2 - 3,2,3 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "3+4"
+          ],
+          "routes": [
+            "iWS2 - f+1 - b+2,1 - df+3 - B!",
+            "f+2,3 - dash f+1+2 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df+3+4 - d+1 - ws2 - 3,2,3"
+      ],
+      "postBound": [
+        "3,2,3",
+        "iWS2~b",
+        "df+3+4,3+4",
+        "df+3+4 - BT 1+2",
+        "qcf+1,2",
+        "iWS2~b - BT 3+4",
+        "ff+3,3+4"
+      ],
+      "wall": {
+        "splatToBound": [
+          "df+3 - B! - f+3+4~3,4",
+          "f+1+2 - B! - f+3 (oki)",
+          "df+3 - B! - df+3+4,3+4"
+        ],
+        "boundToSplat": [
+          "1,2 - f+1+2",
+          "1,2 - delay 1+2",
+          "f+3+4~3,4",
+          "df+3+4,3+4"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "2,4",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "f+1+2 (range)",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "uf+3",
+          "crouch": "FC df+1"
+        },
+        {
+          "startup": "16f",
+          "stand": "df+2",
+          "crouch": "WS 3"
+        },
+        {
+          "startup": "17f",
+          "stand": "d+3+4",
+          "crouch": "WS 2"
+        },
+        {
+          "startup": "18f",
+          "stand": "qcf+3?",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Marduk",
+      "players": [
+        "Narakhof the only one you need tbh"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "U/f+4"
+          ],
+          "followUps": [
+            "db+3,1,1",
+            "db+4"
+          ]
+        },
+        {
+          "starters": [
+            "CH D/b+2",
+            "CH ws+4"
+          ],
+          "followUps": [
+            "Ground Throw"
+          ]
+        },
+        {
+          "starters": [
+            "F+4"
+          ],
+          "followUps": [
+            "db+4"
+          ]
+        },
+        {
+          "starters": [
+            "b+1+2"
+          ],
+          "followUps": [
+            "ws3"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+1",
+            "D+1+2",
+            "D/f+3,df+1",
+            "(f+2),d+1,2"
+          ],
+          "routes": [
+            "2,d+1+2 - df+4,2 - B!",
+            "2 - df+4,2 - B!",
+            "2 - df+3,1,2 VTSc - df+4,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+1+2",
+            "Ground Throw"
+          ],
+          "routes": [
+            "uf+3 - df+4,2 - B!",
+            "f+3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+1+2"
+          ],
+          "routes": [
+            "qcf+1,2 - W!",
+            "db+3,1,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "QCF+1"
+          ],
+          "routes": [
+            "iVTS~df - fc df+1+2 - df+4,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+1+2"
+          ],
+          "routes": [
+            "dash - df+3,df+1,2 - B!",
+            "SSR - f+3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "ws3",
+            "VTS 3"
+          ],
+          "routes": [
+            "f+1 - df+4,2 - B! - df+3,1,2 VTSc - b+1,2",
+            "df+4,2 - B! - df+3,df+1 - b+1+2"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "f+2+4/1+3",
+            "ff+2 - d+4"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+3"
+          ],
+          "routes": [
+            "uf+1+2 - df+4,2 - B!",
+            "2,d+1+2 - df+4,2 - B!",
+            "2 - df+4,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS 2",
+            "VTS 2"
+          ],
+          "routes": [
+            "df+3,df+1,2 - B! - uf+3+4",
+            "df+3,df+1,2 - B! - b+1+2",
+            "df+3,df+1,2 - B! - b+1,2"
+          ]
+        },
+        {
+          "launchers": [
+            "1+2"
+          ],
+          "routes": [
+            "df+1…",
+            "ff+2 - W!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df+3,1,2 VTSc - 1,2 VTSc - ff+1+2",
+        "df+3,1 - f+1+3"
+      ],
+      "postBound": [
+        "df+3,1,2 VTSc - ff+1+2",
+        "df+3,1,2 VTSc - b+1,2",
+        "df+3,1 - f+1+3",
+        "qcf+1,2",
+        "df+2 - iVST tackle (Narakhof ender)"
+      ],
+      "wall": {
+        "splatToBound": [
+          "df+4,2 - B! - df+2,1",
+          "df+4,2 - B! - df+3,1 - GT"
+        ],
+        "boundToSplat": [
+          "df+2,1",
+          "1 - GT",
+          "1 - db+4",
+          "Wall Throw"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,d+2 / 2,1",
+          "crouch": "WS 1+2"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 1,2"
+        },
+        {
+          "startup": "12f",
+          "stand": "ff+2 (hard af)",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "df+4,2",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "16f",
+          "stand": "df+1",
+          "crouch": ""
+        },
+        {
+          "startup": "17f",
+          "stand": "uf+1+2",
+          "crouch": "uf+1+2"
+        },
+        {
+          "startup": "18f",
+          "stand": "qcf+1",
+          "crouch": "WS 3"
+        }
+      ]
+    },
+    {
+      "name": "Miguel",
+      "players": [
+        "Rain",
+        "Fab",
+        "Sunchip"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "db+1"
+          ],
+          "followUps": [
+            "ws4 - d+4,1+2~f",
+            "ws+4 - db+3,4"
+          ]
+        },
+        {
+          "starters": [
+            "f+1+2"
+          ],
+          "followUps": [
+            "d+1+2"
+          ]
+        },
+        {
+          "starters": [
+            "CH D+2"
+          ],
+          "followUps": [
+            "d+3"
+          ]
+        },
+        {
+          "starters": [
+            "fc D/f+4"
+          ],
+          "followUps": [
+            "ff+2,1",
+            "cc - d+4,1+2~f"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2,1"
+          ],
+          "routes": [
+            "df+1~f - SAV df+1 - df+4,1 - df+2,2 - B!",
+            "df+1~f - SAV df+1 - df+4,1~f - SAV 2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+4"
+          ],
+          "routes": [
+            "3 - df+1 - df+4,1 - df+2,2 - B! (drops on bigs)",
+            "df+1~f - SAV df+1 - df+4,1~f - SAV 1,2,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "ws 2,2"
+          ],
+          "routes": [
+            "1,2,4~f - SAV 2 - B!",
+            "df+1 - df+4,1~f - SAV 1,2,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "SAV D/f+2"
+          ],
+          "routes": [
+            "3 - 1,2,4~f - SAV 2 - B!",
+            "df+1~f - SAV df+1 - df+4,1~f - SAV 1,2,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "SAV 1+2"
+          ],
+          "routes": [
+            "SSL - uf+1 - B! - df+1 - df+4,1~f - SAV 1,2,1",
+            "df+1~f - SAV df+1 - df+4,1~f - SAV 1,2,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "<D/b+1>",
+            "SAV (b+1),2"
+          ],
+          "routes": [
+            "ws+1~f - SAV df+1 - df+4,1 - df+2,2 - B!",
+            "d+2 - B! - df+1~f - SAV b+1,4 - d+4,1+2~f"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "d+4,1+2~f",
+            "ff+2,1 (??)"
+          ]
+        },
+        {
+          "launchers": [
+            "b+1+2",
+            "b+2",
+            "SAV U/f+3"
+          ],
+          "routes": [
+            "SSR - df+1~f - SAV df+1 - df+4,1 - df+2,2 - B!",
+            "SSR - df+1~f - SAV df+1 - df+4,1~f - SAV 1,2,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "(3),4"
+          ],
+          "routes": [
+            "d+2 - B! - ff+2,1",
+            "d+2 - B! - d+4,1+2~f"
+          ]
+        },
+        {
+          "launchers": [
+            "(f+3),4"
+          ],
+          "routes": [
+            "dash d+2 - B! - df+1 - df+4,1~f - SAV 1,2,1",
+            "ff+2,1"
+          ]
+        },
+        {
+          "launchers": [
+            "(df+4,1),1"
+          ],
+          "routes": [
+            "SSL - df+1~f - SAV df+1 - df+4,1 - df+2,2 - B!",
+            "SSL - df+1~f - SAV df+1 - df+4,1~f - SAV 1,2,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "b+2,2"
+          ],
+          "routes": [
+            "B! - df+1 - df+4,1~f - SAV 1,2,1",
+            "B! - df+3,2 - d+4,1+2~f"
+          ]
+        },
+        {
+          "launchers": [
+            "U+4"
+          ],
+          "routes": [
+            "df+1~f - SAV df+1 - df+4,1 - df+2,2 - B!",
+            "df+1~f - SAV df+1 - df+4,1~f - SAV 2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SAV (b+1),4",
+            "(no tech)"
+          ],
+          "routes": [
+            "df+1~f - SAV df+1 - df+4,1 - df+2,2 - B!",
+            "df+1~f - SAV df+1 - df+4,1~f - SAV 2 - B!",
+            "uf+1 - B! - df+1 - df+4,1~f - SAV 1,2,1"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df+1~f - SAV df+1 - df+4,1~f - SAV 1,2,1",
+        "df+1~f - SAV df+1~f - SAV b+1,4 - d+4,1+2 (Oki)"
+      ],
+      "postBound": [
+        "df+1 - ff+2,1",
+        "ff+2,1",
+        "df+1~f - SAV 2",
+        "d+4,1+2~f",
+        "df+4,1,1",
+        "df+2,2"
+      ],
+      "wall": {
+        "splatToBound": [
+          "d+2 - B! - df+1~f - SAV df+2",
+          "df+2,2 - B! - df+4,1,1",
+          "d+2 - B! - df+1~f - d+2",
+          "df+2,2 - B! - d+1+2 (wallbreak)",
+          "df+2,2 - B! - ff+2,1"
+        ],
+        "boundToSplat": [
+          "ff+2,1",
+          "df+1~f - SAV 3 (SAV oki)",
+          "d+4,1+2~f",
+          "df+2,2"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,2",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "2,1",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "13f",
+          "stand": "df+1,2",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "f+1+2",
+          "crouch": "WS 1+2,4,1"
+        },
+        {
+          "startup": "15f",
+          "stand": "uf+4",
+          "crouch": "WS 2,2"
+        },
+        {
+          "startup": "16f",
+          "stand": "df+2,1",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Nina",
+      "players": [
+        "Only Practice 🐐",
+        "Dioxin"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "fc D/f+4",
+            "CH ws4,3"
+          ],
+          "followUps": [
+            "ff+1+2"
+          ]
+        },
+        {
+          "starters": [
+            "(b+3),4",
+            "CH B+3,4",
+            "qcf+3"
+          ],
+          "followUps": [
+            "db+3"
+          ]
+        },
+        {
+          "starters": [
+            "Evil Mist"
+          ],
+          "followUps": [
+            "b+1+4",
+            "uf+2,1"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2",
+            "WS 2"
+          ],
+          "routes": [
+            "df+3,2~SSR - SS1~b - uf+4 - uWS1 x3 - 1+4 - B!",
+            "df+3,2~SSR - SS1~f - ws1 - 1+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SSR 2",
+            "B+1+4"
+          ],
+          "routes": [
+            "uf4 - iWS1 x 6 - 1+4  - B!",
+            "df+3,2~SSL - SS1~b - uf+4 - 1+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SSL 2",
+            "DB+3+4"
+          ],
+          "routes": [
+            "df+3,2~SSR - SS1~b - uf+4 - 1+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "QCF+2"
+          ],
+          "routes": [
+            "df+3,2~SSR - SS1~f - WS1 - 1+4 - B!",
+            "df+3,2 - f+4,3,3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "QCB+4"
+          ],
+          "routes": [
+            "uf+4 - iWS1 x6 - 1+4 - B!",
+            "df+3,2~SSR - SS1~b - uf+4 - 1+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+1"
+          ],
+          "routes": [
+            "cc - df+3,2~SSR - SS1~f - iWS1 x4 - 1+4 - B!",
+            "ws1 - SSR - d+4,1 - iWS1 x4 - 1+4 - B!",
+            "cc - df+3,2 - f+4,3,3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "QCF+1"
+          ],
+          "routes": [
+            "uf+2,1 - B! - SSR - SS1~b - uf+4 - iWS1 x3 - ff+3",
+            "uf+2,1 - B! - SSR - SS1~b - uf+4 - 1+4"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+2,1"
+          ],
+          "routes": [
+            "B! - SSR - SS1~b - uf+4 - iWS1 x4 - ff+3",
+            "B! - SSR - SS1~b - uf+4 - d+4,1 - ff+3"
+          ]
+        },
+        {
+          "launchers": [
+            "SS 1+2"
+          ],
+          "routes": [
+            "dash d+2 - d+4,1 - 1+4 - B!",
+            "dash d+3,4,3 - FB!",
+            "ff+1+2"
+          ]
+        },
+        {
+          "launchers": [
+            "db+1+2"
+          ],
+          "routes": [
+            "d+4,1 - SSR - iWS1 x5 - 1+4 - B!",
+            "d+4,1 - df+3,2 - 1+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "B+1"
+          ],
+          "routes": [
+            "d+4,1 - 1+4 - B! - 1+4 / df+1,2,f+1+2"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "dash d+4,1 - micro SSR - iWS1 x5 - 1+4 - B!",
+            "dash d+4,1 - f+4,3,3 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+4,3"
+          ],
+          "routes": [
+            "SSR 1~b - uf+4 - iWS1 x5 - 1+4 - B!",
+            "SSR 1~b - uf+4 - 1 - 1+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+3"
+          ],
+          "routes": [
+            "SSR - df+3,2~u - SS1~b - uf+4 - iWS1 x3 - 1+4 - B!",
+            "df+3,2~u - SS1~b - uf+4 - 1+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SS 4"
+          ],
+          "routes": [
+            "1+4 - B! - df+3,2,3"
+          ]
+        },
+        {
+          "launchers": [
+            "b+4"
+          ],
+          "routes": [
+            "B+1+4…"
+          ]
+        },
+        {
+          "launchers": [
+            "(D/f+3),2,3",
+            "F+4,3"
+          ],
+          "routes": [
+            "df+3,2~SSR - SS1~b - uf+4 - uWS1 x3 - 1+4 - B!",
+            "df+3,2~SSR - SS1~f - ws1 - 1+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(U/f+2),1",
+            "<U/F>+4"
+          ],
+          "routes": [
+            "df+1 - micro SSR - iWS1 x5 - 1+4 - B!",
+            "df+1 - df+3,2 - 1+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+3"
+          ],
+          "routes": [
+            "(uf+4),3,(4)~SSR - d+4,1 - iWS1 x4 - 1+4",
+            "dash d+4,1 - df+3,2 - 1+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS B+1"
+          ],
+          "routes": [
+            "uf+2,1 - B! - SSR - SS1~b - uf+4 - iWS1 x3 - ff+3",
+            "uf+2,1 - B! - SSR - SS1~b - uf+4 - 1+4"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+2"
+          ],
+          "routes": [
+            "SSR - iWS1 x7 - 1+4 - B!",
+            "SSR - d+4,1 - iWS1 x5 - 1+4 - B!",
+            "d+4,1 - df+3,2 - 1+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(D+2),3",
+            "(D/f+3),4"
+          ],
+          "routes": [
+            "SSR - df+3,2~SSR - SS1~b - uf+4 - 1+4 - B!",
+            "SSL - df+3,2 - 1+4 - B! - 1+4 (oki)"
+          ]
+        },
+        {
+          "launchers": [
+            "(1),4"
+          ],
+          "routes": [
+            "SSL 1~b - uf+4 - iWS1 x5 - 1+4 - B!",
+            "SSL df+3,2~SSL - SS1~b - uf+4 - 1+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(b+3,4),4"
+          ],
+          "routes": [
+            "micro SSR - d+4,1 - micro SSR - iWS1 x6 - 1+4 - B!",
+            "d+4,1 - iWS1 - df+1 - 1+4 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "SSR1~b~uf+4 - iWS1 x6 - ff+3",
+        "df+3,2~SSR - SS1~b~uf+4 - f+1 - ff+3"
+      ],
+      "postBound": [
+        "iWS1 - ff+3",
+        "iWS1 - 1+4",
+        "iWS1,1+2",
+        "SS1~b~b+1+2 (iWS1+2)",
+        "1+4",
+        "uf+1"
+      ],
+      "wall": {
+        "splatToBound": [
+          "df+3,2 - 1+4 - B! - SS1~b~ws1/uf+3",
+          "df+1 - 1+4 - B! - df+1,2,f+1+2",
+          "1+4 - B! - SS1~b~u - df+1,2,f+1+2",
+          "SS1~b~ws4 - 1+4 - B! - SS1~b~u - df+1,2,f+1+2"
+        ],
+        "boundToSplat": [
+          "df+3,2 - 1+4",
+          "1 - df+1,2,f+1+2",
+          "df+1,2 - uf+3",
+          "df+3,2 - df+1,2,f+1+2 (Bear)"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,4",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "b+2,2",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "df+1,2",
+          "crouch": "WS 1,1+2"
+        },
+        {
+          "startup": "14f",
+          "stand": "3,4 / df+3,4",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "df+2",
+          "crouch": "WS 2"
+        },
+        {
+          "startup": "16f",
+          "stand": "b+1+4",
+          "crouch": ""
+        },
+        {
+          "startup": "18f",
+          "stand": "uf+2,1",
+          "crouch": "uf+2,1"
+        }
+      ]
+    },
+    {
+      "name": "Paul",
+      "players": [
+        "Jisang",
+        "Hideto"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "QCB+1",
+            "CH QCF+3"
+          ],
+          "followUps": [
+            "qcf+3"
+          ]
+        },
+        {
+          "starters": [
+            "QCF+3+4"
+          ],
+          "followUps": [
+            "ff+2:1"
+          ]
+        },
+        {
+          "starters": [
+            "D/f+4"
+          ],
+          "followUps": [
+            "df+2",
+            "qcf+2 - W!"
+          ]
+        },
+        {
+          "starters": [
+            "(df+3),4"
+          ],
+          "followUps": [
+            "db+2 - b+1,2 - B!"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2",
+            "U/f+4",
+            "f,F+3,4"
+          ],
+          "routes": [
+            "qcf+1 - f+2 - b+1,2 - B!",
+            "qcf+1 - f+2 - d+4:2:1+2 - W!",
+            "3,2 - b+1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/Fn+4"
+          ],
+          "routes": [
+            "uf+3,4 - f+1+2 - B!",
+            "qcf+1 - d+4:2:1+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "QCF+1"
+          ],
+          "routes": [
+            "f+2 - qcf+1 - b+1,2 - B!",
+            "f+2 - f+2 - dash f+1 - ff+2:1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+3,4"
+          ],
+          "routes": [
+            "f+2 - b+1,2 - B!",
+            "f+2 - ff+2:1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+4"
+          ],
+          "routes": [
+            "ws1 - db+2 - b+1,[2] - B!",
+            "ws1 - dash 1 - dash 1 - ff+2:1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "B+3",
+            "(f,F+2),2"
+          ],
+          "routes": [
+            "3 - db+2 - b+1,[2] - B!",
+            "3,2 - f+1 - ff+2:1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS 2"
+          ],
+          "routes": [
+            "db+2 - b+1,2 B!",
+            "f+2 - df+1~b - SWY 1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+3,4"
+          ],
+          "routes": [
+            "b+1,2 - B!",
+            "f+2 - dash d+4:2:1+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "qcf+1+2"
+          ],
+          "routes": [
+            "dash 3,2 - f+1 - f+1+2 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "dash f+1,2 - b+1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(3),2"
+          ],
+          "routes": [
+            "dash qcb+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "B+2"
+          ],
+          "routes": [
+            "db+2 - b+1,2 - B!",
+            "f+1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SS1"
+          ],
+          "routes": [
+            "dash qcf+1 - f+2 - b+1,2 - B!",
+            "dash df+4 - db+2 - b+1,[2] - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "QCB1"
+          ],
+          "routes": [
+            "qcf+1 - f+2 - b+1,2 - B!",
+            "qcf+1 - df+1,1 - f+1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(2),3"
+          ],
+          "routes": [
+            "SSL - qcf+1 - f+2 - b+1,2 - B!",
+            "SSL - qcf+1 - df+1,1 - f+1+2 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "QCF1 - f+2 - ff+1 - ff - d+4:2:1+2",
+        "SSL 3,2 - f+1 - ff - d+4:2:1+2"
+      ],
+      "postBound": [
+        "d+4:2:1+2",
+        "qcf+1",
+        "qcf+1 - ff+2;1",
+        "qcf+2 - ff+4",
+        "ff+3,4"
+      ],
+      "wall": {
+        "splatToBound": [
+          "b+1,2 - B! - df+1~b - SWY 2",
+          "b+1,2 - B! - df+1 - d+1+2",
+          "f+1+2 - B! - df+1,1 - d+1+2"
+        ],
+        "boundToSplat": [
+          "1 - df+1 - d+1+2",
+          "d+4:2:1+2",
+          "1 - d+1 (oki, but at what cost?)"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,2",
+          "crouch": "WS 1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "b+1,2 / d+1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "b+3",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "df+2 / uf+3,4",
+          "crouch": "uf+3,4"
+        },
+        {
+          "startup": "16f",
+          "stand": "df+3,4 (range)",
+          "crouch": "WS 2"
+        }
+      ]
+    },
+    {
+      "name": "Raven",
+      "players": [
+        "Go Attack",
+        "K1"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "FC D/f+3+4",
+            "SDW 1+2"
+          ],
+          "followUps": [
+            "b+3",
+            "uf+3"
+          ]
+        },
+        {
+          "starters": [
+            "CH B+1"
+          ],
+          "followUps": [
+            "1+2",
+            "b+2,4"
+          ]
+        },
+        {
+          "starters": [
+            "b,B+2"
+          ],
+          "followUps": [
+            "uf+3",
+            "3~4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "f,F+3"
+          ],
+          "routes": [
+            "ff+3 - f+1 - ssl - 1 - b+1 - B! - ff+3 - f+1 - ff+4",
+            "ff+3 - f+1 - ssl - 1 - ff+3 - f+1 - ff+4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS 1"
+          ],
+          "routes": [
+            "b+1 - b! - ssl - ff+3 - f+1 - ff+3 - f+1 - ff+3 - f+2,3 / ff+4",
+            "ff+3 - f+1 - ff+3 - f+1 - ff+3 - ff+4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+2",
+            "QCF+4"
+          ],
+          "routes": [
+            "f+2,3 - B! - ssl - ff+3 - f+1 - ff+3 - f+2,3 / ff+4",
+            "SDW b+2 - SDW 2,1 - ff+3 - f+1 - b+2,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+3",
+            "F+3+4",
+            "QCF+2"
+          ],
+          "routes": [
+            "b+4,4 - B! - SDW f+2,4,3+4",
+            "b+4,4 - B! - SDW iWS ff+4 - f+2,3 (OKI)"
+          ]
+        },
+        {
+          "launchers": [
+            "3~4"
+          ],
+          "routes": [
+            "SDW 4 - b+4,4 - B! - SDW f+2,4,3+4",
+            "SDW 4 - b+4,4 - B! - SDW iWS ff+4 - f+2,3 (OKI)"
+          ]
+        },
+        {
+          "launchers": [
+            "SDW D+3"
+          ],
+          "routes": [
+            "b+1+2,2 - B! - SWD f+2,4,3+4",
+            "b+1 - B! - ssl - ff+3 - f+1 - ff+3 - f+1 - ff+3 - ff+4"
+          ]
+        },
+        {
+          "launchers": [
+            "SDW f,F+3+4"
+          ],
+          "routes": [
+            "Crossup: SDW f+4,3",
+            "No Crossup: d+1 - F+1 - ff+3 - f+1 - b+1 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "WS 2"
+          ],
+          "routes": [
+            "df+2,3 - ff+3 - f+1 - b+1 - B!",
+            "ff+3 - f+1 - ssl - 1 - ff+3 - f+1 - ff+4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+3+4,4"
+          ],
+          "routes": [
+            "b+4,4 - B! - SDW f+2,4,3+4",
+            "b+4,4 - B! - SDW iWS ff+4 - f+2,3 (OKI)"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+3"
+          ],
+          "routes": [
+            "ff+3 - ff+3 - f+1 - SSR - f+1 - b+1 - B!",
+            "ff+3 - ff+3 - f+1 - ff+3 - f+1 - ff+3 - ff+4 - W! (Carry)"
+          ]
+        },
+        {
+          "launchers": [
+            "QCF+1",
+            "VAN 1"
+          ],
+          "routes": [
+            "ff+4 - f+1 - b+1 - B!",
+            "~3+4 VAN 4 - B! - f+2 - f+1 - ff+3 - f+1 - ff+3 - ff+4"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F,N 4"
+          ],
+          "routes": [
+            "ff+4 - f+1 - b+1 - B!",
+            "ff+4 - db+2,1 - ub+1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+4"
+          ],
+          "routes": [
+            "ff+4 - f+1 - b+1 - B!",
+            "ssl - db+2 - SDW 1 - ff+3 - f+1 - b+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "B+2,3"
+          ],
+          "routes": [
+            "UF+4 - f+1 - ff+3 - f+1 - b+1 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "ff+3 - f+1 - ff+3 - f+1 - ff+3 - ff+4"
+      ],
+      "postBound": [
+        "ff+3 - ff+4",
+        "ff+3 - f+1 - ff+4",
+        "ff+3 - f+2,3",
+        "b+2,4,3+4"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - ub+1,2 - B! - b+2,2,3",
+          "W! - b+4,4 - B! - SDW b+2 - SDW 1+2",
+          "W! - b+4,4 - B! - SDW b+2 - d+4 (Oki)",
+          "W! - b+4,4 - B! - SDW f+2,3 (Spike)"
+        ],
+        "boundToSplat": [
+          "W! - b+2,2,3",
+          "W! - f+3+4,4,2",
+          "W! - f+1+2 (Tech Trap)",
+          "W! - df+2,3 - 1+2 - SDW d+4 (Bears)"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,2",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "13f",
+          "stand": "db+2,1",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "3,3 / b+4,4",
+          "crouch": "WS 1"
+        },
+        {
+          "startup": "15f",
+          "stand": "1+2 / f+2,3",
+          "crouch": ""
+        },
+        {
+          "startup": "16f",
+          "stand": "df+2 / f+4 (range)",
+          "crouch": "WS 3+4"
+        },
+        {
+          "startup": "17f",
+          "stand": "ff+3 / 4;3",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Roger Jr.",
+      "players": [
+        "Holiday",
+        "Go Attack",
+        "NaengmyunSungin",
+        "Hankuma"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "CH ws3,[3]",
+            "b,B+4"
+          ],
+          "followUps": [
+            "d+3+4",
+            "uf+3+4 ?",
+            "ROC 1+2 - b! ?"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "U/f+4",
+            "U/F+4",
+            "BT 3+4"
+          ],
+          "routes": [
+            "SSR - 1+2 - f+4,3,2 - B!",
+            "b+3+4,1 - iWS3,[3] - B!",
+            "1+2 - df+1+2 - B!",
+            "d+1+2,1+2,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "fc D/f+2 *",
+            "3+4"
+          ],
+          "routes": [
+            "f+4,3,2 - B!",
+            "1+2 - f+4,3,2 - B! (*hard on smalls)"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+3"
+          ],
+          "routes": [
+            "b+1+2 - ROC 1+2 - B! - ws4 - d+3+4",
+            "b+1+2 - ROC 1+2 - W! - iWS3,[3]",
+            "df+4 - 1+2 - df+1 (Spike Oki)"
+          ]
+        },
+        {
+          "launchers": [
+            "SS4"
+          ],
+          "routes": [
+            "df+4 - df+1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "3~4",
+            "ROC 1"
+          ],
+          "routes": [
+            "b+3+4,1 - 1+2 - df+1+2 - B!",
+            "b+3+4,1 - d+1+2,1+2,2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "ROC 1+2"
+          ],
+          "routes": [
+            "B! - ws4 - d+3+4",
+            "B! - ws4 - ff+2"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+1+2"
+          ],
+          "routes": [
+            "1+2 - f+4,3,2 - B!",
+            "Delay - 1+2 - 1+2 - df+1+2 - B! (unreliable)"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "df+1,2 - df,1+2 - d+3+4"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+2"
+          ],
+          "routes": [
+            "SSR - 1+2 - f+4,3,2 - B!",
+            "Delay - 1+2 - 1+2 - df+1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "F+3"
+          ],
+          "routes": [
+            "ffn 1+2 - f+4,3,2 - B!",
+            "delay -1+2 - 1+2 - df+1+2 - B! (unreliable)"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df+4 - 1+2 - 12~b+1+2 - ROC 2",
+        "df+4 - 1+2 - 1,2,3"
+      ],
+      "postBound": [
+        "1+2 - ff+2",
+        "AGF",
+        "f+1+2,2"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - df+1+2 - B! - D/b+4,3,4,3,4",
+          "W! - ROC 1+2 - B! -"
+        ],
+        "boundToSplat": [
+          "W! - D/b+4,3,4,3,4",
+          "W! - ROC 1+2 (2 hits) - 3+4,3,4,3,4",
+          "low slump - uf+3+4 - (spike oki)",
+          "W! - iWS 3,[3] (needs testing)"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "2,1",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS4"
+        },
+        {
+          "startup": "13f",
+          "stand": "1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "df+1,2",
+          "crouch": "WS 2,2"
+        },
+        {
+          "startup": "15f",
+          "stand": "uf+4",
+          "crouch": "uf+4"
+        },
+        {
+          "startup": "16f",
+          "stand": "ff+2",
+          "crouch": "FC df+2 / FC db+1+2"
+        },
+        {
+          "startup": "17f",
+          "stand": "d+1+2,1+2~b",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Steve",
+      "players": [
+        "Nin",
+        "Knee",
+        "Fighting Spirit",
+        "Kor"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "f,F+2",
+            "D/b+3,2",
+            "ALB D+2",
+            "CH LWV (2),1"
+          ],
+          "followUps": [
+            "D/b+2",
+            "ALB D+2"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "U/f+2"
+          ],
+          "routes": [
+            "df+1,(2),1~b - DCK 1 - ff+2 - B!",
+            "df+1,(2),1~b - DCKc - ws1 - f+2,1~b - DCKc - ws1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+4"
+          ],
+          "routes": [
+            "df+1,(2),1~b - DCK 1 - ff+2 - B!",
+            "b+1~b - DCK 1 - df+1,(2),1~b - DCKc - ws1,2 - B! (Hard)"
+          ]
+        },
+        {
+          "launchers": [
+            "DCK 2"
+          ],
+          "routes": [
+            "DCK f+2~f+3 - DCK 1 - df+1,(2),1~b - DCKc - ws1,2 - B!",
+            "DCK f+2~f+3 - DCK 1 - df+1,(2),1 - ff+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "Ext DCK f+2"
+          ],
+          "routes": [
+            "~f+3 - DCK 1 - df+1,(2),1~b - DCKc - ws1,2 - B!",
+            "SSL - df+1,(2),1 - f+2,1~b - DCKc - ws1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "PAB D/f+2"
+          ],
+          "routes": [
+            "PAB 1 - PAB df+1,1,2,1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS 1+2"
+          ],
+          "routes": [
+            "DCK 1 - df+1,(2),1~b - DCKc - ws1,2 - B!",
+            "DCK f+2~f+3 - DCK 1 - ff+2 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "B+1",
+            "(D/f+1,(2)),1 *"
+          ],
+          "routes": [
+            "Ext DCK 1 - df+1,(2),1 - ff+2 *Nah",
+            "Ext DCK 1 - df+1,(2),1 - f+2,1~b - DCKc - ws1,2 - B!",
+            "Ext DCK 1 - df+1,(2),1 - f+2,1~b - DCK 1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+2"
+          ],
+          "routes": [
+            "ff+2 - B! - DCK 1 - df+1,(2),1~b - FLK 1 - ALB 2",
+            "ff+2 - B! - f+2,1 - f+2,1~b - DCK 1 - W!",
+            "ff+2 -  df+1,(2),1 - f+2,1~b - DCK 1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "B+2"
+          ],
+          "routes": [
+            "d+2,[1],2 - ff+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS2"
+          ],
+          "routes": [
+            "b+1~b - FLK 1 - f+2,1~b - DCKc - ws1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS2~DCK"
+          ],
+          "routes": [
+            "DCK 1 - df+1,(2),1 - ff+2 - B!",
+            "DCKc - ws1 - df+1,(2),1 - f+2,1~b - DCKc - ws1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS2~4/3"
+          ],
+          "routes": [
+            "LWV 2 / RWV 1 - df+1,(2),1 - ff+2",
+            "LWV 2 / RWV 1 - df+1,(2),1 - DCKc - ws1,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "DCK 1"
+          ],
+          "routes": [
+            "df1,(2),1~b - FLK 1,(1),f+1 - B!",
+            "df1,(2),1~b - FLK 2 - B!",
+            "b+3+4 - FLK 1,d+1 - ff+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "FLK 1,D+1"
+          ],
+          "routes": [
+            "ff+2 - B! - DCK 1 - d+2,[1],2~b - DCK 1"
+          ]
+        },
+        {
+          "launchers": [
+            "RWV 1,2"
+          ],
+          "routes": [
+            "df+1,(2),1~b - DCK 1 - ff+2 - B!",
+            "df+1,(2),1~b - DCKc - ws1 - f+2,1~b - DCKc - ws1,2 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df+1,(2),1 - f+2,1~b - DCK 1"
+      ],
+      "postBound": [
+        "df+1,(2),1~b - DCK 1",
+        "f+2,1~b - DCK 1",
+        "D/f+1+2",
+        "f,F+2",
+        "(d+2),1,2",
+        "df+1,(2),1~b - FLK 1~b - ALB 2 (Short Only)"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - f+2,1~b~db  - ws1,2 - B! - 3,1,1",
+          "W! - ff+2 - B! -  f+2,1~b - Gatling",
+          "W! - ff+2 - B! -  f+2,1 - df+1+2",
+          "W! - ff+2 - B! - f+2,1~b~db  - ws1,[2]"
+        ],
+        "boundToSplat": [
+          "f+2,1~b - Gatling",
+          "f+2,1 - df+1+2",
+          "f+2,1~b~db  - ws1,[2]",
+          "3,1,1"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,1,2",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 1,2"
+        },
+        {
+          "startup": "12f",
+          "stand": "2,1",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "df+1+2",
+          "crouch": "WS 2~f+3"
+        },
+        {
+          "startup": "15f",
+          "stand": "ff+2",
+          "crouch": ""
+        },
+        {
+          "startup": "16f",
+          "stand": "fb+3,2",
+          "crouch": ""
+        },
+        {
+          "startup": "18f",
+          "stand": "qcf+1",
+          "crouch": ""
+        },
+        {
+          "startup": "19f",
+          "stand": "",
+          "crouch": "WS 1+2"
+        }
+      ]
+    },
+    {
+      "name": "Wang",
+      "players": [
+        "Lee3 🐐"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "f,F+4"
+          ],
+          "followUps": [
+            "f+1+2"
+          ]
+        },
+        {
+          "starters": [
+            "1+2"
+          ],
+          "followUps": [
+            "d+2"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "U/f+3",
+            "D/f+2,1",
+            "D+1+2",
+            "F+1+4"
+          ],
+          "routes": [
+            "ff+2 - f+1 - ff+2 - f+1 - 1+2 - B!",
+            "ff+2 - f+1 - dash f+1 - df+1,1 - B!",
+            "ff+2 - B+2,1 - b+2,1,1+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D+1+2"
+          ],
+          "routes": [
+            "UFn+4 - b+2,1 - 1+2 - B!",
+            "UFn+4 - b+2,1 - b+2,1,1+2 W!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+4"
+          ],
+          "routes": [
+            "f+4 - 2 - b+2,1 - 1+2 - B!",
+            "1+2 - B! - f+4 - f+1 - b+2,1,1+2"
+          ]
+        },
+        {
+          "launchers": [
+            "F+1+2+3"
+          ],
+          "routes": [
+            "db+1 - f+1 - b+2,1 - 1+2 - B!",
+            "ff+2 - b+2,1 - b+2,1,1+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+1+2"
+          ],
+          "routes": [
+            "db+2 - db+2,4,2"
+          ]
+        },
+        {
+          "launchers": [
+            "Waning Moon"
+          ],
+          "routes": [
+            "Deep Dash d+1+2 - ss+1+2 - df+3+4 - f+1 - b+2,1,[1+2]"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4"
+          ],
+          "routes": [
+            "1+2 - B!",
+            "dash f+1 - ff+2 - f+1 - 1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D+4,1"
+          ],
+          "routes": [
+            "f+1 - ff+2 - f+1 - ff - 2 - 1+2 - B!",
+            "f+1 - ff+2 - f+1 b+2,1,1+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+1"
+          ],
+          "routes": [
+            "[db+1] - f+1 - ff+2 - f+1 - 1+2 - B!",
+            "[db+1] - f+1 - ff+2 - b+2,1,1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(D+2),1+2"
+          ],
+          "routes": [
+            "SSL 1+2 - B! - db+1 - f+1 - b+2,1,1+2",
+            "d+4,n4 - f+1 - 1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+4,2"
+          ],
+          "routes": [
+            "f+1 - f+1 - df+1,1 - B!",
+            "db+2,4 - db+4,2"
+          ]
+        },
+        {
+          "launchers": [
+            "(B+2,1,)1+2"
+          ],
+          "routes": [
+            "deep dash df+3+4 - f+1 - 1+2 - B!",
+            "qcf+1,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+1+2"
+          ],
+          "routes": [
+            "SSL 1+2 - B! - db+1 - f+1 - b+2,1,1+2",
+            "f+4 - f+1 - b+2,1 - 1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SS4"
+          ],
+          "routes": [
+            "ws3 - b+2,1 - 1+2 - B!",
+            "ws3 - b+2,1 - b+2,1,1+2 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "(WS2,2,)2"
+          ],
+          "routes": [
+            "d+1 - ff - f+1 - b+2,1 - 1+2 - B!",
+            "d+1 - ws1,1 - W!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "ff+2 - B+2,1 - b+2,1,1+2"
+      ],
+      "postBound": [
+        "QCF 2",
+        "b+2,1,1+2",
+        "QCF 1,1",
+        "df+3+4 - d+2 (Oki)",
+        "d+2 (Oki)",
+        "db+2,4,2/1"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - 1+2 - B! - db+1 - b+2,1,[1+2]",
+          "W! - df+1,1 - B! - 1 - qcf+2",
+          "W! - df+1,1 - B! - f+4,1+2,2",
+          "W! - ss+1+2 - B! - db+1 - f+1 - qcf+2",
+          "(Bigs+Marduk Only)"
+        ],
+        "boundToSplat": [
+          "1 - db+2,4,1",
+          "1 - b+2,1,[1+2] (slight delay)",
+          "1, qcf+2",
+          "f+4,1+2,[2]"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,4 / 2,3",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "13f",
+          "stand": "",
+          "crouch": "WS 1,1"
+        },
+        {
+          "startup": "14f",
+          "stand": "3",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "uf+3 / f+2,2",
+          "crouch": "uf+3"
+        },
+        {
+          "startup": "16f",
+          "stand": "uf+4 / df+2",
+          "crouch": "uf+4 / WS 3,2"
+        }
+      ]
+    },
+    {
+      "name": "Xiaoyu",
+      "players": [
+        "Sodam",
+        "ChangDdaeng"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "AOP D+4~3"
+          ],
+          "followUps": [
+            "get up 3"
+          ]
+        },
+        {
+          "starters": [
+            "3",
+            "CH f,F+1,2"
+          ],
+          "followUps": [
+            "ff+3 - db+4 - f+3,1,1+2",
+            "4~3"
+          ]
+        },
+        {
+          "starters": [
+            "(1,d+2),1+2",
+            "CH db+4"
+          ],
+          "followUps": [
+            "4~3"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "U/f+3",
+            "D/f+2~1",
+            "U/b+3+4",
+            "BT 4",
+            "AOP U/f+3"
+          ],
+          "routes": [
+            "df+2 - f+3,1 - BT 2,1 - ff+1 - B!",
+            "df+2 - f+3,1 - BT 2,2 - B!",
+            "df+2 - f+3,1 - BT 2,1,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/b+3+4~AOP"
+          ],
+          "routes": [
+            "AOP 1,2 - BT 2,1 - ff+1 - B!",
+            "AOP"
+          ]
+        },
+        {
+          "launchers": [
+            "SS3"
+          ],
+          "routes": [
+            "b+3 - BT 2 x2 - BT 2,2 - B! - SSR BT 1,4"
+          ]
+        },
+        {
+          "launchers": [
+            "SS3~AOP"
+          ],
+          "routes": [
+            "AOP 1,2 - BT 2 - BT 2,2 - B! - SSR BT 1,4",
+            "AOP d+1+2 - f+3,1 - BT 2,2 - B! - SSR BT 1,4"
+          ]
+        },
+        {
+          "launchers": [
+            "WR 3"
+          ],
+          "routes": [
+            "AOP 1,2 - BT 2 - BT 2,2 - B! - SSR BT 1,4"
+          ]
+        },
+        {
+          "launchers": [
+            "BT U/f+4"
+          ],
+          "routes": [
+            "f+3,1 - BT 2 - BT 2,2 - B!",
+            "f+3,1 - BT 2 - BT 2,1 - ff+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "AOP U/f+3,1"
+          ],
+          "routes": [
+            "B! - AOP u+4 - ws2 - BT 2,2,1+2",
+            "B! - AOP u+4 - ws2 - BT 1,4"
+          ]
+        },
+        {
+          "launchers": [
+            "AOP U/f+3,3"
+          ],
+          "routes": [
+            "b+2 - BT 2,2 - B! d+2+3 - f+3,1,1+2",
+            "b+2 - BT 2,1 - ff+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "AOP D+1+2"
+          ],
+          "routes": [
+            "ufN+4 - f+3,1 - BT 2,1 - ff+1 - B!",
+            "ufN+4 - f+3,1 - BT 2,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "AOP 1+2"
+          ],
+          "routes": [
+            "df+1~f - f+3,1 - BT 2,2 - B!",
+            "df+1~f - f+3,1 - BT 2,1 - ff+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "AOP U/fN+3"
+          ],
+          "routes": [
+            "AOP uf+3 - 1,d+2 - BT 2,2 - B!",
+            "AOP uf+3 - 1,d+2 - BT 2,1 - ff+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "BT f+3+4,3+4"
+          ],
+          "routes": [
+            "BT f+3+4,3+4 - BT 2 x2 - BT 2,2 - B!",
+            "BT f+3+4,3+4 - BT 2 - BT 2,1 - ff+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "BT D+4",
+            "AOP U/fNL+3"
+          ],
+          "routes": [
+            "ff+3 - BT 2 - BT 2 - BT 2,1 - ff+1 - B!",
+            "ff+3 - BT 2 x2 - BT 2,2 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "4~3"
+          ],
+          "routes": [
+            "ws1 - f+3,1 - BT 2,1 - ff+1 - B!",
+            "ws1 - f+3,1 - BT 2,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "4~3~AOP"
+          ],
+          "routes": [
+            "AOP 4 - f+3,1 - BT 2,1 - ff+1 - B!",
+            "AOP 4 - f+3,1 - BT 2,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+4",
+            "(f+4),4"
+          ],
+          "routes": [
+            "ff+3 -  BT 2 - BT 2,1 - ff+1 - B!",
+            "ff+3 - BT 2 x2 - BT 2,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "(f,F+1+2,)1+2"
+          ],
+          "routes": [
+            "iWS2~f - f+3,1 - BT 2,1 - ff+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "BT d+3"
+          ],
+          "routes": [
+            "db4 - f+3,1 - BT 2,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS 2"
+          ],
+          "routes": [
+            "U/fN 4 - f+3,1 - BT 2,1 - ff+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS 2~f"
+          ],
+          "routes": [
+            "b+3 - BT 2 - BT 2,2 - B!",
+            "b+3 - BT 2 - BT 2,1 - ff+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+4"
+          ],
+          "routes": [
+            "df+2 - f+3,1 - BT 2,1 - ff+1 - B!",
+            "df+2 - f+3,1 - BT 2,2 - B!",
+            "df+2 - f+3,1 - BT 2,1,4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+4~d"
+          ],
+          "routes": [
+            "ws2 - BT 2 - BT 2,2 - B!",
+            "ws2 - BT 2 - BT 2,1 - ff+1 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+4~AOP"
+          ],
+          "routes": [
+            "AOP1 - ws2 - BT 2 - BT 2,2 - B!",
+            "AOP1 - ws2 - BT 2 - BT 2,1 - ff+1 - B!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df+2 - f+3,1 - BT 2 - BT 2,2,1+2"
+      ],
+      "postBound": [
+        "Normal"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - uf+4~AOP / ff+1~AOP - b+3+4 - BT 2 x2 - BT 2,2,1+2~d - AOP 4",
+          "W! - BT 2,2 - B! - BT 2 - BT 2,2,1+2~d - AOP 4",
+          "W! - AOP uf+3,1 - B! - b+3+4 - BT 2 - BT 2,2,1+2~d - AOP 4",
+          "High W! - WR3 - uf+3,1 - B! - b+3+4 - BT 2 - BT 2,2,1+2~d - AOP 4"
+        ],
+        "boundToSplat": [
+          "W! - 1 - d+1+2~AOP - AOP 4",
+          "W! - 1,d+2,1+2",
+          "W! - ff+2,1",
+          "W! - 1 - db+1",
+          "High W! - WR3 - AOP uf+3,1"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,d+2",
+          "crouch": ""
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "12f",
+          "stand": "f+1+2",
+          "crouch": ""
+        },
+        {
+          "startup": "13f",
+          "stand": "b+4,4",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "b+2,2",
+          "crouch": "WS b+4 / WS 2"
+        },
+        {
+          "startup": "15f",
+          "stand": "3 / df+2~1",
+          "crouch": ""
+        },
+        {
+          "startup": "16f",
+          "stand": "uf+3",
+          "crouch": "uf+3"
+        },
+        {
+          "startup": "18f",
+          "stand": "db+1",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Yoshimitu",
+      "players": [
+        "Help Me",
+        "Just Frame James"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "BT 2"
+          ],
+          "followUps": [
+            "df+2,2 ??",
+            "F+1+2 ??"
+          ]
+        },
+        {
+          "starters": [
+            "MED 3"
+          ],
+          "followUps": [
+            "U,N,L+3 (Jump Land 3)"
+          ]
+        },
+        {
+          "starters": [
+            "Poison Breath"
+          ],
+          "followUps": [
+            "d+1+2 - FLE 1+2 - d+4 (to FC SS)",
+            "qb+3,3,4 - CD1~1+2"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2,2",
+            "CD 1",
+            "Flash"
+          ],
+          "routes": [
+            "df+1 - 2 - f+1+2 - B!",
+            "df+1 - f+1 - b+1,1 - f+1+2",
+            "df+1 - f+1 - b+1,1 - b+2,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+3"
+          ],
+          "routes": [
+            "3 - f+1 - f+1+2 - B!",
+            "b+1,1 - b+1,1,1,(1,)1 - f+1+2 - B!",
+            "b+1,1 - b+1,1 - b+2,1 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "U+3+4"
+          ],
+          "routes": [
+            "df+1 - 2 - f+1+2 - B!",
+            "f+1+2 - B! - f+2,1~1+2 - KIN f+2"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+4",
+            "(F+3,)4",
+            "BT Bad Stom 3"
+          ],
+          "routes": [
+            "BT 1 - d+2 - ws+3,2 - B!",
+            "BT 1 - BT 4 - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "4~3",
+            "FLE 3+4",
+            "IND 4",
+            "IND (3,)4",
+            "f,F+3+4,1+2,)3+4"
+          ],
+          "routes": [
+            "ufN+4 - 2 - f+1+2 - B!",
+            "ufN+4 - f+1+2 - B!",
+            "hold F - ufN+4 - b+1,1,1,(1,)1 - f+1+2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "DGF 2"
+          ],
+          "routes": [
+            "~d - 2 - f+1+2 - B!",
+            "~d - f+1 - b+1,1,1 - uf+4 - B!",
+            "DGF 2~d - f+1+2 - b!"
+          ]
+        },
+        {
+          "launchers": [
+            "FC D/f+1"
+          ],
+          "routes": [
+            "df+1 - f+1 - b+1,1 - f+1+2 - B!"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "F+2"
+          ],
+          "routes": [
+            "SSR - df+1 - f+1 - f+1+2 - B!",
+            "SSL uf+4 - B! - f+1+2 (oki)"
+          ]
+        },
+        {
+          "launchers": [
+            "f,F+3"
+          ],
+          "routes": [
+            "ff+3+4 - B! - b+2,1~1+2 - KIN f+2",
+            "ff+1+2 - B! - BT d+1+4 (Peak Yoshimitsu Combo)",
+            "f+1+2 - B! - f+1+2 - CD1"
+          ]
+        },
+        {
+          "launchers": [
+            "FC D/f+4"
+          ],
+          "routes": [
+            "cc - df+1 - 2 - f+1+2 - B!",
+            "ws3,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "U/f+2"
+          ],
+          "routes": [
+            "cc - df+1 - 2 - f+1+2 - B!",
+            "ws4 - f+1 - b+2,1 - W!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df+1 - f+1 - b+1 - b+2,1~1+2 - KIN f+2",
+        "df1 - 2 - f+1 - f+3+4 - FLE 2"
+      ],
+      "postBound": [
+        "b+2,1",
+        "b+2,1~1+2 - KIN f+2",
+        "d+2,2",
+        "3~4",
+        "f+3+4 - FLE 2",
+        "f+1+2 (Oki)",
+        "ff+4 (BT Oki)"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - f+1+2 - B! - b+1,1 - 3~4~u",
+          "W! - f+1+2 - B! - b+2,1~KIN",
+          "ff+4 - W! - iWS3,2 - B! b+2,1"
+        ],
+        "boundToSplat": [
+          "b+1,1 - 3~4~u",
+          "b+2,1~KIN",
+          "db+3,3,3,3"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,1",
+          "crouch": "d+1"
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "14f",
+          "stand": "",
+          "crouch": "WS 1,1"
+        },
+        {
+          "startup": "15f",
+          "stand": "uf+3 / 4,4",
+          "crouch": "WS 2,1"
+        },
+        {
+          "startup": "16f",
+          "stand": "df+2,2 / f+3",
+          "crouch": "WS 3,2"
+        },
+        {
+          "startup": "17f",
+          "stand": "f,f+4",
+          "crouch": ""
+        }
+      ]
+    },
+    {
+      "name": "Zafina",
+      "players": [
+        "Chanel",
+        "기상어퍼 / StandingUpper"
+      ],
+      "notes": [],
+      "guaranteed": [
+        {
+          "starters": [
+            "FC D/f+3",
+            "SCR 1+2",
+            "B+3",
+            "TRT 1+2",
+            "CH D/b+2",
+            "TRT 3~u"
+          ],
+          "followUps": [
+            "b+3",
+            "d+2",
+            "db+3 (SCR Oki)"
+          ]
+        },
+        {
+          "starters": [
+            "SCR 1+2~d",
+            "TRT 3"
+          ],
+          "followUps": [
+            "TRT 1",
+            "TRT d+1+2"
+          ]
+        },
+        {
+          "starters": [
+            "(2,1,)3",
+            "FC D/f+3~d",
+            "TRT D+1+2",
+            "TRT 3~d"
+          ],
+          "followUps": [
+            "MNT uf+3"
+          ]
+        },
+        {
+          "starters": [
+            "WS 1"
+          ],
+          "followUps": [
+            "df+1,4"
+          ]
+        },
+        {
+          "starters": [
+            "MNT D+4"
+          ],
+          "followUps": [
+            "MNT 3"
+          ]
+        },
+        {
+          "starters": [
+            "D/b+1+2"
+          ],
+          "followUps": [
+            "MNT d+3,1 - MNT d+1,4"
+          ]
+        }
+      ],
+      "structure": [
+        {
+          "launchers": [
+            "D/f+2",
+            "U/f+4",
+            "TRT 2"
+          ],
+          "routes": [
+            "SSR - f+1 - uf+1 - f+2,3 - SCR 3+4 - B!",
+            "df+1 - f+2,3 - SCR 3+4 - B!",
+            "uf+1 - ff - df+1 - f+2,3 - SCR 3+4 - B!",
+            "df+1 - f+2,3 - SCR 4~b - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/f+1+2"
+          ],
+          "routes": [
+            "uf+1 - df+1 - f+2,3 - SCR 3+4 - B!",
+            "df+2 - df+1 - f+2,3 - SCR - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "WS 2"
+          ],
+          "routes": [
+            "SSR - f+1 - uf+1 - f+2,3 - SCR 3+4 - B!",
+            "df+2 - df+1 - f+2,3 - SCR 3+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SCR 4"
+          ],
+          "routes": [
+            "SCR 1 x2 - SCR 2,2 - B!",
+            "SCR 1 x2 - SCR 1+2 - B!",
+            "SCR 2,2 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SCR 4~b"
+          ],
+          "routes": [
+            "df+1 - f+2,3 - SCR 3+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "SCR D/f+3"
+          ],
+          "routes": [
+            "cc - df+1 - ff - df+1 - f+2,3 - SCR 3+4 - B!",
+            "cc - df+1 - f+2,3 - SCR 4~b - W!"
+          ]
+        },
+        {
+          "launchers": [
+            "MNT D/f+2"
+          ],
+          "routes": [
+            "f+1 - f+2,3 - SCR 3+4 - B!",
+            "f+1 - ff+3 - B! - SCR 3+4 (Oki)"
+          ]
+        }
+      ],
+      "counterHit": [
+        {
+          "launchers": [
+            "1+2"
+          ],
+          "routes": [
+            "df+1 x2 - f+2,3 - SCR 3+4 - B!",
+            "df+1 - f+1 - ff+3 - B! - SCR 3+4 (Oki)"
+          ]
+        },
+        {
+          "launchers": [
+            "1+2,4"
+          ],
+          "routes": [
+            "df+1 - f+2,3 - SCR 3+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "B+2"
+          ],
+          "routes": [
+            "df+2 - df+1 - f+2,3 - SCR 3+4 - B!",
+            "3 - SCR 1 - SCR 1+2 - B! (Short)"
+          ]
+        },
+        {
+          "launchers": [
+            "B+1",
+            "(D/f+3,)4"
+          ],
+          "routes": [
+            "df+2 - df+1 - f+2,3 - SCR 3+4 - B!"
+          ]
+        },
+        {
+          "launchers": [
+            "D/b+4,2",
+            "D+4,3"
+          ],
+          "routes": [
+            "SSR - f+1 - uf+1 - f+2,3 - SCR 3+4 - B!",
+            "df+1 - f+2,3 - SCR 3+4 - B!",
+            "uf+1 - ff - df+1 - f+2,3 - SCR 3+4 - B!",
+            "df+1 - f+2,3 - SCR 4~b - W!"
+          ]
+        }
+      ],
+      "lowParry": [
+        "df1 - df+1 - f+2,3,4"
+      ],
+      "postBound": [
+        "ff+3+4",
+        "1+2 (Oki)",
+        "df+1,4 (Carry)",
+        "f+2,3,4",
+        "iWS3 - SCR 4 (Carry)",
+        "df+4,1"
+      ],
+      "wall": {
+        "splatToBound": [
+          "W! - 1+2 - B! - f+2,3 - SCR 4",
+          "W! - 1+2 - B! - 1,2,3 - SCR 4"
+        ],
+        "boundToSplat": [
+          "W! f+2,3 - SCR 4",
+          "W! - 1,2,3 - SCR 4",
+          "W! f+2,3 - SCR 3 (Oki)"
+        ]
+      },
+      "punish": [
+        {
+          "startup": "10f",
+          "stand": "1,3",
+          "crouch": ""
+        },
+        {
+          "startup": "11f",
+          "stand": "",
+          "crouch": "WS 4"
+        },
+        {
+          "startup": "13f",
+          "stand": "df+1,2 / df+1,4",
+          "crouch": ""
+        },
+        {
+          "startup": "14f",
+          "stand": "f+4 / df+3,4",
+          "crouch": ""
+        },
+        {
+          "startup": "15f",
+          "stand": "",
+          "crouch": "WS 1,2"
+        },
+        {
+          "startup": "16f",
+          "stand": "df+2",
+          "crouch": "WS 3"
+        },
+        {
+          "startup": "17f",
+          "stand": "uf+4",
+          "crouch": "uf+4"
+        }
+      ]
+    }
+  ]
+}

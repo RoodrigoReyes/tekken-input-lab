@@ -11,6 +11,7 @@ import { errorMessage, useCombo, useCombos, useRepository } from '../../hooks/us
 import { paths } from '../../hooks/useHashRoute';
 import { dialectsForGame, getDialect } from '../../notation/dialects';
 import { GAMES, getGame } from '../../notation/games';
+import { comboDraftSchema } from '../../storage/schema';
 import { DIFFICULTIES, type ComboDraft } from '../../types/combo';
 import type { GameId } from '../../types/notation';
 import { parseCombo } from '../combo/parseCombo';
@@ -60,15 +61,18 @@ interface EditorFormProps {
 
 /** Whether a draft already carries optional details (then that section starts open). */
 function hasDetails(draft: ComboDraft): boolean {
-  return draft.tags.length > 0 || draft.notes.trim() !== '' || draft.damage !== undefined || draft.difficulty !== NEW_DRAFT.difficulty;
+  return draft.tags.length > 0 || draft.notes.trim() !== '' || draft.damage !== undefined || draft.hits !== undefined || !!draft.position || !!draft.videoUrl || draft.difficulty !== NEW_DRAFT.difficulty;
 }
 
 /** One-line recap of the optional details, shown while the section is folded. */
-function detailsSummary(draft: ComboDraft, damage: string): string {
+function detailsSummary(draft: ComboDraft, damage: string, hits: string): string {
   const parts = [
     `Difficulty: ${draft.difficulty}`,
     damage.trim() && `${damage.trim()} dmg`,
-    draft.tags.length > 0 && `${draft.tags.length} tag${draft.tags.length > 1 ? 's' : ''}`,
+    hits.trim() && (Number(hits) === 1 ? `${hits.trim()} hit` : `${hits.trim()} hits`),
+    draft.position && `Position: ${draft.position}`,
+    draft.videoUrl && 'Video',
+    draft.tags.length > 0 && (draft.tags.length === 1 ? `${draft.tags.length} tag` : `${draft.tags.length} tags`),
     draft.notes.trim() && 'Notes',
   ];
   return parts.filter(Boolean).join(' · ');
@@ -90,6 +94,7 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
   const [start] = useState(() => initialDraft(initial));
   const [draft, setDraft] = useState<ComboDraft>(start.draft);
   const [damage, setDamage] = useState(start.draft.damage?.toString() ?? '');
+  const [hits, setHits] = useState(start.draft.hits?.toString() ?? '');
   const [visual, setVisual] = useState(DEFAULT_VISUAL);
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
@@ -128,10 +133,22 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
       setFormError('Damage must be a whole number between 0 and 999.');
       return;
     }
+    const hitCount = hits.trim() === '' ? undefined : Number(hits);
+    if (hitCount !== undefined && (!Number.isInteger(hitCount) || hitCount < 0 || hitCount > 999)) {
+      setFormError('Hits must be a whole number between 0 and 999.');
+      return;
+    }
+    const videoUrl = draft.videoUrl?.trim() || undefined;
+    if (!comboDraftSchema.shape.videoUrl.safeParse(videoUrl).success) {
+      setFormError('Video URL must be a valid HTTPS URL of at most 500 characters.');
+      return;
+    }
     const sections = parsed.result.ast.sections.length;
     const payload: ComboDraft = {
       ...draft,
       damage: dmg,
+      hits: hitCount,
+      videoUrl,
       partner: draft.game === 'ttt2' ? draft.partner : undefined,
       sectionCharacters: draft.sectionCharacters.slice(0, sections),
     };
@@ -217,14 +234,14 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
           <div className="label-sm flex flex-wrap items-center justify-between gap-2 text-fg-muted">
             <span className="flex items-center gap-2">
               <span aria-hidden className={`size-2 rounded-full ${warnings ? 'bg-warning' : draft.notation.trim() ? 'bg-success' : 'bg-fg-muted'}`} />
-              {!draft.notation.trim() ? 'Waiting for notation' : warnings ? `${warnings} warning${warnings > 1 ? 's' : ''} detected` : 'No warnings'}
+              {!draft.notation.trim() ? 'Waiting for notation' : warnings ? (warnings === 1 ? `${warnings} warning detected` : `${warnings} warnings detected`) : 'No warnings'}
             </span>
             <span>
-              {draft.notation.length} chars · {getDialect(draft.dialect).name}
+              {`${draft.notation.length} chars`} · {getDialect(draft.dialect).name}
             </span>
           </div>
           {game.tag && (
-            <a href={paths.generator()} onClick={() => id === null && stashEditorDraft({ ...draft, damage: damageValue(damage) })} className="flex min-h-11 items-center justify-between gap-3 rounded-lg border border-line-control bg-neutral px-3 py-2.5 text-sm text-fg-muted hover:bg-muted hover:text-fg">
+            <a href={paths.generator()} onClick={() => id === null && stashEditorDraft({ ...draft, damage: damageValue(damage), hits: damageValue(hits) })} className="flex min-h-11 items-center justify-between gap-3 rounded-lg border border-line-control bg-neutral px-3 py-2.5 text-sm text-fg-muted hover:bg-muted hover:text-fg">
               <span>
                 <strong className="label-md mr-2 text-fg">Generate from guide</strong>
                 Build a TTT2 team combo from the bundled “TTT2 BNB Combos” guide.
@@ -293,7 +310,7 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
         <Collapsible
           className="lg:col-start-1 lg:row-start-3"
           title="Combo details"
-          summary={detailsSummary(draft, damage)}
+          summary={detailsSummary(draft, damage, hits)}
           defaultOpen={hasDetails(start.draft)}
           aside={<span className="label-sm text-fg-muted uppercase">Optional</span>}
         >
@@ -310,7 +327,20 @@ function EditorForm({ id, initial, navigate }: EditorFormProps) {
             <Field label="Damage" aside="0 to 999">
               <TextInput type="number" inputMode="numeric" min={0} max={999} value={damage} onChange={(e) => setDamage(e.target.value)} />
             </Field>
+            <Field label="Hits" aside="0 to 999">
+              <TextInput type="number" inputMode="numeric" min={0} max={999} value={hits} onChange={(e) => setHits(e.target.value)} />
+            </Field>
+            <Field label="Position">
+              <Select value={draft.position ?? ''} onChange={(e) => set('position', (e.target.value || undefined) as ComboDraft['position'])}>
+                <option value="">None</option>
+                <option value="open">Open</option>
+                <option value="wall">Wall</option>
+              </Select>
+            </Field>
           </div>
+          <Field label="Video URL" hint="HTTPS links only, up to 500 characters.">
+            <TextInput type="url" value={draft.videoUrl ?? ''} onChange={(e) => set('videoUrl', e.target.value)} maxLength={500} placeholder="https://" />
+          </Field>
           <Field label="Tags">
             <TagInput id="tags" value={draft.tags} onChange={(t) => set('tags', t)} suggestions={collectTags(library)} />
           </Field>

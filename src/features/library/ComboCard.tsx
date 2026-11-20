@@ -32,15 +32,17 @@ export function ComboCard({ combo, onToggleFavorite }: ComboCardProps) {
             <GameBadge game={combo.game} />
             <span className="text-fg">{characters}</span>
             <DifficultyBadge difficulty={combo.difficulty} />
+            {combo.damage !== undefined && <span>{combo.damage} dmg</span>}
+            {combo.hits !== undefined && <span>{(combo.hits === 1 ? `${combo.hits} hit` : `${combo.hits} hits`)}</span>}
+            {combo.position && <span className="capitalize">{(combo.position === 'wall' ? "Wall" : "Open")}</span>}
             {warnings > 0 && (
-              <span className="label-sm rounded-sm border border-dashed border-warning px-1.5 py-0.5 text-warning" title={`${warnings} notation warning(s)`}>
+              <span className="label-sm rounded-sm border border-dashed border-warning px-1.5 py-0.5 text-warning" title={(warnings === 1 ? `${warnings} notation warning` : `${warnings} notation warnings`)}>
                 ⚠ {warnings}
               </span>
             )}
           </p>
         </div>
         <div className="-mt-2 -mr-2 flex shrink-0 items-center gap-1">
-          {combo.damage !== undefined && <span className="font-label text-base font-semibold text-fg">{combo.damage} dmg</span>}
           <button
             type="button"
             onClick={() => onToggleFavorite(combo)}

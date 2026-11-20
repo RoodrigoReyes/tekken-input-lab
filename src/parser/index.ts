@@ -8,7 +8,7 @@
  */
 import { findDialect, getDialect } from '../notation/dialects';
 import { getGame } from '../notation/games';
-import type { Diagnostic, GameId, ParseResult } from '../types/notation';
+import type { Diagnostic, GameId, ParseResult, StageNode } from '../types/notation';
 import { normalizeTokens } from './normalizer';
 import { parseTokens } from './parser';
 import { tokenize } from './tokenizer';
@@ -48,13 +48,60 @@ function parseUncached(text: string, options: ParseOptions): ParseResult {
   const labelNames = [...getGame(options.game).roster, ...characters];
   const tokens = tokenize(text, { labelNames });
   const { ast, diagnostics } = parseTokens(tokens, text, { game: options.game, dialect, characters });
+  const normalized = normalizeTokens(tokens, ast);
+  for (const section of ast.sections) {
+    const expanded: StageNode[] = [];
+    for (const stage of section.stages) {
+      let current: StageNode = { ...stage, steps: [] };
+      for (const step of stage.steps) {
+        if (step.node.type !== 'namedMove' || !step.node.expandsTo) {
+          current.steps.push(step);
+          continue;
+        }
+        const expansion = step.node.expandsTo;
+        const parsed = parseTokens(tokenize(expansion, { labelNames }), expansion, { game: options.game, dialect, characters });
+        const stages = parsed.ast.sections.flatMap((part) => part.stages);
+        stages.forEach((part, i) => {
+          if (i > 0) { expanded.push(current); current = { ...stage, steps: [] }; }
+          part.steps.forEach((item, j) => {
+            const first = i === 0 && j === 0;
+            const last = i === stages.length - 1 && j === part.steps.length - 1;
+            current.steps.push({
+              ...item,
+              relation: first ? step.relation : item.relation && { ...item.relation, span: step.node.span },
+              node: {
+                ...item.node,
+                span: step.node.span,
+                prefixes: [...(first ? step.node.prefixes : []), ...item.node.prefixes.map((prefix) => ({ ...prefix, span: step.node.span }))],
+                hold: item.node.hold || (last && step.node.hold),
+                ...(last && step.node.repeat !== undefined ? { repeat: step.node.repeat } : {}),
+              },
+            });
+          });
+        });
+      }
+      expanded.push(current);
+    }
+    section.stages = expanded;
+  }
+  for (const section of ast.sections) for (const stage of section.stages) for (const { node } of stage.steps) {
+    for (const prefix of node.prefixes) {
+      const token = tokens.find((t) => t.span.start === prefix.span.start);
+      if (token) token.canonical = prefix.abbr;
+    }
+    if (node.type === 'namedMove' || node.type === 'stance') {
+      const start = node.prefixes.at(-1)?.span.end ?? node.span.start;
+      const token = tokens.find((t) => t.span.start >= start && t.span.end <= node.span.end && t.type === 'word');
+      if (token) token.canonical = node.type === 'namedMove' ? node.name : node.abbr;
+    }
+  }
   const semantic = [...dialectDiagnostics(options), ...validateCombo(ast, options.game)];
   return {
     parserVersion: PARSER_VERSION,
     game: options.game,
     dialect: dialect.id,
     original: text,
-    normalized: normalizeTokens(tokens),
+    normalized,
     tokens,
     ast,
     diagnostics: [...diagnostics, ...semantic].sort(bySpan),

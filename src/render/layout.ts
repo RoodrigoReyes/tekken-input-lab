@@ -63,6 +63,8 @@ export type BoxKind = 'item' | 'relation' | 'stage' | 'bracket' | 'sectionHeader
 export interface Box {
   id: number;
   kind: BoxKind;
+  /** Zero-based stage index across all sections. */
+  stageIndex?: number;
   x: number;
   y: number;
   w: number;
@@ -338,18 +340,22 @@ export function layoutCombo(result: ParseResult, options: LayoutOptions): Layout
   const boxes: Box[] = [];
   let y = pad;
   let id = 0;
+  let stageIndex = 0;
 
   sections.forEach((section, si) => {
     if (showHeaders) {
       const info = options.sectionHeaders?.[si] ?? { title: section.label ?? null };
       const head = b.header(info, section.boundary === 'tagAssault');
-      boxes.push({ ...stripDraft(head), id: id++, x: pad, y });
+      boxes.push({ ...stripDraft(head), stageIndex, id: id++, x: pad, y });
       y += head.h + Math.round(b.s * 0.12);
     }
     const drafts: Draft[] = [];
     section.stages.forEach((stage, i) => {
-      if (i > 0) b.stage(drafts);
-      b.steps(stage.steps, drafts);
+      const stageDrafts: Draft[] = [];
+      if (i > 0) b.stage(stageDrafts);
+      b.steps(stage.steps, stageDrafts);
+      drafts.push(...stageDrafts.map((draft) => ({ ...draft, stageIndex })));
+      stageIndex++;
     });
     if (drafts.length === 0) {
       if (showHeaders) y += rowGap;

@@ -1,6 +1,6 @@
 import { useMemo, useState, type ReactNode } from 'react';
 import { DiagnosticsList } from '../../components/combos/DiagnosticsList';
-import { ArcadeDisplay, DEFAULT_VISUAL } from '../../components/combos/ComboVisual';
+import { DEFAULT_VISUAL } from '../../components/combos/ComboVisual';
 import { GameBadge } from '../../components/combos/GameBadge';
 import { Chip } from '../../components/ui/Chip';
 import { Collapsible } from '../../components/ui/Collapsible';
@@ -14,8 +14,10 @@ import { paths } from '../../hooks/useHashRoute';
 import { getDialect } from '../../notation/dialects';
 import { getGame } from '../../notation/games';
 import type { Combo } from '../../types/combo';
+import { PracticeDisplay } from './PracticeDisplay';
 import { parseCombo, type ParsedCombo } from '../combo/parseCombo';
 import type { VisualOptions } from '../../components/combos/ComboVisual';
+import { encodeShareLink } from '../share/shareLink';
 
 export interface DetailsExtraProps {
   combo: Combo;
@@ -83,6 +85,12 @@ function Details({
       toast('Notation copied', 'success');
     }, 'Could not copy');
 
+  const copyShareLink = () =>
+    run(async () => {
+      await navigator.clipboard.writeText(window.location.origin + window.location.pathname + encodeShareLink(combo));
+      toast('Share link copied', 'success');
+    }, 'Could not copy');
+
   const duplicate = () =>
     run(async () => {
       const copyOf = await repo.duplicate(combo.id);
@@ -146,7 +154,16 @@ function Details({
             </Meta>
             {combo.damage !== undefined && (
               <Meta label="Damage">
-                <span className="font-label text-base font-semibold">{combo.damage}</span>
+                <Chip>{combo.damage}</Chip>
+              </Meta>
+            )}
+            {combo.hits !== undefined && <Meta label="Hits"><Chip>{combo.hits}</Chip></Meta>}
+            {combo.position && <Meta label="Position"><Chip><span className="capitalize">{combo.position}</span></Chip></Meta>}
+            {combo.videoUrl && (
+              <Meta label="Video">
+                <a href={combo.videoUrl} target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary-hover">
+                  Watch video
+                </a>
               </Meta>
             )}
             {combo.tags.length > 0 && (
@@ -165,6 +182,7 @@ function Details({
             Edit
           </LinkButton>
           <Button onClick={copy}>Copy notation</Button>
+          <Button onClick={copyShareLink}>Copy share link</Button>
           {renderExtraActions && <Menu label="Export">{renderExtraActions({ combo, parsed, visual })}</Menu>}
           <Menu label="More">
             <Button variant="ghost" onClick={duplicate}>
@@ -178,12 +196,12 @@ function Details({
       </header>
 
       <Panel aria-label="Commands" className="flex flex-col gap-3 p-4">
-        <ArcadeDisplay title="Arcade display" parsed={parsed} visual={visual} onVisualChange={setVisual} />
+        <PracticeDisplay key={combo.notation} parsed={parsed} visual={visual} onVisualChange={setVisual} />
         {parsed.result.diagnostics.length > 0 ? (
           <DiagnosticsList diagnostics={parsed.result.diagnostics} notation={combo.notation} />
         ) : (
           <p className="label-sm flex items-center gap-2 text-fg-muted uppercase">
-            <span aria-hidden className="size-2 rounded-full bg-success" /> No notation warnings for {game.name}
+            <span aria-hidden className="size-2 rounded-full bg-success" /> {`No notation warnings for ${game.name}`}
           </p>
         )}
       </Panel>
@@ -193,14 +211,14 @@ function Details({
         defaultOpen
         storageKey="details-notation-notes"
         bodyClassName="grid items-start gap-3 lg:grid-cols-2"
-        aside={<span className="label-sm text-fg-muted uppercase">Dialect: {getDialect(combo.dialect).name}</span>}
+        aside={<span className="label-sm text-fg-muted uppercase">{`Dialect: ${getDialect(combo.dialect).name}`}</span>}
       >
         <pre className="overflow-x-auto font-mono text-sm leading-[22px] font-medium whitespace-pre-wrap text-fg">{combo.notation}</pre>
         {combo.notes && <Notes text={combo.notes} />}
       </Collapsible>
       <p className="label-sm px-1 text-fg-muted">
-        Created {new Date(combo.createdAt).toLocaleString()} · Updated {new Date(combo.updatedAt).toLocaleString()}
-        {warnings > 0 && <span className="text-warning"> · ⚠ {warnings} warning{warnings > 1 ? 's' : ''}</span>}
+        {`Created ${new Date(combo.createdAt).toLocaleString()} · Updated ${new Date(combo.updatedAt).toLocaleString()}`}
+        {warnings > 0 && <span className="text-warning"> · ⚠ {(warnings === 1 ? `${warnings} warning` : `${warnings} warnings`)}</span>}
       </p>
 
       <ConfirmDialog

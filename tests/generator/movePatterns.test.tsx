@@ -28,6 +28,6 @@ describe('MovePatterns', () => {
     expect(starter.getAttribute('aria-pressed')).toBe('true');
     fireEvent.click(starter);
     expect(onMove).toHaveBeenLastCalledWith('');
-    expect(screen.getByText('b+1 > WS+1,2 > b+4,3 ×2')).toBeTruthy();
+    expect(screen.getByText('b+1 > WS 1,2 > b+4,3 ×2')).toBeTruthy();
   });
 });
