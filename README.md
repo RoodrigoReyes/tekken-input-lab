@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/ewgf.svg" alt="EWGF drawn as arcade commands: forward, neutral, down, down-forward, just frame, button 2" width="560">
+  <img src="docs/assets/ewgf.svg" alt="EWGF inputs: forward, neutral, down, down-forward plus 2" width="320">
 </p>
 
 <h1 align="center">Tekken Input Lab</h1>
