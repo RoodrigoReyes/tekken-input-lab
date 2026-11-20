@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { CommandSequence } from '../../components/arcade';
 import { Button } from '../../components/ui/Button';
 import { Chip, ToggleChip } from '../../components/ui/Chip';
-import { Checkbox, Select, TextInput } from '../../components/ui/Field';
+import { Checkbox, Select } from '../../components/ui/Field';
 import { PageTitle, Panel } from '../../components/ui/Panel';
 import { useToast } from '../../components/ui/Toast';
 import { errorMessage, useRepository } from '../../hooks/useCombos';
@@ -55,8 +55,7 @@ export function ExploreView() {
     <header><PageTitle>Explore community combos</PageTitle>{game !== 't6' && <p className="mt-2 text-sm text-fg-muted">Combos from tekken8combo.kagewebsite.com / tekken7combo.kagewebsite.com, by their authors.</p>}</header>
     <Panel aria-label="Explore filters" className="flex flex-col gap-3 p-4">
       <div className="flex flex-wrap gap-1" role="group" aria-label="Game">{[...games, 't6' as const].map((g) => <ToggleChip key={g} active={game === g} onClick={() => { setGame(g); setFilters(DEFAULT_FILTERS); setLimit(20); }}>{g.toUpperCase()}</ToggleChip>)}</div>
-      {game !== 't6' && <><div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-        <TextInput type="search" aria-label="Search notation or author" placeholder="Search notation or author" value={filters.query} onChange={(e) => set('query', e.target.value)} />
+      {game !== 't6' && <><div className="grid gap-2 sm:grid-cols-3">
         <Select aria-label="Character" value={filters.character} onChange={(e) => { setFilters((f) => ({ ...f, character: e.target.value, launcher: '' })); setLimit(20); }}><option value="">Any character</option>{characters.map((c) => <option key={c}>{c}</option>)}</Select>
         <Select aria-label="Launcher" value={filters.launcher} onChange={(e) => set('launcher', e.target.value)}><option value="">Any launcher</option>{launchers.map((l) => <option key={l}>{l}</option>)}</Select>
         <Select aria-label="Sort" value={filters.sort} onChange={(e) => set('sort', e.target.value as ExploreFilters['sort'])}><option value="newest">Newest</option><option value="damage">Most damage</option><option value="hits">Most hits</option></Select>

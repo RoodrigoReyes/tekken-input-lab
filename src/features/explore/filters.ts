@@ -21,13 +21,12 @@ export interface ConvertedCombo extends CommunityCombo {
 }
 export interface ExploreFilters {
   character: string;
-  query: string;
   tags: string[];
   launcher: string;
   cleanOnly: boolean;
   sort: 'newest' | 'damage' | 'hits';
 }
-export const DEFAULT_FILTERS: ExploreFilters = { character: '', query: '', tags: [], launcher: '', cleanOnly: true, sort: 'newest' };
+export const DEFAULT_FILTERS: ExploreFilters = { character: '', tags: [], launcher: '', cleanOnly: true, sort: 'newest' };
 
 function dateValue(date: string): number {
   const [month, day, year] = date.split('/').map(Number);
@@ -35,10 +34,8 @@ function dateValue(date: string): number {
 }
 
 export function filterAndSortCombos(combos: readonly ConvertedCombo[], filters: ExploreFilters): ConvertedCombo[] {
-  const query = filters.query.toLocaleLowerCase().trim();
   return combos.filter((combo) =>
     (!filters.character || combo.character === filters.character) &&
-    (!query || combo.notation.toLocaleLowerCase().includes(query) || combo.author.toLocaleLowerCase().includes(query)) &&
     filters.tags.every((tag) => combo.tags.some((t) => t.toLocaleLowerCase() === tag.toLocaleLowerCase())) &&
     (!filters.launcher || launcherOf(combo.notation) === filters.launcher) &&
     (!filters.cleanOnly || combo.clean),
