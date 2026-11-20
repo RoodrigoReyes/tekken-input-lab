@@ -91,7 +91,7 @@ function CommunityCard({ combo }: { combo: ConvertedCombo }) {
     finally { setSaving(false); }
   };
   return <article className="flex min-w-0 flex-col gap-3 rounded-lg border border-line bg-surface p-4">
-    <header><h2 className="text-lg font-semibold">{combo.character}</h2><p className="text-sm text-fg-muted">{`by ${combo.author || "Unknown"} · ${combo.date || "Unknown date"}`}</p></header>
+    <header><h2 className="text-lg font-semibold">{combo.character}</h2></header>
     <div className="flex flex-wrap items-center gap-1.5">{combo.damage != null && <Chip>{combo.damage} dmg</Chip>}{combo.hits != null && <Chip>{(combo.hits === 1 ? `${combo.hits} hit` : `${combo.hits} hits`)}</Chip>}{combo.tags.map((tag) => <Chip key={tag}>{tag}</Chip>)}{!combo.clean && <Chip>Conversion warnings</Chip>}</div>
     <CommandSequence result={combo.result} size={24} side={side} motionFrame={motionFrame} />
     <p className="break-words font-mono text-sm text-fg-muted">{combo.raw}</p>
