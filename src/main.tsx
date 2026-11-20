@@ -11,6 +11,9 @@ import './index.css';
 const root = document.getElementById('root');
 if (!root) throw new Error('Root element #root not found');
 
+// Ask the browser not to evict the IndexedDB combo library under storage pressure.
+navigator.storage?.persist?.().catch((error: unknown) => console.warn('Persistent storage request failed', error));
+
 createRoot(root).render(
   <StrictMode>
     <App />
