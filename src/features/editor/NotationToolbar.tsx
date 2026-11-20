@@ -50,6 +50,12 @@ export function NotationToolbar({ game, target, onInsert }: NotationToolbarProps
     const value = el?.value ?? '';
     const start = el?.selectionStart ?? value.length;
     const end = el?.selectionEnd ?? value.length;
+    // Native insertion lands in the textarea's undo history, so Ctrl+Z / Ctrl+Shift+Z undo and redo tokens.
+    if (el) {
+      el.focus();
+      el.setSelectionRange(start, end);
+      if (typeof document.execCommand === 'function' && document.execCommand('insertText', false, token)) return;
+    }
     onInsert(value.slice(0, start) + token + value.slice(end), start + token.length);
   };
   return (
